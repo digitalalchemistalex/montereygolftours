@@ -65,11 +65,10 @@ export default function Footer() {
 
       <div className="border-t border-[rgba(250,246,238,.08)] bg-[#0f171a] px-6 py-3 text-center md:px-14">
         <p className="mx-auto max-w-[900px] font-ui text-[10.5px] leading-relaxed text-[#7d847f]">
-          Pebble Beach®, Pebble Beach Golf Links®, Spyglass Hill Golf Course®, The Links at
-          Spanish Bay®, Pebble Beach Resorts®, and their respective underlying distinctive
-          images are trademarks, service marks, and trade dress of Pebble Beach Company. Del
-          Monte Golf Course™ and The Hay™ are trademarks of Pebble Beach Company. Used with
-          permission.
+          Pebble Beach®, Pebble Beach Resorts®, Pebble Beach Golf Links®, The Links at
+          Spanish Bay™, Spyglass Hill® Golf Course, Del Monte Golf Course®, and their
+          underlying distinctive images are trademarks, service marks, and trade dress of
+          Pebble Beach Company. Used with permission.
         </p>
       </div>
 

@@ -560,7 +560,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     holes: 18,
     designer: "Jack Neville and Douglas Grant (1919)",
     type: "Resort (Pebble Beach Resorts®)",
-    address: "1700 17 Mile Dr, Pebble Beach, CA 93953",
+    address: "1700 17-Mile Drive, Pebble Beach, CA 93953",
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "The most famous cliff-top course in American golf, opened in 1919 and unchanged in legend ever since.",
@@ -614,7 +614,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     holes: 18,
     designer: "Robert Trent Jones Sr.",
     type: "Resort (Pebble Beach Resorts®)",
-    address: "Spyglass Hill Rd, Pebble Beach, CA 93953",
+    address: "Stevenson Drive, Pebble Beach, CA 93953",
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
@@ -653,7 +653,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
   },
   "links-at-spanish-bay": {
     slug: "links-at-spanish-bay",
-    name: "The Links at Spanish Bay®",
+    name: "The Links at Spanish Bay™",
     city: "Pebble Beach, CA",
     facility: "Pebble Beach Resorts®",
     par: 72,
@@ -663,12 +663,12 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     holes: 18,
     designer: "Original design team; recent transformation led by Gil Hanse",
     type: "Resort (Pebble Beach Resorts®)",
-    address: "2700 17 Mile Dr, Pebble Beach, CA 93953",
+    address: "2700 17-Mile Drive, Pebble Beach, CA 93953",
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "A true links-style course on the Monterey Peninsula, recently transformed by architect Gil Hanse.",
     description: [
-      "The Links at Spanish Bay® plays as genuine links-style golf — firm, fast turf and coastal dunes character that's rare on the California coast. The course recently underwent a multi-million dollar transformation led by architect Gil Hanse.",
+      "The Links at Spanish Bay™ plays as genuine links-style golf — firm, fast turf and coastal dunes character that's rare on the California coast. The course recently underwent a multi-million dollar transformation led by architect Gil Hanse.",
       "At par 72 and 6,726 yards (rating 73.7, slope 143), the course is priced at $350 per player for 18 holes.",
     ],
     highlights: [
@@ -687,18 +687,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     nearbySlugs: ["pebble-beach-golf-links", "spyglass-hill"],
     faqs: [
       {
-        q: "What's the green fee at The Links at Spanish Bay®?",
+        q: "What's the green fee at The Links at Spanish Bay™?",
         a: "$350 per player for 18 holes.",
       },
       {
-        q: "What makes The Links at Spanish Bay® different from the other Pebble Beach Resorts® courses?",
+        q: "What makes The Links at Spanish Bay™ different from the other Pebble Beach Resorts® courses?",
         a: "It plays as true links-style golf — firm, fast turf and dune-bordered holes — distinct from the cliff-top and forest character of the resort's other courses. It was recently transformed by architect Gil Hanse.",
       },
     ],
   },
   "del-monte-golf-course": {
     slug: "del-monte-golf-course",
-    name: "Del Monte Golf Course™",
+    name: "Del Monte Golf Course®",
     city: "Monterey, CA",
     facility: "Pebble Beach Resorts®",
     par: 72,
@@ -708,12 +708,12 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     holes: 18,
     designer: "Charles E. Maud (1897, original 9 holes)",
     type: "Resort (Pebble Beach Resorts®)",
-    address: "1300 Sylvan Rd, Monterey, CA 93940",
+    address: "2700 17-Mile Drive, Pebble Beach, CA 93953",
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
     description: [
-      "Del Monte Golf Course™ traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
+      "Del Monte Golf Course® traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
       "At par 72 and 6,356 yards (rating 71.8, slope 129), it plays as a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses, with green fees of $150 weekday and $175 weekend.",
     ],
     highlights: [
@@ -736,15 +736,15 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     nearbySlugs: [],
     faqs: [
       {
-        q: "Why is Del Monte Golf Course™ historically significant?",
+        q: "Why is Del Monte Golf Course® historically significant?",
         a: "It's the oldest golf course in continuous use west of the Mississippi, originally laid out in 1897 by Charles E. Maud.",
       },
       {
-        q: "What's the green fee at Del Monte Golf Course™?",
+        q: "What's the green fee at Del Monte Golf Course®?",
         a: "$150 on weekdays, $175 on weekends.",
       },
       {
-        q: "Which hotel is on Del Monte Golf Course™?",
+        q: "Which hotel is on Del Monte Golf Course®?",
         a: "The Hyatt Regency Monterey Hotel & Spa sits directly on the course grounds.",
       },
     ],
@@ -761,7 +761,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     holes: 9,
     designer: "Peter Hay (1957), redesigned by Tiger Woods and TGR Design (2021)",
     type: "Resort short course (Pebble Beach Resorts®)",
-    address: "1 Pebble Beach Resorts, Pebble Beach, CA 93953",
+    address: "1700 17-Mile Drive, Pebble Beach, CA 93953",
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "A reimagined short course experience at Pebble Beach, redesigned by Tiger Woods and TGR Design in 2021.",

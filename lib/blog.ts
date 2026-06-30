@@ -75,7 +75,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "Pick a base that matches your priorities",
         paragraphs: [
-          "Monterey itself is the most central base, putting Del Monte Golf Course™, Laguna Seca, and The Club at Pasadera within easy reach, plus the largest hotel selection on the peninsula. Carmel Valley runs warmer and sunnier, with golf-anchor resorts like Carmel Valley Ranch and Quail Lodge offering on-site courses. Carmel-by-the-Sea works well if your group includes non-golfing partners who want a walkable village.",
+          "Monterey itself is the most central base, putting Del Monte Golf Course®, Laguna Seca, and The Club at Pasadera within easy reach, plus the largest hotel selection on the peninsula. Carmel Valley runs warmer and sunnier, with golf-anchor resorts like Carmel Valley Ranch and Quail Lodge offering on-site courses. Carmel-by-the-Sea works well if your group includes non-golfing partners who want a walkable village.",
         ],
       },
       {

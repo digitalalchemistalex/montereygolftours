@@ -33,9 +33,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     website: "hyatt.com",
     rooms: "560 guestrooms and suites",
     brand: "Hyatt Regency",
-    hook: "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course™.",
+    hook: "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course®.",
     description: [
-      "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte Golf Course™ — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
+      "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte Golf Course® — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
       "With 560 guestrooms and suites, it's the largest property on this list and a natural base for group trips, offering verified stay-and-play packages with Poppy Hills, Bayonet, and Black Horse, in addition to the on-site Del Monte course.",
     ],
     amenities: [
@@ -51,14 +51,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Pet-friendly",
       "40,000 sq ft meeting/event space",
     ],
-    onSiteGolf: "Del Monte Golf Course™",
+    onSiteGolf: "Del Monte Golf Course®",
     airportDistance: "~8 min from MRY",
     positioning:
       "Best base for groups wanting a central Monterey location with on-site golf and strong group rates, plus easy access to Poppy Hills, Bayonet, and Black Horse.",
     faqs: [
       {
         q: "Is the Hyatt Regency Monterey on a golf course?",
-        a: "Yes. It sits directly on Del Monte Golf Course™, the oldest golf course in continuous operation west of the Mississippi.",
+        a: "Yes. It sits directly on Del Monte Golf Course®, the oldest golf course in continuous operation west of the Mississippi.",
       },
       {
         q: "How many rooms does the Hyatt Regency Monterey have?",

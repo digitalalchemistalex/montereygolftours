@@ -19,8 +19,8 @@ export const HOTELS: Hotel[] = [
     city: "Monterey, CA",
     tier: 1,
     description:
-      "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course™, 2 miles from downtown.",
-    onSiteGolf: "Del Monte Golf Course™",
+      "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course®, 2 miles from downtown.",
+    onSiteGolf: "Del Monte Golf Course®",
   },
   {
     slug: "carmel-valley-ranch",

@@ -108,7 +108,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "links-at-spanish-bay",
-    name: "The Links at Spanish Bay®",
+    name: "The Links at Spanish Bay™",
     city: "Pebble Beach, CA",
     par: 72,
     yards: "6,726 yds",
@@ -117,7 +117,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "del-monte-golf-course",
-    name: "Del Monte Golf Course™",
+    name: "Del Monte Golf Course®",
     city: "Monterey, CA",
     par: 72,
     yards: "6,356 yds",
