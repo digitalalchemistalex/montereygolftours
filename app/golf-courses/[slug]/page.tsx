@@ -82,6 +82,8 @@ export default async function CoursePage({ params }: Props) {
         url: canonicalUrl,
         numberOfHoles: course.holes,
         courseLength: course.yards,
+        ...(course.rating ? { courseRating: course.rating } : {}),
+        ...(course.slope ? { courseSlope: course.slope } : {}),
       },
       {
         "@type": "FAQPage",
@@ -144,9 +146,11 @@ export default async function CoursePage({ params }: Props) {
         </section>
 
         <section className="border-b border-[#e3ddcf] px-6 py-6 md:px-14">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
             <FactBox label="Par" value={String(course.par)} />
             <FactBox label="Yards" value={course.yards} />
+            {course.rating && <FactBox label="Rating" value={course.rating} />}
+            {course.slope && <FactBox label="Slope" value={course.slope} />}
             <FactBox label="Type" value={course.type} />
             <FactBox label="City" value={course.city} />
           </div>

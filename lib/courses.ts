@@ -18,9 +18,9 @@ export const COURSES: Course[] = [
     name: "Bayonet",
     city: "Seaside, CA",
     par: 72,
-    yards: "7,094 yds",
+    yards: "7,024 yds",
     type: "Semi-private",
-    hook: "The military-heritage championship at former Fort Ord — one of California's most demanding public layouts.",
+    hook: "The military-heritage championship at former Fort Ord — ranked among the toughest public courses in the country.",
   },
   {
     slug: "black-horse",
