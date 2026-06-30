@@ -15,8 +15,8 @@ export const HOTELS: Hotel[] = [
     name: "Hyatt Regency Monterey Hotel & Spa",
     city: "Monterey, CA",
     description:
-      "22 secluded acres of Monterey pines, 2 miles from downtown. Stay & play packages with Poppy Hills, Bayonet, and Black Horse.",
-    onSiteGolf: null,
+      "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course™, 2 miles from downtown.",
+    onSiteGolf: "Del Monte Golf Course™",
   },
   {
     slug: "carmel-valley-ranch",
