@@ -1,6 +1,5 @@
-// Source: mgts-course-intelligence.md (verified June 2 2026)
-// Only fields with no [VERIFY] flag are included here.
-// Ratings/slopes are deliberately omitted where the source file flags them unresolved.
+// Source: mgts-course-intelligence.md + MGTS_Fact_Verification_Tracker.xlsx
+// (corrected against direct verification by Raza, June 30 2026)
 
 export type Course = {
   slug: string;
@@ -45,7 +44,7 @@ export const COURSES: Course[] = [
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     par: 71,
-    yards: "6,449–6,500 yds",
+    yards: "6,500 yds",
     type: "Resort / semi-private",
     hook: "A resort round in the Carmel Valley sun, away from the coastal marine layer.",
   },
@@ -54,7 +53,7 @@ export const COURSES: Course[] = [
     name: "Laguna Seca Golf Ranch",
     city: "Monterey, CA",
     par: 71,
-    yards: "6,157–6,226 yds",
+    yards: "6,226 yds",
     type: "Daily-fee",
     hook: "An accessible daily-fee round close to downtown Monterey.",
   },
@@ -63,7 +62,7 @@ export const COURSES: Course[] = [
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
-    yards: "5,732 yds",
+    yards: "5,727 yds",
     type: "Municipal",
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
   },
@@ -72,17 +71,17 @@ export const COURSES: Course[] = [
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
-    yards: "7,002 yds",
+    yards: "7,091 yds",
     type: "Daily-fee (NCGA)",
     hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
   },
   {
-    slug: "tpc-monterey-at-pasadera",
-    name: "TPC Monterey at Pasadera",
+    slug: "club-at-pasadera",
+    name: "The Club at Pasadera",
     city: "Monterey, CA",
     par: 71,
     yards: "6,673–6,733 yds",
     type: "Private (limited access)",
-    hook: "The only Jack Nicklaus Signature course on the Monterey Peninsula — Monday public access.",
+    hook: "A Jack Nicklaus Signature course on the Monterey Peninsula — Monday public access.",
   },
 ];
