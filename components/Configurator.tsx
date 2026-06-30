@@ -24,7 +24,7 @@ export default function Configurator() {
         </div>
         <Link
           href="/quote/"
-          className="whitespace-nowrap rounded-[8px] bg-cypress px-7 py-4 font-ui text-base font-semibold text-white shadow-[0_5px_16px_rgba(20,35,25,.4)] hover:bg-[#26392c]"
+          className="whitespace-nowrap rounded-[8px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-white shadow-[0_5px_16px_rgba(31,79,102,.4)] hover:bg-ocean-dark"
         >
           Build my custom trip &rarr;
         </Link>
@@ -36,7 +36,7 @@ export default function Configurator() {
             key={s.n}
             className="flex items-center gap-4 rounded-[11px] border border-[#e7e2d6] bg-white p-5 shadow-[0_2px_8px_rgba(30,40,38,.07)]"
           >
-            <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-cypress font-ui text-base font-semibold text-white">
+            <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-ocean font-ui text-base font-semibold text-white">
               {s.n}
             </div>
             <div className="font-ui text-[15px] font-semibold text-[#1e2826]">{s.label}</div>

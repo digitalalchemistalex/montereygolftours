@@ -27,7 +27,7 @@ export default function FitFinder() {
   return (
     <section className="border-b border-[#eceae1] px-6 py-12 md:px-14 md:py-[60px]">
       <div className="mx-auto mb-9 max-w-[560px] text-center">
-        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-brass">
+        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
           Find your fit
         </div>
         <h2 className="mt-2.5 font-display text-3xl font-bold leading-[1.08] text-[#1e2826] md:text-[40px]">
@@ -69,7 +69,7 @@ export default function FitFinder() {
               <div className="mt-1.5 hidden font-body text-[13.5px] leading-relaxed text-[rgba(255,255,255,.88)] md:block">
                 {f.blurb}
               </div>
-              <div className="mt-2.5 font-ui text-xs font-semibold text-[#e6c489] md:text-[13px]">
+              <div className="mt-2.5 font-ui text-xs font-semibold text-[#e8b876] md:text-[13px]">
                 Match my group &rarr;
               </div>
             </div>

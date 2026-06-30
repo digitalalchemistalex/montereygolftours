@@ -19,7 +19,7 @@ const LEARN_LINKS = [
 export default function Footer() {
   return (
     <footer>
-      <div className="flex flex-col gap-10 bg-navy px-6 py-12 md:flex-row md:justify-between md:px-14">
+      <div className="flex flex-col gap-10 bg-ink px-6 py-12 md:flex-row md:justify-between md:px-14">
         <div className="max-w-[300px]">
           <Link href="/" className="font-display text-[22px] font-bold leading-none text-[#f6f2e7]">
             Monterey Golf
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-brass">Play</div>
+          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Play</div>
           <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
             {PLAY_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-white">
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-brass">Learn</div>
+          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Learn</div>
           <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
             {LEARN_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-white">
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-brass">Contact</div>
+          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Contact</div>
           <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
             <a href={SITE.phoneHref}>{SITE.phone}</a>
             {SITE.email ? <a href={`mailto:${SITE.email}`}>{SITE.email}</a> : null}
@@ -67,7 +67,7 @@ export default function Footer() {
         <span className="font-ui text-[11px] text-[#9aa39d]">
           &copy; {new Date().getFullYear()} Monterey Golf Tours. All rights reserved.
         </span>
-        <span className="font-ui text-[11px] text-brass">
+        <span className="font-ui text-[11px] text-gold">
           Fog typically clears by 10am &middot; Best tee time: 8&ndash;10am
         </span>
         <span className="font-ui text-[11px] text-[#9aa39d]">

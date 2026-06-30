@@ -11,60 +11,62 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[640px] flex-col overflow-hidden bg-[#19231e] md:min-h-[840px]">
+    <section className="relative flex min-h-[640px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
       <Image
-        src="https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1920&q=80"
-        alt="Golf course fairway on the Monterey Peninsula in morning light"
+        src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=1920&q=80"
+        alt="Aerial view of a coastal golf course at sunrise"
         fill
         priority
         className="object-cover"
-        style={{ objectPosition: "center 50%" }}
+        style={{ objectPosition: "center 55%" }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(18,26,20,.13) 0%, rgba(18,26,20,.13) 26%, rgba(18,26,20,.40) 64%, rgba(18,26,20,.46) 100%)",
+            "linear-gradient(180deg, rgba(22,36,44,.20) 0%, rgba(22,36,44,.10) 30%, rgba(22,36,44,.55) 72%, rgba(22,36,44,.72) 100%)",
         }}
       />
 
       <Header />
 
-      <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 md:px-14 md:pb-7">
+      <div className="relative z-10 mt-auto max-w-[760px] px-6 pb-8 md:px-14 md:pb-7">
+        <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(22,36,44,.35)] px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[.1em] text-cream backdrop-blur-sm">
+          Monterey Peninsula, California
+        </span>
         <h1
-          className="font-display text-[42px] font-extrabold leading-[1.05] text-[#f5f1e6] md:text-[72px] md:leading-[1.0]"
-          style={{ textShadow: "0 2px 24px rgba(0,0,0,.34)" }}
+          className="mt-6 font-display text-[40px] font-bold leading-[1.08] text-cream md:text-[64px] md:leading-[1.05]"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,.3)" }}
         >
-          Plan your perfect round on{" "}
-          <span className="text-[#cda14f]">the Monterey Peninsula</span>
+          Your group&apos;s golf trip to the coast, planned end to end
         </h1>
-        <p className="mt-5 max-w-[600px] font-body text-base leading-relaxed text-[rgba(246,242,231,.88)] md:mt-6 md:text-xl">
-          Private group golf trips to California&apos;s most storied coastline — we handle courses,
-          tee times, lodging, and transport end to end.
+        <p className="mt-5 max-w-[540px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:mt-6 md:text-lg">
+          Courses, tee times, lodging, and transport for the Monterey Peninsula — handled by people
+          who know the fog patterns as well as the fairways.
         </p>
         <div className="mt-7 flex flex-wrap gap-3 md:mt-8">
           <Link
             href="/quote/"
-            className="inline-flex items-center gap-2 rounded-[9px] bg-cypress px-7 py-4 font-ui text-base font-semibold text-white shadow-[0_6px_18px_rgba(20,35,25,.45)] hover:bg-[#26392c]"
+            className="inline-flex items-center gap-2 rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream shadow-[0_6px_18px_rgba(0,0,0,.25)] hover:bg-ocean-dark"
           >
-            Get a Custom Quote &rarr;
+            Get a custom quote &rarr;
           </Link>
           <Link
             href="/itineraries/"
-            className="inline-flex items-center rounded-[9px] border-[1.5px] border-[rgba(246,242,231,.5)] bg-[rgba(20,30,24,.25)] px-7 py-4 font-ui text-base font-semibold text-[#f3e8d1] backdrop-blur-[2px] hover:border-[#cda150] hover:bg-[rgba(184,141,66,.18)]"
+            className="inline-flex items-center rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-4 font-ui text-base font-semibold text-cream backdrop-blur-[2px] hover:border-gold hover:bg-[rgba(216,155,92,.18)]"
           >
-            See Sample Itineraries
+            See sample itineraries
           </Link>
         </div>
       </div>
 
-      <div className="relative z-10 mx-6 flex max-w-[920px] border-t border-[rgba(246,242,231,.24)] px-0 py-6 md:mx-14 md:py-7">
+      <div className="relative z-10 mx-6 flex max-w-[920px] border-t border-[rgba(250,246,238,.22)] px-0 py-6 md:mx-14 md:py-7">
         {STATS.map((s) => (
           <div key={s.l} className="flex-1">
-            <div className="font-display text-2xl font-extrabold leading-none text-[#dbb466] md:text-[42px]">
+            <div className="font-display text-2xl font-bold leading-none text-gold md:text-[40px]">
               {s.n}
             </div>
-            <div className="mt-2 font-ui text-[11px] font-medium uppercase tracking-[.06em] text-[rgba(246,242,231,.8)] md:text-xs">
+            <div className="mt-2 font-ui text-[11px] font-medium uppercase tracking-[.06em] text-[rgba(250,246,238,.75)] md:text-xs">
               {s.l}
             </div>
           </div>
