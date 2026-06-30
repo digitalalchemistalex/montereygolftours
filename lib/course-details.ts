@@ -353,4 +353,199 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
     ],
   },
+  "laguna-seca-golf-ranch": {
+    slug: "laguna-seca-golf-ranch",
+    name: "Laguna Seca Golf Ranch",
+    city: "Monterey, CA",
+    facility: "Laguna Seca Golf Ranch",
+    par: 71,
+    yards: "6,226 yards",
+    holes: 18,
+    designer: "—",
+    type: "Daily-fee",
+    address: "10520 York Rd, Monterey, CA 93940",
+    phone: "(831) 373-3701",
+    website: "lagunasecagolf.com",
+    hook: "An accessible daily-fee round close to downtown Monterey, with rates that won't strain a group budget.",
+    description: [
+      "Laguna Seca Golf Ranch offers a straightforward, accessible daily-fee round close to downtown Monterey. At par 71 and 6,226 yards, it's well suited to groups wanting a relaxed pace and approachable green fees without sacrificing a genuine 18-hole round.",
+      "Weekday rates run $58, with weekend rates at $78 — among the more budget-friendly options on the peninsula, making it a natural fit for the early or closing round of a multi-day group trip.",
+    ],
+    highlights: [
+      {
+        label: "Budget-friendly",
+        detail: "Among the most accessible green fees on the peninsula.",
+      },
+      {
+        label: "Close to downtown Monterey",
+        detail: "A short drive from the city center and Cannery Row.",
+      },
+    ],
+    bestFor: [
+      "Groups watching their overall trip budget",
+      "A relaxed-pace round to open or close a multi-day trip",
+      "Beginners and mixed-skill groups",
+    ],
+    lessIdealIf: ["You want a marquee, bucket-list championship test"],
+    greenFeeEst: "$58 weekday / $78 weekend",
+    nearbySlugs: ["pacific-grove-golf-links"],
+    faqs: [
+      {
+        q: "What's the green fee at Laguna Seca?",
+        a: "$58 Monday through Thursday, $78 on weekends.",
+      },
+      {
+        q: "How far is Laguna Seca from downtown Monterey?",
+        a: "It's close to downtown Monterey, making it convenient for groups based in the city.",
+      },
+    ],
+  },
+  "pacific-grove-golf-links": {
+    slug: "pacific-grove-golf-links",
+    name: "Pacific Grove Golf Links",
+    city: "Pacific Grove, CA",
+    facility: "Pacific Grove Golf Links",
+    par: 70,
+    yards: "5,727 yards",
+    holes: 18,
+    designer: "—",
+    type: "Municipal",
+    address: "77 Asilomar Ave, Pacific Grove, CA 93950",
+    phone: "(831) 648-5775",
+    website: "playpacificgrove.com",
+    hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
+    description: [
+      "Pacific Grove Golf Links is a city-owned municipal course offering genuine ocean-adjacent holes at a fraction of the cost of the peninsula's private and resort courses. At par 70 and 5,727 yards, it's a shorter, walkable layout well suited to groups of mixed ability.",
+      "Rates run $66 Monday through Thursday and $89 Friday through Sunday — making it one of the better value-for-experience rounds on the Monterey Peninsula.",
+    ],
+    highlights: [
+      {
+        label: "Ocean-adjacent holes",
+        detail: "Genuine coastal views on a municipal budget.",
+      },
+      {
+        label: "Municipal pricing",
+        detail: "City-owned course with rates well below the peninsula's resort/private options.",
+      },
+      {
+        label: "Walkable layout",
+        detail: "Shorter yardage suits a relaxed, walkable round.",
+      },
+    ],
+    bestFor: [
+      "Budget-conscious groups",
+      "Mixed-handicap groups wanting a relaxed pace",
+      "Anyone wanting ocean views without the premium price tag",
+    ],
+    lessIdealIf: ["You want a long, championship-length test"],
+    greenFeeEst: "$66 Mon–Thu / $89 Fri–Sun",
+    nearbySlugs: ["laguna-seca-golf-ranch"],
+    faqs: [
+      {
+        q: "Is Pacific Grove Golf Links on the ocean?",
+        a: "Yes, the course includes ocean-adjacent holes, offering coastal views at municipal course pricing.",
+      },
+      {
+        q: "What's the green fee at Pacific Grove?",
+        a: "$66 Monday through Thursday, $89 Friday through Sunday.",
+      },
+    ],
+  },
+  "poppy-hills": {
+    slug: "poppy-hills",
+    name: "Poppy Hills Golf Course",
+    city: "Pebble Beach, CA (Del Monte Forest)",
+    facility: "Poppy Hills Golf Course",
+    par: 71,
+    yards: "7,091 yards (Jones tees)",
+    holes: 18,
+    designer: "Robert Trent Jones II",
+    type: "Daily-fee (NCGA)",
+    address: "3200 Lopez Rd, Pebble Beach, CA 93953",
+    phone: "(831) 250-1499",
+    website: "poppyhillsgolf.com",
+    hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
+    description: [
+      "Poppy Hills Golf Course sits inside the Del Monte Forest — the same storied Pebble Beach zip code as the resort's marquee courses — but is owned and operated by the Northern California Golf Association (NCGA), not Pebble Beach Company, and doesn't carry the resort's gate fee or pricing.",
+      "At 7,091 yards from the Jones tees and par 71, the Robert Trent Jones II design plays through forested terrain with bentgrass greens. Rates run $95 Monday through Thursday and $125 Friday through Sunday.",
+    ],
+    highlights: [
+      {
+        label: "Del Monte Forest setting",
+        detail: "Same legendary zip code as Pebble Beach Resorts' courses.",
+      },
+      {
+        label: "NCGA-owned",
+        detail: "Owned by the Northern California Golf Association, not Pebble Beach Company — no resort gate fee.",
+      },
+      {
+        label: "Bentgrass greens",
+        detail: "Quality conditioning at daily-fee pricing.",
+      },
+    ],
+    bestFor: [
+      "Groups wanting the Pebble Beach area experience at daily-fee pricing",
+      "Mid to low-handicap players",
+    ],
+    lessIdealIf: ["You specifically want a Pebble Beach Company-branded course"],
+    greenFeeEst: "$95 Mon–Thu / $125 Fri–Sun",
+    nearbySlugs: [],
+    faqs: [
+      {
+        q: "Is Poppy Hills owned by Pebble Beach Company?",
+        a: "No. Poppy Hills is owned and operated by the Northern California Golf Association (NCGA), separate from Pebble Beach Company, despite sitting in the same Del Monte Forest area.",
+      },
+      {
+        q: "What's the green fee at Poppy Hills?",
+        a: "$95 Monday through Thursday, $125 Friday through Sunday.",
+      },
+    ],
+  },
+  "club-at-pasadera": {
+    slug: "club-at-pasadera",
+    name: "The Club at Pasadera",
+    city: "Monterey, CA",
+    facility: "The Club at Pasadera",
+    par: 71,
+    yards: "6,673–6,733 yards",
+    rating: "73.7",
+    holes: 18,
+    designer: "Jack Nicklaus (Jack Nicklaus Signature Design)",
+    type: "Private (limited public access)",
+    address: "1 Pasadera Drive, Monterey, CA 93940",
+    phone: "Contact club directly",
+    website: "theclubatpasadera.com",
+    hook: "A Jack Nicklaus Signature course on the Monterey Peninsula — limited public access available.",
+    description: [
+      "The Club at Pasadera is a Jack Nicklaus Signature Design that opened in 2000, privately operated with limited public access. The course is owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name \"The Club at Pasadera\" rather than any TPC-prefixed name.",
+      "At par 71 and roughly 6,673–6,733 yards depending on the source, the course offers a premium Nicklaus design experience on the Monterey Peninsula, typically with limited access windows for non-members.",
+    ],
+    highlights: [
+      {
+        label: "Jack Nicklaus Signature Design",
+        detail: "A premium designer course on the Monterey Peninsula.",
+      },
+      {
+        label: "Limited public access",
+        detail: "Private club with select windows for outside play — contact directly for current access terms.",
+      },
+    ],
+    bestFor: [
+      "Groups seeking a premium designer-course experience",
+      "Trips planned well in advance to secure access",
+    ],
+    lessIdealIf: ["You need guaranteed same-week public access — confirm availability before planning"],
+    greenFeeEst: "Contact club directly for current rates and access terms",
+    nearbySlugs: [],
+    faqs: [
+      {
+        q: "Can the public play The Club at Pasadera?",
+        a: "Access is limited — the club is primarily private. Contact the club directly to confirm current public access terms before planning a round.",
+      },
+      {
+        q: "Who designed The Club at Pasadera?",
+        a: "Jack Nicklaus designed the course as a Jack Nicklaus Signature Design, which opened in 2000.",
+      },
+    ],
+  },
 };
