@@ -5,6 +5,8 @@ import Courses from "@/components/Courses";
 import Packages from "@/components/Packages";
 import Itinerary from "@/components/Itinerary";
 import Hotels from "@/components/Hotels";
+import LocalIntel from "@/components/LocalIntel";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,6 +20,8 @@ export default function Home() {
         <Packages />
         <Itinerary />
         <Hotels />
+        <LocalIntel />
+        <FAQ />
       </main>
       <Footer />
     </>
