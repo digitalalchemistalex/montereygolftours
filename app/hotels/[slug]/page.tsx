@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HOTEL_DETAILS } from "@/lib/hotel-details";
+import { HOTELS } from "@/lib/hotels";
 import { SITE } from "@/lib/site";
 
 type Props = {
@@ -56,6 +58,7 @@ export default async function HotelPage({ params }: Props) {
   }
 
   const canonicalUrl = `https://${SITE.domain}/hotels/${hotel.slug}/`;
+  const hotelImage = HOTELS.find((h) => h.slug === hotel.slug)?.image;
 
   const schema = {
     "@context": "https://schema.org",
@@ -109,6 +112,9 @@ export default async function HotelPage({ params }: Props) {
       />
 
       <section className="relative flex min-h-[400px] flex-col overflow-hidden bg-[#16242c] md:min-h-[480px]">
+        {hotelImage && (
+          <Image src={hotelImage} alt={hotel.name} fill priority className="object-cover" />
+        )}
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.78) 100%)" }}

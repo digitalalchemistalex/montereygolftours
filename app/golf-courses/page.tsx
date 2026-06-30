@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSES } from "@/lib/courses";
@@ -77,24 +78,43 @@ export default function GolfCoursesIndexPage() {
               <Link
                 key={c.slug}
                 href={`/golf-courses/${c.slug}/`}
-                className="group flex flex-col justify-between overflow-hidden rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
+                className="group flex flex-col overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
               >
-                <div>
-                  <span className="inline-block rounded-full bg-[#e7f0f3] px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-ocean-dark">
-                    {c.type}
-                  </span>
-                  <div className="mt-3 font-display text-lg font-bold leading-snug text-ink">
-                    {c.name}
+                {c.image ? (
+                  <div className="relative h-[140px] w-full overflow-hidden">
+                    <Image
+                      src={c.image}
+                      alt={c.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
-                  <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">
-                    {c.city} &middot; Par {c.par} &middot; {c.yards}
+                ) : (
+                  <div className="flex h-[140px] w-full items-center justify-center bg-gradient-to-br from-ocean to-ocean-dark">
+                    <span className="font-display text-sm font-semibold text-cream opacity-80">
+                      Photo coming soon
+                    </span>
                   </div>
-                  <p className="mt-3 font-body text-[13px] leading-relaxed text-[#5a564e]">
-                    {c.hook}
-                  </p>
-                </div>
-                <div className="mt-4 font-ui text-sm font-semibold text-ocean">
-                  View course &rarr;
+                )}
+                <div className="flex flex-1 flex-col justify-between p-5">
+                  <div>
+                    <span className="inline-block rounded-full bg-[#e7f0f3] px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-ocean-dark">
+                      {c.type}
+                    </span>
+                    <div className="mt-3 font-display text-lg font-bold leading-snug text-ink">
+                      {c.name}
+                    </div>
+                    <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">
+                      {c.city} &middot; Par {c.par} &middot; {c.yards}
+                    </div>
+                    <p className="mt-3 font-body text-[13px] leading-relaxed text-[#5a564e]">
+                      {c.hook}
+                    </p>
+                  </div>
+                  <div className="mt-4 font-ui text-sm font-semibold text-ocean">
+                    View course &rarr;
+                  </div>
                 </div>
               </Link>
             ))}

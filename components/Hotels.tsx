@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HOTELS } from "@/lib/hotels";
 
 const FEATURED_SLUGS = ["hyatt-regency-monterey", "carmel-valley-ranch", "quail-lodge"];
@@ -30,21 +31,32 @@ export default function Hotels() {
           <Link
             key={h.slug}
             href={`/hotels/${h.slug}/`}
-            className="group flex flex-col justify-between overflow-hidden rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
+            className="group flex flex-col overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
           >
-            <div>
-              {h.onSiteGolf && (
-                <span className="inline-block rounded-full bg-[#e7f0f3] px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-ocean-dark">
-                  On-site golf
-                </span>
-              )}
-              <div className="mt-3 font-display text-lg font-bold text-ink">{h.name}</div>
-              <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">{h.city}</div>
-              <p className="mt-3 font-body text-[13px] leading-relaxed text-[#5a564e]">
-                {h.description}
-              </p>
+            <div className="relative h-[150px] w-full overflow-hidden">
+              <Image
+                src={h.image}
+                alt={h.name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
             </div>
-            <div className="mt-4 font-ui text-sm font-semibold text-ocean">View hotel &rarr;</div>
+            <div className="flex flex-1 flex-col justify-between p-5">
+              <div>
+                {h.onSiteGolf && (
+                  <span className="inline-block rounded-full bg-[#e7f0f3] px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-ocean-dark">
+                    On-site golf
+                  </span>
+                )}
+                <div className="mt-3 font-display text-lg font-bold text-ink">{h.name}</div>
+                <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">{h.city}</div>
+                <p className="mt-3 font-body text-[13px] leading-relaxed text-[#5a564e]">
+                  {h.description}
+                </p>
+              </div>
+              <div className="mt-4 font-ui text-sm font-semibold text-ocean">View hotel &rarr;</div>
+            </div>
           </Link>
         ))}
       </div>

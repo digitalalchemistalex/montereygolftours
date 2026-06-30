@@ -10,11 +10,13 @@ export type Hotel = {
   tier: 1 | 2 | 3;
   description: string;
   onSiteGolf: string | null;
+  image: string;
 };
 
 export const HOTELS: Hotel[] = [
   {
     slug: "hyatt-regency-monterey",
+    image: "https://images.unsplash.com/photo-1549294413-26f195200c16",
     name: "Hyatt Regency Monterey Hotel & Spa",
     city: "Monterey, CA",
     tier: 1,
@@ -24,6 +26,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "carmel-valley-ranch",
+    image: "https://images.unsplash.com/photo-1623718649591-311775a30c43",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -33,6 +36,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "quail-lodge",
+    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -42,6 +46,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "bernardus-lodge",
+    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6",
     name: "Bernardus Lodge & Spa",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -51,6 +56,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "monterey-plaza",
+    image: "https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd",
     name: "Monterey Plaza Hotel & Spa",
     city: "Monterey, CA",
     tier: 2,
@@ -60,6 +66,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "intercontinental-the-clement",
+    image: "https://images.unsplash.com/photo-1584132869994-873f9363a562",
     name: "InterContinental The Clement Monterey",
     city: "Monterey, CA",
     tier: 2,
@@ -69,6 +76,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "portola-hotel",
+    image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864",
     name: "Portola Hotel & Spa",
     city: "Monterey, CA",
     tier: 2,
@@ -78,6 +86,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "lauberge-carmel",
+    image: "https://images.unsplash.com/photo-1582533568805-78a15dcb01b5",
     name: "L'Auberge Carmel",
     city: "Carmel-by-the-Sea, CA",
     tier: 3,
@@ -87,6 +96,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "casa-munras",
+    image: "https://images.unsplash.com/photo-1570213489059-0aac6626cade",
     name: "Casa Munras Garden Hotel & Spa",
     city: "Monterey, CA",
     tier: 3,

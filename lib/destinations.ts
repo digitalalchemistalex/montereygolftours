@@ -14,11 +14,13 @@ export type Destination = {
   hotelSlugs: string[];
   itinerarySlugs: string[];
   faqs: { q: string; a: string }[];
+  image: string;
 };
 
 export const DESTINATIONS: Record<string, Destination> = {
   monterey: {
     slug: "monterey",
+    image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd",
     name: "Monterey",
     heroTitle: "Golf in Monterey",
     speakable:
@@ -65,6 +67,7 @@ export const DESTINATIONS: Record<string, Destination> = {
   },
   carmel: {
     slug: "carmel",
+    image: "https://images.unsplash.com/photo-1645844235135-de673bcc4792",
     name: "Carmel-by-the-Sea",
     heroTitle: "Golf near Carmel-by-the-Sea",
     speakable:
@@ -110,6 +113,7 @@ export const DESTINATIONS: Record<string, Destination> = {
   },
   "carmel-valley": {
     slug: "carmel-valley",
+    image: "https://images.unsplash.com/photo-1624723457165-f57168bb7dd7",
     name: "Carmel Valley",
     heroTitle: "Golf in Carmel Valley",
     speakable:
@@ -155,6 +159,7 @@ export const DESTINATIONS: Record<string, Destination> = {
   },
   "pacific-grove": {
     slug: "pacific-grove",
+    image: "https://images.unsplash.com/photo-1706269771866-728009e647a3",
     name: "Pacific Grove",
     heroTitle: "Golf in Pacific Grove",
     speakable:
@@ -200,6 +205,7 @@ export const DESTINATIONS: Record<string, Destination> = {
   },
   seaside: {
     slug: "seaside",
+    image: "https://images.unsplash.com/photo-1612641313315-d3aec695974f",
     name: "Seaside",
     heroTitle: "Golf in Seaside",
     speakable:
@@ -245,6 +251,7 @@ export const DESTINATIONS: Record<string, Destination> = {
   },
   "pebble-beach-area": {
     slug: "pebble-beach-area",
+    image: "https://images.unsplash.com/photo-1674728450078-2383f1a3514e",
     name: "Pebble Beach Area",
     heroTitle: "Golf in the Pebble Beach Area",
     speakable:

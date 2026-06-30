@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSE_DETAILS } from "@/lib/course-details";
@@ -55,6 +56,7 @@ export default async function CoursePage({ params }: Props) {
     .filter(Boolean);
 
   const canonicalUrl = `https://${SITE.domain}/golf-courses/${course.slug}/`;
+  const courseImage = COURSES.find((c) => c.slug === course.slug)?.image;
 
   const schema = {
     "@context": "https://schema.org",
@@ -118,6 +120,15 @@ export default async function CoursePage({ params }: Props) {
       />
 
       <section className="relative flex min-h-[400px] flex-col overflow-hidden bg-[#16242c] md:min-h-[480px]">
+        {courseImage && (
+          <Image
+            src={courseImage}
+            alt={course.name}
+            fill
+            priority
+            className="object-cover"
+          />
+        )}
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.78) 100%)" }}

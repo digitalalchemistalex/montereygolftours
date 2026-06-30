@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DESTINATIONS } from "@/lib/destinations";
@@ -110,6 +111,7 @@ export default async function DestinationPage({ params }: Props) {
       />
 
       <section className="relative flex min-h-[360px] flex-col overflow-hidden bg-[#16242c] md:min-h-[420px]">
+        <Image src={dest.image} alt={dest.name} fill priority className="object-cover" />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.78) 100%)" }}

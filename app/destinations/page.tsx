@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DESTINATIONS } from "@/lib/destinations";
@@ -43,16 +44,27 @@ export default function DestinationsIndexPage() {
               <Link
                 key={d.slug}
                 href={`/destinations/${d.slug}/`}
-                className="group flex flex-col justify-between overflow-hidden rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
+                className="group flex flex-col overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
               >
-                <div>
-                  <div className="font-display text-lg font-bold text-ink">{d.name}</div>
-                  <p className="mt-2 font-body text-[13px] leading-relaxed text-[#5a564e]">
-                    {d.speakable}
-                  </p>
+                <div className="relative h-[140px] w-full overflow-hidden">
+                  <Image
+                    src={d.image}
+                    alt={d.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
-                <div className="mt-4 font-ui text-sm font-semibold text-ocean">
-                  Explore {d.name} &rarr;
+                <div className="flex flex-1 flex-col justify-between p-5">
+                  <div>
+                    <div className="font-display text-lg font-bold text-ink">{d.name}</div>
+                    <p className="mt-2 font-body text-[13px] leading-relaxed text-[#5a564e]">
+                      {d.speakable}
+                    </p>
+                  </div>
+                  <div className="mt-4 font-ui text-sm font-semibold text-ocean">
+                    Explore {d.name} &rarr;
+                  </div>
                 </div>
               </Link>
             ))}
