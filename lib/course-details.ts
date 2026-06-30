@@ -101,4 +101,74 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
     ],
   },
+  pasatiempo: {
+    slug: "pasatiempo",
+    name: "Pasatiempo Golf Course",
+    city: "Santa Cruz, CA",
+    facility: "Pasatiempo Golf Club",
+    par: 70,
+    yards: "6,473 yards",
+    rating: "72.7",
+    slope: "143",
+    holes: 18,
+    designer: "Alister MacKenzie (1929)",
+    type: "Semi-private / daily-fee",
+    address: "20 Clubhouse Rd, Santa Cruz, CA 95060",
+    phone: "(831) 459-9155",
+    website: "pasatiempo.com",
+    hook:
+      "Alister MacKenzie's self-declared favorite design — he lived and died alongside the 6th fairway.",
+    description: [
+      "Pasatiempo opened on September 8, 1929, designed by Alister MacKenzie for Marion Hollins, the 1921 U.S. Women's Amateur champion. MacKenzie — the architect behind Augusta National, Cypress Point, and Royal Melbourne — considered Pasatiempo one of his finest pieces of work, and felt strongly enough about the course that he bought a home next to the 6th fairway, where he lived until his death in 1934.",
+      "The course sits in the hills above Santa Cruz, with the front nine descending through tree-lined corridors toward a Pacific Ocean view before climbing back to the clubhouse, and the back nine winding through a canyon defined by barranca ravines. A multi-decade restoration — led by Tom Doak and Jim Urbina starting in 1996, with a full green and bunker rebuild completed in 2024 — has returned the course closely to MacKenzie's original 1929 design.",
+      "Pasatiempo operates as a semi-private club, setting aside daily-fee tee times for public play. It's a perennial entry on national top-100 course lists.",
+    ],
+    highlights: [
+      {
+        label: "MacKenzie's home course",
+        detail: "He lived alongside the 6th fairway and died there in 1934 — his only American course with that level of direct, ongoing oversight.",
+      },
+      {
+        label: "Recently restored",
+        detail: "Every green and bunker rebuilt to the 1929 specification, completed December 2024.",
+      },
+      {
+        label: "Top-100 ranked",
+        detail: "A perennial entry on national top-100 golf course lists.",
+      },
+      {
+        label: "Public access",
+        detail: "Semi-private, with daily-fee tee times set aside for non-members.",
+      },
+    ],
+    bestFor: [
+      "Golf architecture enthusiasts and MacKenzie fans",
+      "Groups wanting a genuine Golden Age design experience",
+      "Players who enjoy strategic, contoured greens over pure length",
+    ],
+    lessIdealIf: [
+      "Your group wants a flat, easy walk — the terrain has real elevation change",
+      "You're looking for a modern, wide-open layout",
+    ],
+    greenFeeEst: "Contact club directly for current daily-fee rates",
+    nearbySlugs: [],
+    faqs: [
+      {
+        q: "Is Pasatiempo open to the public?",
+        a: "Yes. Pasatiempo is semi-private and sets aside daily-fee tee times each day for public play.",
+      },
+      {
+        q: "Who designed Pasatiempo?",
+        a: "Alister MacKenzie designed the course, which opened in 1929. MacKenzie considered it one of his finest designs and lived alongside the 6th fairway until his death in 1934.",
+      },
+      {
+        q: "Has Pasatiempo been restored?",
+        a: "Yes. A restoration led by Tom Doak and Jim Urbina began in 1996, with a full rebuild of every green and bunker to the original 1929 design completed in December 2024.",
+      },
+      {
+        q: "What's the green fee at Pasatiempo?",
+        a: "Rates are not published as a flat figure and vary by season and tee time — contact the club directly for current daily-fee pricing.",
+      },
+    ],
+  },
 };
