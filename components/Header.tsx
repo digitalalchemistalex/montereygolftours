@@ -48,7 +48,7 @@ export default function Header() {
         </a>
         <Link
           href="/quote/"
-          className="rounded-[7px] bg-gold px-5 py-[11px] font-ui text-[15px] font-bold text-ink shadow-[0_3px_11px_rgba(0,0,0,.25)] hover:bg-[#c4884a]"
+          className="rounded-[7px] bg-gold px-5 py-[11px] font-ui text-[15px] font-bold text-ink shadow-[0_3px_11px_rgba(0,0,0,.18)] hover:bg-[#dc8893]"
         >
           Get a Quote
         </Link>

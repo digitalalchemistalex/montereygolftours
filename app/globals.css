@@ -8,7 +8,8 @@
   --color-ocean-dark: #1F4F66;
   --color-ink: #252321;
   --color-cream: #FAF6EE;
-  --color-gold: #D89B5C;
+  --color-gold: #E8A0A8;
+  --color-sky: #A8D4E8;
 }
 
 @theme inline {
@@ -19,6 +20,7 @@
   --color-ink: var(--color-ink);
   --color-cream: var(--color-cream);
   --color-gold: var(--color-gold);
+  --color-sky: var(--color-sky);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Lora", Georgia, serif;
   --font-ui: "Inter", system-ui, sans-serif;

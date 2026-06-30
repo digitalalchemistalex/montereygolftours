@@ -53,7 +53,7 @@ export default function Hero() {
           </Link>
           <Link
             href="/itineraries/"
-            className="inline-flex items-center rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-4 font-ui text-base font-semibold text-cream backdrop-blur-[2px] hover:border-gold hover:bg-[rgba(216,155,92,.18)]"
+            className="inline-flex items-center rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-4 font-ui text-base font-semibold text-cream backdrop-blur-[2px] hover:border-gold hover:bg-[rgba(232,160,168,.18)]"
           >
             See sample itineraries
           </Link>

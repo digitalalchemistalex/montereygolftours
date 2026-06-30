@@ -33,7 +33,7 @@ export default function Courses() {
           className="group flex flex-col justify-between overflow-hidden rounded-[13px] border border-[#e3ddcf] bg-white p-6 shadow-[0_6px_20px_rgba(37,35,33,.08)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(37,35,33,.14)] md:flex-[1.6]"
         >
           <div>
-            <span className="inline-block rounded-full bg-[#fbeee0] px-3 py-1 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a5b2b]">
+            <span className="inline-block rounded-full bg-[#fbecee] px-3 py-1 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#a85561]">
               {featured.type}
             </span>
             <div className="mt-4 font-display text-2xl font-bold text-ink md:text-[28px]">

@@ -69,7 +69,7 @@ export default function FitFinder() {
               <div className="mt-1.5 hidden font-body text-[13.5px] leading-relaxed text-[rgba(255,255,255,.88)] md:block">
                 {f.blurb}
               </div>
-              <div className="mt-2.5 font-ui text-xs font-semibold text-[#e8b876] md:text-[13px]">
+              <div className="mt-2.5 font-ui text-xs font-semibold text-[#f0b4bc] md:text-[13px]">
                 Match my group &rarr;
               </div>
             </div>
