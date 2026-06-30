@@ -19,6 +19,7 @@ export type ItineraryTemplate = {
   baseHotel: string;
   priceFrom: number;
   priceTo: number;
+  priceVerified: boolean;
   days: ItineraryDay[];
   courseSlugs: string[];
   hotelSlugs: string[];
@@ -35,6 +36,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     target: "Casual golfer group, weekend escape, 4–8 players",
     baseHotel: "Hyatt Regency Monterey or Portola Hotel",
     priceFrom: 564,
+    priceVerified: true,
     priceTo: 1740,
     courseSlugs: ["pacific-grove-golf-links", "bayonet", "laguna-seca-golf-ranch"],
     hotelSlugs: ["hyatt-regency-monterey", "portola-hotel"],
@@ -77,6 +79,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     target: "Serious golfer group, bucket-list trip, 4–12 players",
     baseHotel: "Hyatt Regency Monterey or Monterey Plaza Hotel & Spa",
     priceFrom: 949,
+    priceVerified: true,
     priceTo: 2340,
     mostBooked: true,
     courseSlugs: ["poppy-hills", "bayonet", "carmel-valley-ranch", "black-horse"],
@@ -126,6 +129,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     target: "Avid golfer group wanting to play every key course, 4–12 players",
     baseHotel: "3 nights Hyatt Regency Monterey + 2 nights Carmel Valley Ranch",
     priceFrom: 1264,
+    priceVerified: true,
     priceTo: 2915,
     courseSlugs: [
       "pacific-grove-golf-links",
@@ -192,6 +196,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     target: "Golf enthusiast wanting everything, 2–8 players",
     baseHotel: "3 nights Carmel Valley Ranch + 4 nights Monterey Plaza Hotel & Spa",
     priceFrom: 2500,
+    priceVerified: false,
     priceTo: 4000,
     courseSlugs: [
       "carmel-valley-ranch",
@@ -271,6 +276,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     target: "Golfer plus non-golfing partner, wine-country-meets-golf",
     baseHotel: "Carmel Valley Ranch or Bernardus Lodge",
     priceFrom: 900,
+    priceVerified: false,
     priceTo: 1500,
     courseSlugs: ["carmel-valley-ranch", "quail-lodge"],
     hotelSlugs: ["carmel-valley-ranch", "bernardus-lodge"],
@@ -309,6 +315,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     target: "Budget-conscious golfer group, 4–8 players",
     baseHotel: "Casa Munras Garden Hotel & Spa or Portola Hotel",
     priceFrom: 350,
+    priceVerified: false,
     priceTo: 600,
     courseSlugs: ["pacific-grove-golf-links", "laguna-seca-golf-ranch", "black-horse"],
     hotelSlugs: ["casa-munras", "portola-hotel"],

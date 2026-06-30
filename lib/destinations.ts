@@ -235,7 +235,7 @@ export const DESTINATIONS: Record<string, Destination> = {
       },
       {
         q: "Is Bayonet the hardest course on the peninsula?",
-        a: "It's ranked among the toughest public courses in the country — No. 35 nationally by Golf Digest and No. 17 by GolfPass.",
+        a: "It's ranked among the toughest public courses in the country — No. 35 nationally on Golf Digest's list of the 50 Toughest Golf Courses in the United States.",
       },
       {
         q: "Are there hotels in Seaside?",

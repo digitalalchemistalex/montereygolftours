@@ -105,7 +105,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     datePublished: "2026-06-30",
     dateModified: "2026-06-30",
     intro:
-      "Bayonet is one of the toughest public golf courses in the country — ranked No. 35 nationally by Golf Digest and No. 17 by GolfPass — built on the grounds of the former Fort Ord military base in Seaside, California.",
+      "Bayonet is one of the toughest public golf courses in the country — ranked No. 35 nationally on Golf Digest's list of America's toughest courses — built on the grounds of the former Fort Ord military base in Seaside, California.",
     sections: [
       {
         heading: "A military pedigree",

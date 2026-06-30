@@ -91,6 +91,11 @@ export default function ItinerariesIndexPage() {
                   <div className="mt-4 font-display text-lg font-bold text-ocean-dark">
                     from ${t.priceFrom.toLocaleString()}
                     <span className="font-ui text-sm font-normal text-[#6a665e]">/person</span>
+                    {!t.priceVerified && (
+                      <span className="ml-1.5 font-ui text-[11px] font-normal italic text-[#8a7560]">
+                        (estimate)
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="mt-4 font-ui text-sm font-semibold text-ocean">

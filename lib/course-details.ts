@@ -47,7 +47,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "Bayonet sits on the grounds of the former Fort Ord military base, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954 — reportedly to suit his own left-handed game. Hole 15, part of a demanding stretch that runs holes 11 through 15, carries the course's famous \"Combat Corner\" nickname. The course is named for the 7th Infantry, the \"Bayonet Division.\"",
       "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A Gene Bates redesign completed in 2007 refreshed the layout while keeping the demanding, military-pedigree character intact.",
-      "At 7,024 yards from the back tees (rating 74.8, slope 139), Bayonet is ranked among the toughest public courses in the country — Golf Digest placed it No. 35 nationwide on its list of the toughest courses in America, and GolfPass ranked it No. 17 nationally among the most grueling public layouts. It's hosted PGA Tour qualifiers and players including Billy Andrade, Arnold Palmer, Jack Nicklaus, and Tom Watson, and a Nationwide Tour event (the Monterey Peninsula Classic) was held here from 2000 to 2003.",
+      "At 7,024 yards from the back tees (rating 74.8, slope 139), Bayonet is ranked among the toughest public courses in the country — Golf Digest placed it No. 35 nationwide on its list of the 50 Toughest Golf Courses in the United States. It's hosted PGA Tour qualifiers and players including Billy Andrade, Arnold Palmer, Jack Nicklaus, and Tom Watson, and a Nationwide Tour event (the Monterey Peninsula Classic) was held here from 2000 to 2003. Note: independent sources differ on Bayonet's exact yardage — Golf Digest, TeeOff, and other third-party sites list it at 7,104 yards rather than 7,024; the figure here follows direct verification against the official facility, but this is worth re-confirming against the current scorecard.",
     ],
     highlights: [
       {
@@ -56,7 +56,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         label: "Nationally ranked",
-        detail: "Golf Digest No. 35 and GolfPass No. 17 on their toughest public courses in America lists.",
+        detail: "Golf Digest No. 35 on the 50 Toughest Golf Courses in the United States.",
       },
       {
         label: "Military heritage",
@@ -85,7 +85,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "How difficult is Bayonet?",
-        a: "It's ranked among the toughest public courses in the country — No. 35 nationally by Golf Digest and No. 17 by GolfPass. Built for serious and scratch-to-mid-handicap players; high-handicap beginners may find it punishing.",
+        a: "It's ranked among the toughest public courses in the country — No. 35 nationally on Golf Digest's list of the 50 Toughest Golf Courses in the United States. Built for serious and scratch-to-mid-handicap players; high-handicap beginners may find it punishing.",
       },
       {
         q: "Who designed Bayonet?",

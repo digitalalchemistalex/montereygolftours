@@ -243,6 +243,11 @@ export default async function DestinationPage({ params }: Props) {
                   <div className="mt-2 font-display text-lg font-bold text-ink">{t.title}</div>
                   <div className="mt-3 font-display text-base font-bold text-ocean-dark">
                     from ${t.priceFrom.toLocaleString()}/person
+                    {!t.priceVerified && (
+                      <span className="ml-1 font-ui text-[10px] font-normal italic text-[#8a7560]">
+                        (estimate)
+                      </span>
+                    )}
                   </div>
                   <div className="mt-3 font-ui text-sm font-semibold text-ocean">
                     View itinerary &rarr;

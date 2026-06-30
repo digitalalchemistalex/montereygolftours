@@ -144,6 +144,13 @@ export default async function ItineraryPage({ params }: Props) {
               value={`$${trip.priceFrom.toLocaleString()}/person`}
             />
           </div>
+          {!trip.priceVerified && (
+            <p className="mt-4 max-w-[700px] font-body text-[13px] italic text-[#8a7560]">
+              This price range is an estimate based on typical course and lodging costs,
+              not a recalculated figure from current rates. Get a custom quote for
+              accurate pricing.
+            </p>
+          )}
         </section>
 
         <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
