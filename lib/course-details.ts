@@ -171,4 +171,186 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
     ],
   },
+  "black-horse": {
+    slug: "black-horse",
+    name: "Black Horse",
+    city: "Seaside, CA",
+    facility: "Bayonet & Black Horse",
+    par: 72,
+    yards: "7,024 yards",
+    rating: "73.7",
+    slope: "141",
+    holes: 18,
+    designer: "Gen. Robert B. McClure (1954), redesigned by Gene Bates (2007)",
+    type: "Semi-private / public",
+    address: "1 McClure Way, Seaside, CA 93955",
+    phone: "(831) 899-7271",
+    website: "bayonetblackhorse.com",
+    hook:
+      "Black Horse's twin at the former Fort Ord — sweeping Monterey Bay views with a gentler test than its sister course.",
+    description: [
+      "Black Horse shares its origin with Bayonet on the grounds of the former Fort Ord military base. Designed alongside Bayonet by General Robert B. McClure in 1954 and refreshed in a 2007 Gene Bates redesign, Black Horse offers fescue-framed fairways and sweeping views of Monterey Bay throughout the round.",
+      "Where Bayonet has built its reputation as one of the toughest public tests in the country, Black Horse plays as the more approachable of the two Fort Ord courses — still a genuine championship-caliber layout, but with a bit more forgiveness for a wider range of handicaps.",
+      "Both courses operate under the same Bayonet & Black Horse facility, 5 miles from downtown Monterey, and are a natural multi-round pairing for groups spending a few days on the peninsula.",
+    ],
+    highlights: [
+      {
+        label: "Monterey Bay views",
+        detail: "Sweeping coastal views carry through much of the round.",
+      },
+      {
+        label: "Fort Ord heritage",
+        detail: "Designed in 1954 by Gen. Robert B. McClure alongside Bayonet, on the former military base.",
+      },
+      {
+        label: "Pairs naturally with Bayonet",
+        detail: "Same facility, same clubhouse — an easy two-round day or back-to-back booking.",
+      },
+      {
+        label: "Gene Bates redesign",
+        detail: "Refreshed in 2007 alongside Bayonet's redesign.",
+      },
+    ],
+    bestFor: [
+      "Groups wanting a genuine test without Bayonet's full difficulty",
+      "Mid-handicap players",
+      "Pairing with a Bayonet round for a two-course Fort Ord day",
+    ],
+    lessIdealIf: [
+      "You specifically want the hardest test on the peninsula (that's Bayonet)",
+    ],
+    greenFeeEst: "~$165 with cart",
+    nearbySlugs: ["bayonet"],
+    faqs: [
+      {
+        q: "Is Black Horse harder or easier than Bayonet?",
+        a: "Black Horse is generally considered the more approachable of the two Fort Ord courses, though it's still a genuine championship-caliber test.",
+      },
+      {
+        q: "Can I play both Bayonet and Black Horse in one trip?",
+        a: "Yes — both courses share the same facility and clubhouse, making a two-round day or back-to-back booking straightforward.",
+      },
+      {
+        q: "Who designed Black Horse?",
+        a: "Gen. Robert B. McClure designed the original course in 1954, the same year as Bayonet. Gene Bates completed a redesign in 2007.",
+      },
+      {
+        q: "What's the green fee at Black Horse?",
+        a: "Estimated around $165 with cart, though rates vary seasonally — always verify current pricing before booking.",
+      },
+    ],
+  },
+  "carmel-valley-ranch": {
+    slug: "carmel-valley-ranch",
+    name: "Carmel Valley Ranch",
+    city: "Carmel Valley, CA",
+    facility: "Carmel Valley Ranch",
+    par: 70,
+    yards: "6,117 yards",
+    holes: 18,
+    designer: "Pete Dye (original), redesigned by Gene Bates",
+    type: "Resort",
+    address: "1 Old Ranch Rd, Carmel, CA 93923",
+    phone: "(831) 625-9500",
+    website: "carmelvalleyranch.com/golf",
+    hook:
+      "Inland warmth and an early clear from the fog — the only Pete Dye design in Northern California.",
+    description: [
+      "Carmel Valley Ranch sits inland from the coastal fog belt, in the warmer Carmel Valley microclimate that tends to clear earlier in the day than the peninsula proper. The course carries a Pete Dye pedigree — the only Pete Dye design in Northern California — with a subsequent Gene Bates redesign.",
+      "At 6,117 yards and par 70, the course favors strategy and shot placement over pure length, characteristic of Dye's design philosophy. It anchors the Carmel Valley Ranch resort property, making it a natural stay-and-play pairing for groups based there.",
+    ],
+    highlights: [
+      {
+        label: "Only Pete Dye design in Northern California",
+        detail: "A distinctive design pedigree not found elsewhere in the region.",
+      },
+      {
+        label: "Inland microclimate",
+        detail: "Clears earlier than the coastal fog — a reliable warm-weather round.",
+      },
+      {
+        label: "On-site resort course",
+        detail: "Anchors the Carmel Valley Ranch resort for stay-and-play groups.",
+      },
+    ],
+    bestFor: [
+      "Groups wanting a warmer, fog-free round",
+      "Players who enjoy strategic, Pete Dye-style course architecture",
+      "Stay-and-play groups based at Carmel Valley Ranch",
+    ],
+    lessIdealIf: ["You want maximum yardage and a pure power test"],
+    greenFeeEst: "~$195 (rates vary by season — verify before booking)",
+    nearbySlugs: ["quail-lodge"],
+    faqs: [
+      {
+        q: "Who designed Carmel Valley Ranch?",
+        a: "Pete Dye designed the original course — the only Pete Dye design in Northern California — with a later redesign by Gene Bates.",
+      },
+      {
+        q: "Is Carmel Valley Ranch usually less foggy than the coast?",
+        a: "Yes. Its inland location in Carmel Valley sits outside the coastal marine layer, so it tends to clear earlier in the day than peninsula courses.",
+      },
+      {
+        q: "What's the green fee at Carmel Valley Ranch?",
+        a: "Around $195, though rates vary by season and tee time — always verify current pricing before booking.",
+      },
+    ],
+  },
+  "quail-lodge": {
+    slug: "quail-lodge",
+    name: "Quail Lodge & Golf Club",
+    city: "Carmel Valley, CA",
+    facility: "Quail Lodge & Golf Club",
+    par: 71,
+    yards: "6,500 yards",
+    slope: "129",
+    holes: 18,
+    designer: "Robert Muir Graves",
+    type: "Resort / semi-private",
+    address: "8205 Valley Greens Dr, Carmel, CA 93923",
+    phone: "(831) 624-2888",
+    website: "quaillodge.com/golf",
+    hook:
+      "A resort round in the Carmel Valley sun, threaded around 10 man-made lakes, away from the coastal marine layer.",
+    description: [
+      "Quail Lodge & Golf Club plays through Carmel Valley's warmer inland climate, with 10 man-made lakes woven through the layout — a defining feature of the course. At par 71 and 6,500 yards, it's a resort-style round that rewards accuracy around the water hazards.",
+      "Green fees here are dynamic rather than fixed, generally averaging in the $100–$150 range on weekends depending on season and tee time — worth confirming current pricing directly before booking a group round.",
+    ],
+    highlights: [
+      {
+        label: "10 man-made lakes",
+        detail: "A defining feature of the layout, demanding accuracy off the tee and into greens.",
+      },
+      {
+        label: "Carmel Valley warmth",
+        detail: "Inland location clears of fog earlier than coastal peninsula courses.",
+      },
+      {
+        label: "Resort-anchored",
+        detail: "On-site course for guests staying at Quail Lodge & Golf Club.",
+      },
+    ],
+    bestFor: [
+      "Groups wanting a warm-weather resort round",
+      "Players who enjoy water-feature strategic golf",
+      "Stay-and-play groups based at Quail Lodge",
+    ],
+    lessIdealIf: ["You're looking for a links-style or coastal-fog round"],
+    greenFeeEst: "Dynamic pricing, ~$100–$150 on weekends (verify current rates)",
+    nearbySlugs: ["carmel-valley-ranch"],
+    faqs: [
+      {
+        q: "What's distinctive about Quail Lodge's layout?",
+        a: "The course is threaded around 10 man-made lakes, a defining feature that rewards accurate shot-making.",
+      },
+      {
+        q: "What's the green fee at Quail Lodge?",
+        a: "Pricing is dynamic rather than a fixed rate, generally averaging $100–$150 on weekends — confirm current pricing directly before booking.",
+      },
+      {
+        q: "Is Quail Lodge open to non-resort guests?",
+        a: "Yes, it operates as a semi-private resort course with availability for outside play alongside resort guests.",
+      },
+    ],
+  },
 };
