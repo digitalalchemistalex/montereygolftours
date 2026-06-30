@@ -1,34 +1,37 @@
-<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
-<title>Painterly illustration of an old stone clubhouse archway framed by warm afternoon light</title>
+<svg width="1600" height="400" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
+<title>Painterly illustration of a stone clubhouse archway at golden hour, wide format</title>
 <defs>
-<linearGradient id="asky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C896"/><stop offset="50%" stop-color="#E0A87C"/><stop offset="100%" stop-color="#C97E5E"/></linearGradient>
-<radialGradient id="aglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFEBC4" stop-opacity="0.9"/><stop offset="100%" stop-color="#FFEBC4" stop-opacity="0"/></radialGradient>
-<linearGradient id="astone" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9A37C"/><stop offset="100%" stop-color="#9C7654"/></linearGradient>
-<linearGradient id="apath" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D9B98E"/><stop offset="100%" stop-color="#B89468"/></linearGradient>
-<linearGradient id="agrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9CB06A"/><stop offset="100%" stop-color="#74904A"/></linearGradient>
-<filter id="agrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/></filter>
+<linearGradient id="aSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C896"/><stop offset="50%" stop-color="#E0A87C"/><stop offset="100%" stop-color="#C97E5E"/></linearGradient>
+<radialGradient id="aGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFEBC4" stop-opacity="0.9"/><stop offset="100%" stop-color="#FFEBC4" stop-opacity="0"/></radialGradient>
+<linearGradient id="aStone" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9A37C"/><stop offset="100%" stop-color="#9C7654"/></linearGradient>
+<linearGradient id="aGrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9CB06A"/><stop offset="100%" stop-color="#74904A"/></linearGradient>
 </defs>
-<rect x="0" y="0" width="680" height="320" fill="url(#asky)"/>
-<circle cx="340" cy="90" r="110" fill="url(#aglow)"/>
-<path d="M0 120 Q170 95 340 115 T680 105 L680 170 L0 170 Z" fill="#C9926B" opacity="0.5"/>
-<path d="M0 150 Q200 120 400 145 T680 130 L680 220 L0 220 Z" fill="url(#agrass)" opacity="0.85"/>
-<g transform="translate(80,80)">
-<path d="M0 240 L0 60 Q40 0 80 60 L80 240 Z" fill="url(#astone)"/>
-<path d="M10 230 L10 65 Q40 15 70 65 L70 230 Z" fill="#7A5A3E"/>
-<g opacity="0.3" stroke="#7A5A3E" stroke-width="1.5"><path d="M0 100 L80 100"/><path d="M0 140 L80 140"/><path d="M0 180 L80 180"/></g>
+<rect x="0" y="0" width="1600" height="400" fill="url(#aSky)"/>
+<circle cx="800" cy="110" r="200" fill="url(#aGlow)"/>
+<path d="M0 150 Q400 115 800 145 T1600 130 L1600 210 L0 210 Z" fill="#C9926B" opacity="0.5"/>
+<path d="M0 188 Q470 145 940 180 T1600 160 L1600 280 L0 280 Z" fill="url(#aGrass)" opacity="0.85"/>
+<g transform="translate(200,90)">
+<path d="M0 290 L0 70 Q50 0 100 70 L100 290 Z" fill="url(#aStone)"/>
+<path d="M14 278 L14 78 Q50 18 86 78 L86 278 Z" fill="#7A5A3E"/>
+<g opacity="0.3" stroke="#7A5A3E" stroke-width="2"><path d="M0 120 L100 120"/><path d="M0 170 L100 170"/><path d="M0 220 L100 220"/></g>
 </g>
-<g transform="translate(520,80)">
-<path d="M0 240 L0 60 Q40 0 80 60 L80 240 Z" fill="url(#astone)"/>
-<path d="M10 230 L10 65 Q40 15 70 65 L70 230 Z" fill="#7A5A3E"/>
-<g opacity="0.3" stroke="#7A5A3E" stroke-width="1.5"><path d="M0 100 L80 100"/><path d="M0 140 L80 140"/><path d="M0 180 L80 180"/></g>
+<g transform="translate(1300,90)">
+<path d="M0 290 L0 70 Q50 0 100 70 L100 290 Z" fill="url(#aStone)"/>
+<path d="M14 278 L14 78 Q50 18 86 78 L86 278 Z" fill="#7A5A3E"/>
+<g opacity="0.3" stroke="#7A5A3E" stroke-width="2"><path d="M0 120 L100 120"/><path d="M0 170 L100 170"/><path d="M0 220 L100 220"/></g>
 </g>
-<path d="M160 110 Q340 60 520 110" fill="none" stroke="url(#astone)" stroke-width="22" stroke-linecap="round"/>
-<path d="M160 110 Q340 60 520 110" fill="none" stroke="#7A5A3E" stroke-width="22" stroke-linecap="round" opacity="0.25"/>
-<g opacity="0.85"><path d="M115 250 Q113 215 119 188 Q121 178 127 184 Q130 191 126 198 Q123 206 125 218 Q126 230 122 250 Z" fill="#33502B"/><ellipse cx="123" cy="182" rx="26" ry="30" fill="#3A5A30"/></g>
-<g opacity="0.85"><path d="M565 255 Q563 220 569 194 Q571 184 577 190 Q580 197 576 204 Q573 212 575 224 Q576 235 572 255 Z" fill="#33502B"/><ellipse cx="573" cy="188" rx="26" ry="30" fill="#3A5A30"/></g>
-<path d="M0 190 Q170 165 340 185 T680 170 L680 320 L0 320 Z" fill="url(#apath)" opacity="0.5"/>
-<path d="M260 320 Q300 230 340 200 Q380 230 420 320 Z" fill="#E2C696" opacity="0.7"/>
-<g opacity="0.4" stroke="#B89468" stroke-width="1"><path d="M290 300 Q310 250 340 220"/><path d="M390 300 Q370 250 340 220"/></g>
-<g opacity="0.7" fill="#5C8B45"><ellipse cx="200" cy="280" rx="3" ry="9"/><ellipse cx="480" cy="285" rx="3" ry="9"/><ellipse cx="150" cy="295" rx="2.5" ry="7"/><ellipse cx="540" cy="298" rx="2.5" ry="7"/></g>
-<rect x="0" y="0" width="680" height="320" filter="url(#agrain)"/>
+<path d="M340 130 Q800 65 1260 130" fill="none" stroke="url(#aStone)" stroke-width="28" stroke-linecap="round"/>
+<path d="M340 130 Q800 65 1260 130" fill="none" stroke="#7A5A3E" stroke-width="28" stroke-linecap="round" opacity="0.22"/>
+<g opacity="0.85">
+<path d="M280 300 Q277 255 285 220 Q288 208 296 216 Q300 224 295 234 Q291 244 294 260 Q296 276 290 300 Z" fill="#33502B"/>
+<ellipse cx="291" cy="212" rx="32" ry="38" fill="#3A5A30"/>
+</g>
+<g opacity="0.85">
+<path d="M1330 308 Q1327 265 1335 232 Q1338 220 1346 228 Q1350 236 1345 245 Q1341 254 1344 270 Q1346 284 1340 308 Z" fill="#33502B"/>
+<ellipse cx="1341" cy="226" rx="32" ry="38" fill="#3A5A30"/>
+</g>
+<path d="M0 230 Q400 195 800 225 T1600 205 L1600 400 L0 400 Z" fill="#D9B98E" opacity="0.4"/>
+<path d="M600 400 Q700 270 800 230 Q900 270 1000 400 Z" fill="#E2C696" opacity="0.7"/>
+<g opacity="0.4" stroke="#B89468" stroke-width="1.5"><path d="M680 370 Q730 290 800 250"/><path d="M920 370 Q870 290 800 250"/></g>
+<g opacity="0.7" fill="#5C8B45"><ellipse cx="470" cy="340" rx="4" ry="11"/><ellipse cx="1130" cy="345" rx="4" ry="11"/><ellipse cx="360" cy="360" rx="3" ry="9"/><ellipse cx="1260" cy="365" rx="3" ry="9"/></g>
 </svg>

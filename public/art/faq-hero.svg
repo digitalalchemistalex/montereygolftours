@@ -1,29 +1,39 @@
-<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
-<title>Painterly illustration of a misty fairway at dawn</title>
+<svg width="1600" height="400" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
+<title>Illustration of a fairway at dawn with bold FAQ lettering</title>
 <defs>
-<linearGradient id="fsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9CEDB"/><stop offset="45%" stop-color="#D9D2C8"/><stop offset="100%" stop-color="#E8DCC4"/></linearGradient>
-<radialGradient id="fsun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D8" stop-opacity="0.9"/><stop offset="100%" stop-color="#FFF3D8" stop-opacity="0"/></radialGradient>
-<linearGradient id="fridgeFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A8B49C"/><stop offset="100%" stop-color="#8C9C7E"/></linearGradient>
-<linearGradient id="fridgeMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7E9470"/><stop offset="100%" stop-color="#5E7850"/></linearGradient>
-<linearGradient id="ffair" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9CB880"/><stop offset="100%" stop-color="#7A9C5E"/></linearGradient>
-<linearGradient id="fmist" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8E2D4" stop-opacity="0"/><stop offset="50%" stop-color="#E8E2D4" stop-opacity="0.55"/><stop offset="100%" stop-color="#E8E2D4" stop-opacity="0.1"/></linearGradient>
-<filter id="fgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/></filter>
+<linearGradient id="fsky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7FB8DC"/><stop offset="40%" stop-color="#BCD8DC"/><stop offset="75%" stop-color="#F2D9A8"/><stop offset="100%" stop-color="#EEAE7C"/></linearGradient>
+<radialGradient id="fsun2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF6DE" stop-opacity="1"/><stop offset="100%" stop-color="#FFD79A" stop-opacity="0"/></radialGradient>
+<linearGradient id="fridge2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7FA86C"/><stop offset="100%" stop-color="#578048"/></linearGradient>
+<linearGradient id="ffair2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9FCC78"/><stop offset="100%" stop-color="#6FA048"/></linearGradient>
 </defs>
-<rect x="0" y="0" width="680" height="320" fill="url(#fsky)"/>
-<circle cx="500" cy="100" r="90" fill="url(#fsun)"/>
-<circle cx="500" cy="100" r="30" fill="#FBF0D6" opacity="0.85"/>
-<path d="M0 140 Q170 110 340 135 T680 120 L680 190 L0 190 Z" fill="url(#fridgeFar)" opacity="0.7"/>
-<path d="M0 175 Q200 140 400 170 T680 155 L680 235 L0 235 Z" fill="url(#fridgeMid)" opacity="0.85"/>
-<g opacity="0.6"><path d="M70 240 Q68 210 74 188 Q76 180 81 185 Q84 191 80 198 Q77 205 79 215 Q80 226 76 240 Z" fill="#4A6442"/><ellipse cx="78" cy="184" rx="24" ry="28" fill="#54704A"/></g>
-<g opacity="0.45"><path d="M600 250 Q598 222 603 202 Q605 195 610 200 Q612 206 609 212 Q607 218 608 228 Q610 238 606 250 Z" fill="#4A6442"/><ellipse cx="607" cy="198" rx="20" ry="24" fill="#54704A"/></g>
-<path d="M0 215 Q220 175 440 210 T680 192 L680 320 L0 320 Z" fill="url(#ffair)"/>
-<path d="M0 213 Q220 173 440 208 T680 190" fill="none" stroke="#B0CE8E" stroke-width="2" opacity="0.4"/>
-<g opacity="0.9" fill="#7A9C5E"><ellipse cx="120" cy="270" rx="2.5" ry="7"/><ellipse cx="260" cy="255" rx="2.5" ry="8"/><ellipse cx="420" cy="275" rx="2.5" ry="7"/><ellipse cx="540" cy="260" rx="2.5" ry="8"/></g>
-<circle cx="350" cy="248" r="4.5" fill="#F4EFE2"/>
-<rect x="349" y="234" width="1.4" height="14" fill="#6B5638"/>
-<path d="M350.4 234 L362 238 L350.4 242 Z" fill="#A8A0C2"/>
-<rect x="0" y="60" width="680" height="80" fill="url(#fmist)"/>
-<rect x="0" y="160" width="680" height="70" fill="url(#fmist)" opacity="0.7"/>
-<rect x="0" y="230" width="680" height="50" fill="url(#fmist)" opacity="0.5"/>
-<rect x="0" y="0" width="680" height="320" filter="url(#fgrain)"/>
+<rect x="0" y="0" width="1600" height="400" fill="url(#fsky2)"/>
+<circle cx="1280" cy="110" r="170" fill="url(#fsun2)"/>
+<circle cx="1280" cy="110" r="50" fill="#FFF8E6"/>
+<path d="M0 200 Q280 160 560 195 T1120 180 T1600 190 L1600 250 L0 250 Z" fill="url(#fridge2)" opacity="0.85"/>
+<g opacity="0.7">
+<path d="M150 250 Q147 215 154 188 Q157 178 163 184 Q166 191 161 200 Q158 208 160 222 Q161 235 156 250 Z" fill="#33502B"/>
+<ellipse cx="159" cy="182" rx="28" ry="34" fill="#3D5F33"/>
+</g>
+<g opacity="0.6">
+<path d="M1380 260 Q1378 228 1384 204 Q1386 195 1392 200 Q1394 207 1391 214 Q1388 221 1390 232 Q1391 243 1386 260 Z" fill="#33502B"/>
+<ellipse cx="1389" cy="198" rx="22" ry="27" fill="#3D5F33"/>
+</g>
+<path d="M0 235 Q300 190 600 230 T1200 210 T1600 222 L1600 400 L0 400 Z" fill="url(#ffair2)"/>
+<circle cx="800" cy="280" r="6" fill="#FFFBF0"/>
+<rect x="798" y="262" width="2" height="18" fill="#6B5638"/>
+<path d="M800 262 L818 267 L800 272 Z" fill="#D8546C"/>
+<g opacity="0.85" stroke="#3E9E2E" stroke-width="1.5" fill="none">
+<path d="M120 330 Q128 320 136 330"/><path d="M260 350 Q268 340 276 350"/><path d="M1320 340 Q1328 330 1336 340"/><path d="M1450 360 Q1458 350 1466 360"/>
+</g>
+<g transform="translate(800,205)">
+<text x="0" y="0" text-anchor="middle" font-family="Georgia, serif" font-size="150" font-weight="700" fill="#FFFFFF" stroke="#1C5E38" stroke-width="5" paint-order="stroke">FAQ</text>
+</g>
+<g transform="translate(560,150)">
+<circle cx="0" cy="0" r="34" fill="#FFFFFF" opacity="0.92"/>
+<text x="0" y="14" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#2C6E8E">?</text>
+</g>
+<g transform="translate(1080,130) scale(0.7)">
+<circle cx="0" cy="0" r="34" fill="#FFFFFF" opacity="0.85"/>
+<text x="0" y="14" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#D8546C">?</text>
+</g>
 </svg>
