@@ -17,13 +17,13 @@
   --color-navy: var(--color-navy);
   --color-stone: var(--color-stone);
   --color-brass: var(--color-brass);
-  --font-display: var(--font-playfair);
-  --font-body: var(--font-lora);
-  --font-ui: var(--font-inter);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-ui: "Inter", system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
 }
