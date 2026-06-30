@@ -4,6 +4,7 @@ import FitFinder from "@/components/FitFinder";
 import Courses from "@/components/Courses";
 import Packages from "@/components/Packages";
 import Itinerary from "@/components/Itinerary";
+import Hotels from "@/components/Hotels";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Courses />
         <Packages />
         <Itinerary />
+        <Hotels />
       </main>
       <Footer />
     </>
