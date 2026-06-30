@@ -20,6 +20,7 @@ export type ItineraryTemplate = {
   priceFrom: number;
   priceTo: number;
   priceVerified: boolean;
+  image: string;
   days: ItineraryDay[];
   courseSlugs: string[];
   hotelSlugs: string[];
@@ -29,6 +30,7 @@ export type ItineraryTemplate = {
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
   "3-day-monterey-golf-weekend": {
     slug: "3-day-monterey-golf-weekend",
+    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513",
     title: "3-Day Monterey Golf Weekend",
     shortTitle: "Weekend",
     durationDays: 3,
@@ -72,6 +74,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
+    image: "https://images.unsplash.com/photo-1443706340763-4b60757a36ce",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
@@ -122,6 +125,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "5-day-complete-monterey-golf-vacation": {
     slug: "5-day-complete-monterey-golf-vacation",
+    image: "https://images.unsplash.com/photo-1592919505780-303950717480",
     title: "5-Day Full Peninsula",
     shortTitle: "Full Peninsula",
     durationDays: 5,
@@ -189,6 +193,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "7-day-ultimate-monterey-golf-trip": {
     slug: "7-day-ultimate-monterey-golf-trip",
+    image: "https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4",
     title: "7-Day Ultimate Monterey",
     shortTitle: "Ultimate Monterey",
     durationDays: 7,
@@ -269,6 +274,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "carmel-valley-golf-getaway": {
     slug: "carmel-valley-golf-getaway",
+    image: "https://images.unsplash.com/photo-1648706319922-5b884abb264d",
     title: "Carmel Valley Golf Getaway",
     shortTitle: "Carmel Valley Getaway",
     durationDays: 3,
@@ -308,6 +314,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
+    image: "https://images.unsplash.com/photo-1549109786-eb80da56e693",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,

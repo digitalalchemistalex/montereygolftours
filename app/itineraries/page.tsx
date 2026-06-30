@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ITINERARIES } from "@/lib/itineraries";
@@ -71,11 +72,25 @@ export default function ItinerariesIndexPage() {
               <Link
                 key={t.slug}
                 href={`/itineraries/${t.slug}/`}
-                className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white p-6 shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
+                className="group relative flex h-[300px] flex-col justify-end overflow-hidden rounded-2xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-transform duration-150 hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(37,35,33,.26)]"
               >
-                <div>
+                <Image
+                  src={t.image}
+                  alt={t.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(15,21,18,.92) 0%, rgba(15,21,18,.55) 45%, rgba(15,21,18,.1) 100%)",
+                  }}
+                />
+                <div className="relative z-10 p-6">
                   <div className="flex items-center gap-2">
-                    <span className="font-ui text-[11px] font-bold uppercase tracking-[.08em] text-ocean-dark">
+                    <span className="font-ui text-[11px] font-bold uppercase tracking-[.08em] text-[rgba(250,246,238,.85)]">
                       {t.durationDays} days &middot; {t.rounds}
                     </span>
                     {t.mostBooked && (
@@ -84,22 +99,24 @@ export default function ItinerariesIndexPage() {
                       </span>
                     )}
                   </div>
-                  <div className="mt-3 font-display text-xl font-bold text-ink">{t.title}</div>
-                  <p className="mt-2 font-body text-[14px] leading-relaxed text-[#5a564e]">
+                  <div className="mt-2.5 font-display text-xl font-bold text-cream">{t.title}</div>
+                  <p className="mt-1.5 font-body text-[14px] leading-relaxed text-[rgba(250,246,238,.85)]">
                     {t.target}
                   </p>
-                  <div className="mt-4 font-display text-lg font-bold text-ocean-dark">
+                  <div className="mt-3 font-display text-lg font-bold text-[#e8b8be]">
                     from ${t.priceFrom.toLocaleString()}
-                    <span className="font-ui text-sm font-normal text-[#6a665e]">/person</span>
+                    <span className="font-ui text-sm font-normal text-[rgba(250,246,238,.7)]">
+                      /person
+                    </span>
                     {!t.priceVerified && (
-                      <span className="ml-1.5 font-ui text-[11px] font-normal italic text-[#8a7560]">
+                      <span className="ml-1.5 font-ui text-[11px] font-normal italic text-[rgba(250,246,238,.7)]">
                         (estimate)
                       </span>
                     )}
                   </div>
-                </div>
-                <div className="mt-4 font-ui text-sm font-semibold text-ocean">
-                  View itinerary &rarr;
+                  <div className="mt-3 font-ui text-sm font-semibold text-[#e8b8be]">
+                    View itinerary &rarr;
+                  </div>
                 </div>
               </Link>
             ))}
