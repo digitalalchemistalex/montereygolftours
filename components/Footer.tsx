@@ -63,6 +63,16 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className="border-t border-[rgba(250,246,238,.08)] bg-[#0f171a] px-6 py-3 text-center md:px-14">
+        <p className="mx-auto max-w-[900px] font-ui text-[10.5px] leading-relaxed text-[#7d847f]">
+          Pebble Beach®, Pebble Beach Golf Links®, Spyglass Hill Golf Course®, The Links at
+          Spanish Bay®, Pebble Beach Resorts®, and their respective underlying distinctive
+          images are trademarks, service marks, and trade dress of Pebble Beach Company. Del
+          Monte Golf Course™ and The Hay™ are trademarks of Pebble Beach Company. Used with
+          permission.
+        </p>
+      </div>
+
       <div className="flex flex-col items-center justify-between gap-3 bg-[#161F23] px-6 py-4 text-center md:flex-row md:px-14 md:text-left">
         <span className="font-ui text-[11px] text-[#9aa39d]">
           &copy; {new Date().getFullYear()} Monterey Golf Tours. All rights reserved.
