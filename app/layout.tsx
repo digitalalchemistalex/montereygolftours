@@ -9,6 +9,7 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "./globals.css";
+import SiteSchema from "@/components/SiteSchema";
 
 export const metadata: Metadata = {
   title: "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula",
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteSchema />
+        {children}
+      </body>
     </html>
   );
 }
