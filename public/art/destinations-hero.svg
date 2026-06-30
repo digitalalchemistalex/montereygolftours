@@ -1,0 +1,26 @@
+<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+<title>Painterly aerial illustration of a rugged coastline with turquoise water</title>
+<defs>
+<linearGradient id="dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#CDEAE6"/><stop offset="100%" stop-color="#9FD4CC"/></linearGradient>
+<linearGradient id="docean" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1E8FA0"/><stop offset="50%" stop-color="#1B7390"/><stop offset="100%" stop-color="#134F6E"/></linearGradient>
+<radialGradient id="dshallow" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#6FD8C8" stop-opacity="0.9"/><stop offset="100%" stop-color="#6FD8C8" stop-opacity="0"/></radialGradient>
+<linearGradient id="dcliff" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9A876"/><stop offset="55%" stop-color="#A4824F"/><stop offset="100%" stop-color="#7A5E38"/></linearGradient>
+<linearGradient id="dgrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9FCB6E"/><stop offset="100%" stop-color="#6FA048"/></linearGradient>
+<filter id="dgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.045 0"/></filter>
+</defs>
+<rect x="0" y="0" width="680" height="320" fill="url(#dsky)"/>
+<rect x="0" y="0" width="680" height="320" fill="url(#docean)"/>
+<ellipse cx="280" cy="140" rx="220" ry="130" fill="url(#dshallow)"/>
+<g opacity="0.5" stroke="#BFF0E6" stroke-width="1.2" fill="none"><path d="M30 60 Q60 56 90 60"/><path d="M150 90 Q180 86 210 90"/><path d="M450 50 Q480 46 510 50"/><path d="M540 110 Q570 106 600 110"/><path d="M80 200 Q110 196 140 200"/><path d="M480 230 Q510 226 540 230"/><path d="M380 260 Q410 256 440 260"/></g>
+<g opacity="0.4" stroke="#0F3F55" stroke-width="1" fill="none"><path d="M200 130 Q230 126 260 130"/><path d="M340 170 Q370 166 400 170"/></g>
+<path d="M0 0 L0 230 Q60 195 120 215 Q170 230 200 195 Q230 165 180 130 Q140 105 170 75 Q195 52 160 25 Q140 10 150 0 Z" fill="url(#dcliff)"/>
+<path d="M0 0 L0 230 Q60 195 120 215 Q170 230 200 195 Q230 165 180 130 Q140 105 170 75 Q195 52 160 25 Q140 10 150 0" fill="none" stroke="#7A5E38" stroke-width="2" opacity="0.4"/>
+<g opacity="0.6" stroke="#8A6E45" stroke-width="1" fill="none"><path d="M20 60 Q40 75 30 95"/><path d="M60 130 Q85 145 70 168"/><path d="M100 30 Q120 45 108 65"/></g>
+<path d="M0 0 L0 60 Q40 50 60 65 Q80 80 50 95 Q25 105 35 130 L0 130 Z" fill="url(#dgrass)" opacity="0.9"/>
+<g opacity="0.95"><path d="M55 95 Q53 70 58 52 Q60 45 65 50 Q68 56 64 62 Q61 68 63 78 Q64 86 60 95 Z" fill="#2A4A2E"/><ellipse cx="61" cy="48" rx="18" ry="22" fill="#33572F"/><ellipse cx="50" cy="36" rx="10" ry="13" fill="#3E6839"/></g>
+<g opacity="0.9"><path d="M150 195 Q148 172 153 156 Q155 150 159 154 Q161 159 158 164 Q156 169 157 178 Q158 186 155 195 Z" fill="#2A4A2E"/><ellipse cx="156" cy="152" rx="14" ry="17" fill="#33572F"/></g>
+<path d="M680 320 L680 90 Q620 110 600 150 Q580 190 630 220 Q660 238 680 230 Z" fill="url(#dcliff)" opacity="0.85"/>
+<g opacity="0.95"><ellipse cx="340" cy="105" rx="6" ry="3" fill="#FFFFFF" opacity="0.85"/><path d="M330 105 Q335 100 340 105" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/><ellipse cx="380" cy="180" rx="5" ry="2.5" fill="#FFFFFF" opacity="0.7"/></g>
+<g opacity="0.85"><circle cx="420" cy="220" r="3" fill="#FFE9C2"/><circle cx="440" cy="235" r="2" fill="#FFE9C2"/><path d="M415 215 L425 225 M425 215 L415 225" stroke="#3A2E1E" stroke-width="1" opacity="0.6"/></g>
+<rect x="0" y="0" width="680" height="320" filter="url(#dgrain)"/>
+</svg>

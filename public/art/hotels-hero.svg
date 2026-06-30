@@ -1,0 +1,45 @@
+<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+<title>Painterly illustration of a coastal hotel terrace at dusk</title>
+<defs>
+<linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#1B2A52"/><stop offset="40%" stop-color="#2C3F73"/><stop offset="75%" stop-color="#4A5A8C"/><stop offset="100%" stop-color="#6B6E9E"/>
+</linearGradient>
+<radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#FFF6DC" stop-opacity="0.95"/><stop offset="40%" stop-color="#E8E0B8" stop-opacity="0.45"/><stop offset="100%" stop-color="#E8E0B8" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="hsea" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#3A4E80"/><stop offset="100%" stop-color="#23315C"/>
+</linearGradient>
+<linearGradient id="hbuild" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#3A2E3E"/><stop offset="100%" stop-color="#241B2A"/>
+</linearGradient>
+<linearGradient id="hterrace" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#4A3528"/><stop offset="100%" stop-color="#2E2018"/>
+</linearGradient>
+<radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#FFD68A" stop-opacity="0.9"/><stop offset="100%" stop-color="#FFD68A" stop-opacity="0"/>
+</radialGradient>
+<filter id="hgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/></filter>
+</defs>
+<rect x="0" y="0" width="680" height="320" fill="url(#hsky)"/>
+<g opacity="0.9"><circle cx="540" cy="65" r="2" fill="#FFF6DC"/><circle cx="490" cy="40" r="1.5" fill="#FFF6DC"/><circle cx="600" cy="45" r="1.5" fill="#FFF6DC"/><circle cx="120" cy="35" r="1.5" fill="#FFF6DC"/><circle cx="200" cy="55" r="1.2" fill="#FFF6DC"/><circle cx="60" cy="60" r="1.3" fill="#FFF6DC"/><circle cx="350" cy="30" r="1.5" fill="#FFF6DC"/><circle cx="420" cy="50" r="1.2" fill="#FFF6DC"/></g>
+<circle cx="555" cy="70" r="85" fill="url(#moonGlow)"/>
+<circle cx="555" cy="70" r="32" fill="#FBF3D4"/>
+<ellipse cx="545" cy="60" rx="7" ry="5" fill="#E8DEB0" opacity="0.5"/>
+<ellipse cx="565" cy="80" rx="5" ry="4" fill="#E8DEB0" opacity="0.4"/>
+<path d="M0 145 Q150 130 300 142 T600 138 T680 140 L680 195 L0 195 Z" fill="url(#hsea)"/>
+<g opacity="0.5" stroke="#8FA0CC" stroke-width="1.3" fill="none"><path d="M520 155 Q540 152 560 155"/><path d="M480 168 Q502 165 522 168"/><path d="M440 178 Q462 175 482 178"/><path d="M560 175 Q582 172 602 175"/></g>
+<rect x="0" y="160" width="680" height="160" fill="url(#hbuild)"/>
+<g opacity="0.95">
+<rect x="40" y="185" width="58" height="78" rx="2" fill="#2A1F2E"/><rect x="48" y="195" width="16" height="22" fill="#FFD68A" opacity="0.85"/><rect x="74" y="195" width="16" height="22" fill="#3A2E3E"/><rect x="48" y="225" width="16" height="22" fill="#3A2E3E"/><rect x="74" y="225" width="16" height="22" fill="#FFD68A" opacity="0.7"/>
+<rect x="120" y="170" width="64" height="93" rx="2" fill="#2A1F2E"/><rect x="129" y="182" width="16" height="20" fill="#3A2E3E"/><rect x="156" y="182" width="16" height="20" fill="#FFD68A" opacity="0.8"/><rect x="129" y="210" width="16" height="20" fill="#FFD68A" opacity="0.6"/><rect x="156" y="210" width="16" height="20" fill="#3A2E3E"/><rect x="129" y="238" width="16" height="20" fill="#3A2E3E"/><rect x="156" y="238" width="16" height="20" fill="#FFD68A" opacity="0.75"/>
+<rect x="480" y="180" width="62" height="83" rx="2" fill="#2A1F2E"/><rect x="489" y="192" width="16" height="20" fill="#FFD68A" opacity="0.7"/><rect x="515" y="192" width="16" height="20" fill="#3A2E3E"/><rect x="489" y="220" width="16" height="20" fill="#3A2E3E"/><rect x="515" y="220" width="16" height="20" fill="#FFD68A" opacity="0.85"/>
+<rect x="560" y="195" width="50" height="68" rx="2" fill="#2A1F2E"/><rect x="568" y="206" width="14" height="18" fill="#FFD68A" opacity="0.65"/><rect x="592" y="206" width="14" height="18" fill="#3A2E3E"/><rect x="568" y="232" width="14" height="18" fill="#3A2E3E"/>
+</g>
+<path d="M0 250 L680 250 L680 320 L0 320 Z" fill="url(#hterrace)"/>
+<g opacity="0.4" stroke="#5C4530" stroke-width="1"><path d="M0 265 L680 265"/><path d="M0 285 L680 285"/><path d="M0 305 L680 305"/></g>
+<g><rect x="100" y="252" width="6" height="68" fill="#3A2A1E"/><rect x="280" y="252" width="6" height="68" fill="#3A2A1E"/><rect x="460" y="252" width="6" height="68" fill="#3A2A1E"/><path d="M70 252 Q190 232 310 252" stroke="#7A5C3A" stroke-width="2" fill="none"/><path d="M250 252 Q370 232 490 252" stroke="#7A5C3A" stroke-width="2" fill="none"/></g>
+<g opacity="0.95"><circle cx="190" cy="240" r="6" fill="#FFE4A0"/><circle cx="190" cy="240" r="14" fill="url(#lampGlow)"/><circle cx="370" cy="240" r="6" fill="#FFE4A0"/><circle cx="370" cy="240" r="14" fill="url(#lampGlow)"/><circle cx="130" cy="242" r="4" fill="#FFE4A0"/><circle cx="250" cy="242" r="4" fill="#FFE4A0"/><circle cx="310" cy="242" r="4" fill="#FFE4A0"/><circle cx="430" cy="242" r="4" fill="#FFE4A0"/></g>
+<g opacity="0.9"><ellipse cx="210" cy="300" rx="16" ry="20" fill="#1E1A14"/><rect x="206" y="280" width="8" height="20" fill="#1E1A14"/><ellipse cx="430" cy="305" rx="18" ry="22" fill="#1E1A14"/><rect x="425" y="282" width="9" height="23" fill="#1E1A14"/></g>
+<rect x="0" y="0" width="680" height="320" filter="url(#hgrain)"/>
+</svg>

@@ -49,16 +49,23 @@ export default function PackagesPage() {
       />
 
       <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+        <Image
+          src="/art/packages-hero.svg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.4) 0%, rgba(22,36,44,.82) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(20,20,28,.2) 0%, rgba(20,20,28,.7) 100%)" }}
         />
         <Header />
         <div className="relative z-10">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Golf trip packages
           </h1>
-          <p className="mt-3 max-w-[640px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:text-lg">
+          <p className="mt-3 max-w-[640px] font-body text-base leading-relaxed text-[rgba(250,246,238,.92)] md:text-lg">
             Every package below is built from real course and lodging rates &mdash; 3 to 7
             days, every length customizable to your group.
           </p>
