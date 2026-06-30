@@ -1,0 +1,129 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { ITINERARIES } from "@/lib/itineraries";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Golf Trip Packages | Monterey Golf Tours",
+  description:
+    "Monterey Peninsula golf trip packages, priced from real course and lodging rates — 3 to 7 days, every length customizable to your group.",
+  alternates: {
+    canonical: `https://${SITE.domain}/packages/`,
+  },
+};
+
+export default function PackagesPage() {
+  const trips = Object.values(ITINERARIES).sort((a, b) => a.durationDays - b.durationDays);
+
+  const canonicalUrl = `https://${SITE.domain}/packages/`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: "Golf Trip Packages",
+        isPartOf: { "@id": `https://${SITE.domain}/#website` },
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: trips.map((t, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://${SITE.domain}/itineraries/${t.slug}/`,
+          name: t.title,
+        })),
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.4) 0%, rgba(22,36,44,.82) 100%)" }}
+        />
+        <Header />
+        <div className="relative z-10">
+          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
+            Golf trip packages
+          </h1>
+          <p className="mt-3 max-w-[640px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:text-lg">
+            Every package below is built from real course and lodging rates &mdash; 3 to 7
+            days, every length customizable to your group.
+          </p>
+        </div>
+      </section>
+
+      <main className="flex-1">
+        <section className="px-6 py-10 md:px-14 md:py-12">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {trips.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/itineraries/${t.slug}/`}
+                className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white p-6 shadow-[0_3px_11px_rgba(37,35,33,.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(37,35,33,.12)]"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-ui text-[11px] font-bold uppercase tracking-[.08em] text-ocean-dark">
+                      {t.durationDays} days &middot; {t.rounds}
+                    </span>
+                    {t.mostBooked && (
+                      <span className="rounded-full bg-gold px-2.5 py-1 font-ui text-[10px] font-bold uppercase tracking-[.05em] text-ink">
+                        Most booked
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-3 font-display text-xl font-bold text-ink">{t.title}</div>
+                  <p className="mt-2 font-body text-[14px] leading-relaxed text-[#5a564e]">
+                    {t.target}
+                  </p>
+                  <div className="mt-4 font-display text-lg font-bold text-ocean-dark">
+                    from ${t.priceFrom.toLocaleString()}
+                    <span className="font-ui text-sm font-normal text-[#6a665e]">/person</span>
+                    {!t.priceVerified && (
+                      <span className="ml-1.5 font-ui text-[11px] font-normal italic text-[#8a7560]">
+                        (estimate)
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="mt-4 font-ui text-sm font-semibold text-ocean">
+                  View package details &rarr;
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-[#e3ddcf] bg-[#f4f0e7] px-6 py-12 text-center md:px-14 md:py-14">
+          <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">
+            Want something custom?
+          </h2>
+          <p className="mx-auto mt-3 max-w-[520px] font-body text-[15px] text-[#5a564e]">
+            Every package here is a starting point &mdash; tell us your group and
+            we&apos;ll build the right courses, lodging, and length around it.
+          </p>
+          <Link
+            href="/quote/"
+            className="mt-6 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
+          >
+            Get a custom quote &rarr;
+          </Link>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
