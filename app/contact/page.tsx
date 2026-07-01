@@ -49,21 +49,21 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#E8384F] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#7EC8E8] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
         <Image
           src="/art/contact-hero.svg"
-          alt="Illustrated phone, envelope, and golf ball representing contact"
+          alt="Illustration of a golfer on a fairway on a sunny day"
           fill
           priority
           className="object-cover"
         />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(20,20,20,.42) 0%, rgba(20,20,20,0) 40%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(15,25,35,.32) 0%, rgba(15,25,35,0) 38%, rgba(20,40,20,.15) 100%)" }}
         />
         <Header />
         <div className="relative z-10 pt-20 md:pt-0">
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]" style={{ textShadow: "0 2px 12px rgba(0,0,0,.5)" }}>
+          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-ink md:text-[48px]" style={{ textShadow: "0 1px 8px rgba(255,255,255,.6)" }}>
             Get in touch
           </h1>
         </div>
