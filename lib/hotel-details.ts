@@ -1,7 +1,10 @@
 // Source: mgts-lodging-intelligence.md (verified June 2 2026)
 // Corrections applied per Sean's Del Monte Golf Course confirmation and
 // Raza's direct verification (Casa Munras, Quail Lodge room counts).
-// Fields genuinely unverified are omitted rather than guessed.
+// Drive-time matrix, room features, and dining names pulled from the same
+// verified source file. Fields genuinely unverified are omitted rather
+// than guessed (e.g. Quail Lodge's "best playing conditions" marketing
+// claim was checked and could not be independently verified — excluded).
 
 export type HotelDetail = {
   slug: string;
@@ -16,8 +19,12 @@ export type HotelDetail = {
   hook: string;
   description: string[];
   amenities: string[];
+  roomFeatures?: string[];
+  diningNames?: { name: string; detail: string }[];
+  uniqueDetails?: string[];
   onSiteGolf: string | null;
   airportDistance: string;
+  driveTimeToCourses: { course: string; minutes: number }[];
   positioning: string;
   faqs: { q: string; a: string }[];
 };
@@ -44,15 +51,32 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "6 outdoor tennis courts",
       "Pickleball facility",
       "Bocce courts",
+      "Hammock gardens",
       "24-hour fitness center",
-      "3 dining outlets including Sea Root Restaurant & Bar",
       "Free airport shuttle",
       "EV charging",
       "Pet-friendly",
       "40,000 sq ft meeting/event space",
     ],
+    diningNames: [
+      { name: "Sea Root Restaurant & Bar", detail: "Coastal Mediterranean cuisine" },
+      { name: "Central Coast Provisions", detail: "Casual all-day dining" },
+      { name: "Beer Garden", detail: "Seasonal outdoor bar" },
+    ],
+    uniqueDetails: [
+      "Verified stay-and-play packages with Poppy Hills, Bayonet, and Black Horse",
+    ],
     onSiteGolf: "Del Monte Golf Course®",
     airportDistance: "~8 min from MRY",
+    driveTimeToCourses: [
+      { course: "Bayonet / Black Horse", minutes: 8 },
+      { course: "Pacific Grove Golf Links", minutes: 10 },
+      { course: "The Club at Pasadera", minutes: 10 },
+      { course: "Laguna Seca Golf Ranch", minutes: 12 },
+      { course: "Poppy Hills", minutes: 15 },
+      { course: "Quail Lodge", minutes: 20 },
+      { course: "Carmel Valley Ranch", minutes: 25 },
+    ],
     positioning:
       "Best base for groups wanting a central Monterey location with on-site golf and strong group rates, plus easy access to Poppy Hills, Bayonet, and Black Horse.",
     faqs: [
@@ -66,7 +90,15 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       },
       {
         q: "Which other courses can I reach easily from the Hyatt Regency Monterey?",
-        a: "Stay-and-play packages are available with Poppy Hills, Bayonet, and Black Horse, all a short drive from the property.",
+        a: "Verified stay-and-play packages are available with Poppy Hills, Bayonet, and Black Horse, all 8–15 minutes from the property.",
+      },
+      {
+        q: "What dining options are on-site?",
+        a: "Sea Root Restaurant & Bar (Coastal Mediterranean), Central Coast Provisions for casual all-day dining, and a seasonal outdoor Beer Garden.",
+      },
+      {
+        q: "Is the Hyatt Regency Monterey good for large groups?",
+        a: "Yes — with 560 rooms and 40,000 sq ft of meeting and event space, it's built to handle large group golf trips and corporate outings.",
       },
     ],
   },
@@ -82,7 +114,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "The Unbound Collection by Hyatt",
     hook: "All-suite resort on 500 acres, with the only Pete Dye golf course in Northern California on-site.",
     description: [
-      "Carmel Valley Ranch is an all-suite resort — every accommodation, from studio suites to 2-bedroom suites, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
+      "Carmel Valley Ranch is an all-suite resort — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
       "The on-site golf course is a Pete Dye original (1980), renovated by Gene Bates in 2006 — the only Pete Dye design in Northern California. The wine-country microclimate here tends to stay sunny even when the coast is fogged in.",
     ],
     amenities: [
@@ -91,12 +123,33 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "3 outdoor pools",
       "Tennis courts",
       "Estate vineyard, organic gardens, olive grove",
-      "Valley Kitchen restaurant (farm-to-table)",
-      "Complimentary shuttle between lodging clusters",
       "On-site bike trails",
+      "In-suite dining",
+      "Complimentary shuttle between lodging clusters",
+    ],
+    diningNames: [{ name: "Valley Kitchen", detail: "Farm-to-table, using the resort's own gardens and beehives" }],
+    roomFeatures: [
+      "Studio, 1-bedroom, and 2-bedroom suites (up to 4 interconnected bedrooms)",
+      "Gas fireplace",
+      "Private deck or patio",
+      "Valley, vineyard, or forest views",
+      "Espresso maker and refrigerator",
+      "Smart room technology",
+    ],
+    uniqueDetails: [
+      "Miniature goats at The Corral",
+      "Seasonal activities: beekeeping, stargazing, axe throwing, archery, cooking classes",
     ],
     onSiteGolf: "Carmel Valley Ranch Golf Course",
     airportDistance: "~20 min from MRY",
+    driveTimeToCourses: [
+      { course: "Quail Lodge", minutes: 10 },
+      { course: "Bernardus Lodge (The Club at Pasadera access)", minutes: 7 },
+      { course: "Laguna Seca Golf Ranch", minutes: 20 },
+      { course: "Poppy Hills", minutes: 20 },
+      { course: "Bayonet / Black Horse", minutes: 25 },
+      { course: "Pacific Grove Golf Links", minutes: 25 },
+    ],
     positioning:
       "Premier all-suite golf resort, best for groups wanting a luxury resort experience with golf on-site, in a warm, sunny microclimate when the coast is foggy.",
     faqs: [
@@ -106,11 +159,19 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       },
       {
         q: "Who designed the golf course at Carmel Valley Ranch?",
-        a: "Pete Dye designed the original course in 1980, with a 2006 renovation by Gene Bates. It's the only Pete Dye design in Northern California.",
+        a: "Pete Dye designed the original course in 1980 — the only Pete Dye design in Northern California — with a 2006 renovation by Gene Bates.",
       },
       {
         q: "Is Carmel Valley Ranch usually warmer than the coast?",
         a: "Yes — its inland Carmel Valley location sits in a wine-country microclimate that often stays sunny when the coastal areas are fogged in.",
+      },
+      {
+        q: "What's included in the suites?",
+        a: "A gas fireplace, private deck or patio, valley/vineyard/forest views, an espresso maker, and a refrigerator are standard across suite types.",
+      },
+      {
+        q: "Are there non-golf activities for the group?",
+        a: "Yes — seasonal offerings include beekeeping, stargazing, axe throwing, archery, and cooking classes, plus a resident herd of miniature goats at The Corral.",
       },
     ],
   },
@@ -126,20 +187,31 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent",
     hook: "Best value golf-resort combo on the peninsula, with an on-site championship course and warm Carmel Valley weather.",
     description: [
-      "Quail Lodge & Golf Club sits in the sunny Carmel Valley, set among lush gardens and 10 man-made lakes that draw quail, hawks, deer, and turtles. The on-site golf course is a Robert Muir Graves design (1964), refined by Todd Eckenrode / Origins Golf Design in 2015.",
+      "Quail Lodge & Golf Club sits in the sunny Carmel Valley, set among lush gardens and 10 man-made lakes that draw quail, hawks, deer, turtles, and fox. The on-site golf course is a Robert Muir Graves design (1964), refined by Todd Eckenrode / Origins Golf Design in 2015.",
       "With 93 rooms and suites, it's a more intimate property than the larger Tier 1 resorts, generally positioned as the best value golf-and-stay combination on the peninsula.",
     ],
     amenities: [
       "On-site 18-hole championship golf course",
-      "Covey Grill restaurant",
       "Outdoor heated pool",
       "Tennis courts",
       "Driving range and practice green",
       "Full golf shop",
       "Golf instruction available",
     ],
+    diningNames: [{ name: "Covey Grill", detail: "On-site restaurant" }],
+    uniqueDetails: [
+      "Wildlife on property includes quail, hawks, deer, turtles, and fox around the 10 man-made lakes",
+    ],
     onSiteGolf: "Quail Lodge & Golf Club",
     airportDistance: "~15 min from MRY",
+    driveTimeToCourses: [
+      { course: "Carmel Valley Ranch", minutes: 10 },
+      { course: "Bernardus Lodge (The Club at Pasadera access)", minutes: 15 },
+      { course: "Laguna Seca Golf Ranch", minutes: 18 },
+      { course: "Poppy Hills", minutes: 18 },
+      { course: "Bayonet / Black Horse", minutes: 20 },
+      { course: "Pacific Grove Golf Links", minutes: 22 },
+    ],
     positioning:
       "Best value golf-resort combination on the peninsula, with strong course conditions and warm Carmel Valley weather — ideal for groups wanting to be on-course rather than in town.",
     faqs: [
@@ -150,6 +222,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Who designed the Quail Lodge golf course?",
         a: "Robert Muir Graves designed the original course in 1964, with a 2015 refinement by Todd Eckenrode / Origins Golf Design.",
+      },
+      {
+        q: "What wildlife might I see at Quail Lodge?",
+        a: "The property's 10 man-made lakes and gardens draw quail, hawks, deer, turtles, and fox.",
+      },
+      {
+        q: "Are there golf practice facilities on-site?",
+        a: "Yes — a driving range, practice green, full golf shop, and golf instruction are all available on property.",
       },
     ],
   },
@@ -170,16 +250,37 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     ],
     amenities: [
       "Guest access to The Club at Pasadera golf course",
-      "Lucia Restaurant & Bar",
       "Outdoor heated pool + poolside bar",
-      "Full-service spa",
+      "Full-service spa (massages, hydrotherapy, facials, manicure/pedicure)",
       "24-hour gym",
       "Outdoor tennis courts",
-      "Estate vineyard",
+      "Bocce ball, croquet, lawn games",
+      "Hair salon",
+      "Estate vineyard and gardens",
+      "5 meeting rooms / 4,000 sq ft event space",
       "Green Key Global sustainability certification",
+    ],
+    diningNames: [{ name: "Lucia Restaurant & Bar", detail: "On-site, acclaimed" }],
+    roomFeatures: [
+      "Stone fireplace",
+      "Vaulted ceilings",
+      "Private terrace or balcony",
+      "Vineyard views",
+      "Limestone flooring",
+      "Mini-fridge bar and Nespresso",
+    ],
+    uniqueDetails: [
+      "Premier Villas (Villa Sol & Villa Carmelo): 2-bedroom/2.5-bath, 12-person dining table, private terrace with fire pits, outdoor showers",
     ],
     onSiteGolf: null,
     airportDistance: "~21 min from MRY",
+    driveTimeToCourses: [
+      { course: "Carmel Valley Ranch", minutes: 7 },
+      { course: "Quail Lodge", minutes: 15 },
+      { course: "Poppy Hills", minutes: 25 },
+      { course: "Pacific Grove Golf Links", minutes: 30 },
+      { course: "Bayonet / Black Horse", minutes: 30 },
+    ],
     positioning:
       "Best choice for golfers wanting access to The Club at Pasadera outside of Monday, paired with a wine-country setting that's strong for groups combining golf and Carmel Valley wine tasting.",
     faqs: [
@@ -190,6 +291,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "How many rooms does Bernardus Lodge have?",
         a: "73 rooms, making it the most intimate of the Tier 1 golf-anchor properties on this list.",
+      },
+      {
+        q: "What are the Premier Villas?",
+        a: "Villa Sol and Villa Carmelo are 2-bedroom, 2.5-bath villas with a 12-person dining table, a private terrace with fire pits, and outdoor showers.",
+      },
+      {
+        q: "What's in a standard room at Bernardus Lodge?",
+        a: "A stone fireplace, vaulted ceilings, a private terrace or balcony, vineyard views, and a mini-fridge bar with Nespresso.",
       },
     ],
   },
@@ -205,19 +314,33 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent (AAA Four Diamond)",
     hook: "The only Forbes Four-Star hotel in Monterey, perched over the bay on historic Cannery Row.",
     description: [
-      "Monterey Plaza Hotel & Spa is an oceanfront property perched directly over Monterey Bay on historic Cannery Row — the only Forbes Four-Star hotel in Monterey. With 285 units, it's a strong fit for groups wanting to be in the heart of the action, walking distance to Cannery Row and Fisherman's Wharf.",
-      "There's no traditional outdoor pool here, given the waterfront setting and open bay access, but the property compensates with a rooftop-level spa and direct ocean views throughout much of the hotel.",
+      "Monterey Plaza Hotel & Spa is an oceanfront property perched directly over Monterey Bay on historic Cannery Row — the only Forbes Four-Star hotel in Monterey, with European-influenced architecture often described as the \"grand dame of the bay.\" With 285 units, it's a strong fit for groups wanting to be in the heart of the action, walking distance to Cannery Row and Fisherman's Wharf.",
+      "There's no traditional outdoor pool here, given the waterfront setting and open bay access, but the property compensates with a rooftop-level spa and direct ocean views throughout much of the hotel. Parking is valet only.",
     ],
     amenities: [
       "Vista Blue Spa (rooftop level)",
-      "2 restaurants including Schooners Monterey (oceanfront)",
-      "Tidal Coffee cafe",
-      "Ocean-view meeting rooms and waterfront ballrooms",
+      "Ocean-view meeting rooms",
+      "Waterfront ballrooms with outdoor terraces",
       "Complimentary bicycles",
-      "Valet parking",
+      "Valet parking only",
+    ],
+    diningNames: [
+      { name: "Schooners Monterey", detail: "Oceanfront dining" },
+      { name: "Coastal Kitchen", detail: "Newer dining addition" },
+      { name: "Tidal Coffee", detail: "Cafe" },
+      { name: "Lobby Lounge", detail: "Artisan spirits and small plates" },
     ],
     onSiteGolf: null,
     airportDistance: "~10 min from MRY",
+    driveTimeToCourses: [
+      { course: "Pacific Grove Golf Links", minutes: 8 },
+      { course: "The Club at Pasadera", minutes: 8 },
+      { course: "Bayonet / Black Horse", minutes: 8 },
+      { course: "Laguna Seca Golf Ranch", minutes: 12 },
+      { course: "Poppy Hills", minutes: 12 },
+      { course: "Quail Lodge", minutes: 20 },
+      { course: "Carmel Valley Ranch", minutes: 25 },
+    ],
     positioning:
       "The prestige address in Monterey for golfers wanting to be in the heart of the action — walking distance to Cannery Row, with easy drives to all peninsula courses. Strong for corporate golf groups.",
     faqs: [
@@ -228,6 +351,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Does Monterey Plaza have a pool?",
         a: "No traditional outdoor pool — it's a waterfront property with direct bay access instead.",
+      },
+      {
+        q: "What dining options are on-site?",
+        a: "Schooners Monterey for oceanfront dining, Coastal Kitchen, Tidal Coffee cafe, and the Lobby Lounge for spirits and small plates.",
+      },
+      {
+        q: "Is parking available at Monterey Plaza?",
+        a: "Valet parking only.",
       },
     ],
   },
@@ -247,15 +378,32 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Rooms feature Frette linens, marble bathrooms, and a mix of king or two-double configurations, with some rooms offering stone fireplaces and balconies with partial ocean views.",
     ],
     amenities: [
-      "C Restaurant (waterfront dining)",
-      "The Spa",
       "Outdoor heated pool + spa tub",
       "24-hour fitness center",
       "12 versatile meeting/event venues overlooking Monterey Bay",
       "IHG One Rewards loyalty program",
+      "In-room shopping",
+    ],
+    diningNames: [{ name: "C Restaurant", detail: "Waterfront dining, American cuisine — whale watching from seats" }],
+    roomFeatures: [
+      "425–450 sq ft standard rooms",
+      "King bed or two doubles",
+      "Frette linens",
+      "Marble bathrooms with soaking tub and separate shower",
+      "Nespresso",
+      "Some rooms: stone fireplace and balcony with partial ocean view",
     ],
     onSiteGolf: null,
     airportDistance: "~8 min from MRY",
+    driveTimeToCourses: [
+      { course: "Pacific Grove Golf Links", minutes: 8 },
+      { course: "The Club at Pasadera", minutes: 8 },
+      { course: "Bayonet / Black Horse", minutes: 8 },
+      { course: "Laguna Seca Golf Ranch", minutes: 12 },
+      { course: "Poppy Hills", minutes: 12 },
+      { course: "Quail Lodge", minutes: 20 },
+      { course: "Carmel Valley Ranch", minutes: 25 },
+    ],
     positioning:
       "A strong alternative to Monterey Plaza for corporate or group golf, with IHG loyalty points attractive for business travelers, and a location next to the Aquarium that's ideal for groups with non-golfer partners.",
     faqs: [
@@ -266,6 +414,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "How many rooms does InterContinental The Clement Monterey have?",
         a: "208 guest rooms and suites.",
+      },
+      {
+        q: "What can I expect from the on-site restaurant?",
+        a: "C Restaurant offers waterfront American dining with panoramic views — some seats even allow whale watching.",
+      },
+      {
+        q: "Does IHG loyalty apply here?",
+        a: "Yes, the property participates in the IHG One Rewards loyalty program.",
       },
     ],
   },
@@ -285,17 +441,36 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "The hotel was the Central Coast's first LEED-certified property, and includes a 6,000 square-foot spa — the largest day spa in Monterey County — along with an on-site craft brewery.",
     ],
     amenities: [
-      "Spa on the Plaza (6,000 sq ft)",
-      "2 restaurants including Jacks Monterey",
+      "Spa on the Plaza (6,000 sq ft, 11 private treatment rooms — largest day spa in Monterey County)",
       "Craft brewery on-site",
       "60,000 sq ft meeting/event space",
       "Connected to Monterey Conference Center",
       "Outdoor heated pool",
+      "Fitness center",
+      "Valet + self-parking",
       "Pet-friendly",
+      "Children's loyalty program",
       "No resort fee on direct bookings",
+      "EV charging",
+    ],
+    diningNames: [{ name: "Jacks Monterey", detail: "Breakfast and dinner, American cuisine" }],
+    roomFeatures: [
+      "Spanish missionary-inspired aesthetic with Monterey Bay tones",
+      "Double-pane windows, ceiling fans, USB outlets",
+      "King or two Queen beds",
+      "Some suites with a Queen sofa sleeper",
     ],
     onSiteGolf: null,
     airportDistance: "~8 min from MRY",
+    driveTimeToCourses: [
+      { course: "Pacific Grove Golf Links", minutes: 10 },
+      { course: "The Club at Pasadera", minutes: 10 },
+      { course: "Bayonet / Black Horse", minutes: 10 },
+      { course: "Laguna Seca Golf Ranch", minutes: 12 },
+      { course: "Poppy Hills", minutes: 14 },
+      { course: "Quail Lodge", minutes: 20 },
+      { course: "Carmel Valley Ranch", minutes: 25 },
+    ],
     positioning:
       "Best choice for large groups (20+ golfers), corporate outings, or groups paired with a conference, with LEED credentials appealing to sustainability-minded groups.",
     faqs: [
@@ -306,6 +481,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Is Portola Hotel LEED-certified?",
         a: "Yes, it was the Central Coast's first LEED-certified hotel.",
+      },
+      {
+        q: "Does Portola Hotel charge a resort fee?",
+        a: "No resort fee on direct bookings, per the hotel's official policy.",
+      },
+      {
+        q: "What's the spa like at Portola Hotel?",
+        a: "Spa on the Plaza is 6,000 sq ft with 11 private treatment rooms — the largest day spa in Monterey County.",
       },
     ],
   },
@@ -325,15 +508,35 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Every room is individually designed, naturally ventilated with no air conditioning, and features radiant floor heating in the bathrooms. The on-site Aubergine restaurant is a 9-table fine-dining destination with an acclaimed chef and a 2,500-bottle wine cellar.",
     ],
     amenities: [
-      "Aubergine restaurant (9-table fine dining)",
-      "Concierge service",
+      "Concierge service (pre-arrival email available)",
       "Complimentary valet parking",
       "Spa treatments (in-room or arranged)",
-      "Walking distance to Carmel Beach",
-      "Signature continental breakfast included",
+      "Walking distance to Carmel Beach (0.5 miles)",
+      "Signature continental breakfast for 2 included in room rate",
+    ],
+    diningNames: [
+      { name: "Aubergine", detail: "9-table intimate fine dining, Chef Justin Cogley, 2,500-bottle wine cellar" },
+    ],
+    roomFeatures: [
+      "Individually designed rooms",
+      "Separate walk-in shower and vanity",
+      "Recessed lighting",
+      "Radiant floor heating in bathrooms",
+      "Naturally ventilated — no air conditioning",
+      "Nespresso",
+      "Select rooms: deep soaking tubs and canopy king beds",
     ],
     onSiteGolf: null,
     airportDistance: "~15 min from MRY",
+    driveTimeToCourses: [
+      { course: "Quail Lodge", minutes: 12 },
+      { course: "Poppy Hills", minutes: 15 },
+      { course: "Bernardus Lodge (The Club at Pasadera access)", minutes: 15 },
+      { course: "Pacific Grove Golf Links", minutes: 18 },
+      { course: "Bayonet / Black Horse", minutes: 18 },
+      { course: "Carmel Valley Ranch", minutes: 20 },
+      { course: "Laguna Seca Golf Ranch", minutes: 20 },
+    ],
     positioning:
       "Best choice for a golfer traveling with a non-golfing partner, with unmatched village intimacy and one of the finest restaurants on the Central Coast. No pool on-site — better suited to groups who prefer village exploration over resort amenities.",
     faqs: [
@@ -344,6 +547,18 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Does L'Auberge Carmel have a pool?",
         a: "No pool on-site. It's better suited to groups who want to explore Carmel village rather than rely on resort amenities.",
+      },
+      {
+        q: "Is breakfast included?",
+        a: "Yes, a signature continental breakfast for 2 is included in the room rate.",
+      },
+      {
+        q: "Why is there no air conditioning?",
+        a: "Rooms are naturally ventilated by design, with radiant floor heating in the bathrooms instead — consistent with the property's original 1929 character.",
+      },
+      {
+        q: "What's the on-site restaurant like?",
+        a: "Aubergine is a 9-table intimate fine-dining restaurant led by Chef Justin Cogley, with a 2,500-bottle wine cellar — one of the most acclaimed restaurants on the Central Coast.",
       },
     ],
   },
@@ -359,18 +574,28 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent boutique",
     hook: "Monterey's first hotel, dating to 1824, with hacienda-style architecture and lush courtyard gardens.",
     description: [
-      "Casa Munras Garden Hotel & Spa traces back to 1824 — Monterey's first hotel, and one of the oldest hotel properties on the Central Coast. The hacienda-style architecture and Spanish Colonial heritage are reflected throughout the downtown Monterey property, set amid picturesque courtyard gardens.",
+      "Casa Munras Garden Hotel & Spa traces back to 1824 — Monterey's first hotel, and one of the oldest hotel properties on the Central Coast. The hacienda-style architecture and Spanish Colonial heritage are reflected throughout the downtown Monterey property, set amid picturesque courtyard gardens. It was named Best Hotel in Monterey County in 2023.",
       "With 163 rooms, it's positioned as a strong value boutique option for groups wanting authentic Monterey character without full resort pricing.",
     ],
     amenities: [
-      "Esteban Restaurant & Bar (Spanish-California cuisine)",
       "On-site spa",
       "Outdoor heated pool",
       "Complimentary bikes",
       "Lush courtyard gardens",
     ],
+    diningNames: [{ name: "Esteban Restaurant & Bar", detail: "Spanish-California cuisine, house-made sangria" }],
+    uniqueDetails: ["Named Best Hotel in Monterey County, 2023"],
     onSiteGolf: null,
     airportDistance: "~8 min from MRY",
+    driveTimeToCourses: [
+      { course: "Pacific Grove Golf Links", minutes: 10 },
+      { course: "The Club at Pasadera", minutes: 10 },
+      { course: "Bayonet / Black Horse", minutes: 8 },
+      { course: "Laguna Seca Golf Ranch", minutes: 12 },
+      { course: "Poppy Hills", minutes: 14 },
+      { course: "Quail Lodge", minutes: 20 },
+      { course: "Carmel Valley Ranch", minutes: 25 },
+    ],
     positioning:
       "Best value boutique option in downtown Monterey, with historic character unique on the peninsula — strong for groups wanting authentic atmosphere without full resort pricing.",
     faqs: [
@@ -381,6 +606,14 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "How many rooms does Casa Munras have?",
         a: "163 rooms.",
+      },
+      {
+        q: "Has Casa Munras won any recent awards?",
+        a: "Yes — it was named Best Hotel in Monterey County in 2023.",
+      },
+      {
+        q: "Are bikes available to guests?",
+        a: "Yes, complimentary bikes are available for getting around downtown Monterey.",
       },
     ],
   },
