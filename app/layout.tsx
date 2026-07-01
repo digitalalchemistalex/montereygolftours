@@ -9,6 +9,17 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/pacifico/400.css";
+import "@fontsource/cinzel/700.css";
+import "@fontsource/cormorant-garamond/600.css";
+import "@fontsource/eb-garamond/600.css";
+import "@fontsource/marcellus/400.css";
+import "@fontsource/italiana/400.css";
+import "@fontsource/bodoni-moda/700.css";
+import "@fontsource/unifrakturmaguntia/400.css";
+import "@fontsource/im-fell-english-sc/400.css";
+import "@fontsource/great-vibes/400.css";
+import "@fontsource/alex-brush/400.css";
+import "@fontsource/parisienne/400.css";
 import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
 
