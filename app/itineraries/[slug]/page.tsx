@@ -124,39 +124,55 @@ export default async function ItineraryPage({ params }: Props) {
       </section>
 
       <main className="flex-1">
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-8 md:px-14">
-          <p
-            id="speakable-summary"
-            className="max-w-[760px] font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base"
-          >
-            A {trip.durationDays}-day trip with {trip.rounds}, based at {trip.baseHotel}.
-            Pricing runs from ${trip.priceFrom.toLocaleString()} to $
-            {trip.priceTo.toLocaleString()} per person depending on course and room
-            selections — built for {trip.target.toLowerCase()}.
-          </p>
-        </section>
-
-        <section className="border-b border-[#e3ddcf] px-6 py-6 md:px-14">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <FactBox label="Days" value={String(trip.durationDays)} />
-            <FactBox label="Rounds" value={trip.rounds} />
-            <FactBox label="Base hotel" value={trip.baseHotel} />
-            <FactBox
-              label="Price from"
-              value={`$${trip.priceFrom.toLocaleString()}/person`}
-            />
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.5fr_1fr] md:gap-16">
+            <div className="flex flex-wrap gap-x-10 gap-y-6">
+              <div>
+                <div className="font-display text-4xl font-extrabold leading-none text-ocean-dark md:text-5xl">
+                  {trip.durationDays}
+                </div>
+                <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                  Days
+                </div>
+              </div>
+              <div>
+                <div className="font-display text-2xl font-bold leading-none text-ink md:text-3xl">
+                  {trip.rounds}
+                </div>
+                <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                  Rounds
+                </div>
+              </div>
+              <div>
+                <div className="font-display text-2xl font-bold leading-none text-gold md:text-3xl">
+                  ${trip.priceFrom.toLocaleString()}
+                </div>
+                <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                  Price from{!trip.priceVerified && " (estimate)"}
+                </div>
+              </div>
+            </div>
+            <div>
+              <p id="speakable-summary" className="pull-quote text-xl leading-snug text-ink md:text-2xl">
+                A {trip.durationDays}-day trip with {trip.rounds}, based at {trip.baseHotel}.
+              </p>
+              <p className="mt-4 font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Pricing runs from ${trip.priceFrom.toLocaleString()} to $
+                {trip.priceTo.toLocaleString()} per person depending on course and room
+                selections — built for {trip.target.toLowerCase()}.
+                {!trip.priceVerified && (
+                  <span className="mt-2 block text-[13px] italic text-[#a87a5c]">
+                    This range is an estimate, not a recalculated figure from current
+                    rates. Get a custom quote for accurate pricing.
+                  </span>
+                )}
+              </p>
+            </div>
           </div>
-          {!trip.priceVerified && (
-            <p className="mt-4 max-w-[700px] font-body text-[13px] italic text-[#8a7560]">
-              This price range is an estimate based on typical course and lodging costs,
-              not a recalculated figure from current rates. Get a custom quote for
-              accurate pricing.
-            </p>
-          )}
         </section>
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-7 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Day-by-day itinerary
           </h2>
           <div className="space-y-6">
@@ -182,8 +198,8 @@ export default async function ItineraryPage({ params }: Props) {
         </section>
 
         {tripCourses.length > 0 && (
-          <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-            <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+          <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Courses on this trip
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -263,16 +279,5 @@ export default async function ItineraryPage({ params }: Props) {
 
       <Footer />
     </>
-  );
-}
-
-function FactBox({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl border border-[#e3ddcf] bg-white p-4 text-center">
-      <div className="font-ui text-[11px] font-semibold uppercase tracking-[.06em] text-[#8a857a]">
-        {label}
-      </div>
-      <div className="mt-1 font-display text-base font-bold leading-snug text-ink">{value}</div>
-    </div>
   );
 }

@@ -117,51 +117,50 @@ export default async function DestinationPage({ params }: Props) {
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.68) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-12">
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
+        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-14">
+          <h1 className="text-display-lg font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
             {dest.heroTitle}
           </h1>
         </div>
       </section>
 
       <main className="flex-1">
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-8 md:px-14">
-          <p
-            id="speakable-summary"
-            className="max-w-[760px] font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base"
-          >
-            {dest.speakable}
-          </p>
-        </section>
-
-        <section className="border-b border-[#e3ddcf] px-6 py-6 md:px-14">
-          <div className="flex flex-wrap gap-3">
-            {dest.trustBar.map((item) => (
-              <span
-                key={item}
-                className="rounded-full bg-[#e7f0f3] px-4 py-2 font-ui text-[13px] font-semibold text-ocean-dark"
-              >
-                {item}
-              </span>
-            ))}
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.5fr_1fr] md:gap-16">
+            <div className="flex flex-wrap content-start gap-2.5">
+              {dest.trustBar.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full bg-[#e7f0f3] px-4 py-2 font-ui text-[13px] font-semibold text-ocean-dark"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <p
+              id="speakable-summary"
+              className="pull-quote text-xl leading-snug text-ink md:text-2xl"
+            >
+              {dest.speakable}
+            </p>
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-4 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-5 font-display font-bold text-ink">
             Why play golf in {dest.name}
           </h2>
           <p className="max-w-[760px] font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
             {dest.whyPlay}
           </p>
-          <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {dest.features.map((f) => (
-              <div
-                key={f.label}
-                className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)]"
-              >
-                <div className="font-ui text-sm font-semibold text-ink">{f.label}</div>
-                <div className="mt-2 font-body text-[13px] leading-relaxed text-[#6a665e]">
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {dest.features.map((f, i) => (
+              <div key={f.label}>
+                <div className="font-display text-2xl font-extrabold leading-none text-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="mt-2.5 font-ui text-[15px] font-semibold text-ink">{f.label}</div>
+                <div className="mt-1.5 font-body text-[13px] leading-relaxed text-[#6a665e]">
                   {f.detail}
                 </div>
               </div>
@@ -170,8 +169,8 @@ export default async function DestinationPage({ params }: Props) {
         </section>
 
         {destCourses.length > 0 && (
-          <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-            <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+          <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Courses in / near {dest.name}
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -200,8 +199,8 @@ export default async function DestinationPage({ params }: Props) {
         )}
 
         {destHotels.length > 0 && (
-          <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-            <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+          <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Stay here
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -228,8 +227,8 @@ export default async function DestinationPage({ params }: Props) {
         )}
 
         {destItineraries.length > 0 && (
-          <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-            <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+          <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Sample itineraries featuring {dest.name}
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -260,17 +259,17 @@ export default async function DestinationPage({ params }: Props) {
           </section>
         )}
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Common questions
           </h2>
-          <div className="max-w-[800px] divide-y divide-[#e4e0d6] border-t border-[#e4e0d6]">
+          <div className="max-w-[800px] divide-y divide-[#ddd6c2] border-t border-[#ddd6c2]">
             {dest.faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-ink">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
                   {f.q}
-                  <span className="font-ui text-xl text-gold group-open:hidden">+</span>
-                  <span className="hidden font-ui text-xl text-gold group-open:inline">&minus;</span>
+                  <span className="font-display text-xl text-gold group-open:hidden">+</span>
+                  <span className="hidden font-display text-xl text-gold group-open:inline">&minus;</span>
                 </summary>
                 <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#5a564e]">
                   {f.a}
@@ -280,13 +279,13 @@ export default async function DestinationPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="px-6 py-12 text-center md:px-14 md:py-14">
-          <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="px-6 py-16 text-center md:px-14 md:py-20">
+          <h2 className="text-display-md font-display font-bold text-ink">
             Plan your {dest.name} golf trip
           </h2>
           <Link
             href="/quote/"
-            className="mt-6 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
+            className="mt-7 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
           >
             Get a custom quote &rarr;
           </Link>

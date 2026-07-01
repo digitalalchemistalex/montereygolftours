@@ -111,78 +111,96 @@ export default async function HotelPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[400px] flex-col overflow-hidden bg-[#16242c] md:min-h-[480px]">
+      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         {hotelImage && (
           <Image src={hotelImage} alt={hotel.name} fill priority className="object-cover" />
         )}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.68) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.7) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-12">
+        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-14">
           <span className="inline-block rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.06em] text-ink">
             {TIER_LABEL[hotel.tier]}
           </span>
-          <h1 className="mt-3 font-display text-[36px] font-bold leading-[1.1] text-cream md:text-[52px]">
+          <h1 className="text-display-lg mt-4 font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
             {hotel.name}
           </h1>
-          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:text-lg">
+          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.9)] md:text-lg">
             {hotel.hook}
           </p>
         </div>
       </section>
 
       <main className="flex-1">
-        <section className="border-b border-[#e3ddcf] px-6 py-6 md:px-14">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <FactBox label="Rooms" value={hotel.rooms} />
-            <FactBox label="City" value={hotel.city} />
-            <FactBox label="On-site golf" value={hotel.onSiteGolf ?? "None"} />
-            <FactBox label="Airport" value={hotel.airportDistance} />
+        <section className="border-b border-[#e3ddcf] px-6 py-8 md:px-14 md:py-10">
+          <div className="flex flex-wrap gap-x-10 gap-y-6 md:gap-x-14">
+            <div>
+              <div className="font-display text-4xl font-extrabold leading-none text-ocean-dark md:text-5xl">
+                {hotel.rooms.split(" ")[0]}
+              </div>
+              <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                Rooms
+              </div>
+            </div>
+            <div className="min-w-[140px]">
+              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                City
+              </div>
+              <div className="mt-1.5 font-display text-lg font-bold text-ink">{hotel.city}</div>
+            </div>
+            <div className="min-w-[160px]">
+              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                On-site golf
+              </div>
+              <div className="mt-1.5 font-display text-lg font-bold text-ink">{hotel.onSiteGolf ?? "None"}</div>
+            </div>
+            <div className="min-w-[140px]">
+              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                Airport
+              </div>
+              <div className="mt-1.5 font-display text-lg font-bold text-ink">{hotel.airportDistance}</div>
+            </div>
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <div className="max-w-[760px] space-y-4">
-            {hotel.description.map((p, i) => (
-              <p key={i} className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-                {p}
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.55fr_1fr] md:gap-16">
+            <div>
+              <p className="pull-quote text-2xl leading-tight text-ink md:text-3xl">
+                &ldquo;{hotel.positioning.split(".")[0]}.&rdquo;
               </p>
-            ))}
+              <div className="mt-6 font-ui text-sm font-semibold uppercase tracking-[.06em] text-ocean-dark">
+                {hotel.brand}
+              </div>
+            </div>
+            <div className="space-y-4">
+              {hotel.description.map((p, i) => (
+                <p key={i} className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                  {p}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Amenities
           </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
             {hotel.amenities.map((a) => (
-              <div
-                key={a}
-                className="rounded-lg border border-[#e3ddcf] bg-white px-4 py-3 font-body text-[14px] text-[#4a463f]"
-              >
+              <div key={a} className="flex items-baseline gap-2.5 border-b border-[#ddd6c2] py-2.5 font-body text-[14px] text-[#4a463f]">
+                <span className="h-1.5 w-1.5 flex-none rounded-full bg-gold" />
                 {a}
               </div>
             ))}
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-4 font-display text-2xl font-bold text-ink md:text-[32px]">
-            Why groups choose this hotel
-          </h2>
-          <p className="max-w-[700px] font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-            {hotel.positioning}
-          </p>
-        </section>
-
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
-            Practical info
-          </h2>
-          <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-14">
+          <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <PracticalItem label="Address" value={hotel.address} />
             <PracticalItem label="Phone" value={hotel.phone} />
             <PracticalItem label="Website" value={hotel.website} />
@@ -190,17 +208,17 @@ export default async function HotelPage({ params }: Props) {
           </dl>
         </section>
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Common questions
           </h2>
-          <div className="max-w-[800px] divide-y divide-[#e4e0d6] border-t border-[#e4e0d6]">
+          <div className="max-w-[800px] divide-y divide-[#ddd6c2] border-t border-[#ddd6c2]">
             {hotel.faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-ink">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
                   {f.q}
-                  <span className="font-ui text-xl text-gold group-open:hidden">+</span>
-                  <span className="hidden font-ui text-xl text-gold group-open:inline">&minus;</span>
+                  <span className="font-display text-xl text-gold group-open:hidden">+</span>
+                  <span className="hidden font-display text-xl text-gold group-open:inline">&minus;</span>
                 </summary>
                 <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#5a564e]">
                   {f.a}
@@ -210,13 +228,13 @@ export default async function HotelPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="px-6 py-12 text-center md:px-14 md:py-14">
-          <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="px-6 py-16 text-center md:px-14 md:py-20">
+          <h2 className="text-display-md font-display font-bold text-ink">
             Pair {hotel.name} with a planned golf trip
           </h2>
           <Link
             href="/quote/"
-            className="mt-6 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
+            className="mt-7 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
           >
             Get a custom quote &rarr;
           </Link>
@@ -228,24 +246,13 @@ export default async function HotelPage({ params }: Props) {
   );
 }
 
-function FactBox({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl border border-[#e3ddcf] bg-white p-4 text-center">
-      <div className="font-ui text-[11px] font-semibold uppercase tracking-[.06em] text-[#8a857a]">
-        {label}
-      </div>
-      <div className="mt-1 font-display text-base font-bold leading-snug text-ink">{value}</div>
-    </div>
-  );
-}
-
 function PracticalItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dt className="font-ui text-[11px] font-semibold uppercase tracking-[.06em] text-[#8a857a]">
         {label}
       </dt>
-      <dd className="mt-1 font-body text-[15px] text-ink">{value}</dd>
+      <dd className="mt-1.5 font-body text-[15px] text-ink">{value}</dd>
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function Hero() {
 
       <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 md:px-14 md:pb-8">
         <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(22,36,44,.35)] px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[.14em] text-cream backdrop-blur-sm">
-          Monterey Peninsula, California
+          California&apos;s Central Coast
         </span>
         <h1
           className="text-display-xl mt-6 font-display font-extrabold text-cream"
