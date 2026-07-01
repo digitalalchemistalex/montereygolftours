@@ -117,7 +117,7 @@ export default async function DestinationPage({ params }: Props) {
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.68) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-14">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-24 md:px-14 md:pb-14 md:pt-0">
           <h1 className="text-display-lg font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
             {dest.heroTitle}
           </h1>

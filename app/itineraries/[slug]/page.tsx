@@ -108,7 +108,7 @@ export default async function ItineraryPage({ params }: Props) {
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.2) 0%, rgba(22,36,44,.72) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-14">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-24 md:px-14 md:pb-14 md:pt-0">
           {trip.mostBooked && (
             <span className="mb-3 inline-block rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.05em] text-ink">
               Most booked

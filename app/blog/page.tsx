@@ -27,7 +27,7 @@ export default function BlogIndexPage() {
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.4) 0%, rgba(22,36,44,.82) 100%)" }}
         />
         <Header />
-        <div className="relative z-10">
+        <div className="relative z-10 pt-20 md:pt-0">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Trip planning guides
           </h1>
