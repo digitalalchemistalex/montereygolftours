@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: "Destinations", href: "/destinations/" },
   { label: "Itineraries", href: "/itineraries/" },
   { label: "Packages", href: "/packages/" },
+  { label: "Blog", href: "/blog/" },
   { label: "About", href: "/about/" },
   { label: "FAQ", href: "/faq/" },
 ];
@@ -25,7 +26,7 @@ export default function Header() {
         </span>
       </Link>
 
-      <nav className="hidden flex-1 items-center justify-center gap-6 whitespace-nowrap lg:flex">
+      <nav className="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap lg:flex">
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}
