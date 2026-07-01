@@ -11,7 +11,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[640px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
+    <section className="relative flex min-h-[760px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
       <Image
         src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=1920&q=80"
         alt="Aerial view of a coastal golf course at sunrise"
