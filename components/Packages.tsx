@@ -4,6 +4,7 @@ import Reveal from "./Reveal";
 const PACKAGES = [
   {
     label: "Weekend",
+    slug: "3-day-monterey-golf-weekend",
     days: "3 days",
     rounds: "2 rounds",
     from: 564,
@@ -12,6 +13,7 @@ const PACKAGES = [
   },
   {
     label: "Classic Peninsula",
+    slug: "4-day-monterey-peninsula-golf-trip",
     days: "4 days",
     rounds: "3 rounds",
     from: 949,
@@ -20,6 +22,7 @@ const PACKAGES = [
   },
   {
     label: "Full Peninsula",
+    slug: "5-day-complete-monterey-golf-vacation",
     days: "5 days",
     rounds: "4–5 rounds",
     from: 1264,
@@ -87,10 +90,10 @@ export default function Packages() {
               </div>
             </div>
             <Link
-              href="/quote/"
+              href={`/itineraries/${p.slug}/`}
               className="mt-6 inline-flex items-center justify-center rounded-[9px] bg-ocean px-5 py-3 font-ui text-sm font-semibold text-cream hover:bg-ocean-dark"
             >
-              Build this trip &rarr;
+              See this trip &rarr;
             </Link>
           </div>
         ))}

@@ -7,21 +7,25 @@ const FIT_PROFILES = [
     title: "Challenge seekers",
     blurb: "Tournament tees, firm greens, bucket-list tracks.",
     img: "https://images.unsplash.com/photo-1606443192517-919653213206?auto=format&fit=crop&w=600&h=600&fit=crop&q=75",
+    href: "/golf-courses/bayonet/",
   },
   {
     title: "Beginners",
     blurb: "Forgiving layouts, relaxed pace, room to learn.",
     img: "https://images.unsplash.com/photo-1622482594949-a2ea0c800edd?auto=format&fit=crop&w=600&h=600&fit=crop&q=75",
+    href: "/golf-courses/quail-lodge/",
   },
   {
     title: "Mixed groups",
     blurb: "A balance of difficulty so every level enjoys it.",
     img: "https://images.unsplash.com/photo-1592937238247-cd0090e02f65?auto=format&fit=crop&w=600&h=600&fit=crop&q=75",
+    href: "/itineraries/4-day-monterey-peninsula-golf-trip/",
   },
   {
     title: "Budget conscious",
     blurb: "Great value rounds without losing the views.",
     img: "https://images.unsplash.com/photo-1582528979903-bee578216a69?auto=format&fit=crop&w=600&h=600&fit=crop&q=75",
+    href: "/itineraries/monterey-golf-trip-best-value/",
   },
 ];
 
@@ -47,7 +51,7 @@ export default function FitFinder() {
       <div className="grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-4">
         {FIT_PROFILES.map((f, i) => (
           <Reveal key={f.title} delay={i * 100}>
-            <Link href="/quote/" className="group flex flex-col items-center text-center">
+            <Link href={f.href} className="group flex flex-col items-center text-center">
               <div className="relative aspect-square w-full max-w-[260px] overflow-hidden rounded-full shadow-[0_8px_24px_rgba(30,40,38,.18)] transition-transform duration-200 group-hover:-translate-y-1.5 group-hover:shadow-[0_16px_36px_rgba(30,40,38,.28)]">
                 <Image
                   src={f.img}
@@ -65,7 +69,7 @@ export default function FitFinder() {
                 {f.blurb}
               </div>
               <div className="mt-2.5 font-ui text-xs font-semibold text-ocean group-hover:text-ocean-dark md:text-[13px]">
-                Match my group &rarr;
+                See the fit &rarr;
               </div>
             </Link>
           </Reveal>
