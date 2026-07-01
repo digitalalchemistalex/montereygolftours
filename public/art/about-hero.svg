@@ -1,37 +1,31 @@
 <svg width="1600" height="400" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
-<title>Painterly illustration of a stone clubhouse archway at golden hour, wide format</title>
+<title>Coastal illustration with Monterey Golf Tours wordmark</title>
 <defs>
-<linearGradient id="aSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C896"/><stop offset="50%" stop-color="#E0A87C"/><stop offset="100%" stop-color="#C97E5E"/></linearGradient>
-<radialGradient id="aGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFEBC4" stop-opacity="0.9"/><stop offset="100%" stop-color="#FFEBC4" stop-opacity="0"/></radialGradient>
-<linearGradient id="aStone" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9A37C"/><stop offset="100%" stop-color="#9C7654"/></linearGradient>
-<linearGradient id="aGrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9CB06A"/><stop offset="100%" stop-color="#74904A"/></linearGradient>
+<linearGradient id="ab2Sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1F4F66"/><stop offset="55%" stop-color="#2C6E8E"/><stop offset="100%" stop-color="#5CA3B8"/></linearGradient>
+<radialGradient id="ab2Glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFEFC4" stop-opacity="0.95"/><stop offset="100%" stop-color="#FFEFC4" stop-opacity="0"/></radialGradient>
+<linearGradient id="ab2Ridge" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3A7A5C"/><stop offset="100%" stop-color="#255C42"/></linearGradient>
+<linearGradient id="ab2Fair" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F9C6E"/><stop offset="100%" stop-color="#2F7A4C"/></linearGradient>
 </defs>
-<rect x="0" y="0" width="1600" height="400" fill="url(#aSky)"/>
-<circle cx="800" cy="110" r="200" fill="url(#aGlow)"/>
-<path d="M0 150 Q400 115 800 145 T1600 130 L1600 210 L0 210 Z" fill="#C9926B" opacity="0.5"/>
-<path d="M0 188 Q470 145 940 180 T1600 160 L1600 280 L0 280 Z" fill="url(#aGrass)" opacity="0.85"/>
-<g transform="translate(200,90)">
-<path d="M0 290 L0 70 Q50 0 100 70 L100 290 Z" fill="url(#aStone)"/>
-<path d="M14 278 L14 78 Q50 18 86 78 L86 278 Z" fill="#7A5A3E"/>
-<g opacity="0.3" stroke="#7A5A3E" stroke-width="2"><path d="M0 120 L100 120"/><path d="M0 170 L100 170"/><path d="M0 220 L100 220"/></g>
-</g>
-<g transform="translate(1300,90)">
-<path d="M0 290 L0 70 Q50 0 100 70 L100 290 Z" fill="url(#aStone)"/>
-<path d="M14 278 L14 78 Q50 18 86 78 L86 278 Z" fill="#7A5A3E"/>
-<g opacity="0.3" stroke="#7A5A3E" stroke-width="2"><path d="M0 120 L100 120"/><path d="M0 170 L100 170"/><path d="M0 220 L100 220"/></g>
-</g>
-<path d="M340 130 Q800 65 1260 130" fill="none" stroke="url(#aStone)" stroke-width="28" stroke-linecap="round"/>
-<path d="M340 130 Q800 65 1260 130" fill="none" stroke="#7A5A3E" stroke-width="28" stroke-linecap="round" opacity="0.22"/>
-<g opacity="0.85">
-<path d="M280 300 Q277 255 285 220 Q288 208 296 216 Q300 224 295 234 Q291 244 294 260 Q296 276 290 300 Z" fill="#33502B"/>
-<ellipse cx="291" cy="212" rx="32" ry="38" fill="#3A5A30"/>
+<rect x="0" y="0" width="1600" height="400" fill="url(#ab2Sky)"/>
+<circle cx="1360" cy="80" r="150" fill="url(#ab2Glow)"/>
+<circle cx="1360" cy="80" r="42" fill="#FFF6DE"/>
+<path d="M0 170 Q260 138 520 165 T1040 152 T1600 160 L1600 240 L0 240 Z" fill="url(#ab2Ridge)"/>
+<path d="M0 220 Q320 188 640 215 T1280 202 T1600 210 L1600 400 L0 400 Z" fill="url(#ab2Fair)"/>
+<g opacity="0.9">
+<path d="M100 250 Q97 214 106 184 Q109 173 116 180 Q121 189 115 200 Q111 209 113 224 Q116 238 110 250 Z" fill="#1B4A2C"/>
+<ellipse cx="112" cy="178" rx="32" ry="38" fill="#1F5733"/>
 </g>
 <g opacity="0.85">
-<path d="M1330 308 Q1327 265 1335 232 Q1338 220 1346 228 Q1350 236 1345 245 Q1341 254 1344 270 Q1346 284 1340 308 Z" fill="#33502B"/>
-<ellipse cx="1341" cy="226" rx="32" ry="38" fill="#3A5A30"/>
+<path d="M1500 270 Q1497 232 1504 200 Q1507 189 1513 195 Q1517 203 1512 213 Q1509 220 1511 234 Q1513 247 1508 270 Z" fill="#1B4A2C"/>
+<ellipse cx="1510" cy="192" rx="24" ry="30" fill="#1F5733"/>
 </g>
-<path d="M0 230 Q400 195 800 225 T1600 205 L1600 400 L0 400 Z" fill="#D9B98E" opacity="0.4"/>
-<path d="M600 400 Q700 270 800 230 Q900 270 1000 400 Z" fill="#E2C696" opacity="0.7"/>
-<g opacity="0.4" stroke="#B89468" stroke-width="1.5"><path d="M680 370 Q730 290 800 250"/><path d="M920 370 Q870 290 800 250"/></g>
-<g opacity="0.7" fill="#5C8B45"><ellipse cx="470" cy="340" rx="4" ry="11"/><ellipse cx="1130" cy="345" rx="4" ry="11"/><ellipse cx="360" cy="360" rx="3" ry="9"/><ellipse cx="1260" cy="365" rx="3" ry="9"/></g>
+<circle cx="1150" cy="300" r="5" fill="#FFFBF0"/>
+<rect x="1148" y="284" width="2" height="16" fill="#7A6648"/>
+<path d="M1150 284 L1166 288 L1150 292 Z" fill="#FFEFC4"/>
+<rect x="200" y="130" width="1200" height="150" rx="10" fill="#0F2E3D" opacity="0.38"/>
+<g text-anchor="middle">
+<text x="800" y="200" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#FAF6EE">MONTEREY</text>
+<text x="800" y="265" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#FAF6EE" letter-spacing="6">GOLF TOURS</text>
+</g>
+<line x1="640" y1="222" x2="960" y2="222" stroke="#E8A0A8" stroke-width="2" opacity="0.85"/>
 </svg>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ITINERARIES } from "@/lib/itineraries";
@@ -100,22 +101,23 @@ export default async function ItineraryPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[360px] flex-col overflow-hidden bg-[#16242c] md:min-h-[420px]">
+      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+        <Image src={trip.image} alt={trip.title} fill priority className="object-cover" />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.78) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.2) 0%, rgba(22,36,44,.72) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-12">
+        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-14">
           {trip.mostBooked && (
             <span className="mb-3 inline-block rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.05em] text-ink">
               Most booked
             </span>
           )}
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
+          <h1 className="text-display-lg font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
             {trip.title}
           </h1>
-          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:text-lg">
+          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.9)] md:text-lg">
             {trip.target}
           </p>
         </div>

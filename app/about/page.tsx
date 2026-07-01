@@ -14,6 +14,24 @@ export const metadata: Metadata = {
   },
 };
 
+const PRINCIPLES = [
+  {
+    n: "01",
+    title: "Complete trips, not tee times",
+    detail: "We don't sell single rounds — every trip is courses, lodging, and logistics planned together.",
+  },
+  {
+    n: "02",
+    title: "Never \"all-inclusive\"",
+    detail: "Flights and meals aren't bundled in unless you specifically ask us to arrange them.",
+  },
+  {
+    n: "03",
+    title: "Authorized Pebble Beach access",
+    detail: "As an IAGTO-contracted partner, we book Pebble Beach Resorts® courses directly.",
+  },
+];
+
 export default function AboutPage() {
   const canonicalUrl = `https://${SITE.domain}/about/`;
 
@@ -50,81 +68,97 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
-        <Image
-          src="/art/about-hero.svg"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(35,20,15,.18) 0%, rgba(35,20,15,.65) 100%)" }}
-        />
+      <section className="relative flex min-h-[320px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[420px]">
+        <Image src="/art/about-hero.svg" alt="Monterey Golf Tours" fill priority className="object-cover" />
         <Header />
-        <div className="relative z-10">
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
-            About Monterey Golf Tours
-          </h1>
+        <div className="relative z-10 px-6 pb-8 md:px-14 md:pb-10">
+          <h1 className="sr-only">About Monterey Golf Tours</h1>
         </div>
       </section>
 
-      <main className="flex-1 px-6 py-12 md:px-14 md:py-14">
-        <div className="mx-auto max-w-[760px] space-y-8">
-          <div>
-            <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-              Monterey Golf Tours plans custom multi-day golf trips on the Monterey
-              Peninsula &mdash; courses, lodging, and tee times handled end to end. We work
-              with groups of any size, from a twosome to 300 players, and put together
-              trips ranging from a quick weekend to a full week covering every major
-              course on the peninsula.
-            </p>
-            <p className="mt-4 font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-              As an IAGTO-contracted travel partner with Pebble Beach Resorts&reg;, we can
-              book and coordinate tee times at Pebble Beach Golf Links&reg;, Spyglass Hill
-              Golf Course&reg;, The Links at Spanish Bay&reg;, Del Monte Golf Course&trade;,
-              and The Hay&trade;, alongside the rest of the peninsula&apos;s courses.
-            </p>
+      <main className="flex-1">
+        <section className="border-b border-[#e3ddcf] px-6 py-16 md:px-14 md:py-24">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.6fr_1fr] md:gap-16">
+            <div>
+              <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+                Who we are
+              </div>
+              <p className="pull-quote mt-4 text-2xl leading-tight text-ink md:text-3xl">
+                &ldquo;We plan the whole trip — not just the tee time.&rdquo;
+              </p>
+            </div>
+            <div className="space-y-4">
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Monterey Golf Tours plans custom multi-day golf trips on the Monterey
+                Peninsula — courses, lodging, and tee times handled end to end. We work
+                with groups of any size, from a twosome to 300 players, and put together
+                trips ranging from a quick weekend to a full week covering every major
+                course on the peninsula.
+              </p>
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                As an IAGTO-contracted travel partner with Pebble Beach Resorts&reg;, we
+                can book and coordinate tee times at Pebble Beach Golf Links&reg;,
+                Spyglass Hill Golf Course&reg;, The Links at Spanish Bay&reg;, Del Monte
+                Golf Course&reg;, and The Hay&trade;, alongside the rest of the
+                peninsula&apos;s courses.
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="rounded-2xl border border-[#e3ddcf] bg-white p-6 md:p-8">
-            <div className="font-display text-lg font-bold text-ink">Founder</div>
-            <p className="mt-2 font-body text-[15px] leading-relaxed text-[#4a463f]">
-              Sean Schaeffer founded Monterey Golf Tours. Monterey Golf Tours is part of
-              a family of golf trip planning sites operating under the same ownership,
-              including{" "}
-              <a
-                href="https://golfthehighsierra.com"
-                className="text-ocean"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Golf the High Sierra
-              </a>
-              .
-            </p>
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
+          <h2 className="text-display-md mb-10 font-display font-bold text-ink md:mb-14">
+            How we operate
+          </h2>
+          <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-3">
+            {PRINCIPLES.map((p) => (
+              <div key={p.n}>
+                <div className="font-display text-3xl font-extrabold leading-none text-gold">
+                  {p.n}
+                </div>
+                <div className="mt-3 font-ui text-lg font-semibold text-ink">{p.title}</div>
+                <div className="mt-2 font-body text-[14px] leading-relaxed text-[#6a665e]">
+                  {p.detail}
+                </div>
+              </div>
+            ))}
           </div>
+        </section>
 
-          <div>
-            <div className="font-display text-lg font-bold text-ink">What we don&apos;t do</div>
-            <p className="mt-2 font-body text-[15px] leading-relaxed text-[#4a463f]">
-              We don&apos;t sell individual tee times &mdash; we plan complete trips. And
-              we don&apos;t use the word &ldquo;all-inclusive&rdquo;: flights and meals
-              aren&apos;t included in a package unless specifically arranged as part of
-              your custom quote.
-            </p>
+        <section className="border-b border-[#e3ddcf] px-6 py-16 md:px-14 md:py-24">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.6fr_1fr] md:gap-16">
+            <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+              Founder
+            </div>
+            <div>
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Sean Schaeffer founded Monterey Golf Tours. It&apos;s part of a family of
+                golf trip planning sites operating under the same ownership, including{" "}
+                <a
+                  href="https://golfthehighsierra.com"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Golf the High Sierra
+                </a>
+                .
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="text-center">
-            <Link
-              href="/quote/"
-              className="inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
-            >
-              Get a custom quote &rarr;
-            </Link>
-          </div>
-        </div>
+        <section className="px-6 py-16 text-center md:px-14 md:py-20">
+          <h2 className="text-display-md font-display font-bold text-ink">
+            Ready to plan your trip?
+          </h2>
+          <Link
+            href="/quote/"
+            className="mt-7 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
+          >
+            Get a custom quote &rarr;
+          </Link>
+        </section>
       </main>
 
       <Footer />

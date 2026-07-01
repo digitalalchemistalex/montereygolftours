@@ -114,7 +114,7 @@ export default async function DestinationPage({ params }: Props) {
         <Image src={dest.image} alt={dest.name} fill priority className="object-cover" />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.78) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.68) 100%)" }}
         />
         <Header />
         <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-12">
