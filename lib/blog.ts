@@ -5,6 +5,8 @@
 export type BlogPost = {
   slug: string;
   title: string;
+  cardTitle: string;
+  cardImage: string;
   category: "Trip Planning" | "Course Guides" | "Best Of";
   datePublished: string;
   dateModified: string;
@@ -17,6 +19,8 @@ export type BlogPost = {
 export const BLOG_POSTS: Record<string, BlogPost> = {
   "best-time-to-play-golf-monterey-peninsula": {
     slug: "best-time-to-play-golf-monterey-peninsula",
+    cardTitle: "Best Time to Play",
+    cardImage: "/art/blog/best-time-to-play.svg",
     title: "Best Time to Play Golf on the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -59,6 +63,8 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   },
   "how-to-plan-a-group-golf-trip-monterey": {
     slug: "how-to-plan-a-group-golf-trip-monterey",
+    cardTitle: "Plan a Group Trip",
+    cardImage: "/art/blog/group-trip.svg",
     title: "How to Plan a Group Golf Trip to the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -100,6 +106,8 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   },
   "bayonet-golf-course-guide": {
     slug: "bayonet-golf-course-guide",
+    cardTitle: "Bayonet Guide",
+    cardImage: "/art/blog/bayonet-guide.svg",
     title: "Bayonet Golf Course: A Complete Guide",
     category: "Course Guides",
     datePublished: "2026-06-30",
@@ -136,6 +144,8 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   },
   "best-golf-courses-monterey-peninsula": {
     slug: "best-golf-courses-monterey-peninsula",
+    cardTitle: "Best Courses",
+    cardImage: "/art/blog/best-courses.svg",
     title: "Best Golf Courses on the Monterey Peninsula in 2026",
     category: "Best Of",
     datePublished: "2026-06-30",
@@ -182,6 +192,8 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   },
   "monterey-golf-trip-on-a-budget": {
     slug: "monterey-golf-trip-on-a-budget",
+    cardTitle: "Budget Golf Trip",
+    cardImage: "/art/blog/budget-trip.svg",
     title: "How to Plan an Affordable Monterey Golf Trip",
     category: "Trip Planning",
     datePublished: "2026-06-30",

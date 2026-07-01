@@ -8,8 +8,6 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
-import "@fontsource/anton/400.css";
-import "@fontsource/luckiest-guy/400.css";
 import "@fontsource/pacifico/400.css";
 import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";

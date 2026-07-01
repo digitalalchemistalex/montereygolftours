@@ -1,0 +1,28 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+<title>Pop-art illustration of three golf tees standing together</title>
+<defs>
+<pattern id="halftone2" width="9" height="9" patternUnits="userSpaceOnUse">
+<circle cx="4.5" cy="4.5" r="1.6" fill="#000" opacity="0.5"/>
+</pattern>
+</defs>
+<circle cx="150" cy="150" r="144" fill="#2C6E8E" stroke="#000" stroke-width="6"/>
+<g>
+<path d="M95 235 L101 175 L89 175 Z" fill="#F5D033" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="95" cy="163" r="16" fill="#FFFFFF" stroke="#000" stroke-width="5"/>
+<path d="M83 168 A16 16 0 0 0 107 168" fill="url(#halftone2)"/>
+</g>
+<g>
+<path d="M150 245 L158 165 L142 165 Z" fill="#E8384F" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="150" cy="148" r="22" fill="#FFFFFF" stroke="#000" stroke-width="6"/>
+<path d="M133 155 A22 22 0 0 0 167 155" fill="url(#halftone2)"/>
+<circle cx="143" cy="140" r="2.5" fill="#000"/>
+<circle cx="157" cy="140" r="2.5" fill="#000"/>
+<circle cx="150" cy="150" r="2.5" fill="#000"/>
+</g>
+<g>
+<path d="M205 235 L211 175 L199 175 Z" fill="#F5D033" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="205" cy="163" r="16" fill="#FFFFFF" stroke="#000" stroke-width="5"/>
+<path d="M193 168 A16 16 0 0 0 217 168" fill="url(#halftone2)"/>
+</g>
+<line x1="30" y1="253" x2="270" y2="253" stroke="#000" stroke-width="6"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+<title>Pop-art illustration of a golf ball trophy with a star</title>
+<defs>
+<pattern id="halftone4" width="9" height="9" patternUnits="userSpaceOnUse">
+<circle cx="4.5" cy="4.5" r="1.6" fill="#000" opacity="0.5"/>
+</pattern>
+</defs>
+<circle cx="150" cy="150" r="144" fill="#E8384F" stroke="#000" stroke-width="6"/>
+<path d="M118 230 L182 230 L176 250 L124 250 Z" fill="#F5D033" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+<rect x="128" y="200" width="44" height="32" fill="#F5D033" stroke="#000" stroke-width="5"/>
+<path d="M108 150 Q108 190 150 195 Q192 190 192 150 L192 130 L108 130 Z" fill="#F5D033" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+<path d="M192 140 Q218 140 218 160 Q218 178 196 178" fill="none" stroke="#000" stroke-width="6"/>
+<path d="M108 140 Q82 140 82 160 Q82 178 104 178" fill="none" stroke="#000" stroke-width="6"/>
+<path d="M118 150 Q118 178 150 183" fill="url(#halftone4)" opacity="0.7"/>
+<circle cx="150" cy="103" r="30" fill="#FFFFFF" stroke="#000" stroke-width="6"/>
+<path d="M126 112 A30 30 0 0 0 174 112" fill="url(#halftone4)"/>
+<circle cx="140" cy="93" r="3" fill="#000"/>
+<circle cx="160" cy="93" r="3" fill="#000"/>
+<circle cx="150" cy="103" r="3" fill="#000"/>
+<circle cx="135" cy="108" r="3" fill="#000"/>
+<circle cx="165" cy="108" r="3" fill="#000"/>
+<path d="M234 78 L240 92 L255 93 L243 102 L247 117 L234 108 L221 117 L225 102 L213 93 L228 92 Z" fill="#F5D033" stroke="#000" stroke-width="4" stroke-linejoin="round"/>
+</svg>
