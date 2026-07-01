@@ -22,17 +22,24 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#F5D033] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+        <Image
+          src="/art/blog-hero.svg"
+          alt="Illustrated golf guides and tips"
+          fill
+          priority
+          className="object-cover"
+        />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.4) 0%, rgba(22,36,44,.82) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(20,20,20,.42) 0%, rgba(20,20,20,0) 40%)" }}
         />
         <Header />
         <div className="relative z-10 pt-20 md:pt-0">
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
+          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-ink md:text-[48px]">
             Trip planning guides
           </h1>
-          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:text-lg">
+          <p className="mt-3 max-w-[600px] rounded-lg bg-[rgba(255,255,255,.6)] px-3 py-1.5 font-body text-base leading-relaxed text-[#2A2620] backdrop-blur-sm md:text-lg">
             Course breakdowns, seasonal advice, and planning guides for golfing the
             Monterey Peninsula.
           </p>

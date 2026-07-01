@@ -1,0 +1,45 @@
+<svg width="1600" height="400" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
+<title>Bold pop-art illustration for the contact page with communication and golf elements</title>
+<defs>
+<pattern id="chDots" width="10" height="10" patternUnits="userSpaceOnUse">
+<circle cx="5" cy="5" r="1.8" fill="#000" opacity="0.5"/>
+</pattern>
+</defs>
+<rect width="1600" height="400" fill="#E8384F"/>
+<g opacity="0.5">
+<circle cx="110" cy="90" r="24" fill="#F5D033" stroke="#000" stroke-width="4"/>
+<circle cx="1490" cy="80" r="20" fill="#2C6E8E" stroke="#000" stroke-width="4"/>
+<circle cx="80" cy="310" r="20" fill="#2C6E8E" stroke="#000" stroke-width="4"/>
+<circle cx="1520" cy="320" r="26" fill="#F5D033" stroke="#000" stroke-width="4"/>
+<rect x="1400" y="200" width="30" height="30" fill="#F5D033" stroke="#000" stroke-width="4" transform="rotate(12 1415 215)"/>
+<rect x="150" y="180" width="28" height="28" fill="#2C6E8E" stroke="#000" stroke-width="4" transform="rotate(-15 164 194)"/>
+</g>
+<g transform="translate(1080,120) rotate(-6)">
+<rect x="0" y="0" width="90" height="150" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="7"/>
+<rect x="10" y="16" width="70" height="104" fill="#2C6E8E" stroke="#000" stroke-width="4"/>
+<circle cx="45" cy="136" r="7" fill="#000"/>
+<path d="M22 60 Q22 40 45 40 Q68 40 68 60 Q68 74 52 82 L52 92 L38 92 L38 82 Q22 74 22 60 Z" fill="#F5D033" opacity="0.9"/>
+</g>
+<g transform="translate(760,60)">
+<path d="M0 170 Q-3 130 6 100 Q9 88 17 96 Q21 105 15 118 Q11 128 13 145 Q15 160 10 170 Z" fill="#F5D033" stroke="#000" stroke-width="6"/>
+<circle cx="15" cy="90" r="54" fill="#FFFFFF" stroke="#000" stroke-width="7"/>
+<path d="M-32 106 A54 54 0 0 0 62 106" fill="url(#chDots)" opacity="0.85"/>
+<circle cx="-4" cy="70" r="5" fill="#000"/>
+<circle cx="20" cy="62" r="5" fill="#000"/>
+<circle cx="40" cy="78" r="5" fill="#000"/>
+<circle cx="6" cy="94" r="5" fill="#000"/>
+<circle cx="32" cy="98" r="5" fill="#000"/>
+</g>
+<g transform="translate(430,130)">
+<rect x="0" y="0" width="140" height="94" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="7"/>
+<path d="M4 6 L70 55 L136 6" fill="none" stroke="#2C6E8E" stroke-width="6" stroke-linejoin="round"/>
+<path d="M4 6 L136 6 L136 88 L4 88 Z" fill="none" stroke="#000" stroke-width="7"/>
+</g>
+<g transform="translate(1250,230)">
+<path d="M0 40 Q-4 12 20 4 Q44 -6 62 12 Q78 28 62 46 Q46 62 22 56 L2 66 Z" fill="#2C6E8E" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="20" cy="28" r="4" fill="#FFFFFF"/>
+<circle cx="34" cy="24" r="4" fill="#FFFFFF"/>
+<circle cx="46" cy="32" r="4" fill="#FFFFFF"/>
+</g>
+<path d="M0 340 Q400 310 800 335 T1600 325 L1600 400 L0 400 Z" fill="#F5D033" stroke="#000" stroke-width="6"/>
+</svg>
