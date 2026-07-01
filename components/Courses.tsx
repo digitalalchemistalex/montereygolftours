@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { COURSES } from "@/lib/courses";
+import Reveal from "./Reveal";
 
 const FEATURED_SLUG = "bayonet";
 const GRID_SLUGS = ["pacific-grove-golf-links", "carmel-valley-ranch", "poppy-hills"];
@@ -11,22 +12,24 @@ export default function Courses() {
 
   return (
     <section className="border-b border-[#e3ddcf] px-6 py-16 md:px-14 md:py-24">
-      <div className="mb-8 flex items-end justify-between md:mb-10">
-        <div>
-          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-            The courses
+      <Reveal>
+        <div className="mb-8 flex items-end justify-between md:mb-10">
+          <div>
+            <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+              The courses
+            </div>
+            <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+              Featured courses
+            </h2>
           </div>
-          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
-            Featured courses
-          </h2>
+          <Link
+            href="/golf-courses/"
+            className="hidden whitespace-nowrap font-ui text-[15px] font-semibold text-ocean hover:text-ocean-dark md:inline"
+          >
+            View all courses &rarr;
+          </Link>
         </div>
-        <Link
-          href="/golf-courses/"
-          className="hidden whitespace-nowrap font-ui text-[15px] font-semibold text-ocean hover:text-ocean-dark md:inline"
-        >
-          View all courses &rarr;
-        </Link>
-      </div>
+      </Reveal>
 
       <div className="flex flex-col gap-5 md:flex-row md:items-stretch">
         <Link

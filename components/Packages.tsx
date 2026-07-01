@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "./Reveal";
 
 const PACKAGES = [
   {
@@ -39,18 +40,20 @@ export default function Packages() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mb-9 max-w-[600px]">
-        <span className="inline-block rounded-full bg-gold px-4 py-1.5 font-ui text-xs font-bold uppercase tracking-[.1em] text-ink">
-          Real pricing, no surprises
-        </span>
-        <h2 className="mt-4 text-display-md font-display font-bold text-cream">
-          Trip packages, priced from real Monterey rounds
-        </h2>
-        <p className="mt-3 font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.85)] md:text-base">
-          Every range below is built from actual course and hotel rates — not placeholder
-          numbers. Final pricing depends on which courses and nights you pick.
-        </p>
-      </div>
+      <Reveal>
+        <div className="relative z-10 mb-9 max-w-[600px]">
+          <span className="inline-block rounded-full bg-gold px-4 py-1.5 font-ui text-xs font-bold uppercase tracking-[.1em] text-ink">
+            Real pricing, no surprises
+          </span>
+          <h2 className="mt-4 text-display-md font-display font-bold text-cream">
+            Trip packages, priced from real Monterey rounds
+          </h2>
+          <p className="mt-3 font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.85)] md:text-base">
+            Every range below is built from actual course and hotel rates — not placeholder
+            numbers. Final pricing depends on which courses and nights you pick.
+          </p>
+        </div>
+      </Reveal>
 
       <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-3">
         {PACKAGES.map((p) => (

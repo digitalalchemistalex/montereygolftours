@@ -2,20 +2,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { FEATURED_ITINERARY } from "@/lib/itinerary";
 import { ITINERARIES } from "@/lib/itineraries";
+import Reveal from "./Reveal";
 
 export default function Itinerary() {
   const fullTrip = ITINERARIES[FEATURED_ITINERARY.slug];
 
   return (
     <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
-      <div className="mb-10 flex flex-wrap items-center gap-3 md:mb-12">
-        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-          Sample itinerary
+      <Reveal>
+        <div className="mb-10 flex flex-wrap items-center gap-3 md:mb-12">
+          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+            Sample itinerary
+          </div>
+          <span className="rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold text-ink shadow-[0_1px_4px_rgba(0,0,0,.15)]">
+            Most booked
+          </span>
         </div>
-        <span className="rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold text-ink shadow-[0_1px_4px_rgba(0,0,0,.15)]">
-          Most booked
-        </span>
-      </div>
+      </Reveal>
 
       <div className="overflow-hidden rounded-2xl bg-white shadow-[0_10px_34px_rgba(37,35,33,.1)] md:grid md:grid-cols-[0.9fr_1.1fr]">
         {fullTrip && (

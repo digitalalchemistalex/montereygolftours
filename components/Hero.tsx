@@ -31,11 +31,8 @@ export default function Hero() {
       <Header />
 
       <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 md:px-14 md:pb-8">
-        <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(22,36,44,.35)] px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[.14em] text-cream backdrop-blur-sm">
-          California&apos;s Central Coast
-        </span>
         <h1
-          className="text-display-xl mt-6 font-display font-extrabold text-cream"
+          className="text-display-xl font-display font-extrabold text-cream"
           style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}
         >
           Your group&apos;s golf trip,

@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export type FAQItem = { q: string; a: string };
 export type FAQCategory = { category: string; items: FAQItem[] };
 
@@ -58,14 +60,16 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
 export default function FAQ() {
   return (
     <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
-      <div className="mb-12 md:mb-16">
-        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-          Questions
+      <Reveal>
+        <div className="mb-12 md:mb-16">
+          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+            Questions
+          </div>
+          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+            Frequently asked
+          </h2>
         </div>
-        <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
-          Frequently asked
-        </h2>
-      </div>
+      </Reveal>
 
       <div className="space-y-12 md:space-y-16">
         {FAQ_CATEGORIES.map((cat) => (

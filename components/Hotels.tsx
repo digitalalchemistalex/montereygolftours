@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HOTELS } from "@/lib/hotels";
+import Reveal from "./Reveal";
 
 const FEATURED_SLUGS = ["hyatt-regency-monterey", "carmel-valley-ranch", "quail-lodge"];
 
@@ -9,22 +10,24 @@ export default function Hotels() {
 
   return (
     <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
-      <div className="mb-8 flex items-end justify-between md:mb-10">
-        <div>
-          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-            Where to stay
+      <Reveal>
+        <div className="mb-8 flex items-end justify-between md:mb-10">
+          <div>
+            <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+              Where to stay
+            </div>
+            <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+              Golf-anchor hotels
+            </h2>
           </div>
-          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
-            Golf-anchor hotels
-          </h2>
+          <Link
+            href="/hotels/"
+            className="hidden whitespace-nowrap font-ui text-[15px] font-semibold text-ocean hover:text-ocean-dark md:inline"
+          >
+            View all hotels &rarr;
+          </Link>
         </div>
-        <Link
-          href="/hotels/"
-          className="hidden whitespace-nowrap font-ui text-[15px] font-semibold text-ocean hover:text-ocean-dark md:inline"
-        >
-          View all hotels &rarr;
-        </Link>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {featured.map((h) => (

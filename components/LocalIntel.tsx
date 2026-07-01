@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 function showCarWeekWarning() {
   const month = new Date().getMonth(); // 0-indexed
   return month === 6 || month === 7; // July or August
@@ -8,14 +10,16 @@ export default function LocalIntel() {
 
   return (
     <section className="border-b border-[#e3ddcf] px-6 py-16 md:px-14 md:py-24">
-      <div className="mb-10 max-w-[560px] md:mb-14">
-        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-          Local intelligence
+      <Reveal>
+        <div className="mb-10 max-w-[560px] md:mb-14">
+          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+            Local intelligence
+          </div>
+          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+            Things a brochure won&apos;t tell you
+          </h2>
         </div>
-        <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
-          Things a brochure won&apos;t tell you
-        </h2>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <div>
