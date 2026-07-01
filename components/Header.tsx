@@ -6,6 +6,7 @@ import { HOTELS } from "@/lib/hotels";
 import { DESTINATIONS } from "@/lib/destinations";
 import { ITINERARIES } from "@/lib/itineraries";
 import MobileNav from "./MobileNav";
+import Logo from "./Logo";
 
 const SIMPLE_LINKS = [
   { label: "Packages", href: "/packages/" },
@@ -83,15 +84,8 @@ const MEGA_MENUS = [
 export default function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between gap-7 px-6 py-6 md:px-14">
-      <Link href="/" className="flex items-center gap-3 flex-none">
-        <span
-          className="font-display text-xl font-bold leading-none text-[#f6f2e7]"
-          style={{ textShadow: "0 1px 8px rgba(0,0,0,.5)" }}
-        >
-          Monterey Golf
-          <br />
-          Tours
-        </span>
+      <Link href="/" className="flex items-center flex-none">
+        <Logo variant="dark-bg" className="h-9 w-auto md:h-10" style={{ filter: "drop-shadow(0 1px 6px rgba(0,0,0,.5))" }} />
       </Link>
 
       <nav className="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap lg:flex">

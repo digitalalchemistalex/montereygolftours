@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import Logo from "./Logo";
 
 const PLAY_LINKS = [
   { label: "Courses", href: "/golf-courses/" },
@@ -21,10 +22,8 @@ export default function Footer() {
     <footer>
       <div className="flex flex-col gap-10 bg-ink px-6 py-12 md:flex-row md:justify-between md:px-14">
         <div className="max-w-[300px]">
-          <Link href="/" className="font-display text-[22px] font-bold leading-none text-[#f6f2e7]">
-            Monterey Golf
-            <br />
-            Tours
+          <Link href="/" className="inline-block">
+            <Logo variant="dark-bg" className="h-9 w-auto" />
           </Link>
           <p className="mt-4 font-body text-sm italic leading-relaxed text-[#c4ccc6]">
             Private group golf trips to California&apos;s most storied coastline.
