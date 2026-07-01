@@ -24,6 +24,7 @@ export type CourseDetail = {
   greenFeeEst: string;
   nearbySlugs: string[];
   faqs: { q: string; a: string }[];
+  pointers?: string[];
 };
 
 export const COURSE_DETAILS: Record<string, CourseDetail> = {
@@ -99,6 +100,12 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Can groups book Bayonet?",
         a: "Yes, Bayonet accommodates group events. Contact the facility directly or work with Monterey Golf Tours to coordinate tee times as part of a planned trip.",
       },
+    ],
+    pointers: [
+      "Ranked #16 nationally on GolfPass's Top 25 Courses for Layout in the US (2017).",
+      "Has hosted several U.S. Presidents and foreign dignitaries during the course's Fort Ord military era.",
+      "Local lore holds that designer Gen. Robert McClure, a left-hander, laid out the course to favor his own slice.",
+      "The practice facility includes an all-grass driving range, two short-game areas, and a putting green overlooking Monterey Bay.",
     ],
   },
   pasatiempo: {
@@ -649,6 +656,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's the green fee at Spyglass Hill Golf Course®?",
         a: "A flat $550 per round, seven days a week.",
       },
+    ],
+    pointers: [
+      "Co-hosted the AT&T Pebble Beach Pro-Am from 1991 to 2009 alongside Pebble Beach Golf Links®.",
+      "A 2014 renovation introduced native sandy waste areas and opened up the forest floor, widely praised by golf media afterward.",
+      "Groups of 16 or more can book beyond the standard advance-booking window through the resort's Group Ambassador program.",
     ],
   },
   "links-at-spanish-bay": {

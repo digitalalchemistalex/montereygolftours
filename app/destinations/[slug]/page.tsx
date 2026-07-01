@@ -114,7 +114,7 @@ export default async function DestinationPage({ params }: Props) {
         <Image src={dest.image} alt={dest.name} fill priority className="object-cover" />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.68) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(10,40,45,.18) 0%, rgba(10,40,45,.68) 100%)" }}
         />
         <Header />
         <div className="relative z-10 mt-auto px-6 pb-10 pt-24 md:px-14 md:pb-14 md:pt-0">
@@ -124,14 +124,14 @@ export default async function DestinationPage({ params }: Props) {
         </div>
       </section>
 
-      <main className="flex-1">
-        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+      <main className="flex-1 bg-seacream">
+        <section className="border-b border-seaborder px-6 py-14 md:px-14 md:py-20">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.5fr_1fr] md:gap-16">
             <div className="flex flex-wrap content-start gap-2.5">
               {dest.trustBar.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-[#e7f0f3] px-4 py-2 font-ui text-[13px] font-semibold text-ocean-dark"
+                  className="rounded-full bg-white px-4 py-2 font-ui text-[13px] font-semibold text-turquoise-dark"
                 >
                   {item}
                 </span>
@@ -146,21 +146,21 @@ export default async function DestinationPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+        <section className="border-b border-seaborder bg-white px-6 py-14 md:px-14 md:py-20">
           <h2 className="text-display-md mb-5 font-display font-bold text-ink">
             Why play golf in {dest.name}
           </h2>
-          <p className="max-w-[760px] font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+          <p className="max-w-[760px] font-body text-[15px] leading-relaxed text-[#3a4844] md:text-base">
             {dest.whyPlay}
           </p>
           <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {dest.features.map((f, i) => (
               <div key={f.label}>
-                <div className="font-display text-2xl font-extrabold leading-none text-gold">
+                <div className="font-display text-2xl font-extrabold leading-none text-turquoise">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="mt-2.5 font-ui text-[15px] font-semibold text-ink">{f.label}</div>
-                <div className="mt-1.5 font-body text-[13px] leading-relaxed text-[#6a665e]">
+                <div className="mt-1.5 font-body text-[13px] leading-relaxed text-[#5c6b66]">
                   {f.detail}
                 </div>
               </div>
@@ -168,8 +168,24 @@ export default async function DestinationPage({ params }: Props) {
           </div>
         </section>
 
+        {dest.pointers && (
+          <section className="border-b border-seaborder px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+              Worth knowing
+            </h2>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+              {dest.pointers.map((p) => (
+                <div key={p} className="flex gap-3 rounded-xl border border-seaborder bg-white p-4">
+                  <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-turquoise" />
+                  <p className="font-body text-[14px] leading-relaxed text-[#3a4844]">{p}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {destCourses.length > 0 && (
-          <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <section className="border-b border-seaborder bg-white px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Courses in / near {dest.name}
             </h2>
@@ -179,16 +195,16 @@ export default async function DestinationPage({ params }: Props) {
                   <Link
                     key={c.slug}
                     href={`/golf-courses/${c.slug}/`}
-                    className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-transform hover:-translate-y-1"
+                    className="rounded-xl border border-seaborder bg-seacream p-5 transition-transform hover:-translate-y-1"
                   >
                     <div className="font-display text-lg font-bold text-ink">{c.name}</div>
-                    <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">
+                    <div className="mt-1.5 font-body text-[13px] text-[#5c6b66]">
                       Par {c.par} &middot; {c.yards}
                     </div>
-                    <p className="mt-3 font-body text-[13px] leading-relaxed text-[#5a564e]">
+                    <p className="mt-3 font-body text-[13px] leading-relaxed text-[#4a463f]">
                       {c.hook}
                     </p>
-                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                    <div className="mt-3 font-ui text-sm font-semibold text-turquoise-dark">
                       View course &rarr;
                     </div>
                   </Link>
@@ -199,7 +215,7 @@ export default async function DestinationPage({ params }: Props) {
         )}
 
         {destHotels.length > 0 && (
-          <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <section className="border-b border-seaborder px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Stay here
             </h2>
@@ -209,14 +225,14 @@ export default async function DestinationPage({ params }: Props) {
                   <Link
                     key={h.slug}
                     href={`/hotels/${h.slug}/`}
-                    className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-transform hover:-translate-y-1"
+                    className="rounded-xl border border-seaborder bg-white p-5 transition-transform hover:-translate-y-1"
                   >
                     <div className="font-display text-lg font-bold text-ink">{h.name}</div>
-                    <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">{h.city}</div>
-                    <p className="mt-3 font-body text-[13px] leading-relaxed text-[#5a564e]">
+                    <div className="mt-1.5 font-body text-[13px] text-[#5c6b66]">{h.city}</div>
+                    <p className="mt-3 font-body text-[13px] leading-relaxed text-[#4a463f]">
                       {h.description}
                     </p>
-                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                    <div className="mt-3 font-ui text-sm font-semibold text-turquoise-dark">
                       View hotel &rarr;
                     </div>
                   </Link>
@@ -227,7 +243,7 @@ export default async function DestinationPage({ params }: Props) {
         )}
 
         {destItineraries.length > 0 && (
-          <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <section className="border-b border-seaborder bg-white px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Sample itineraries featuring {dest.name}
             </h2>
@@ -236,13 +252,13 @@ export default async function DestinationPage({ params }: Props) {
                 <Link
                   key={t.slug}
                   href={`/itineraries/${t.slug}/`}
-                  className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-transform hover:-translate-y-1"
+                  className="rounded-xl border border-seaborder bg-seacream p-5 transition-transform hover:-translate-y-1"
                 >
-                  <div className="font-ui text-[11px] font-bold uppercase tracking-[.08em] text-ocean-dark">
+                  <div className="font-ui text-[11px] font-bold uppercase tracking-[.08em] text-turquoise-dark">
                     {t.durationDays} days &middot; {t.rounds}
                   </div>
                   <div className="mt-2 font-display text-lg font-bold text-ink">{t.title}</div>
-                  <div className="mt-3 font-display text-base font-bold text-ocean-dark">
+                  <div className="mt-3 font-display text-base font-bold text-turquoise-dark">
                     from ${t.priceFrom.toLocaleString()}/person
                     {!t.priceVerified && (
                       <span className="ml-1 font-ui text-[10px] font-normal italic text-[#8a7560]">
@@ -250,7 +266,7 @@ export default async function DestinationPage({ params }: Props) {
                       </span>
                     )}
                   </div>
-                  <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                  <div className="mt-3 font-ui text-sm font-semibold text-turquoise-dark">
                     View itinerary &rarr;
                   </div>
                 </Link>
@@ -259,23 +275,28 @@ export default async function DestinationPage({ params }: Props) {
           </section>
         )}
 
-        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
-          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
-            Common questions
-          </h2>
-          <div className="max-w-[800px] divide-y divide-[#ddd6c2] border-t border-[#ddd6c2]">
-            {dest.faqs.map((f) => (
-              <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
-                  {f.q}
-                  <span className="font-display text-xl text-gold group-open:hidden">+</span>
-                  <span className="hidden font-display text-xl text-gold group-open:inline">&minus;</span>
-                </summary>
-                <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#5a564e]">
-                  {f.a}
-                </p>
-              </details>
-            ))}
+        <section className="relative overflow-hidden border-b border-seaborder bg-white px-6 py-14 md:px-14 md:py-20">
+          <div className="pointer-events-none absolute inset-0 text-turquoise opacity-[0.05]">
+            <Image src="/art/patterns/faq-bg.svg" alt="" fill className="object-cover" />
+          </div>
+          <div className="relative">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+              Common questions
+            </h2>
+            <div className="max-w-[800px] divide-y divide-seaborder border-t border-seaborder">
+              {dest.faqs.map((f) => (
+                <details key={f.q} className="group py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
+                    {f.q}
+                    <span className="font-display text-xl text-turquoise group-open:hidden">+</span>
+                    <span className="hidden font-display text-xl text-turquoise group-open:inline">&minus;</span>
+                  </summary>
+                  <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#4a463f]">
+                    {f.a}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -285,7 +306,7 @@ export default async function DestinationPage({ params }: Props) {
           </h2>
           <Link
             href="/quote/"
-            className="mt-7 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
+            className="mt-7 inline-block rounded-[9px] bg-turquoise px-7 py-4 font-ui text-base font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-turquoise-dark"
           >
             Get a custom quote &rarr;
           </Link>

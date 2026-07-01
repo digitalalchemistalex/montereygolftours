@@ -15,6 +15,14 @@
   --color-terracotta-dark: #8A461E;
   --color-warmcream: #FBF1E6;
   --color-warmborder: #EAD9C4;
+  --color-turquoise: #1B8AA8;
+  --color-turquoise-dark: #125C7E;
+  --color-seacream: #EFF7F5;
+  --color-seaborder: #D2E6E2;
+  --color-fairway: #3B6B2E;
+  --color-fairway-dark: #294A20;
+  --color-fairwaycream: #F5F4E8;
+  --color-fairwayborder: #DDE0C4;
 }
 
 @theme inline {
@@ -31,6 +39,14 @@
   --color-terracotta-dark: var(--color-terracotta-dark);
   --color-warmcream: var(--color-warmcream);
   --color-warmborder: var(--color-warmborder);
+  --color-turquoise: var(--color-turquoise);
+  --color-turquoise-dark: var(--color-turquoise-dark);
+  --color-seacream: var(--color-seacream);
+  --color-seaborder: var(--color-seaborder);
+  --color-fairway: var(--color-fairway);
+  --color-fairway-dark: var(--color-fairway-dark);
+  --color-fairwaycream: var(--color-fairwaycream);
+  --color-fairwayborder: var(--color-fairwayborder);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Lora", Georgia, serif;
   --font-ui: "Inter", system-ui, sans-serif;

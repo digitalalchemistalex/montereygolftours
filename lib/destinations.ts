@@ -10,6 +10,7 @@ export type Destination = {
   trustBar: string[];
   whyPlay: string;
   features: { label: string; detail: string }[];
+  pointers?: string[];
   courseSlugs: string[];
   hotelSlugs: string[];
   itinerarySlugs: string[];
@@ -42,6 +43,12 @@ export const DESTINATIONS: Record<string, Destination> = {
         detail: "Strong for groups with non-golfing partners.",
       },
       { label: "MRY airport access", detail: "Most courses are 8–20 minutes from the airport." },
+    ],
+    pointers: [
+      "Del Monte Golf Course® dates to 1897 \u2014 the oldest golf course in continuous operation west of the Mississippi.",
+      "Monterey Regional Airport (MRY) has year-round nonstop service from LAX, SFO, PHX, DEN, DFW, SAN, and SEA.",
+      "Cannery Row and the Monterey Bay Aquarium sit a short walk or drive from most downtown hotels.",
+      "Fisherman's Wharf offers a walkable dining option for group dinners after a round.",
     ],
     courseSlugs: ["del-monte-golf-course", "laguna-seca-golf-ranch", "club-at-pasadera"],
     hotelSlugs: ["hyatt-regency-monterey", "monterey-plaza", "casa-munras"],
@@ -93,6 +100,11 @@ export const DESTINATIONS: Record<string, Destination> = {
         detail: "Aubergine at L'Auberge Carmel is one of the Central Coast's most acclaimed restaurants.",
       },
     ],
+    pointers: [
+      "Ocean Avenue is the main gallery and shopping street, running straight down to Carmel Beach.",
+      "Carmel-by-the-Sea has no street addresses on homes \u2014 mail is collected at the post office, a quirk of the village's history.",
+      "Aubergine at L'Auberge Carmel is a 9-table, chef-driven restaurant with a 2,500-bottle wine cellar.",
+    ],
     courseSlugs: ["carmel-valley-ranch", "quail-lodge"],
     hotelSlugs: ["lauberge-carmel"],
     itinerarySlugs: ["carmel-valley-golf-getaway", "4-day-monterey-peninsula-golf-trip"],
@@ -138,6 +150,11 @@ export const DESTINATIONS: Record<string, Destination> = {
         label: "Pete Dye design",
         detail: "Carmel Valley Ranch is the only Pete Dye course in Northern California.",
       },
+    ],
+    pointers: [
+      "Bernardus Winery and Folktale Winery are both a short drive from the valley's golf resorts.",
+      "Carmel Valley Ranch's course is a Pete Dye original from 1980, renovated by Gene Bates in 2006.",
+      "Guests of Bernardus Lodge can arrange access to The Club at Pasadera outside its usual Monday-only public window \u2014 confirm current terms with the property.",
     ],
     courseSlugs: ["carmel-valley-ranch", "quail-lodge"],
     hotelSlugs: ["carmel-valley-ranch", "quail-lodge", "bernardus-lodge"],
@@ -185,6 +202,11 @@ export const DESTINATIONS: Record<string, Destination> = {
         detail: "A short drive from downtown Monterey and Cannery Row.",
       },
     ],
+    pointers: [
+      "Pacific Grove Golf Links plays 5,727 yards at par 70, with split weekday/weekend rates.",
+      "Asilomar State Beach borders the town, offering a scenic walk for non-golfing members of the group.",
+      "Downtown Pacific Grove is a short drive from Cannery Row and downtown Monterey.",
+    ],
     courseSlugs: ["pacific-grove-golf-links"],
     hotelSlugs: [],
     itinerarySlugs: ["monterey-golf-trip-best-value", "3-day-monterey-golf-weekend"],
@@ -231,6 +253,11 @@ export const DESTINATIONS: Record<string, Destination> = {
         detail: "A short 5-minute drive from downtown Monterey.",
       },
     ],
+    pointers: [
+      "Bayonet plays 7,024 yards at a 74.8 rating and 139 slope from the back tees \u2014 built for serious and low-handicap players.",
+      "Bayonet's \u201cCombat Corner\u201d nickname refers to hole 15 specifically, part of the tough closing stretch from 11 through 15.",
+      "Both courses were designed in 1954 as part of the Fort Ord Army base's original recreational facilities.",
+    ],
     courseSlugs: ["bayonet", "black-horse"],
     hotelSlugs: [],
     itinerarySlugs: ["3-day-monterey-golf-weekend", "monterey-golf-trip-best-value"],
@@ -276,6 +303,11 @@ export const DESTINATIONS: Record<string, Destination> = {
         label: "Del Monte Forest setting",
         detail: "Coastal cliffs giving way to forested inland holes.",
       },
+    ],
+    pointers: [
+      "The scenic coastal drive through the Del Monte Forest connects several of these courses, running along the shoreline past Stillwater Cove.",
+      "Spyglass Hill Golf Course® can be booked 3 months out without a resort stay; The Links at Spanish Bay®, Del Monte Golf Course®, and The Hay\u2122 can be booked 6 months out.",
+      "Pebble Beach Golf Links® generally requires a 2\u20133 night resort stay to book in advance \u2014 otherwise it's a 24-hour booking window.",
     ],
     courseSlugs: ["pebble-beach-golf-links", "spyglass-hill", "links-at-spanish-bay", "poppy-hills"],
     hotelSlugs: [],
