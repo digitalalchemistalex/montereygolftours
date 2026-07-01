@@ -1,0 +1,19 @@
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+<title>Subtle question and conversation background pattern</title>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<path d="M100 90 Q100 60 130 60 Q160 60 160 90 Q160 112 138 122 L138 138" stroke-linecap="round"/>
+<circle cx="138" cy="158" r="3" fill="currentColor" stroke="none"/>
+</g>
+<g fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.7">
+<path d="M370 250 Q370 226 394 226 Q418 226 418 250 Q418 268 400 276 L400 289" stroke-linecap="round"/>
+<circle cx="400" cy="304" r="2.5" fill="currentColor" stroke="none"/>
+</g>
+<g fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.5">
+<path d="M60 320 Q60 300 80 300 Q100 300 100 320 Q100 335 85 341 L85 351" stroke-linecap="round"/>
+<circle cx="85" cy="363" r="2" fill="currentColor" stroke="none"/>
+</g>
+<rect x="300" y="70" width="120" height="90" rx="6" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+<line x1="316" y1="95" x2="404" y2="95" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+<line x1="316" y1="112" x2="404" y2="112" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+<line x1="316" y1="129" x2="374" y2="129" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+</svg>
