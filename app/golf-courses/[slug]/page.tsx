@@ -112,6 +112,13 @@ export default async function CoursePage({ params }: Props) {
     ],
   };
 
+  const statItems = [
+    { label: "Par", value: String(course.par) },
+    { label: "Yards", value: course.yards.replace(" yards", "") },
+    ...(course.rating ? [{ label: "Rating", value: course.rating }] : []),
+    ...(course.slope ? [{ label: "Slope", value: course.slope }] : []),
+  ];
+
   return (
     <>
       <script
@@ -119,88 +126,93 @@ export default async function CoursePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[400px] flex-col overflow-hidden bg-[#16242c] md:min-h-[480px]">
+      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         {courseImage && (
-          <Image
-            src={courseImage}
-            alt={course.name}
-            fill
-            priority
-            className="object-cover"
-          />
+          <Image src={courseImage} alt={course.name} fill priority className="object-cover" />
         )}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.78) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.25) 0%, rgba(22,36,44,.85) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-12">
-          <h1 className="font-display text-[36px] font-bold leading-[1.1] text-cream md:text-[52px]">
-            {course.name} &mdash; {course.city}
+        <div className="relative z-10 mt-auto px-6 pb-10 md:px-14 md:pb-14">
+          <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(22,36,44,.4)] px-3.5 py-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-cream backdrop-blur-sm">
+            {course.city}
+          </span>
+          <h1 className="text-display-lg mt-4 font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
+            {course.name}
           </h1>
-          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:text-lg">
+          <p className="mt-3 max-w-[620px] font-body text-base leading-relaxed text-[rgba(250,246,238,.9)] md:text-lg">
             {course.hook}
           </p>
         </div>
       </section>
 
       <main className="flex-1">
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-8 md:px-14">
-          <p
-            id="speakable-summary"
-            className="max-w-[760px] font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base"
-          >
-            {course.name} is a {course.type.toLowerCase()} course in {course.city}, designed by{" "}
-            {course.designer}. The course plays to par {course.par} at {course.yards} from the back
-            tees. {course.bestFor[0]} will find this course most rewarding.
-          </p>
-        </section>
-
-        <section className="border-b border-[#e3ddcf] px-6 py-6 md:px-14">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
-            <FactBox label="Par" value={String(course.par)} />
-            <FactBox label="Yards" value={course.yards} />
-            {course.rating && <FactBox label="Rating" value={course.rating} />}
-            {course.slope && <FactBox label="Slope" value={course.slope} />}
-            <FactBox label="Type" value={course.type} />
-            <FactBox label="City" value={course.city} />
-          </div>
-        </section>
-
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <div className="max-w-[760px] space-y-4">
-            {course.description.map((p, i) => (
-              <p key={i} className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-                {p}
-              </p>
+        <section className="border-b border-[#e3ddcf] px-6 py-8 md:px-14 md:py-10">
+          <div className="flex flex-wrap gap-x-10 gap-y-6 md:gap-x-14">
+            {statItems.map((s) => (
+              <div key={s.label}>
+                <div className="font-display text-4xl font-extrabold leading-none text-ocean-dark md:text-5xl">
+                  {s.value}
+                </div>
+                <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                  {s.label}
+                </div>
+              </div>
             ))}
+            <div className="min-w-[180px] flex-1">
+              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+                Type
+              </div>
+              <div className="mt-1.5 font-display text-lg font-bold text-ink">{course.type}</div>
+            </div>
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.55fr_1fr] md:gap-16">
+            <div>
+              <p id="speakable-summary" className="pull-quote text-2xl leading-tight text-ink md:text-3xl">
+                &ldquo;{course.bestFor[0]} will find this course most rewarding.&rdquo;
+              </p>
+              <div className="mt-6 font-body text-sm text-[#8a857a]">
+                Designed by {course.designer}
+              </div>
+            </div>
+            <div className="space-y-4">
+              {course.description.map((p, i) => (
+                <p key={i} className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Course highlights
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {course.highlights.map((h) => (
-              <div
-                key={h.label}
-                className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)]"
-              >
-                <div className="font-ui text-sm font-semibold text-ink">{h.label}</div>
-                <div className="mt-2 font-body text-[13px] leading-relaxed text-[#6a665e]">
-                  {h.detail}
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+            {course.highlights.map((h, i) => (
+              <div key={h.label} className="flex gap-4">
+                <div className="font-display text-2xl font-extrabold leading-none text-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <div className="font-ui text-base font-semibold text-ink">{h.label}</div>
+                  <div className="mt-1.5 font-body text-[14px] leading-relaxed text-[#6a665e]">
+                    {h.detail}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
-            Who this course is for
-          </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
             <div>
               <div className="font-ui text-sm font-bold uppercase tracking-[.08em] text-ocean-dark">
                 Best for
@@ -212,7 +224,7 @@ export default async function CoursePage({ params }: Props) {
               </ul>
             </div>
             <div>
-              <div className="font-ui text-sm font-bold uppercase tracking-[.08em] text-[#8a5b2b]">
+              <div className="font-ui text-sm font-bold uppercase tracking-[.08em] text-[#a85561]">
                 Less ideal if
               </div>
               <ul className="mt-3 space-y-2 font-body text-[15px] text-[#4a463f]">
@@ -224,11 +236,8 @@ export default async function CoursePage({ params }: Props) {
           </div>
         </section>
 
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
-            Practical info
-          </h2>
-          <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-10 md:px-14 md:py-14">
+          <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <PracticalItem label="Green fee" value={`${course.greenFeeEst} (verify current rates)`} />
             <PracticalItem label="Address" value={course.address} />
             <PracticalItem label="Phone" value={course.phone} />
@@ -237,8 +246,8 @@ export default async function CoursePage({ params }: Props) {
         </section>
 
         {nearby.length > 0 && (
-          <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-            <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+          <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Nearby courses
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
@@ -263,17 +272,17 @@ export default async function CoursePage({ params }: Props) {
           </section>
         )}
 
-        <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12 faq-section">
-          <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20 faq-section">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Common questions
           </h2>
           <div className="max-w-[800px] divide-y divide-[#e4e0d6] border-t border-[#e4e0d6]">
             {course.faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-ink">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
                   {f.q}
-                  <span className="font-ui text-xl text-gold group-open:hidden">+</span>
-                  <span className="hidden font-ui text-xl text-gold group-open:inline">&minus;</span>
+                  <span className="font-display text-xl text-gold group-open:hidden">+</span>
+                  <span className="hidden font-display text-xl text-gold group-open:inline">&minus;</span>
                 </summary>
                 <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#5a564e]">
                   {f.a}
@@ -283,13 +292,13 @@ export default async function CoursePage({ params }: Props) {
           </div>
         </section>
 
-        <section className="px-6 py-12 text-center md:px-14 md:py-14">
-          <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">
-            Play {course.name} as part of a planned Monterey trip
+        <section className="px-6 py-16 text-center md:px-14 md:py-20">
+          <h2 className="text-display-md font-display font-bold text-ink">
+            Play {course.name} as part of a planned trip
           </h2>
           <Link
             href="/packages/"
-            className="mt-6 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
+            className="mt-7 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
           >
             View packages &rarr;
           </Link>
@@ -301,24 +310,13 @@ export default async function CoursePage({ params }: Props) {
   );
 }
 
-function FactBox({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl border border-[#e3ddcf] bg-white p-4 text-center">
-      <div className="font-ui text-[11px] font-semibold uppercase tracking-[.06em] text-[#8a857a]">
-        {label}
-      </div>
-      <div className="mt-1 font-display text-lg font-bold text-ink">{value}</div>
-    </div>
-  );
-}
-
 function PracticalItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dt className="font-ui text-[11px] font-semibold uppercase tracking-[.06em] text-[#8a857a]">
         {label}
       </dt>
-      <dd className="mt-1 font-body text-[15px] text-ink">{value}</dd>
+      <dd className="mt-1.5 font-body text-[15px] text-ink">{value}</dd>
     </div>
   );
 }
