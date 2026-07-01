@@ -27,31 +27,44 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-12 md:px-14 md:py-14">
-      <div className="mb-8 max-w-[600px]">
-        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-          Questions
+    <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
+        <div>
+          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+            Questions
+          </div>
+          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+            Frequently
+            <br />
+            asked
+          </h2>
+          <p className="mt-4 max-w-[280px] font-body text-[14px] leading-relaxed text-[#8a857a]">
+            Can&apos;t find what you need? See the full FAQ page or send us a question
+            directly.
+          </p>
         </div>
-        <h2 className="mt-1 font-display text-3xl font-bold leading-[1.1] text-ink md:text-[40px]">
-          Frequently asked questions
-        </h2>
-      </div>
 
-      <div className="max-w-[820px] divide-y divide-[#e4e0d6] border-t border-[#e4e0d6]">
-        {FAQS.map((f) => (
-          <details key={f.q} className="group py-5">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-ink md:text-lg">
-              {f.q}
-              <span className="flex-none font-ui text-2xl text-gold group-open:hidden">+</span>
-              <span className="hidden flex-none font-ui text-2xl text-gold group-open:inline">
-                &minus;
-              </span>
-            </summary>
-            <p className="mt-3 max-w-[720px] font-body text-[15px] leading-relaxed text-[#5a564e]">
-              {f.a}
-            </p>
-          </details>
-        ))}
+        <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+          {FAQS.map((f, i) => (
+            <details
+              key={f.q}
+              className={`group py-5 ${i < FAQS.length - 2 ? "border-b border-[#ddd6c2]" : ""} ${
+                i % 2 === 0 ? "sm:pr-8" : ""
+              }`}
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-3 font-ui text-[15px] font-semibold leading-snug text-ink">
+                {f.q}
+                <span className="flex-none font-display text-xl leading-none text-gold group-open:hidden">+</span>
+                <span className="hidden flex-none font-display text-xl leading-none text-gold group-open:inline">
+                  &minus;
+                </span>
+              </summary>
+              <p className="mt-3 font-body text-[14px] leading-relaxed text-[#5a564e]">
+                {f.a}
+              </p>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   );

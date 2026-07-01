@@ -10,6 +10,7 @@
   --color-cream: #FAF6EE;
   --color-gold: #E8A0A8;
   --color-sky: #A8D4E8;
+  --color-stone: #EDE7D8;
 }
 
 @theme inline {
@@ -21,6 +22,7 @@
   --color-cream: var(--color-cream);
   --color-gold: var(--color-gold);
   --color-sky: var(--color-sky);
+  --color-stone: var(--color-stone);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Lora", Georgia, serif;
   --font-ui: "Inter", system-ui, sans-serif;
@@ -30,4 +32,27 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Editorial type scale — big, confident jumps between levels */
+.text-display-xl { font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: 0.98; letter-spacing: -0.02em; }
+.text-display-lg { font-size: clamp(2.25rem, 4.5vw, 4rem); line-height: 1.0; letter-spacing: -0.015em; }
+.text-display-md { font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.05; letter-spacing: -0.01em; }
+.text-stat-xl { font-size: clamp(3.5rem, 8vw, 7rem); line-height: 0.9; letter-spacing: -0.03em; }
+.text-stat-lg { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.92; letter-spacing: -0.02em; }
+
+/* Pull-quote style */
+.pull-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Scroll reveal */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

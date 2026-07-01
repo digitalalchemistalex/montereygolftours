@@ -30,43 +30,45 @@ export default function Hero() {
 
       <Header />
 
-      <div className="relative z-10 mt-auto max-w-[760px] px-6 pb-8 md:px-14 md:pb-7">
-        <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(22,36,44,.35)] px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[.1em] text-cream backdrop-blur-sm">
+      <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 md:px-14 md:pb-8">
+        <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(22,36,44,.35)] px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[.14em] text-cream backdrop-blur-sm">
           Monterey Peninsula, California
         </span>
         <h1
-          className="mt-6 font-display text-[40px] font-bold leading-[1.08] text-cream md:text-[64px] md:leading-[1.05]"
-          style={{ textShadow: "0 2px 20px rgba(0,0,0,.3)" }}
+          className="text-display-xl mt-6 font-display font-extrabold text-cream"
+          style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}
         >
-          Your group&apos;s golf trip to the coast, planned end to end
+          Your group&apos;s golf trip,
+          <br />
+          <span className="text-gold">planned end to end.</span>
         </h1>
-        <p className="mt-5 max-w-[540px] font-body text-base leading-relaxed text-[rgba(250,246,238,.85)] md:mt-6 md:text-lg">
+        <p className="mt-5 max-w-[520px] font-body text-base leading-relaxed text-[rgba(250,246,238,.88)] md:mt-6 md:text-lg">
           Courses, tee times, lodging, and transport for the Monterey Peninsula — handled by people
           who know the fog patterns as well as the fairways.
         </p>
-        <div className="mt-7 flex flex-wrap gap-3 md:mt-8">
+        <div className="mt-7 flex flex-wrap gap-3 md:mt-9">
           <Link
             href="/quote/"
-            className="inline-flex items-center gap-2 rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream shadow-[0_6px_18px_rgba(0,0,0,.25)] hover:bg-ocean-dark"
+            className="inline-flex items-center gap-2 rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream shadow-[0_6px_18px_rgba(0,0,0,.25)] transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
           >
             Get a custom quote &rarr;
           </Link>
           <Link
             href="/itineraries/"
-            className="inline-flex items-center rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-4 font-ui text-base font-semibold text-cream backdrop-blur-[2px] hover:border-gold hover:bg-[rgba(232,160,168,.18)]"
+            className="inline-flex items-center rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-4 font-ui text-base font-semibold text-cream backdrop-blur-[2px] transition-transform hover:-translate-y-0.5 hover:border-gold hover:bg-[rgba(232,160,168,.18)]"
           >
             See sample itineraries
           </Link>
         </div>
       </div>
 
-      <div className="relative z-10 mx-6 flex max-w-[920px] border-t border-[rgba(250,246,238,.22)] px-0 py-6 md:mx-14 md:py-7">
-        {STATS.map((s) => (
-          <div key={s.l} className="flex-1">
-            <div className="font-display text-2xl font-bold leading-none text-gold md:text-[40px]">
+      <div className="relative z-10 mx-6 grid max-w-[980px] grid-cols-2 gap-x-6 gap-y-8 border-t border-[rgba(250,246,238,.22)] px-0 py-7 md:mx-14 md:grid-cols-4 md:py-8">
+        {STATS.map((s, i) => (
+          <div key={s.l} className={i === 0 ? "md:pr-4" : "md:border-l md:border-[rgba(250,246,238,.15)] md:pl-6"}>
+            <div className="font-display text-stat-lg font-extrabold leading-none text-gold">
               {s.n}
             </div>
-            <div className="mt-2 font-ui text-[11px] font-medium uppercase tracking-[.06em] text-[rgba(250,246,238,.75)] md:text-xs">
+            <div className="mt-2.5 font-ui text-[11px] font-medium uppercase tracking-[.08em] text-[rgba(250,246,238,.75)] md:text-xs">
               {s.l}
             </div>
           </div>

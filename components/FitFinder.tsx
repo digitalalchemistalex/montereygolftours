@@ -25,17 +25,18 @@ const FIT_PROFILES = [
 
 export default function FitFinder() {
   return (
-    <section className="border-b border-[#eceae1] px-6 py-12 md:px-14 md:py-[60px]">
-      <div className="mx-auto mb-9 max-w-[560px] text-center">
-        <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-          Find your fit
+    <section className="border-b border-[#eceae1] px-6 py-16 md:px-14 md:py-24">
+      <div className="mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-12">
+        <div className="max-w-[520px]">
+          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+            Find your fit
+          </div>
+          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+            Which course fits your group?
+          </h2>
         </div>
-        <h2 className="mt-2.5 font-display text-3xl font-bold leading-[1.08] text-[#1e2826] md:text-[40px]">
-          Which course is right for your group?
-        </h2>
-        <p className="mt-3 font-body text-base text-[#6a6a62] md:text-[16.5px]">
-          Pick the profile that fits your foursome and we&apos;ll match the right courses to
-          your trip.
+        <p className="max-w-[280px] font-body text-[15px] leading-relaxed text-[#6a6a62]">
+          Pick the profile that matches your foursome — we&apos;ll match the courses.
         </p>
       </div>
 

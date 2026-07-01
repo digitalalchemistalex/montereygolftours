@@ -29,7 +29,7 @@ const PACKAGES = [
 
 export default function Packages() {
   return (
-    <section className="relative overflow-hidden border-b border-[#e3ddcf] bg-gradient-to-br from-ocean to-ocean-dark px-6 py-12 md:px-14 md:py-16">
+    <section className="relative overflow-hidden border-b border-[#e3ddcf] bg-gradient-to-br from-ocean to-ocean-dark px-6 py-16 md:px-14 md:py-24">
       <div
         className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold opacity-[0.12] md:h-96 md:w-96"
         aria-hidden="true"
@@ -43,7 +43,7 @@ export default function Packages() {
         <span className="inline-block rounded-full bg-gold px-4 py-1.5 font-ui text-xs font-bold uppercase tracking-[.1em] text-ink">
           Real pricing, no surprises
         </span>
-        <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] text-cream md:text-[42px]">
+        <h2 className="mt-4 text-display-md font-display font-bold text-cream">
           Trip packages, priced from real Monterey rounds
         </h2>
         <p className="mt-3 font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.85)] md:text-base">

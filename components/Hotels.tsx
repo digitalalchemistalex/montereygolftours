@@ -8,13 +8,13 @@ export default function Hotels() {
   const featured = FEATURED_SLUGS.map((slug) => HOTELS.find((h) => h.slug === slug)!);
 
   return (
-    <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-12 md:px-14 md:py-[54px]">
-      <div className="mb-6 flex items-baseline justify-between">
+    <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
+      <div className="mb-8 flex items-end justify-between md:mb-10">
         <div>
           <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
             Where to stay
           </div>
-          <h2 className="font-display text-3xl font-bold leading-none text-ink md:text-[40px]">
+          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
             Golf-anchor hotels
           </h2>
         </div>
