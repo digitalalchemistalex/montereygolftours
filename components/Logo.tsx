@@ -1,14 +1,25 @@
 type LogoProps = {
   className?: string;
-  variant?: "dark-bg" | "light-bg";
+  variant?: "dark-bg" | "light-bg" | "dark-bg-blue";
   style?: React.CSSProperties;
 };
 
 export default function Logo({ className, variant = "dark-bg", style }: LogoProps) {
-  const lineColor = variant === "dark-bg" ? "#A8D4E8" : "#2C6E8E";
+  let lineColor = "#2C6E8E";
+  let outlineColor = "#2C6E8E";
+  let golfToursColor = "#2C6E8E";
+
+  if (variant === "dark-bg") {
+    lineColor = "#A8D4E8";
+    outlineColor = "#F6F2E7";
+    golfToursColor = "#CDE6F2";
+  } else if (variant === "dark-bg-blue") {
+    lineColor = "#A8D4E8";
+    outlineColor = "#A8D4E8";
+    golfToursColor = "#A8D4E8";
+  }
+
   const monthereyFill = "#E8A0A8";
-  const outlineColor = variant === "dark-bg" ? "#F6F2E7" : "#2C6E8E";
-  const golfToursColor = variant === "dark-bg" ? "#CDE6F2" : "#2C6E8E";
 
   return (
     <svg
