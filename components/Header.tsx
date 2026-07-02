@@ -88,12 +88,13 @@ export default function Header() {
         <Logo />
       </Link>
 
-      <nav className="hidden flex-1 items-center justify-center gap-3 whitespace-nowrap lg:flex">
+      <nav className="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap lg:flex">
         {MEGA_MENUS.map((menu) => (
           <div key={menu.href} className="group relative">
             <Link
               href={menu.href}
-              className="flex items-center gap-1 rounded-[7px] bg-gold px-3.5 py-1.5 font-ui text-[14px] font-semibold text-ink shadow-[0_2px_8px_rgba(0,0,0,.15)] hover:bg-[#dc8893]"
+              className="flex items-center gap-1 py-3 font-ui text-[15px] text-[#f3efe2] hover:text-white"
+              style={{ textShadow: "0 1px 4px rgba(0,0,0,.5)" }}
             >
               {menu.label}
               <svg width="10" height="6" viewBox="0 0 10 6" className="mt-[1px] opacity-70">
@@ -166,7 +167,8 @@ export default function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-[7px] bg-gold px-3.5 py-1.5 font-ui text-[14px] font-semibold text-ink shadow-[0_2px_8px_rgba(0,0,0,.15)] hover:bg-[#dc8893]"
+            className="font-ui text-[15px] text-[#f3efe2] hover:text-white"
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,.5)" }}
           >
             {link.label}
           </Link>
