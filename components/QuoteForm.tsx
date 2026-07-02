@@ -21,6 +21,17 @@ const BUDGET_RANGES = [
 ];
 const TRIP_LENGTHS = ["3 days", "4 days", "5 days", "7 days", "Other / not sure yet"];
 
+// Real, already-established content elsewhere on the site (destination pages,
+// hotel dining data) — not invented for this form.
+const ACTIVITIES = [
+  "Wine tasting (Carmel Valley — Bernardus, Folktale)",
+  "Monterey Bay Aquarium",
+  "Cannery Row dining",
+  "Spa / wellness",
+  "Scenic coastal drive through Del Monte Forest",
+  "Carmel-by-the-Sea galleries & shopping",
+];
+
 // The Links at Spanish Bay is closed for renovation until April 17, 2027 and
 // must not be offered as a selectable option here.
 const CLOSED_COURSE_SLUGS = new Set(["links-at-spanish-bay"]);
@@ -56,6 +67,9 @@ export default function QuoteForm() {
   const [datesFlexible, setDatesFlexible] = useState(false);
   const [tripLength, setTripLength] = useState(TRIP_LENGTHS[1]);
   const [nonGolfer, setNonGolfer] = useState(false);
+  const [selectedHotels, setSelectedHotels] = useState<string[]>([]);
+  const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
+  const [groundTransport, setGroundTransport] = useState(false);
 
   // Read context from the referring page (course/hotel/trip slug in the URL)
   // once, up front, so a "Get a custom quote" click carries what the person
@@ -124,6 +138,18 @@ export default function QuoteForm() {
     );
   }
 
+  function toggleHotel(slug: string) {
+    setSelectedHotels((prev) =>
+      prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]
+    );
+  }
+
+  function toggleActivity(activity: string) {
+    setSelectedActivities((prev) =>
+      prev.includes(activity) ? prev.filter((a) => a !== activity) : [...prev, activity]
+    );
+  }
+
   // Live compatibility hint: flag when a selected course's green fee alone
   // is likely to exceed a "budget" range the person has chosen.
   const compatibilityHint = useMemo(() => {
@@ -176,6 +202,9 @@ export default function QuoteForm() {
       trip_length: tripLength,
       budget_per_person: budget,
       courses_interested: selectedCourses,
+      hotels_interested: selectedHotels,
+      activities_interested: selectedActivities,
+      ground_transport_needed: groundTransport,
       non_golfer_in_group: nonGolfer,
       message: fullMessage || null,
     });
@@ -401,6 +430,86 @@ export default function QuoteForm() {
             . This is golf only — lodging and transport aren&apos;t included yet.
           </div>
         )}
+      </div>
+
+      {/* Section: Lodging */}
+      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
+        Lodging
+      </div>
+      <div className="border-b border-[#ede8da] pb-7">
+        <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
+          Hotels you&apos;re interested in (optional)
+        </label>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {HOTELS.map((h) => (
+            <label
+              key={h.slug}
+              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean"
+            >
+              <input
+                type="checkbox"
+                checked={selectedHotels.includes(h.slug)}
+                onChange={() => toggleHotel(h.slug)}
+                className="h-4 w-4 accent-ocean"
+              />
+              {h.name}
+            </label>
+          ))}
+        </div>
+        <p className="mt-2.5 font-body text-[12px] text-[#8a857a]">
+          Not sure yet? Leave this blank and we&apos;ll match a hotel to whichever
+          courses you play.
+        </p>
+      </div>
+
+      {/* Section: Beyond golf */}
+      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
+        Beyond golf
+      </div>
+      <div className="border-b border-[#ede8da] pb-7">
+        <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
+          Dining and activities of interest (optional)
+        </label>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {ACTIVITIES.map((a) => (
+            <label
+              key={a}
+              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean"
+            >
+              <input
+                type="checkbox"
+                checked={selectedActivities.includes(a)}
+                onChange={() => toggleActivity(a)}
+                className="h-4 w-4 accent-ocean"
+              />
+              {a}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Section: Transportation */}
+      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
+        Transportation
+      </div>
+      <div className="border-b border-[#ede8da] pb-7">
+        <label className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3.5 py-3 font-body text-[14px] text-[#4a463f] hover:border-ocean">
+          <input
+            type="checkbox"
+            checked={groundTransport}
+            onChange={(e) => setGroundTransport(e.target.checked)}
+            className="mt-0.5 h-4 w-4 accent-ocean"
+          />
+          <span>
+            Help arrange ground transportation (airport transfers, between courses/hotels)
+          </span>
+        </label>
+        <p className="mt-2.5 max-w-[600px] font-body text-[12px] leading-relaxed text-[#8a857a]">
+          Monterey Regional Airport (MRY) is about 10 minutes from most courses, with
+          direct flights from major West Coast and select national hubs. San Jose
+          (SJC) and San Francisco (SFO) are 90&ndash;120 minute drives if you&apos;re
+          flying into one of those instead.
+        </p>
       </div>
 
       <div className="mt-6">
