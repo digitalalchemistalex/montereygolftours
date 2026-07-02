@@ -47,14 +47,15 @@ This file is the live source of truth for this repo. MASTER (Alex) updates it di
 
 ## LIVE DIRECTIVES (current, check every session)
 
-**Updated: 2026-07-01**
+**Updated: 2026-07-02**
 
-1. **[OPEN] Fix Spanish Bay bookability.** Confirmed live on `montereygolftours.vercel.app`:
-   - Page title reads "The Links at Spanish Bay™ — Tee Times & Course Info"
-   - Selectable checkbox in `/quote/` form
-   - Full FAQ describing how to book, green fee shown
-   - Zero mention of closure anywhere
-   **Action:** Remove from quote form course list. Either remove the course detail page or replace its content with a "reopening April 17, 2027" notice. Do not re-add booking-style content until that date.
+0. **[OPEN — CRITICAL/BLOCKING] Supabase has zero tables. The site cannot capture a single lead right now.** Confirmed via direct REST probe against the live project (`ewhatqtehwzlypjguvoo.supabase.co`): every expected table returns 404, including `leads`. Only one migration file exists in the repo (`supabase/migrations/001_create_leads_table.sql`) and it was never run against the live database. Every quote form submission is currently failing silently — `supabase.from("leads").insert()` errors out, the form still shows the success message to the visitor, but nothing is stored and no one is notified. This has been true since the form went live; unknown how many real leads have already been lost.
+   **Action, in order:** (1) Run `001_create_leads_table.sql` against the live Supabase project immediately. (2) Verify with a real test submission that a row actually lands. (3) Then build the notification path from directive #6 below — a working table with no notification is still better than nothing, but both are required. (4) Confirm whether `courses`, `hotels`, `packages`, `destinations`, `itineraries`, `blog_posts`, `trip_recaps` tables are needed yet per the strategy doc, or whether the current fully-static approach is the intended interim state — state this explicitly in your commit message, don't leave it ambiguous.
+
+1. **[OPEN] Fix Spanish Bay bookability.** Confirmed live in two places:
+   - `montereygolftours.vercel.app/golf-courses/links-at-spanish-bay/`: page title "Tee Times & Course Info," selectable in `/quote/` form, full booking FAQ, green fee shown, zero closure mention
+   - `llms.txt`: lists it as a featured bookable course with zero closure mention — this is served directly to AI crawlers (GPTBot, ClaudeBot, PerplexityBot etc. all allowed in robots.txt)
+   **Action:** Remove from quote form course list. Remove or replace course detail page content with a "reopening April 17, 2027" notice. Update its `llms.txt` entry the same way. Do not re-add booking-style content in either location until that date.
 
 2. **[OPEN] Move all course pricing out of `lib/course-details.ts` into Supabase.** 33 hardcoded `$` instances across all 13 courses (`greenFeeEst` field, `description` prose, `faqs[].a` strings) — confirmed live and confirmed injected into `FAQPage` JSON-LD schema. Follow the pattern already correct in `app/packages/page.tsx` (`t.priceFrom` + `priceVerified` flag pulled from Supabase). No price should exist as a TS string/number literal anywhere in this file.
 
