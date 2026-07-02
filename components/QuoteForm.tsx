@@ -315,19 +315,25 @@ export default function QuoteForm() {
           </label>
           {!datesFlexible && (
             <div className="grid grid-cols-2 gap-3">
-              <input
-                type="date"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-                className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-              />
-              <input
-                type="date"
-                value={endDate}
-                onChange={(e) => setEndDate(e.target.value)}
-                min={startDate || undefined}
-                className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-              />
+              <div>
+                <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Start date</label>
+                <input
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                  className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">End date</label>
+                <input
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                  min={startDate || undefined}
+                  className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
+                />
+              </div>
             </div>
           )}
           <label className="mt-2.5 flex cursor-pointer items-center gap-2 font-ui text-[13px] text-[#6a665e]">
