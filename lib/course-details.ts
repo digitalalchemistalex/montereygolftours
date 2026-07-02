@@ -25,6 +25,7 @@ export type CourseDetail = {
   nearbySlugs: string[];
   faqs: { q: string; a: string }[];
   pointers?: string[];
+  priceEstimate?: number;
 };
 
 export const COURSE_DETAILS: Record<string, CourseDetail> = {
@@ -78,6 +79,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "You want a relaxed, low-pressure round",
     ],
     greenFeeEst: "~$195 with cart",
+    priceEstimate: 195,
     nearbySlugs: ["black-horse"],
     faqs: [
       {
@@ -231,6 +233,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "You specifically want the hardest test on the peninsula (that's Bayonet)",
     ],
     greenFeeEst: "~$165 with cart",
+    priceEstimate: 165,
     nearbySlugs: ["bayonet"],
     faqs: [
       {
@@ -295,6 +298,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     lessIdealIf: ["You want maximum yardage and a pure power test"],
     greenFeeEst: "~$195 (rates vary by season — verify before booking)",
+    priceEstimate: 195,
     nearbySlugs: ["quail-lodge"],
     faqs: [
       {
@@ -360,6 +364,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     lessIdealIf: ["You're looking for a links-style or coastal-fog round"],
     greenFeeEst: "Dynamic pricing, ~$100–$150 on weekends (verify current rates)",
+    priceEstimate: 125,
     nearbySlugs: ["carmel-valley-ranch"],
     faqs: [
       {
@@ -419,6 +424,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     lessIdealIf: ["You want a marquee, bucket-list championship test"],
     greenFeeEst: "$58 weekday / $78 weekend",
+    priceEstimate: 58,
     nearbySlugs: ["pacific-grove-golf-links"],
     faqs: [
       {
@@ -482,6 +488,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     lessIdealIf: ["You want a long, championship-length test"],
     greenFeeEst: "$66 Mon–Thu / $89 Fri–Sun",
+    priceEstimate: 66,
     nearbySlugs: ["laguna-seca-golf-ranch"],
     faqs: [
       {
@@ -544,6 +551,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     lessIdealIf: ["You specifically want a Pebble Beach Company-branded course"],
     greenFeeEst: "$95 Mon–Thu / $125 Fri–Sun",
+    priceEstimate: 95,
     nearbySlugs: [],
     faqs: [
       {
@@ -665,6 +673,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     bestFor: ["Bucket-list trips", "Groups planning well in advance", "Serious golfers wanting the marquee round"],
     lessIdealIf: ["Budget is the primary constraint — this is the most expensive round on the peninsula"],
     greenFeeEst: "$695 flat rate (+ $60/person cart fee for non-resort guests)",
+    priceEstimate: 695,
     nearbySlugs: ["spyglass-hill", "links-at-spanish-bay"],
     faqs: [
       {
@@ -726,6 +735,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     bestFor: ["Low-handicap and scratch players", "Groups wanting a genuine championship test"],
     lessIdealIf: ["Your group is mostly high-handicap or beginner players"],
     greenFeeEst: "$550 flat rate",
+    priceEstimate: 550,
     nearbySlugs: ["pebble-beach-golf-links", "links-at-spanish-bay"],
     faqs: [
       {
@@ -850,6 +860,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     bestFor: ["Groups staying at the Hyatt Regency Monterey", "Mixed-handicap groups wanting a gentler historic round"],
     lessIdealIf: ["You specifically want a cliff-top coastal test"],
     greenFeeEst: "$150 weekday / $175 weekend",
+    priceEstimate: 150,
     nearbySlugs: [],
     faqs: [
       {
@@ -911,6 +922,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     lessIdealIf: ["You want a full 18-hole championship round — see Pebble Beach Golf Links® or Spyglass Hill®"],
     greenFeeEst: "$75 weekday / $80 weekend",
+    priceEstimate: 75,
     nearbySlugs: ["pebble-beach-golf-links"],
     faqs: [
       {

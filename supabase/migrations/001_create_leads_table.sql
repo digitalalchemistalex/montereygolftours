@@ -10,8 +10,10 @@ create table if not exists leads (
   phone text,
   group_size text not null,
   travel_dates text,
+  trip_length text,
   budget_per_person text,
   courses_interested text[],
+  non_golfer_in_group boolean default false,
   message text
 );
 
