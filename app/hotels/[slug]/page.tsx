@@ -302,7 +302,7 @@ export default async function HotelPage({ params }: Props) {
             Pair {hotel.name} with a planned golf trip
           </h2>
           <Link
-            href="/quote/"
+            href={`/quote/?hotel=${hotel.slug}`}
             className="mt-7 inline-block rounded-[9px] bg-terracotta px-7 py-4 font-ui text-base font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-terracotta-dark"
           >
             Get a custom quote &rarr;

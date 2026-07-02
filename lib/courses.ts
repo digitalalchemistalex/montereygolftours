@@ -121,8 +121,8 @@ export const COURSES: Course[] = [
     city: "Pebble Beach, CA",
     par: 72,
     yards: "6,726 yds",
-    type: "Resort (Pebble Beach Resorts)",
-    hook: "A true links-style course on the Monterey Peninsula, recently transformed by architect Gil Hanse.",
+    type: "Closed until Apr 2027",
+    hook: "Closed for a full Gil Hanse-led renovation — reopening April 17, 2027.",
   },
   {
     slug: "del-monte-golf-course",

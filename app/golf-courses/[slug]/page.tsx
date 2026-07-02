@@ -20,8 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = COURSE_DETAILS[slug];
   if (!course) return {};
 
-  const title = `${course.name} — Tee Times & Course Info | Monterey Golf Tours`;
-  const description = `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Plan your Monterey golf trip including ${course.name} with Monterey Golf Tours.`;
+  const isClosed = slug === "links-at-spanish-bay";
+  const title = isClosed
+    ? `${course.name} — Closed for Renovation, Reopening April 2027 | Monterey Golf Tours`
+    : `${course.name} — Tee Times & Course Info | Monterey Golf Tours`;
+  const description = isClosed
+    ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now and plan your Monterey golf trip with Monterey Golf Tours.`
+    : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Plan your Monterey golf trip including ${course.name} with Monterey Golf Tours.`;
 
   return {
     title,
@@ -57,6 +62,7 @@ export default async function CoursePage({ params }: Props) {
 
   const canonicalUrl = `https://${SITE.domain}/golf-courses/${course.slug}/`;
   const courseImage = COURSES.find((c) => c.slug === course.slug)?.image;
+  const isClosed = slug === "links-at-spanish-bay";
 
   const schema = {
     "@context": "https://schema.org",
@@ -65,7 +71,9 @@ export default async function CoursePage({ params }: Props) {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `${course.name} — Tee Times & Course Info | Monterey Golf Tours`,
+        name: isClosed
+          ? `${course.name} — Closed for Renovation, Reopening April 2027 | Monterey Golf Tours`
+          : `${course.name} — Tee Times & Course Info | Monterey Golf Tours`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
       },

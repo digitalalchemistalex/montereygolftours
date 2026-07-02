@@ -1,9 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { COURSES } from "@/lib/courses";
+import { HOTELS } from "@/lib/hotels";
+import { ITINERARIES } from "@/lib/itineraries";
 
 const GROUP_SIZES = ["2-4", "5-8", "9-12", "13-16", "17-20", "21-50", "50+"];
 const BUDGET_RANGES = [
@@ -15,22 +18,107 @@ const BUDGET_RANGES = [
   "Not sure yet",
 ];
 
+// Courses whose green fee alone typically exceeds a "budget" range, used for
+// the live compatibility hint. Figures come from each course's own verified
+// greenFeeEst in lib/course-details.ts.
+// The Links at Spanish Bay is closed for renovation until April 17, 2027 and
+// must not be offered as a selectable option here.
+const CLOSED_COURSE_SLUGS = new Set(["links-at-spanish-bay"]);
+const BOOKABLE_COURSES = COURSES.filter((c) => !CLOSED_COURSE_SLUGS.has(c.slug));
+
+const PREMIUM_COURSE_SLUGS = new Set([
+  "pebble-beach-golf-links",
+  "spyglass-hill",
+  "links-at-spanish-bay",
+]);
+
 export default function QuoteForm() {
+  const searchParams = useSearchParams();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [groupSize, setGroupSize] = useState(GROUP_SIZES[1]);
   const [travelDates, setTravelDates] = useState("");
-  const [budget, setBudget] = useState(BUDGET_RANGES[0]);
-  const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
-  const [message, setMessage] = useState("");
+
+  // Read context from the referring page (course/hotel/trip slug in the URL)
+  // once, up front, so a "Get a custom quote" click carries what the person
+  // was actually looking at instead of always landing on an identical blank
+  // form. Computed as lazy initial state rather than in an effect so it
+  // doesn't trigger extra renders.
+  const initialContext = useMemo(() => {
+    const courseSlug = searchParams.get("course");
+    const hotelSlug = searchParams.get("hotel");
+    const tripSlug = searchParams.get("trip");
+
+    if (courseSlug) {
+      const course = COURSES.find((c) => c.slug === courseSlug);
+      if (course) {
+        return {
+          courses: [courseSlug],
+          message: "",
+          budget: BUDGET_RANGES[0],
+          note: `Noted — you're inquiring about ${course.name}.`,
+        };
+      }
+    }
+
+    if (hotelSlug) {
+      const hotel = HOTELS.find((h) => h.slug === hotelSlug);
+      if (hotel) {
+        return {
+          courses: [] as string[],
+          message: `I'm interested in staying at ${hotel.name}.`,
+          budget: BUDGET_RANGES[0],
+          note: `Noted — you're inquiring about ${hotel.name}.`,
+        };
+      }
+    }
+
+    if (tripSlug) {
+      const trip = ITINERARIES[tripSlug];
+      if (trip) {
+        const closest =
+          BUDGET_RANGES.find((b) => {
+            if (b === "Not sure yet") return false;
+            const num = parseInt(b.replace(/[^0-9]/g, ""), 10);
+            return trip.priceFrom <= num;
+          }) ?? BUDGET_RANGES[0];
+        return {
+          courses: trip.courseSlugs,
+          message: `I'm interested in the ${trip.title} itinerary.`,
+          budget: closest,
+          note: `Noted — you're inquiring about the ${trip.title} itinerary.`,
+        };
+      }
+    }
+
+    return { courses: [] as string[], message: "", budget: BUDGET_RANGES[0], note: null as string | null };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [budget, setBudget] = useState(initialContext.budget);
+  const [selectedCourses, setSelectedCourses] = useState<string[]>(initialContext.courses);
+  const [message, setMessage] = useState(initialContext.message);
+  const contextNote = initialContext.note;
 
   function toggleCourse(slug: string) {
     setSelectedCourses((prev) =>
       prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]
     );
   }
+
+  // Live compatibility hint: flag when a selected course's green fee alone
+  // is likely to exceed a "budget" range the person has chosen.
+  const compatibilityHint = useMemo(() => {
+    if (budget !== "Under $1,000/person" && budget !== "$1,000-$1,500/person") return null;
+    const premiumSelected = selectedCourses
+      .filter((s) => PREMIUM_COURSE_SLUGS.has(s))
+      .map((s) => COURSES.find((c) => c.slug === s)?.name)
+      .filter(Boolean);
+    if (premiumSelected.length === 0) return null;
+    return `Heads up: ${premiumSelected.join(", ")} typically run $350\u2013$695 per round, which may exceed your selected budget across a multi-round trip. We'll still send options \u2014 just flagging it now so there are no surprises.`;
+  }, [budget, selectedCourses]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -79,6 +167,12 @@ export default function QuoteForm() {
       onSubmit={handleSubmit}
       className="rounded-2xl border border-[#e3ddcf] bg-white p-6 md:p-10"
     >
+      {contextNote && (
+        <div className="mb-6 rounded-lg border border-[#cfe0d8] bg-[#eef6f1] px-4 py-3 font-ui text-[13px] text-[#2f6b4f]">
+          {contextNote}
+        </div>
+      )}
+
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Name" required>
           <input
@@ -143,12 +237,18 @@ export default function QuoteForm() {
         </Field>
       </div>
 
+      {compatibilityHint && (
+        <div className="mt-5 rounded-lg border border-[#e8cfa0] bg-[#fdf3e2] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#6a5528]">
+          {compatibilityHint}
+        </div>
+      )}
+
       <div className="mt-6">
         <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
           Courses you&apos;re interested in (optional)
         </label>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {COURSES.map((c) => (
+          {BOOKABLE_COURSES.map((c) => (
             <label
               key={c.slug}
               className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean"

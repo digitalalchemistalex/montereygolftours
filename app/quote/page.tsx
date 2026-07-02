@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -35,7 +36,9 @@ export default function QuotePage() {
 
       <main className="flex-1 px-6 py-10 md:px-14 md:py-12">
         <div className="mx-auto max-w-[760px]">
-          <QuoteForm />
+          <Suspense fallback={<div className="h-[600px]" />}>
+            <QuoteForm />
+          </Suspense>
           <p className="mt-6 text-center font-body text-[13px] text-[#8a857a]">
             Prefer to talk it through? Call us at{" "}
             <a href={SITE.phoneHref} className="text-ocean">
