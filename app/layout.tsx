@@ -9,6 +9,8 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/pacifico/400.css";
+import "@fontsource/rye/400.css";
+import "@fontsource/sancreek/400.css";
 import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
 
