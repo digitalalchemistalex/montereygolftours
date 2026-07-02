@@ -32,7 +32,7 @@ export default function Hero() {
 
       <Header />
 
-      <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 pt-44 md:px-14 md:pb-8 md:pt-32">
+      <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 pt-[200px] md:px-14 md:pb-8 md:pt-[152px]">
         <h1
           className="text-display-xl font-display font-extrabold text-cream"
           style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}
