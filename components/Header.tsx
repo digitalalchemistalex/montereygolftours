@@ -85,7 +85,7 @@ export default function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between gap-7 px-6 py-6 md:px-14">
       <Link href="/" className="flex items-center flex-none">
-        <Logo variant="dark-bg-blue" className="h-20 w-auto" style={{ filter: "drop-shadow(0 1px 6px rgba(0,0,0,.5))" }} />
+        <Logo variant="dark-bg-blue" className="h-28 w-auto" />
       </Link>
 
       <nav className="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap lg:flex">

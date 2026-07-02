@@ -29,6 +29,7 @@ export default function Logo({ className, variant = "dark-bg", style }: LogoProp
       role="img"
       aria-label="Monterey Golf Tours"
     >
+      <line x1="20" y1="82" x2="245" y2="82" stroke={lineColor} strokeWidth="1.5" />
       <text
         x="350"
         y="95"
@@ -44,7 +45,7 @@ export default function Logo({ className, variant = "dark-bg", style }: LogoProp
       >
         MONTEREY
       </text>
-      <line x1="20" y1="82" x2="680" y2="82" stroke={lineColor} strokeWidth="1.5" opacity="0.65" />
+      <line x1="455" y1="82" x2="680" y2="82" stroke={lineColor} strokeWidth="1.5" />
       <text
         x="350"
         y="132"
