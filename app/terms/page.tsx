@@ -20,7 +20,7 @@ export default function TermsPage() {
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.4) 0%, rgba(22,36,44,.82) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-32 md:pt-0">
+        <div className="relative z-10 pt-32 md:pt-28">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Terms of Use
           </h1>

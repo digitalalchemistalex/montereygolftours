@@ -26,7 +26,7 @@ export default function QuotePage() {
           style={{ background: "linear-gradient(180deg, rgba(15,25,20,.18) 0%, rgba(15,25,20,.6) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-32 md:pt-0">
+        <div className="relative z-10 pt-32 md:pt-28">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]" style={{ textShadow: "0 2px 12px rgba(0,0,0,.4)" }}>
             Get a custom golf trip quote
           </h1>

@@ -143,7 +143,7 @@ export default async function CoursePage({ params }: Props) {
           style={{ background: "linear-gradient(180deg, rgba(15,25,15,.25) 0%, rgba(15,25,15,.85) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 pt-36 md:px-14 md:pb-14 md:pt-0">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-36 md:px-14 md:pb-14 md:pt-28">
           <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(20,30,15,.4)] px-3.5 py-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-cream backdrop-blur-sm">
             {course.city}
           </span>
