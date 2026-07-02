@@ -93,7 +93,7 @@ export default function Header() {
           <div key={menu.href} className="group relative">
             <Link
               href={menu.href}
-              className="flex items-center gap-1 py-3 font-ui text-[15px] text-[#f3efe2] hover:text-white"
+              className="flex items-center gap-1 py-3 font-ui text-[15px] text-gold hover:text-white"
               style={{ textShadow: "0 1px 4px rgba(0,0,0,.5)" }}
             >
               {menu.label}
@@ -167,7 +167,7 @@ export default function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="font-ui text-[15px] text-[#f3efe2] hover:text-white"
+            className="font-ui text-[15px] text-gold hover:text-white"
             style={{ textShadow: "0 1px 4px rgba(0,0,0,.5)" }}
           >
             {link.label}
