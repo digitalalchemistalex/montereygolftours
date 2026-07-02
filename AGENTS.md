@@ -60,6 +60,10 @@ This file is the live source of truth for this repo. MASTER (Alex) updates it di
 
 3. **[NOTE] Logo — flagged, no action needed retroactively.** Commit `d483847` (Raza, 2026-07-01) shipped the current live logo (white-outline dark-bg) without a preview/approval step, per Raza's own commit message. Noted for awareness — going forward, all visual/brand changes need a preview step before shipping (see Git workflow above). Not asking for a redo unless Sean flags it.
 
+4. **[OPEN] Add Open Graph / Twitter Card meta tags — site-wide, 53/53 pages missing.** Confirmed live: zero `og:image`, `og:title`, `og:description`, `twitter:card` tags anywhere on the site (checked every page in the sitemap). Any link shared on Slack/iMessage/Facebook/LinkedIn currently renders with no preview card. **Action:** Add Open Graph + Twitter Card metadata via Next.js metadata API on every page/layout — at minimum `og:title`, `og:description`, `og:image` (needs a real image asset, not a placeholder), `og:url`, `twitter:card=summary_large_image`.
+
+5. **[OPEN] Homepage missing `rel="canonical"`.** Every other page (52/53) has a self-referencing canonical tag; the homepage alone does not. Add canonical pointing to `https://montereygolftours.com/`.
+
 ---
 
 *When you resolve a LIVE DIRECTIVE, change its tag from [OPEN] to [DONE] and note the commit SHA in your next commit message, don't delete the entry — MASTER needs the history.*
