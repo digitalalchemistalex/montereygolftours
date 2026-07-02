@@ -64,6 +64,8 @@ This file is the live source of truth for this repo. MASTER (Alex) updates it di
 
 5. **[OPEN] Homepage missing `rel="canonical"`.** Every other page (52/53) has a self-referencing canonical tag; the homepage alone does not. Add canonical pointing to `https://montereygolftours.com/`.
 
+6. **[OPEN] Lead notification system does not exist.** Confirmed by reading `components/QuoteForm.tsx` and the full repo tree: the quote form does a direct client-side `supabase.from("leads").insert()` and shows a static success message — that's the entire flow. No API route, no webhook, no email trigger anywhere in the repo. The form copy promises "a custom quote within 24 hours," but nothing notifies Sean when a lead comes in — leads currently land silently in Supabase with no one alerted. **Action:** Build the notification path (Resend or Gmail API, per `gmail-api-integration` skill pattern) that fires on insert and emails Sean. This is the only path to leads for the whole site — treat as high priority, not cosmetic.
+
 ---
 
 *When you resolve a LIVE DIRECTIVE, change its tag from [OPEN] to [DONE] and note the commit SHA in your next commit message, don't delete the entry — MASTER needs the history.*
