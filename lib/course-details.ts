@@ -176,6 +176,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's the green fee at Pasatiempo?",
         a: "Rates are not published as a flat figure and vary by season and tee time — contact the club directly for current daily-fee pricing.",
       },
+      {
+        q: "What other courses did Alister MacKenzie design?",
+        a: "MacKenzie is also the architect behind Augusta National, Cypress Point, and Royal Melbourne — Pasatiempo is considered one of his finest works among that list.",
+      },
     ],
   },
   "black-horse": {
@@ -245,6 +249,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's the green fee at Black Horse?",
         a: "Estimated around $165 with cart, though rates vary seasonally — always verify current pricing before booking.",
       },
+      {
+        q: "How far is Black Horse from downtown Monterey?",
+        a: "Both Bayonet and Black Horse sit about 5 miles from downtown Monterey, within the same facility.",
+      },
     ],
   },
   "carmel-valley-ranch": {
@@ -300,6 +308,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         q: "What's the green fee at Carmel Valley Ranch?",
         a: "Around $195, though rates vary by season and tee time — always verify current pricing before booking.",
+      },
+      {
+        q: "How long is the course at Carmel Valley Ranch?",
+        a: "6,117 yards at par 70 — shorter than many peninsula courses, favoring strategy and shot placement over pure length, characteristic of Pete Dye's design style.",
+      },
+      {
+        q: "Can non-resort guests play Carmel Valley Ranch?",
+        a: "It primarily serves resort guests as an on-site course, so availability for outside play should be confirmed directly with the resort or arranged as part of a planned trip." ,
       },
     ],
   },
@@ -358,6 +374,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is Quail Lodge open to non-resort guests?",
         a: "Yes, it operates as a semi-private resort course with availability for outside play alongside resort guests.",
       },
+      {
+        q: "Who designed Quail Lodge?",
+        a: "Robert Muir Graves designed the course, which plays 6,500 yards at par 71 with a slope of 129.",
+      },
+      {
+        q: "Is Quail Lodge good for early tee times?",
+        a: "Yes — its inland Carmel Valley location tends to clear of fog earlier than coastal peninsula courses, making early rounds more reliable.",
+      },
     ],
   },
   "laguna-seca-golf-ranch": {
@@ -404,6 +428,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         q: "How far is Laguna Seca from downtown Monterey?",
         a: "It's close to downtown Monterey, making it convenient for groups based in the city.",
+      },
+      {
+        q: "How long is the course at Laguna Seca?",
+        a: "6,226 yards at par 71 — a straightforward, accessible 18-hole layout." ,
+      },
+      {
+        q: "Is Laguna Seca good for a mixed-skill group?",
+        a: "Yes — it's positioned as a relaxed-pace round suited to beginners and mixed-handicap groups, and a natural choice to open or close a multi-day trip.",
+      },
+      {
+        q: "Is Laguna Seca associated with the nearby raceway of the same name?",
+        a: "The golf course and WeatherTech Raceway Laguna Seca share the same regional name but are separate facilities.",
       },
     ],
   },
@@ -456,6 +492,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's the green fee at Pacific Grove?",
         a: "$66 Monday through Thursday, $89 Friday through Sunday.",
       },
+      {
+        q: "How long is Pacific Grove Golf Links?",
+        a: "5,727 yards at par 70 — shorter than most peninsula courses, suited to a relaxed, walkable round.",
+      },
+      {
+        q: "Is Pacific Grove Golf Links good for beginners?",
+        a: "Yes — its shorter yardage and municipal pace make it one of the more approachable rounds on the peninsula for mixed-ability groups.",
+      },
+      {
+        q: "Is Pacific Grove Golf Links owned by a resort?",
+        a: "No — it's a city-owned municipal course, which is why its rates run well below the peninsula's resort and private options.",
+      },
     ],
   },
   "poppy-hills": {
@@ -506,6 +554,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's the green fee at Poppy Hills?",
         a: "$95 Monday through Thursday, $125 Friday through Sunday.",
       },
+      {
+        q: "Who designed Poppy Hills?",
+        a: "Robert Trent Jones II designed the course, which plays 7,091 yards from the Jones tees at par 71.",
+      },
+      {
+        q: "What kind of greens does Poppy Hills have?",
+        a: "Bentgrass greens, offering quality conditioning at daily-fee pricing.",
+      },
+      {
+        q: "Is Poppy Hills in the same area as Pebble Beach Golf Links®?",
+        a: "Yes — it sits in the same Del Monte Forest, though it's independently owned by the NCGA and doesn't carry the resort's gate fee.",
+      },
     ],
   },
   "club-at-pasadera": {
@@ -552,6 +612,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         q: "Who designed The Club at Pasadera?",
         a: "Jack Nicklaus designed the course as a Jack Nicklaus Signature Design, which opened in 2000.",
+      },
+      {
+        q: "How long is the course at The Club at Pasadera?",
+        a: "Roughly 6,673–6,733 yards depending on the source, at par 71 with a 73.7 rating.",
+      },
+      {
+        q: "Who owns The Club at Pasadera?",
+        a: "It's owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name The Club at Pasadera.",
+      },
+      {
+        q: "Is The Club at Pasadera a good fit for a group trip?",
+        a: "It suits groups planning well in advance to secure access, given its limited public availability as a primarily private club.",
       },
     ],
   },
@@ -607,6 +679,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "How do I book a round at Pebble Beach Golf Links®?",
         a: "Monterey Golf Tours, as an IAGTO-contracted partner with Pebble Beach Resorts®, can coordinate tee times as part of a planned group trip.",
       },
+      {
+        q: "How far in advance can I book Pebble Beach Golf Links®?",
+        a: "It generally requires a 2–3 night resort stay to book in advance — otherwise it's a 24-hour booking window.",
+      },
+      {
+        q: "How long is the course at Pebble Beach Golf Links®?",
+        a: "6,802 yards from the blue tees, rating 74.9, slope 144, with shorter tee options available for a range of player abilities.",
+      },
     ],
   },
   "spyglass-hill": {
@@ -656,6 +736,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's the green fee at Spyglass Hill Golf Course®?",
         a: "A flat $550 per round, seven days a week.",
       },
+      {
+        q: "Who designed Spyglass Hill Golf Course®?",
+        a: "Robert Trent Jones Sr. designed the course, which plays up to 6,960 yards with a 75.4 rating and 145 slope.",
+      },
+      {
+        q: "How far in advance can I book Spyglass Hill Golf Course®?",
+        a: "Without a resort stay, it can be booked 3 months out — a shorter window than the other Pebble Beach Resorts® courses aside from Pebble Beach Golf Links® itself.",
+      },
+      {
+        q: "What's distinctive about the layout at Spyglass Hill?",
+        a: "The front nine moves through coastal dunes before the back nine turns inland through Del Monte Forest pines, giving the round two distinct characters.",
+      },
     ],
     pointers: [
       "Co-hosted the AT&T Pebble Beach Pro-Am from 1991 to 2009 alongside Pebble Beach Golf Links®.",
@@ -673,38 +765,51 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     rating: "73.7",
     slope: "143",
     holes: 18,
-    designer: "Original design team; recent transformation led by Gil Hanse",
-    type: "Resort (Pebble Beach Resorts®)",
+    designer: "Original design team; under a Gil Hanse-led transformation",
+    type: "Resort (Pebble Beach Resorts®) — currently closed for renovation",
     address: "2700 17-Mile Drive, Pebble Beach, CA 93953",
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
-    hook: "A true links-style course on the Monterey Peninsula, recently transformed by architect Gil Hanse.",
+    hook: "Closed for a full Gil Hanse-led transformation — reopening April 17, 2027.",
     description: [
-      "The Links at Spanish Bay™ plays as genuine links-style golf — firm, fast turf and coastal dunes character that's rare on the California coast. The course recently underwent a multi-million dollar transformation led by architect Gil Hanse.",
-      "At par 72 and 6,726 yards (rating 73.7, slope 143), the course is priced at $350 per player for 18 holes.",
+      "The Links at Spanish Bay™ is currently closed for a comprehensive renovation led by architect Gil Hanse, Jim Wagner, and Hanse Golf Course Design. Construction began March 18, 2026, and Pebble Beach Company has confirmed a reopening date of April 17, 2027, a few months ahead of the U.S. Open's return to Pebble Beach Golf Links®.",
+      "The transformation is intended to elevate the roughly 40-year-old course — historically a true links-style layout with firm, fast turf and coastal dunes character — to match the pedigree of the resort's other championship courses, while updating aging infrastructure including drainage and irrigation.",
+      "The course is not currently bookable and does not appear in trip planning until it reopens. Check back after April 17, 2027, or contact us for the latest status.",
     ],
     highlights: [
       {
-        label: "True links-style golf",
-        detail: "Firm, fast, dune-bordered turf, rare on the California coast.",
+        label: "Currently closed",
+        detail: "Under renovation since March 18, 2026, with a confirmed reopening date of April 17, 2027.",
       },
       {
-        label: "Gil Hanse transformation",
-        detail: "A recent multi-million dollar redesign led by the acclaimed modern architect.",
+        label: "Gil Hanse-led transformation",
+        detail: "A full redesign by Gil Hanse, Jim Wagner, and Hanse Golf Course Design.",
       },
     ],
-    bestFor: ["Links-golf enthusiasts", "Groups wanting variety alongside the parkland/cliff-top Pebble Beach courses"],
-    lessIdealIf: ["You're not familiar with or don't enjoy firm, fast links-style conditions"],
-    greenFeeEst: "$350 per player",
+    bestFor: [],
+    lessIdealIf: ["You want to book this course before it reopens — it is not currently available"],
+    greenFeeEst: "Not applicable — course closed until April 17, 2027",
     nearbySlugs: ["pebble-beach-golf-links", "spyglass-hill"],
     faqs: [
       {
-        q: "What's the green fee at The Links at Spanish Bay™?",
-        a: "$350 per player for 18 holes.",
+        q: "Is The Links at Spanish Bay™ open right now?",
+        a: "No. The course is closed for a full Gil Hanse-led renovation that began March 18, 2026. Pebble Beach Company has confirmed a reopening date of April 17, 2027.",
       },
       {
-        q: "What makes The Links at Spanish Bay™ different from the other Pebble Beach Resorts® courses?",
-        a: "It plays as true links-style golf — firm, fast turf and dune-bordered holes — distinct from the cliff-top and forest character of the resort's other courses. It was recently transformed by architect Gil Hanse.",
+        q: "Can I book a round at The Links at Spanish Bay™ for a trip before April 2027?",
+        a: "No — the course is not currently bookable and doesn't appear as an option in our quote form until it reopens.",
+      },
+      {
+        q: "What's changing in the renovation?",
+        a: "Gil Hanse's team is transforming the course from its 1980s-era Scottish-inspired links layout into what Pebble Beach Company describes as a modern California coastal design, alongside infrastructure upgrades to drainage and irrigation.",
+      },
+      {
+        q: "Should I plan a trip around the reopening?",
+        a: "If your trip falls after April 17, 2027, get in touch and we can look at including it once it's confirmed open and bookable.",
+      },
+      {
+        q: "What other Pebble Beach Resorts® courses are available in the meantime?",
+        a: "Pebble Beach Golf Links®, Spyglass Hill Golf Course®, Del Monte Golf Course®, and The Hay™ remain open and bookable.",
       },
     ],
   },
@@ -759,6 +864,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Which hotel is on Del Monte Golf Course®?",
         a: "The Hyatt Regency Monterey Hotel & Spa sits directly on the course grounds.",
       },
+      {
+        q: "How long is Del Monte Golf Course®?",
+        a: "6,356 yards at par 72, with a 71.8 rating and 129 slope — a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses.",
+      },
+      {
+        q: "How far in advance can I book Del Monte Golf Course®?",
+        a: "Without a resort stay, it can be booked 6 months out.",
+      },
     ],
   },
   "the-hay": {
@@ -811,6 +924,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         q: "What's the green fee at The Hay™?",
         a: "$75 on weekdays, $80 on weekends.",
+      },
+      {
+        q: "How far in advance can I book The Hay™?",
+        a: "Without a resort stay, it can be booked 6 months out, the same window as the other non-Pebble-Beach-Golf-Links resort courses.",
+      },
+      {
+        q: "Is The Hay™ good for a group with mixed experience levels?",
+        a: "Yes — its short, 9-hole par-27 format makes it approachable for beginners while still giving experienced golfers a fun, fast round at Pebble Beach.",
       },
     ],
   },

@@ -25,6 +25,7 @@ export type ItineraryTemplate = {
   courseSlugs: string[];
   hotelSlugs: string[];
   mostBooked?: boolean;
+  faqs: { q: string; a: string }[];
 };
 
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
@@ -70,6 +71,14 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
           "Afternoon: depart after the round",
         ],
       },
+    ],
+    faqs: [
+      { q: "How many people is this trip built for?", a: "This 3-day weekend is designed for a casual golfer group of 4–8 players." },
+      { q: "Which courses are included?", a: "Pacific Grove Golf Links, Bayonet, and Laguna Seca Golf Ranch — one round each over the 3 days." },
+      { q: "Where do we stay?", a: "Hyatt Regency Monterey or Portola Hotel, both central to all three courses." },
+      { q: "What's the price range for this trip?", a: "Verified at $564–$1,740 per person, depending on room and course selections." },
+      { q: "Is this a good fit for a first golf trip to Monterey?", a: "Yes — it's built as an accessible weekend introduction, pairing an easy shakeout round with one serious challenge day at Bayonet." },
+      { q: "Can this itinerary be extended?", a: "Yes — get a custom quote and we can extend it toward the 4-day or 5-day version if you want more rounds." },
     ],
   },
   "4-day-monterey-peninsula-golf-trip": {
@@ -121,6 +130,14 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         title: "Black Horse + departure",
         items: ["Morning: Black Horse — 7:30am tee time", "Afternoon: depart after the round"],
       },
+    ],
+    faqs: [
+      { q: "Why is this the most booked itinerary?", a: "It balances 4 rounds across difficulty levels — Poppy Hills, Bayonet, a Carmel Valley round, and Black Horse — without the longer commitment of the 5- or 7-day trips." },
+      { q: "How many rounds are included?", a: "4 rounds over 4 days." },
+      { q: "Where do we stay?", a: "Hyatt Regency Monterey or Monterey Plaza Hotel & Spa." },
+      { q: "What's the price range?", a: "Verified at $949–$2,340 per person, depending on room and course selections." },
+      { q: "Does this include a Carmel Valley round?", a: "Yes — day 3 is dedicated to Carmel Valley golf, giving the group a warmer, more relaxed round between the two Fort Ord challenge days." },
+      { q: "Is Bayonet the hardest round on this trip?", a: "Yes — it's positioned as the trip's challenge day, with an early tee time to make the most of it." },
     ],
   },
   "5-day-complete-monterey-golf-vacation": {
@@ -189,6 +206,14 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
           "Afternoon: depart",
         ],
       },
+    ],
+    faqs: [
+      { q: "How many rounds and nights does this trip include?", a: "5 rounds over 5 days, with 3 nights at Hyatt Regency Monterey and 2 nights at Carmel Valley Ranch." },
+      { q: "Why split the stay between two hotels?", a: "It pairs the central Monterey location for the coastal rounds with a Carmel Valley base for the warmer, inland golf days." },
+      { q: "What's the price range?", a: "Verified at $1,264–$2,915 per person, depending on room and course selections." },
+      { q: "Which courses are included?", a: "Pacific Grove, Poppy Hills, Bayonet, Carmel Valley Ranch, and Quail Lodge." },
+      { q: "Is this trip good for mixed-skill groups?", a: "Yes — it mixes an accessible opener, a serious Del Monte Forest round, the Bayonet challenge day, and two more relaxed Carmel Valley rounds." },
+      { q: "Can we customize the hotel split?", a: "Yes — get a custom quote if you'd prefer to stay at one property the whole trip instead of splitting the stay." },
     ],
   },
   "7-day-ultimate-monterey-golf-trip": {
@@ -271,6 +296,14 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         items: ["Morning: Laguna Seca Golf Ranch (final round)", "Afternoon: depart MRY"],
       },
     ],
+    faqs: [
+      { q: "How many rounds does the 7-day trip include?", a: "6–7 rounds across the full week, covering nearly every course featured on this site." },
+      { q: "Where do we stay?", a: "3 nights at Carmel Valley Ranch and 4 nights at Monterey Plaza Hotel & Spa." },
+      { q: "Is the pricing verified for this trip?", a: "No — this is a longer, more customized itinerary, so the $2,500–$4,000 per-person range shown is an estimate. Get a custom quote for accurate pricing." },
+      { q: "Does this trip include The Club at Pasadera?", a: "Yes, alongside wine tasting on the same day, given the Carmel Valley base for the first stretch of the trip." },
+      { q: "Is this trip only for serious golfers?", a: "It's built around a full week of golf, so it suits groups who want to play nearly every day — Pacific Grove and Black Horse are included as more relaxed rounds alongside the tougher days." },
+      { q: "Can we shorten this trip?", a: "Yes — the 4-day or 5-day itineraries cover a similar course mix in less time if a full week isn't practical." },
+    ],
   },
   "carmel-valley-golf-getaway": {
     slug: "carmel-valley-golf-getaway",
@@ -311,6 +344,14 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         items: ["Optional: Carmel Beach walk, Carmel shopping", "Depart"],
       },
     ],
+    faqs: [
+      { q: "Who is this itinerary built for?", a: "Golfers traveling with a non-golfing partner, or anyone wanting a wine-country-meets-golf trip rather than a golf-only schedule." },
+      { q: "How much golf is included?", a: "2–3 rounds over 3 days, with wine tasting built into the schedule rather than a full daily round." },
+      { q: "Where do we stay?", a: "Carmel Valley Ranch or Bernardus Lodge, both wine-country properties." },
+      { q: "Is the pricing verified?", a: "No — the $900–$1,500 per-person range is a template estimate. Get a custom quote for accurate pricing." },
+      { q: "Is Carmel-by-the-Sea included?", a: "Yes — day 1 includes dinner in Carmel-by-the-Sea, a 20-minute drive from Carmel Valley." },
+      { q: "Can we add more golf to this itinerary?", a: "Yes — get a custom quote and we can add rounds or extend the trip." },
+    ],
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
@@ -348,6 +389,14 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         title: "Black Horse + departure",
         items: ["Morning: Black Horse — more affordable than Bayonet, still an excellent round", "Depart after the round"],
       },
+    ],
+    faqs: [
+      { q: "How is this trip more affordable than the others?", a: "It uses Pacific Grove, Laguna Seca, and Black Horse — the peninsula's most accessible green fees — instead of premium or Pebble Beach Resorts® courses." },
+      { q: "Where do we stay?", a: "Casa Munras Garden Hotel & Spa or Portola Hotel, both value-focused downtown Monterey properties." },
+      { q: "Is the pricing verified?", a: "No — the $350–$600 per-person range is a template estimate based on typical budget course and lodging costs. Get a custom quote for accurate pricing." },
+      { q: "Is Black Horse a downgrade from Bayonet?", a: "Not really — it's the same 1954 Fort Ord facility, generally considered a slightly more approachable companion round to Bayonet at a similar price point." },
+      { q: "Can we add a Pebble Beach Resorts® round to this trip?", a: "Yes — get a custom quote and we can build one in, though it will raise the per-person cost significantly above this trip's budget range." },
+      { q: "Is this a good trip for a first-time visit?", a: "Yes — it's a low-cost way to sample three real Monterey Peninsula courses before committing to a premium trip on a future visit." },
     ],
   },
 };

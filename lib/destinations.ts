@@ -70,6 +70,14 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "What's nearby besides golf?",
         a: "Cannery Row and the Monterey Bay Aquarium are both in Monterey, making it a strong base for groups traveling with non-golfing partners.",
       },
+      {
+        q: "Which airlines fly nonstop to Monterey?",
+        a: "Monterey Regional Airport (MRY) has year-round nonstop service from LAX, SFO, PHX, DEN, DFW, SAN, and SEA, plus seasonal routes from LAS, BUR, ORD, and SNA.",
+      },
+      {
+        q: "Is Del Monte Golf Course® walkable from downtown Monterey?",
+        a: "It's a short drive rather than a walk, but it's one of the closest courses to downtown, sitting directly on the Hyatt Regency Monterey property.",
+      },
     ],
   },
   carmel: {
@@ -120,6 +128,14 @@ export const DESTINATIONS: Record<string, Destination> = {
       {
         q: "How far is Carmel from the airport?",
         a: "About 15 minutes from Monterey Regional Airport (MRY).",
+      },
+      {
+        q: "Does Carmel-by-the-Sea have street addresses?",
+        a: "No — homes in the village don't have street numbers; mail is collected at the post office, a well-known local quirk.",
+      },
+      {
+        q: "What's the best restaurant in Carmel for a group dinner?",
+        a: "Aubergine at L'Auberge Carmel is the most acclaimed, though its 9-table size suits smaller groups best — worth booking well ahead.",
       },
     ],
   },
@@ -172,6 +188,14 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "Is Carmel Valley good for early tee times?",
         a: "Yes — its inland microclimate often clears earlier than the coast, making early morning rounds more reliable here.",
       },
+      {
+        q: "Is there wine tasting near the golf courses?",
+        a: "Yes — Bernardus Winery and Folktale Winery are both a short drive from Carmel Valley Ranch and Quail Lodge.",
+      },
+      {
+        q: "How far is Carmel Valley from the airport?",
+        a: "About 20 minutes from Monterey Regional Airport (MRY), a bit further than the coastal courses given its inland location.",
+      },
     ],
   },
   "pacific-grove": {
@@ -222,6 +246,14 @@ export const DESTINATIONS: Record<string, Destination> = {
       {
         q: "Are there hotels directly in Pacific Grove?",
         a: "We don't currently feature a hotel directly in Pacific Grove — groups typically base in nearby Monterey, a short drive away.",
+      },
+      {
+        q: "How long is the course at Pacific Grove Golf Links?",
+        a: "5,727 yards at par 70, shorter than most peninsula courses, which suits a relaxed pace and mixed-handicap groups.",
+      },
+      {
+        q: "Is Asilomar State Beach nearby?",
+        a: "Yes, it borders Pacific Grove, offering a scenic walk for non-golfing members of the group.",
       },
     ],
   },
@@ -274,6 +306,14 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "Are there hotels in Seaside?",
         a: "We don't currently feature a hotel directly in Seaside — most groups base in nearby Monterey, a 5-minute drive away.",
       },
+      {
+        q: "What's the yardage at Bayonet and Black Horse?",
+        a: "Bayonet plays 7,024 yards at a 74.8 rating and 139 slope; Black Horse plays the same 7,024 yards at par 72, slope 141, rating 73.7.",
+      },
+      {
+        q: "Were Bayonet and Black Horse always public courses?",
+        a: "No — both were built in 1954 as part of the Fort Ord Army base's recreational facilities, and opened to the public after the base was decommissioned in the 1990s.",
+      },
     ],
   },
   "pebble-beach-area": {
@@ -324,6 +364,14 @@ export const DESTINATIONS: Record<string, Destination> = {
       {
         q: "Is there a more affordable course in the same area?",
         a: "Yes — Poppy Hills Golf Course sits in the same Del Monte Forest, owned by the Northern California Golf Association (NCGA), without the Pebble Beach Resorts® gate fee.",
+      },
+      {
+        q: "How far in advance can I book a Pebble Beach round?",
+        a: "It depends on the course and whether you're staying on-property. Without a resort stay, Spyglass Hill can be booked 3 months out, and The Links at Spanish Bay®, Del Monte Golf Course®, and The Hay™ can be booked 6 months out. Pebble Beach Golf Links® generally requires a 2–3 night resort stay to book in advance, otherwise it's a 24-hour booking window.",
+      },
+      {
+        q: "What's the oldest course in the Del Monte Forest?",
+        a: "Del Monte Golf Course®, dating to 1897 — the oldest golf course in continuous operation west of the Mississippi.",
       },
     ],
   },

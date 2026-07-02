@@ -91,6 +91,15 @@ export default async function ItineraryPage({ params }: Props) {
           { "@type": "ListItem", position: 3, name: trip.title, item: canonicalUrl },
         ],
       },
+      {
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl}#faq`,
+        mainEntity: trip.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
     ],
   };
 
@@ -260,6 +269,26 @@ export default async function ItineraryPage({ params }: Props) {
           </p>
         </section>
 
+        <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+            Common questions
+          </h2>
+          <div className="max-w-[800px] divide-y divide-[#e4e0d6] border-t border-[#e4e0d6]">
+            {trip.faqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
+                  {f.q}
+                  <span className="font-display text-xl text-gold group-open:hidden">+</span>
+                  <span className="hidden font-display text-xl text-gold group-open:inline">&minus;</span>
+                </summary>
+                <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#5a564e]">
+                  {f.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
         <section className="px-6 py-12 text-center md:px-14 md:py-14">
           <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">
             Want different courses or dates?
@@ -269,7 +298,7 @@ export default async function ItineraryPage({ params }: Props) {
             group.
           </p>
           <Link
-            href="/quote/"
+            href={`/quote/?trip=${trip.slug}`}
             className="mt-6 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
           >
             Get a custom quote &rarr;

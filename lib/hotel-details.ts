@@ -231,6 +231,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "Are there golf practice facilities on-site?",
         a: "Yes — a driving range, practice green, full golf shop, and golf instruction are all available on property.",
       },
+      {
+        q: "What's the dining like at Quail Lodge?",
+        a: "Covey Grill is the on-site restaurant, serving the property's golfers and guests.",
+      },
     ],
   },
   "bernardus-lodge": {
@@ -300,6 +304,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "What's in a standard room at Bernardus Lodge?",
         a: "A stone fireplace, vaulted ceilings, a private terrace or balcony, vineyard views, and a mini-fridge bar with Nespresso.",
       },
+      {
+        q: "How far is Bernardus Lodge from Carmel Valley Ranch?",
+        a: "About 7 minutes — the two properties are the closest golf-anchor hotels to each other in Carmel Valley.",
+      },
     ],
   },
   "monterey-plaza": {
@@ -359,6 +367,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Is parking available at Monterey Plaza?",
         a: "Valet parking only.",
+      },
+      {
+        q: "How close is Monterey Plaza to the golf courses?",
+        a: "8 minutes to Pacific Grove Golf Links, The Club at Pasadera, and Bayonet/Black Horse — among the shortest drive times of any hotel on this site.",
       },
     ],
   },
@@ -422,6 +434,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Does IHG loyalty apply here?",
         a: "Yes, the property participates in the IHG One Rewards loyalty program.",
+      },
+      {
+        q: "What are the rooms like at InterContinental The Clement Monterey?",
+        a: "425–450 sq ft standard rooms with Frette linens, marble bathrooms with a soaking tub and separate shower, and a king bed or two doubles.",
       },
     ],
   },
@@ -489,6 +505,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "What's the spa like at Portola Hotel?",
         a: "Spa on the Plaza is 6,000 sq ft with 11 private treatment rooms — the largest day spa in Monterey County.",
+      },
+      {
+        q: "What's the dining like at Portola Hotel?",
+        a: "Jacks Monterey serves breakfast and dinner with an American menu, on-site at the hotel.",
       },
     ],
   },
@@ -614,6 +634,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       {
         q: "Are bikes available to guests?",
         a: "Yes, complimentary bikes are available for getting around downtown Monterey.",
+      },
+      {
+        q: "What's the dining like at Casa Munras?",
+        a: "Esteban Restaurant & Bar serves Spanish-California cuisine, including house-made sangria.",
       },
     ],
   },
