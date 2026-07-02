@@ -2,7 +2,7 @@ export default function Logo({ className }: { className?: string }) {
   return (
     <div className={`flex flex-col items-start ${className ?? ""}`}>
       <div
-        className="text-[34px] leading-none md:text-[52px]"
+        className="text-[42px] leading-none sm:text-[56px] md:text-[64px] lg:text-[72px]"
         style={{
           fontFamily: "'Firlest', serif",
           color: "#2C6E8E",
@@ -13,11 +13,11 @@ export default function Logo({ className }: { className?: string }) {
         MonTeReY
       </div>
       <div
-        className="mt-[3px] h-[2px] md:mt-[5px] md:h-[3px]"
+        className="mt-[4px] h-[2px] sm:mt-[5px] md:mt-[6px] md:h-[3px] lg:h-[4px]"
         style={{ width: "68%", backgroundColor: "#E8A0A8" }}
       />
       <div
-        className="mt-1.5 text-[17px] leading-none tracking-[1px] md:mt-2.5 md:text-[26px]"
+        className="mt-2 text-[21px] leading-none tracking-[1px] sm:mt-2.5 sm:text-[28px] md:text-[32px] lg:text-[36px]"
         style={{
           fontFamily: "'Firlest', serif",
           color: "#2C6E8E",

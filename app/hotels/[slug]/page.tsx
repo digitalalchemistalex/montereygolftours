@@ -121,7 +121,7 @@ export default async function HotelPage({ params }: Props) {
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.7) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 pt-24 md:px-14 md:pb-14 md:pt-0">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-36 md:px-14 md:pb-14 md:pt-0">
           <span className="inline-block rounded-full bg-terracotta px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.06em] text-white">
             {TIER_LABEL[hotel.tier]}
           </span>
