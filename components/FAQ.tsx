@@ -118,23 +118,23 @@ export default function FAQ() {
 
       <div className="space-y-12 md:space-y-16">
         {FAQ_CATEGORIES.map((cat) => (
-          <div key={cat.category} className="grid grid-cols-1 gap-6 md:grid-cols-[0.35fr_1fr] md:gap-16">
-            <div className="flex flex-row items-center gap-3 md:block">
-              <div className="relative h-20 w-20 flex-none overflow-hidden rounded-full shadow-[0_4px_14px_rgba(0,0,0,.18)] md:h-28 md:w-28">
+          <div key={cat.category} className="grid grid-cols-1 gap-6 md:grid-cols-[0.4fr_1fr] md:gap-16">
+            <div className="flex flex-row items-center gap-4 md:block">
+              <div className="relative h-32 w-32 flex-none overflow-hidden rounded-full shadow-[0_6px_20px_rgba(0,0,0,.22)] sm:h-40 sm:w-40 md:h-48 md:w-48">
                 {CATEGORY_ICONS[cat.category] && (
                   <Image
                     src={CATEGORY_ICONS[cat.category]}
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="112px"
+                    sizes="192px"
                   />
                 )}
                 <div
-                  className="absolute inset-0 flex items-end justify-center pb-2.5 text-center"
-                  style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.65) 100%)" }}
+                  className="absolute inset-0 flex items-center justify-center text-center"
+                  style={{ background: "linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%)" }}
                 >
-                  <span className="px-2 font-ui text-[10px] font-bold uppercase leading-tight tracking-[.04em] text-white md:text-[11px]">
+                  <span className="px-4 font-ui text-[15px] font-bold uppercase leading-tight tracking-[.04em] text-white sm:text-[18px] md:text-[20px]">
                     {cat.category}
                   </span>
                 </div>
