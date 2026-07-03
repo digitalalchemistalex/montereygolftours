@@ -11,6 +11,7 @@ import "@fontsource/inter/700.css";
 import "@fontsource/pacifico/400.css";
 import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <SiteSchema />
         {children}
+        <BackToTop />
       </body>
     </html>
   );

@@ -94,7 +94,6 @@ export default function Header() {
             <Link
               href={menu.href}
               className="flex items-center gap-1 py-3 font-ui text-[15px] text-gold hover:text-white"
-              style={{ textShadow: "0 1px 4px rgba(0,0,0,.5)" }}
             >
               {menu.label}
               <svg width="10" height="6" viewBox="0 0 10 6" className="mt-[1px] opacity-70">
@@ -168,7 +167,6 @@ export default function Header() {
             key={link.href}
             href={link.href}
             className="font-ui text-[15px] text-gold hover:text-white"
-            style={{ textShadow: "0 1px 4px rgba(0,0,0,.5)" }}
           >
             {link.label}
           </Link>

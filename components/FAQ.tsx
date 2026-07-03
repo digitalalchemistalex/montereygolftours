@@ -23,6 +23,14 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         q: "Do you handle lodging as well as golf?",
         a: "Yes. We work with 9 verified properties across the peninsula, from golf-anchor resorts with on-site courses to boutique village stays, and can pair the right one with your course lineup.",
       },
+      {
+        q: "Do you sell single tee times, or only full trips?",
+        a: "Full trips only — we don't offer standalone single-round bookings. Every quote covers courses, lodging, and logistics planned together.",
+      },
+      {
+        q: "Are flights and meals included?",
+        a: "Not by default. Pricing covers golf and lodging; flights and meals can be arranged separately if you'd like us to include them in your quote.",
+      },
     ],
   },
   {
@@ -40,6 +48,10 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         q: "What's the oldest course on the peninsula?",
         a: "Del Monte Golf Course®, dating to 1897 — the oldest golf course in continuous operation west of the Mississippi.",
       },
+      {
+        q: "How many courses do you feature in total?",
+        a: "14 courses across the peninsula, from accessible daily-fee options like Pacific Grove Golf Links to championship-caliber rounds like Bayonet and the full Pebble Beach Resorts® portfolio.",
+      },
     ],
   },
   {
@@ -52,6 +64,14 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       {
         q: "Should I avoid August?",
         a: "If Car Week and the Concours d'Elegance aren't part of the appeal, yes — Bayonet and Black Horse close for several days in mid-August, and hotel rates spike well above normal during the event.",
+      },
+      {
+        q: "How do I get to the Monterey Peninsula?",
+        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) and San Francisco (SFO) are 90–120 minute drives if you're flying into one of those instead.",
+      },
+      {
+        q: "Is Carmel Valley warmer than the coast?",
+        a: "Yes — its inland location sits outside the coastal marine layer, so it's often clear and 15–18°F warmer even when Monterey and Pacific Grove are fogged in.",
       },
     ],
   },
