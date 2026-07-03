@@ -26,11 +26,11 @@ export default function BackToTop() {
       type="button"
       aria-label="Back to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#E8A0A8] shadow-[0_6px_20px_rgba(0,0,0,.25)] transition-transform hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,.3)]"
+      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full transition-transform hover:-translate-y-1"
     >
-      <svg width="34" height="34" viewBox="0 0 34 34">
-        <circle cx="17" cy="17" r="15.5" fill="#FDF0F1" stroke="#7A2E38" strokeWidth="1.5" />
-        <g fill="#D98A93">
+      <svg width="48" height="48" viewBox="0 0 34 34">
+        <circle cx="17" cy="17" r="15.5" fill="#E8A0A8" stroke="#7A2E38" strokeWidth="1.5" />
+        <g fill="#C97985">
           <circle cx="12" cy="11" r="1.5" />
           <circle cx="17" cy="9.5" r="1.5" />
           <circle cx="22" cy="11" r="1.5" />
