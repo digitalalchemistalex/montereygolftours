@@ -148,7 +148,7 @@ export default function FAQ() {
                     i % 2 === 0 ? "sm:pr-8" : ""
                   }`}
                 >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-3 font-ui text-[15px] font-semibold leading-snug text-ink">
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-3 font-ui text-[15px] font-semibold italic leading-snug text-ink">
                     {f.q}
                     <span className="flex-none font-display text-xl leading-none text-gold group-open:hidden">+</span>
                     <span className="hidden flex-none font-display text-xl leading-none text-gold group-open:inline">
