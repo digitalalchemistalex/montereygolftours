@@ -5,14 +5,30 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 const LINKS = [
-  { label: "Courses", href: "/golf-courses/" },
-  { label: "Hotels", href: "/hotels/" },
-  { label: "Destinations", href: "/destinations/" },
-  { label: "Itineraries", href: "/itineraries/" },
-  { label: "Packages", href: "/packages/" },
-  { label: "Blog", href: "/blog/" },
-  { label: "About", href: "/about/" },
-  { label: "FAQ", href: "/faq/" },
+  {
+    label: "Courses",
+    href: "/golf-courses/",
+    image: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f",
+  },
+  {
+    label: "Hotels",
+    href: "/hotels/",
+    image: "https://images.unsplash.com/photo-1549294413-26f195200c16",
+  },
+  {
+    label: "Destinations",
+    href: "/destinations/",
+    image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd",
+  },
+  {
+    label: "Itineraries",
+    href: "/itineraries/",
+    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513",
+  },
+  { label: "Packages", href: "/packages/", image: "/art/packages-hero.svg" },
+  { label: "Blog", href: "/blog/", image: "/art/blog-hero.svg" },
+  { label: "About", href: "/about/", image: "/art/about-hero.svg" },
+  { label: "FAQ", href: "/faq/", image: "/art/faq-hero.svg" },
 ];
 
 export default function MobileNav() {
@@ -42,20 +58,40 @@ export default function MobileNav() {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-20 flex flex-col bg-[#16242c] px-6 pb-8 pt-32">
-          <nav className="flex flex-1 flex-col gap-1">
-            {LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-[rgba(250,246,238,.1)] py-4 font-display text-2xl font-bold text-cream"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="mt-6 flex flex-col gap-4">
+        <div className="fixed inset-0 z-20 flex flex-col bg-[#16242c]">
+          <div className="flex-1 overflow-y-auto pt-24">
+            <nav className="flex flex-col">
+              {LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="relative flex h-[76px] items-center overflow-hidden px-6"
+                  style={{
+                    backgroundImage: `url(${link.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, rgba(10,15,15,.75) 0%, rgba(10,15,15,.45) 55%, rgba(10,15,15,.2) 100%)",
+                    }}
+                  />
+                  <span
+                    className="relative font-display text-2xl font-bold text-cream"
+                    style={{ textShadow: "0 1px 6px rgba(0,0,0,.6)" }}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div className="flex flex-col gap-4 border-t border-[rgba(250,246,238,.1)] px-6 py-6">
             <a href={SITE.phoneHref} className="font-ui text-base font-semibold text-cream">
               {SITE.phone}
             </a>
