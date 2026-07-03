@@ -31,9 +31,11 @@ const MEGA_MENUS = [
       image: featuredCourse.image!,
       blurb: featuredCourse.hook,
     },
-    items: COURSES.filter((c) => c.slug !== "bayonet")
-      .slice(0, 7)
-      .map((c) => ({ label: c.name, sub: c.city, href: `/golf-courses/${c.slug}/` })),
+    items: COURSES.filter((c) => c.slug !== "bayonet").map((c) => ({
+      label: c.name,
+      sub: c.city,
+      href: `/golf-courses/${c.slug}/`,
+    })),
   },
   {
     label: "Hotels",
