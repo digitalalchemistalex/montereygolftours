@@ -136,7 +136,7 @@ export default function Header() {
                     <div className="px-2 pb-2 font-ui text-[10.5px] font-bold uppercase tracking-[.1em] text-[#a8a294]">
                       {menu.eyebrow}
                     </div>
-                    <div className="max-h-[220px] flex-1 overflow-y-auto pr-1">
+                    <div className="flex-1 pr-1">
                       {menu.items.map((item) => (
                         <Link
                           key={item.href}
