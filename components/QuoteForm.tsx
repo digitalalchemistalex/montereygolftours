@@ -79,6 +79,7 @@ export default function QuoteForm() {
   const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
   const [groundTransport, setGroundTransport] = useState(false);
   const [referralSource, setReferralSource] = useState("");
+  const [referralOther, setReferralOther] = useState("");
 
   // Read context from the referring page (course/hotel/trip slug in the URL)
   // once, up front, so a "Get a custom quote" click carries what the person
@@ -215,7 +216,7 @@ export default function QuoteForm() {
       activities_interested: selectedActivities,
       ground_transport_needed: groundTransport,
       non_golfer_in_group: nonGolfer,
-      referral_source: referralSource || null,
+      referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
       message: fullMessage || null,
     });
 
@@ -299,20 +300,6 @@ export default function QuoteForm() {
             {GROUP_SIZES.map((g) => (
               <option key={g} value={g}>
                 {g} players
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field label="How did you hear about us?">
-          <select
-            value={referralSource}
-            onChange={(e) => setReferralSource(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          >
-            <option value="">Select an option</option>
-            {REFERRAL_SOURCES.map((r) => (
-              <option key={r} value={r}>
-                {r}
               </option>
             ))}
           </select>
@@ -534,6 +521,34 @@ export default function QuoteForm() {
           (SJC) and San Francisco (SFO) are 90&ndash;120 minute drives if you&apos;re
           flying into one of those instead.
         </p>
+      </div>
+
+      {/* Section: How did you hear about us */}
+      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
+        How did you hear about us?
+      </div>
+      <div className="border-b border-[#ede8da] pb-7">
+        <select
+          value={referralSource}
+          onChange={(e) => setReferralSource(e.target.value)}
+          className="w-full max-w-[400px] rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
+        >
+          <option value="">Select an option</option>
+          {REFERRAL_SOURCES.map((r) => (
+            <option key={r} value={r}>
+              {r}
+            </option>
+          ))}
+        </select>
+        {referralSource === "Other" && (
+          <input
+            type="text"
+            placeholder="Please tell us where you heard about us"
+            value={referralOther}
+            onChange={(e) => setReferralOther(e.target.value)}
+            className="mt-3 w-full max-w-[400px] rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
+          />
+        )}
       </div>
 
       <div className="mt-6">

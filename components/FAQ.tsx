@@ -1,7 +1,15 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 export type FAQItem = { q: string; a: string };
 export type FAQCategory = { category: string; items: FAQItem[] };
+
+const CATEGORY_ICONS: Record<string, string> = {
+  "Trip planning": "/art/faq-categories/trip-planning.svg",
+  "Pebble Beach & courses": "/art/faq-categories/courses.svg",
+  "Timing & logistics": "/art/faq-categories/timing.svg",
+  "Lodging & travel": "/art/faq-categories/lodging.svg",
+};
 
 export const FAQ_CATEGORIES: FAQCategory[] = [
   {
@@ -75,6 +83,23 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       },
     ],
   },
+  {
+    category: "Lodging & travel",
+    items: [
+      {
+        q: "How many hotels do you feature?",
+        a: "9 verified properties, from golf-anchor resorts like Hyatt Regency Monterey and Carmel Valley Ranch to boutique village stays like L'Auberge Carmel.",
+      },
+      {
+        q: "Can you help arrange ground transportation?",
+        a: "Yes — the quote form includes an option to have us arrange airport transfers and transport between courses and hotels as part of your trip.",
+      },
+      {
+        q: "What's included in a room at your featured hotels?",
+        a: "It varies by property — some, like Carmel Valley Ranch, are all-suite with fireplaces and private decks; others are standard resort rooms. Each hotel's page lists its specific room features.",
+      },
+    ],
+  },
 ];
 
 export default function FAQ() {
@@ -94,8 +119,26 @@ export default function FAQ() {
       <div className="space-y-12 md:space-y-16">
         {FAQ_CATEGORIES.map((cat) => (
           <div key={cat.category} className="grid grid-cols-1 gap-6 md:grid-cols-[0.35fr_1fr] md:gap-16">
-            <div className="font-ui text-sm font-bold uppercase tracking-[.08em] text-ocean-dark">
-              {cat.category}
+            <div className="flex flex-row items-center gap-3 md:block">
+              <div className="relative h-20 w-20 flex-none overflow-hidden rounded-full shadow-[0_4px_14px_rgba(0,0,0,.18)] md:h-28 md:w-28">
+                {CATEGORY_ICONS[cat.category] && (
+                  <Image
+                    src={CATEGORY_ICONS[cat.category]}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="112px"
+                  />
+                )}
+                <div
+                  className="absolute inset-0 flex items-end justify-center pb-2.5 text-center"
+                  style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.65) 100%)" }}
+                >
+                  <span className="px-2 font-ui text-[10px] font-bold uppercase leading-tight tracking-[.04em] text-white md:text-[11px]">
+                    {cat.category}
+                  </span>
+                </div>
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {cat.items.map((f, i) => (

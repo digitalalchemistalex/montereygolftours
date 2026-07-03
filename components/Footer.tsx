@@ -20,16 +20,13 @@ const LEARN_LINKS = [
 export default function Footer() {
   return (
     <footer>
-      <div className="flex flex-col gap-10 bg-ink px-6 py-12 md:flex-row md:justify-between md:px-14">
-        <div className="max-w-[300px]">
-          <Link href="/" className="inline-block">
-            <Logo />
-          </Link>
-          <p className="mt-4 font-body text-sm italic leading-relaxed text-[#c4ccc6]">
-            Private group golf trips to California&apos;s most storied coastline.
-          </p>
-        </div>
+      <div className="flex justify-center bg-ink px-6 pt-12 md:px-14">
+        <Link href="/">
+          <Logo color="#E8A0A8" />
+        </Link>
+      </div>
 
+      <div className="flex flex-col gap-10 bg-ink px-6 pb-12 pt-8 md:flex-row md:justify-center md:gap-20 md:px-14">
         <div>
           <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Play</div>
           <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
