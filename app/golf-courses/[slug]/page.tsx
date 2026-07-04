@@ -5,11 +5,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSE_DETAILS } from "@/lib/course-details";
 import { COURSES } from "@/lib/courses";
+import { getCoursePricing } from "@/lib/course-pricing";
 import { SITE } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+// Revalidate every hour so pricing edits made in Supabase's table editor
+// show up automatically without needing a full manual redeploy -- otherwise
+// this page's static generation would only pick up new prices at build time.
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   return Object.keys(COURSE_DETAILS).map((slug) => ({ slug }));
@@ -55,6 +61,9 @@ export default async function CoursePage({ params }: Props) {
       </>
     );
   }
+
+  const livePricing = await getCoursePricing(course.slug);
+  const greenFeeDisplay = livePricing?.price_label ?? course.greenFeeEst;
 
   const nearby = course.nearbySlugs
     .map((s) => COURSES.find((c) => c.slug === s))
@@ -262,7 +271,7 @@ export default async function CoursePage({ params }: Props) {
 
         <section className="border-b border-fairwayborder bg-white px-6 py-10 md:px-14 md:py-14">
           <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <PracticalItem label="Green fee" value={`${course.greenFeeEst} (verify current rates)`} />
+            <PracticalItem label="Green fee" value={`${greenFeeDisplay} (verify current rates)`} />
             <PracticalItem label="Address" value={course.address} />
             <PracticalItem label="Phone" value={course.phone} />
             <PracticalItem label="Website" value={course.website} />
