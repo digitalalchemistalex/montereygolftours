@@ -33,7 +33,7 @@ export default function DestinationsIndexPage() {
           style={{ background: "linear-gradient(180deg, rgba(10,30,38,.18) 0%, rgba(10,30,38,.68) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-32 md:pt-28">
+        <div className="relative z-10 pt-40 md:pt-60">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Golf destinations on the Monterey Peninsula
           </h1>

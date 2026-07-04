@@ -62,7 +62,7 @@ export default function ContactPage() {
           style={{ background: "linear-gradient(180deg, rgba(15,25,35,.32) 0%, rgba(15,25,35,0) 38%, rgba(20,40,20,.15) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-32 md:pt-28">
+        <div className="relative z-10 pt-40 md:pt-60">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-ink md:text-[48px]" style={{ textShadow: "0 1px 8px rgba(255,255,255,.6)" }}>
             Get in touch
           </h1>
