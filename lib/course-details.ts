@@ -612,6 +612,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "theclubatpasadera.com",
     hook: "A Jack Nicklaus Signature course on the Monterey Peninsula — limited public access available.",
     description: [
+      "The only Jack Nicklaus Signature course on the Monterey Peninsula. The Club at Pasadera rewards groups who plan around its Monday public access window — the canyon par-3 14th ('The Moment', 205 yards over a canyon with views to Monterey and Pacific Grove) rivals any signature hole on the peninsula, with conditions that match private clubs in California.",
       "The Club at Pasadera is a Jack Nicklaus Signature Design that opened in 2000, privately operated with limited public access. The course is owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name \"The Club at Pasadera\" rather than any TPC-prefixed name.",
       "At par 71 and roughly 6,673–6,733 yards depending on the source, the course offers a premium Nicklaus design experience on the Monterey Peninsula, typically with limited access windows for non-members.",
     ],

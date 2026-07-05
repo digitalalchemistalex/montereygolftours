@@ -32,6 +32,14 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         a: "Yes. We work with 9 verified properties across the peninsula, from golf-anchor resorts with on-site courses to boutique village stays, and can pair the right one with your course lineup.",
       },
       {
+        q: "What is 'Combat Corner' at Bayonet?",
+        a: "Combat Corner is the nickname for holes 11–15 at Bayonet, with hole 15 at the heart of the stretch. It's where the course turns most demanding — long, exposed holes with prevailing wind and little margin for error. Plan your best golf for here, and book an 8–10am tee time to have the best conditions before afternoon wind picks up.",
+      },
+      {
+        q: "What's the pace of play at Bayonet?",
+        a: "Approximately 4 hours 30 minutes for a standard group. For larger groups of 12+, an 8–10am tee time is industry-standard to ensure a full round without pace-of-play pressure.",
+      },
+      {
         q: "Do you sell single tee times, or only full trips?",
         a: "Full trips only — we don't offer standalone single-round bookings. Every quote covers courses, lodging, and logistics planned together.",
       },

@@ -114,7 +114,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "The Unbound Collection by Hyatt",
     hook: "All-suite resort on 500 acres, with the only Pete Dye golf course in Northern California on-site.",
     description: [
-      "Carmel Valley Ranch is an all-suite resort — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
+      "Carmel Valley Ranch is an all-suite resort — every accommodation is a minimum 800 sq ft (starting with the Santa Lucia Studio); there are no standard hotel rooms. Pete Dye's only Northern California golf design is on-site, and the property sits inland in the sun-drenched Santa Lucia foothills, typically 15–18°F warmer than the Monterey coast and clear of marine fog earlier in the morning. — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
       "The on-site golf course is a Pete Dye original (1980), renovated by Gene Bates in 2006 — the only Pete Dye design in Northern California. The wine-country microclimate here tends to stay sunny even when the coast is fogged in.",
     ],
     amenities: [
@@ -534,7 +534,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Relais & Châteaux",
     hook: "A 20-room Relais & Châteaux property in the heart of Carmel village, a block from the beach.",
     description: [
-      "L'Auberge Carmel is a 20-room Relais & Châteaux property built in 1929, in the heart of Carmel-by-the-Sea village, one block from Carmel Beach and walking distance to galleries, shops, and restaurants. The atmosphere leans adults-oriented and intimate.",
+      "L'Auberge Carmel is a 20-room Relais & Châteaux property (one of only two on the peninsula) built in 1929, in the heart of Carmel-by-the-Sea village, one block from Carmel Beach and walking distance to galleries, shops, and restaurants. The atmosphere leans adults-oriented and intimate.",
       "Every room is individually designed, naturally ventilated with no air conditioning, and features radiant floor heating in the bathrooms. The on-site Aubergine restaurant is a 9-table fine-dining destination with an acclaimed chef and a 2,500-bottle wine cellar.",
     ],
     amenities: [
