@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 const LINKS = [
@@ -76,7 +77,7 @@ export default function MobileNav() {
 
       {/* Full-screen overlay — z-[55] so it covers the page but hamburger stays on top */}
       {open && (
-        <div className="fixed inset-0 z-[55] flex flex-col bg-[#16242c]">
+        <div className="fixed inset-0 z-[55] flex flex-col" style={{ backgroundColor: "#16242c" }}>
           <div className="flex-1 overflow-y-auto pt-20">
             <nav className="flex flex-col">
               {LINKS.map((link) => (
@@ -85,22 +86,28 @@ export default function MobileNav() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="relative flex h-[76px] items-center overflow-hidden px-6"
-                  style={{
-                    backgroundImage: `url(${link.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
                 >
+                  {/* Solid dark fallback always renders — image loads on top */}
+                  <div className="absolute inset-0" style={{ backgroundColor: "#0f1a14" }} />
+                  {/* Background image via Next Image — solid dark fallback always shows first */}
+                  <Image
+                    src={link.image}
+                    alt=""
+                    fill
+                    className="object-cover opacity-70"
+                    sizes="100vw"
+                  />
+                  {/* Dark gradient overlay for text legibility */}
                   <div
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(90deg, rgba(10,15,15,.78) 0%, rgba(10,15,15,.45) 55%, rgba(10,15,15,.15) 100%)",
+                        "linear-gradient(90deg, rgba(10,15,15,.85) 0%, rgba(10,15,15,.5) 55%, rgba(10,15,15,.2) 100%)",
                     }}
                   />
                   <span
-                    className="relative font-display text-2xl font-bold text-cream"
-                    style={{ textShadow: "0 1px 6px rgba(0,0,0,.6)" }}
+                    className="relative z-10 font-display text-2xl font-bold text-cream"
+                    style={{ textShadow: "0 1px 6px rgba(0,0,0,.8)" }}
                   >
                     {link.label}
                   </span>
@@ -109,7 +116,7 @@ export default function MobileNav() {
             </nav>
           </div>
 
-          <div className="flex flex-col gap-4 border-t border-[rgba(250,246,238,.1)] px-6 py-6">
+          <div className="flex flex-col gap-4 border-t border-[rgba(250,246,238,.1)] px-6 py-6" style={{ backgroundColor: "#16242c" }}>
             <a href={SITE.phoneHref} className="font-ui text-base font-semibold text-cream">
               {SITE.phone}
             </a>
