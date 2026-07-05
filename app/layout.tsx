@@ -13,10 +13,34 @@ import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
 import BackToTop from "@/components/BackToTop";
 
+const OG_IMAGE =
+  "https://images.unsplash.com/photo-1443706340763-4b60757a36ce?w=1200&h=630&fit=crop&q=80";
+
+const DEFAULT_TITLE = "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula";
+const DEFAULT_DESC =
+  "Plan a private group golf trip to the Monterey Peninsula. Courses, lodging, and tee times handled end to end.";
+
 export const metadata: Metadata = {
-  title: "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula",
-  description:
-    "Plan a private group golf trip to the Monterey Peninsula. Courses, lodging, and tee times handled end to end.",
+  metadataBase: new URL("https://montereygolftours.com"),
+  title: {
+    default: DEFAULT_TITLE,
+    template: "%s | Monterey Golf Tours",
+  },
+  description: DEFAULT_DESC,
+  openGraph: {
+    type: "website",
+    siteName: "Monterey Golf Tours",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESC,
+    url: "https://montereygolftours.com/",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Monterey Peninsula golf" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESC,
+    images: [OG_IMAGE],
+  },
 };
 
 export default function RootLayout({
