@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Configurator from "@/components/Configurator";
 import FitFinder from "@/components/FitFinder";
@@ -8,6 +9,12 @@ import Hotels from "@/components/Hotels";
 import LocalIntel from "@/components/LocalIntel";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://montereygolftours.com/",
+  },
+};
 
 export default function Home() {
   return (
