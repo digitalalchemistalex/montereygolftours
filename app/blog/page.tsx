@@ -31,7 +31,7 @@ export default function BlogIndexPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[420px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[520px]">
+      <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] md:min-h-[520px]">
         <Image
           src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=2400&q=90"
           alt="Golfer on an elegant coastal course"
