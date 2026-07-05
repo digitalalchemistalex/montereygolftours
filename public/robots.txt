@@ -42,3 +42,4 @@ User-agent: Bytespider
 Disallow: /
 
 Sitemap: https://montereygolftours.com/sitemap.xml
+Sitemap: https://montereygolftours.com/image-sitemap.xml
