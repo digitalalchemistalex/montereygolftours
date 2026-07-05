@@ -113,17 +113,15 @@ export default async function CoursePage({ params }: Props) {
             { "@type": "LocationFeatureSpecification", name: "Course Type", value: course.type },
           ],
         } : {}),
-        ...(livePricing?.price_label ? {
-          offers: {
-            "@type": "Offer",
-            name: "Green Fee",
-            description: livePricing.price_label,
-            priceCurrency: "USD",
-            availability: isClosed
-              ? "https://schema.org/Discontinued"
-              : "https://schema.org/InStock",
-          },
-        } : {}),
+        offers: {
+          "@type": "Offer",
+          name: "Green Fee",
+          description: greenFeeDisplay,
+          priceCurrency: "USD",
+          availability: isClosed
+            ? "https://schema.org/Discontinued"
+            : "https://schema.org/InStock",
+        },
         ...(courseData?.image ? {
           image: {
             "@type": "ImageObject",
