@@ -240,22 +240,33 @@ export default function Header() {
             Destinations {chevron}
           </Link>
 
-          <div className={`${DROP} left-1/2 w-[540px] -translate-x-1/2`}>
+          <div className={`${DROP} left-1/2 w-[600px] -translate-x-1/2`}>
             <div className={CARD}>
-              <div className="border-b border-[#f0ebe1] bg-[#f9f6ef] px-5 py-3">
+              <div className="border-b border-[#f0ebe1] bg-[#f9f6ef] px-5 py-2.5 flex items-center justify-between">
                 <span className="font-ui text-[10px] font-bold uppercase tracking-[.12em] text-[#a8a294]">6 Areas · Monterey Peninsula + Central Coast</span>
+                <Link href="/destinations/" className="font-ui text-[11px] font-semibold text-ocean hover:text-ocean-dark">View all →</Link>
               </div>
-              <div className="grid grid-cols-1 divide-y divide-[#f5f0e8]">
+              <div className="grid grid-cols-2 gap-0">
                 {Object.values(DESTINATIONS).map(d => (
                   <Link key={d.slug} href={`/destinations/${d.slug}/`}
-                    className="group/d flex items-start gap-3 px-5 py-3.5 hover:bg-[#faf7f2]">
-                    <div className="flex-1">
-                      <div className="font-ui text-[13.5px] font-semibold text-ink group-hover/d:text-ocean">{d.name}</div>
-                      <div className="mt-0.5 font-body text-[12px] leading-snug text-[#8a857a] pr-2">
-                        {d.speakable.split(".")[0]}
-                      </div>
+                    className="group/d flex items-center gap-3 px-4 py-3 hover:bg-[#faf7f2] border-b border-r border-[#f5f0e8] last:border-r-0 [&:nth-child(2n)]:border-r-0">
+                    {/* Destination image thumbnail */}
+                    <div className="relative h-14 w-20 flex-none overflow-hidden rounded-lg">
+                      <Image
+                        src={`${d.image}?auto=format&fit=crop&w=160&h=112&q=70`}
+                        alt={d.name}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover/d:scale-105"
+                        sizes="80px"
+                      />
                     </div>
-                    <span className="mt-1 flex-none font-ui text-[11px] text-[#c8b89a] opacity-0 transition-opacity group-hover/d:opacity-100">&rarr;</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-ui text-[13px] font-semibold text-ink group-hover/d:text-ocean leading-tight">{d.name}</div>
+                      <div className="mt-0.5 font-body text-[11px] leading-snug text-[#8a857a] line-clamp-2">
+                        {d.trustBar?.[0] ?? d.speakable.split(".")[0].slice(0, 60)}
+                      </div>
+                      <div className="mt-1 font-ui text-[10px] font-semibold text-[#b8a890] opacity-0 transition-opacity group-hover/d:opacity-100">Explore area →</div>
+                    </div>
                   </Link>
                 ))}
               </div>
