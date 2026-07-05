@@ -96,6 +96,7 @@ export default async function CoursePage({ params }: Props) {
           streetAddress: course.address,
           addressLocality: course.city.split(",")[0].trim(),
           addressRegion: "CA",
+          addressCountry: "US",
         },
         telephone: course.phone,
         url: canonicalUrl,
@@ -103,6 +104,35 @@ export default async function CoursePage({ params }: Props) {
         courseLength: course.yards,
         ...(course.rating ? { courseRating: course.rating } : {}),
         ...(course.slope ? { courseSlope: course.slope } : {}),
+        ...(course.designer && course.designer !== "Unknown" ? {
+          amenityFeature: [
+            { "@type": "LocationFeatureSpecification", name: "Designer", value: course.designer },
+            { "@type": "LocationFeatureSpecification", name: "Par", value: String(course.par) },
+            { "@type": "LocationFeatureSpecification", name: "Course Type", value: course.type },
+          ],
+        } : {}),
+        ...(livePricing?.price_label ? {
+          offers: {
+            "@type": "Offer",
+            name: "Green Fee",
+            description: livePricing.price_label,
+            priceCurrency: "USD",
+            availability: isClosed
+              ? "https://schema.org/Discontinued"
+              : "https://schema.org/InStock",
+          },
+        } : {}),
+        ...(course.image ? {
+          image: {
+            "@type": "ImageObject",
+            url: `${course.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            contentUrl: `${course.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            width: 1200,
+            height: 800,
+            name: `${course.name} — Monterey Golf Tours`,
+            acquireLicensePage: "https://unsplash.com/license",
+          },
+        } : {}),
       },
       {
         "@type": "FAQPage",
