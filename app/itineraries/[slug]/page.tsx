@@ -57,6 +57,11 @@ export default async function ItineraryPage({ params }: Props) {
     .map((s) => HOTELS.find((h) => h.slug === s))
     .filter(Boolean);
 
+  // Cross-sell: up to 2 other itineraries, different from current
+  const otherTrips = Object.values(ITINERARIES)
+    .filter((t) => t.slug !== trip.slug)
+    .slice(0, 2);
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -110,6 +115,7 @@ export default async function ItineraryPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
+      {/* Hero */}
       <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         <Image src={trip.image} alt={trip.title} fill priority className="object-cover" />
         <div
@@ -133,6 +139,7 @@ export default async function ItineraryPage({ params }: Props) {
       </section>
 
       <main className="flex-1">
+        {/* Stats + summary */}
         <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.5fr_1fr] md:gap-16">
             <div className="flex flex-wrap gap-x-10 gap-y-6">
@@ -180,6 +187,7 @@ export default async function ItineraryPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Day-by-day */}
         <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
           <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Day-by-day itinerary
@@ -206,6 +214,7 @@ export default async function ItineraryPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Courses — with images */}
         {tripCourses.length > 0 && (
           <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
@@ -217,14 +226,27 @@ export default async function ItineraryPage({ params }: Props) {
                   <Link
                     key={c.slug}
                     href={`/golf-courses/${c.slug}/`}
-                    className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-transform hover:-translate-y-1"
+                    className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]"
                   >
-                    <div className="font-display text-lg font-bold text-ink">{c.name}</div>
-                    <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">
-                      Par {c.par} &middot; {c.yards}
-                    </div>
-                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">
-                      View course &rarr;
+                    {c.image && (
+                      <div className="relative h-44 w-full overflow-hidden">
+                        <Image
+                          src={c.image}
+                          alt={c.name}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <div className="font-display text-base font-bold text-ink">{c.name}</div>
+                      <div className="mt-1 font-body text-[13px] text-[#6a665e]">
+                        Par {c.par} &middot; {c.yards} &middot; {c.type}
+                      </div>
+                      <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                        View course &rarr;
+                      </div>
                     </div>
                   </Link>
                 ) : null
@@ -233,9 +255,10 @@ export default async function ItineraryPage({ params }: Props) {
           </section>
         )}
 
+        {/* Hotels — with images */}
         {tripHotels.length > 0 && (
-          <section className="border-b border-[#e3ddcf] px-6 py-10 md:px-14 md:py-12">
-            <h2 className="mb-6 font-display text-2xl font-bold text-ink md:text-[32px]">
+          <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Where you&apos;ll stay
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -244,12 +267,26 @@ export default async function ItineraryPage({ params }: Props) {
                   <Link
                     key={h.slug}
                     href={`/hotels/${h.slug}/`}
-                    className="rounded-xl border border-[#e3ddcf] bg-white p-5 shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-transform hover:-translate-y-1"
+                    className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]"
                   >
-                    <div className="font-display text-lg font-bold text-ink">{h.name}</div>
-                    <div className="mt-1.5 font-body text-[13px] text-[#6a665e]">{h.city}</div>
-                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">
-                      View hotel &rarr;
+                    <div className="relative h-52 w-full overflow-hidden">
+                      <Image
+                        src={h.image}
+                        alt={h.name}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="font-display text-lg font-bold text-ink">{h.name}</div>
+                      <div className="mt-1 font-body text-[13px] text-[#6a665e]">{h.city}</div>
+                      <p className="mt-2 font-body text-[13px] leading-relaxed text-[#5a564e] line-clamp-2">
+                        {h.description}
+                      </p>
+                      <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                        View hotel &rarr;
+                      </div>
                     </div>
                   </Link>
                 ) : null
@@ -258,6 +295,7 @@ export default async function ItineraryPage({ params }: Props) {
           </section>
         )}
 
+        {/* What's included */}
         <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-10 md:px-14 md:py-12">
           <h2 className="mb-4 font-display text-2xl font-bold text-ink md:text-[32px]">
             What&apos;s included
@@ -269,6 +307,32 @@ export default async function ItineraryPage({ params }: Props) {
           </p>
         </section>
 
+        {/* Upsell — Pebble Beach add-on */}
+        <section className="border-b border-[#e3ddcf] bg-[#16242c] px-6 py-14 md:px-14 md:py-20">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div>
+              <span className="mb-3 inline-block rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.05em] text-ink">
+                Optional upgrade
+              </span>
+              <h2 className="mt-2 font-display text-2xl font-bold text-cream md:text-[32px]">
+                Add Pebble Beach Golf Links® to your trip
+              </h2>
+              <p className="mt-3 max-w-[520px] font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.8)]">
+                Pebble Beach Golf Links® and Spyglass Hill® Golf Course are available as add-ons
+                to any itinerary. Green fees from $625/person — mention it in your quote and
+                we&apos;ll build it in.
+              </p>
+            </div>
+            <Link
+              href={`/quote/?trip=${trip.slug}&upgrade=pebble-beach`}
+              className="flex-none whitespace-nowrap rounded-[9px] border-2 border-gold px-7 py-4 font-ui text-base font-semibold text-gold transition-colors hover:bg-gold hover:text-ink"
+            >
+              Add to my quote &rarr;
+            </Link>
+          </div>
+        </section>
+
+        {/* FAQ */}
         <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
           <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Common questions
@@ -289,6 +353,52 @@ export default async function ItineraryPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Cross-sell — other itineraries */}
+        {otherTrips.length > 0 && (
+          <section className="border-b border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+              Other trips to consider
+            </h2>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {otherTrips.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/itineraries/${t.slug}/`}
+                  className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]"
+                >
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={t.image}
+                      alt={t.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                    {t.mostBooked && (
+                      <span className="absolute left-3 top-3 rounded-full bg-gold px-2.5 py-0.5 font-ui text-[10px] font-bold uppercase tracking-[.05em] text-ink">
+                        Most booked
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <div className="font-display text-lg font-bold text-ink">{t.title}</div>
+                    <div className="mt-1 font-body text-[13px] text-[#6a665e]">
+                      {t.durationDays} days &middot; {t.rounds} &middot; from ${t.priceFrom.toLocaleString()}/person
+                    </div>
+                    <p className="mt-2 font-body text-[13px] leading-relaxed text-[#5a564e]">
+                      {t.target}
+                    </p>
+                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                      View itinerary &rarr;
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Custom quote CTA */}
         <section className="px-6 py-12 text-center md:px-14 md:py-14">
           <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">
             Want different courses or dates?
