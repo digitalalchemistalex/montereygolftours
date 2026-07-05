@@ -64,7 +64,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "how-to-plan-a-group-golf-trip-monterey": {
     slug: "how-to-plan-a-group-golf-trip-monterey",
     cardTitle: "Plan a Group Trip",
-    cardImage: "https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=600&q=85",
+    cardImage: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=600&q=85",
     title: "How to Plan a Group Golf Trip to the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
