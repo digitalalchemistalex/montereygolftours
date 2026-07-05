@@ -89,7 +89,7 @@ export default function Footer() {
             Pebble Beach Golf Links®, Spyglass Hill® Golf Course, The Links at Spanish Bay®, Del Monte Golf Course®,
             The Hay™, and Pebble Beach Resorts® are registered trademarks of Pebble Beach Company.
             Monterey Golf Tours is an IAGTO-contracted golf travel operator authorized to promote and book
-            Pebble Beach Resorts courses. All rights reserved by Pebble Beach Company.
+            Pebble Beach Resorts® courses. All rights reserved by Pebble Beach Company.
           </p>
         </div>
       </footer>
