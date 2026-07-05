@@ -319,8 +319,7 @@ export default async function ItineraryPage({ params }: Props) {
               </h2>
               <p className="mt-3 max-w-[520px] font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.8)]">
                 Pebble Beach Golf Links® and Spyglass Hill® Golf Course are available as add-ons
-                to any itinerary. Green fees from $625/person — mention it in your quote and
-                we&apos;ll build it in.
+                to any itinerary. Green fees vary annually — mention it in your quote and we’ll build it in with current rates.
               </p>
             </div>
             <Link
