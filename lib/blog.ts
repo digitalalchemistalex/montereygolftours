@@ -20,7 +20,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "best-time-to-play-golf-monterey-peninsula": {
     slug: "best-time-to-play-golf-monterey-peninsula",
     cardTitle: "Best Time to Play",
-    cardImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=85",
+    cardImage: "https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=600&q=85",
     title: "Best Time to Play Golf on the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
