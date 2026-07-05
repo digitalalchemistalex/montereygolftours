@@ -224,6 +224,32 @@ export default function QuoteForm() {
       setStatus("error");
       return;
     }
+
+    // Directive #6 — fire-and-forget lead notification. A failure here
+    // must never block the visitor's success state.
+    fetch("/api/notify-lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        phone: phone || null,
+        group_size: groupSize,
+        travel_dates: datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ") || null,
+        trip_length: tripLength,
+        budget_per_person: budget,
+        courses_interested: selectedCourses,
+        hotels_interested: selectedHotels,
+        activities_interested: selectedActivities,
+        ground_transport_needed: groundTransport,
+        non_golfer_in_group: nonGolfer,
+        referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
+        message: fullMessage || null,
+      }),
+    }).catch(() => {
+      // Intentionally swallowed — notification failure must not affect UX.
+    });
+
     setStatus("success");
   }
 
