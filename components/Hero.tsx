@@ -13,20 +13,20 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[760px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
       <Image
-        src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=2400&q=95"
+        src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=2800&q=100"
         alt="Aerial view of a coastal golf course at sunrise"
         fill
         priority
-        quality={92}
+        quality={100}
         sizes="100vw"
         className="object-cover"
-        style={{ objectPosition: "center 55%", filter: "saturate(1.18) contrast(1.08) brightness(1.03)" }}
+        style={{ objectPosition: "center 45%" }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(22,36,44,.14) 0%, rgba(22,36,44,.06) 32%, rgba(22,36,44,.5) 72%, rgba(22,36,44,.7) 100%)",
+            "linear-gradient(180deg, rgba(15,22,18,.08) 0%, rgba(15,22,18,.04) 30%, rgba(15,22,18,.38) 70%, rgba(15,22,18,.62) 100%)",
         }}
       />
 
