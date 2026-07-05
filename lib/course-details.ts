@@ -78,7 +78,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Your group is mostly high-handicap beginners",
       "You want a relaxed, low-pressure round",
     ],
-    greenFeeEst: "~$195 with cart",
+    greenFeeEst: "Contact us for current rates",
     priceEstimate: 195,
     nearbySlugs: ["black-horse"],
     faqs: [
@@ -96,7 +96,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Bayonet?",
-        a: "Estimated around $195 with cart, though rates vary seasonally — always verify current pricing before booking.",
+        a: "Rates vary by season and tee time — contact us for current green fees before booking.",
       },
       {
         q: "Can groups book Bayonet?",
@@ -232,7 +232,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     lessIdealIf: [
       "You specifically want the hardest test on the peninsula (that's Bayonet)",
     ],
-    greenFeeEst: "~$165 with cart",
+    greenFeeEst: "Contact us for current rates",
     priceEstimate: 165,
     nearbySlugs: ["bayonet"],
     faqs: [
@@ -250,7 +250,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Black Horse?",
-        a: "Estimated around $165 with cart, though rates vary seasonally — always verify current pricing before booking.",
+        a: "Rates vary by season and tee time — contact us for current green fees before booking.",
       },
       {
         q: "How far is Black Horse from downtown Monterey?",
@@ -297,7 +297,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Stay-and-play groups based at Carmel Valley Ranch",
     ],
     lessIdealIf: ["You want maximum yardage and a pure power test"],
-    greenFeeEst: "~$195 (rates vary by season — verify before booking)",
+    greenFeeEst: "Resort rates — enquire",
     priceEstimate: 195,
     nearbySlugs: ["quail-lodge"],
     faqs: [
@@ -311,7 +311,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Carmel Valley Ranch?",
-        a: "Around $195, though rates vary by season and tee time — always verify current pricing before booking.",
+        a: "Rates vary by season and tee time — contact us for current green fees before booking.",
       },
       {
         q: "How long is the course at Carmel Valley Ranch?",
@@ -341,7 +341,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "A resort round in the Carmel Valley sun, threaded around 10 man-made lakes, away from the coastal marine layer.",
     description: [
       "Quail Lodge & Golf Club plays through Carmel Valley's warmer inland climate, with 10 man-made lakes woven through the layout — a defining feature of the course. At par 71 and 6,500 yards, it's a resort-style round that rewards accuracy around the water hazards.",
-      "Green fees here are dynamic rather than fixed, generally averaging in the $100–$150 range on weekends depending on season and tee time — worth confirming current pricing directly before booking a group round.",
+      "Green fees here are dynamic rather than fixed, varying by season and tee time — worth confirming current pricing directly before booking a group round.",
     ],
     highlights: [
       {
@@ -363,7 +363,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Stay-and-play groups based at Quail Lodge",
     ],
     lessIdealIf: ["You're looking for a links-style or coastal-fog round"],
-    greenFeeEst: "Dynamic pricing, ~$100–$150 on weekends (verify current rates)",
+    greenFeeEst: "Daily-fee — enquire for rates",
     priceEstimate: 125,
     nearbySlugs: ["carmel-valley-ranch"],
     faqs: [
@@ -373,7 +373,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Quail Lodge?",
-        a: "Pricing is dynamic rather than a fixed rate, generally averaging $100–$150 on weekends — confirm current pricing directly before booking.",
+        a: "Pricing varies by season and tee time — confirm current rates before booking.",
       },
       {
         q: "Is Quail Lodge open to non-resort guests?",
@@ -405,7 +405,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "An accessible daily-fee round close to downtown Monterey, with rates that won't strain a group budget.",
     description: [
       "Laguna Seca Golf Ranch offers a straightforward, accessible daily-fee round close to downtown Monterey. At par 71 and 6,226 yards, it's well suited to groups wanting a relaxed pace and approachable green fees without sacrificing a genuine 18-hole round.",
-      "Weekday rates run $58, with weekend rates at $78 — among the more budget-friendly options on the peninsula, making it a natural fit for the early or closing round of a multi-day group trip.",
+      "Among the most accessible green fees on the peninsula, making it a natural fit for the early or closing round of a multi-day group trip.",
     ],
     highlights: [
       {
@@ -423,13 +423,13 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Beginners and mixed-skill groups",
     ],
     lessIdealIf: ["You want a marquee, bucket-list championship test"],
-    greenFeeEst: "$58 weekday / $78 weekend",
+    greenFeeEst: "Municipal rates — enquire",
     priceEstimate: 58,
     nearbySlugs: ["pacific-grove-golf-links"],
     faqs: [
       {
         q: "What's the green fee at Laguna Seca?",
-        a: "$58 Monday through Thursday, $78 on weekends.",
+        a: "Rates vary — contact us or the club directly for current green fees.",
       },
       {
         q: "How far is Laguna Seca from downtown Monterey?",
@@ -465,7 +465,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
     description: [
       "Pacific Grove Golf Links is a city-owned municipal course offering genuine ocean-adjacent holes at a fraction of the cost of the peninsula's private and resort courses. At par 70 and 5,727 yards, it's a shorter, walkable layout well suited to groups of mixed ability.",
-      "Rates run $66 Monday through Thursday and $89 Friday through Sunday — making it one of the better value-for-experience rounds on the Monterey Peninsula.",
+      "Rates vary by day — making it one of the better value-for-experience rounds on the Monterey Peninsula.",
     ],
     highlights: [
       {
@@ -487,7 +487,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Anyone wanting ocean views without the premium price tag",
     ],
     lessIdealIf: ["You want a long, championship-length test"],
-    greenFeeEst: "$66 Mon–Thu / $89 Fri–Sun",
+    greenFeeEst: "Daily-fee — enquire for rates",
     priceEstimate: 66,
     nearbySlugs: ["laguna-seca-golf-ranch"],
     faqs: [
@@ -497,7 +497,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Pacific Grove?",
-        a: "$66 Monday through Thursday, $89 Friday through Sunday.",
+        a: "Rates vary — contact us or the club directly for current green fees.",
       },
       {
         q: "How long is Pacific Grove Golf Links?",
@@ -529,7 +529,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
     description: [
       "Poppy Hills Golf Course sits inside the Del Monte Forest — the same storied Pebble Beach zip code as the resort's marquee courses — but is owned and operated by the Northern California Golf Association (NCGA), not Pebble Beach Company, and doesn't carry the resort's gate fee or pricing.",
-      "At 7,091 yards from the Jones tees and par 71, the Robert Trent Jones II design plays through forested terrain with bentgrass greens. Rates run $95 Monday through Thursday and $125 Friday through Sunday.",
+      "At 7,091 yards from the Jones tees and par 71, the Robert Trent Jones II design plays through forested terrain with bentgrass greens. Rates vary by day — contact us for current pricing.",
     ],
     highlights: [
       {
@@ -550,7 +550,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Mid to low-handicap players",
     ],
     lessIdealIf: ["You specifically want a Pebble Beach Company-branded course"],
-    greenFeeEst: "$95 Mon–Thu / $125 Fri–Sun",
+    greenFeeEst: "Daily-fee — enquire for rates",
     priceEstimate: 95,
     nearbySlugs: [],
     faqs: [
@@ -560,7 +560,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Poppy Hills?",
-        a: "$95 Monday through Thursday, $125 Friday through Sunday.",
+        a: "Rates vary — contact us or the club directly for current green fees.",
       },
       {
         q: "Who designed Poppy Hills?",
@@ -653,7 +653,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "The most famous cliff-top course in American golf, opened in 1919 and unchanged in legend ever since.",
     description: [
       "Pebble Beach Golf Links® was designed by two amateur golfers, Jack Neville and Douglas Grant, opening on February 22, 1919. It remains the most recognized golf course in the country, with a string of holes running directly along the Pacific coastline.",
-      "Tee options range from the 6,802-yard blue tees (rating 74.9, slope 144) down to shorter sets for a range of player abilities. Green fees are a flat $695 for both resort and non-resort players, with a mandatory $60 per-person cart fee for non-resort guests, plus optional caddie services.",
+      "Tee options range from the 6,802-yard blue tees (rating 74.9, slope 144) down to shorter sets for a range of player abilities. Green fees vary annually for both resort and non-resort players, with optional caddie services. Enquire through us for current rates.",
       "Booking through Monterey Golf Tours, as an IAGTO-contracted travel partner with Pebble Beach Resorts®, gives groups access to coordinated tee times and stay-and-play packages as part of a planned trip.",
     ],
     highlights: [
@@ -672,13 +672,13 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     bestFor: ["Bucket-list trips", "Groups planning well in advance", "Serious golfers wanting the marquee round"],
     lessIdealIf: ["Budget is the primary constraint — this is the most expensive round on the peninsula"],
-    greenFeeEst: "$695 flat rate (+ $60/person cart fee for non-resort guests)",
+    greenFeeEst: "Enquire for current resort rates",
     priceEstimate: 695,
     nearbySlugs: ["spyglass-hill", "links-at-spanish-bay"],
     faqs: [
       {
         q: "What's the green fee at Pebble Beach Golf Links®?",
-        a: "A flat $695, applying to both resort and non-resort players, seven days a week. Non-resort guests pay an additional mandatory $60 per-person cart fee.",
+        a: "Rates vary annually — enquire through us or contact the Pebble Beach travel desk for current green fees.",
       },
       {
         q: "Who designed Pebble Beach Golf Links®?",
@@ -716,7 +716,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
-      "The front nine moves through coastal dunes before the back nine turns inland through Del Monte Forest pines, giving the round two distinct characters. Green fees run a flat $550 per round, seven days a week.",
+      "The front nine moves through coastal dunes before the back nine turns inland through Del Monte Forest pines, giving the round two distinct characters. Green fees vary annually — enquire for current rates.",
     ],
     highlights: [
       {
@@ -734,7 +734,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     bestFor: ["Low-handicap and scratch players", "Groups wanting a genuine championship test"],
     lessIdealIf: ["Your group is mostly high-handicap or beginner players"],
-    greenFeeEst: "$550 flat rate",
+    greenFeeEst: "Enquire for current resort rates",
     priceEstimate: 550,
     nearbySlugs: ["pebble-beach-golf-links", "links-at-spanish-bay"],
     faqs: [
@@ -744,7 +744,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Spyglass Hill Golf Course®?",
-        a: "A flat $550 per round, seven days a week.",
+        a: "Rates vary annually — enquire through us for current green fees.",
       },
       {
         q: "Who designed Spyglass Hill Golf Course®?",
@@ -841,7 +841,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
     description: [
       "Del Monte Golf Course® traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
-      "At par 72 and 6,356 yards (rating 71.8, slope 129), it plays as a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses, with green fees of $150 weekday and $175 weekend.",
+      "At par 72 and 6,356 yards (rating 71.8, slope 129), it plays as a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses — enquire for current green fees.",
     ],
     highlights: [
       {
@@ -859,7 +859,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
     bestFor: ["Groups staying at the Hyatt Regency Monterey", "Mixed-handicap groups wanting a gentler historic round"],
     lessIdealIf: ["You specifically want a cliff-top coastal test"],
-    greenFeeEst: "$150 weekday / $175 weekend",
+    greenFeeEst: "Enquire for current resort rates",
     priceEstimate: 150,
     nearbySlugs: [],
     faqs: [
@@ -869,7 +869,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at Del Monte Golf Course®?",
-        a: "$150 on weekdays, $175 on weekends.",
+        a: "Rates vary annually — enquire through us for current green fees.",
       },
       {
         q: "Which hotel is on Del Monte Golf Course®?",
@@ -903,7 +903,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook: "A reimagined short course experience at Pebble Beach, redesigned by Tiger Woods and TGR Design in 2021.",
     description: [
       "The Hay™ originally opened in 1957 as Peter Hay Golf Course, and was completely overhauled and redesigned by Tiger Woods and TGR Design in 2021, reopening as The Hay™ — a 9-hole, par-27 short course experience.",
-      "At 670 yards and rating 70/slope 110, it's a fast, approachable round suited to a relaxed afternoon, a warm-up before a championship round, or a lower-pressure addition to a group itinerary. Green fees run $75 weekday and $80 weekend.",
+      "At 670 yards and rating 70/slope 110, it's a fast, approachable round suited to a relaxed afternoon, a warm-up before a championship round, or a lower-pressure addition to a group itinerary. Enquire for current green fees.",
     ],
     highlights: [
       {
@@ -921,7 +921,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Mixed-skill groups including beginners",
     ],
     lessIdealIf: ["You want a full 18-hole championship round — see Pebble Beach Golf Links® or Spyglass Hill®"],
-    greenFeeEst: "$75 weekday / $80 weekend",
+    greenFeeEst: "Semi-private rates — enquire",
     priceEstimate: 75,
     nearbySlugs: ["pebble-beach-golf-links"],
     faqs: [
@@ -935,7 +935,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What's the green fee at The Hay™?",
-        a: "$75 on weekdays, $80 on weekends.",
+        a: "Rates vary — contact us or Pasatiempo directly for current green fees.",
       },
       {
         q: "How far in advance can I book The Hay™?",
