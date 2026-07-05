@@ -13,7 +13,7 @@ function esc(s: string) {
 
 type ImageEntry = { loc: string; images: { url: string; title: string; caption?: string }[] };
 
-export async function GET() {
+export function GET() {
   const base = `https://${SITE.domain}`;
   const entries: ImageEntry[] = [];
 
@@ -31,9 +31,8 @@ export async function GET() {
     }
   }
 
-  // Hotel pages
-  const { HOTEL_DETAILS } = await import("@/lib/hotel-details");
-  for (const h of Object.values(HOTEL_DETAILS)) {
+  // Hotel pages — use HOTELS (has image field); HOTEL_DETAILS does not
+  for (const h of HOTELS) {
     if (h.image) {
       entries.push({
         loc: `${base}/hotels/${h.slug}/`,
