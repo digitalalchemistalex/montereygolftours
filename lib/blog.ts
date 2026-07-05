@@ -132,7 +132,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "Planning a round",
         paragraphs: [
-          "Bayonet shares its facility with Black Horse, its sister course — a natural two-round pairing for a multi-day trip. Green fees run around $195 with cart, though rates vary seasonally. One scheduling note: Bayonet and Black Horse close for several days in mid-August during Car Week and the Concours d'Elegance.",
+          "Bayonet shares its facility with Black Horse, its sister course — a natural two-round pairing for a multi-day trip. Green fees vary seasonally — contact us for current rates. One scheduling note: Bayonet and Black Horse close for several days in mid-August during Car Week and the Concours d'Elegance.",
         ],
       },
     ],
@@ -199,7 +199,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     datePublished: "2026-06-30",
     dateModified: "2026-06-30",
     intro:
-      "A budget-conscious Monterey golf trip is genuinely possible — a 3-day, 3-round trip built around the peninsula's most accessible courses runs from roughly $564 to $1,740 per person, depending on hotel choice.",
+      "A budget-conscious Monterey golf trip is genuinely possible — a 3-day, 3-round trip built around the peninsula's most accessible courses varies by hotel and course selection — contact us for a custom quote.",
     sections: [
       {
         heading: "Choosing value courses without sacrificing quality",
