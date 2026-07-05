@@ -534,7 +534,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     highlights: [
       {
         label: "Del Monte Forest setting",
-        detail: "Same legendary zip code as Pebble Beach Resorts' courses.",
+        detail: "Same legendary zip code as Pebble Beach Resorts®' courses.",
       },
       {
         label: "NCGA-owned",
@@ -767,7 +767,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
   },
   "links-at-spanish-bay": {
     slug: "links-at-spanish-bay",
-    name: "The Links at Spanish Bay™",
+    name: "The Links at Spanish Bay®",
     city: "Pebble Beach, CA",
     facility: "Pebble Beach Resorts®",
     par: 72,
@@ -782,7 +782,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "Closed for a full Gil Hanse-led transformation — reopening April 17, 2027.",
     description: [
-      "The Links at Spanish Bay™ is currently closed for a comprehensive renovation led by architect Gil Hanse, Jim Wagner, and Hanse Golf Course Design. Construction began March 18, 2026, and Pebble Beach Company has confirmed a reopening date of April 17, 2027, a few months ahead of the U.S. Open's return to Pebble Beach Golf Links®.",
+      "The Links at Spanish Bay® is currently closed for a comprehensive renovation led by architect Gil Hanse, Jim Wagner, and Hanse Golf Course Design. Construction began March 18, 2026, and Pebble Beach Company has confirmed a reopening date of April 17, 2027, a few months ahead of the U.S. Open's return to Pebble Beach Golf Links®.",
       "The transformation is intended to elevate the roughly 40-year-old course — historically a true links-style layout with firm, fast turf and coastal dunes character — to match the pedigree of the resort's other championship courses, while updating aging infrastructure including drainage and irrigation.",
       "The course is not currently bookable and does not appear in trip planning until it reopens. Check back after April 17, 2027, or contact us for the latest status.",
     ],
@@ -802,11 +802,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     nearbySlugs: ["pebble-beach-golf-links", "spyglass-hill"],
     faqs: [
       {
-        q: "Is The Links at Spanish Bay™ open right now?",
+        q: "Is The Links at Spanish Bay® open right now?",
         a: "No. The course is closed for a full Gil Hanse-led renovation that began March 18, 2026. Pebble Beach Company has confirmed a reopening date of April 17, 2027.",
       },
       {
-        q: "Can I book a round at The Links at Spanish Bay™ for a trip before April 2027?",
+        q: "Can I book a round at The Links at Spanish Bay® for a trip before April 2027?",
         a: "No — the course is not currently bookable and doesn't appear as an option in our quote form until it reopens.",
       },
       {
