@@ -1,3 +1,18 @@
+---
+
+## ⛔ SESSION HOLD — READ BEFORE DOING ANYTHING
+
+**MASTER has taken over this project directly. Do NOT start any new work this session.**
+
+All open directives are either resolved or being handled by MASTER and his Claude instance.
+The site is in a stable, near-complete state. Your job right now is to **do nothing** until
+MASTER explicitly lifts this hold in a future AGENTS.md update.
+
+If you have been asked by someone to work on a task, confirm with MASTER first before touching
+any file, making any commit, or running any tool.
+
+---
+
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
