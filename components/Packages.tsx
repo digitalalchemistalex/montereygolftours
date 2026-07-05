@@ -1,33 +1,30 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 
-const PACKAGES = [
+const TIERS = [
   {
     label: "Weekend",
     slug: "3-day-monterey-golf-weekend",
     days: "3 days",
-    rounds: "2 rounds",
-    from: 564,
-    to: 1740,
+    rounds: "2–3 rounds",
     badge: null,
+    description: "Bay Area escape — Friday to Sunday with coastal rounds and Cannery Row.",
   },
   {
     label: "Classic Peninsula",
     slug: "4-day-monterey-peninsula-golf-trip",
     days: "4 days",
-    rounds: "3 rounds",
-    from: 949,
-    to: 2340,
+    rounds: "3–4 rounds",
     badge: "Most booked",
+    description: "The benchmark Monterey trip — championship courses, Carmel base, full itinerary.",
   },
   {
     label: "Full Peninsula",
     slug: "5-day-complete-monterey-golf-vacation",
-    days: "5 days",
-    rounds: "4–5 rounds",
-    from: 1264,
-    to: 2915,
+    days: "5–7 days",
+    rounds: "4–6 rounds",
     badge: null,
+    description: "Cover every major course type — from coastal links to forest, valley to resort.",
   },
 ];
 
@@ -52,14 +49,14 @@ export default function Packages() {
             Trip packages, priced from real Monterey rounds
           </h2>
           <p className="mt-3 font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.85)] md:text-base">
-            Every range below is built from actual course and hotel rates — not placeholder
-            numbers. Final pricing depends on which courses and nights you pick.
+            Every package is built from actual course and hotel rates — pricing varies by
+            course and room selections. Get a custom quote for your exact group.
           </p>
         </div>
       </Reveal>
 
       <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-        {PACKAGES.map((p) => (
+        {TIERS.map((p) => (
           <div
             key={p.label}
             className={`flex flex-col justify-between rounded-2xl bg-cream p-6 shadow-[0_10px_30px_rgba(0,0,0,.18)] transition-transform duration-150 hover:-translate-y-1.5 ${
@@ -78,15 +75,11 @@ export default function Packages() {
                 )}
               </div>
               <div className="mt-3 font-display text-2xl font-bold text-ink">{p.label}</div>
-              <div className="mt-4 flex items-baseline gap-1.5">
-                <span className="font-ui text-sm text-[#6a665e]">from</span>
-                <span className="font-display text-3xl font-bold text-ocean-dark">
-                  ${p.from.toLocaleString()}
-                </span>
-                <span className="font-ui text-sm text-[#6a665e]">/person</span>
-              </div>
-              <div className="mt-1 font-body text-[13px] text-[#8a857a]">
-                up to ${p.to.toLocaleString()} for premium courses and hotels
+              <p className="mt-3 font-body text-[14px] leading-relaxed text-[#6a665e]">
+                {p.description}
+              </p>
+              <div className="mt-4 font-ui text-[12px] font-semibold uppercase tracking-[.06em] text-ocean-dark">
+                Pricing on enquiry
               </div>
             </div>
             <Link
@@ -97,6 +90,15 @@ export default function Packages() {
             </Link>
           </div>
         ))}
+      </div>
+
+      <div className="relative z-10 mt-8 text-center">
+        <Link
+          href="/packages/"
+          className="font-ui text-[13px] font-semibold text-[rgba(250,246,238,.75)] hover:text-gold underline underline-offset-2"
+        >
+          View all packages including real trip examples &rarr;
+        </Link>
       </div>
     </section>
   );
