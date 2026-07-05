@@ -116,14 +116,14 @@ export default async function ItineraryPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+      <section className="relative flex min-h-[480px] flex-col overflow-hidden bg-[#16242c] md:min-h-[600px]">
         <Image src={trip.image} alt={trip.title} fill priority className="object-cover" />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.2) 0%, rgba(22,36,44,.72) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 pt-40 md:px-14 md:pb-14 md:pt-60">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-48 md:px-14 md:pb-14 md:pt-36">
           {trip.mostBooked && (
             <span className="mb-3 inline-block rounded-full bg-gold px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.05em] text-ink">
               Most booked

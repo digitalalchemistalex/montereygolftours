@@ -31,10 +31,10 @@ export default function BlogIndexPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[520px]">
+      <section className="relative flex min-h-[420px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[520px]">
         <Image
-          src="https://images.unsplash.com/photo-1443706340763-4b60757a36ce?auto=format&fit=crop&w=2400&q=90"
-          alt="Coastal golf course at dawn"
+          src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=2400&q=90"
+          alt="Elegant golf course in morning light"
           fill
           priority
           className="object-cover"

@@ -110,14 +110,14 @@ export default async function DestinationPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+      <section className="relative flex min-h-[480px] flex-col overflow-hidden bg-[#16242c] md:min-h-[600px]">
         <Image src={dest.image} alt={dest.name} fill priority className="object-cover" />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(10,40,45,.18) 0%, rgba(10,40,45,.68) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 pt-40 md:px-14 md:pb-14 md:pt-60">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-48 md:px-14 md:pb-14 md:pt-36">
           <h1 className="text-display-lg font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
             {dest.heroTitle}
           </h1>

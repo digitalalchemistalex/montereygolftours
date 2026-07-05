@@ -56,10 +56,10 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-6 md:min-h-[520px] md:px-14 md:pb-8">
+      <section className="relative flex min-h-[420px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-6 md:min-h-[520px] md:px-14 md:pb-8">
         <Image src="https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=2400&q=90" alt="Misty morning on a golf course" fill priority className="object-cover" />
         <Header />
-        <div className="relative z-10 pt-40 md:pt-60">
+        <div className="relative z-10 pt-44 md:pt-32">
           <h1 className="sr-only">Frequently asked questions</h1>
           <p className="max-w-[600px] rounded-lg bg-[rgba(255,255,255,.55)] px-4 py-2 font-body text-base leading-relaxed text-[#2A2620] backdrop-blur-sm md:text-lg">
             Common questions about planning a Monterey Peninsula golf trip.

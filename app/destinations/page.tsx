@@ -20,7 +20,7 @@ export default function DestinationsIndexPage() {
 
   return (
     <>
-      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[420px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
           src="https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=2400&q=90"
           alt=""
@@ -33,7 +33,7 @@ export default function DestinationsIndexPage() {
           style={{ background: "linear-gradient(180deg, rgba(10,30,38,.18) 0%, rgba(10,30,38,.68) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-40 md:pt-60">
+        <div className="relative z-10 pt-44 md:pt-32">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Golf destinations on the Monterey Peninsula
           </h1>

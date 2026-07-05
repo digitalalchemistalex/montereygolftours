@@ -143,7 +143,7 @@ export default async function CoursePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+      <section className="relative flex min-h-[480px] flex-col overflow-hidden bg-[#16242c] md:min-h-[600px]">
         {courseImage && (
           <Image src={courseImage} alt={course.name} fill priority className="object-cover" />
         )}
@@ -152,7 +152,7 @@ export default async function CoursePage({ params }: Props) {
           style={{ background: "linear-gradient(180deg, rgba(15,25,15,.25) 0%, rgba(15,25,15,.85) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 mt-auto px-6 pb-10 pt-40 md:px-14 md:pb-14 md:pt-60">
+        <div className="relative z-10 mt-auto px-6 pb-10 pt-48 md:px-14 md:pb-14 md:pt-36">
           <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(20,30,15,.4)] px-3.5 py-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-cream backdrop-blur-sm">
             {course.city}
           </span>

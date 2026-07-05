@@ -54,7 +54,7 @@ export default function GolfCoursesIndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[420px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
           src="https://images.unsplash.com/photo-1443706340763-4b60757a36ce?auto=format&fit=crop&w=2400&q=90"
           alt=""
@@ -67,7 +67,7 @@ export default function GolfCoursesIndexPage() {
           style={{ background: "linear-gradient(180deg, rgba(22,20,30,.25) 0%, rgba(22,20,30,.7) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-40 md:pt-60">
+        <div className="relative z-10 pt-44 md:pt-32">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Golf courses on the Monterey Peninsula
           </h1>
