@@ -143,7 +143,7 @@ export default async function CoursePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         {courseImage && (
           <Image src={courseImage} alt={course.name} fill priority className="object-cover" />
         )}

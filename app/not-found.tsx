@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export default function NotFound() {
   return (
     <>
-      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(22,36,44,.4) 0%, rgba(22,36,44,.82) 100%)" }}

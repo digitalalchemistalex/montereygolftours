@@ -110,7 +110,7 @@ export default async function DestinationPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[360px] flex-col overflow-hidden bg-[#16242c] md:min-h-[420px]">
+      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         <Image src={dest.image} alt={dest.name} fill priority className="object-cover" />
         <div
           className="absolute inset-0"

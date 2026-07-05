@@ -116,7 +116,7 @@ export default async function ItineraryPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         <Image src={trip.image} alt={trip.title} fill priority className="object-cover" />
         <div
           className="absolute inset-0"

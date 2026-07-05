@@ -48,9 +48,9 @@ export default function PackagesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
-          src="/art/packages-hero.svg"
+          src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=2400&q=90"
           alt=""
           fill
           priority

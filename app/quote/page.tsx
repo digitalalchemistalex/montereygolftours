@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function QuotePage() {
   return (
     <>
-      <section className="relative flex min-h-[320px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[380px] md:px-14 md:pb-12">
-        <Image src="/art/quote-hero.svg" alt="" fill priority className="object-cover" />
+      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
+        <Image src="https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=2400&q=90" alt="" fill priority className="object-cover" />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(15,25,20,.18) 0%, rgba(15,25,20,.6) 100%)" }}

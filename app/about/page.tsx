@@ -68,7 +68,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[320px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[420px]">
+      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[520px]">
         <Image src="https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=2400&q=90" alt="Aerial view of an elegant golf course" fill priority className="object-cover" />
         <Header />
         <div className="relative z-10 px-6 pb-8 pt-40 md:px-14 md:pb-10 md:pt-60">

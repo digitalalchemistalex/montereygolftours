@@ -112,7 +112,7 @@ export default async function HotelPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
+      <section className="relative flex min-h-[420px] flex-col overflow-hidden bg-[#16242c] md:min-h-[560px]">
         {hotelImage && (
           <Image src={hotelImage} alt={hotel.name} fill priority className="object-cover" />
         )}

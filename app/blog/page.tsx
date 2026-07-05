@@ -31,8 +31,18 @@ export default function BlogIndexPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[440px]">
-        <div className="absolute inset-0 bg-[#16242c]" />
+      <section className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[520px]">
+        <Image
+          src="https://images.unsplash.com/photo-1443706340763-4b60757a36ce?auto=format&fit=crop&w=2400&q=90"
+          alt="Coastal golf course at dawn"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.25) 0%, rgba(22,36,44,.78) 100%)" }}
+        />
         <Header />
         <div className="relative z-10 px-6 pb-12 pt-40 md:px-14 md:pb-16 md:pt-64">
           <p className="mb-3 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">

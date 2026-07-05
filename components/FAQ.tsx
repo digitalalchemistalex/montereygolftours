@@ -5,10 +5,10 @@ export type FAQItem = { q: string; a: string };
 export type FAQCategory = { category: string; items: FAQItem[] };
 
 const CATEGORY_ICONS: Record<string, string> = {
-  "Trip planning": "/art/faq-categories/trip-planning.svg",
-  "Pebble Beach & courses": "/art/faq-categories/courses.svg",
-  "Timing & logistics": "/art/faq-categories/timing.svg",
-  "Lodging & travel": "/art/faq-categories/lodging.svg",
+  "Trip planning": "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=400&q=85",
+  "Pebble Beach & courses": "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=400&q=85",
+  "Timing & logistics": "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=400&q=85",
+  "Lodging & travel": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=400&q=85",
 };
 
 export const FAQ_CATEGORIES: FAQCategory[] = [
