@@ -58,7 +58,7 @@ export default function TermsPage() {
             <h2 className="font-display text-xl font-bold text-ink">Trademarks</h2>
             <p className="mt-2 font-body text-[15px] leading-relaxed text-[#4a463f]">
               Pebble Beach®, Pebble Beach Resorts®, Pebble Beach Golf Links®, The Links at
-              Spanish Bay™, Spyglass Hill® Golf Course, Del Monte Golf Course®, and their
+              Spanish Bay®, Spyglass Hill® Golf Course, Del Monte Golf Course®, and their
               underlying distinctive images are trademarks, service marks, and trade
               dress of Pebble Beach Company. Used with permission.
             </p>
