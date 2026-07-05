@@ -252,7 +252,7 @@ export default function Header() {
                     <div className="flex-1">
                       <div className="font-ui text-[13.5px] font-semibold text-ink group-hover/d:text-ocean">{d.name}</div>
                       <div className="mt-0.5 line-clamp-1 font-body text-[11.5px] leading-snug text-[#8a857a]">
-                        {d.speakable.split(".")[0].replace(/^[^,—–]+[,—–]\s*/,"").slice(0,80)}
+                        {d.speakable.split(".")[0].slice(0,90)}
                       </div>
                     </div>
                     <span className="mt-1 flex-none font-ui text-[11px] text-[#c8b89a] opacity-0 transition-opacity group-hover/d:opacity-100">&rarr;</span>
