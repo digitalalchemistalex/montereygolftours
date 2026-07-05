@@ -240,7 +240,7 @@ export default function Header() {
             Destinations {chevron}
           </Link>
 
-          <div className={`${DROP} left-1/2 w-[440px] -translate-x-1/2`}>
+          <div className={`${DROP} left-1/2 w-[540px] -translate-x-1/2`}>
             <div className={CARD}>
               <div className="border-b border-[#f0ebe1] bg-[#f9f6ef] px-5 py-3">
                 <span className="font-ui text-[10px] font-bold uppercase tracking-[.12em] text-[#a8a294]">6 Areas · Monterey Peninsula + Central Coast</span>
@@ -251,8 +251,8 @@ export default function Header() {
                     className="group/d flex items-start gap-3 px-5 py-3.5 hover:bg-[#faf7f2]">
                     <div className="flex-1">
                       <div className="font-ui text-[13.5px] font-semibold text-ink group-hover/d:text-ocean">{d.name}</div>
-                      <div className="mt-0.5 line-clamp-1 font-body text-[11.5px] leading-snug text-[#8a857a]">
-                        {d.speakable.split(".")[0].slice(0,90)}
+                      <div className="mt-0.5 font-body text-[12px] leading-snug text-[#8a857a] pr-2">
+                        {d.speakable.split(".")[0]}
                       </div>
                     </div>
                     <span className="mt-1 flex-none font-ui text-[11px] text-[#c8b89a] opacity-0 transition-opacity group-hover/d:opacity-100">&rarr;</span>
