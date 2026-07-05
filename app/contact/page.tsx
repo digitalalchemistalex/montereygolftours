@@ -49,10 +49,10 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#7EC8E8] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
+      <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-10 md:min-h-[340px] md:px-14 md:pb-12">
         <Image
-          src="/art/contact-hero.svg"
-          alt="Illustration of a golfer on a fairway on a sunny day"
+          src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=90"
+          alt="Luxury resort pool and terrace"
           fill
           priority
           className="object-cover"
@@ -63,7 +63,7 @@ export default function ContactPage() {
         />
         <Header />
         <div className="relative z-10 pt-40 md:pt-60">
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-ink md:text-[48px]" style={{ textShadow: "0 1px 8px rgba(255,255,255,.6)" }}>
+          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]" style={{ textShadow: "0 2px 12px rgba(0,0,0,.5)" }}>
             Get in touch
           </h1>
         </div>

@@ -57,7 +57,7 @@ export default function FAQPage() {
       />
 
       <section className="relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#16242c] px-6 pb-6 md:min-h-[340px] md:px-14 md:pb-8">
-        <Image src="/art/faq-hero.svg" alt="" fill priority className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=2400&q=90" alt="Misty morning on a golf course" fill priority className="object-cover" />
         <Header />
         <div className="relative z-10 pt-40 md:pt-60">
           <h1 className="sr-only">Frequently asked questions</h1>

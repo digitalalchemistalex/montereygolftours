@@ -69,7 +69,7 @@ export default function AboutPage() {
       />
 
       <section className="relative flex min-h-[320px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[420px]">
-        <Image src="/art/about-hero.svg" alt="Monterey Golf Tours" fill priority className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=2400&q=90" alt="Aerial view of an elegant golf course" fill priority className="object-cover" />
         <Header />
         <div className="relative z-10 px-6 pb-8 pt-40 md:px-14 md:pb-10 md:pt-60">
           <h1 className="sr-only">About Monterey Golf Tours</h1>

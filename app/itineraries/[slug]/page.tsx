@@ -398,6 +398,117 @@ export default async function ItineraryPage({ params }: Props) {
           </section>
         )}
 
+        {/* Upsell — next trip up */}
+        {(() => {
+          const allTrips = Object.values(ITINERARIES).sort((a, b) => a.priceFrom - b.priceFrom);
+          const currentIndex = allTrips.findIndex((t) => t.slug === trip.slug);
+          const upsell = allTrips[currentIndex + 1];
+          if (!upsell) return null;
+          return (
+            <section className="border-b border-[#e3ddcf] bg-[#f4f0e7] px-6 py-14 md:px-14 md:py-16">
+              <div className="mx-auto max-w-[900px]">
+                <div className="font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
+                  Take it further
+                </div>
+                <h2 className="mt-2 font-display text-2xl font-bold text-ink md:text-[28px]">
+                  Add more days, more courses
+                </h2>
+                <p className="mt-2 max-w-[560px] font-body text-[14px] leading-relaxed text-[#5a564e]">
+                  Groups who extend to {upsell.durationDays} days typically add{" "}
+                  {upsell.rounds} — giving the trip a more relaxed pace and room
+                  for one more standout course.
+                </p>
+                <Link
+                  href={`/itineraries/${upsell.slug}/`}
+                  className="group mt-6 flex max-w-[420px] items-center justify-between gap-4 overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]"
+                >
+                  {upsell.image && (
+                    <div className="relative h-full w-[120px] flex-none self-stretch overflow-hidden">
+                      <Image
+                        src={upsell.image}
+                        alt={upsell.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="120px"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 py-4 pr-5">
+                    <div className="font-ui text-[11px] font-bold uppercase tracking-[.06em] text-gold">
+                      {upsell.durationDays} days &middot; {upsell.rounds}
+                    </div>
+                    <div className="mt-1 font-display text-base font-bold text-ink">
+                      {upsell.title}
+                    </div>
+                    <div className="mt-1 font-display text-sm font-bold text-ocean-dark">
+                      from ${upsell.priceFrom.toLocaleString()}/person
+                    </div>
+                    <div className="mt-2 font-ui text-sm font-semibold text-ocean">
+                      See this itinerary &rarr;
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* Cross-sell — related itineraries at similar price point */}
+        {(() => {
+          const related = Object.values(ITINERARIES)
+            .filter((t) => t.slug !== trip.slug)
+            .sort((a, b) => Math.abs(a.priceFrom - trip.priceFrom) - Math.abs(b.priceFrom - trip.priceFrom))
+            .slice(0, 2);
+          if (related.length === 0) return null;
+          return (
+            <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-16">
+              <div className="mx-auto max-w-[900px]">
+                <div className="font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
+                  You might also like
+                </div>
+                <h2 className="mt-2 font-display text-2xl font-bold text-ink md:text-[28px]">
+                  Similar trips
+                </h2>
+                <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  {related.map((t) => (
+                    <Link
+                      key={t.slug}
+                      href={`/itineraries/${t.slug}/`}
+                      className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]"
+                    >
+                      {t.image && (
+                        <div className="relative h-40 w-full overflow-hidden">
+                          <Image
+                            src={t.image}
+                            alt={t.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            sizes="(max-width: 640px) 100vw, 50vw"
+                          />
+                        </div>
+                      )}
+                      <div className="p-5">
+                        <div className="font-ui text-[11px] font-bold uppercase tracking-[.06em] text-gold">
+                          {t.durationDays} days &middot; {t.rounds}
+                        </div>
+                        <div className="mt-1.5 font-display text-base font-bold text-ink">
+                          {t.title}
+                        </div>
+                        <div className="mt-1 font-display text-sm font-bold text-ocean-dark">
+                          from ${t.priceFrom.toLocaleString()}/person
+                        </div>
+                        <div className="mt-3 font-ui text-sm font-semibold text-ocean">
+                          View itinerary &rarr;
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        })()}
+
         {/* Custom quote CTA */}
         <section className="px-6 py-12 text-center md:px-14 md:py-14">
           <h2 className="font-display text-2xl font-bold text-ink md:text-[32px]">

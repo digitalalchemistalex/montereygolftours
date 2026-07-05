@@ -72,6 +72,7 @@ export default function BackToTop() {
           <circle cx="16" cy="27.3" r="0.9" />
           <circle cx="20" cy="27.8" r="0.9" />
         </g>
+        <path d="M17 19 L17 11 M13 15 L17 11 L21 15" fill="none" stroke="#2C6E8E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </button>
   );
