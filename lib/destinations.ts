@@ -322,10 +322,10 @@ export const DESTINATIONS: Record<string, Destination> = {
     name: "Pebble Beach Area",
     heroTitle: "Golf in the Pebble Beach Area",
     speakable:
-      "The Pebble Beach Area refers to the Del Monte Forest area of the Monterey Peninsula, home to Pebble Beach Golf Links®, Spyglass Hill Golf Course®, The Links at Spanish Bay™, and Poppy Hills, among others.",
+      "The Pebble Beach Area refers to the Del Monte Forest area of the Monterey Peninsula, home to Pebble Beach Golf Links®, Spyglass Hill Golf Course®, The Links at Spanish Bay®, and Poppy Hills, among others.",
     trustBar: ["4+ courses in the Del Monte Forest", "IAGTO-authorized booking partner", "World-renowned golf address"],
     whyPlay:
-      "\"Pebble Beach Area\" here refers to the Del Monte Forest area of the Monterey Peninsula — the geography, not the Pebble Beach Company brand specifically. As an IAGTO-contracted travel partner with Pebble Beach Resorts®, we can book and name Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay™ directly, alongside Poppy Hills, an NCGA-owned course in the same forest that doesn't carry the resort's gate fee.",
+      "\"Pebble Beach Area\" here refers to the Del Monte Forest area of the Monterey Peninsula — the geography, not the Pebble Beach Company brand specifically. As an IAGTO-contracted travel partner with Pebble Beach Resorts®, we can book and name Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay® directly, alongside Poppy Hills, an NCGA-owned course in the same forest that doesn't carry the resort's gate fee.",
     features: [
       {
         label: "World-renowned address",
@@ -355,11 +355,11 @@ export const DESTINATIONS: Record<string, Destination> = {
     faqs: [
       {
         q: "What does \"Pebble Beach Area\" mean on this site?",
-        a: "It refers to the Del Monte Forest area of the Monterey Peninsula — the geography. Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay™ are trademarks of Pebble Beach Company, used here with authorization as an IAGTO-contracted travel partner.",
+        a: "It refers to the Del Monte Forest area of the Monterey Peninsula — the geography. Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay® are trademarks of Pebble Beach Company, used here with authorization as an IAGTO-contracted travel partner.",
       },
       {
         q: "Can I book a round at Pebble Beach Golf Links® through Monterey Golf Tours?",
-        a: "Yes — as an IAGTO-contracted travel partner with Pebble Beach Resorts®, we coordinate tee times at Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay™ as part of a planned trip.",
+        a: "Yes — as an IAGTO-contracted travel partner with Pebble Beach Resorts®, we coordinate tee times at Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay® as part of a planned trip.",
       },
       {
         q: "Is there a more affordable course in the same area?",
