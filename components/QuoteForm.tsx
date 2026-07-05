@@ -40,7 +40,7 @@ const ACTIVITIES = [
   "Carmel-by-the-Sea galleries & shopping",
 ];
 
-// The Links at Spanish Bay is closed for renovation until April 17, 2027 and
+// The Links at Spanish Bay® is closed for renovation until April 17, 2027 and
 // must not be offered as a selectable option here.
 const CLOSED_COURSE_SLUGS = new Set(["links-at-spanish-bay"]);
 const BOOKABLE_COURSES = COURSES.filter((c) => !CLOSED_COURSE_SLUGS.has(c.slug));
