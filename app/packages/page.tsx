@@ -77,7 +77,7 @@ export default async function PackagesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* Hero */}
-      <section className="relative flex min-h-[440px] flex-col justify-end overflow-hidden bg-[#16242c] md:min-h-[540px]">
+      <section className="relative flex min-h-[440px] flex-col justify-end bg-[#16242c] md:min-h-[540px]">
         <Image
           src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=2400&q=90"
           alt="Monterey Peninsula golf"
