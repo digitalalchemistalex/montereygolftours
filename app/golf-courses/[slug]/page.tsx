@@ -64,6 +64,8 @@ export default async function CoursePage({ params }: Props) {
 
   const livePricing = await getCoursePricing(course.slug);
   const greenFeeDisplay = livePricing?.price_label ?? course.greenFeeEst;
+  // courseData from COURSES has the image field (CourseDetail doesn't)
+  const courseData = COURSES.find(c => c.slug === slug);
 
   const nearby = course.nearbySlugs
     .map((s) => COURSES.find((c) => c.slug === s))
@@ -122,14 +124,14 @@ export default async function CoursePage({ params }: Props) {
               : "https://schema.org/InStock",
           },
         } : {}),
-        ...(course.image ? {
+        ...(courseData?.image ? {
           image: {
             "@type": "ImageObject",
-            url: `${course.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
-            contentUrl: `${course.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            url: `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            contentUrl: `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
             width: 1200,
             height: 800,
-            name: `${course.name} — Monterey Golf Tours`,
+            name: `${courseData!.name} — Monterey Golf Tours`,
             acquireLicensePage: "https://unsplash.com/license",
           },
         } : {}),
