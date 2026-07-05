@@ -75,7 +75,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: "How do I get to the Monterey Peninsula?",
-        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) and San Francisco (SFO) are 90–120 minute drives if you're flying into one of those instead.",
+        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min if you're flying into one of those instead.",
       },
       {
         q: "Is Carmel Valley warmer than the coast?",

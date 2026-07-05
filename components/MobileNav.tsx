@@ -8,27 +8,43 @@ const LINKS = [
   {
     label: "Courses",
     href: "/golf-courses/",
-    image: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f",
+    image: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=800&q=85",
   },
   {
     label: "Hotels",
     href: "/hotels/",
-    image: "https://images.unsplash.com/photo-1549294413-26f195200c16",
+    image: "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=800&q=85",
   },
   {
     label: "Destinations",
     href: "/destinations/",
-    image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd",
+    image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=800&q=85",
   },
   {
     label: "Itineraries",
     href: "/itineraries/",
-    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513",
+    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=800&q=85",
   },
-  { label: "Packages", href: "/packages/", image: "/art/packages-hero.svg" },
-  { label: "Blog", href: "/blog/", image: "/art/blog-hero.svg" },
-  { label: "About", href: "/about/", image: "/art/about-hero.svg" },
-  { label: "FAQ", href: "/faq/", image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=85" },
+  {
+    label: "Packages",
+    href: "/packages/",
+    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=800&q=85",
+  },
+  {
+    label: "Blog",
+    href: "/blog/",
+    image: "https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=800&q=85",
+  },
+  {
+    label: "About",
+    href: "/about/",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=85",
+  },
+  {
+    label: "FAQ",
+    href: "/faq/",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=85",
+  },
 ];
 
 export default function MobileNav() {
@@ -36,12 +52,13 @@ export default function MobileNav() {
 
   return (
     <div className="lg:hidden">
+      {/* Hamburger — z-[60] so it always sits above the header (z-50) and overlay (z-[55]) */}
       <button
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="relative z-30 flex h-9 w-9 flex-none flex-col items-center justify-center gap-[5px]"
+        className="relative z-[60] flex h-9 w-9 flex-none flex-col items-center justify-center gap-[5px]"
       >
         <span
           className="block h-[2px] w-6 rounded-full bg-cream transition-transform duration-200"
@@ -57,9 +74,10 @@ export default function MobileNav() {
         />
       </button>
 
+      {/* Full-screen overlay — z-[55] so it covers the page but hamburger stays on top */}
       {open && (
-        <div className="fixed inset-0 z-20 flex flex-col bg-[#16242c]">
-          <div className="flex-1 overflow-y-auto pt-24">
+        <div className="fixed inset-0 z-[55] flex flex-col bg-[#16242c]">
+          <div className="flex-1 overflow-y-auto pt-20">
             <nav className="flex flex-col">
               {LINKS.map((link) => (
                 <Link
@@ -77,7 +95,7 @@ export default function MobileNav() {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(90deg, rgba(10,15,15,.75) 0%, rgba(10,15,15,.45) 55%, rgba(10,15,15,.2) 100%)",
+                        "linear-gradient(90deg, rgba(10,15,15,.78) 0%, rgba(10,15,15,.45) 55%, rgba(10,15,15,.15) 100%)",
                     }}
                   />
                   <span

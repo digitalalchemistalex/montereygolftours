@@ -332,6 +332,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Complimentary bicycles",
       "Valet parking only",
     ],
+    uniqueDetails: [
+      "Forbes Four-Star rated — one of the most decorated hotels on the peninsula.",
+      "Sits directly on Cannery Row waterfront with Monterey Bay views from the majority of rooms.",
+      "Walking distance to the Monterey Bay Aquarium and the main Cannery Row strip.",
+    ],
     diningNames: [
       { name: "Schooners Monterey", detail: "Oceanfront dining" },
       { name: "Coastal Kitchen", detail: "Newer dining addition" },
@@ -469,6 +474,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "No resort fee on direct bookings",
       "EV charging",
     ],
+    uniqueDetails: [
+      "The Central Coast's first LEED-certified hotel — a meaningful sustainability credential for environmentally conscious groups.",
+      "Largest hotel in Monterey at 379 rooms, connected directly to the Monterey Conference Center — best choice for larger corporate golf groups.",
+      "No resort fee on direct bookings — a real differentiator at this price point on the peninsula.",
+    ],
     diningNames: [{ name: "Jacks Monterey", detail: "Breakfast and dinner, American cuisine" }],
     roomFeatures: [
       "Spanish missionary-inspired aesthetic with Monterey Bay tones",
@@ -533,6 +543,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Spa treatments (in-room or arranged)",
       "Walking distance to Carmel Beach (0.5 miles)",
       "Signature continental breakfast for 2 included in room rate",
+    ],
+    uniqueDetails: [
+      "One of only two Relais & Châteaux properties on the Monterey Peninsula — a designation reserved for the world's finest independent hotels.",
+      "Aubergine is a 9-table chef-driven restaurant with a 2,500-bottle wine cellar, widely regarded as the finest dining in Carmel.",
+      "No air conditioning by design — the village's coastal microclimate keeps rooms naturally comfortable year-round.",
     ],
     diningNames: [
       { name: "Aubergine", detail: "9-table intimate fine dining, Chef Justin Cogley, 2,500-bottle wine cellar" },

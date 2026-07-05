@@ -544,7 +544,7 @@ export default function QuoteForm() {
         <p className="mt-2.5 max-w-[600px] font-body text-[12px] leading-relaxed text-[#8a857a]">
           Monterey Regional Airport (MRY) is about 10 minutes from most courses, with
           direct flights from major West Coast and select national hubs. San Jose
-          (SJC) and San Francisco (SFO) are 90&ndash;120 minute drives if you&apos;re
+          (SJC) and San Francisco (SFO) are 90–115min and 115min drives respectively if you&apos;re
           flying into one of those instead.
         </p>
       </div>

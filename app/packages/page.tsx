@@ -4,7 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ITINERARIES } from "@/lib/itineraries";
-import { getMontereyTrips, type GHTSTrip } from "@/lib/gths";
+import { getMontereyTrips } from "@/lib/gths";
 import { SITE } from "@/lib/site";
 
 // GTHS api-image.php returns 403 — use vibe-based Unsplash fallbacks instead

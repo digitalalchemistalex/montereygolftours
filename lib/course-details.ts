@@ -257,6 +257,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         a: "Both Bayonet and Black Horse sit about 5 miles from downtown Monterey, within the same facility.",
       },
     ],
+    pointers: [
+      "Named for the 11th Cavalry Regiment 'Black Horse,' stationed at the Presidio of Monterey from 1919 to 1940.",
+      "The sweeping Monterey Bay views from Black Horse's fairways are among the best on the peninsula.",
+      "Savvy groups play both Bayonet and Black Horse in the same two-day stretch — same facility, distinct challenges.",
+    ],
   },
   "carmel-valley-ranch": {
     slug: "carmel-valley-ranch",
@@ -448,6 +453,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         a: "The golf course and WeatherTech Raceway Laguna Seca share the same regional name but are separate facilities.",
       },
     ],
+    pointers: [
+      "The par-5 15th is nicknamed the 'snake hole' — it's shaped like a serpent and requires carries over water twice.",
+      "Designed by Robert Trent Jones Sr. and Jr. in 1970 — notable design pedigree at a daily-fee price point.",
+      "The best-value full-length course on the peninsula, ideal as an accessible opening or closing round.",
+    ],
   },
   "pacific-grove-golf-links": {
     slug: "pacific-grove-golf-links",
@@ -512,6 +522,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         a: "No — it's a city-owned municipal course, which is why its rates run well below the peninsula's resort and private options.",
       },
     ],
+    pointers: [
+      "The back nine was laid out by the same architect who designed the famous clifftop links next door — same Pacific Ocean, same crashing waves, a fraction of the price.",
+      "The front nine plays through forested Pacific Grove, giving the round two completely different characters.",
+      "Address: 77 Asilomar Avenue, Pacific Grove — adjacent to Asilomar State Beach.",
+    ],
   },
   "poppy-hills": {
     slug: "poppy-hills",
@@ -575,6 +590,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         a: "Yes — it sits in the same Del Monte Forest, though it's independently owned by the NCGA and doesn't carry the resort's gate fee.",
       },
     ],
+    pointers: [
+      "Colin Montgomerie compared it to Pine Valley. Tom Watson said: 'I like that a lot. Would love a three-round event at Poppy Hills.'",
+      "All 18 holes play through towering Monterey Pines of the Del Monte Forest — unique atmosphere at a public price.",
+      "Day visitors do NOT pay the Pebble Beach gate fee to access Poppy Hills — the NCGA entrance is entirely separate from the resort.",
+    ],
   },
   "club-at-pasadera": {
     slug: "club-at-pasadera",
@@ -633,6 +653,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is The Club at Pasadera a good fit for a group trip?",
         a: "It suits groups planning well in advance to secure access, given its limited public availability as a primarily private club.",
       },
+    ],
+    pointers: [
+      "Signature hole: par-3 14th — 'The Moment' — 205 yards over a canyon with views stretching to Monterey and Pacific Grove.",
+      "Guests of Bernardus Lodge can access the course outside the standard Monday public window — verify current terms with the property.",
+      "Joined the TPC Network in 2025; previously operated as TPC Monterey at Pasadera.",
     ],
   },
   "pebble-beach-golf-links": {
