@@ -4,8 +4,20 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ITINERARIES } from "@/lib/itineraries";
-import { getMontereyTrips, getGHTSImageUrl, type GHTSTrip } from "@/lib/gths";
+import { getMontereyTrips, type GHTSTrip } from "@/lib/gths";
 import { SITE } from "@/lib/site";
+
+// GTHS api-image.php returns 403 — use vibe-based Unsplash fallbacks instead
+const GTHS_IMG: Record<string, string> = {
+  Premium: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=600&h=350&q=80",
+  Classic: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&h=350&q=80",
+  Value:   "https://images.unsplash.com/photo-1587205476864-4a5a195167b4?auto=format&fit=crop&w=600&h=350&q=80",
+  Luxury:  "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=600&h=350&q=80",
+  Relaxed: "https://images.unsplash.com/photo-1605144884374-ecbb643615f6?auto=format&fit=crop&w=600&h=350&q=80",
+};
+function gthsImg(vibe: string): string {
+  return GTHS_IMG[vibe] ?? GTHS_IMG.Classic;
+}
 
 export const metadata: Metadata = {
   title: "Golf Trip Packages | Monterey Golf Tours",
@@ -134,7 +146,7 @@ export default async function PackagesPage() {
                   {/* Image */}
                   <div className="relative h-52 w-full overflow-hidden">
                     <Image
-                      src={getGHTSImageUrl(trip.id)}
+                      src={gthsImg(trip.vibe)}
                       alt={`${trip.vibe} Monterey golf trip — ${trip.nights} nights`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
