@@ -13,6 +13,37 @@ any file, making any commit, or running any tool.
 
 ---
 
+
+---
+
+## ⚠️ MANDATORY PRE-PUSH REASONING PROTOCOL
+
+Before ANY GitHub PUT (file commit), you MUST explicitly reason through ALL of the following.
+No exceptions. No shortcuts. A failed build costs MASTER real money and time.
+
+**Step 1 — Type verification**
+For every TypeScript property you reference (e.g. `course.image`, `hotel.slug`), you MUST have
+already fetched and read the actual type definition in the source file. If you have not read it,
+READ IT NOW before writing any code. "I think it has that field" is not acceptable.
+
+**Step 2 — Replacement string uniqueness**
+If using `content.replace(old, new)`, confirm the OLD string is long enough to be unambiguous.
+Count how many times OLD appears in the file. If >1, use a longer, more unique string.
+NEVER use short generic tokens like `"\n};\n"` — they will hit the wrong target.
+
+**Step 3 — Scope check**
+List every file the commit touches. Confirm each file change was explicitly requested.
+Any out-of-scope file change requires MASTER approval before pushing.
+
+**Step 4 — Build confidence**
+Before pushing: mentally compile the changed code. Trace every import, every property access,
+every function call. If you cannot trace it confidently, fetch the relevant files and check.
+
+**Step 5 — Verify READY before next change**
+After each push, confirm the Vercel deployment reaches READY state before starting the next
+code change. Never stack commits on a broken build.
+
+---
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
