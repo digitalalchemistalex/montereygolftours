@@ -197,12 +197,12 @@ export default function Header() {
                     const meta = HOTEL_NOTE[slug];
                     return (
                       <Link key={slug} href={`/hotels/${slug}/`}
-                        className="flex items-baseline justify-between rounded-md px-2 py-[4px] hover:bg-[#f4f0e7]">
-                        <div>
-                          <span className="font-ui text-[12.5px] font-medium text-ink">{h.name.replace(" Hotel & Spa","").replace(" Garden Hotel & Spa","").replace(" Hotel","")}</span>
-                          {meta && <span className="ml-1.5 font-body text-[10.5px] text-[#a0958a]">{meta.note}</span>}
+                        className="flex flex-col rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-ui text-[12.5px] font-medium text-ink truncate">{h.name.replace(" Hotel & Spa","").replace(" Garden Hotel & Spa","").replace(" Hotel","")}</span>
+                          {meta && <span className="flex-none font-body text-[10px] text-gold">{meta.stars}</span>}
                         </div>
-                        {meta && <span className="flex-none font-body text-[10.5px] text-gold">{meta.stars}</span>}
+                        {meta && <span className="font-body text-[10.5px] text-[#a0958a]">{meta.note}</span>}
                       </Link>
                     );
                   })}
@@ -215,12 +215,12 @@ export default function Header() {
                     const meta = HOTEL_NOTE[slug];
                     return (
                       <Link key={slug} href={`/hotels/${slug}/`}
-                        className="flex items-baseline justify-between rounded-md px-2 py-[4px] hover:bg-[#f4f0e7]">
-                        <div>
-                          <span className="font-ui text-[12.5px] font-medium text-ink">{h.name.replace(" Lodge & Spa","").replace(" & Golf Club","")}</span>
-                          {meta && <span className="ml-1.5 font-body text-[10.5px] text-[#a0958a]">{meta.note}</span>}
+                        className="flex flex-col rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-ui text-[12.5px] font-medium text-ink truncate">{h.name.replace(" Lodge & Spa","").replace(" & Golf Club","")}</span>
+                          {meta && <span className="flex-none font-body text-[10px] text-gold">{meta.stars}</span>}
                         </div>
-                        {meta && <span className="flex-none font-body text-[10.5px] text-gold">{meta.stars}</span>}
+                        {meta && <span className="font-body text-[10.5px] text-[#a0958a]">{meta.note}</span>}
                       </Link>
                     );
                   })}
