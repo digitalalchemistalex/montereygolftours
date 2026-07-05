@@ -61,7 +61,7 @@ export default function PackagesPage() {
           style={{ background: "linear-gradient(180deg, rgba(20,20,28,.2) 0%, rgba(20,20,28,.7) 100%)" }}
         />
         <Header />
-        <div className="relative z-10 pt-44 md:pt-32">
+        <div className="relative z-10 px-6 pb-10 pt-44 md:px-14 md:pb-12 md:pt-32">
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Golf trip packages
           </h1>

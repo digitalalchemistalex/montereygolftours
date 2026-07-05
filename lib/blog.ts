@@ -20,7 +20,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "best-time-to-play-golf-monterey-peninsula": {
     slug: "best-time-to-play-golf-monterey-peninsula",
     cardTitle: "Best Time to Play",
-    cardImage: "/art/blog/best-time-to-play.svg",
+    cardImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=85",
     title: "Best Time to Play Golf on the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -64,7 +64,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "how-to-plan-a-group-golf-trip-monterey": {
     slug: "how-to-plan-a-group-golf-trip-monterey",
     cardTitle: "Plan a Group Trip",
-    cardImage: "/art/blog/group-trip.svg",
+    cardImage: "https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=600&q=85",
     title: "How to Plan a Group Golf Trip to the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -107,7 +107,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "bayonet-golf-course-guide": {
     slug: "bayonet-golf-course-guide",
     cardTitle: "Bayonet Guide",
-    cardImage: "/art/blog/bayonet-guide.svg",
+    cardImage: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&q=85",
     title: "Bayonet Golf Course: A Complete Guide",
     category: "Course Guides",
     datePublished: "2026-06-30",
@@ -145,7 +145,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "best-golf-courses-monterey-peninsula": {
     slug: "best-golf-courses-monterey-peninsula",
     cardTitle: "Best Courses",
-    cardImage: "/art/blog/best-courses.svg",
+    cardImage: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=600&q=85",
     title: "Best Golf Courses on the Monterey Peninsula in 2026",
     category: "Best Of",
     datePublished: "2026-06-30",
@@ -193,7 +193,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "monterey-golf-trip-on-a-budget": {
     slug: "monterey-golf-trip-on-a-budget",
     cardTitle: "Budget Golf Trip",
-    cardImage: "/art/blog/budget-trip.svg",
+    cardImage: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=600&q=85",
     title: "How to Plan an Affordable Monterey Golf Trip",
     category: "Trip Planning",
     datePublished: "2026-06-30",

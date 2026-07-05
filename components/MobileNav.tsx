@@ -28,7 +28,7 @@ const LINKS = [
   { label: "Packages", href: "/packages/", image: "/art/packages-hero.svg" },
   { label: "Blog", href: "/blog/", image: "/art/blog-hero.svg" },
   { label: "About", href: "/about/", image: "/art/about-hero.svg" },
-  { label: "FAQ", href: "/faq/", image: "/art/faq-hero.svg" },
+  { label: "FAQ", href: "/faq/", image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=85" },
 ];
 
 export default function MobileNav() {
