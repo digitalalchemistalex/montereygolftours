@@ -74,7 +74,7 @@ export default function PackagesPage() {
 
       <main className="flex-1">
         <section className="px-6 py-10 md:px-14 md:py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {trips.map((t) => (
               <Link
                 key={t.slug}
