@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HOTEL_DETAILS } from "@/lib/hotel-details";
 import { HOTELS } from "@/lib/hotels";
+import { COURSES } from "@/lib/courses";
+import { ITINERARIES } from "@/lib/itineraries";
 import { SITE } from "@/lib/site";
 
 type Props = {
@@ -41,6 +43,17 @@ const TIER_LABEL: Record<number, string> = {
 export default async function HotelPage({ params }: Props) {
   const { slug } = await params;
   const hotel = HOTEL_DETAILS[slug];
+
+  const nearbyCity = hotel?.city?.split(",")[0].trim() ?? "";
+  const nearbyCourses = hotel ? COURSES
+    .filter(c => c.city.includes(nearbyCity) || c.city.includes("Monterey") || c.city.includes("Carmel") || c.city.includes("Seaside"))
+    .filter(c => c.slug !== "links-at-spanish-bay")
+    .slice(0, 3) : [];
+  const allTrips = Object.values(ITINERARIES);
+  const crossSellTrips = hotel ? [
+    ...allTrips.filter(t => t.hotelSlugs?.includes(hotel.slug)),
+    ...allTrips.filter(t => !t.hotelSlugs?.includes(hotel.slug)),
+  ].slice(0, 2) : [];
 
   if (!hotel) {
     return (
@@ -296,6 +309,63 @@ export default async function HotelPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Nearby courses cross-sell */}
+        {nearbyCourses.length > 0 && (
+          <section className="border-t border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink">
+              Courses near {hotel.name}
+            </h2>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {nearbyCourses.map(c => (
+                <Link key={c.slug} href={`/golf-courses/${c.slug}/`}
+                  className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]">
+                  {c.image && (
+                    <div className="relative h-40 w-full overflow-hidden">
+                      <Image src={c.image} alt={c.name} fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, 33vw" />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <div className="font-display text-sm font-bold text-ink">{c.name}</div>
+                    <div className="mt-0.5 font-body text-[12px] text-[#6a665e]">Par {c.par} · {c.yards}</div>
+                    <div className="mt-2 font-ui text-[12px] font-semibold text-ocean">View course →</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Itinerary cross-sell */}
+        {crossSellTrips.length > 0 && (
+          <section className="border-t border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink">
+              Golf trips based here
+            </h2>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {crossSellTrips.map(t => (
+                <Link key={t.slug} href={`/itineraries/${t.slug}/`}
+                  className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]">
+                  <div className="relative h-44 w-full overflow-hidden">
+                    <Image src={t.image} alt={t.title} fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, 50vw" />
+                    {t.mostBooked && (
+                      <span className="absolute left-3 top-3 rounded-full bg-gold px-2.5 py-0.5 font-ui text-[10px] font-bold uppercase tracking-[.05em] text-ink">Most booked</span>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <div className="font-display text-base font-bold text-ink">{t.title}</div>
+                    <div className="mt-1 font-body text-[13px] text-[#6a665e]">{t.durationDays} days · {t.rounds}</div>
+                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">View itinerary →</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="px-6 py-16 text-center md:px-14 md:py-20">
           <h2 className="text-display-md font-display font-bold text-ink">
