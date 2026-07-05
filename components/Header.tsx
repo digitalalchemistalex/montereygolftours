@@ -85,7 +85,7 @@ const MEGA_MENUS = [
 
 export default function Header() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between gap-7 px-6 py-6 md:px-14">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-7 px-6 py-6 md:px-14">
       <Link href="/" className="flex items-center flex-none">
         <Logo />
       </Link>
@@ -103,7 +103,7 @@ export default function Header() {
               </svg>
             </Link>
 
-            <div className="pointer-events-none fixed left-1/2 top-[76px] z-50 w-[560px] -translate-x-1/2 opacity-0 transition-all duration-200 ease-out [transform:translateY(-6px)] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:[transform:translateY(0)]">
+            <div className="pointer-events-none absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 ease-out [transform:translateY(-6px)] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:[transform:translateY(0)]">
               <div className="overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white shadow-[0_24px_60px_rgba(20,25,20,.28)]">
                 <div className="grid grid-cols-[0.9fr_1.1fr]">
                   <Link href={menu.featured.href} className="group/f relative block h-full min-h-[260px] overflow-hidden">
