@@ -319,14 +319,27 @@ export default async function CoursePage({ params }: Props) {
                   <Link
                     key={c.slug}
                     href={`/golf-courses/${c.slug}/`}
-                    className="rounded-xl border border-fairwayborder bg-white p-5 transition-transform hover:-translate-y-1"
+                    className="group overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white shadow-[0_3px_12px_rgba(37,35,33,.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(37,35,33,.15)]"
                   >
-                    <div className="font-display text-lg font-bold text-ink">{c.name}</div>
-                    <div className="mt-1.5 font-body text-[13px] text-[#5c6048]">
-                      Par {c.par} &middot; {c.yards}
+                    <div className="relative h-48 w-full overflow-hidden bg-[#e8e4da]">
+                      {c.image && (
+                        <Image src={c.image} alt={c.name} fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, 33vw" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,20,18,.4)] to-transparent" />
+                      <span className="absolute left-3 bottom-3 rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-1 font-ui text-[10px] font-bold uppercase tracking-[.07em] text-white">
+                        {c.type.split("/")[0].trim()}
+                      </span>
                     </div>
-                    <div className="mt-3 font-ui text-sm font-semibold text-fairway-dark">
-                      View course &rarr;
+                    <div className="p-5">
+                      <div className="font-display text-base font-bold leading-snug text-ink group-hover:text-ocean transition-colors">{c.name}</div>
+                      <div className="mt-1 font-body text-[12.5px] text-[#6a665e]">Par {c.par} · {c.yards} · {c.city.split(",")[0]}</div>
+                      <p className="mt-2 line-clamp-2 font-body text-[12px] leading-relaxed text-[#7a7670]">{c.hook}</p>
+                      <div className="mt-3 flex items-center gap-1 font-ui text-[12.5px] font-semibold text-ocean">
+                        View course
+                        <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      </div>
                     </div>
                   </Link>
                 ) : null
