@@ -23,8 +23,6 @@ export type Course = {
 export const COURSES: Course[] = [
   {
     slug: "bayonet",
-    // Military championship course — dramatic tree-lined fairways at former Fort Ord
-    image: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f",
     name: "Bayonet",
     city: "Seaside, CA",
     par: 72,
@@ -34,8 +32,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "black-horse",
-    // Monterey Bay views, open fescue fairways
-    image: "https://images.unsplash.com/photo-1592937238247-cd0090e02f65",
     name: "Black Horse",
     city: "Seaside, CA",
     par: 72,
@@ -45,8 +41,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    // Inland valley, warm, rolling hills — Pete Dye design
-    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     par: 70,
@@ -56,8 +50,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "quail-lodge",
-    // Resort/valley course, sunny Carmel Valley
-    image: "https://images.unsplash.com/photo-1632946269126-0f8edbe8b068",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     par: 71,
@@ -67,8 +59,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "laguna-seca-golf-ranch",
-    // Accessible daily-fee, tree-lined, close to Monterey
-    image: "https://images.unsplash.com/photo-1623567341691-1f47b5cf949e",
     name: "Laguna Seca Golf Ranch",
     city: "Monterey, CA",
     par: 71,
@@ -78,8 +68,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pacific-grove-golf-links",
-    // Municipal coastal links — ocean views on back nine
-    image: "https://images.unsplash.com/photo-1587205476864-4a5a195167b4",
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
@@ -89,8 +77,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "poppy-hills",
-    // Del Monte Forest, tall pines, NCGA bentgrass
-    image: "https://images.unsplash.com/photo-1605144884374-ecbb643615f6",
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
@@ -100,8 +86,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "club-at-pasadera",
-    // Jack Nicklaus Signature, private hillside layout
-    image: "https://images.unsplash.com/photo-1606443192517-919653213206",
     name: "The Club at Pasadera",
     city: "Monterey, CA",
     par: 71,
@@ -111,8 +95,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pebble-beach-golf-links",
-    // Coastal cliff, ocean, dramatic — the iconic Pebble Beach character
-    image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec",
     name: "Pebble Beach Golf Links®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -122,8 +104,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "spyglass-hill",
-    // Monterey pine forest descending to dunes — deep forest character
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48",
     name: "Spyglass Hill Golf Course®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -133,8 +113,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "links-at-spanish-bay",
-    // Coastal links, dunes, sea grass — Scottish links character (currently closed)
-    image: "https://images.unsplash.com/photo-1552508744-1696d4464960",
     name: "The Links at Spanish Bay®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -144,8 +122,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "del-monte-golf-course",
-    // Historic, flat, mature oak and pine canopy — oldest course west of Mississippi
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df",
     name: "Del Monte Golf Course®",
     city: "Monterey, CA",
     par: 72,
@@ -155,8 +131,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "the-hay",
-    // Short course, fun, Pebble Beach — flag pin and hole character
-    image: "https://images.unsplash.com/photo-1506374322094-6021fc3926f1",
     name: "The Hay™",
     city: "Pebble Beach, CA",
     par: 27,
@@ -166,8 +140,6 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pasatiempo",
-    // Alister MacKenzie design, Santa Cruz — historic parkland
-    image: "https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb",
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,
