@@ -319,18 +319,28 @@ export default async function HotelPage({ params }: Props) {
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
               {nearbyCourses.map(c => (
                 <Link key={c.slug} href={`/golf-courses/${c.slug}/`}
-                  className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]">
-                  {c.image && (
-                    <div className="relative h-40 w-full overflow-hidden">
+                  className="group overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white shadow-[0_3px_12px_rgba(37,35,33,.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(37,35,33,.15)]">
+                  {/* Image with type badge overlay */}
+                  <div className="relative h-48 w-full overflow-hidden bg-[#e8e4da]">
+                    {c.image && (
                       <Image src={c.image} alt={c.name} fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, 33vw" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,20,18,.4)] to-transparent" />
+                    <span className="absolute left-3 bottom-3 rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-1 font-ui text-[10px] font-bold uppercase tracking-[.07em] text-white">
+                      {c.type.split("/")[0].trim()}
+                    </span>
+                  </div>
+                  {/* Content */}
+                  <div className="p-5">
+                    <div className="font-display text-base font-bold leading-snug text-ink group-hover:text-ocean transition-colors">{c.name}</div>
+                    <div className="mt-1 font-body text-[12.5px] text-[#6a665e]">Par {c.par} · {c.yards} · {c.city.split(",")[0]}</div>
+                    <p className="mt-2 line-clamp-2 font-body text-[12px] leading-relaxed text-[#7a7670]">{c.hook}</p>
+                    <div className="mt-3 flex items-center gap-1 font-ui text-[12.5px] font-semibold text-ocean">
+                      View course
+                      <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </div>
-                  )}
-                  <div className="p-4">
-                    <div className="font-display text-sm font-bold text-ink">{c.name}</div>
-                    <div className="mt-0.5 font-body text-[12px] text-[#6a665e]">Par {c.par} · {c.yards}</div>
-                    <div className="mt-2 font-ui text-[12px] font-semibold text-ocean">View course →</div>
                   </div>
                 </Link>
               ))}
