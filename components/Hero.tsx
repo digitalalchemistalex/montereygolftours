@@ -12,6 +12,18 @@ const STATS = [
 export default function Hero() {
   return (
     <section className="relative flex min-h-[760px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
+      {/* Mobile hero image — shown below md breakpoint */}
+      <Image
+        src="https://images.unsplash.com/photo-1693400057854-88a97914f7a1?auto=format&fit=crop&w=1200&q=100"
+        alt="Aerial view of Pebble Beach golf course with Pacific Ocean backdrop"
+        fill
+        priority
+        quality={100}
+        sizes="100vw"
+        className="object-cover md:hidden"
+        style={{ objectPosition: "center 40%" }}
+      />
+      {/* Desktop hero image — shown at md breakpoint and above, untouched */}
       <Image
         src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=2800&q=100"
         alt="Aerial view of a coastal golf course at sunrise"
@@ -19,7 +31,7 @@ export default function Hero() {
         priority
         quality={100}
         sizes="100vw"
-        className="object-cover"
+        className="hidden object-cover md:block"
         style={{ objectPosition: "center 45%" }}
       />
       <div
