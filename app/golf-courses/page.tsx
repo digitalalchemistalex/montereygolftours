@@ -58,10 +58,7 @@ export default function GolfCoursesIndexPage() {
         <Image
           src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=2400&q=90"
           alt=""
-          fill
-          priority
-          className="object-cover"
-        />
+          fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(22,20,30,.25) 0%, rgba(22,20,30,.7) 100%)" }}

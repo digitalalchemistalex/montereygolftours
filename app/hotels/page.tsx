@@ -76,10 +76,7 @@ export default function HotelsIndexPage() {
         <Image
           src="https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=2400&q=90"
           alt=""
-          fill
-          priority
-          className="object-cover"
-        />
+          fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(15,18,32,.2) 0%, rgba(15,18,32,.72) 100%)" }}

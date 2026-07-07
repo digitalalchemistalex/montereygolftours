@@ -24,10 +24,7 @@ export default function DestinationsIndexPage() {
         <Image
           src="https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=2400&q=90"
           alt=""
-          fill
-          priority
-          className="object-cover"
-        />
+          fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(10,30,38,.18) 0%, rgba(10,30,38,.68) 100%)" }}

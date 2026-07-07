@@ -33,11 +33,12 @@ export default function BlogIndexPage() {
       {/* Hero */}
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] md:min-h-[520px]">
         <Image
-          src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=2400&q=90"
-          alt="Golfer on an elegant coastal course"
+          src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=2400&q=90"
+          alt="Golf course fairway on the Monterey Peninsula"
           fill
           priority
           className="object-cover"
+          style={{ objectPosition: "center 80%" }}
         />
         <div
           className="absolute inset-0"

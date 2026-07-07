@@ -52,10 +52,7 @@ export default function ItinerariesIndexPage() {
         <Image
           src="https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=2400&q=90"
           alt=""
-          fill
-          priority
-          className="object-cover"
-        />
+          fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(20,30,18,.15) 0%, rgba(20,30,18,.6) 100%)" }}

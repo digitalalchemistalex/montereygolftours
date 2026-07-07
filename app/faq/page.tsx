@@ -57,7 +57,7 @@ export default function FAQPage() {
       />
 
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-6 md:min-h-[520px] md:px-14 md:pb-8">
-        <Image src="https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=2400&q=90" alt="Misty morning on a golf course" fill priority className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=2400&q=90" alt="Misty morning on a golf course" fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <Header />
         <div className="relative z-10 pt-44 md:pt-32">
           <h1 className="sr-only">Frequently asked questions</h1>

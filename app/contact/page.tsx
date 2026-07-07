@@ -53,10 +53,7 @@ export default function ContactPage() {
         <Image
           src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=90"
           alt="Luxury resort pool and terrace"
-          fill
-          priority
-          className="object-cover"
-        />
+          fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(15,25,35,.32) 0%, rgba(15,25,35,0) 38%, rgba(20,40,20,.15) 100%)" }}
