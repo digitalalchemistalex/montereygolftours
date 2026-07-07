@@ -12,6 +12,7 @@ const STATS = [
 export default function Hero() {
   return (
     <section className="relative flex min-h-[760px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
+      {/* Desktop + tablet hero — aerial wide shot */}
       <Image
         src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=2400&q=95"
         alt="Aerial view of a coastal golf course at sunrise"
@@ -19,8 +20,19 @@ export default function Hero() {
         priority
         quality={92}
         sizes="100vw"
-        className="object-cover"
+        className="hidden object-cover sm:block"
         style={{ objectPosition: "center 55%", filter: "saturate(1.18) contrast(1.08) brightness(1.03)" }}
+      />
+      {/* Mobile hero — ground-level sharp close-up, portrait-friendly crop */}
+      <Image
+        src="https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=800&q=95"
+        alt="Golf course green with fairway and trees"
+        fill
+        priority
+        quality={95}
+        sizes="100vw"
+        className="block object-cover sm:hidden"
+        style={{ objectPosition: "center 60%", filter: "saturate(1.2) contrast(1.1) brightness(1.02)" }}
       />
       <div
         className="absolute inset-0"
