@@ -9,11 +9,11 @@ import { SITE } from "@/lib/site";
 
 // GTHS api-image.php returns 403 — use vibe-based Unsplash fallbacks instead
 const GTHS_IMG: Record<string, string> = {
-  Premium: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=600&h=350&q=80",
+  Premium: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=600&h=350&q=80",
   Classic: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&h=350&q=80",
-  Value:   "https://images.unsplash.com/photo-1587205476864-4a5a195167b4?auto=format&fit=crop&w=600&h=350&q=80",
-  Luxury:  "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=600&h=350&q=80",
-  Relaxed: "https://images.unsplash.com/photo-1605144884374-ecbb643615f6?auto=format&fit=crop&w=600&h=350&q=80",
+  Value:   "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=600&h=350&q=80",
+  Luxury:  "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=600&h=350&q=80",
+  Relaxed: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&h=350&q=80",
 };
 function gthsImg(vibe: string): string {
   return GTHS_IMG[vibe] ?? GTHS_IMG.Classic;
