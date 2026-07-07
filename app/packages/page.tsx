@@ -7,16 +7,17 @@ import { ITINERARIES } from "@/lib/itineraries";
 import { getMontereyTrips } from "@/lib/gths";
 import { SITE } from "@/lib/site";
 
-// GTHS api-image.php returns 403 — use vibe-based Unsplash fallbacks instead
-const GTHS_IMG: Record<string, string> = {
-  Premium: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=600&h=350&q=80",
-  Classic: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&h=350&q=80",
-  Value:   "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=600&h=350&q=80",
-  Luxury:  "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=600&h=350&q=80",
-  Relaxed: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&h=350&q=80",
-};
-function gthsImg(vibe: string): string {
-  return GTHS_IMG[vibe] ?? GTHS_IMG.Classic;
+// GTHS api-image.php returns 403 — use index-based Unsplash fallbacks so each card gets a different photo
+const GTHS_IMG_BY_INDEX: string[] = [
+  "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&h=350&q=80",
+  "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=600&h=350&q=80",
+  "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&h=350&q=80",
+  "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=600&h=350&q=80",
+  "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&h=350&q=80",
+  "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=600&h=350&q=80",
+];
+function gthsImg(index: number): string {
+  return GTHS_IMG_BY_INDEX[index % GTHS_IMG_BY_INDEX.length];
 }
 
 export const metadata: Metadata = {
@@ -94,7 +95,7 @@ export default async function PackagesPage() {
           src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=2400&q=90"
           alt="Monterey Peninsula golf"
           fill priority
-          className="object-cover"
+          className="object-cover object-[center_70%]"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(20,20,28,.2) 0%,rgba(20,20,28,.75) 100%)" }} />
         <Header />
@@ -135,7 +136,7 @@ export default async function PackagesPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {gthsTrips.map((trip) => (
+              {gthsTrips.map((trip, index) => (
                 <a
                   key={trip.id}
                   href={trip.canonicalUrl}
@@ -146,7 +147,7 @@ export default async function PackagesPage() {
                   {/* Image */}
                   <div className="relative h-52 w-full overflow-hidden">
                     <Image
-                      src={gthsImg(trip.vibe)}
+                      src={gthsImg(index)}
                       alt={`${trip.vibe} Monterey golf trip — ${trip.nights} nights`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
