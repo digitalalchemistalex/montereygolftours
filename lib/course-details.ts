@@ -39,7 +39,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     rating: "74.8",
     slope: "139",
     holes: 18,
-    designer: "Gen. Robert B. McClure (1954), redesigned by Gene Bates (2007)",
+    designer: "Gen. Robert B. McClure (1954) + Gene Bates redesign (2007)",
     type: "Semi-private / public",
     address: "1 McClure Way, Seaside, CA 93955",
     phone: "(831) 899-7271",
@@ -49,7 +49,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "Bayonet sits on the grounds of the former Fort Ord military base, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954 — reportedly to suit his own left-handed game. Hole 15, part of a demanding stretch that runs holes 11 through 15, carries the course's famous \"Combat Corner\" nickname. The course is named for the 7th Infantry, the \"Bayonet Division.\"",
       "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A Gene Bates redesign completed in 2007 refreshed the layout while keeping the demanding, military-pedigree character intact.",
-      "At 7,024 yards from the back tees (rating 74.8, slope 139), Bayonet is ranked among the toughest public courses in the country — Golf Digest placed it No. 35 nationwide on its list of the 50 Toughest Golf Courses in the United States. It's hosted PGA Tour qualifiers and players including Billy Andrade, Arnold Palmer, Jack Nicklaus, and Tom Watson, and a Nationwide Tour event (the Monterey Peninsula Classic) was held here from 2000 to 2003. Note: independent sources differ on Bayonet's exact yardage — Golf Digest, TeeOff, and other third-party sites list it at 7,104 yards rather than 7,024; the figure here follows direct verification against the official facility, but this is worth re-confirming against the current scorecard.",
+      "At 7,024 yards from the back tees (rating 74.8, slope 139), Bayonet is ranked among the toughest public courses in the country — Golf Digest placed it No. 35 nationwide on its list of the 50 Toughest Golf Courses in the United States, and Destinations Magazine ranks it the 13th most challenging course in California. It has hosted PGA Tour qualifiers and players including Billy Andrade, Arnold Palmer, Jack Nicklaus, and Tom Watson, and the Nationwide Tour's Monterey Peninsula Classic was held here from 2000 to 2003.",
+      "Managed by Troon, with Patrick R. Jones, PGA serving as General Manager. The practice facility includes an all-grass driving range with 6 practice tees, two short-game areas, and a putting green overlooking Monterey Bay.",
     ],
     highlights: [
       {
@@ -205,6 +206,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Black Horse shares its origin with Bayonet on the grounds of the former Fort Ord military base. Designed alongside Bayonet by General Robert B. McClure in 1954 and refreshed in a 2007 Gene Bates redesign, Black Horse offers fescue-framed fairways and sweeping views of Monterey Bay throughout the round.",
       "Where Bayonet has built its reputation as one of the toughest public tests in the country, Black Horse plays as the more approachable of the two Fort Ord courses — still a genuine championship-caliber layout, but with a bit more forgiveness for a wider range of handicaps.",
       "Both courses operate under the same Bayonet & Black Horse facility, 5 miles from downtown Monterey, and are a natural multi-round pairing for groups spending a few days on the peninsula.",
+      "⚠️ Car Week note: The annual Concorso Italiano (Monterey Car Week, August) is held on these grounds — both courses may be unavailable during that event week. Confirm dates before booking any August round.",
     ],
     highlights: [
       {
@@ -222,6 +224,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         label: "Gene Bates redesign",
         detail: "Refreshed in 2007 alongside Bayonet's redesign.",
+      },
+      {
+        label: "Fescue fairways + serrated bunkers",
+        detail: "Fescue-framed fairways and bunkers with distinctive serrated edges — a hallmark of the redesign.",
       },
     ],
     bestFor: [
@@ -337,7 +343,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     yards: "6,500 yards",
     slope: "129",
     holes: 18,
-    designer: "Robert Muir Graves",
+    designer: "Robert Muir Graves (1964) + Todd Eckenrode, Origins Golf Design (2015)",
     type: "Resort / semi-private",
     address: "8205 Valley Greens Dr, Carmel, CA 93923",
     phone: "(831) 624-2888",
@@ -345,8 +351,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook:
       "A resort round in the Carmel Valley sun, threaded around 10 man-made lakes, away from the coastal marine layer.",
     description: [
-      "Quail Lodge & Golf Club plays through Carmel Valley's warmer inland climate, with 10 man-made lakes woven through the layout — a defining feature of the course. At par 71 and 6,500 yards, it's a resort-style round that rewards accuracy around the water hazards.",
-      "Green fees here are dynamic rather than fixed, varying by season and tee time — worth confirming current pricing directly before booking a group round.",
+      "Quail Lodge & Golf Club was designed by Robert Muir Graves in 1964 and refined in 2015 by Principal Designer Todd Eckenrode of Origins Golf Design. The course plays through Carmel Valley's warmer inland climate with 10 man-made lakes strategically woven through the layout — accuracy matters more than distance here.",
+      "The front nine runs along the Carmel River through open terrain; the back nine transitions into forested corridors. Wildlife is abundant throughout — quail, hawks, deer, turtles, and fox are regular companions on the round. The course is flat enough to walk comfortably, with Poa annua greens that Quail Lodge maintains to the standard that has earned it the 'Best Playing Conditions in Central California' award from GreensKeeper.org every year since 2016.",
+      "At par 71 and 6,500 yards (slope 128), it's a resort-style round suited to a wide range of handicaps, with the resort's heated pool, Covey Grill restaurant, and tennis courts rounding out the stay-and-play experience.",
     ],
     highlights: [
       {
@@ -360,6 +367,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         label: "Resort-anchored",
         detail: "On-site course for guests staying at Quail Lodge & Golf Club.",
+      },
+      {
+        label: "'Best Playing Conditions' — Central California",
+        detail: "GreensKeeper.org award winner every year since 2016.",
+      },
+      {
+        label: "Wildlife throughout",
+        detail: "Quail, hawks, deer, turtles, and fox are regular companions on the round.",
       },
     ],
     bestFor: [
@@ -401,16 +416,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     facility: "Laguna Seca Golf Ranch",
     par: 71,
     yards: "6,226 yards",
+    rating: "70.7",
+    slope: "129",
     holes: 18,
-    designer: "—",
+    designer: "Robert Trent Jones Sr. & Robert Trent Jones Jr. (1970)",
     type: "Daily-fee",
     address: "10520 York Rd, Monterey, CA 93940",
     phone: "(831) 373-3701",
     website: "lagunasecagolf.com",
     hook: "An accessible daily-fee round close to downtown Monterey, with rates that won't strain a group budget.",
     description: [
-      "Laguna Seca Golf Ranch offers a straightforward, accessible daily-fee round close to downtown Monterey. At par 71 and 6,226 yards, it's well suited to groups wanting a relaxed pace and approachable green fees without sacrificing a genuine 18-hole round.",
-      "Among the most accessible green fees on the peninsula, making it a natural fit for the early or closing round of a multi-day group trip.",
+      "Laguna Seca Golf Ranch was designed by the legendary Robert Trent Jones Sr. and Robert Trent Jones Jr. father-son duo in 1970 — remarkable design pedigree at a daily-fee price point. The course is carved through oak-studded coastal hills between Monterey and Salinas, with narrow uneven fairways, elevated tees, and strategically placed bunkers guarding every green.",
+      "SeeMontereY describes it as the 'best golf value on the Monterey Peninsula.' The signature hole is the par-5 15th — 548 yards, shaped like a snake, requiring carries over water on both the tee shot and approach. Hilly terrain makes a cart recommended, though the course is technically walkable. Managed by CourseCo, Inc., with Matt Pennington as General Manager.",
     ],
     highlights: [
       {
@@ -420,6 +437,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         label: "Close to downtown Monterey",
         detail: "A short drive from the city center and Cannery Row.",
+      },
+      {
+        label: "RTJ Father-Son design",
+        detail: "Designed by Robert Trent Jones Sr. & Jr. in 1970 — remarkable pedigree at a daily-fee price.",
+      },
+      {
+        label: "Snake hole — #15",
+        detail: "Par-5 548 yards shaped like a serpent, with water carries on both tee and approach shots.",
       },
     ],
     bestFor: [
@@ -465,17 +490,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     city: "Pacific Grove, CA",
     facility: "Pacific Grove Golf Links",
     par: 70,
-    yards: "5,727 yards",
+    yards: "5,732 yards",
     holes: 18,
-    designer: "—",
+    designer: "H. Chandler Egan (front nine, 1932) + Jack Neville (back nine)",
     type: "Municipal",
     address: "77 Asilomar Ave, Pacific Grove, CA 93950",
     phone: "(831) 648-5775",
     website: "playpacificgrove.com",
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
     description: [
-      "Pacific Grove Golf Links is a city-owned municipal course offering genuine ocean-adjacent holes at a fraction of the cost of the peninsula's private and resort courses. At par 70 and 5,727 yards, it's a shorter, walkable layout well suited to groups of mixed ability.",
-      "Rates vary by day — making it one of the better value-for-experience rounds on the Monterey Peninsula.",
+      "Pacific Grove Golf Links opened on May 9, 1932, with H. Chandler Egan designing the front nine. The back nine was laid out by Jack Neville — the same architect who designed the famous clifftop links right next door — and plays along the Pacific coast with crashing waves, tide pools, and views of Point Pinos Lighthouse.",
+      "Widely known as the 'Poor Man's Pebble Beach' — same ocean, same coastline, fraction of the cost. The front nine winds through forested Pacific Grove, giving the round two completely different personalities: wooded and sheltered on the front, fully exposed to the Pacific on the back.",
+      "City-owned and managed by CourseCo, Inc. (General Manager: Neil Sauer), with municipal pricing that makes it one of the best value rounds on the peninsula. The course is adjacent to Asilomar State Beach at 77 Asilomar Avenue.",
     ],
     highlights: [
       {
@@ -489,6 +515,14 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         label: "Walkable layout",
         detail: "Shorter yardage suits a relaxed, walkable round.",
+      },
+      {
+        label: "Jack Neville back nine",
+        detail: "The same architect who designed the famous clifftop links laid out the back nine — same Pacific, fraction of the price.",
+      },
+      {
+        label: "'Poor Man's Pebble Beach'",
+        detail: "Same ocean, same coastline, fraction of the resort price.",
       },
     ],
     bestFor: [
@@ -543,8 +577,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "poppyhillsgolf.com",
     hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
     description: [
-      "Poppy Hills Golf Course sits inside the Del Monte Forest — the same storied Pebble Beach zip code as the resort's marquee courses — but is owned and operated by the Northern California Golf Association (NCGA), not Pebble Beach Company, and doesn't carry the resort's gate fee or pricing.",
-      "At 7,091 yards from the Jones tees and par 71, the Robert Trent Jones II design plays through forested terrain with bentgrass greens. Rates vary by day — contact us for current pricing.",
+      "Poppy Hills Golf Course sits inside the Del Monte Forest — the same 93953 zip code as the resort's marquee courses — but is owned and operated by the Northern California Golf Association (NCGA), entirely separate from Pebble Beach Company. Day visitors do not pay the Pebble Beach gate fee; the NCGA entrance is completely separate.",
+      "At par 71 and 7,002 yards (rating 73.5, slope 135), the Robert Trent Jones Jr. design opened in 1986 and underwent a 13-month renovation completed in April 2014, which introduced native sandy waste areas, removed rough, and opened up the forest floor. Post-renovation, Golf.com called it 'Pinehurst-like, with a hint of near-neighbor Cypress Point.'",
+      "Colin Montgomerie said it 'reminds me of Pinehurst and Pine Valley.' Tom Watson: 'I like that a lot — would love a three-round event at Poppy Hills.' RTJ Jr. himself describes it as 'the closest you can get to playing golf in a National Park.' The course record is 62, set by Matt Gogel in the 2001 AT&T Pebble Beach Pro-Am. It co-hosted the AT&T from 1991 to 2009.",
+      "Groups of 16+ receive an advance booking window beyond the standard 90-day window — contact Group Ambassador Cassidy Young at cyoung@ncga.org or (831) 622-8239.",
     ],
     highlights: [
       {
@@ -557,7 +593,15 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         label: "Bentgrass greens",
-        detail: "Quality conditioning at daily-fee pricing.",
+        detail: "NCGA official site describes them as 'among the purest on the peninsula.'",
+      },
+      {
+        label: "Course record: Matt Gogel 62",
+        detail: "Set during the 2001 AT&T Pebble Beach Pro-Am when Poppy Hills co-hosted the event (1991–2009).",
+      },
+      {
+        label: "Golf Digest Top 100",
+        detail: "Confirmed on the NCGA official site — Top 100 Courses You Can Play.",
       },
     ],
     bestFor: [
@@ -624,6 +668,18 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       {
         label: "Limited public access",
         detail: "Private club with select windows for outside play — contact directly for current access terms.",
+      },
+      {
+        label: "'The Moment' — Hole 14",
+        detail: "Par-3, 205 yards over a canyon with views stretching to Monterey and Pacific Grove.",
+      },
+      {
+        label: "Hole 15 — former longest par 4 in North America",
+        detail: "At 562 yards, once the longest par 4 on the continent.",
+      },
+      {
+        label: "Nicklaus's own words",
+        detail: "Jack Nicklaus is on record calling it one of the best courses he ever designed.",
       },
     ],
     bestFor: [
