@@ -83,7 +83,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
-    image: "https://images.unsplash.com/photo-1443706340763-4b60757a36ce",
+    image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=800&q=80",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
@@ -218,7 +218,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "7-day-ultimate-monterey-golf-trip": {
     slug: "7-day-ultimate-monterey-golf-trip",
-    image: "https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4",
+    image: "https://images.unsplash.com/photo-1632406209836-2d7e3c32d2e9?auto=format&fit=crop&w=800&q=80",
     title: "7-Day Ultimate Monterey",
     shortTitle: "Ultimate Monterey",
     durationDays: 7,
@@ -307,7 +307,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "carmel-valley-golf-getaway": {
     slug: "carmel-valley-golf-getaway",
-    image: "https://images.unsplash.com/photo-1648706319922-5b884abb264d",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
     title: "Carmel Valley Golf Getaway",
     shortTitle: "Carmel Valley Getaway",
     durationDays: 3,
@@ -355,7 +355,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
-    image: "https://images.unsplash.com/photo-1549109786-eb80da56e693",
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,

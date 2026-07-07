@@ -14,7 +14,7 @@ import SiteSchema from "@/components/SiteSchema";
 import BackToTop from "@/components/BackToTop";
 
 const OG_IMAGE =
-  "https://images.unsplash.com/photo-1443706340763-4b60757a36ce?w=1200&h=630&fit=crop&q=80";
+  "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=1200&h=630&fit=crop&q=80";
 
 const DEFAULT_TITLE = "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula";
 const DEFAULT_DESC =

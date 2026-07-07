@@ -11,7 +11,7 @@ const LINKS = [
   { label: "Destinations", href: "/destinations/",   image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=800&q=85" },
   { label: "Itineraries",  href: "/itineraries/",    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=800&q=85" },
   { label: "Packages",     href: "/packages/",       image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=800&q=85" },
-  { label: "Blog",         href: "/blog/",           image: "https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=800&q=85" },
+  { label: "Blog",         href: "/blog/",           image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=85" },
   { label: "About",        href: "/about/",          image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=85" },
   { label: "FAQ",          href: "/faq/",            image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=85" },
 ];
