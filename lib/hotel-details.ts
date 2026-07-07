@@ -183,12 +183,12 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     address: "8205 Valley Greens Dr, Carmel, CA 93923",
     phone: "(888) 828-8787",
     website: "quaillodge.com",
-    rooms: "93 rooms and suites",
+    rooms: "77 guest rooms + 14 suites (91 total)",
     brand: "Independent",
     hook: "Best value golf-resort combo on the peninsula, with an on-site championship course and warm Carmel Valley weather.",
     description: [
       "Quail Lodge & Golf Club sits in the sunny Carmel Valley, set among lush gardens and 10 man-made lakes that draw quail, hawks, deer, turtles, and fox. The on-site golf course is a Robert Muir Graves design (1964), refined by Todd Eckenrode / Origins Golf Design in 2015.",
-      "With 93 rooms and suites, it's a more intimate property than the larger Tier 1 resorts, generally positioned as the best value golf-and-stay combination on the peninsula.",
+      "With 77 guest rooms and 14 suites (91 total keys), it's a more intimate property than the larger Tier 1 resorts, generally positioned as the best value golf-and-stay combination on the peninsula.",
     ],
     amenities: [
       "On-site 18-hole championship golf course",
@@ -217,7 +217,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     faqs: [
       {
         q: "How many rooms does Quail Lodge have?",
-        a: "93 rooms and suites.",
+        a: "77 guest rooms and 14 suites — 91 total keys.",
       },
       {
         q: "Who designed the Quail Lodge golf course?",
