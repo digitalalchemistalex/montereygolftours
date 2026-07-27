@@ -52,7 +52,7 @@ export default function FitFinder() {
         {FIT_PROFILES.map((f, i) => (
           <Reveal key={f.title} delay={i * 100}>
             <Link href={f.href} className="group flex flex-col items-center text-center">
-              <div className="relative aspect-square w-full max-w-[260px] overflow-hidden rounded-full shadow-[0_8px_24px_rgba(30,40,38,.18)] transition-transform duration-200 group-hover:-translate-y-1.5 group-hover:shadow-[0_16px_36px_rgba(30,40,38,.28)]">
+              <div className="relative aspect-square w-full max-w-[260px] overflow-hidden rounded-none shadow-[0_8px_24px_rgba(30,40,38,.18)] transition-transform duration-200 group-hover:-translate-y-1.5 group-hover:shadow-[0_16px_36px_rgba(30,40,38,.28)] md:rounded-full">
                 <Image
                   src={f.img}
                   alt={f.title}
@@ -60,7 +60,7 @@ export default function FitFinder() {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   sizes="(max-width: 768px) 45vw, 260px"
                 />
-                <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-[rgba(0,0,0,.06)]" />
+                <div className="absolute inset-0 rounded-none ring-1 ring-inset ring-[rgba(0,0,0,.06)] md:rounded-full" />
               </div>
               <div className="mt-5 font-display text-lg font-bold text-ink md:text-xl">
                 {f.title}

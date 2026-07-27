@@ -127,8 +127,8 @@ export default function FAQ() {
       <div className="space-y-12 md:space-y-16">
         {FAQ_CATEGORIES.map((cat) => (
           <div key={cat.category} className="grid grid-cols-1 gap-6 md:grid-cols-[0.4fr_1fr] md:gap-16">
-            <div className="flex flex-row items-center gap-4 md:block">
-              <div className="relative h-32 w-32 flex-none overflow-hidden rounded-full shadow-[0_6px_20px_rgba(0,0,0,.22)] sm:h-40 sm:w-40 md:h-48 md:w-48">
+            <div className="flex flex-col gap-4 md:block">
+              <div className="relative h-40 w-full overflow-hidden rounded-lg shadow-[0_6px_20px_rgba(0,0,0,.22)] sm:h-44 md:h-48 md:w-48 md:rounded-full">
                 {CATEGORY_ICONS[cat.category] && (
                   <Image
                     src={CATEGORY_ICONS[cat.category]}

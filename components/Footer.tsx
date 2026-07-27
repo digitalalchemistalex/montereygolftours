@@ -30,34 +30,36 @@ export default function Footer() {
           </p>
         </div>
 
-        <div>
-          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Play</div>
-          <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
-            {PLAY_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-white">
-                {link.label}
-              </Link>
-            ))}
+        <div className="grid grid-cols-2 gap-8 md:contents">
+          <div>
+            <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Play</div>
+            <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
+              {PLAY_LINKS.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-white">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Learn</div>
-          <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
-            {LEARN_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-white">
-                {link.label}
-              </Link>
-            ))}
+          <div>
+            <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Learn</div>
+            <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
+              {LEARN_LINKS.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-white">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Contact</div>
-          <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
-            <a href={SITE.phoneHref}>{SITE.phone}</a>
-            {SITE.email ? <a href={`mailto:${SITE.email}`}>{SITE.email}</a> : null}
-            <span>Monterey, CA</span>
+          <div>
+            <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Contact</div>
+            <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-[#f3efe2]">
+              <a href={SITE.phoneHref}>{SITE.phone}</a>
+              {SITE.email ? <a href={`mailto:${SITE.email}`}>{SITE.email}</a> : null}
+              <span>Monterey, CA</span>
+            </div>
           </div>
         </div>
       </div>
