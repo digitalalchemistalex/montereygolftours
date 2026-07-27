@@ -14,15 +14,36 @@ const LINKS = [
   { label: "FAQ",          href: "/faq/" },
 ];
 
+// Verified local-intelligence facts, sourced from LocalIntel.tsx — never invented.
+function isCarWeek() {
+  const month = new Date().getMonth(); // 0-indexed
+  return month === 6 || month === 7; // July or August
+}
+
+function getIntelLine(): string {
+  const facts = [
+    "Fog typically clears by 10am \u00b7 best tee time 8\u201310am.",
+    "Carmel Valley courses run 15\u201318\u00b0F warmer than the coast, often clear when the fog hasn't lifted.",
+    "Monterey Regional Airport (MRY) is 10\u201320 minutes from most courses.",
+    "March\u2013May and September\u2013November bring the lightest fog of the year.",
+  ];
+  if (isCarWeek()) {
+    facts.push("Car Week (mid-August) closes Bayonet and Black Horse for several days \u2014 ask us before booking this month.");
+  }
+  return facts[Math.floor(Math.random() * facts.length)];
+}
+
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [intelLine, setIntelLine] = useState(getIntelLine());
 
-  // Lock body scroll when open, trigger stagger-in animation
+  // Lock body scroll when open, trigger stagger-in animation, pick a fresh fact
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
+      setIntelLine(getIntelLine());
       // next tick so the CSS transition actually fires
       const t = setTimeout(() => setMounted(true), 10);
       return () => clearTimeout(t);
@@ -60,21 +81,13 @@ export default function MobileNav() {
             fontFamily: "'Playfair Display', Georgia, serif",
           }}
         >
-          {/* Top bar: index counter + close */}
+          {/* Top bar: close only */}
           <div style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "flex-end",
             padding: "22px 24px 0",
           }}>
-            <span style={{
-              color: "#8a9199",
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              fontFamily: "Inter, sans-serif",
-            }}>
-              {String(activeIndex + 1).padStart(2, "0")} / {String(LINKS.length).padStart(2, "0")}
-            </span>
             <button
               type="button"
               aria-label="Close menu"
@@ -144,9 +157,7 @@ export default function MobileNav() {
                   onFocus={() => setActiveIndex(i + 1)}
                   onMouseEnter={() => setActiveIndex(i + 1)}
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "baseline",
+                    display: "block",
                     textDecoration: "none",
                     color: "#e6e2d8",
                     fontSize: 21,
@@ -158,15 +169,7 @@ export default function MobileNav() {
                     transition: `opacity 420ms ease ${delay}ms, transform 420ms ease ${delay}ms`,
                   }}
                 >
-                  <span>{link.label}</span>
-                  <span style={{
-                    color: "#6f7d78",
-                    fontSize: 11,
-                    fontFamily: "Inter, sans-serif",
-                    letterSpacing: "0.1em",
-                  }}>
-                    {String(i + 2).padStart(2, "0")}
-                  </span>
+                  {link.label}
                 </Link>
               );
             })}
@@ -185,7 +188,7 @@ export default function MobileNav() {
               fontStyle: "italic",
               fontFamily: "Lora, Georgia, serif",
             }}>
-              Fog typically clears by 10am &middot; Best tee time 8&ndash;10am.
+              {intelLine}
             </div>
           </div>
 

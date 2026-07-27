@@ -69,7 +69,7 @@ const chevron = (
   </svg>
 );
 
-const DROP = "pointer-events-none absolute top-[calc(100%+8px)] z-50 opacity-0 transition-all duration-200 ease-out [transform:translateY(-6px)] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:[transform:translateY(0)]";
+const DROP = "pointer-events-none absolute top-full pt-2 z-50 opacity-0 transition-all duration-200 ease-out [transform:translateY(-6px)] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:[transform:translateY(0)]";
 const CARD = "overflow-hidden rounded-2xl border border-[#e3ddcf]/60 bg-white shadow-[0_28px_64px_rgba(15,22,18,.32)]";
 
 // ── Featured image panel (reused across dropdowns) ────────────────────────
