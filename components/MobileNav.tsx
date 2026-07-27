@@ -6,25 +6,29 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 const LINKS = [
-  { label: "Courses",      href: "/golf-courses/",  image: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=800&q=85" },
-  { label: "Hotels",       href: "/hotels/",         image: "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=800&q=85" },
-  { label: "Destinations", href: "/destinations/",   image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=800&q=85" },
-  { label: "Itineraries",  href: "/itineraries/",    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=800&q=85" },
-  { label: "Packages",     href: "/packages/",       image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=800&q=85" },
-  { label: "Blog",         href: "/blog/",           image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=85" },
-  { label: "About",        href: "/about/",          image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=85" },
-  { label: "FAQ",          href: "/faq/",            image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=85" },
+  { label: "Courses",      href: "/golf-courses/" },
+  { label: "Hotels",       href: "/hotels/" },
+  { label: "Destinations", href: "/destinations/" },
+  { label: "Itineraries",  href: "/itineraries/" },
+  { label: "About",        href: "/about/" },
+  { label: "FAQ",          href: "/faq/" },
 ];
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Lock body scroll when open
+  // Lock body scroll when open, trigger stagger-in animation
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
+      // next tick so the CSS transition actually fires
+      const t = setTimeout(() => setMounted(true), 10);
+      return () => clearTimeout(t);
     } else {
       document.body.style.overflow = "";
+      setMounted(false);
     }
     return () => { document.body.style.overflow = ""; };
   }, [open]);
@@ -50,102 +54,180 @@ export default function MobileNav() {
             position: "fixed",
             inset: 0,
             zIndex: 9999,
-            backgroundColor: "#16242c",
+            backgroundColor: "#12181c",
             display: "flex",
             flexDirection: "column",
+            fontFamily: "'Playfair Display', Georgia, serif",
           }}
         >
-          {/* Close button */}
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-            style={{
-              position: "absolute",
-              top: 18,
-              right: 20,
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 8,
-              zIndex: 1,
-            }}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M6 6L18 18M6 18L18 6" stroke="#f6f2e7" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          </button>
-
-          {/* Links */}
-          <div style={{ flex: 1, overflowY: "auto", paddingTop: 64 }}>
-            {LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  height: 76,
-                  overflow: "hidden",
-                  paddingLeft: 24,
-                  backgroundImage: `url(${link.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  textDecoration: "none",
-                }}
-              >
-                <div style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: "linear-gradient(90deg,rgba(10,15,15,.85) 0%,rgba(10,15,15,.5) 55%,rgba(10,15,15,.15) 100%)",
-                }} />
-                <span style={{
-                  position: "relative",
-                  zIndex: 1,
-                  fontFamily: "'Playfair Display',serif",
-                  fontSize: 26,
-                  fontWeight: 700,
-                  color: "#f6f2e7",
-                  textShadow: "0 1px 6px rgba(0,0,0,.8)",
-                }}>
-                  {link.label}
-                </span>
-              </Link>
-            ))}
+          {/* Top bar: index counter + close */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "22px 24px 0",
+          }}>
+            <span style={{
+              color: "#8a9199",
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              fontFamily: "Inter, sans-serif",
+            }}>
+              {String(activeIndex + 1).padStart(2, "0")} / {String(LINKS.length).padStart(2, "0")}
+            </span>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              style={{ background: "none", border: "none", cursor: "pointer", padding: 8 }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M6 6L18 18M6 18L18 6" stroke="#e6e2d8" strokeWidth="1.75" strokeLinecap="round"/>
+              </svg>
+            </button>
           </div>
 
-          {/* Bottom */}
+          {/* Featured first link — large editorial treatment */}
+          <div style={{ padding: "30px 28px 0" }}>
+            <div style={{
+              color: "#6f7d78",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              fontFamily: "Inter, sans-serif",
+              marginBottom: 6,
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(8px)",
+              transition: "opacity 420ms ease, transform 420ms ease",
+            }}>
+              MONTEREY PENINSULA
+            </div>
+            <Link
+              href={LINKS[0].href}
+              onClick={() => setOpen(false)}
+              onFocus={() => setActiveIndex(0)}
+              onMouseEnter={() => setActiveIndex(0)}
+              style={{
+                display: "block",
+                textDecoration: "none",
+                color: "#e6e2d8",
+                fontSize: 42,
+                lineHeight: 1.05,
+                letterSpacing: "-0.01em",
+                opacity: mounted ? 1 : 0,
+                transform: mounted ? "translateY(0)" : "translateY(10px)",
+                transition: "opacity 460ms ease 40ms, transform 460ms ease 40ms",
+              }}
+            >
+              {LINKS[0].label}
+            </Link>
+            <div style={{
+              width: 38,
+              height: 1,
+              background: "#A8843D",
+              margin: "14px 0 26px",
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "scaleX(1)" : "scaleX(0)",
+              transformOrigin: "left",
+              transition: "opacity 400ms ease 160ms, transform 400ms ease 160ms",
+            }} />
+          </div>
+
+          {/* Remaining links — numbered rows, staggered */}
+          <div style={{ padding: "0 28px", flex: 1, overflowY: "auto" }}>
+            {LINKS.slice(1).map((link, i) => {
+              const delay = 120 + i * 55;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  onFocus={() => setActiveIndex(i + 1)}
+                  onMouseEnter={() => setActiveIndex(i + 1)}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "baseline",
+                    textDecoration: "none",
+                    color: "#e6e2d8",
+                    fontSize: 21,
+                    padding: "15px 0",
+                    borderTop: "0.5px solid rgba(230,226,216,0.1)",
+                    borderBottom: i === LINKS.length - 2 ? "0.5px solid rgba(230,226,216,0.1)" : "none",
+                    opacity: mounted ? 1 : 0,
+                    transform: mounted ? "translateY(0)" : "translateY(10px)",
+                    transition: `opacity 420ms ease ${delay}ms, transform 420ms ease ${delay}ms`,
+                  }}
+                >
+                  <span>{link.label}</span>
+                  <span style={{
+                    color: "#6f7d78",
+                    fontSize: 11,
+                    fontFamily: "Inter, sans-serif",
+                    letterSpacing: "0.1em",
+                  }}>
+                    {String(i + 2).padStart(2, "0")}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Live local intelligence line */}
           <div style={{
-            borderTop: "1px solid rgba(250,246,238,.1)",
-            padding: "20px 24px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 12,
-            backgroundColor: "#16242c",
+            padding: "22px 28px 8px",
+            opacity: mounted ? 1 : 0,
+            transition: "opacity 500ms ease 420ms",
           }}>
-            <a href={SITE.phoneHref} style={{ color: "#f6f2e7", fontSize: 16, fontWeight: 600, textDecoration: "none", fontFamily: "sans-serif" }}>
-              {SITE.phone}
-            </a>
+            <div style={{
+              color: "#7c8b85",
+              fontSize: 13,
+              lineHeight: 1.6,
+              fontStyle: "italic",
+              fontFamily: "Lora, Georgia, serif",
+            }}>
+              Fog typically clears by 10am &middot; Best tee time 8&ndash;10am.
+            </div>
+          </div>
+
+          {/* Bottom: phone + CTA */}
+          <div style={{
+            padding: "14px 28px 26px",
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            opacity: mounted ? 1 : 0,
+            transition: "opacity 500ms ease 460ms",
+          }}>
             <Link
               href="/quote/"
               onClick={() => setOpen(false)}
               style={{
-                display: "block",
-                backgroundColor: "#E8A0A8",
-                color: "#252321",
+                flex: 1,
                 textAlign: "center",
-                padding: "14px 20px",
-                borderRadius: 9,
-                fontSize: 15,
-                fontWeight: 700,
+                padding: "15px",
+                backgroundColor: "#A8843D",
+                color: "#12181c",
+                fontFamily: "Inter, sans-serif",
+                fontSize: 13,
+                letterSpacing: "0.08em",
+                fontWeight: 600,
                 textDecoration: "none",
-                fontFamily: "sans-serif",
               }}
             >
-              Get a Quote
+              GET A QUOTE
             </Link>
+            <a
+              href={SITE.phoneHref}
+              style={{
+                color: "#e6e2d8",
+                fontFamily: "Inter, sans-serif",
+                fontSize: 13,
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {SITE.phone}
+            </a>
           </div>
         </div>,
         document.body
