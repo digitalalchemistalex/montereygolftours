@@ -41,7 +41,7 @@ export default function Logo({
           >
             MonTeReY
           </div>
-          <div style={{ marginTop: Math.max(3, size * 0.045), height: Math.max(1.5, size * 0.015), width: "100%", backgroundColor: color, opacity: 0.85 }} />
+          <div style={{ marginTop: Math.max(3, size * 0.045), height: Math.max(1.5, size * 0.015), width: "100%", backgroundColor: "#E8A0A8", opacity: 0.9 }} />
           <div
             style={{
               marginTop: Math.max(3, size * 0.045),
