@@ -98,7 +98,7 @@ export default function Header() {
       {/* Logo */}
       <Link href="/" className="flex flex-none items-center">
         <div className="scale-90 sm:scale-100">
-          <Logo size={76} />
+          <Logo size={88} />
         </div>
       </Link>
 
