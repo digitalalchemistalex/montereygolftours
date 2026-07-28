@@ -339,8 +339,30 @@ export default function MobileNav() {
               </Link>
             ))}
 
+            {/* Trademark / IAGTO disclaimer — fills otherwise-blank space, protects the brand */}
+            <div style={{ padding: "26px 0 0", opacity: mounted ? 1 : 0, transition: "opacity 500ms ease 400ms" }}>
+              <p style={{
+                color: "rgba(230,226,216,0.45)", fontSize: 10.5, lineHeight: 1.6,
+                fontFamily: "Inter, sans-serif",
+              }}>
+                Pebble Beach Golf Links&reg;, Spyglass Hill&reg; Golf Course, The Links at Spanish Bay&reg;,
+                Del Monte Golf Course&reg;, The Hay&trade;, and Pebble Beach Resorts&reg; are registered
+                trademarks of Pebble Beach Company. Monterey Golf Tours is an IAGTO-contracted golf travel
+                operator authorized to promote and book Pebble Beach Resorts&reg; courses. All rights
+                reserved by Pebble Beach Company.
+              </p>
+              <div style={{ marginTop: 10, display: "flex", gap: 14 }}>
+                <Link href="/privacy/" onClick={close} style={{ color: "rgba(230,226,216,0.55)", fontSize: 11, fontFamily: "Inter, sans-serif", textDecoration: "underline", textUnderlineOffset: 2 }}>
+                  Privacy Policy
+                </Link>
+                <Link href="/terms/" onClick={close} style={{ color: "rgba(230,226,216,0.55)", fontSize: 11, fontFamily: "Inter, sans-serif", textDecoration: "underline", textUnderlineOffset: 2 }}>
+                  Terms of Use
+                </Link>
+              </div>
+            </div>
+
             {/* Live local intelligence line */}
-            <div style={{ padding: "22px 0 8px", opacity: mounted ? 1 : 0, transition: "opacity 500ms ease 420ms" }}>
+            <div style={{ padding: "16px 0 8px", opacity: mounted ? 1 : 0, transition: "opacity 500ms ease 420ms" }}>
               <div style={{ color: "#7c8b85", fontSize: 13, lineHeight: 1.6, fontStyle: "italic", fontFamily: "Lora, Georgia, serif" }}>
                 {intelLine}
               </div>
