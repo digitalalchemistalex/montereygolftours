@@ -22,7 +22,8 @@ function buildHtml(d: Record<string, unknown>): string {
 <html>
 <head><meta charset="utf-8" /></head>
 <body style="font-family:Georgia,serif;color:#2a2620;max-width:600px;margin:0 auto;padding:24px;">
-  <div style="border-bottom:3px solid #c8a84b;padding-bottom:12px;margin-bottom:24px;">
+  <div style="border-bottom:3px solid #c8a84b;padding-bottom:12px;margin-bottom:24px;text-align:center;">
+    <img src="https://montereygolftours.com/brand/logo-400.png" alt="Monterey Golf Tours" width="72" height="72" style="display:block;margin:0 auto 10px;" />
     <p style="margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#8a857a;">Monterey Golf Tours</p>
     <h1 style="margin:4px 0 0;font-size:24px;">New quote request</h1>
   </div>

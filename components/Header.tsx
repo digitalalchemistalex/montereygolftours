@@ -96,7 +96,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 border-b border-white/[.07] bg-[#16242c]/97 px-5 py-[14px] backdrop-blur-md md:px-10">
       {/* Logo */}
-      <Link href="/" className="flex flex-none items-center"><Logo /></Link>
+      <Link href="/" className="flex flex-none items-center"><Logo size={52} /></Link>
 
       {/* Nav */}
       <nav className="hidden flex-1 items-center justify-center gap-0.5 whitespace-nowrap lg:flex">

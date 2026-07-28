@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     template: "%s | Monterey Golf Tours",
   },
   description: DEFAULT_DESC,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     type: "website",
     siteName: "Monterey Golf Tours",
