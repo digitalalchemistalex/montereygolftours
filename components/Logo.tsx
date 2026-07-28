@@ -4,54 +4,53 @@ export default function Logo({
   className,
   size = 64,
   showText = true,
-  color = "#f6f2e7",
+  color = "#D4B073",
 }: {
   className?: string;
   size?: number;
   showText?: boolean;
   color?: string;
 }) {
-  // Original wordmark proportions (MonTeReY at ~72px / GOLf TOURS at ~36px on
-  // the old standalone logo) scaled down to sit beside the image at any size.
-  const nameSize = Math.round(size * 0.34);
-  const subSize = Math.round(size * 0.19);
+  // Image sized down relative to text so the two read as one balanced unit —
+  // text is the dominant element, image is a compact mark beside it.
+  const imageSize = Math.round(size * 0.78);
+  const nameSize = Math.round(size * 0.40);
+  const subSize = Math.round(size * 0.21);
 
   return (
-    <div className={`flex items-center gap-3 ${className ?? ""}`}>
+    <div className={`flex items-center gap-2.5 ${className ?? ""}`}>
       <Image
         src="/brand/logo.png"
         alt="Monterey Golf Tours"
-        width={size}
-        height={size}
+        width={imageSize}
+        height={imageSize}
         priority
-        style={{ width: size, height: size, objectFit: "contain", flexShrink: 0 }}
+        style={{ width: imageSize, height: imageSize, objectFit: "contain", flexShrink: 0 }}
       />
       {showText && (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-          <div style={{ display: "inline-block" }}>
-            <div
-              style={{
-                fontFamily: "'Firlest', serif",
-                fontSize: nameSize,
-                lineHeight: 1,
-                color,
-                textShadow: "0 1px 0 rgba(255,255,255,.35), 0 -1px 1px rgba(0,0,0,.6), 0 2px 3px rgba(0,0,0,.4)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              MonTeReY
-            </div>
-            <div style={{ marginTop: Math.max(2, size * 0.02), height: Math.max(2, size * 0.02), width: "100%", backgroundColor: "#E8A0A8" }} />
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
             style={{
-              marginTop: size * 0.03,
+              fontFamily: "'Firlest', serif",
+              fontSize: nameSize,
+              lineHeight: 1,
+              color,
+              textShadow: "0 1px 0 rgba(255,255,255,.25), 0 -1px 1px rgba(0,0,0,.55), 0 2px 3px rgba(0,0,0,.35)",
+              whiteSpace: "nowrap",
+            }}
+          >
+            MonTeReY
+          </div>
+          <div style={{ marginTop: Math.max(3, size * 0.045), height: Math.max(1.5, size * 0.015), width: "100%", backgroundColor: color, opacity: 0.85 }} />
+          <div
+            style={{
+              marginTop: Math.max(3, size * 0.045),
               fontFamily: "'Firlest', serif",
               fontSize: subSize,
               lineHeight: 1,
               letterSpacing: "1px",
               color,
-              textShadow: "0 1px 0 rgba(255,255,255,.3), 0 -1px 1px rgba(0,0,0,.5)",
+              textShadow: "0 1px 0 rgba(255,255,255,.2), 0 -1px 1px rgba(0,0,0,.45)",
               whiteSpace: "nowrap",
             }}
           >
