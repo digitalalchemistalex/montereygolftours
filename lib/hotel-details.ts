@@ -581,4 +581,188 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       },
     ],
   },
+  "hotel-abrego": {
+    slug: "hotel-abrego",
+    name: "Hotel Abrego",
+    city: "Monterey, CA",
+    tier: 3,
+    address: "755 Abrego Street, Monterey, CA 93940",
+    phone: "+1 (831) 372-7551",
+    website: "hotelabrego.com",
+    rooms: "93 rooms across four buildings",
+    brand: "Independent boutique",
+    hook: "Downtown Monterey boutique property, walkable to Cannery Row and the Monterey Bay Aquarium.",
+    description: [
+      "Hotel Abrego is an independent boutique property in downtown Monterey, spread across four buildings with 93 individually furnished rooms.",
+      "Its downtown location puts guests within walking distance of Cannery Row and the Monterey Bay Aquarium, making it a strong choice for groups who want to pair golf with time exploring the city.",
+    ],
+    amenities: [
+      "Heated outdoor pool + hot tub",
+      "Bistro Abrego (on-site dining)",
+      "Fitness facilities",
+      "Group rates available",
+      "Aquarium ticket packages",
+      "On-site parking + WiFi (bundled under a mandatory $20/night amenity fee)",
+    ],
+    diningNames: [
+      { name: "Bistro Abrego", detail: "Daily breakfast buffet; California coastal dishes and drinks in the evening" },
+    ],
+    uniqueDetails: [
+      "Aquarium Package: 15% off standard room rates plus breakfast and a welcome drink at the bistro.",
+      "Bistro Abrego Dinner Package: accommodations paired with a three-course dinner for two.",
+    ],
+    onSiteGolf: null,
+    airportDistance: "Pending confirmation",
+    driveTimeToCourses: [
+      { course: "Bayonet / Black Horse", minutes: 15 },
+      { course: "Poppy Hills", minutes: 13 },
+      { course: "Laguna Seca Golf Ranch", minutes: 12 },
+      { course: "Pacific Grove Golf Links", minutes: 15 },
+    ],
+    positioning:
+      "Best for groups who want a walkable downtown Monterey base and are planning to spend some trip time off the course — note the mandatory $20/night amenity fee when comparing total cost to other properties.",
+    faqs: [
+      {
+        q: "Is Hotel Abrego close to the Monterey Bay Aquarium?",
+        a: "Yes — it's about 1.6 miles away, an easy walk or short drive.",
+      },
+      {
+        q: "How many rooms does Hotel Abrego have?",
+        a: "93 rooms, spread across four buildings on the property.",
+      },
+      {
+        q: "Does Hotel Abrego have a resort fee?",
+        a: "Yes — a mandatory $20/night amenity fee covers parking and WiFi. Factor this into your total cost comparison.",
+      },
+      {
+        q: "Is Hotel Abrego good for golf groups?",
+        a: "It's not on a golf course, but it's centrally located with drive times of roughly 12–15 minutes to several Monterey Peninsula courses, and offers group rates.",
+      },
+      {
+        q: "What dining is on-site at Hotel Abrego?",
+        a: "Bistro Abrego serves a daily breakfast buffet and California coastal dishes in the evening.",
+      },
+    ],
+  },
+  "embassy-suites-monterey-bay-seaside": {
+    slug: "embassy-suites-monterey-bay-seaside",
+    name: "Embassy Suites by Hilton Monterey Bay Seaside",
+    city: "Seaside, CA",
+    tier: 2,
+    address: "1441 Canyon Del Rey Boulevard, Seaside, CA 93955",
+    phone: "+1 (831) 393-1115",
+    website: "hilton.com",
+    rooms: "225 rooms, all-suite",
+    brand: "Embassy Suites by Hilton",
+    hook: "All-suite property in Seaside with a separate living room and bedroom in every unit.",
+    description: [
+      "Embassy Suites by Hilton Monterey Bay Seaside is a 225-room all-suite property, with every unit featuring a separate living room and bedroom, a microwave, mini-refrigerator, wet bar, and two televisions.",
+      "It's a strong choice for groups wanting extra room to spread out, with brand-standard amenities and a central Seaside location convenient to several Monterey Peninsula courses.",
+    ],
+    amenities: [
+      "Complimentary full cooked-to-order breakfast",
+      "Indoor pool",
+      "Fitness center + sauna/steam",
+      "Bike trails nearby",
+      "Group rates + group dining available",
+      "Pet-friendly",
+    ],
+    roomFeatures: [
+      "Separate living room and bedroom in every suite",
+      "Microwave, mini-refrigerator, wet bar",
+      "Two televisions",
+    ],
+    onSiteGolf: null,
+    airportDistance: "Pending confirmation",
+    driveTimeToCourses: [
+      { course: "Bayonet / Black Horse", minutes: 8 },
+    ],
+    positioning:
+      "Best for groups who want extra suite space and brand-standard reliability, centrally located in Seaside near Bayonet/Black Horse.",
+    faqs: [
+      {
+        q: "Is Embassy Suites Monterey Bay Seaside an all-suite hotel?",
+        a: "Yes — all 225 units are suites with a separate living room and bedroom.",
+      },
+      {
+        q: "Is breakfast included at Embassy Suites Monterey Bay Seaside?",
+        a: "Yes, a complimentary full cooked-to-order breakfast is included, standard for the Embassy Suites brand.",
+      },
+      {
+        q: "How far is Embassy Suites Monterey Bay Seaside from Bayonet and Black Horse?",
+        a: "About 8 minutes by car.",
+      },
+      {
+        q: "Does Embassy Suites Monterey Bay Seaside have a pool?",
+        a: "Yes, an indoor pool, along with a fitness center and sauna/steam room.",
+      },
+      {
+        q: "Is Embassy Suites Monterey Bay Seaside pet-friendly?",
+        a: "Yes.",
+      },
+    ],
+  },
+  "monterey-beach-hotel": {
+    slug: "monterey-beach-hotel",
+    name: "Monterey Beach Hotel, A Tribute Portfolio Hotel",
+    city: "Monterey, CA",
+    tier: 2,
+    address: "2600 Sand Dunes Drive, Monterey, CA 93940",
+    phone: "+1 (831) 394-3321",
+    website: "montereybeach.com",
+    rooms: "188 guest rooms + 4 suites (192 total)",
+    brand: "Tribute Portfolio (Marriott International)",
+    hook: "The only Monterey Golf Tours hotel located directly on the beach.",
+    description: [
+      "Monterey Beach Hotel, a Tribute Portfolio Hotel, is the only property in this collection located directly on a beach, with 188 guest rooms and 4 suites following a full property renovation and rebrand under Marriott's Tribute Portfolio.",
+      "It's a strong fit for groups who want a beachfront base with full-service amenities and meeting space, a short drive from Bayonet and Black Horse.",
+    ],
+    amenities: [
+      "3 restaurants (The Lantern Room, Tidewater, Lobby Lounge) + 3 bars/lounges",
+      "Outdoor pool + hot tub",
+      "24-hour fitness center",
+      "Beachfront",
+      "13 meeting rooms, 56,171 sq ft conference space",
+      "Pet-friendly",
+      "EV charging",
+      "Wedding services",
+    ],
+    diningNames: [
+      { name: "The Lantern Room", detail: "On-site restaurant" },
+      { name: "Tidewater", detail: "On-site restaurant" },
+      { name: "Lobby Lounge", detail: "On-site bar" },
+    ],
+    uniqueDetails: [
+      "Built in 1967; fully renovated under the Tribute Portfolio rebrand.",
+    ],
+    onSiteGolf: null,
+    airportDistance: "Pending confirmation",
+    driveTimeToCourses: [
+      { course: "Bayonet / Black Horse", minutes: 9 },
+    ],
+    positioning:
+      "Best for groups who want a beachfront hotel with full-service amenities and meeting space, a short drive from Bayonet and Black Horse.",
+    faqs: [
+      {
+        q: "Is Monterey Beach Hotel actually on the beach?",
+        a: "Yes — it's the only Monterey Golf Tours hotel located directly on a beach.",
+      },
+      {
+        q: "How many rooms does Monterey Beach Hotel have?",
+        a: "188 guest rooms plus 4 suites, for 192 total.",
+      },
+      {
+        q: "What brand is Monterey Beach Hotel affiliated with?",
+        a: "It's part of Marriott International's Tribute Portfolio, following a full property renovation and rebrand.",
+      },
+      {
+        q: "How far is Monterey Beach Hotel from Bayonet and Black Horse?",
+        a: "About 9 minutes by car.",
+      },
+      {
+        q: "Does Monterey Beach Hotel have meeting space for groups?",
+        a: "Yes — 13 meeting rooms and 56,171 sq ft of conference space, in addition to 3 on-site restaurants and 3 bars/lounges.",
+      },
+    ],
+  },
 };

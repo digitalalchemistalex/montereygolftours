@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Hotels on the Monterey Peninsula | Monterey Golf Tours",
   description:
-    "Browse all 8 hotels Monterey Golf Tours recommends for group golf trips — from golf-anchor resorts to boutique village properties across the Monterey Peninsula.",
+    "Browse all 11 hotels Monterey Golf Tours recommends for group golf trips — from golf-anchor resorts to boutique village properties across the Monterey Peninsula.",
   alternates: {
     canonical: `https://${SITE.domain}/hotels/`,
   },

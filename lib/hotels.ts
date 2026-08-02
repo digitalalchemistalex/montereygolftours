@@ -94,4 +94,34 @@ export const HOTELS: Hotel[] = [
       "Monterey's first hotel, dating to 1824, with hacienda-style architecture and lush courtyard gardens.",
     onSiteGolf: null,
   },
+  {
+    slug: "hotel-abrego",
+    image: "",
+    name: "Hotel Abrego",
+    city: "Monterey, CA",
+    tier: 3,
+    description:
+      "Downtown Monterey boutique property, walkable to Cannery Row and the Monterey Bay Aquarium.",
+    onSiteGolf: null,
+  },
+  {
+    slug: "embassy-suites-monterey-bay-seaside",
+    image: "",
+    name: "Embassy Suites by Hilton Monterey Bay Seaside",
+    city: "Seaside, CA",
+    tier: 2,
+    description:
+      "All-suite property in Seaside with a separate living room and bedroom in every unit.",
+    onSiteGolf: null,
+  },
+  {
+    slug: "monterey-beach-hotel",
+    image: "",
+    name: "Monterey Beach Hotel, A Tribute Portfolio Hotel",
+    city: "Monterey, CA",
+    tier: 2,
+    description:
+      "The only Monterey Golf Tours hotel located directly on the beach.",
+    onSiteGolf: null,
+  },
 ];
