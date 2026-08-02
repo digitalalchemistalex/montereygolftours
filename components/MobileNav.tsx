@@ -295,7 +295,7 @@ export default function MobileNav() {
                     sub={meta ? `${meta.stars}  ${meta.note}` : undefined} />
                 );
               })}
-              <ViewAllRow href="/hotels/" onClick={close} label="View all 9 hotels" />
+              <ViewAllRow href="/hotels/" onClick={close} label="View all 8 hotels" />
             </Section>
 
             {/* ━━ DESTINATIONS ━━ */}

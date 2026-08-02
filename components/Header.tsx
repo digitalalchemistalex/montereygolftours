@@ -230,7 +230,7 @@ export default function Header() {
                 </div>
                 <Link href="/hotels/"
                   className="flex items-center justify-center gap-1.5 border-t border-[#f0ebe1] py-2.5 font-ui text-[12px] font-semibold text-ocean hover:bg-[#f4f0e7]">
-                  View all 9 hotels &rarr;
+                  View all 8 hotels &rarr;
                 </Link>
               </div>
             </div>

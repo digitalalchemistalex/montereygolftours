@@ -4,7 +4,7 @@ import Header from "./Header";
 
 const STATS = [
   { n: "8", l: "Courses on tap" },
-  { n: "9", l: "Properties to stay" },
+  { n: "8", l: "Properties to stay" },
   { n: "1954", l: "Year Bayonet opened" },
   { n: "1897", l: "Oldest course on the peninsula" },
 ];
@@ -44,7 +44,7 @@ export default function Hero() {
 
       <Header />
 
-      <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 pt-44 md:px-14 md:pb-8 md:pt-64">
+      <div className="relative z-10 mt-auto max-w-[820px] px-6 pb-8 pt-44 md:px-14 md:pb-8 md:pt-52">
         <h1
           className="text-display-xl font-display font-extrabold text-cream"
           style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}
