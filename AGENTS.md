@@ -1,5 +1,163 @@
 ---
 
+## ✅ HOLD LIFTED FOR RAZA — DIRECTIVE #9 ONLY — READ THIS FULLY BEFORE TOUCHING ANYTHING
+
+**Date: August 2, 2026**
+
+Raza — the hold at the top of this file is partially lifted. Here is exactly what has happened and exactly what you are authorized to do. No speculation required.
+
+---
+
+### WHAT MASTER'S CLAUDE ALREADY DID (do not redo any of this)
+
+Two commits were made to AGENTS.md by MASTER's Claude instance today:
+
+- `dda0b7c` (15:28) — wrote directive #9 with the full image upload mapping
+- `e85503e` (15:31) — corrected 3 oversized files in the mapping (mbeach 1→13, quail golf 4→1, portola 1→9)
+
+**No code was committed to the repo. No images were uploaded. No lib files were changed.**
+MASTER's Claude only updated AGENTS.md. The actual image work has NOT been done.
+Your job is to do that work now.
+
+---
+
+### WHAT YOU ARE AUTHORIZED TO DO THIS SESSION
+
+**One task only: execute directive #9 as written below.**
+
+Nothing else. Do not touch any other file, do not start any other directive, do not make any improvements you think are needed. Directive #9 only.
+
+---
+
+### THE EXACT FILES YOU WILL CHANGE
+
+1. `public/images/courses/` — new folder, 8 image files uploaded here
+2. `public/images/hotels/` — new folder, 8 image files uploaded here
+3. `public/og-image.jpg` — 1 image file at the public root
+4. `lib/courses.ts` — image field updated for 8 courses (string replacement only)
+5. `lib/hotels.ts` — image field updated for 8 hotels (string replacement only)
+6. `app/layout.tsx` — OG_IMAGE constant replaced with `/og-image.jpg`
+
+**Total: 18 image files + 3 code files. Nothing else.**
+
+---
+
+### THE EXACT IMAGE RENAME MAPPING
+
+Sean provided a zip of licensed photos. You should have received it directly.
+Rename files exactly as shown before uploading. No other files from the zip are in scope.
+
+**Courses → upload to `/public/images/courses/`:**
+
+| Source filename (in zip) | Upload as |
+|---|---|
+| `bayonet 1.webp` | `bayonet-hero.webp` |
+| `black horse 1.jpg` | `black-horse-hero.jpg` |
+| `CVR Golf 1.webp` | `carmel-valley-ranch-hero.webp` |
+| `laguna 1.jpg` | `laguna-seca-hero.jpg` |
+| `pacific grove 1-potential home page shot.jpg` | `pacific-grove-hero.jpg` |
+| `pasa 1.jpg` | `pasatiempo-hero.jpg` |
+| `poppy 1.webp` | `poppy-hills-hero.webp` |
+| `quail golf 1.jpg` | `quail-lodge-hero.jpg` |
+
+**Hotels → upload to `/public/images/hotels/`:**
+
+| Source filename (in zip) | Upload as |
+|---|---|
+| `Hyatt 1.webp` | `hyatt-regency-hero.webp` |
+| `CVR 1.webp` | `carmel-valley-ranch-hotel-hero.webp` |
+| `quail 1.webp` | `quail-lodge-hotel-hero.webp` |
+| `bern 13-best shot here.webp` | `bernardus-lodge-hero.webp` |
+| `mbeach 13.webp` | `monterey-plaza-hero.webp` |
+| `intercon 4.avif` | `intercontinental-hero.avif` |
+| `portola 9.jpg` | `portola-hotel-hero.jpg` |
+| `casa 1.avif` | `casa-munras-hero.avif` |
+
+**OG image → upload to `/public/` (root):**
+
+| Source filename (in zip) | Upload as |
+|---|---|
+| `pasa-use this on home back background maybe.jpg` | `og-image.jpg` |
+
+**DO NOT use any other file from the zip.** Ignore: LAB, abrego, embassy, mp 11_files/, LAB 2_files/. Those are not in scope.
+
+---
+
+### THE EXACT CODE CHANGES
+
+**`lib/courses.ts` — replace the `image:` field value for these slugs only:**
+
+```
+bayonet              → /images/courses/bayonet-hero.webp
+black-horse          → /images/courses/black-horse-hero.jpg
+carmel-valley-ranch  → /images/courses/carmel-valley-ranch-hero.webp
+laguna-seca-golf-ranch → /images/courses/laguna-seca-hero.jpg
+pacific-grove-golf-links → /images/courses/pacific-grove-hero.jpg
+pasatiempo           → /images/courses/pasatiempo-hero.jpg
+poppy-hills          → /images/courses/poppy-hills-hero.webp
+quail-lodge          → /images/courses/quail-lodge-hero.jpg
+```
+
+Leave all Pebble Beach Resorts® courses untouched (pebble-beach-golf-links, spyglass-hill, links-at-spanish-bay, del-monte-golf-course, the-hay, club-at-pasadera).
+
+**`lib/hotels.ts` — replace the `image:` field value for these slugs only:**
+
+```
+hyatt-regency-monterey       → /images/hotels/hyatt-regency-hero.webp
+carmel-valley-ranch          → /images/hotels/carmel-valley-ranch-hotel-hero.webp
+quail-lodge                  → /images/hotels/quail-lodge-hotel-hero.webp
+bernardus-lodge              → /images/hotels/bernardus-lodge-hero.webp
+monterey-plaza               → /images/hotels/monterey-plaza-hero.webp
+intercontinental-the-clement → /images/hotels/intercontinental-hero.avif
+portola-hotel                → /images/hotels/portola-hotel-hero.jpg
+casa-munras                  → /images/hotels/casa-munras-hero.avif
+```
+
+**`app/layout.tsx` — replace lines 16–17:**
+
+Find:
+```typescript
+const OG_IMAGE =
+  "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=1200&h=630&fit=crop&q=80";
+```
+
+Replace with:
+```typescript
+const OG_IMAGE = "/og-image.jpg";
+```
+
+**Also in the same commit — fix this 1-line bug:**
+In the hotels nav dropdown component, find `"View all 9 hotels →"` and change to `"View all 8 hotels →"`.
+Search `components/Header.tsx` and `components/MobileNav.tsx` for this string.
+
+---
+
+### COMMIT RULES
+
+- **One single commit** containing all 18 images + 3 code file changes + the hotel count fix
+- Commit message must be exactly: `feat: replace Unsplash placeholders with real licensed course + hotel photos; fix hotel nav count`
+- Do NOT split into multiple commits
+- Wait for Vercel READY status before reporting back
+
+---
+
+### ⚠️ FILE SIZE LIMIT
+
+GitHub Contents API maximum is **1MB per file**. Every file in the mapping above is confirmed under 1MB. If you find a file is over 1MB, stop and report to MASTER — do not substitute a different file without authorization.
+
+---
+
+### DO NOT:
+- Add gallery arrays or change the TypeScript type of the `image` field (it stays `string`)
+- Touch `next.config.ts` (local `/images/` paths need no remotePatterns config)
+- Touch `course-details.ts`, any page TSX, `itineraries.ts`, blog posts, destinations
+- Use any image not in the mapping table above
+- Make more than one commit for this task
+
+---
+
+---
+
 ## ⛔ SESSION HOLD — READ BEFORE DOING ANYTHING
 
 **MASTER has taken over this project directly. Do NOT start any new work this session.**
@@ -250,5 +408,6 @@ Replace the Unsplash og:image URL with `/og-image.jpg`. This resolves directive 
 - **Do not commit images to git as base64.** Upload as binary blobs via the GitHub Contents API (base64-encode the binary for the API call, but the stored file will be the raw binary).
 - **Do not use any image from the zip that is not in the mapping table above.**
 - **The hold at the top of this file is lifted for this directive only.** Work directive #9 and only directive #9 this session.
+
 
 
