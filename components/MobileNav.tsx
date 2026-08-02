@@ -242,7 +242,7 @@ export default function MobileNav() {
             {/* ━━ COURSES ━━ */}
             <Section label="Courses" open={expanded === "courses"} onToggle={() => toggle("courses")} delay={40} mounted={mounted}>
               <FeaturedRow
-                image={`${FC.image!}?auto=format&fit=crop&w=680&h=420&q=80`}
+                image={FC.image!.startsWith("/") ? FC.image! : `${FC.image!}?auto=format&fit=crop&w=680&h=420&q=80`}
                 alt={FC.name} title={FC.name} sub={COURSE_CHAR[FC.slug] ?? FC.hook}
                 href={`/golf-courses/${FC.slug}/`} onClick={close}
               />
@@ -271,7 +271,7 @@ export default function MobileNav() {
             {/* ━━ HOTELS ━━ */}
             <Section label="Hotels" open={expanded === "hotels"} onToggle={() => toggle("hotels")} delay={80} mounted={mounted}>
               <FeaturedRow
-                image={`${FH.image}?auto=format&fit=crop&w=680&h=420&q=80`}
+                image={FH.image.startsWith("/") ? FH.image : `${FH.image}?auto=format&fit=crop&w=680&h=420&q=80`}
                 alt={FH.name} title={FH.name} sub="22 secluded acres · Ideal for golf groups"
                 href={`/hotels/${FH.slug}/`} onClick={close}
               />

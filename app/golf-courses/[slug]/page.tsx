@@ -125,12 +125,16 @@ export default async function CoursePage({ params }: Props) {
         ...(courseData?.image ? {
           image: {
             "@type": "ImageObject",
-            url: `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
-            contentUrl: `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            url: courseData!.image.startsWith("/")
+              ? `https://${SITE.domain}${courseData!.image}`
+              : `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            contentUrl: courseData!.image.startsWith("/")
+              ? `https://${SITE.domain}${courseData!.image}`
+              : `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
             width: 1200,
             height: 800,
             name: `${courseData!.name} — Monterey Golf Tours`,
-            acquireLicensePage: "https://unsplash.com/license",
+            ...(courseData!.image.startsWith("/") ? {} : { acquireLicensePage: "https://unsplash.com/license" }),
           },
         } : {}),
       },

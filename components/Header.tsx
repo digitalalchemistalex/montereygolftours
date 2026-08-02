@@ -116,7 +116,7 @@ export default function Header() {
 
               {/* Left: featured course */}
               <FeaturedPanel
-                image={`${FC.image!}?auto=format&fit=crop&w=440&h=560&q=85`}
+                image={FC.image!.startsWith("/") ? FC.image! : `${FC.image!}?auto=format&fit=crop&w=440&h=560&q=85`}
                 alt={FC.name} title={FC.name}
                 sub={COURSE_CHAR[FC.slug] ?? FC.hook}
                 href={`/golf-courses/${FC.slug}/`}
@@ -185,7 +185,7 @@ export default function Header() {
           <div className={`${DROP} left-1/2 w-[600px] -translate-x-1/2`}>
             <div className={`${CARD} grid grid-cols-[200px_1fr]`}>
               <FeaturedPanel
-                image={`${FH.image}?auto=format&fit=crop&w=400&h=520&q=85`}
+                image={FH.image.startsWith("/") ? FH.image : `${FH.image}?auto=format&fit=crop&w=400&h=520&q=85`}
                 alt={FH.name} title={FH.name}
                 sub="22 secluded acres · Ideal for golf groups"
                 href={`/hotels/${FH.slug}/`}

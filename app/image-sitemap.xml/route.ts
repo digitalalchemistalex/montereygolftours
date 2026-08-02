@@ -23,7 +23,7 @@ export function GET() {
       entries.push({
         loc: `${base}/golf-courses/${c.slug}/`,
         images: [{
-          url: `${c.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+          url: c.image.startsWith("/") ? `${base}${c.image}` : `${c.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
           title: `${c.name} — Monterey Peninsula Golf Course`,
           caption: `${c.name} in ${c.city}. Par ${c.par}, ${c.yards}.`,
         }],
@@ -37,7 +37,7 @@ export function GET() {
       entries.push({
         loc: `${base}/hotels/${h.slug}/`,
         images: [{
-          url: `${h.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+          url: h.image.startsWith("/") ? `${base}${h.image}` : `${h.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
           title: `${h.name} — Monterey Golf Tours Lodging`,
           caption: `${h.name} in ${h.city} — lodging for Monterey Peninsula golf trips.`,
         }],

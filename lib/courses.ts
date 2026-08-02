@@ -23,7 +23,7 @@ export type Course = {
 export const COURSES: Course[] = [
   {
     slug: "bayonet",
-    image: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f",
+    image: "/images/courses/bayonet-hero.webp",
     name: "Bayonet",
     city: "Seaside, CA",
     par: 72,
@@ -33,7 +33,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "black-horse",
-    image: "https://images.unsplash.com/photo-1592937238247-cd0090e02f65",
+    image: "/images/courses/black-horse-hero.jpg",
     name: "Black Horse",
     city: "Seaside, CA",
     par: 72,
@@ -43,7 +43,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7",
+    image: "/images/courses/carmel-valley-ranch-hero.webp",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     par: 70,
@@ -53,7 +53,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "quail-lodge",
-    image: "https://images.unsplash.com/photo-1632946269126-0f8edbe8b068",
+    image: "/images/courses/quail-lodge-hero.jpg",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     par: 71,
@@ -63,7 +63,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "laguna-seca-golf-ranch",
-    image: "https://images.unsplash.com/photo-1623567341691-1f47b5cf949e",
+    image: "/images/courses/laguna-seca-hero.jpg",
     name: "Laguna Seca Golf Ranch",
     city: "Monterey, CA",
     par: 71,
@@ -73,7 +73,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pacific-grove-golf-links",
-    image: "https://images.unsplash.com/photo-1587205476864-4a5a195167b4",
+    image: "/images/courses/pacific-grove-hero.jpg",
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
@@ -83,7 +83,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "poppy-hills",
-    image: "https://images.unsplash.com/photo-1605144884374-ecbb643615f6",
+    image: "/images/courses/poppy-hills-hero.webp",
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
@@ -148,7 +148,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pasatiempo",
-    image: "https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb",
+    image: "/images/courses/pasatiempo-hero.jpg",
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,
