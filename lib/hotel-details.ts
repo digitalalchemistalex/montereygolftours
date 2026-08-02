@@ -614,7 +614,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Nearby: Cannery Row (1.4 mi), Monterey Bay Aquarium (1.6 mi), Path of History, Monterey Sports Center.",
     ],
     onSiteGolf: null,
-    airportDistance: "Pending confirmation",
+    airportDistance: "~8 min from MRY (est.)",
     driveTimeToCourses: [
       { course: "Bayonet / Black Horse", minutes: 15 },
       { course: "Poppy Hills", minutes: 13 },
@@ -675,7 +675,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Two televisions",
     ],
     onSiteGolf: null,
-    airportDistance: "Pending confirmation",
+    airportDistance: "~5 min from MRY (est.)",
     driveTimeToCourses: [
       { course: "Bayonet / Black Horse", minutes: 8 },
     ],
@@ -740,7 +740,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "4.2 miles (6.7 km) from Bayonet & Black Horse Golf Course.",
     ],
     onSiteGolf: null,
-    airportDistance: "Pending confirmation",
+    airportDistance: "~6 min from MRY (est.)",
     driveTimeToCourses: [],
     positioning:
       "Best for groups who want a beachfront hotel with full-service amenities and meeting space, about 4.2 miles from Bayonet and Black Horse.",
