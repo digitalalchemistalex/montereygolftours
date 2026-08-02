@@ -86,10 +86,10 @@ export const DESTINATIONS: Record<string, Destination> = {
     name: "Carmel-by-the-Sea",
     heroTitle: "Golf near Carmel-by-the-Sea",
     speakable:
-      "Carmel-by-the-Sea is a village base for golf trips, with Carmel Valley's courses a short 5-10 minute drive inland and L'Auberge Carmel offering an intimate in-village stay.",
-    trustBar: ["Carmel Valley courses 5–10 min away", "Village walkability", "L'Auberge Carmel on-site dining"],
+      "Carmel-by-the-Sea is a walkable village base for golf trips, with Carmel Valley's courses a short 5-10 minute drive inland.",
+    trustBar: ["Carmel Valley courses 5–10 min away", "Village walkability", "Steps from Carmel Beach"],
     whyPlay:
-      "Carmel-by-the-Sea itself has no golf course within the village, but Carmel Valley's courses — Carmel Valley Ranch and Quail Lodge — are a short 5 to 10 minute drive inland. Carmel works best as a village base for groups who want walkable galleries, shops, and dining alongside their golf, with L'Auberge Carmel offering an intimate, adults-oriented stay.",
+      "Carmel-by-the-Sea itself has no golf course within the village, but Carmel Valley's courses — Carmel Valley Ranch and Quail Lodge — are a short 5 to 10 minute drive inland. Carmel works best as a village base for groups who want walkable galleries, shops, and dining alongside their golf.",
     features: [
       {
         label: "Village walkability",
@@ -104,17 +104,16 @@ export const DESTINATIONS: Record<string, Destination> = {
         detail: "A short walk from the village center.",
       },
       {
-        label: "Fine dining",
-        detail: "Aubergine at L'Auberge Carmel is one of the Central Coast's most acclaimed restaurants.",
+        label: "Dining & galleries",
+        detail: "Dozens of restaurants and art galleries within a short walk of Ocean Avenue.",
       },
     ],
     pointers: [
       "Ocean Avenue is the main gallery and shopping street, running straight down to Carmel Beach.",
       "Carmel-by-the-Sea has no street addresses on homes \u2014 mail is collected at the post office, a quirk of the village's history.",
-      "Aubergine at L'Auberge Carmel is a 9-table, chef-driven restaurant with a 2,500-bottle wine cellar.",
     ],
     courseSlugs: ["carmel-valley-ranch", "quail-lodge"],
-    hotelSlugs: ["lauberge-carmel"],
+    hotelSlugs: [],
     itinerarySlugs: ["carmel-valley-golf-getaway", "4-day-monterey-peninsula-golf-trip"],
     faqs: [
       {
@@ -135,7 +134,7 @@ export const DESTINATIONS: Record<string, Destination> = {
       },
       {
         q: "What's the best restaurant in Carmel for a group dinner?",
-        a: "Aubergine at L'Auberge Carmel is the most acclaimed, though its 9-table size suits smaller groups best — worth booking well ahead.",
+        a: "Carmel village has dozens of restaurants within walking distance of Ocean Avenue — ask us for a current recommendation matched to your group size and taste, since the best fit changes with availability.",
       },
     ],
   },

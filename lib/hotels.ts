@@ -85,16 +85,6 @@ export const HOTELS: Hotel[] = [
     onSiteGolf: null,
   },
   {
-    slug: "lauberge-carmel",
-    image: "https://images.unsplash.com/photo-1582533568805-78a15dcb01b5",
-    name: "L'Auberge Carmel",
-    city: "Carmel-by-the-Sea, CA",
-    tier: 3,
-    description:
-      "A 20-room Relais & Châteaux property in the heart of Carmel village, a block from the beach.",
-    onSiteGolf: null,
-  },
-  {
     slug: "casa-munras",
     image: "https://images.unsplash.com/photo-1570213489059-0aac6626cade",
     name: "Casa Munras Garden Hotel & Spa",

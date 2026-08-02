@@ -96,7 +96,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
     items: [
       {
         q: "How many hotels do you feature?",
-        a: "9 verified properties, from golf-anchor resorts like Hyatt Regency Monterey and Carmel Valley Ranch to boutique village stays like L'Auberge Carmel.",
+        a: "8 verified properties, from golf-anchor resorts like Hyatt Regency Monterey and Carmel Valley Ranch to boutique stays like Casa Munras.",
       },
       {
         q: "Can you help arrange ground transportation?",

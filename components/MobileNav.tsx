@@ -30,7 +30,6 @@ const COURSE_CHAR: Record<string, string> = {
 
 const HOTEL_NOTE: Record<string, { stars: string; note: string }> = {
   "bernardus-lodge":          { stars: "★★★★★", note: "Ultra-luxury · Carmel Valley" },
-  "lauberge-carmel":          { stars: "★★★★★", note: "Boutique · village setting" },
   "carmel-valley-ranch":      { stars: "★★★★",  note: "Golf resort · fog-free" },
   "quail-lodge":              { stars: "★★★★",  note: "Golf resort · valley" },
   "hyatt-regency-monterey":   { stars: "★★★★",  note: "22 secluded acres · golf groups" },
@@ -44,7 +43,7 @@ const PB_SLUGS    = ["pebble-beach-golf-links","spyglass-hill","del-monte-golf-c
 const OTHER_SLUGS = ["bayonet","black-horse","carmel-valley-ranch","quail-lodge","club-at-pasadera",
                      "poppy-hills","pacific-grove-golf-links","laguna-seca-golf-ranch","pasatiempo"];
 const MONTEREY_SLUGS = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras"];
-const CARMEL_SLUGS   = ["bernardus-lodge","lauberge-carmel","quail-lodge","carmel-valley-ranch"];
+const CARMEL_SLUGS   = ["bernardus-lodge","quail-lodge","carmel-valley-ranch"];
 
 const courseMap = Object.fromEntries(COURSES.map(c => [c.slug, c]));
 const hotelMap  = Object.fromEntries(HOTELS.map(h => [h.slug, h]));
