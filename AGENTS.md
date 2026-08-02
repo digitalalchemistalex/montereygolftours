@@ -125,3 +125,126 @@ This file is the live source of truth for this repo. MASTER (Alex) updates it di
 
 *When you resolve a LIVE DIRECTIVE, change its tag from [OPEN] to [DONE] and note the commit SHA in your next commit message, don't delete the entry — MASTER needs the history.*
 
+
+
+9. **[OPEN — Raza action required] Replace Unsplash placeholders with real licensed photos across all course and hotel pages.**
+
+MASTER has uploaded a zip of real licensed images from Sean (Google Drive folder "Monterey Images"). The zip has been inventoried. This directive gives you the exact mapping — do not deviate, do not guess, do not use any image not listed here.
+
+---
+
+### STEP 1 — Download the images
+
+Sean's images are in Google Drive folder: `https://drive.google.com/drive/folders/1R49od5MrIFrM3yHTUh9n0ChVIaBjugAl`
+
+Download the full folder as a zip (already done by MASTER — available as `drive-download-20260802T152205Z-1-001.zip`). Extract it locally. You will see files like `bayonet 1.webp`, `bern 13-best shot here.webp`, etc.
+
+---
+
+### STEP 2 — Rename files using this exact mapping
+
+Rename each file as shown. Use the EXACT filenames below — these become the public URLs. No spaces. Lowercase only.
+
+**Courses:**
+| Original filename | Rename to |
+|---|---|
+| `bayonet 1.webp` | `bayonet-hero.webp` |
+| `black horse 1.jpg` | `black-horse-hero.jpg` |
+| `CVR Golf 1.webp` | `carmel-valley-ranch-hero.webp` |
+| `laguna 1.jpg` | `laguna-seca-hero.jpg` |
+| `pacific grove 1-potential home page shot.jpg` | `pacific-grove-hero.jpg` |
+| `pasa 1.jpg` | `pasatiempo-hero.jpg` |
+| `poppy 1.webp` | `poppy-hills-hero.webp` |
+| `quail golf 4-could be a great home page shot.jpeg` | `quail-lodge-hero.jpg` |
+
+**Hotels:**
+| Original filename | Rename to |
+|---|---|
+| `Hyatt 1.webp` | `hyatt-regency-hero.webp` |
+| `CVR 1.webp` | `carmel-valley-ranch-hotel-hero.webp` |
+| `quail 1.webp` | `quail-lodge-hotel-hero.webp` |
+| `bern 13-best shot here.webp` | `bernardus-lodge-hero.webp` |
+| `mbeach 1.webp` | `monterey-plaza-hero.webp` |
+| `intercon 4.avif` | `intercontinental-hero.avif` |
+| `portola 1.jpg` | `portola-hotel-hero.jpg` |
+| `casa 1.avif` | `casa-munras-hero.avif` |
+
+**Homepage OG image (also resolves directive #8):**
+| Original filename | Rename to |
+|---|---|
+| `pasa-use this on home back background maybe.jpg` | `og-image.jpg` |
+
+**DO NOT rename or use any other files from the zip** — the rest are extras Sean may use later. Ignore `LAB 1.jpg`, `Lab 3.jpg`, `abrego *.avif`, `embassy *.avif` — MASTER will handle those separately.
+
+---
+
+### STEP 3 — Place files in `/public/images/courses/` and `/public/images/hotels/`
+
+Create two new folders:
+- `public/images/courses/` — all course hero images
+- `public/images/hotels/` — all hotel hero images
+- `public/` — `og-image.jpg` goes here (root of public, not in a subfolder)
+
+Upload ALL renamed files to GitHub in **one single commit** using the Contents API. The commit message must be:
+
+```
+feat: replace Unsplash placeholders with real licensed course + hotel photos
+```
+
+Commit all image files + the two `lib/` file changes (Step 4) in the **same commit**. Do not split across multiple commits.
+
+---
+
+### STEP 4 — Update `lib/courses.ts` and `lib/hotels.ts`
+
+Replace the `image` field value for each entity. Use local paths, not external URLs.
+
+**`lib/courses.ts` changes:**
+```
+bayonet        → /images/courses/bayonet-hero.webp
+black-horse    → /images/courses/black-horse-hero.jpg
+carmel-valley-ranch → /images/courses/carmel-valley-ranch-hero.webp
+laguna-seca-golf-ranch → /images/courses/laguna-seca-hero.jpg
+pacific-grove-golf-links → /images/courses/pacific-grove-hero.jpg
+pasatiempo     → /images/courses/pasatiempo-hero.jpg
+poppy-hills    → /images/courses/poppy-hills-hero.webp
+quail-lodge    → /images/courses/quail-lodge-hero.jpg
+```
+Pebble Beach Resorts® courses (pebble-beach-golf-links, spyglass-hill, links-at-spanish-bay, del-monte-golf-course, the-hay, club-at-pasadera) — leave image field as-is (Unsplash or absent). Do not touch them.
+
+**`lib/hotels.ts` changes:**
+```
+hyatt-regency-monterey      → /images/hotels/hyatt-regency-hero.webp
+carmel-valley-ranch         → /images/hotels/carmel-valley-ranch-hotel-hero.webp
+quail-lodge                 → /images/hotels/quail-lodge-hotel-hero.webp
+bernardus-lodge             → /images/hotels/bernardus-lodge-hero.webp
+monterey-plaza              → /images/hotels/monterey-plaza-hero.webp
+intercontinental-the-clement → /images/hotels/intercontinental-hero.avif
+portola-hotel               → /images/hotels/portola-hotel-hero.jpg
+casa-munras                 → /images/hotels/casa-munras-hero.avif
+```
+
+**`app/layout.tsx` or wherever og:image is set:**
+Replace the Unsplash og:image URL with `/og-image.jpg`. This resolves directive #8.
+
+---
+
+### STEP 5 — Verify before pushing
+
+1. Confirm every image file exists at its new path locally before committing
+2. Confirm `courses.ts` TypeScript still compiles — the `image` field is `string | undefined`, local paths are valid strings
+3. Confirm `hotels.ts` same — `image` field is `string`, all entries now have a local path
+4. Confirm `og-image.jpg` is in `/public/` root
+5. Run `next build` locally — zero errors expected since this is only string values changing
+6. Single commit, then wait for Vercel READY before reporting back to MASTER
+
+---
+
+### CONSTRAINTS — read carefully
+
+- **Do not add a gallery or image array.** Current `image` field is a single string. Do not change the type. That is a future task.
+- **Do not touch any file not listed above.** Not `course-details.ts`, not any page TSX, not `itineraries.ts`, not blog posts. Only: `lib/courses.ts`, `lib/hotels.ts`, `app/layout.tsx` (og:image only), plus new image files in `/public/images/`.
+- **Do not commit images to git as base64.** Upload as binary blobs via the GitHub Contents API (base64-encode the binary for the API call, but the stored file will be the raw binary).
+- **Do not use any image from the zip that is not in the mapping table above.**
+- **The hold at the top of this file is lifted for this directive only.** Work directive #9 and only directive #9 this session.
+
