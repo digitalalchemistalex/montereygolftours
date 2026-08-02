@@ -484,3 +484,49 @@ Replace the Unsplash og:image URL with `/og-image.jpg`. This resolves directive 
 
 
 
+
+
+---
+
+## ✅ DIRECTIVE #10 — BUILD MONTEREY BEACH HOTEL PAGE
+
+**Date: August 2, 2026**
+**Authorized by: MASTER**
+
+---
+
+### YOUR TASK
+
+Build the hotel page for **Monterey Beach Hotel, A Tribute Portfolio Hotel** using the exact same template and structure as the existing hotel pages already in the codebase.
+
+---
+
+### HOTEL FACTS — USE EXACTLY AS WRITTEN
+
+- **Full legal name:** Monterey Beach Hotel, A Tribute Portfolio Hotel
+- **Short name (for UI labels, cards, nav):** Monterey Beach Hotel
+- **Address:** 2600 Sand Dunes Dr, Monterey, CA 93940
+- **Brand:** Marriott Tribute Portfolio
+- **Slug:** `monterey-beach-hotel`
+
+Do not invent any other facts (star rating, room count, amenities, description). Use only what is confirmed above. For any fields the template requires that are not listed here, use a placeholder comment `{/* TODO: Sean to confirm */}` — do not fabricate.
+
+---
+
+### WHAT TO DO
+
+1. Look at an existing hotel page (e.g. Portola Hotel or Casa Munras) to understand the exact file structure, data shape, and template used
+2. Add the hotel entry to `lib/hotels.ts` using the confirmed facts above
+3. Create the hotel page at `app/hotels/monterey-beach-hotel/page.tsx` following the same pattern
+4. Do not add an image path — leave the `image` field absent or as an empty string until MASTER provides one
+5. Single commit, wait for Vercel READY, report back
+
+---
+
+### CONSTRAINTS
+
+- **Template only** — no new components, no new patterns, no improvements
+- **No invented facts** — name, address, brand only; everything else gets a TODO placeholder
+- **Do not touch any other file** beyond `lib/hotels.ts` and the new page file
+- **Do not start any other directive**
+
