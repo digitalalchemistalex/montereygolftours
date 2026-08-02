@@ -96,7 +96,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "hotel-abrego",
-    image: "",
+    image: "/images/hotels/hotel-abrego-hero.avif",
     name: "Hotel Abrego",
     city: "Monterey, CA",
     tier: 3,
@@ -106,7 +106,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "embassy-suites-monterey-bay-seaside",
-    image: "",
+    image: "/images/hotels/embassy-suites-hero.avif",
     name: "Embassy Suites by Hilton Monterey Bay Seaside",
     city: "Seaside, CA",
     tier: 2,
