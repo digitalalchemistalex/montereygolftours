@@ -259,22 +259,24 @@ export default async function HotelPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
-          <h2 className="text-display-md mb-3 font-display font-bold text-ink md:mb-4">
-            Distance to courses
-          </h2>
-          <p className="mb-8 max-w-[600px] font-body text-[14px] text-[#7a6a58]">
-            Approximate driving times from {hotel.name}.
-          </p>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {sortedDriveTimes.map((d) => (
-              <div key={d.course} className="flex items-center justify-between border-b border-warmborder py-2.5">
-                <span className="font-body text-[14px] text-[#4a3f34]">{d.course}</span>
-                <span className="font-display text-base font-bold text-terracotta-dark">{d.minutes} min</span>
-              </div>
-            ))}
-          </div>
-        </section>
+        {sortedDriveTimes.length > 0 && (
+          <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-3 font-display font-bold text-ink md:mb-4">
+              Distance to courses
+            </h2>
+            <p className="mb-8 max-w-[600px] font-body text-[14px] text-[#7a6a58]">
+              Approximate driving times from {hotel.name}.
+            </p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {sortedDriveTimes.map((d) => (
+                <div key={d.course} className="flex items-center justify-between border-b border-warmborder py-2.5">
+                  <span className="font-body text-[14px] text-[#4a3f34]">{d.course}</span>
+                  <span className="font-display text-base font-bold text-terracotta-dark">{d.minutes} min</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="border-b border-warmborder px-6 py-10 md:px-14 md:py-14">
           <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

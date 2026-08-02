@@ -590,11 +590,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     phone: "+1 (831) 372-7551",
     website: "hotelabrego.com",
     rooms: "93 rooms across four buildings",
-    brand: "Independent boutique",
+    brand: "Independent boutique — AAA Three Diamond",
     hook: "Downtown Monterey boutique property, walkable to Cannery Row and the Monterey Bay Aquarium.",
     description: [
-      "Hotel Abrego is an independent boutique property in downtown Monterey, spread across four buildings with 93 individually furnished rooms.",
-      "Its downtown location puts guests within walking distance of Cannery Row and the Monterey Bay Aquarium, making it a strong choice for groups who want to pair golf with time exploring the city.",
+      "Hotel Abrego is an independent boutique property in downtown Monterey, spread across four buildings with 93 individually furnished rooms. It carries an AAA Three Diamond rating.",
+      "Its downtown location puts guests within walking distance of Cannery Row (1.4 mi), the Monterey Bay Aquarium (1.6 mi), and the Path of History, making it a strong choice for groups who want to pair golf with time exploring the city.",
     ],
     amenities: [
       "Heated outdoor pool + hot tub",
@@ -608,8 +608,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       { name: "Bistro Abrego", detail: "Daily breakfast buffet; California coastal dishes and drinks in the evening" },
     ],
     uniqueDetails: [
+      "AAA Three Diamond rated.",
       "Aquarium Package: 15% off standard room rates plus breakfast and a welcome drink at the bistro.",
       "Bistro Abrego Dinner Package: accommodations paired with a three-course dinner for two.",
+      "Nearby: Cannery Row (1.4 mi), Monterey Bay Aquarium (1.6 mi), Path of History, Monterey Sports Center.",
     ],
     onSiteGolf: null,
     airportDistance: "Pending confirmation",
@@ -653,10 +655,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     phone: "+1 (831) 393-1115",
     website: "hilton.com",
     rooms: "225 rooms, all-suite",
-    brand: "Embassy Suites by Hilton",
+    brand: "Embassy Suites by Hilton — AAA Three Diamond",
     hook: "All-suite property in Seaside with a separate living room and bedroom in every unit.",
     description: [
-      "Embassy Suites by Hilton Monterey Bay Seaside is a 225-room all-suite property, with every unit featuring a separate living room and bedroom, a microwave, mini-refrigerator, wet bar, and two televisions.",
+      "Embassy Suites by Hilton Monterey Bay Seaside is a 225-room all-suite property, carrying an AAA Three Diamond rating, with every unit featuring a separate living room and bedroom, a microwave, mini-refrigerator, wet bar, and two televisions.",
       "It's a strong choice for groups wanting extra room to spread out, with brand-standard amenities and a central Seaside location convenient to several Monterey Peninsula courses.",
     ],
     amenities: [
@@ -711,10 +713,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     phone: "+1 (831) 394-3321",
     website: "montereybeach.com",
     rooms: "188 guest rooms + 4 suites (192 total)",
-    brand: "Tribute Portfolio (Marriott International)",
+    brand: "Tribute Portfolio (Marriott International) — AAA Three Diamond",
     hook: "The only Monterey Golf Tours hotel located directly on the beach.",
     description: [
-      "Monterey Beach Hotel, a Tribute Portfolio Hotel, is the only property in this collection located directly on a beach, with 188 guest rooms and 4 suites following a full property renovation and rebrand under Marriott's Tribute Portfolio.",
+      "Monterey Beach Hotel, a Tribute Portfolio Hotel, is the only property in this collection located directly on a beach, with 188 guest rooms and 4 suites. Originally built in 1967, the property reopened under Marriott's Tribute Portfolio brand on August 21, 2024 following a complete renovation. It carries an AAA Three Diamond rating.",
       "It's a strong fit for groups who want a beachfront base with full-service amenities and meeting space, a short drive from Bayonet and Black Horse.",
     ],
     amenities: [
@@ -733,15 +735,15 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       { name: "Lobby Lounge", detail: "On-site bar" },
     ],
     uniqueDetails: [
-      "Built in 1967; fully renovated under the Tribute Portfolio rebrand.",
+      "Built in 1967; reopened under the Tribute Portfolio brand on August 21, 2024 following a complete renovation.",
+      "AAA Three Diamond rated.",
+      "4.2 miles (6.7 km) from Bayonet & Black Horse Golf Course.",
     ],
     onSiteGolf: null,
     airportDistance: "Pending confirmation",
-    driveTimeToCourses: [
-      { course: "Bayonet / Black Horse", minutes: 9 },
-    ],
+    driveTimeToCourses: [],
     positioning:
-      "Best for groups who want a beachfront hotel with full-service amenities and meeting space, a short drive from Bayonet and Black Horse.",
+      "Best for groups who want a beachfront hotel with full-service amenities and meeting space, about 4.2 miles from Bayonet and Black Horse.",
     faqs: [
       {
         q: "Is Monterey Beach Hotel actually on the beach?",
@@ -753,11 +755,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       },
       {
         q: "What brand is Monterey Beach Hotel affiliated with?",
-        a: "It's part of Marriott International's Tribute Portfolio, following a full property renovation and rebrand.",
+        a: "It's part of Marriott International's Tribute Portfolio, reopened August 21, 2024 following a complete renovation. It carries an AAA Three Diamond rating.",
       },
       {
         q: "How far is Monterey Beach Hotel from Bayonet and Black Horse?",
-        a: "About 9 minutes by car.",
+        a: "4.2 miles (6.7 km).",
       },
       {
         q: "Does Monterey Beach Hotel have meeting space for groups?",
