@@ -19,16 +19,14 @@ export default function Logo({
 
   return (
     <div className={`flex items-center gap-2.5 ${className ?? ""}`}>
-      {/* Image mark temporarily hidden pending Sean's logo approval (Lone Cypress / PBC trademark review).
-          Restore by uncommenting once new logo is approved. */}
-      {/* <Image
+      <Image
         src="/brand/logo.png"
         alt="Monterey Golf Tours"
         width={imageSize}
         height={imageSize}
         priority
         style={{ width: imageSize, height: imageSize, objectFit: "contain", flexShrink: 0 }}
-      /> */}
+      />
       {showText && (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
