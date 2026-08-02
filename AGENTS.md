@@ -141,6 +141,9 @@ Download the full folder as a zip (already done by MASTER — available as `driv
 
 ---
 
+### ⚠️ FILE SIZE LIMIT — GitHub Contents API max is 1MB per file
+All files in the mapping below are confirmed under 1MB. Do not substitute larger files.
+
 ### STEP 2 — Rename files using this exact mapping
 
 Rename each file as shown. Use the EXACT filenames below — these become the public URLs. No spaces. Lowercase only.
@@ -155,7 +158,7 @@ Rename each file as shown. Use the EXACT filenames below — these become the pu
 | `pacific grove 1-potential home page shot.jpg` | `pacific-grove-hero.jpg` |
 | `pasa 1.jpg` | `pasatiempo-hero.jpg` |
 | `poppy 1.webp` | `poppy-hills-hero.webp` |
-| `quail golf 4-could be a great home page shot.jpeg` | `quail-lodge-hero.jpg` |
+| `quail golf 1.jpg` | `quail-lodge-hero.jpg` |
 
 **Hotels:**
 | Original filename | Rename to |
@@ -164,9 +167,9 @@ Rename each file as shown. Use the EXACT filenames below — these become the pu
 | `CVR 1.webp` | `carmel-valley-ranch-hotel-hero.webp` |
 | `quail 1.webp` | `quail-lodge-hotel-hero.webp` |
 | `bern 13-best shot here.webp` | `bernardus-lodge-hero.webp` |
-| `mbeach 1.webp` | `monterey-plaza-hero.webp` |
+| `mbeach 13.webp` | `monterey-plaza-hero.webp` |
 | `intercon 4.avif` | `intercontinental-hero.avif` |
-| `portola 1.jpg` | `portola-hotel-hero.jpg` |
+| `portola 9.jpg` | `portola-hotel-hero.jpg` |
 | `casa 1.avif` | `casa-munras-hero.avif` |
 
 **Homepage OG image (also resolves directive #8):**
@@ -247,4 +250,5 @@ Replace the Unsplash og:image URL with `/og-image.jpg`. This resolves directive 
 - **Do not commit images to git as base64.** Upload as binary blobs via the GitHub Contents API (base64-encode the binary for the API call, but the stored file will be the raw binary).
 - **Do not use any image from the zip that is not in the mapping table above.**
 - **The hold at the top of this file is lifted for this directive only.** Work directive #9 and only directive #9 this session.
+
 
