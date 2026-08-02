@@ -116,7 +116,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "monterey-beach-hotel",
-    image: "",
+    image: "/images/hotels/monterey-beach-hotel-hero.webp",
     name: "Monterey Beach Hotel, A Tribute Portfolio Hotel",
     city: "Monterey, CA",
     tier: 2,
