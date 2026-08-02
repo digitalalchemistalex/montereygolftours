@@ -1,5 +1,77 @@
 ---
 
+## 🚨 EMERGENCY DIRECTIVE — LOGO MUST BE REPLACED BEFORE ANY OTHER WORK
+
+**Date: August 2, 2026**
+**Priority: HIGHEST — legal risk, overrides all other directives including #9**
+
+---
+
+### THE PROBLEM
+
+The current logo (`/public/brand/logo.png` and all variants) depicts a **cypress tree on a rocky coastal outcrop with ocean waves** — identical in composition to the **Lone Cypress**, which is a registered trademark of Pebble Beach Company.
+
+Pebble Beach Company actively enforces this trademark. Using it — even a stylized or illustrated version — exposes the site to immediate legal action. This logo cannot appear on any live page.
+
+**The site must NOT go live on montereygolftours.com with this logo under any circumstances.**
+
+---
+
+### YOUR ONLY JOB THIS SESSION
+
+Replace the logo across the entire site with a safe text-only or abstract placeholder before touching anything else, including directive #9.
+
+---
+
+### WHAT TO DO — EXACTLY
+
+**Step 1 — Create a safe placeholder logo**
+
+Create a new file at `public/brand/logo-placeholder.png` — a simple square image with:
+- Dark navy background (#16242c)
+- Gold text "MGT" centered
+- No tree, no cypress, no coastline, no recognizable landmark
+
+Use a canvas/node script or a minimal SVG converted to PNG. Keep it 300×300px to match the current logo dimensions.
+
+Alternatively, if creating a PNG is complex, convert the existing logo references in the codebase to use an inline SVG text mark instead. Check how `logo.png` is referenced first.
+
+**Step 2 — Find every reference to the logo files**
+
+Search the codebase for:
+- `/brand/logo.png`
+- `/brand/logo-400.png`
+- `/brand/logo-master.jpg`
+- `/brand/logo-transparent-master.png`
+
+These appear in at minimum: `components/Header.tsx`, `components/MobileNav.tsx`, `app/layout.tsx` (apple-icon, favicon references), and the wordmark inline style blocks.
+
+**Step 3 — Replace or remove**
+
+For every `<Image src="/brand/logo.png" ...>` instance: either point to the new placeholder, or if the wordmark "MonTeReY / GOLf TOURS" text renders independently without the logo image, remove the `<Image>` entirely and let the text wordmark stand alone. The text wordmark is safe — the image is the problem.
+
+**Step 4 — Do NOT delete the old logo files from git**
+
+Leave `logo.png`, `logo-400.png`, `logo-master.jpg`, `logo-transparent-master.png` in place in the repo. Just stop referencing them in components. MASTER will handle permanent replacement with a new commissioned logo.
+
+**Step 5 — Single commit**
+
+Commit message: `fix: remove Lone Cypress logo — trademark risk (Pebble Beach Co.); replace with safe placeholder`
+
+Wait for Vercel READY. Report back with confirmation.
+
+---
+
+### DO NOT:
+- Proceed with directive #9 (image uploads) until this is done
+- Leave the cypress logo rendering on any page
+- Delete the old logo files (preserve for reference)
+- Make any other changes in this commit
+
+---
+
+---
+
 ## ✅ HOLD LIFTED FOR RAZA — DIRECTIVE #9 ONLY — READ THIS FULLY BEFORE TOUCHING ANYTHING
 
 **Date: August 2, 2026**
@@ -408,6 +480,7 @@ Replace the Unsplash og:image URL with `/og-image.jpg`. This resolves directive 
 - **Do not commit images to git as base64.** Upload as binary blobs via the GitHub Contents API (base64-encode the binary for the API call, but the stored file will be the raw binary).
 - **Do not use any image from the zip that is not in the mapping table above.**
 - **The hold at the top of this file is lifted for this directive only.** Work directive #9 and only directive #9 this session.
+
 
 
 
