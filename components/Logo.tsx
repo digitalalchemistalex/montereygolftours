@@ -15,7 +15,7 @@ export default function Logo({
 }) {
   // Image sized down relative to text so the two read as one balanced unit —
   // text is the dominant element, image is a compact mark beside it.
-  const imageSize = Math.round(size * 0.78);
+  const imageSize = Math.round(size * 0.92);
   const nameSize = Math.round(size * 0.355);
   const subSize = Math.round(size * 0.185);
 
