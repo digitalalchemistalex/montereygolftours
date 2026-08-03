@@ -93,11 +93,11 @@ function FeaturedPanel({ image, alt, title, sub, href }: {
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 border-b border-white/[.07] bg-[#16242c]/97 px-5 py-[14px] backdrop-blur-md md:px-10">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-[14px] backdrop-blur-md md:px-10">
       {/* Logo */}
       <Link href="/" className="flex flex-none items-center">
         <div className="scale-90 sm:scale-100">
-          <Logo size={88} />
+          <Logo size={88} color="#1B4332" onLight />
         </div>
       </Link>
 
@@ -106,7 +106,7 @@ export default function Header() {
 
         {/* ━━ COURSES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/golf-courses/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-[#f0ece0] hover:bg-white/[.08] hover:text-gold">
+          <Link href="/golf-courses/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
             Courses {chevron}
           </Link>
 
@@ -178,7 +178,7 @@ export default function Header() {
 
         {/* ━━ HOTELS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/hotels/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-[#f0ece0] hover:bg-white/[.08] hover:text-gold">
+          <Link href="/hotels/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
             Hotels {chevron}
           </Link>
 
@@ -239,7 +239,7 @@ export default function Header() {
 
         {/* ━━ DESTINATIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/destinations/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-[#f0ece0] hover:bg-white/[.08] hover:text-gold">
+          <Link href="/destinations/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
             Destinations {chevron}
           </Link>
 
@@ -279,7 +279,7 @@ export default function Header() {
 
         {/* ━━ ITINERARIES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/itineraries/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-[#f0ece0] hover:bg-white/[.08] hover:text-gold">
+          <Link href="/itineraries/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
             Itineraries {chevron}
           </Link>
 
@@ -324,7 +324,7 @@ export default function Header() {
         {/* Simple links */}
         {SIMPLE_LINKS.map(l => (
           <Link key={l.href} href={l.href}
-            className="rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-[#f0ece0] hover:bg-white/[.08] hover:text-gold">
+            className="rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
             {l.label}
           </Link>
         ))}
@@ -332,7 +332,7 @@ export default function Header() {
 
       {/* Right side */}
       <div className="flex flex-none items-center gap-3">
-        <a href={SITE.phoneHref} className="hidden font-ui text-[13px] font-semibold text-[#f3efe2]/80 hover:text-[#f3efe2] sm:inline">
+        <a href={SITE.phoneHref} className="hidden font-ui text-[13px] font-semibold text-ink/70 hover:text-ink sm:inline">
           {SITE.phone}
         </a>
         <Link href="/quote/"

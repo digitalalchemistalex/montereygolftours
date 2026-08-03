@@ -213,7 +213,7 @@ export default function MobileNav() {
         style={{ background: "none", border: "none", cursor: "pointer", padding: 8 }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6H21M3 12H21M3 18H21" stroke="#f6f2e7" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M3 6H21M3 12H21M3 18H21" stroke="#252321" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       </button>
 
