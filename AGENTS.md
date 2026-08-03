@@ -530,3 +530,69 @@ Do not invent any other facts (star rating, room count, amenities, description).
 - **Do not touch any other file** beyond `lib/hotels.ts` and the new page file
 - **Do not start any other directive**
 
+
+
+---
+
+## ✅ DIRECTIVE #11 — ADD 3 NEW HOTELS TO NAV MEGA-MENU
+
+**Date: August 3, 2026**
+**Authorized by: MASTER**
+
+---
+
+### CONTEXT
+
+Three new hotels were added in Directive #10 and are live at:
+- `/hotels/hotel-abrego/`
+- `/hotels/embassy-suites-monterey-bay-seaside/`
+- `/hotels/monterey-beach-hotel/`
+
+They exist in `lib/hotels.ts` and `lib/hotel-details.ts` but are **not appearing in the nav mega-menu dropdown** because `components/Header.tsx` was not updated. This is the only fix needed.
+
+---
+
+### YOUR TASK — ONE FILE ONLY: `components/Header.tsx`
+
+**Change 1 — Add 3 entries to `HOTEL_NOTE`:**
+
+Find the `HOTEL_NOTE` constant (it contains entries like `"casa-munras"`, `"portola-hotel"`, etc.) and add these 3 entries:
+
+```ts
+"hotel-abrego":                      { stars: "★★★", note: "Boutique · downtown Monterey" },
+"embassy-suites-monterey-bay-seaside": { stars: "★★★", note: "All-suite · free breakfast" },
+"monterey-beach-hotel":              { stars: "★★★", note: "Beachfront · Tribute Portfolio" },
+```
+
+**Change 2 — Add slugs to `MONTEREY_SLUGS`:**
+
+Find the line:
+```ts
+const MONTEREY_SLUGS = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras"];
+```
+
+Replace it with:
+```ts
+const MONTEREY_SLUGS = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras","hotel-abrego","embassy-suites-monterey-bay-seaside","monterey-beach-hotel"];
+```
+
+---
+
+### CONSTRAINTS
+
+- **Touch only `components/Header.tsx`** — no other files
+- **Do not change any existing entries** in `HOTEL_NOTE` or `MONTEREY_SLUGS`
+- **Do not reformat, restructure, or improve anything else** in the file
+- Single commit message: `fix: add 3 new hotels to nav mega-menu dropdown`
+- Wait for Vercel READY, then verify all 3 appear in the Hotels dropdown at `https://montereygolftours.vercel.app`
+- Report back with confirmation
+
+---
+
+### PRE-PUSH PROTOCOL (MANDATORY)
+
+1. Read the current `components/Header.tsx` from GitHub API before making any change
+2. Confirm `HOTEL_NOTE` and `MONTEREY_SLUGS` are present exactly as described above
+3. Make both changes in a single PUT — not two separate commits
+4. Verify the build passes before reporting done
+
