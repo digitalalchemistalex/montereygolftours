@@ -42,30 +42,33 @@ export default function Logo({
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
             style={{
-              fontFamily: "'Firlest', serif",
+              fontFamily: "'Cinzel', serif",
+              fontWeight: 600,
               fontSize: nameSize,
               lineHeight: 1,
+              letterSpacing: "1.5px",
               color,
               textShadow: nameShadow,
               whiteSpace: "nowrap",
             }}
           >
-            MonTeReY
+            MONTEREY
           </div>
           <div style={{ marginTop: Math.max(3, size * 0.045), height: Math.max(1.5, size * 0.015), width: "100%", backgroundColor: "#E8A0A8", opacity: 0.9 }} />
           <div
             style={{
               marginTop: Math.max(3, size * 0.045),
-              fontFamily: "'Firlest', serif",
+              fontFamily: "'Cinzel', serif",
+              fontWeight: 500,
               fontSize: subSize,
               lineHeight: 1,
-              letterSpacing: "1px",
+              letterSpacing: "2.5px",
               color,
               textShadow: subShadow,
               whiteSpace: "nowrap",
             }}
           >
-            GOLf TOURS
+            GOLF TOURS
           </div>
         </div>
       )}
