@@ -42,6 +42,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "560 guestrooms and suites",
     brand: "Hyatt Regency",
     hook: "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course®.",
+    gallery: [
+      "/images/hotels/gallery/hyatt-regency-monterey-2.webp",
+      "/images/hotels/gallery/hyatt-regency-monterey-3.webp",
+      "/images/hotels/gallery/hyatt-regency-monterey-4.webp",
+    ],
     description: [
       "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte Golf Course® — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
       "With 560 guestrooms and suites, it's the largest property on this list and a natural base for group trips, offering verified stay-and-play packages with Poppy Hills, Bayonet, and Black Horse, in addition to the on-site Del Monte course.",
