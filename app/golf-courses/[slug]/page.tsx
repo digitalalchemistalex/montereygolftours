@@ -241,6 +241,40 @@ export default async function CoursePage({ params }: Props) {
           </div>
         </section>
 
+        {course.gallery && course.gallery.length > 0 && (
+          <section className="border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+              Photos
+            </h2>
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-[2fr_1fr] md:gap-3">
+              <div className="group relative h-[280px] overflow-hidden rounded-xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(37,35,33,.22)] md:h-[440px]">
+                <Image
+                  src={course.gallery[0]}
+                  alt={`${course.name} — photo 1`}
+                  fill
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.06]"
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                />
+              </div>
+              {course.gallery.length > 1 && (
+                <div className="grid grid-cols-2 gap-3 md:grid-cols-1 md:grid-rows-2">
+                  {course.gallery.slice(1, 3).map((src, i) => (
+                    <div key={src} className="group relative h-[135px] overflow-hidden rounded-xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(37,35,33,.22)] md:h-full">
+                      <Image
+                        src={src}
+                        alt={`${course.name} — photo ${i + 2}`}
+                        fill
+                        className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.06]"
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
         <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
           <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
             Course highlights

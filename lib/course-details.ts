@@ -26,6 +26,7 @@ export type CourseDetail = {
   faqs: { q: string; a: string }[];
   pointers?: string[];
   priceEstimate?: number;
+  gallery?: string[];
 };
 
 export const COURSE_DETAILS: Record<string, CourseDetail> = {
@@ -128,6 +129,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pasatiempo.com",
     hook:
       "Alister MacKenzie's self-declared favorite design — he lived and died alongside the 6th fairway.",
+    gallery: [
+      "/images/courses/gallery/pasatiempo-2.jpg",
+      "/images/courses/gallery/pasatiempo-3.jpg",
+    ],
     description: [
       "Pasatiempo opened on September 8, 1929, designed by Alister MacKenzie for Marion Hollins, the 1921 U.S. Women's Amateur champion. MacKenzie — the architect behind Augusta National, Cypress Point, and Royal Melbourne — considered Pasatiempo one of his finest pieces of work, and felt strongly enough about the course that he bought a home next to the 6th fairway, where he lived until his death in 1934.",
       "The course sits in the hills above Santa Cruz, with the front nine descending through tree-lined corridors toward a Pacific Ocean view before climbing back to the clubhouse, and the back nine winding through a canyon defined by barranca ravines. A multi-decade restoration — led by Tom Doak and Jim Urbina starting in 1996, with a full green and bunker rebuild completed in 2024 — has returned the course closely to MacKenzie's original 1929 design.",
