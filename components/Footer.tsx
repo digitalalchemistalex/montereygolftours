@@ -23,12 +23,7 @@ export default function Footer() {
       <div className="flex flex-col gap-10 bg-cream px-6 py-12 md:flex-row md:justify-between md:px-14">
         <div className="max-w-[300px]">
           <Link href="/" className="inline-block">
-            <span className="block md:hidden">
-              <Logo size={76} color="#1B4332" onLight />
-            </span>
-            <span className="hidden md:block">
-              <Logo size={110} color="#1B4332" onLight />
-            </span>
+            <Logo size={110} />
           </Link>
           <p className="mt-4 font-body text-sm italic leading-relaxed text-[#5a5147]">
             Private group golf trips to California&apos;s most storied coastline.
