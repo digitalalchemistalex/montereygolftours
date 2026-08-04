@@ -436,6 +436,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(831) 373-3701",
     website: "lagunasecagolf.com",
     hook: "An accessible daily-fee round close to downtown Monterey, with rates that won't strain a group budget.",
+    gallery: [
+      "/images/courses/gallery/laguna-seca-2.jpg",
+    ],
     description: [
       "Laguna Seca Golf Ranch was designed by the legendary Robert Trent Jones Sr. and Robert Trent Jones Jr. father-son duo in 1970 — remarkable design pedigree at a daily-fee price point. The course is carved through oak-studded coastal hills between Monterey and Salinas, with narrow uneven fairways, elevated tees, and strategically placed bunkers guarding every green.",
       "SeeMontereY describes it as the 'best golf value on the Monterey Peninsula.' The signature hole is the par-5 15th — 548 yards, shaped like a snake, requiring carries over water on both the tee shot and approach. Hilly terrain makes a cart recommended, though the course is technically walkable. Managed by CourseCo, Inc., with Matt Pennington as General Manager.",
@@ -587,6 +590,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(831) 250-1499",
     website: "poppyhillsgolf.com",
     hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
+    gallery: [
+      "/images/courses/gallery/poppy-hills-2.webp",
+    ],
     description: [
       "Poppy Hills Golf Course sits inside the Del Monte Forest — the same 93953 zip code as the resort's marquee courses — but is owned and operated by the Northern California Golf Association (NCGA), entirely separate from Pebble Beach Company. Day visitors do not pay the Pebble Beach gate fee; the NCGA entrance is completely separate.",
       "At par 71 and 7,002 yards (rating 73.5, slope 135), the Robert Trent Jones Jr. design opened in 1986 and underwent a 13-month renovation completed in April 2014, which introduced native sandy waste areas, removed rough, and opened up the forest floor. Post-renovation, Golf.com called it 'Pinehurst-like, with a hint of near-neighbor Cypress Point.'",
