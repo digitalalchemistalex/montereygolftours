@@ -19,7 +19,7 @@ const LEARN_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-cream">
+    <footer className="border-t-4 border-terracotta bg-cream">
       <div className="flex flex-col gap-10 bg-cream px-6 py-12 md:flex-row md:justify-between md:px-14">
         <div className="max-w-[300px]">
           <Link href="/" className="inline-block">
