@@ -96,15 +96,61 @@ function FeaturedPanel({ image, alt, title, sub, href }: {
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 border-b-2 border-terracotta bg-cream/97 px-5 py-4 shadow-[0_2px_12px_rgba(37,35,33,.08)] backdrop-blur-md lg:flex lg:justify-between lg:py-3 md:px-10">
+    <header className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-4 shadow-[0_2px_12px_rgba(37,35,33,.08)] backdrop-blur-md lg:flex lg:justify-between lg:py-3 md:px-10">
       {/* Logo */}
       <Link href="/" className="col-start-2 flex flex-none items-center justify-center lg:col-auto lg:justify-start">
         <Logo size={110} className="lg:hidden" />
         <Logo size={150} className="hidden lg:flex" />
       </Link>
 
-      {/* Nav */}
-      <nav className="hidden flex-1 items-center justify-center gap-0.5 whitespace-nowrap lg:flex">
+      {/* Nav + background putting animation (desktop only) */}
+      <div className="relative hidden flex-1 lg:block">
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full"
+          viewBox="0 0 100 60"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g style={{ opacity: 0.22 }}>
+            {/* golfer, far left */}
+            <g transform="translate(2,26)">
+              <circle cx="0" cy="-2" r="1.6" fill="#1B4332" />
+              <path d="M -1.4,1 Q 0,0.5 1.4,1 L 1.8,7.5 Q 0,8.3 -1.8,7.5 Z" fill="#1B4332" />
+              <path d="M -1.4,7.5 L -2.2,12 L -0.9,12 L 0,8 L 0.9,12 L 2.2,12 L 1.4,7.5 Z" fill="#1B4332" />
+            </g>
+            {/* club, swings from golfer's hands */}
+            <line
+              x1="2" y1="19.5" x2="13" y2="14"
+              stroke="#1B4332" strokeWidth="0.9" strokeLinecap="round"
+              style={{ transformOrigin: "2px 19.5px", animation: "clubSwing 3.6s ease-in-out infinite" }}
+            />
+            {/* ball, rolls left to right toward the flag */}
+            <circle cx="12" cy="34" r="1" fill="#1B4332"
+              style={{ animation: "ballRoll 3.6s ease-in-out infinite" }} />
+            {/* flag, far right */}
+            <g transform="translate(97,13)">
+              <line x1="0" y1="0" x2="0" y2="21" stroke="#1B4332" strokeWidth="0.7" />
+              <path d="M0,1.5 L5,3.5 L0,5.5 Z" fill="#1B4332" />
+              <ellipse cx="0" cy="22" rx="3" ry="1" fill="#1B4332" opacity="0.5" />
+            </g>
+          </g>
+          <style>{`
+            @keyframes clubSwing {
+              0%, 100% { transform: rotate(0deg); }
+              18% { transform: rotate(-38deg); }
+              32% { transform: rotate(52deg); }
+              50% { transform: rotate(0deg); }
+            }
+            @keyframes ballRoll {
+              0%, 30% { transform: translate(0, 0); opacity: 0.8; }
+              33% { transform: translate(0, -2px); }
+              78% { transform: translate(83px, 0); opacity: 0.8; }
+              86% { opacity: 0; }
+              100% { opacity: 0; transform: translate(0, 0); }
+            }
+          `}</style>
+        </svg>
+        <nav className="relative z-10 flex h-full items-center justify-center gap-0.5 whitespace-nowrap">
 
         {/* ━━ COURSES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
@@ -331,6 +377,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
+      </div>
 
       {/* Right side */}
       <div className="col-start-3 flex flex-none items-center justify-self-end gap-3 lg:col-auto lg:justify-self-auto">
