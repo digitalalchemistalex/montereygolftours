@@ -473,6 +473,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "379 rooms and suites",
     brand: "Independent (AAA Four Diamond)",
     hook: "The Central Coast's first LEED-certified hotel, downtown adjacent to the Monterey Conference Center.",
+    gallery: [
+      "/images/hotels/gallery/portola-hotel-2.jpg",
+      "/images/hotels/gallery/portola-hotel-3.jpg",
+      "/images/hotels/gallery/portola-hotel-4.jpg",
+    ],
     description: [
       "Portola Hotel & Spa sits in downtown Monterey, directly adjacent to and connected with the Monterey Conference Center, one mile from Cannery Row. With 379 rooms and suites, it's the best-suited property on this list for large groups, conventions, or groups paired with a conference.",
       "The hotel was the Central Coast's first LEED-certified property, and includes a 6,000 square-foot spa — the largest day spa in Monterey County — along with an on-site craft brewery.",
@@ -549,6 +554,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "163 rooms",
     brand: "Independent boutique",
     hook: "Monterey's first hotel, dating to 1824, with hacienda-style architecture and lush courtyard gardens.",
+    gallery: [
+      "/images/hotels/gallery/casa-munras-2.webp",
+      "/images/hotels/gallery/casa-munras-3.webp",
+    ],
     description: [
       "Casa Munras Garden Hotel & Spa traces back to 1824 — Monterey's first hotel, and one of the oldest hotel properties on the Central Coast. The hacienda-style architecture and Spanish Colonial heritage are reflected throughout the downtown Monterey property, set amid picturesque courtyard gardens. It was named Best Hotel in Monterey County in 2023.",
       "With 163 rooms, it's positioned as a strong value boutique option for groups wanting authentic Monterey character without full resort pricing.",
@@ -681,6 +690,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "225 rooms, all-suite",
     brand: "Embassy Suites by Hilton — AAA Three Diamond",
     hook: "All-suite property in Seaside with a separate living room and bedroom in every unit.",
+    gallery: [
+      "/images/hotels/gallery/embassy-suites-2.avif",
+      "/images/hotels/gallery/embassy-suites-3.jpg",
+      "/images/hotels/gallery/embassy-suites-4.avif",
+    ],
     description: [
       "Embassy Suites by Hilton Monterey Bay Seaside is a 225-room all-suite property, carrying an AAA Three Diamond rating, with every unit featuring a separate living room and bedroom, a microwave, mini-refrigerator, wet bar, and two televisions. Select rooms offer ocean views.",
       "It's a strong choice for groups wanting extra room to spread out, with brand-standard amenities, on-site dining through lunch, dinner, and Sunday brunch, and a central Seaside location convenient to several Monterey Peninsula courses.",
@@ -750,6 +764,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "188 guest rooms + 4 suites (192 total)",
     brand: "Tribute Portfolio (Marriott International) — AAA Three Diamond",
     hook: "The only Monterey Golf Tours hotel located directly on the beach.",
+    gallery: [
+      "/images/hotels/gallery/monterey-beach-hotel-2.webp",
+      "/images/hotels/gallery/monterey-beach-hotel-3.webp",
+    ],
     description: [
       "Monterey Beach Hotel, a Tribute Portfolio Hotel, is the only property in this collection located directly on a beach, with 188 guest rooms and 4 suites. Originally built in 1967, the property reopened under Marriott's Tribute Portfolio brand on August 21, 2024 following a complete renovation. It carries an AAA Three Diamond rating.",
       "It's a strong fit for groups who want a beachfront base with full-service amenities and meeting space, a short drive from Bayonet and Black Horse.",
