@@ -96,12 +96,11 @@ function FeaturedPanel({ image, alt, title, sub, href }: {
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-[22px] backdrop-blur-md md:px-10">
+    <header className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 border-b-2 border-terracotta bg-cream/97 px-5 py-4 shadow-[0_2px_12px_rgba(37,35,33,.08)] backdrop-blur-md lg:flex lg:justify-between lg:py-3 md:px-10">
       {/* Logo */}
-      <Link href="/" className="flex flex-none items-center">
-        <div className="scale-90 sm:scale-100">
-          <Logo size={130} />
-        </div>
+      <Link href="/" className="col-start-2 flex flex-none items-center justify-center lg:col-auto lg:justify-start">
+        <Logo size={110} className="lg:hidden" />
+        <Logo size={150} className="hidden lg:flex" />
       </Link>
 
       {/* Nav */}
@@ -334,7 +333,7 @@ export default function Header() {
       </nav>
 
       {/* Right side */}
-      <div className="flex flex-none items-center gap-3">
+      <div className="col-start-3 flex flex-none items-center justify-self-end gap-3 lg:col-auto lg:justify-self-auto">
         <a href={SITE.phoneHref} className="hidden font-ui text-[13px] font-semibold text-ink/70 hover:text-ink sm:inline">
           {SITE.phone}
         </a>
