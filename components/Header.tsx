@@ -96,11 +96,11 @@ function FeaturedPanel({ image, alt, title, sub, href }: {
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-[14px] backdrop-blur-md md:px-10">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-[22px] backdrop-blur-md md:px-10">
       {/* Logo */}
       <Link href="/" className="flex flex-none items-center">
         <div className="scale-90 sm:scale-100">
-          <Logo size={88} color="#1B4332" onLight />
+          <Logo size={130} />
         </div>
       </Link>
 
