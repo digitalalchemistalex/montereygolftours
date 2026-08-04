@@ -36,6 +36,9 @@ const HOTEL_NOTE: Record<string, { stars: string; note: string }> = {
   "intercontinental-the-clement": { stars: "★★★★", note: "Boutique · oceanfront" },
   "portola-hotel":            { stars: "★★★★",  note: "Downtown Monterey" },
   "casa-munras":              { stars: "★★★",   note: "Boutique · historic garden" },
+  "hotel-abrego":                      { stars: "★★★", note: "Boutique · downtown Monterey" },
+  "embassy-suites-monterey-bay-seaside": { stars: "★★★", note: "All-suite · free breakfast" },
+  "monterey-beach-hotel":              { stars: "★★★", note: "Beachfront · Tribute Portfolio" },
 };
 
 // ── Course groups ─────────────────────────────────────────────────────────
@@ -44,7 +47,7 @@ const OTHER_SLUGS = ["bayonet","black-horse","carmel-valley-ranch","quail-lodge"
                      "poppy-hills","pacific-grove-golf-links","laguna-seca-golf-ranch","pasatiempo"];
 
 // ── Hotel groups ──────────────────────────────────────────────────────────
-const MONTEREY_SLUGS    = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras"];
+const MONTEREY_SLUGS    = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras","hotel-abrego","embassy-suites-monterey-bay-seaside","monterey-beach-hotel"];
 const CARMEL_SLUGS      = ["bernardus-lodge","quail-lodge","carmel-valley-ranch"];
 
 const courseMap  = Object.fromEntries(COURSES.map(c => [c.slug, c]));
