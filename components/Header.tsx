@@ -103,54 +103,8 @@ export default function Header() {
         <Logo size={150} className="hidden lg:flex" />
       </Link>
 
-      {/* Nav + background putting animation (desktop only) */}
-      <div className="relative hidden flex-1 lg:block">
-        <svg
-          className="pointer-events-none absolute inset-0 h-full w-full"
-          viewBox="0 0 540 70"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <g style={{ opacity: 0.45 }}>
-            {/* golfer, far left */}
-            <g transform="translate(24,30)">
-              <circle cx="0" cy="-8" r="5" fill="#1B4332" />
-              <path d="M -5,-2 Q 0,-4 5,-2 L 6,20 Q 0,23 -6,20 Z" fill="#1B4332" />
-              <path d="M -5,20 L -8,36 L -3,36 L 0,22 L 3,36 L 8,36 L 5,20 Z" fill="#1B4332" />
-            </g>
-            {/* club, swings from golfer's hands */}
-            <line
-              x1="24" y1="44" x2="46" y2="16"
-              stroke="#1B4332" strokeWidth="3" strokeLinecap="round" vectorEffect="non-scaling-stroke"
-              style={{ transformOrigin: "24px 44px", animation: "clubSwing 3.6s ease-in-out infinite" }}
-            />
-            {/* ball, rolls left to right toward the flag */}
-            <circle cx="44" cy="58" r="4" fill="#1B4332"
-              style={{ animation: "ballRoll 3.6s ease-in-out infinite" }} />
-            {/* flag, far right */}
-            <g transform="translate(500,14)">
-              <line x1="0" y1="0" x2="0" y2="42" stroke="#1B4332" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
-              <path d="M0,3 L18,10 L0,17 Z" fill="#1B4332" />
-              <ellipse cx="0" cy="44" rx="9" ry="2.5" fill="#1B4332" opacity="0.5" />
-            </g>
-          </g>
-          <style>{`
-            @keyframes clubSwing {
-              0%, 100% { transform: rotate(0deg); }
-              18% { transform: rotate(-42deg); }
-              32% { transform: rotate(58deg); }
-              50% { transform: rotate(0deg); }
-            }
-            @keyframes ballRoll {
-              0%, 30% { transform: translate(0, 0); opacity: 1; }
-              33% { transform: translate(0, -5px); }
-              78% { transform: translate(430px, 0); opacity: 1; }
-              87% { opacity: 0; }
-              100% { opacity: 0; transform: translate(0, 0); }
-            }
-          `}</style>
-        </svg>
-        <nav className="relative z-10 mx-[90px] flex h-full items-center justify-center gap-0.5 whitespace-nowrap">
+      {/* Nav */}
+      <nav className="hidden flex-1 items-center justify-center gap-0.5 whitespace-nowrap lg:flex">
 
         {/* ━━ COURSES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
@@ -377,7 +331,6 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      </div>
 
       {/* Right side */}
       <div className="col-start-3 flex flex-none items-center justify-self-end gap-3 lg:col-auto lg:justify-self-auto">
