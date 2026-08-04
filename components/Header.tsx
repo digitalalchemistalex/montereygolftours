@@ -107,50 +107,50 @@ export default function Header() {
       <div className="relative hidden flex-1 lg:block">
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
-          viewBox="0 0 100 60"
+          viewBox="0 0 540 70"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <g style={{ opacity: 0.22 }}>
+          <g style={{ opacity: 0.45 }}>
             {/* golfer, far left */}
-            <g transform="translate(2,26)">
-              <circle cx="0" cy="-2" r="1.6" fill="#1B4332" />
-              <path d="M -1.4,1 Q 0,0.5 1.4,1 L 1.8,7.5 Q 0,8.3 -1.8,7.5 Z" fill="#1B4332" />
-              <path d="M -1.4,7.5 L -2.2,12 L -0.9,12 L 0,8 L 0.9,12 L 2.2,12 L 1.4,7.5 Z" fill="#1B4332" />
+            <g transform="translate(24,30)">
+              <circle cx="0" cy="-8" r="5" fill="#1B4332" />
+              <path d="M -5,-2 Q 0,-4 5,-2 L 6,20 Q 0,23 -6,20 Z" fill="#1B4332" />
+              <path d="M -5,20 L -8,36 L -3,36 L 0,22 L 3,36 L 8,36 L 5,20 Z" fill="#1B4332" />
             </g>
             {/* club, swings from golfer's hands */}
             <line
-              x1="2" y1="19.5" x2="13" y2="14"
-              stroke="#1B4332" strokeWidth="0.9" strokeLinecap="round"
-              style={{ transformOrigin: "2px 19.5px", animation: "clubSwing 3.6s ease-in-out infinite" }}
+              x1="24" y1="44" x2="46" y2="16"
+              stroke="#1B4332" strokeWidth="3" strokeLinecap="round" vectorEffect="non-scaling-stroke"
+              style={{ transformOrigin: "24px 44px", animation: "clubSwing 3.6s ease-in-out infinite" }}
             />
             {/* ball, rolls left to right toward the flag */}
-            <circle cx="12" cy="34" r="1" fill="#1B4332"
+            <circle cx="44" cy="58" r="4" fill="#1B4332"
               style={{ animation: "ballRoll 3.6s ease-in-out infinite" }} />
             {/* flag, far right */}
-            <g transform="translate(97,13)">
-              <line x1="0" y1="0" x2="0" y2="21" stroke="#1B4332" strokeWidth="0.7" />
-              <path d="M0,1.5 L5,3.5 L0,5.5 Z" fill="#1B4332" />
-              <ellipse cx="0" cy="22" rx="3" ry="1" fill="#1B4332" opacity="0.5" />
+            <g transform="translate(500,14)">
+              <line x1="0" y1="0" x2="0" y2="42" stroke="#1B4332" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+              <path d="M0,3 L18,10 L0,17 Z" fill="#1B4332" />
+              <ellipse cx="0" cy="44" rx="9" ry="2.5" fill="#1B4332" opacity="0.5" />
             </g>
           </g>
           <style>{`
             @keyframes clubSwing {
               0%, 100% { transform: rotate(0deg); }
-              18% { transform: rotate(-38deg); }
-              32% { transform: rotate(52deg); }
+              18% { transform: rotate(-42deg); }
+              32% { transform: rotate(58deg); }
               50% { transform: rotate(0deg); }
             }
             @keyframes ballRoll {
-              0%, 30% { transform: translate(0, 0); opacity: 0.8; }
-              33% { transform: translate(0, -2px); }
-              78% { transform: translate(83px, 0); opacity: 0.8; }
-              86% { opacity: 0; }
+              0%, 30% { transform: translate(0, 0); opacity: 1; }
+              33% { transform: translate(0, -5px); }
+              78% { transform: translate(430px, 0); opacity: 1; }
+              87% { opacity: 0; }
               100% { opacity: 0; transform: translate(0, 0); }
             }
           `}</style>
         </svg>
-        <nav className="relative z-10 flex h-full items-center justify-center gap-0.5 whitespace-nowrap">
+        <nav className="relative z-10 mx-[90px] flex h-full items-center justify-center gap-0.5 whitespace-nowrap">
 
         {/* ━━ COURSES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
