@@ -246,17 +246,31 @@ export default async function CoursePage({ params }: Props) {
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Photos
             </h2>
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-[2fr_1fr] md:gap-3">
-              <div className="group relative h-[280px] overflow-hidden rounded-xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(37,35,33,.22)] md:h-[440px]">
-                <Image
-                  src={course.gallery[0]}
-                  alt={`${course.name} — photo 1`}
-                  fill
-                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.06]"
-                  sizes="(max-width: 768px) 100vw, 66vw"
-                />
+            {course.gallery.length <= 2 ? (
+              <div className={`grid grid-cols-1 gap-3 ${course.gallery.length === 2 ? "md:grid-cols-2" : ""}`}>
+                {course.gallery.map((src, i) => (
+                  <div key={src} className="group relative h-[320px] overflow-hidden rounded-xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(37,35,33,.22)] md:h-[400px]">
+                    <Image
+                      src={src}
+                      alt={`${course.name} — photo ${i + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.06]"
+                      sizes={course.gallery!.length === 2 ? "(max-width: 768px) 100vw, 50vw" : "100vw"}
+                    />
+                  </div>
+                ))}
               </div>
-              {course.gallery.length > 1 && (
+            ) : (
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-[2fr_1fr] md:gap-3">
+                <div className="group relative h-[280px] overflow-hidden rounded-xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(37,35,33,.22)] md:h-[440px]">
+                  <Image
+                    src={course.gallery[0]}
+                    alt={`${course.name} — photo 1`}
+                    fill
+                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.06]"
+                    sizes="(max-width: 768px) 100vw, 66vw"
+                  />
+                </div>
                 <div className="grid grid-cols-3 gap-3 md:grid-cols-1 md:grid-rows-3">
                   {course.gallery.slice(1, 4).map((src, i) => (
                     <div key={src} className="group relative h-[90px] overflow-hidden rounded-xl shadow-[0_5px_18px_rgba(37,35,33,.14)] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(37,35,33,.22)] md:h-full">
@@ -270,8 +284,8 @@ export default async function CoursePage({ params }: Props) {
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </section>
         )}
 

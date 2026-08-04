@@ -209,6 +209,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "bayonetblackhorse.com",
     hook:
       "Black Horse's twin at the former Fort Ord — sweeping Monterey Bay views with a gentler test than its sister course.",
+    gallery: [
+      "/images/courses/gallery/black-horse-2.jpg",
+      "/images/courses/gallery/black-horse-3.webp",
+    ],
     description: [
       "Black Horse shares its origin with Bayonet on the grounds of the former Fort Ord military base. Designed alongside Bayonet by General Robert B. McClure in 1954 and refreshed in a 2007 Gene Bates redesign, Black Horse offers fescue-framed fairways and sweeping views of Monterey Bay throughout the round.",
       "Where Bayonet has built its reputation as one of the toughest public tests in the country, Black Horse plays as the more approachable of the two Fort Ord courses — still a genuine championship-caliber layout, but with a bit more forgiveness for a wider range of handicaps.",
