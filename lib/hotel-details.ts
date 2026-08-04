@@ -27,6 +27,7 @@ export type HotelDetail = {
   driveTimeToCourses: { course: string; minutes: number }[];
   positioning: string;
   faqs: { q: string; a: string }[];
+  gallery?: string[];
 };
 
 export const HOTEL_DETAILS: Record<string, HotelDetail> = {
@@ -186,6 +187,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "77 guest rooms + 14 suites (91 total)",
     brand: "Independent",
     hook: "Best value golf-resort combo on the peninsula, with an on-site championship course and warm Carmel Valley weather.",
+    gallery: [
+      "/images/hotels/gallery/quail-lodge-2.webp",
+      "/images/hotels/gallery/quail-lodge-3.webp",
+      "/images/hotels/gallery/quail-lodge-4.webp",
+    ],
     description: [
       "Quail Lodge & Golf Club sits in the sunny Carmel Valley, set among lush gardens and 10 man-made lakes that draw quail, hawks, deer, turtles, and fox. The on-site golf course is a Robert Muir Graves design (1964), refined by Todd Eckenrode / Origins Golf Design in 2015.",
       "With 77 guest rooms and 14 suites (91 total keys), it's a more intimate property than the larger Tier 1 resorts, generally positioned as the best value golf-and-stay combination on the peninsula.",
