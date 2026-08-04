@@ -254,6 +254,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "73 rooms",
     brand: "Independent luxury boutique",
     hook: "A wine-country retreat with estate vineyard views and guest access to The Club at Pasadera outside of Monday.",
+    gallery: [
+      "/images/hotels/gallery/bernardus-lodge-2.webp",
+      "/images/hotels/gallery/bernardus-lodge-3.webp",
+      "/images/hotels/gallery/bernardus-lodge-4.webp",
+    ],
     description: [
       "Bernardus Lodge & Spa is a wine-country retreat in Carmel Valley, with an estate vineyard visible from many rooms and Santa Lucia mountain views throughout the property. With 73 rooms, it's the most intimate of the Tier 1 golf-anchor properties.",
       "Guests of Bernardus Lodge have access to play The Club at Pasadera — a private course generally open to the public only on Mondays — outside of the standard Monday-only window. This access arrangement should be confirmed with the property before promoting in a specific package, as terms can change.",
