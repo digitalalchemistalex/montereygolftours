@@ -14,6 +14,7 @@ import "@fontsource/cinzel/600.css";
 import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
 import BackToTop from "@/components/BackToTop";
+import ChatWidget from "@/components/ChatWidget";
 
 const OG_IMAGE = "/og-image.jpg";
 
@@ -62,6 +63,7 @@ export default function RootLayout({
         <SiteSchema />
         {children}
         <BackToTop />
+        <ChatWidget />
       </body>
     </html>
   );
