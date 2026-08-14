@@ -3,6 +3,7 @@
 import { useMemo, useState, useRef, useEffect } from "react";
 import { COURSE_DETAILS } from "@/lib/course-details";
 import { HOTEL_DETAILS } from "@/lib/hotel-details";
+import { useChat } from "./ChatContext";
 
 type Message = { text: string; fromUser: boolean };
 
@@ -23,7 +24,7 @@ function scoreMatch(query: string, question: string): number {
 }
 
 export default function ChatWidget() {
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useChat();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -77,78 +78,63 @@ export default function ChatWidget() {
     }, 300);
   }
 
+  if (!open) return null;
+
   return (
-    <div className="fixed bottom-24 right-6 z-40">
-      {open ? (
-        <div className="w-[320px] overflow-hidden rounded-2xl border border-[#e3ddcf] bg-cream shadow-[0_12px_32px_rgba(37,35,33,.2)]">
-          <div className="flex items-center justify-between bg-ink px-4 py-3.5">
-            <div>
-              <div className="font-ui text-[14px] font-bold text-cream">Monterey Golf Tours</div>
-              <div className="mt-0.5 font-ui text-[11px] text-[rgba(250,246,238,.75)]">
-                Ask about courses, hotels, or trips
-              </div>
+    <div className="fixed bottom-6 right-6 z-50">
+      <div className="w-[320px] overflow-hidden rounded-2xl border border-[#e3ddcf] bg-cream shadow-[0_12px_32px_rgba(37,35,33,.2)]">
+        <div className="flex items-center justify-between bg-ink px-4 py-3.5">
+          <div>
+            <div className="font-ui text-[14px] font-bold text-cream">Monterey Golf Tours</div>
+            <div className="mt-0.5 font-ui text-[11px] text-[rgba(250,246,238,.75)]">
+              Ask about courses, hotels, or trips
             </div>
-            <button
-              type="button"
-              aria-label="Close chat"
-              onClick={() => setOpen(false)}
-              className="rounded-full p-1 text-cream hover:bg-[rgba(250,246,238,.15)]"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
-              </svg>
-            </button>
           </div>
-
-          <div ref={bodyRef} className="flex h-[260px] flex-col gap-2.5 overflow-y-auto bg-white p-3.5">
-            {messages.map((m, i) => (
-              <div
-                key={i}
-                className={
-                  m.fromUser
-                    ? "max-w-[85%] self-end rounded-xl bg-ink px-3 py-2 font-ui text-[12.5px] leading-relaxed text-cream"
-                    : "max-w-[85%] self-start rounded-xl bg-[#F4F0E7] px-3 py-2 font-ui text-[12.5px] leading-relaxed text-ink"
-                }
-              >
-                {m.text}
-              </div>
-            ))}
-          </div>
-
-          <div className="flex gap-2 border-t border-[#e3ddcf] bg-cream p-2.5">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Type a question..."
-              className="flex-1 rounded-lg border border-[#d8d2c2] px-2.5 py-2 font-ui text-[13px] outline-none focus:border-ocean/50"
-            />
-            <button
-              type="button"
-              onClick={handleSend}
-              className="rounded-lg bg-terracotta-dark px-3.5 py-2 font-ui text-[13px] font-bold text-white hover:bg-[#9c4e24]"
-            >
-              Send
-            </button>
-          </div>
+          <button
+            type="button"
+            aria-label="Close chat"
+            onClick={() => setOpen(false)}
+            className="rounded-full p-1 text-cream hover:bg-[rgba(250,246,238,.15)]"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
+            </svg>
+          </button>
         </div>
-      ) : (
-        <button
-          type="button"
-          aria-label="Open chat"
-          onClick={() => setOpen(true)}
-          className="flex h-[58px] w-[58px] items-center justify-center rounded-full bg-ink shadow-[0_4px_14px_rgba(27,67,50,.35)] transition-transform hover:-translate-y-1"
-        >
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" strokeWidth="2">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-      )}
+
+        <div ref={bodyRef} className="flex h-[260px] flex-col gap-2.5 overflow-y-auto bg-white p-3.5">
+          {messages.map((m, i) => (
+            <div
+              key={i}
+              className={
+                m.fromUser
+                  ? "max-w-[85%] self-end rounded-xl bg-ink px-3 py-2 font-ui text-[12.5px] leading-relaxed text-cream"
+                  : "max-w-[85%] self-start rounded-xl bg-[#F4F0E7] px-3 py-2 font-ui text-[12.5px] leading-relaxed text-ink"
+              }
+            >
+              {m.text}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex gap-2 border-t border-[#e3ddcf] bg-cream p-2.5">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            placeholder="Type a question..."
+            className="flex-1 rounded-lg border border-[#d8d2c2] px-2.5 py-2 font-ui text-[13px] outline-none focus:border-ocean/50"
+          />
+          <button
+            type="button"
+            onClick={handleSend}
+            className="rounded-lg bg-terracotta-dark px-3.5 py-2 font-ui text-[13px] font-bold text-white hover:bg-[#9c4e24]"
+          >
+            Send
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

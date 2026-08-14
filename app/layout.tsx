@@ -15,6 +15,7 @@ import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
 import BackToTop from "@/components/BackToTop";
 import ChatWidget from "@/components/ChatWidget";
+import { ChatProvider } from "@/components/ChatContext";
 
 const OG_IMAGE = "/og-image.jpg";
 
@@ -61,9 +62,11 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
         <SiteSchema />
-        {children}
+        <ChatProvider>
+          {children}
+          <ChatWidget />
+        </ChatProvider>
         <BackToTop />
-        <ChatWidget />
       </body>
     </html>
   );
