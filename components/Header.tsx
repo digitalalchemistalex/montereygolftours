@@ -106,10 +106,10 @@ export default function Header({ transparent = false }: { transparent?: boolean 
         ? "absolute top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:py-6 md:px-10"
         : "fixed top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-4 shadow-[0_2px_12px_rgba(37,35,33,.08)] backdrop-blur-md lg:flex lg:justify-between lg:py-3 md:px-10"
     }>
-      {/* Logo */}
-      <Link href="/" className={`col-start-2 flex flex-none items-center justify-center lg:col-auto lg:justify-start ${transparent ? "lg:hidden" : ""}`}>
-        <Logo size={110} className="lg:hidden" />
-        <Logo size={150} className="hidden lg:flex" />
+      {/* Logo — hidden entirely on desktop when transparent (hero shows its own large logo separately) */}
+      <Link href="/" className="col-start-2 flex flex-none items-center justify-center lg:col-auto lg:justify-start">
+        <Logo size={110} className={transparent ? "lg:hidden" : "lg:hidden"} />
+        {!transparent && <Logo size={150} className="hidden lg:flex" />}
       </Link>
 
       {/* Nav */}
