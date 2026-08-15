@@ -406,6 +406,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "208 guest rooms and suites",
     brand: "InterContinental (IHG)",
     hook: "Bayfront on Cannery Row, next door to the Monterey Bay Aquarium, with panoramic coastal views.",
+    gallery: [
+      "/images/hotels/gallery/intercontinental-the-clement-2.avif",
+    ],
     description: [
       "InterContinental The Clement Monterey sits bayfront on Cannery Row, directly next to the Monterey Bay Aquarium, with 208 guest rooms and suites offering panoramic coastal views. Opened in 2008, it was the newest waterfront property built in Monterey in over 20 years at the time.",
       "Rooms feature Frette linens, marble bathrooms, and a mix of king or two-double configurations, with some rooms offering stone fireplaces and balconies with partial ocean views.",
@@ -557,6 +560,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     gallery: [
       "/images/hotels/gallery/casa-munras-2.webp",
       "/images/hotels/gallery/casa-munras-3.webp",
+      "/images/hotels/gallery/casa-munras-4.avif",
     ],
     description: [
       "Casa Munras Garden Hotel & Spa traces back to 1824 — Monterey's first hotel, and one of the oldest hotel properties on the Central Coast. The hacienda-style architecture and Spanish Colonial heritage are reflected throughout the downtown Monterey property, set amid picturesque courtyard gardens. It was named Best Hotel in Monterey County in 2023.",
@@ -617,6 +621,13 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "93 rooms across four buildings",
     brand: "Independent boutique — AAA Three Diamond",
     hook: "Downtown Monterey boutique property, walkable to Cannery Row and the Monterey Bay Aquarium.",
+    gallery: [
+      "/images/hotels/gallery/hotel-abrego-2.avif",
+      "/images/hotels/gallery/hotel-abrego-3.avif",
+      "/images/hotels/gallery/hotel-abrego-4.avif",
+      "/images/hotels/gallery/hotel-abrego-5.avif",
+      "/images/hotels/gallery/hotel-abrego-6.avif",
+    ],
     description: [
       "Hotel Abrego is an independent boutique property in downtown Monterey, spread across four buildings with 93 individually furnished rooms. It carries an AAA Three Diamond rating.",
       "Its downtown location puts guests within walking distance of Cannery Row (1.4 mi), the Monterey Bay Aquarium (1.6 mi), and the Path of History, making it a strong choice for groups who want to pair golf with time exploring the city rather than staying resort-bound.",
