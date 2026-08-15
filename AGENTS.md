@@ -596,3 +596,446 @@ const MONTEREY_SLUGS = ["hyatt-regency-monterey","monterey-plaza","intercontinen
 3. Make both changes in a single PUT — not two separate commits
 4. Verify the build passes before reporting done
 
+
+
+---
+
+## DIRECTIVE #12 — Fix hero stat numbers
+**Date: August 14 2026**
+**Authorized by: MASTER + Sean Schaeffer**
+**Priority: Quick fix — do this first**
+
+### THE PROBLEM
+`components/Hero.tsx` displays hardcoded stat chips. Currently shows "8" for both courses and hotels. Actual live counts: 14 courses, 11 hotels.
+
+### EXACT CHANGE REQUIRED
+
+**File:** `components/Hero.tsx`
+
+Find the stats array (exact strings will vary — search for the number `8` near the words "Courses" and "Properties" or "Hotels"). Replace whatever structure holds those two stats with:
+
+- Courses stat: number `14`, label `"Courses available"`
+- Hotels stat: number `11`, label `"Hotels & resorts"`
+
+Do not change any other stat in the hero (year founded, etc.). Do not change any other file.
+
+### COMMIT
+```
+fix: hero stats — 8→14 courses, 8→11 hotels (verified live counts)
+```
+
+Wait for Vercel READY. Confirm the live homepage shows 14 and 11 before marking done.
+
+---
+
+## DIRECTIVE #13 — Pebble Beach Resorts® dedicated nav item
+**Date: August 14 2026**
+**Authorized by: MASTER + Sean Schaeffer**
+**Priority: High**
+
+### THE GOAL
+Add "Pebble Beach Resorts®" as a top-level nav item with its own mega-menu dropdown. It sits between the existing "Courses" and "Hotels" items. This gives PBR a dedicated presence — not buried inside the Courses dropdown sub-header.
+
+### FILE: `components/Header.tsx`
+
+**Step 1 — Add nav item**
+
+In the desktop nav `<nav>` element, after the Courses dropdown trigger and before the Hotels dropdown trigger, add:
+
+```tsx
+{/* Pebble Beach Resorts® */}
+<div className="relative group">
+  <button className="... (match existing nav button styles) ...">
+    Pebble Beach Resorts®
+  </button>
+  {/* mega-menu dropdown — see Step 2 */}
+</div>
+```
+
+Match the exact className pattern used on existing nav dropdown triggers. Do not invent new styles.
+
+**Step 2 — Mega-menu content**
+
+The dropdown shows two columns:
+
+**Column 1 — Golf Courses (5 courses)**
+```
+Pebble Beach Golf Links®          /golf-courses/pebble-beach-golf-links/
+Spyglass Hill® Golf Course        /golf-courses/spyglass-hill/
+The Links at Spanish Bay®         /golf-courses/links-at-spanish-bay/
+  ↳ show CLOSED badge: "Closed — reopens Apr 17, 2027"
+Del Monte Golf Course®            /golf-courses/del-monte-golf-course/
+The Hay™                          /golf-courses/the-hay/
+```
+
+**Column 2 — Lodging (3 properties)**
+```
+The Lodge at Pebble Beach™        (external link — https://www.pebblebeach.com/accommodations/the-lodge/)
+The Inn at Spanish Bay™           (external link — https://www.pebblebeach.com/accommodations/the-inn-at-spanish-bay/)
+Casa Palmero™                     (external link — https://www.pebblebeach.com/accommodations/casa-palmero/)
+```
+
+External links: `target="_blank" rel="noopener noreferrer"`.
+
+**Below the two columns**, add a small footer bar inside the dropdown:
+```
+IAGTO Partner · Authorized Pebble Beach Resorts® Golf Travel Operator
+```
+Same styling as the existing IAGTO badge used elsewhere in the nav.
+
+**Step 3 — Mobile nav**
+
+In `components/MobileNav.tsx`, add "Pebble Beach Resorts®" as an accordion section with the same 8 links (5 courses + 3 lodging). Match the exact pattern used for existing mobile nav sections.
+
+**Step 4 — ® and ™ rules (non-negotiable)**
+- `Pebble Beach Golf Links®` — ® every instance
+- `Spyglass Hill® Golf Course` — ® every instance
+- `The Links at Spanish Bay®` — ® every instance
+- `Del Monte Golf Course®` — ® every instance
+- `The Hay™` — ™ every instance
+- `Pebble Beach Resorts®` — ® every instance
+- `The Lodge at Pebble Beach™` — ™ every instance
+- `The Inn at Spanish Bay™` — ™ every instance
+- `Casa Palmero™` — ™ every instance
+
+Never drop the symbol. Not in link text, not in aria-labels, not in alt text.
+
+### COMMIT
+```
+feat: add Pebble Beach Resorts® dedicated nav item with mega-menu (courses + lodging)
+```
+
+Wait for Vercel READY. Check desktop nav and mobile nav on live site before marking done.
+
+---
+
+## DIRECTIVE #14 — Pebble Beach Resorts® homepage featured section
+**Date: August 14 2026**
+**Authorized by: MASTER + Sean Schaeffer**
+**Priority: High**
+
+### THE GOAL
+Create a visually distinct "site within a site" section on the homepage showcasing Pebble Beach Resorts® courses and lodging. It sits between `<FitFinder />` and `<Courses />` in the homepage render order, so it appears near the top before the general course grid.
+
+### STEP 1 — Create `components/PebbleBeachSection.tsx`
+
+**Visual treatment:**
+- Background: dark navy (`#0e1f2b` or closest Tailwind equivalent — `bg-[#0e1f2b]`)
+- Gold accent color for headings and borders (`#c8a84b` — same gold used site-wide)
+- Full-width section, generous vertical padding (`py-20` or `py-24`)
+- White text on dark background
+
+**Section structure (top to bottom):**
+
+```
+[IAGTO badge chip — small pill: "IAGTO Authorized Partner"]
+
+[H2] Pebble Beach Resorts®
+[Subheading] Exclusive access to the world's most celebrated golf destination
+
+[2-col grid: Golf Courses | Lodging]
+
+[TM acknowledgment line]
+
+[CTA button]
+```
+
+**Golf Courses column (5 cards):**
+
+Each card shows: course name (with ® or ™), one-line description, link to course page. Spanish Bay® card must show the CLOSED state clearly — "Closed for renovation · Reopens April 17, 2027 · Gil Hanse redesign".
+
+```
+Pebble Beach Golf Links®
+"The world's most famous public golf course — clifftop drama on Stillwater Cove"
+→ /golf-courses/pebble-beach-golf-links/
+
+Spyglass Hill® Golf Course
+"Where forest meets ocean — one of the most scenic and challenging tracks on the Peninsula"
+→ /golf-courses/spyglass-hill/
+
+The Links at Spanish Bay®  [CLOSED BADGE]
+"Closed for renovation · Reopens April 17, 2027 · Gil Hanse redesign"
+→ /golf-courses/links-at-spanish-bay/
+
+Del Monte Golf Course®
+"The oldest continuously operating golf course west of the Mississippi, est. 1897"
+→ /golf-courses/del-monte-golf-course/
+
+The Hay™
+"A 9-hole short course designed by Tiger Woods — perfect for a warm-up or twilight round"
+→ /golf-courses/the-hay/
+```
+
+**Lodging column (3 cards):**
+
+Each card shows: property name (with ™), one-line description, external link. Open in new tab.
+
+```
+The Lodge at Pebble Beach™
+"Iconic resort at the 18th hole — the benchmark for golf resort luxury"
+→ https://www.pebblebeach.com/accommodations/the-lodge/
+
+The Inn at Spanish Bay™
+"Scottish links atmosphere with ocean-view rooms and a nightly bagpiper at sunset"
+→ https://www.pebblebeach.com/accommodations/the-inn-at-spanish-bay/
+
+Casa Palmero™
+"An intimate 24-room retreat — the most exclusive address on the Peninsula"
+→ https://www.pebblebeach.com/accommodations/casa-palmero/
+```
+
+**TM acknowledgment line (required — below the grid, above the CTA):**
+```
+Pebble Beach®, Pebble Beach Golf Links®, Spyglass Hill® Golf Course, The Links at Spanish Bay®,
+Del Monte Golf Course®, The Hay™, The Lodge at Pebble Beach™, The Inn at Spanish Bay™, and
+Casa Palmero™ are trademarks, service marks, and trade dress of Pebble Beach Company. Used with permission.
+```
+Style: small text (`text-xs`), muted white/gray, centered.
+
+**CTA button:**
+```
+Plan Your Pebble Beach Resorts® Trip →
+href="/quote/?interest=pebble-beach"
+```
+Gold background, dark text. Match existing CTA button style from other sections.
+
+### STEP 2 — Wire into homepage
+
+**File:** `app/page.tsx`
+
+Add the import and place the component:
+
+```tsx
+import PebbleBeachSection from "@/components/PebbleBeachSection";
+
+// In the JSX, between <FitFinder /> and <Courses />:
+<FitFinder />
+<PebbleBeachSection />
+<Courses />
+```
+
+### STEP 3 — JSX rules
+- All `®` symbols: use `&reg;` or the literal `®` character — both are fine in JSX
+- All `™` symbols: use `&trade;` or literal `™`
+- Apostrophes in copy: `&apos;`
+- No raw `'` or `"` in JSX text nodes
+
+### COMMIT
+```
+feat: add PebbleBeachSection homepage component — PBR courses + lodging featured section
+```
+
+Wait for Vercel READY. Check live homepage — section must appear above the general Courses grid. Check all ® and ™ symbols render correctly. Check Spanish Bay® shows closed badge. Check CTA links to /quote/?interest=pebble-beach.
+
+---
+
+## DIRECTIVE #15 — QuoteForm GTHS parity upgrade
+**Date: August 14 2026**
+**Authorized by: MASTER + Sean Schaeffer**
+**Priority: High — current form is losing lead data**
+
+### CONTEXT
+
+The current QuoteForm has two active bugs and is missing 19 features vs the GTHS GTHSQuoteForm:
+
+**Bug 1:** 4 fields (`hotels_interested`, `activities_interested`, `ground_transport_needed`, `referral_source`) are being inserted into Supabase but those columns don't exist in the `leads` table. They are silently dropped on every submission. This has been happening since launch.
+
+**Bug 2:** `RESEND_API_KEY` and `LEAD_NOTIFY_EMAIL` env vars are not set in Vercel — all lead email notifications are silently failing. MASTER will add these env vars separately. Your job is only to ensure the API route is still correctly called after the form upgrade.
+
+### STEP 1 — Supabase migration (run first, before any code changes)
+
+Add all missing columns to the `leads` table. Use the Supabase Management API at `https://api.supabase.com/v1/projects/ewhatqtehwzlypjguvoo/database/query` with the PAT in your credentials.
+
+```sql
+ALTER TABLE leads
+  ADD COLUMN IF NOT EXISTS hotels_interested TEXT[],
+  ADD COLUMN IF NOT EXISTS activities_interested TEXT[],
+  ADD COLUMN IF NOT EXISTS ground_transport_needed BOOLEAN,
+  ADD COLUMN IF NOT EXISTS referral_source TEXT,
+  ADD COLUMN IF NOT EXISTS firstname TEXT,
+  ADD COLUMN IF NOT EXISTS lastname TEXT,
+  ADD COLUMN IF NOT EXISTS company TEXT,
+  ADD COLUMN IF NOT EXISTS num_nights TEXT,
+  ADD COLUMN IF NOT EXISTS num_rounds TEXT,
+  ADD COLUMN IF NOT EXISTS tee_time_pref TEXT,
+  ADD COLUMN IF NOT EXISTS tee_time_second TEXT,
+  ADD COLUMN IF NOT EXISTS play_arrival TEXT,
+  ADD COLUMN IF NOT EXISTS play_departure TEXT,
+  ADD COLUMN IF NOT EXISTS lodging_type TEXT,
+  ADD COLUMN IF NOT EXISTS room_config TEXT,
+  ADD COLUMN IF NOT EXISTS transport_type TEXT,
+  ADD COLUMN IF NOT EXISTS dining_notes TEXT,
+  ADD COLUMN IF NOT EXISTS fb_event TEXT,
+  ADD COLUMN IF NOT EXISTS fb_event_details TEXT,
+  ADD COLUMN IF NOT EXISTS corporate_needs TEXT[],
+  ADD COLUMN IF NOT EXISTS returning_customer BOOLEAN,
+  ADD COLUMN IF NOT EXISTS last_trip_year TEXT,
+  ADD COLUMN IF NOT EXISTS ok_to_call BOOLEAN,
+  ADD COLUMN IF NOT EXISTS ok_to_text BOOLEAN,
+  ADD COLUMN IF NOT EXISTS consent_given BOOLEAN;
+```
+
+Confirm the migration succeeds before touching any code.
+
+### STEP 2 — Upgrade `components/QuoteForm.tsx`
+
+Add the following fields and features. Match the existing visual style exactly — same input classes, same section headers, same color palette. Do not redesign the form — extend it.
+
+**Contact fields (replace single `name` with split fields):**
+- First name (required) — `firstname`
+- Last name (required) — `lastname`
+- Keep email, phone as-is
+- Add: Company / Group name (optional) — `company`
+
+**Trip details (add to existing section):**
+- Number of nights (text select: 1/2/3/4/5/6/7/8/9/10/11/12/13/14/14+) — `num_nights`
+- Number of rounds (select: 1/2/3/4/5/6/7/8/9/10/10+) — `num_rounds`
+
+**Tee time preferences (new section):**
+- Tee time preference (required select):
+  `Early Bird (6:00–7:30am)` / `Morning (7:30–9:00am)` / `Mid-Morning (9:00–10:30am)` / `Late Morning (10:30am–12pm)` / `Afternoon (12pm–2pm)` / `Twilight (2pm+)` / `No Preference`
+  → `tee_time_pref`
+- Second choice tee time (optional, same options + "No Second Choice") — `tee_time_second`
+
+**Arrival & departure play (new section):**
+- Play on day of arrival? (required select: Yes / No) — `play_arrival`
+- Play on day of departure? (required select: Yes / No) — `play_departure`
+
+**Lodging preferences (new section):**
+- Lodging type (select: Hotel/Resort / Boutique Property / Private Rental / No Preference) — `lodging_type`
+- Room configuration (select: Single Occupancy / Double Occupancy / Mix of Both / Not Sure) — `room_config`
+
+**Transportation (extend existing):**
+- Keep existing groundTransport boolean (renamed to `ground_transport_needed`)
+- If Yes: show Transport type select: `Group Shuttle` / `Charter Bus` / `Limo/SUV` / `Rental Cars` / `Not Sure` — `transport_type`
+
+**Dining & F&B (new section):**
+- Dining notes (text input: "Any dietary restrictions or dining preferences?") — `dining_notes`
+- Special F&B event? (select: No / Yes — Private Dinner / Yes — Group Lunch / Yes — Welcome Reception / Yes — Awards Banquet) — `fb_event`
+- If fb_event is not "No": show details textarea — `fb_event_details`
+
+**Corporate needs (new section, multi-select chips):**
+Options: `AV/Presentation` / `Branded Materials` / `Prizes & Gifts` / `Team Building Activity` / `Meeting Space` / `None`
+→ `corporate_needs` (TEXT[] array)
+
+**Returning customer (new section):**
+- Checkbox: "I've traveled with Monterey Golf Tours before" → `returning_customer`
+- If checked: show Year select (last 10 years) → `last_trip_year`
+
+**Contact preferences (required — at least one must be checked):**
+- Checkbox: "You may call me" → `ok_to_call`
+- Checkbox: "You may text me" → `ok_to_text`
+- Validation: at least one must be true before submit is allowed
+
+**Consent (required):**
+- Checkbox (required): "I agree to the [Privacy Policy](/privacy/) and consent to being contacted about my trip request." → `consent_given`
+- Submit button must be disabled if this is unchecked
+
+**Live trip summary card:**
+- Above the submit button, show a summary card that updates as the user fills in the form
+- Show: dates, group size, selected courses (names), selected hotel, tee time preference, number of nights/rounds
+- Use the same gold/navy color scheme as the PebbleBeachSection
+- Label it: "Your trip at a glance"
+
+**Rich thank-you state:**
+- After successful Supabase insert + notify-lead API call, show a `done` state instead of the basic success message
+- Done state shows:
+  - "We've received your request — expect to hear from us within 24 hours"
+  - Summary of what they requested (courses, hotel, dates, group size)
+  - "In the meantime" links to: /itineraries/, /blog/, /golf-courses/pebble-beach-golf-links/
+
+### STEP 3 — Update Supabase insert payload in `components/QuoteForm.tsx`
+
+The insert object must include ALL fields. Replace the existing insert payload with the full set:
+
+```ts
+{
+  // Contact
+  firstname, lastname, email, phone, company,
+  // Trip
+  group_size: groupSize,
+  travel_dates: `${startDate} to ${endDate}`,
+  dates_flexible: datesFlexible,
+  trip_length: tripLength,
+  num_nights: numNights,
+  num_rounds: numRounds,
+  // Courses & hotels
+  courses_interested: selectedCourses,
+  hotels_interested: selectedHotels,
+  // Tee times
+  tee_time_pref: teePref,
+  tee_time_second: teePref2,
+  play_arrival: playArrival,
+  play_departure: playDeparture,
+  // Lodging
+  lodging_type: lodgingType,
+  room_config: roomConfig,
+  // Transport
+  ground_transport_needed: groundTransport,
+  transport_type: transportType,
+  // F&B
+  activities_interested: selectedActivities,
+  dining_notes: diningNotes,
+  fb_event: fbEvent,
+  fb_event_details: fbEventDetails,
+  // Corporate
+  corporate_needs: corporateNeeds,
+  // Non-golfer
+  non_golfer_in_group: nonGolfer,
+  // Budget
+  budget_per_person: budget,
+  // Returning
+  returning_customer: returningCustomer,
+  last_trip_year: lastYear,
+  // Contact prefs
+  ok_to_call: okToCall,
+  ok_to_text: okToText,
+  // Referral
+  referral_source: referralSource === 'Other' ? referralOther : referralSource,
+  // Consent
+  consent_given: consentGiven,
+  // Message
+  message,
+}
+```
+
+### STEP 4 — Update notify-lead email template
+
+**File:** `app/api/notify-lead/route.ts`
+
+Add the new fields to the `buildHtml` function table so they appear in the email Sean receives. Add rows for: tee_time_pref, play_arrival, play_departure, lodging_type, room_config, transport_type, fb_event, returning_customer, ok_to_call, ok_to_text. Keep existing rows.
+
+### HARD CONSTRAINTS
+- Do NOT remove any existing fields from the form — only add
+- Do NOT change the visual design or color scheme — extend it
+- Do NOT remove the budget range selector, nonGolfer checkbox, or activities chips — keep them
+- The `name` field in the leads table stays — populate it as `${firstname} ${lastname}` on insert (keeps backward compatibility)
+- All new selects and inputs must match the className pattern of existing form elements
+- JSX entity escaping: `&apos;` `&ldquo;` `&rdquo;` — no raw apostrophes in text nodes
+- TypeScript: no `any` types. New state vars must be properly typed.
+
+### VALIDATION RULES
+- `firstname`, `lastname`, `email` — required, block submit if empty
+- `ok_to_call` OR `ok_to_text` — at least one required
+- `consent_given` — required, submit button disabled if false
+- All other new fields — optional
+
+### COMMIT (two commits — migration separate from code)
+
+Commit 1 (after Step 1):
+```
+fix: add missing leads table columns — hotels_interested, activities_interested, ground_transport_needed, referral_source + 21 new GTHS parity fields
+```
+
+Commit 2 (after Steps 2–4):
+```
+feat: QuoteForm GTHS parity — 19 new fields, live summary card, rich thank-you state, consent + contact prefs
+```
+
+Wait for Vercel READY after Commit 2. Test the form end-to-end on the live site:
+1. Fill out the form completely
+2. Submit
+3. Verify the Supabase `leads` row in the dashboard contains all fields (not just the old 12)
+4. Verify the done/thank-you state renders correctly
+5. Report back with the Supabase row ID of the test submission
+
