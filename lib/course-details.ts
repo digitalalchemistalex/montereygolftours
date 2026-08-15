@@ -212,6 +212,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     gallery: [
       "/images/courses/gallery/black-horse-2.jpg",
       "/images/courses/gallery/black-horse-3.webp",
+      "/images/courses/gallery/black-horse-4.webp",
     ],
     description: [
       "Black Horse shares its origin with Bayonet on the grounds of the former Fort Ord military base. Designed alongside Bayonet by General Robert B. McClure in 1954 and refreshed in a 2007 Gene Bates redesign, Black Horse offers fescue-framed fairways and sweeping views of Monterey Bay throughout the round.",
@@ -295,6 +296,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "carmelvalleyranch.com/golf",
     hook:
       "Inland warmth and an early clear from the fog — the only Pete Dye design in Northern California.",
+    gallery: [
+      "/images/courses/gallery/carmel-valley-ranch-golf-2.webp",
+    ],
     description: [
       "Carmel Valley Ranch sits inland from the coastal fog belt, in the warmer Carmel Valley microclimate that tends to clear earlier in the day than the peninsula proper. The course carries a Pete Dye pedigree — the only Pete Dye design in Northern California — with a subsequent Gene Bates redesign.",
       "At 6,117 yards and par 70, the course favors strategy and shot placement over pure length, characteristic of Dye's design philosophy. It anchors the Carmel Valley Ranch resort property, making it a natural stay-and-play pairing for groups based there.",
