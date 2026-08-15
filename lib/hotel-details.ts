@@ -119,6 +119,13 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "179 all-suites (no standard rooms)",
     brand: "The Unbound Collection by Hyatt",
     hook: "All-suite resort on 500 acres, with the only Pete Dye golf course in Northern California on-site.",
+    gallery: [
+      "/images/hotels/gallery/carmel-valley-ranch-2.webp",
+      "/images/hotels/gallery/carmel-valley-ranch-3.webp",
+      "/images/hotels/gallery/carmel-valley-ranch-4.webp",
+      "/images/hotels/gallery/carmel-valley-ranch-5.webp",
+      "/images/hotels/gallery/carmel-valley-ranch-6.webp",
+    ],
     description: [
       "Carmel Valley Ranch is an all-suite resort — every accommodation is a minimum 800 sq ft (starting with the Santa Lucia Studio); there are no standard hotel rooms. Pete Dye's only Northern California golf design is on-site, and the property sits inland in the sun-drenched Santa Lucia foothills, typically 15–18°F warmer than the Monterey coast and clear of marine fog earlier in the morning. — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
       "The on-site golf course is a Pete Dye original (1980), renovated by Gene Bates in 2006 — the only Pete Dye design in Northern California. The wine-country microclimate here tends to stay sunny even when the coast is fogged in.",
@@ -337,6 +344,13 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "285 units",
     brand: "Independent (AAA Four Diamond)",
     hook: "The only Forbes Four-Star hotel in Monterey, perched over the bay on historic Cannery Row.",
+    gallery: [
+      "/images/hotels/gallery/monterey-plaza-2.webp",
+      "/images/hotels/gallery/monterey-plaza-3.webp",
+      "/images/hotels/gallery/monterey-plaza-4.webp",
+      "/images/hotels/gallery/monterey-plaza-5.webp",
+      "/images/hotels/gallery/monterey-plaza-6.webp",
+    ],
     description: [
       "Monterey Plaza Hotel & Spa is an oceanfront property perched directly over Monterey Bay on historic Cannery Row — the only Forbes Four-Star hotel in Monterey, with European-influenced architecture often described as the \"grand dame of the bay.\" With 285 units, it's a strong fit for groups wanting to be in the heart of the action, walking distance to Cannery Row and Fisherman's Wharf.",
       "There's no traditional outdoor pool here, given the waterfront setting and open bay access, but the property compensates with a rooftop-level spa and direct ocean views throughout much of the hotel. Parking is valet only.",
