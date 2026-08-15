@@ -40,6 +40,15 @@ export default function HeroCentered() {
             "linear-gradient(180deg, rgba(22,36,44,.55) 0%, rgba(22,36,44,.25) 30%, rgba(22,36,44,.55) 70%, rgba(22,36,44,.82) 100%)",
         }}
       />
+      {/* Extra radial darkening centered behind the logo/content zone — desktop only.
+          Fixes logo/wordmark getting lost against busy tree detail in the aerial photo. */}
+      <div
+        className="absolute inset-0 hidden sm:block"
+        style={{
+          background:
+            "radial-gradient(ellipse 620px 520px at 50% 42%, rgba(15,26,32,.55) 0%, rgba(15,26,32,.25) 45%, rgba(15,26,32,0) 75%)",
+        }}
+      />
 
       <div className="absolute right-5 top-5 z-20 md:right-8 md:top-6">
         <MobileNav forceVisible />
@@ -52,7 +61,7 @@ export default function HeroCentered() {
           width={280}
           height={268}
           priority
-          style={{ width: 220, height: "auto" }}
+          style={{ width: 220, height: "auto", filter: "drop-shadow(0 4px 18px rgba(0,0,0,.55)) drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}
           className="md:!w-[280px]"
         />
 
