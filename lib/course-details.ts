@@ -361,6 +361,12 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "quaillodge.com/golf",
     hook:
       "A resort round in the Carmel Valley sun, threaded around 10 man-made lakes, away from the coastal marine layer.",
+    gallery: [
+      "/images/courses/gallery/quail-lodge-2.webp",
+      "/images/courses/gallery/quail-lodge-3.webp",
+      "/images/courses/gallery/quail-lodge-4.webp",
+      "/images/courses/gallery/quail-lodge-5.webp",
+    ],
     description: [
       "Quail Lodge & Golf Club was designed by Robert Muir Graves in 1964 and refined in 2015 by Principal Designer Todd Eckenrode of Origins Golf Design. The course plays through Carmel Valley's warmer inland climate with 10 man-made lakes strategically woven through the layout — accuracy matters more than distance here.",
       "The front nine runs along the Carmel River through open terrain; the back nine transitions into forested corridors. Wildlife is abundant throughout — quail, hawks, deer, turtles, and fox are regular companions on the round. The course is flat enough to walk comfortably, with Poa annua greens that Quail Lodge maintains to the standard that has earned it the 'Best Playing Conditions in Central California' award from GreensKeeper.org every year since 2016.",
