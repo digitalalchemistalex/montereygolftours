@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
-import MobileNav from "./MobileNav";
+import Header from "./Header";
 
 const STATS = [
   { n: "14", l: "Courses available" },
@@ -41,9 +41,7 @@ export default function HeroCentered() {
         }}
       />
 
-      <div className="absolute right-5 top-5 z-20 md:right-8 md:top-6">
-        <MobileNav forceVisible />
-      </div>
+      <Header />
 
       <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[720px] flex-col items-center px-6 pb-10 text-center md:pb-12">
         <Image
