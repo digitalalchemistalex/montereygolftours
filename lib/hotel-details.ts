@@ -350,6 +350,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "/images/hotels/gallery/monterey-plaza-4.webp",
       "/images/hotels/gallery/monterey-plaza-5.webp",
       "/images/hotels/gallery/monterey-plaza-6.webp",
+      "/images/hotels/gallery/monterey-plaza-7.webp",
     ],
     description: [
       "Monterey Plaza Hotel & Spa is an oceanfront property perched directly over Monterey Bay on historic Cannery Row — the only Forbes Four-Star hotel in Monterey, with European-influenced architecture often described as the \"grand dame of the bay.\" With 285 units, it's a strong fit for groups wanting to be in the heart of the action, walking distance to Cannery Row and Fisherman's Wharf.",
