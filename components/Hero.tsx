@@ -3,8 +3,8 @@ import Image from "next/image";
 import Header from "./Header";
 
 const STATS = [
-  { n: "8", l: "Courses on tap" },
-  { n: "8", l: "Properties to stay" },
+  { n: "14", l: "Courses available" },
+  { n: "11", l: "Hotels & resorts" },
   { n: "1954", l: "Year Bayonet opened" },
   { n: "1897", l: "Oldest course on the peninsula" },
 ];
