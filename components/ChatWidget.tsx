@@ -41,6 +41,60 @@ const FALLBACKS = [
   "I'm still learning that one. For anything I can't answer, our Get a Quote form goes straight to a person who can help.",
 ];
 
+// Small-talk patterns, checked before the FAQ matcher so casual chat gets a
+// warm, on-topic reply instead of a bad or missed FAQ match.
+const SMALL_TALK: { patterns: RegExp[]; replies: string[] }[] = [
+  {
+    patterns: [/^\s*(hi|hello|hey|yo|howdy)\s*[!.]*\s*$/i],
+    replies: [
+      "Hey! What can I help you plan today \u2014 a course, a hotel, or the whole trip?",
+      "Hi there! Ask away \u2014 courses, hotels, whatever you need for the trip.",
+    ],
+  },
+  {
+    patterns: [/how are you/i, /how('?s| is) it going/i, /how('?s| have) you been/i],
+    replies: [
+      "Doing well, thanks for asking! Yes, we've got some of the best golf courses in Monterey \u2014 want a recommendation, or looking for something specific?",
+      "I'm good! And you're in the right place \u2014 Monterey's got an incredible lineup of courses. What kind of round are you after?",
+    ],
+  },
+  {
+    patterns: [/^\s*(thanks|thank you|thx|ty)\s*[!.]*\s*$/i],
+    replies: [
+      "Anytime! Let me know if you want help with anything else.",
+      "You're welcome! Happy to help with more if you need it.",
+    ],
+  },
+  {
+    patterns: [/^\s*(bye|goodbye|see ya|later)\s*[!.]*\s*$/i],
+    replies: [
+      "Take care! Come back anytime you're planning your trip.",
+      "Bye for now \u2014 good luck with the trip planning!",
+    ],
+  },
+  {
+    patterns: [/who are you/i, /what are you/i, /are you (a )?(real|human|bot|ai)/i],
+    replies: [
+      "I'm the Monterey Golf Tours assistant \u2014 I can answer questions about our courses and hotels. For anything more detailed, the Get a Quote form connects you with a real person on our team.",
+    ],
+  },
+  {
+    patterns: [/^\s*(help|what can you do)\s*[!.?]*\s*$/i],
+    replies: [
+      "I can answer questions about specific courses and hotels \u2014 things like green fees, room counts, whether a course is public, that kind of thing. Ask away, or use Get a Quote for a custom trip.",
+    ],
+  },
+];
+
+function matchSmallTalk(query: string): string | null {
+  for (const group of SMALL_TALK) {
+    if (group.patterns.some((p) => p.test(query))) {
+      return pickRandom(group.replies);
+    }
+  }
+  return null;
+}
+
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -92,8 +146,14 @@ export default function ChatWidget() {
     setTyping(true);
     const delay = 450 + Math.random() * 400;
     setTimeout(() => {
-      const match = findBestAnswer(query);
-      const reply = match ? `${pickRandom(LEAD_INS)} ${match.a}` : pickRandom(FALLBACKS);
+      const smallTalk = matchSmallTalk(query);
+      let reply: string;
+      if (smallTalk) {
+        reply = smallTalk;
+      } else {
+        const match = findBestAnswer(query);
+        reply = match ? `${pickRandom(LEAD_INS)} ${match.a}` : pickRandom(FALLBACKS);
+      }
       setMessages((prev) => [...prev, { text: reply, fromUser: false }]);
       setTyping(false);
     }, delay);
