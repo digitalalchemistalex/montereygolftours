@@ -10,6 +10,7 @@ import { HOTELS } from "@/lib/hotels";
 import { DESTINATIONS } from "@/lib/destinations";
 import { ITINERARIES } from "@/lib/itineraries";
 import { useChat } from "./ChatContext";
+import Logo from "./Logo";
 
 // ── Shared data — mirrors Header.tsx exactly, same source of truth ────────
 const COURSE_CHAR: Record<string, string> = {
@@ -237,9 +238,12 @@ export default function MobileNav({ forceVisible = false }: { forceVisible?: boo
           <div style={{ flex: 1, overflowY: "auto", padding: "18px 24px 0" }}>
 
             <div style={{
-              marginBottom: 4, fontFamily: "Inter, sans-serif", fontSize: 11, letterSpacing: "0.22em",
-              color: "#6f7d78", opacity: mounted ? 1 : 0, transition: "opacity 420ms ease",
-            }}>MONTEREY PENINSULA</div>
+              marginBottom: 14, marginLeft: -24, marginRight: -24, marginTop: -18,
+              padding: "16px 24px", backgroundColor: "#FBF6EE",
+              opacity: mounted ? 1 : 0, transition: "opacity 420ms ease",
+            }}>
+              <Logo size={90} />
+            </div>
 
             {/* ━━ COURSES ━━ */}
             <Section label="Courses" open={expanded === "courses"} onToggle={() => toggle("courses")} delay={40} mounted={mounted}>
