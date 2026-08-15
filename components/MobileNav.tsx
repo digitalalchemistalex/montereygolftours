@@ -270,6 +270,37 @@ export default function MobileNav() {
               <ViewAllRow href="/golf-courses/" onClick={close} label="View all 14 courses" />
             </Section>
 
+            {/* ━━ PEBBLE BEACH RESORTS ━━ */}
+            <Section label="Pebble Beach Resorts®" open={expanded === "pbr"} onToggle={() => toggle("pbr")} delay={50} mounted={mounted}>
+              <GroupLabel>Golf Courses</GroupLabel>
+              {PB_SLUGS.map(slug => {
+                const c = courseMap[slug]; if (!c) return null;
+                const closed = slug === "links-at-spanish-bay";
+                return (
+                  <ItemRow key={slug} href={`/golf-courses/${slug}/`} onClick={close} dim={closed}
+                    title={c.name + (closed ? " (closed)" : "")} />
+                );
+              })}
+              <GroupLabel><span style={{ marginTop: 14, display: "block" }}>Lodging</span></GroupLabel>
+              {[
+                { name: "The Lodge at Pebble Beach\u2122", url: "https://www.pebblebeach.com/accommodations/the-lodge/" },
+                { name: "The Inn at Spanish Bay\u2122", url: "https://www.pebblebeach.com/accommodations/the-inn-at-spanish-bay/" },
+                { name: "Casa Palmero\u2122", url: "https://www.pebblebeach.com/accommodations/casa-palmero/" },
+              ].map((p) => (
+                <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" onClick={close} style={{
+                  display: "flex", flexDirection: "column", padding: "8px 0", textDecoration: "none",
+                }}>
+                  <span style={{ fontFamily: "Inter, sans-serif", fontSize: 14.5, fontWeight: 500, color: "#e6e2d8" }}>{p.name}</span>
+                </a>
+              ))}
+              <div style={{
+                marginTop: 10, paddingTop: 12, borderTop: "0.5px solid rgba(230,226,216,0.1)",
+                fontFamily: "Inter, sans-serif", fontSize: 11.5, fontWeight: 600, color: "#A8843D",
+              }}>
+                IAGTO Partner &middot; Authorized Pebble Beach Resorts® Golf Travel Operator
+              </div>
+            </Section>
+
             {/* ━━ HOTELS ━━ */}
             <Section label="Hotels" open={expanded === "hotels"} onToggle={() => toggle("hotels")} delay={80} mounted={mounted}>
               <FeaturedRow

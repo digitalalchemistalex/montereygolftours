@@ -179,6 +179,56 @@ export default function Header() {
           </div>
         </div>
 
+        {/* ━━ PEBBLE BEACH RESORTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+        <div className="group relative">
+          <button type="button" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+            Pebble Beach Resorts® {chevron}
+          </button>
+
+          <div className={`${DROP} left-1/2 w-[560px] -translate-x-1/2`}>
+            <div className={`${CARD} grid grid-cols-2`}>
+              <div className="border-r border-[#f0ebe1] px-4 pt-4 pb-3">
+                <div className="mb-2 font-ui text-[9.5px] font-bold uppercase tracking-[.12em] text-[#9a8a6e]">Golf Courses</div>
+                <div className="grid grid-cols-1 gap-0">
+                  {PB_SLUGS.map(slug => {
+                    const c = courseMap[slug]; if (!c) return null;
+                    const closed = slug === "links-at-spanish-bay";
+                    return (
+                      <Link key={slug} href={`/golf-courses/${slug}/`}
+                        className={`flex items-baseline justify-between rounded-md px-2 py-[5px] hover:bg-[#f4f0e7] ${closed ? "opacity-70" : ""}`}>
+                        <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">{c.name}</span>
+                        {closed && <span className="rounded-full bg-[#ede7d5] px-1.5 py-px font-ui text-[8px] font-bold uppercase tracking-[.05em] text-[#8a7a5a]">Closed</span>}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="px-4 pt-4 pb-3">
+                <div className="mb-2 font-ui text-[9.5px] font-bold uppercase tracking-[.12em] text-[#9a8a6e]">Lodging</div>
+                <div className="grid grid-cols-1 gap-0">
+                  <a href="https://www.pebblebeach.com/accommodations/the-lodge/" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
+                    <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">The Lodge at Pebble Beach™</span>
+                  </a>
+                  <a href="https://www.pebblebeach.com/accommodations/the-inn-at-spanish-bay/" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
+                    <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">The Inn at Spanish Bay™</span>
+                  </a>
+                  <a href="https://www.pebblebeach.com/accommodations/casa-palmero/" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
+                    <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">Casa Palmero™</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="col-span-2 flex items-center justify-center gap-1.5 border-t border-[#f0ebe1] bg-[#fdfbf7] py-2.5 font-ui text-[11.5px] font-semibold text-gold">
+                IAGTO Partner &middot; Authorized Pebble Beach Resorts® Golf Travel Operator
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ━━ HOTELS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
           <Link href="/hotels/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
