@@ -134,7 +134,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
               />
 
               {/* Right: two sections */}
-              <div className="flex flex-col bg-white">
+              <div className="flex max-h-[calc(100vh-140px)] flex-col overflow-y-auto bg-white">
                 {/* PB Resorts */}
                 <div className="border-b border-[#f0ebe1] bg-[#fdfbf7] px-4 pt-4 pb-3">
                   <div className="mb-2 flex items-center justify-between">
