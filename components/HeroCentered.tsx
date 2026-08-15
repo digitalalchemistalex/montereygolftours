@@ -21,7 +21,7 @@ export default function HeroCentered() {
         quality={92}
         sizes="100vw"
         className="hidden object-cover sm:block"
-        style={{ objectPosition: "center 40%", filter: "saturate(1.15) contrast(1.06) brightness(1.02)" }}
+        style={{ objectPosition: "center 62%", filter: "saturate(1.15) contrast(1.06) brightness(1.02)" }}
       />
       <Image
         src="https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=800&q=95"
@@ -37,7 +37,7 @@ export default function HeroCentered() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.15) 35%, rgba(22,36,44,.15) 55%, rgba(22,36,44,.35) 100%)",
+            "linear-gradient(180deg, rgba(22,36,44,.35) 0%, rgba(22,36,44,.15) 35%, rgba(22,36,44,.15) 55%, rgba(22,36,44,.7) 92%, #16242c 100%)",
         }}
       />
 
