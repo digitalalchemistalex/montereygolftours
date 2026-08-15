@@ -142,6 +142,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "/images/courses/gallery/pasatiempo-4.jpg",
       "/images/courses/gallery/pasatiempo-5.jpg",
       "/images/courses/gallery/pasatiempo-6.webp",
+      "/images/courses/gallery/pasatiempo-7.webp",
+      "/images/courses/gallery/pasatiempo-8.webp",
     ],
     description: [
       "Pasatiempo opened on September 8, 1929, designed by Alister MacKenzie for Marion Hollins, the 1921 U.S. Women's Amateur champion. MacKenzie — the architect behind Augusta National, Cypress Point, and Royal Melbourne — considered Pasatiempo one of his finest pieces of work, and felt strongly enough about the course that he bought a home next to the 6th fairway, where he lived until his death in 1934.",
