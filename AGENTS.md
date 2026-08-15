@@ -1,3 +1,26 @@
+## STANDING RULE — TRACKER UPDATE AFTER EVERY DIRECTIVE
+**This rule applies to every directive, forever. No exceptions.**
+
+After every directive is complete and Vercel shows READY:
+
+1. Open `MGTS_BuildTracker.xlsx` from Google Drive (`Zoomaway/MontereyGolfTours/MGTS_BuildTracker.xlsx`)
+2. On the **MGTS Build Status** sheet, find the row matching the directive and update:
+   - **Status** column → `✅ Done`
+   - **Notes** column → what was done + commit SHA (first 7 chars)
+   - **Next Action** column → `—` (or next step if applicable)
+3. If the directive added a new feature not in the tracker, append a new row
+4. Update **cell A2** (Last updated date) to today's date
+5. Save the file back to Google Drive
+
+**Also update `MGTS_STATUS.md` in the repo root** — find the relevant section and mark it done with the commit SHA.
+
+**Do NOT mark a directive done until:**
+- Vercel shows READY (not building, not error)
+- You have verified the change on the live site at `montereygolftours.vercel.app`
+- The specific verification steps listed in the directive pass
+
+---
+
 ---
 
 ## 🚨 EMERGENCY DIRECTIVE — LOGO MUST BE REPLACED BEFORE ANY OTHER WORK
