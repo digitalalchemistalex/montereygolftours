@@ -37,16 +37,7 @@ export default function HeroCentered() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(22,36,44,.55) 0%, rgba(22,36,44,.25) 30%, rgba(22,36,44,.55) 70%, rgba(22,36,44,.82) 100%)",
-        }}
-      />
-      {/* Extra radial darkening centered behind the logo/content zone — desktop only.
-          Fixes logo/wordmark getting lost against busy tree detail in the aerial photo. */}
-      <div
-        className="absolute inset-0 hidden sm:block"
-        style={{
-          background:
-            "radial-gradient(ellipse 620px 520px at 50% 42%, rgba(15,26,32,.55) 0%, rgba(15,26,32,.25) 45%, rgba(15,26,32,0) 75%)",
+            "linear-gradient(180deg, rgba(22,36,44,.6) 0%, rgba(22,36,44,.15) 22%, rgba(22,36,44,.35) 55%, rgba(22,36,44,.8) 100%)",
         }}
       />
 
@@ -54,14 +45,14 @@ export default function HeroCentered() {
         <MobileNav forceVisible />
       </div>
 
-      <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[720px] flex-col items-center px-6 pb-10 pt-20 text-center md:pb-12">
+      <div className="relative z-10 mx-auto flex w-full max-w-[720px] flex-col items-center px-6 pt-16 text-center md:pt-14">
         <Image
           src="/brand/logo.png"
           alt="Monterey Golf Tours"
           width={280}
           height={268}
           priority
-          style={{ width: 220, height: "auto", filter: "drop-shadow(0 4px 18px rgba(0,0,0,.55)) drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}
+          style={{ width: 220, height: "auto" }}
           className="md:!w-[280px]"
         />
 
@@ -77,23 +68,21 @@ export default function HeroCentered() {
         >
           {SITE.phone}
         </a>
+      </div>
 
-        <div className="mt-3 h-px w-24 bg-[rgba(250,246,238,.35)]" />
-
-        <div className="mt-8 flex w-full max-w-[420px] flex-col gap-3">
-          <Link
-            href="/quote/"
-            className="rounded-[9px] bg-cream px-7 py-4 text-center font-ui text-base font-bold uppercase tracking-[.05em] text-ink shadow-[0_6px_18px_rgba(0,0,0,.25)] transition-transform hover:-translate-y-0.5"
-          >
-            Plan My Trip
-          </Link>
-          <Link
-            href="/itineraries/"
-            className="rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-3.5 text-center font-ui text-[15px] font-semibold text-cream backdrop-blur-[2px] transition-transform hover:-translate-y-0.5 hover:border-gold"
-          >
-            Preview Availability &rsaquo;
-          </Link>
-        </div>
+      <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[420px] flex-col gap-3 px-6 pb-10 md:pb-12">
+        <Link
+          href="/quote/"
+          className="rounded-[9px] bg-cream px-7 py-4 text-center font-ui text-base font-bold uppercase tracking-[.05em] text-ink shadow-[0_6px_18px_rgba(0,0,0,.25)] transition-transform hover:-translate-y-0.5"
+        >
+          Plan My Trip
+        </Link>
+        <Link
+          href="/itineraries/"
+          className="rounded-[9px] border-[1.5px] border-[rgba(250,246,238,.55)] bg-[rgba(22,36,44,.25)] px-7 py-3.5 text-center font-ui text-[15px] font-semibold text-cream backdrop-blur-[2px] transition-transform hover:-translate-y-0.5 hover:border-gold"
+        >
+          Preview Availability &rsaquo;
+        </Link>
       </div>
 
       <div className="relative z-10 mx-6 grid max-w-[980px] grid-cols-2 gap-x-6 gap-y-8 border-t border-[rgba(250,246,238,.22)] px-0 py-7 md:mx-auto md:grid-cols-4 md:py-8">
