@@ -184,7 +184,7 @@ const SIMPLE_LINKS = [
   { label: "FAQ",   href: "/faq/" },
 ];
 
-export default function MobileNav() {
+export default function MobileNav({ forceVisible = false }: { forceVisible?: boolean }) {
   const [open, setOpen] = useState(false);
   const { setOpen: setChatOpen } = useChat();
   const [mounted, setMounted] = useState(false);
@@ -209,13 +209,13 @@ export default function MobileNav() {
   const toggle = (key: string) => setExpanded(expanded === key ? null : key);
 
   return (
-    <div className="lg:hidden">
+    <div className={forceVisible ? "" : "lg:hidden"}>
       <button
         type="button" aria-label="Open menu" onClick={() => setOpen(true)}
         style={{ background: "none", border: "none", cursor: "pointer", padding: 8 }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6H21M3 12H21M3 18H21" stroke="#252321" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M3 6H21M3 12H21M3 18H21" stroke={forceVisible ? "#FAF6EE" : "#252321"} strokeWidth="2" strokeLinecap="round"/>
         </svg>
       </button>
 
