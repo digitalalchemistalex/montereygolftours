@@ -23,14 +23,34 @@ function scoreMatch(query: string, question: string): number {
   return score;
 }
 
+const GREETINGS = [
+  "Hey there! \u{1F44B} I know this peninsula pretty well \u2014 ask me about any course or hotel, like \u201cIs Bayonet open to the public?\u201d",
+  "Hi! Happy to help you plan your trip \u2014 try asking about a specific course or hotel, like \u201cHow many rooms at Quail Lodge?\u201d",
+];
+
+const LEAD_INS = [
+  "Good question \u2014 here's what I've got:",
+  "Here you go:",
+  "Sure thing:",
+  "Here's what I know:",
+];
+
+const FALLBACKS = [
+  "Hmm, I don't have that one yet \u2014 but our team definitely does! Try the Get a Quote form and they'll get back to you personally.",
+  "That's a bit outside what I know so far. Ask me about a specific course or hotel by name, or reach a real human through Get a Quote.",
+  "I'm still learning that one. For anything I can't answer, our Get a Quote form goes straight to a person who can help.",
+];
+
+function pickRandom<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export default function ChatWidget() {
   const { open, setOpen } = useChat();
   const [input, setInput] = useState("");
+  const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    {
-      text: "Hi! Ask me about any course or hotel — like \u201cIs Bayonet open to the public?\u201d or \u201cHow many rooms at Quail Lodge?\u201d",
-      fromUser: false,
-    },
+    { text: pickRandom(GREETINGS), fromUser: false },
   ]);
   const bodyRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +69,7 @@ export default function ChatWidget() {
     if (bodyRef.current) {
       bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, typing]);
 
   function findBestAnswer(query: string): FaqEntry | null {
     let best: FaqEntry | null = null;
@@ -69,13 +89,14 @@ export default function ChatWidget() {
     if (!query) return;
     setMessages((prev) => [...prev, { text: query, fromUser: true }]);
     setInput("");
+    setTyping(true);
+    const delay = 450 + Math.random() * 400;
     setTimeout(() => {
       const match = findBestAnswer(query);
-      const reply = match
-        ? match.a
-        : "I don't have that answer yet \u2014 try asking about a specific course or hotel by name, or use the Get a Quote form for anything more detailed.";
+      const reply = match ? `${pickRandom(LEAD_INS)} ${match.a}` : pickRandom(FALLBACKS);
       setMessages((prev) => [...prev, { text: reply, fromUser: false }]);
-    }, 300);
+      setTyping(false);
+    }, delay);
   }
 
   if (!open) return null;
@@ -115,6 +136,13 @@ export default function ChatWidget() {
               {m.text}
             </div>
           ))}
+          {typing && (
+            <div className="flex max-w-[85%] items-center gap-1 self-start rounded-xl bg-[#F4F0E7] px-3 py-2.5">
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#a89b87] [animation-delay:0ms]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#a89b87] [animation-delay:150ms]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#a89b87] [animation-delay:300ms]" />
+            </div>
+          )}
         </div>
 
         <div className="flex gap-2 border-t border-[#e3ddcf] bg-cream p-2.5">
