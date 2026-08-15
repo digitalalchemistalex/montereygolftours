@@ -518,6 +518,12 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(831) 648-5775",
     website: "playpacificgrove.com",
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
+    gallery: [
+      "/images/courses/gallery/pacific-grove-golf-links-2.webp",
+      "/images/courses/gallery/pacific-grove-golf-links-3.webp",
+      "/images/courses/gallery/pacific-grove-golf-links-4.webp",
+      "/images/courses/gallery/pacific-grove-golf-links-5.webp",
+    ],
     description: [
       "Pacific Grove Golf Links opened on May 9, 1932, with H. Chandler Egan designing the front nine. The back nine was laid out by Jack Neville — the same architect who designed the famous clifftop links right next door — and plays along the Pacific coast with crashing waves, tide pools, and views of Point Pinos Lighthouse.",
       "Widely known as the 'Poor Man's Pebble Beach' — same ocean, same coastline, fraction of the cost. The front nine winds through forested Pacific Grove, giving the round two completely different personalities: wooded and sheltered on the front, fully exposed to the Pacific on the back.",
