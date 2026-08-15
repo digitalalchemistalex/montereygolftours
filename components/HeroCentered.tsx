@@ -14,14 +14,14 @@ export default function HeroCentered() {
   return (
     <section className="relative flex min-h-[820px] flex-col overflow-hidden bg-[#16242c] md:min-h-[900px]">
       <Image
-        src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=2400&q=95"
-        alt="Aerial view of a coastal golf course at sunrise"
+        src="https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=2400&q=95"
+        alt="Golf course overlooking the ocean at Pebble Beach"
         fill
         priority
         quality={92}
         sizes="100vw"
         className="hidden object-cover sm:block"
-        style={{ objectPosition: "center 55%", filter: "saturate(1.18) contrast(1.08) brightness(1.03)" }}
+        style={{ objectPosition: "center 40%", filter: "saturate(1.15) contrast(1.06) brightness(1.02)" }}
       />
       <Image
         src="https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=800&q=95"
