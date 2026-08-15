@@ -122,7 +122,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
           </Link>
 
           {/* 700px: dark featured left + grouped list right */}
-          <div className={`${DROP} left-1/2 w-[700px] -translate-x-1/2`}>
+          <div className={`${DROP} left-0 w-[700px]`}>
             <div className={`${CARD} grid grid-cols-[220px_1fr]`}>
 
               {/* Left: featured course */}
