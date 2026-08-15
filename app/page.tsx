@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Configurator from "@/components/Configurator";
 import FitFinder from "@/components/FitFinder";
+import PebbleBeachSection from "@/components/PebbleBeachSection";
 import Courses from "@/components/Courses";
 import Packages from "@/components/Packages";
 import Itinerary from "@/components/Itinerary";
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
         <Configurator />
         <FitFinder />
+        <PebbleBeachSection />
         <Courses />
         <Packages />
         <Itinerary />
