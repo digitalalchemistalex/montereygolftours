@@ -47,6 +47,13 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "bayonetblackhorse.com",
     hook:
       "The military-heritage championship at former Fort Ord — one of the toughest public courses in the country.",
+    gallery: [
+      "/images/courses/gallery/bayonet-2.webp",
+      "/images/courses/gallery/bayonet-3.webp",
+      "/images/courses/gallery/bayonet-4.webp",
+      "/images/courses/gallery/bayonet-5.webp",
+      "/images/courses/gallery/bayonet-6.webp",
+    ],
     description: [
       "Bayonet sits on the grounds of the former Fort Ord military base, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954 — reportedly to suit his own left-handed game. Hole 15, part of a demanding stretch that runs holes 11 through 15, carries the course's famous \"Combat Corner\" nickname. The course is named for the 7th Infantry, the \"Bayonet Division.\"",
       "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A Gene Bates redesign completed in 2007 refreshed the layout while keeping the demanding, military-pedigree character intact.",
