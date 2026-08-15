@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import HeroCentered from "@/components/HeroCentered";
 import Configurator from "@/components/Configurator";
 import FitFinder from "@/components/FitFinder";
 import PebbleBeachSection from "@/components/PebbleBeachSection";
@@ -21,7 +22,9 @@ export default function Home() {
   return (
     <>
       <main className="flex-1">
-        <Hero />
+        {/* HeroCentered = new large-logo, PBC-mood-inspired hero (Raza trial, Aug 2026).
+            To revert: swap <HeroCentered /> back to <Hero />, both kept in the codebase. */}
+        <HeroCentered />
         <Configurator />
         <FitFinder />
         <PebbleBeachSection />
