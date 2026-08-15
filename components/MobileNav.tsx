@@ -424,8 +424,11 @@ export default function MobileNav() {
                 alignItems: "center", justifyContent: "center", cursor: "pointer",
               }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" strokeWidth="2.2">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" strokeWidth="2">
+                <path d="M4 13a8 8 0 0 1 16 0" strokeLinecap="round" />
+                <path d="M4 13v3a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1z" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20 13v3a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 1 1z" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M13 20h-2a1 1 0 0 1-1-1v0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
