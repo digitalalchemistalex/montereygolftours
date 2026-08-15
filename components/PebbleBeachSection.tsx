@@ -37,7 +37,7 @@ const PBC_LODGING = [
   {
     name: "The Lodge at Pebble Beach™",
     hook: "Iconic resort at the 18th hole — the benchmark for golf resort luxury",
-    url: "https://www.pebblebeach.com/accommodations/the-lodge/",
+    url: "https://www.pebblebeach.com/accommodations/the-lodge-at-pebble-beach/",
   },
   {
     name: "The Inn at Spanish Bay™",
@@ -47,7 +47,7 @@ const PBC_LODGING = [
   {
     name: "Casa Palmero™",
     hook: "An intimate 24-room retreat — the most exclusive address on the Peninsula",
-    url: "https://www.pebblebeach.com/accommodations/casa-palmero/",
+    url: "https://www.pebblebeach.com/accommodations/casa-palmero-at-pebble-beach/",
   },
 ];
 

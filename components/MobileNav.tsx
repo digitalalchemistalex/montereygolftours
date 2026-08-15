@@ -283,9 +283,9 @@ export default function MobileNav() {
               })}
               <GroupLabel><span style={{ marginTop: 14, display: "block" }}>Lodging</span></GroupLabel>
               {[
-                { name: "The Lodge at Pebble Beach\u2122", url: "https://www.pebblebeach.com/accommodations/the-lodge/" },
+                { name: "The Lodge at Pebble Beach\u2122", url: "https://www.pebblebeach.com/accommodations/the-lodge-at-pebble-beach/" },
                 { name: "The Inn at Spanish Bay\u2122", url: "https://www.pebblebeach.com/accommodations/the-inn-at-spanish-bay/" },
-                { name: "Casa Palmero\u2122", url: "https://www.pebblebeach.com/accommodations/casa-palmero/" },
+                { name: "Casa Palmero\u2122", url: "https://www.pebblebeach.com/accommodations/casa-palmero-at-pebble-beach/" },
               ].map((p) => (
                 <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" onClick={close} style={{
                   display: "flex", flexDirection: "column", padding: "8px 0", textDecoration: "none",

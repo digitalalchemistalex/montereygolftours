@@ -207,7 +207,7 @@ export default function Header() {
               <div className="px-4 pt-4 pb-3">
                 <div className="mb-2 font-ui text-[9.5px] font-bold uppercase tracking-[.12em] text-[#9a8a6e]">Lodging</div>
                 <div className="grid grid-cols-1 gap-0">
-                  <a href="https://www.pebblebeach.com/accommodations/the-lodge/" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.pebblebeach.com/accommodations/the-lodge-at-pebble-beach/" target="_blank" rel="noopener noreferrer"
                     className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
                     <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">The Lodge at Pebble Beach™</span>
                   </a>
@@ -215,7 +215,7 @@ export default function Header() {
                     className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
                     <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">The Inn at Spanish Bay™</span>
                   </a>
-                  <a href="https://www.pebblebeach.com/accommodations/casa-palmero/" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.pebblebeach.com/accommodations/casa-palmero-at-pebble-beach/" target="_blank" rel="noopener noreferrer"
                     className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
                     <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">Casa Palmero™</span>
                   </a>
