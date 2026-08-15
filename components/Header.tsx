@@ -95,11 +95,19 @@ function FeaturedPanel({ image, alt, title, sub, href }: {
   );
 }
 
-export default function Header() {
+export default function Header({ transparent = false }: { transparent?: boolean }) {
+  const navLinkClass = transparent
+    ? "group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-cream hover:bg-[rgba(250,246,238,.14)] hover:text-gold"
+    : "group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark";
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-4 shadow-[0_2px_12px_rgba(37,35,33,.08)] backdrop-blur-md lg:flex lg:justify-between lg:py-3 md:px-10">
+    <header className={
+      transparent
+        ? "absolute top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:py-6 md:px-10"
+        : "fixed top-0 left-0 right-0 z-50 grid grid-cols-[44px_1fr_44px] items-center gap-4 border-b border-[#e8e2d3] bg-cream/97 px-5 py-4 shadow-[0_2px_12px_rgba(37,35,33,.08)] backdrop-blur-md lg:flex lg:justify-between lg:py-3 md:px-10"
+    }>
       {/* Logo */}
-      <Link href="/" className="col-start-2 flex flex-none items-center justify-center lg:col-auto lg:justify-start">
+      <Link href="/" className={`col-start-2 flex flex-none items-center justify-center lg:col-auto lg:justify-start ${transparent ? "lg:hidden" : ""}`}>
         <Logo size={110} className="lg:hidden" />
         <Logo size={150} className="hidden lg:flex" />
       </Link>
@@ -109,7 +117,7 @@ export default function Header() {
 
         {/* ━━ COURSES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/golf-courses/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+          <Link href="/golf-courses/" className={navLinkClass}>
             Courses {chevron}
           </Link>
 
@@ -181,7 +189,7 @@ export default function Header() {
 
         {/* ━━ PEBBLE BEACH RESORTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <button type="button" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+          <button type="button" className={navLinkClass}>
             Pebble Beach Resorts® {chevron}
           </button>
 
@@ -231,7 +239,7 @@ export default function Header() {
 
         {/* ━━ HOTELS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/hotels/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+          <Link href="/hotels/" className={navLinkClass}>
             Hotels {chevron}
           </Link>
 
@@ -292,7 +300,7 @@ export default function Header() {
 
         {/* ━━ DESTINATIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/destinations/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+          <Link href="/destinations/" className={navLinkClass}>
             Destinations {chevron}
           </Link>
 
@@ -332,7 +340,7 @@ export default function Header() {
 
         {/* ━━ ITINERARIES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div className="group relative">
-          <Link href="/itineraries/" className="group/t flex items-center gap-1 rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+          <Link href="/itineraries/" className={navLinkClass}>
             Itineraries {chevron}
           </Link>
 
@@ -377,7 +385,9 @@ export default function Header() {
         {/* Simple links */}
         {SIMPLE_LINKS.map(l => (
           <Link key={l.href} href={l.href}
-            className="rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark">
+            className={transparent
+              ? "rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-cream hover:bg-[rgba(250,246,238,.14)] hover:text-gold"
+              : "rounded-lg px-3.5 py-2.5 font-ui text-[14px] font-medium text-ink hover:bg-[#f4f0e7] hover:text-terracotta-dark"}>
             {l.label}
           </Link>
         ))}

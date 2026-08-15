@@ -41,7 +41,7 @@ export default function HeroCentered() {
         }}
       />
 
-      <Header />
+      <Header transparent />
 
       <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[720px] flex-col items-center px-6 pb-10 text-center md:pb-12">
         <Image
