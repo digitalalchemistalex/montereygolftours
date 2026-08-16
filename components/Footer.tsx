@@ -11,6 +11,14 @@ const PLAY_LINKS = [
   { label: "Packages", href: "/packages/" },
 ];
 
+const EXPLORE_LINKS = [
+  { label: "Pebble Beach Golf Links®", href: "/golf-courses/pebble-beach-golf-links/" },
+  { label: "Pasatiempo Golf Course", href: "/golf-courses/pasatiempo/" },
+  { label: "Spyglass Hill® Golf Course", href: "/golf-courses/spyglass-hill/" },
+  { label: "Quail Lodge & Golf Club", href: "/golf-courses/quail-lodge/" },
+  { label: "Bayonet", href: "/golf-courses/bayonet/" },
+];
+
 const LEARN_LINKS = [
   { label: "About", href: "/about/" },
   { label: "Blog", href: "/blog/" },
@@ -18,9 +26,31 @@ const LEARN_LINKS = [
   { label: "Contact", href: "/contact/" },
 ];
 
+const TRUST_ITEMS = [
+  "IAGTO Partner",
+  "Authorized Pebble Beach Resorts® Golf Travel Operator",
+  SITE.groupSizeNote,
+];
+
 export default function Footer() {
   return (
     <footer className="border-t-4 border-terracotta bg-cream">
+      {/* Trust bar */}
+      <div className="border-b border-[#e8e2d3] bg-[#f4f0e7] px-6 py-3 md:px-14">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-center">
+          {TRUST_ITEMS.map((item, i) => (
+            <span key={item} className="flex items-center gap-x-6">
+              <span className="font-ui text-[10.5px] font-semibold uppercase tracking-[.08em] text-[#8a8276]">
+                {item}
+              </span>
+              {i < TRUST_ITEMS.length - 1 && (
+                <span className="hidden text-[#d8d1c2] md:inline">&middot;</span>
+              )}
+            </span>
+          ))}
+        </div>
+      </div>
+
       <div className="flex flex-col gap-10 bg-cream px-6 py-12 md:flex-row md:justify-between md:px-14">
         <div className="max-w-[300px]">
           <Link href="/" className="inline-block">
@@ -36,6 +66,17 @@ export default function Footer() {
             <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Play</div>
             <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-ink">
               {PLAY_LINKS.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-terracotta-dark">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Explore Courses</div>
+            <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-ink">
+              {EXPLORE_LINKS.map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-terracotta-dark">
                   {link.label}
                 </Link>
