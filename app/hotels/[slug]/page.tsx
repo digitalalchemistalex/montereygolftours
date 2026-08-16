@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HotelGalleryLightbox from "@/components/HotelGalleryLightbox";
 import { HOTEL_DETAILS } from "@/lib/hotel-details";
 import { HOTELS } from "@/lib/hotels";
 import { COURSES } from "@/lib/courses";
@@ -230,10 +231,9 @@ export default async function HotelPage({ params }: Props) {
                 </div>
               )}
             </div>
+            <HotelGalleryLightbox images={hotel.gallery} hotelName={hotel.name} />
           </section>
-        )}
-
-        {hotel.roomFeatures && (
+        )}        {hotel.roomFeatures && (
           <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Rooms &amp; suites
