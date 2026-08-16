@@ -32,6 +32,12 @@ const TRUST_ITEMS = [
   SITE.groupSizeNote,
 ];
 
+const CONFIDENCE_ITEMS = [
+  { label: "Custom quote within 24 hours", href: "/quote/" },
+  { label: `${SITE.minGroupSize}–${SITE.maxGroupSize} players, any group size`, href: "/quote/" },
+  { label: "14 courses, 11 hotels on the Peninsula", href: "/golf-courses/" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t-4 border-terracotta bg-cream">
@@ -99,11 +105,30 @@ export default function Footer() {
             <div className="font-ui text-[10px] font-bold uppercase tracking-[.16em] text-gold">Contact</div>
             <div className="mt-3 flex flex-col gap-3 font-ui text-[15px] text-ink">
               <a href={SITE.phoneHref}>{SITE.phone}</a>
-              {SITE.email ? <a href={`mailto:${SITE.email}`}>{SITE.email}</a> : null}
+              {SITE.email ? (
+                <a href={`mailto:${SITE.email}`} className="break-all">
+                  {SITE.email}
+                </a>
+              ) : null}
               <span>Monterey, CA</span>
               <ChatTriggerIcon />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Confidence strip */}
+      <div className="border-t border-[#e8e2d3] bg-cream px-6 py-6 md:px-14">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
+          {CONFIDENCE_ITEMS.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="font-ui text-[12.5px] font-medium text-ink hover:text-terracotta-dark"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
 
