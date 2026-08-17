@@ -132,12 +132,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[#e8e2d3] bg-[#f4f0e7] px-6 py-3 text-center md:px-14">
-        <p className="mx-auto max-w-[900px] font-ui text-[10.5px] leading-relaxed text-[#8a8276]">
-          Pebble Beach®, Pebble Beach Resorts®, Pebble Beach Golf Links®, The Links at
-          Spanish Bay®, Spyglass Hill® Golf Course, Del Monte Golf Course®, and their
-          underlying distinctive images are trademarks, service marks, and trade dress of
-          Pebble Beach Company. Used with permission.
+      {/* Pebble Beach Resorts® Trademark Acknowledgment — required by IAGTO agreement */}
+      <div className="border-t border-[#e8e2d3] bg-[#f4f0e7] px-6 py-4 text-center md:px-14">
+        <p className="mx-auto max-w-[860px] font-ui text-[10.5px] leading-relaxed text-[#8a8276]">
+          Pebble Beach Golf Links®, Spyglass Hill® Golf Course, The Links at Spanish Bay®, Del Monte Golf Course®,
+          The Hay™, and Pebble Beach Resorts® are registered trademarks of Pebble Beach Company.
+          Monterey Golf Tours is an IAGTO-contracted golf travel operator authorized to promote and book
+          Pebble Beach Resorts® courses. All rights reserved by Pebble Beach Company.
         </p>
       </div>
 
@@ -152,16 +153,6 @@ export default function Footer() {
           <Link href="/privacy/">Privacy Policy</Link> &middot; <Link href="/terms/">Terms of Use</Link>
         </span>
       </div>
-    
-        {/* Pebble Beach Resorts® Trademark Acknowledgment — required by IAGTO agreement */}
-        <div className="mt-10 border-t border-[#e8e2d3] pt-6 text-center">
-          <p className="mx-auto max-w-[780px] font-body text-[11px] leading-relaxed text-[#8a8276]">
-            Pebble Beach Golf Links®, Spyglass Hill® Golf Course, The Links at Spanish Bay®, Del Monte Golf Course®,
-            The Hay™, and Pebble Beach Resorts® are registered trademarks of Pebble Beach Company.
-            Monterey Golf Tours is an IAGTO-contracted golf travel operator authorized to promote and book
-            Pebble Beach Resorts® courses. All rights reserved by Pebble Beach Company.
-          </p>
-        </div>
-      </footer>
+    </footer>
   );
 }
