@@ -320,7 +320,7 @@ export default function QuoteForm() {
           <input
             type="number"
             min="2"
-            max="200"
+            max="400"
             value={groupSize}
             onChange={(e) => setGroupSize(e.target.value)}
             placeholder="e.g. 12"
