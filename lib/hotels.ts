@@ -2,6 +2,7 @@
 // confirmed Del Monte Golf Course correction (June 30 2026).
 // Casa Munras room count + address confirmed by Raza (see Master Tracker).
 // Quail Lodge room count confirmed by Raza: 93.
+// 2026-08-21: Portola Hotel moved to position #1 per Sean (S1 — best fit for large groups).
 
 export type Hotel = {
   slug: string;
@@ -14,6 +15,16 @@ export type Hotel = {
 };
 
 export const HOTELS: Hotel[] = [
+  {
+    slug: "portola-hotel",
+    image: "/images/hotels/portola-hotel-hero.jpg",
+    name: "Portola Hotel & Spa",
+    city: "Monterey, CA",
+    tier: 2,
+    description:
+      "The Central Coast's first LEED-certified hotel, downtown adjacent to the Monterey Conference Center — best fit for large groups.",
+    onSiteGolf: null,
+  },
   {
     slug: "hyatt-regency-monterey",
     image: "/images/hotels/hyatt-regency-hero.webp",
@@ -72,16 +83,6 @@ export const HOTELS: Hotel[] = [
     tier: 2,
     description:
       "Bayfront on Cannery Row, next door to the Monterey Bay Aquarium, with panoramic coastal views.",
-    onSiteGolf: null,
-  },
-  {
-    slug: "portola-hotel",
-    image: "/images/hotels/portola-hotel-hero.jpg",
-    name: "Portola Hotel & Spa",
-    city: "Monterey, CA",
-    tier: 2,
-    description:
-      "The Central Coast's first LEED-certified hotel, downtown adjacent to the Monterey Conference Center — best fit for large groups.",
     onSiteGolf: null,
   },
   {
