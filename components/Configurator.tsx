@@ -35,18 +35,18 @@ export default function Configurator() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div className="grid grid-cols-2">
           {STEPS.map((s, i) => (
             <Reveal key={s.n} delay={i * 90}>
               <div
-                className={`py-6 ${i % 2 === 0 ? "sm:pr-8" : "sm:pl-8"} ${
+                className={`py-6 ${i % 2 === 0 ? "pr-4 sm:pr-8" : "pl-4 sm:pl-8"} ${
                   i < 2 ? "border-b border-[#ddd6c2]" : ""
-                } ${i % 2 === 0 ? "sm:border-r sm:border-[#ddd6c2]" : ""}`}
+                } ${i % 2 === 0 ? "border-r border-[#ddd6c2]" : ""}`}
               >
-                <div className="font-display text-4xl font-bold leading-none text-gold">
+                <div className="font-display text-3xl font-bold leading-none text-gold sm:text-4xl">
                   {s.n}
                 </div>
-                <div className="mt-3 font-ui text-lg font-semibold text-ink">{s.label}</div>
+                <div className="mt-3 font-ui text-base font-semibold text-ink sm:text-lg">{s.label}</div>
                 <div className="mt-1 font-body text-sm text-[#8a857a]">{s.detail}</div>
               </div>
             </Reveal>
