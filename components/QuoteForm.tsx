@@ -77,6 +77,8 @@ export default function QuoteForm() {
   const [selectedHotels, setSelectedHotels] = useState<string[]>([]);
   const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
   const [groundTransport, setGroundTransport] = useState(false);
+  const [okToCall, setOkToCall] = useState(false);
+  const [okToText, setOkToText] = useState(false);
   const [referralSource, setReferralSource] = useState("");
   const [referralOther, setReferralOther] = useState("");
 
@@ -215,8 +217,23 @@ export default function QuoteForm() {
       activities_interested: selectedActivities,
       ground_transport_needed: groundTransport,
       non_golfer_in_group: nonGolfer,
+      ok_to_call: okToCall,
+      ok_to_text: okToText,
       referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
       message: fullMessage || null,
+      raw_payload: {
+        name, email, phone: phone || null, group_size: groupSize,
+        travel_dates: datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ") || null,
+        trip_length: tripLength, budget_per_person: budget,
+        courses_interested: selectedCourses, hotels_interested: selectedHotels,
+        activities_interested: selectedActivities, ground_transport_needed: groundTransport,
+        ok_to_call: okToCall, ok_to_text: okToText,
+        non_golfer_in_group: nonGolfer,
+        ok_to_call: okToCall,
+        ok_to_text: okToText,
+        referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
+        message: fullMessage || null,
+      },
     });
 
     if (error) {
@@ -538,6 +555,26 @@ export default function QuoteForm() {
             Help arrange ground transportation (airport transfers, between courses/hotels)
           </span>
         </label>
+        <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-5">
+          <label className="flex cursor-pointer items-center gap-2 font-body text-[13px] text-[#4a463f]">
+            <input
+              type="checkbox"
+              checked={okToCall}
+              onChange={(e) => setOkToCall(e.target.checked)}
+              className="h-4 w-4 accent-ocean"
+            />
+            OK to call
+          </label>
+          <label className="flex cursor-pointer items-center gap-2 font-body text-[13px] text-[#4a463f]">
+            <input
+              type="checkbox"
+              checked={okToText}
+              onChange={(e) => setOkToText(e.target.checked)}
+              className="h-4 w-4 accent-ocean"
+            />
+            OK to text
+          </label>
+        </div>
         <p className="mt-2.5 max-w-[600px] font-body text-[12px] leading-relaxed text-[#8a857a]">
           Monterey Regional Airport (MRY) is about 10 minutes from most courses, with
           direct flights from major West Coast and select national hubs. San Jose
