@@ -29,7 +29,7 @@ Raw feedback from Sean. Each item tracked below with status and directive assign
 | S6 | Re-access IAGTO portal to check images available for PBC properties | ❌ Open | MASTER action | Sean/MASTER need to log into IAGTO portal. Could solve S5 and other PBC image gaps. |
 | S7 | Need a toll-free phone number on the site | ❌ Open | Sean action | Sean to supply the number. Once supplied → Raza adds to header/footer/contact. |
 | S8 | Homepage "Which course fits your group?" section needs to be replaced | ✅ Removed · b0676320ae | MASTER | FitFinder removed from app/page.tsx. Replacement section TBD — MASTER to propose. |
-| S9 | QuoteForm must match GTHS — group size needs precise number of golfers | ✅ Done · dc76226a98 | MASTER | GROUP_SIZES dropdown replaced with <input type="number" min="1" max="200"> — label updated to "Number of golfers" |
+| S9 | QuoteForm must match GTHS — group size needs precise number of golfers | ✅ Done · e68097de4392 | MASTER | GROUP_SIZES dropdown replaced with <input type="number" min="2" max="400"> — label "Number of golfers" — 3 commits to reach final values |
 
 ---
 
@@ -368,5 +368,5 @@ bounced_at timestamptz
 |---|---|
 | 2026-08-21 | Tracker created. All directives spec'd. D#16–D#21 defined. All pre-requisites confirmed open. |
 | 2026-08-21 | Sean feedback received (9 items S1–S9). Added to tracker. S9 added to D#15 scope. S1 added to D#18 scope. S7 added to D#19/D#20 scope. S6/S8 require MASTER action before directives can be written. S2/S3/S4/S5 image sourcing blocked on Sean/MASTER. |
-| 2026-08-21 | MASTER fixed S1, S8, S9 directly (no Raza). S1: Portola Hotel moved to #1 in lib/hotels.ts (5ab96d5002). S9: QuoteForm group size changed from range dropdown to number input, label updated to "Number of golfers" (dc76226a98). S8: FitFinder removed from app/page.tsx — replacement section TBD (b0676320ae). All 3 READY on Vercel. |
+| 2026-08-21 | MASTER fixed S1, S8, S9 directly (no Raza). S1: Portola Hotel moved to #1 in lib/hotels.ts (5ab96d5002). S8: FitFinder removed from app/page.tsx — replacement TBD (b0676320ae). S9: QuoteForm group size — number input min=2 max=400, label "Number of golfers" (final: e68097de4392). All READY on Vercel. |
 
