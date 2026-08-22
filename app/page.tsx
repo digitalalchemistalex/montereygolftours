@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import HeroCentered from "@/components/HeroCentered";
 import Configurator from "@/components/Configurator";
-import FitFinder from "@/components/FitFinder";
 import PebbleBeachSection from "@/components/PebbleBeachSection";
 import Courses from "@/components/Courses";
 import Packages from "@/components/Packages";
@@ -26,7 +25,6 @@ export default function Home() {
             To revert: swap <HeroCentered /> back to <Hero />, both kept in the codebase. */}
         <HeroCentered />
         <Configurator />
-        <FitFinder />
         <PebbleBeachSection />
         <Courses />
         <Packages />
@@ -39,3 +37,4 @@ export default function Home() {
     </>
   );
 }
+
