@@ -18,6 +18,12 @@ export type Course = {
   type: string;
   hook: string;
   image?: string;
+  // Golfer stats — verified from mgts-course-intelligence.md
+  rating?: string;   // e.g. "75.1"
+  slope?: number;    // e.g. 141
+  walkable?: "walk" | "cart" | "cart-only"; // walk = encouraged, cart = recommended, cart-only = mandatory
+  pace?: string;     // estimated round time e.g. "4h 30m"
+  difficulty?: "championship" | "challenging" | "moderate" | "accessible";
 };
 
 export const COURSES: Course[] = [
@@ -27,9 +33,14 @@ export const COURSES: Course[] = [
     name: "Bayonet",
     city: "Seaside, CA",
     par: 72,
-    yards: "7,024 yds",
+    yards: "7,094 yds",
     type: "Semi-private",
     hook: "The military-heritage championship at former Fort Ord — ranked among the toughest public courses in the country.",
+    rating: "75.1",
+    slope: 141,
+    walkable: "cart",
+    pace: "4h 45m",
+    difficulty: "championship",
   },
   {
     slug: "black-horse",
@@ -40,6 +51,11 @@ export const COURSES: Course[] = [
     yards: "7,024 yds",
     type: "Semi-private",
     hook: "Sweeping vistas of Monterey Bay throughout the round, with fescue-framed fairways.",
+    rating: "72.1",
+    slope: 132,
+    walkable: "cart",
+    pace: "4h 30m",
+    difficulty: "challenging",
   },
   {
     slug: "carmel-valley-ranch",
@@ -50,6 +66,11 @@ export const COURSES: Course[] = [
     yards: "6,117 yds",
     type: "Resort",
     hook: "Inland warmth and an early clear from the fog — a Pete Dye original with a Gene Bates redesign.",
+    rating: "71.2",
+    slope: 130,
+    walkable: "walk",
+    pace: "4h 15m",
+    difficulty: "challenging",
   },
   {
     slug: "quail-lodge",
@@ -60,6 +81,11 @@ export const COURSES: Course[] = [
     yards: "6,500 yds",
     type: "Resort / semi-private",
     hook: "A resort round in the Carmel Valley sun, away from the coastal marine layer.",
+    rating: "71.4",
+    slope: 128,
+    walkable: "walk",
+    pace: "4h 15m",
+    difficulty: "moderate",
   },
   {
     slug: "laguna-seca-golf-ranch",
@@ -70,6 +96,11 @@ export const COURSES: Course[] = [
     yards: "6,226 yds",
     type: "Daily-fee",
     hook: "An accessible daily-fee round close to downtown Monterey.",
+    rating: "70.7",
+    slope: 129,
+    walkable: "cart",
+    pace: "4h 15m",
+    difficulty: "moderate",
   },
   {
     slug: "pacific-grove-golf-links",
@@ -77,9 +108,14 @@ export const COURSES: Course[] = [
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
-    yards: "5,727 yds",
+    yards: "5,732 yds",
     type: "Municipal",
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
+    rating: "67.7",
+    slope: 116,
+    walkable: "walk",
+    pace: "3h 45m",
+    difficulty: "accessible",
   },
   {
     slug: "poppy-hills",
@@ -87,9 +123,14 @@ export const COURSES: Course[] = [
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
-    yards: "7,091 yds",
+    yards: "7,002 yds",
     type: "Daily-fee (NCGA)",
-    hook: "Golf\'s most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
+    hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
+    rating: "73.5",
+    slope: 135,
+    walkable: "walk",
+    pace: "4h 30m",
+    difficulty: "challenging",
   },
   {
     slug: "club-at-pasadera",
@@ -97,18 +138,28 @@ export const COURSES: Course[] = [
     name: "The Club at Pasadera",
     city: "Monterey, CA",
     par: 71,
-    yards: "6,673–6,733 yds",
+    yards: "6,673 yds",
     type: "Private (limited access)",
     hook: "A Jack Nicklaus Signature course on the Monterey Peninsula — Monday public access.",
+    rating: "73.7",
+    slope: 144,
+    walkable: "cart",
+    pace: "4h 30m",
+    difficulty: "championship",
   },
   {
     slug: "pebble-beach-golf-links",
     name: "Pebble Beach Golf Links®",
     city: "Pebble Beach, CA",
     par: 72,
-    yards: "6,802 yds",
+    yards: "6,828 yds",
     type: "Resort (Pebble Beach Resorts®)",
     hook: "Designed by Jack Neville and Douglas Grant, opened 1919 — the most famous cliff-top course in American golf.",
+    rating: "75.5",
+    slope: 145,
+    walkable: "walk",
+    pace: "5h 30m",
+    difficulty: "championship",
   },
   {
     slug: "spyglass-hill",
@@ -118,6 +169,11 @@ export const COURSES: Course[] = [
     yards: "6,960 yds",
     type: "Resort (Pebble Beach Resorts®)",
     hook: "A Robert Trent Jones Sr. design moving from dunes to forest — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
+    rating: "75.3",
+    slope: 148,
+    walkable: "cart",
+    pace: "5h 00m",
+    difficulty: "championship",
   },
   {
     slug: "links-at-spanish-bay",
@@ -136,6 +192,11 @@ export const COURSES: Course[] = [
     yards: "6,356 yds",
     type: "Resort (Pebble Beach Resorts®)",
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
+    rating: "70.8",
+    slope: 124,
+    walkable: "walk",
+    pace: "4h 00m",
+    difficulty: "moderate",
   },
   {
     slug: "the-hay",
@@ -152,8 +213,13 @@ export const COURSES: Course[] = [
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,
-    yards: "6,473 yds",
+    yards: "6,434 yds",
     type: "Semi-private",
-    hook: "Alister MacKenzie\'s home course, where he lived alongside the 6th green — a top-100 design in its own right.",
+    hook: "Alister MacKenzie's home course, where he lived alongside the 6th green — a top-100 design in its own right.",
+    rating: "73.2",
+    slope: 139,
+    walkable: "walk",
+    pace: "4h 30m",
+    difficulty: "championship",
   },
 ];
