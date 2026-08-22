@@ -319,7 +319,7 @@ export default function QuoteForm() {
         <Field label="Number of golfers" required>
           <input
             type="number"
-            min="1"
+            min="2"
             max="200"
             value={groupSize}
             onChange={(e) => setGroupSize(e.target.value)}
