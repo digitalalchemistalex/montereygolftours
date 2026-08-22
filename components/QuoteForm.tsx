@@ -10,7 +10,6 @@ import { HOTELS } from "@/lib/hotels";
 import { ITINERARIES } from "@/lib/itineraries";
 import Reveal from "./Reveal";
 
-const GROUP_SIZES = ["2-4", "5-8", "9-12", "13-16", "17-20", "21-50", "50+"];
 const BUDGET_RANGES = [
   "Under $1,000/person",
   "$1,000-$1,500/person",
@@ -69,7 +68,7 @@ export default function QuoteForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [groupSize, setGroupSize] = useState(GROUP_SIZES[1]);
+  const [groupSize, setGroupSize] = useState("8");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [datesFlexible, setDatesFlexible] = useState(false);
@@ -317,18 +316,16 @@ export default function QuoteForm() {
             className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
           />
         </Field>
-        <Field label="Group size" required>
-          <select
+        <Field label="Number of golfers" required>
+          <input
+            type="number"
+            min="1"
+            max="200"
             value={groupSize}
             onChange={(e) => setGroupSize(e.target.value)}
+            placeholder="e.g. 12"
             className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          >
-            {GROUP_SIZES.map((g) => (
-              <option key={g} value={g}>
-                {g} players
-              </option>
-            ))}
-          </select>
+          />
         </Field>
         <div className="sm:col-span-2">
           <label className="flex cursor-pointer items-center gap-2.5 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[14px] text-[#4a463f] hover:border-ocean">
@@ -624,3 +621,4 @@ function Field({
     </div>
   );
 }
+
