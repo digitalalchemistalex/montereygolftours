@@ -10,15 +10,6 @@ import { HOTELS } from "@/lib/hotels";
 import { ITINERARIES } from "@/lib/itineraries";
 import Reveal from "./Reveal";
 
-const BUDGET_RANGES = [
-  "Under $1,000/person",
-  "$1,000-$1,500/person",
-  "$1,500-$2,000/person",
-  "$2,000-$3,000/person",
-  "$3,000+/person",
-  "Not sure yet",
-];
-const TRIP_LENGTHS = ["3 days", "4 days", "5 days", "7 days", "Other / not sure yet"];
 const REFERRAL_SOURCES = [
   "Google search",
   "Referred by a friend or colleague",
@@ -28,8 +19,6 @@ const REFERRAL_SOURCES = [
   "Other",
 ];
 
-// Real, already-established content elsewhere on the site (destination pages,
-// hotel dining data) — not invented for this form.
 const ACTIVITIES = [
   "Wine tasting (Carmel Valley — Bernardus, Folktale)",
   "Monterey Bay Aquarium",
@@ -39,8 +28,14 @@ const ACTIVITIES = [
   "Carmel-by-the-Sea galleries & shopping",
 ];
 
-// The Links at Spanish Bay® is closed for renovation until April 17, 2027 and
-// must not be offered as a selectable option here.
+const TRANSPORT_OPTIONS = [
+  { value: "", label: "No transport needed" },
+  { value: "airport", label: "Airport transfers only (MRY / SJC / SFO)" },
+  { value: "ground", label: "Between courses & hotels" },
+  { value: "both", label: "Both airport and ground" },
+];
+
+// The Links at Spanish Bay® is closed for renovation until April 17, 2027.
 const CLOSED_COURSE_SLUGS = new Set(["links-at-spanish-bay"]);
 const BOOKABLE_COURSES = COURSES.filter((c) => !CLOSED_COURSE_SLUGS.has(c.slug));
 
@@ -50,43 +45,45 @@ const PREMIUM_COURSE_SLUGS = new Set([
   "links-at-spanish-bay",
 ]);
 
-// Car Week / Concours d'Elegance runs mid-August — Bayonet and Black Horse
-// close for several days and hotel rates spike. Same fact already disclosed
-// elsewhere on the site (LocalIntel).
 function isCarWeekDate(value: string) {
   if (!value) return false;
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return false;
-  const month = d.getMonth(); // 0-indexed
-  const day = d.getDate();
-  return month === 7 && day >= 10 && day <= 20; // Aug 10-20, approximate window
+  return d.getMonth() === 7 && d.getDate() >= 10 && d.getDate() <= 20;
 }
 
 export default function QuoteForm() {
   const searchParams = useSearchParams();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  // 1. Contact Info
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [okToCall, setOkToCall] = useState(false);
+  const [okToText, setOkToText] = useState(false);
+  const [returningCustomer, setReturningCustomer] = useState(false);
+
+  // 2. Trip Details
   const [groupSize, setGroupSize] = useState("8");
+  const [nights, setNights] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [datesFlexible, setDatesFlexible] = useState(false);
-  const [tripLength, setTripLength] = useState(TRIP_LENGTHS[1]);
   const [nonGolfer, setNonGolfer] = useState(false);
+
+  // 3–4. Golf & Lodging
   const [selectedHotels, setSelectedHotels] = useState<string[]>([]);
   const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
-  const [groundTransport, setGroundTransport] = useState(false);
-  const [okToCall, setOkToCall] = useState(false);
-  const [okToText, setOkToText] = useState(false);
+
+  // 5. Services
+  const [transportNeeded, setTransportNeeded] = useState("");
+
+  // 6. Almost Done
   const [referralSource, setReferralSource] = useState("");
   const [referralOther, setReferralOther] = useState("");
+  const [message, setMessage] = useState("");
 
-  // Read context from the referring page (course/hotel/trip slug in the URL)
-  // once, up front, so a "Get a custom quote" click carries what the person
-  // was actually looking at instead of always landing on an identical blank
-  // form. Computed as lazy initial state rather than in an effect so it
-  // doesn't trigger extra renders.
   const initialContext = useMemo(() => {
     const courseSlug = searchParams.get("course");
     const hotelSlug = searchParams.get("hotel");
@@ -94,93 +91,37 @@ export default function QuoteForm() {
 
     if (courseSlug) {
       const course = COURSES.find((c) => c.slug === courseSlug);
-      if (course) {
-        return {
-          courses: [courseSlug],
-          message: "",
-          budget: BUDGET_RANGES[0],
-          note: `Noted — you're inquiring about ${course.name}.`,
-        };
-      }
+      if (course) return { courses: [courseSlug], contextNote: `Noted — you're inquiring about ${course.name}.` };
     }
-
     if (hotelSlug) {
       const hotel = HOTELS.find((h) => h.slug === hotelSlug);
-      if (hotel) {
-        return {
-          courses: [] as string[],
-          message: `I'm interested in staying at ${hotel.name}.`,
-          budget: BUDGET_RANGES[0],
-          note: `Noted — you're inquiring about ${hotel.name}.`,
-        };
-      }
+      if (hotel) return { courses: [] as string[], contextNote: `Noted — you're inquiring about ${hotel.name}.` };
     }
-
     if (tripSlug) {
       const trip = ITINERARIES[tripSlug];
-      if (trip) {
-        const closest =
-          BUDGET_RANGES.find((b) => {
-            if (b === "Not sure yet") return false;
-            const num = parseInt(b.replace(/[^0-9]/g, ""), 10);
-            return trip.priceFrom <= num;
-          }) ?? BUDGET_RANGES[0];
-        return {
-          courses: trip.courseSlugs,
-          message: `I'm interested in the ${trip.title} itinerary.`,
-          budget: closest,
-          note: `Noted — you're inquiring about the ${trip.title} itinerary.`,
-        };
-      }
+      if (trip) return { courses: trip.courseSlugs, contextNote: `Noted — you're inquiring about the ${trip.title} itinerary.` };
     }
-
-    return { courses: [] as string[], message: "", budget: BUDGET_RANGES[0], note: null as string | null };
+    return { courses: [] as string[], contextNote: null as string | null };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [budget, setBudget] = useState(initialContext.budget);
   const [selectedCourses, setSelectedCourses] = useState<string[]>(initialContext.courses);
-  const [message, setMessage] = useState(initialContext.message);
-  const contextNote = initialContext.note;
+  const { contextNote } = initialContext;
 
   function toggleCourse(slug: string) {
-    setSelectedCourses((prev) =>
-      prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]
-    );
+    setSelectedCourses((prev) => prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]);
   }
-
   function toggleHotel(slug: string) {
-    setSelectedHotels((prev) =>
-      prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]
-    );
+    setSelectedHotels((prev) => prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]);
+  }
+  function toggleActivity(a: string) {
+    setSelectedActivities((prev) => prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]);
   }
 
-  function toggleActivity(activity: string) {
-    setSelectedActivities((prev) =>
-      prev.includes(activity) ? prev.filter((a) => a !== activity) : [...prev, activity]
-    );
-  }
-
-  // Live compatibility hint: flag when a selected course's green fee alone
-  // is likely to exceed a "budget" range the person has chosen.
-  const compatibilityHint = useMemo(() => {
-    if (budget !== "Under $1,000/person" && budget !== "$1,000-$1,500/person") return null;
-    const premiumSelected = selectedCourses
-      .filter((s) => PREMIUM_COURSE_SLUGS.has(s))
-      .map((s) => COURSES.find((c) => c.slug === s)?.name)
-      .filter(Boolean);
-    if (premiumSelected.length === 0) return null;
-    return `Heads up: ${premiumSelected.join(", ")} typically run $350\u2013$695 per round, which may exceed your selected budget across a multi-round trip. We'll still send options \u2014 just flagging it now so there are no surprises.`;
-  }, [budget, selectedCourses]);
-
-  // Live estimate: sum of green fees for the courses actually selected.
-  // Golf only — lodging and transport are not included. Uses each course's
-  // own verified priceEstimate; courses without a published rate are
-  // excluded from the sum but noted.
+  // Live green-fee estimate when courses are selected
   const liveEstimate = useMemo(() => {
     if (selectedCourses.length === 0) return null;
-    let total = 0;
-    let missing = 0;
+    let total = 0, missing = 0;
     for (const slug of selectedCourses) {
       const est = COURSE_DETAILS[slug]?.priceEstimate;
       if (typeof est === "number") total += est;
@@ -190,78 +131,62 @@ export default function QuoteForm() {
     return { total, missing, count: selectedCourses.length };
   }, [selectedCourses]);
 
+  // PBC premium-course notice (no budget field — just flag the courses)
+  const premiumNotice = useMemo(() => {
+    const premium = selectedCourses
+      .filter((s) => PREMIUM_COURSE_SLUGS.has(s))
+      .map((s) => COURSES.find((c) => c.slug === s)?.name)
+      .filter(Boolean);
+    if (premium.length === 0) return null;
+    return `${premium.join(" and ")} ${premium.length === 1 ? "is" : "are"} Pebble Beach Resorts® — green fees run $350–$695 per round. We'll include full pricing in your custom quote.`;
+  }, [selectedCourses]);
+
   const carWeekFlag = isCarWeekDate(startDate) || isCarWeekDate(endDate);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
 
-    const travelDatesValue = datesFlexible
+    const travelDates = datesFlexible
       ? "Flexible"
       : [startDate, endDate].filter(Boolean).join(" to ");
 
-    const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner/family member." : null]
-      .filter(Boolean)
-      .join(" ");
+    const fullMessage = [
+      message,
+      nonGolfer ? "Group includes a non-golfing partner or family member." : null,
+    ].filter(Boolean).join(" ");
 
-    const { error } = await supabase.from("leads").insert({
+    const payload = {
       name,
       email,
       phone: phone || null,
       group_size: groupSize,
-      travel_dates: travelDatesValue || null,
-      trip_length: tripLength,
-      budget_per_person: budget,
+      nights: nights || null,
+      travel_dates: travelDates || null,
       courses_interested: selectedCourses,
       hotels_interested: selectedHotels,
       activities_interested: selectedActivities,
-      ground_transport_needed: groundTransport,
-      non_golfer_in_group: nonGolfer,
+      transport_needed: transportNeeded || null,
       ok_to_call: okToCall,
       ok_to_text: okToText,
+      returning_customer: returningCustomer,
+      non_golfer_in_group: nonGolfer,
       referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
       message: fullMessage || null,
-      raw_payload: {
-        name, email, phone: phone || null, group_size: groupSize,
-        travel_dates: datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ") || null,
-        trip_length: tripLength, budget_per_person: budget,
-        courses_interested: selectedCourses, hotels_interested: selectedHotels,
-        activities_interested: selectedActivities, ground_transport_needed: groundTransport,
-        non_golfer_in_group: nonGolfer,
-        referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
-        message: fullMessage || null,
-      },
+    };
+
+    const { error } = await supabase.from("leads").insert({
+      ...payload,
+      raw_payload: payload,
     });
 
-    if (error) {
-      setStatus("error");
-      return;
-    }
+    if (error) { setStatus("error"); return; }
 
-    // Directive #6 — fire-and-forget lead notification. A failure here
-    // must never block the visitor's success state.
     fetch("/api/notify-lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        phone: phone || null,
-        group_size: groupSize,
-        travel_dates: datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ") || null,
-        trip_length: tripLength,
-        budget_per_person: budget,
-        courses_interested: selectedCourses,
-        hotels_interested: selectedHotels,
-        activities_interested: selectedActivities,
-        ground_transport_needed: groundTransport,
-        non_golfer_in_group: nonGolfer,
-        referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
-        message: fullMessage || null,
-      }),
-    }).catch(() => {
-      // Intentionally swallowed — notification failure must not affect UX.
-    });
+      body: JSON.stringify(payload),
+    }).catch(() => {});
 
     setStatus("success");
   }
@@ -299,91 +224,54 @@ export default function QuoteForm() {
         </Reveal>
       )}
 
-      {/* Section: Your group */}
-      <div className="mb-2 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
-        Your group
-      </div>
+      {/* ── 1. Contact Info ── */}
+      <SectionHeader n={1} label="Contact Info" />
       <div className="grid grid-cols-1 gap-5 border-b border-[#ede8da] pb-7 sm:grid-cols-2">
-        <Field label="Name" required>
-          <input
-            type="text"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          />
+        <Field label="First name" required>
+          <input type="text" required value={name} onChange={(e) => setName(e.target.value)}
+            className={inputCls} placeholder="e.g. John" />
         </Field>
         <Field label="Email" required>
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          />
+          <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
+            className={inputCls} />
         </Field>
-        <Field label="Phone (faster response with phone)">
-          <input
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          />
+        <Field label="Mobile">
+          <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
+            className={inputCls} placeholder="+1 (555) 000-0000" />
         </Field>
-        <Field label="Number of golfers" required>
-          <input
-            type="number"
-            min="2"
-            max="400"
-            value={groupSize}
-            onChange={(e) => setGroupSize(e.target.value)}
-            placeholder="e.g. 12"
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          />
-        </Field>
+        <div className="flex flex-col justify-end gap-2">
+          <p className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+            Contact preferences
+          </p>
+          <label className={checkRowCls}>
+            <input type="checkbox" checked={okToCall} onChange={(e) => setOkToCall(e.target.checked)} className={checkCls} />
+            You may call me to discuss my quote
+          </label>
+          <label className={checkRowCls}>
+            <input type="checkbox" checked={okToText} onChange={(e) => setOkToText(e.target.checked)} className={checkCls} />
+            You may text me with questions about my trip
+          </label>
+        </div>
         <div className="sm:col-span-2">
-          <label className="flex cursor-pointer items-center gap-2.5 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[14px] text-[#4a463f] hover:border-ocean">
-            <input
-              type="checkbox"
-              checked={nonGolfer}
-              onChange={(e) => setNonGolfer(e.target.checked)}
-              className="h-4 w-4 accent-ocean"
-            />
-            Traveling with a non-golfing partner or family member?
+          <label className={checkRowCls}>
+            <input type="checkbox" checked={returningCustomer} onChange={(e) => setReturningCustomer(e.target.checked)} className={checkCls} />
+            I&apos;ve booked with Monterey Golf Tours before
           </label>
         </div>
       </div>
 
-      {/* Section: Your trip */}
-      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
-        Your trip
-      </div>
+      {/* ── 2. Trip Details ── */}
+      <SectionHeader n={2} label="Trip Details — Golf & Lodging" />
       <div className="grid grid-cols-1 gap-5 border-b border-[#ede8da] pb-7 sm:grid-cols-2">
-        <Field label="Trip length" required>
-          <select
-            value={tripLength}
-            onChange={(e) => setTripLength(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          >
-            {TRIP_LENGTHS.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+        <Field label="Number of golfers" required>
+          <input type="number" min="2" max="400" required value={groupSize}
+            onChange={(e) => setGroupSize(e.target.value)}
+            placeholder="e.g. 12" className={inputCls} />
         </Field>
-        <Field label="Budget per person">
-          <select
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          >
-            {BUDGET_RANGES.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
+        <Field label="Nights">
+          <input type="number" min="1" max="30" value={nights}
+            onChange={(e) => setNights(e.target.value)}
+            placeholder="e.g. 4" className={inputCls} />
         </Field>
 
         <div className="sm:col-span-2">
@@ -393,259 +281,178 @@ export default function QuoteForm() {
           {!datesFlexible && (
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Start date</label>
-                <input
-                  type="date"
-                  value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
-                  className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-                />
+                <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Arrival</label>
+                <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} className={inputCls} />
               </div>
               <div>
-                <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">End date</label>
-                <input
-                  type="date"
-                  value={endDate}
-                  onChange={(e) => setEndDate(e.target.value)}
-                  min={startDate || undefined}
-                  className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-                />
+                <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Departure</label>
+                <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)}
+                  min={startDate || undefined} className={inputCls} />
               </div>
             </div>
           )}
           <label className="mt-2.5 flex cursor-pointer items-center gap-2 font-ui text-[13px] text-[#6a665e]">
-            <input
-              type="checkbox"
-              checked={datesFlexible}
-              onChange={(e) => {
-                setDatesFlexible(e.target.checked);
-                if (e.target.checked) {
-                  setStartDate("");
-                  setEndDate("");
-                }
-              }}
-              className="h-3.5 w-3.5 accent-ocean"
-            />
+            <input type="checkbox" checked={datesFlexible}
+              onChange={(e) => { setDatesFlexible(e.target.checked); if (e.target.checked) { setStartDate(""); setEndDate(""); } }}
+              className="h-3.5 w-3.5 accent-ocean" />
             My dates are flexible
           </label>
-
           {carWeekFlag && (
             <div className="mt-3 rounded-lg border border-[#e8b876] bg-[#fdf3e2] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#6a5528]">
               Heads up: mid-August is Car Week and the Concours d&apos;Elegance —
-              Bayonet and Black Horse close for several days and hotel rates spike
-              well above normal that week. We&apos;ll still send options, but wanted
-              you to know before booking.
+              Bayonet and Black Horse close for several days and hotel rates spike that week.
+              We&apos;ll still send options, but wanted you to know before booking.
             </div>
           )}
         </div>
+
+        <div className="sm:col-span-2">
+          <label className={checkRowCls}>
+            <input type="checkbox" checked={nonGolfer} onChange={(e) => setNonGolfer(e.target.checked)} className={checkCls} />
+            Traveling with a non-golfing partner or family member?
+          </label>
+        </div>
       </div>
 
-      {compatibilityHint && (
-        <div className="mt-5 rounded-lg border border-[#e8cfa0] bg-[#fdf3e2] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#6a5528]">
-          {compatibilityHint}
-        </div>
-      )}
-
-      <div className="mt-6">
+      {/* ── 3. Golf ── */}
+      <SectionHeader n={3} label="Golf" />
+      <div className="border-b border-[#ede8da] pb-7">
         <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
-          Courses you&apos;re interested in (optional)
+          Courses you&apos;re interested in <span className="font-normal text-[#8a857a]">(optional — select one or more)</span>
         </label>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {BOOKABLE_COURSES.map((c) => (
-            <label
-              key={c.slug}
-              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean"
-            >
-              <input
-                type="checkbox"
-                checked={selectedCourses.includes(c.slug)}
-                onChange={() => toggleCourse(c.slug)}
-                className="h-4 w-4 accent-ocean"
-              />
+            <label key={c.slug}
+              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean">
+              <input type="checkbox" checked={selectedCourses.includes(c.slug)}
+                onChange={() => toggleCourse(c.slug)} className={checkCls} />
               {c.name}
             </label>
           ))}
         </div>
-
+        {premiumNotice && (
+          <div className="mt-4 rounded-lg border border-[#e8d9a0] bg-[#fdf8e8] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#6a5528]">
+            {premiumNotice}
+          </div>
+        )}
         {liveEstimate && (
-          <div className="mt-4 rounded-lg border border-[#cfe0d8] bg-[#eef6f1] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#2f6b4f]">
+          <div className="mt-3 rounded-lg border border-[#cfe0d8] bg-[#eef6f1] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#2f6b4f]">
             Your selected {liveEstimate.count === 1 ? "course adds" : `${liveEstimate.count} courses add`} up
             to about{" "}
-            <span className="font-display text-base font-bold">
-              ${liveEstimate.total.toLocaleString()}
-            </span>{" "}
-            per player in green fees{liveEstimate.missing > 0 ? " (some selected courses don't publish a rate and aren't included in this figure)" : ""}
-            . This is golf only — lodging and transport aren&apos;t included yet.
+            <span className="font-display text-base font-bold">${liveEstimate.total.toLocaleString()}</span>
+            {" "}per player in green fees{liveEstimate.missing > 0 ? " (some courses don't publish a rate and aren't included)" : ""}.
+            Golf only — lodging and transport not included.
           </div>
         )}
       </div>
 
-      {/* Section: Lodging */}
-      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
-        Lodging
-      </div>
+      {/* ── 4. Lodging ── */}
+      <SectionHeader n={4} label="Lodging" />
       <div className="border-b border-[#ede8da] pb-7">
         <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
-          Hotels you&apos;re interested in (optional)
+          Hotels you&apos;re interested in <span className="font-normal text-[#8a857a]">(optional)</span>
         </label>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {HOTELS.map((h) => (
-            <label
-              key={h.slug}
-              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean"
-            >
-              <input
-                type="checkbox"
-                checked={selectedHotels.includes(h.slug)}
-                onChange={() => toggleHotel(h.slug)}
-                className="h-4 w-4 accent-ocean"
-              />
+            <label key={h.slug}
+              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean">
+              <input type="checkbox" checked={selectedHotels.includes(h.slug)}
+                onChange={() => toggleHotel(h.slug)} className={checkCls} />
               {h.name}
             </label>
           ))}
         </div>
         <p className="mt-2.5 font-body text-[12px] text-[#8a857a]">
-          Not sure yet? Leave this blank and we&apos;ll match a hotel to whichever
-          courses you play.
+          Not sure yet? Leave this blank — we&apos;ll match lodging to whichever courses you play.
         </p>
       </div>
 
-      {/* Section: Beyond golf */}
-      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
-        Beyond golf
-      </div>
-      <div className="border-b border-[#ede8da] pb-7">
-        <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
-          Dining and activities of interest (optional)
-        </label>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-          {ACTIVITIES.map((a) => (
-            <label
-              key={a}
-              className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean"
-            >
-              <input
-                type="checkbox"
-                checked={selectedActivities.includes(a)}
-                onChange={() => toggleActivity(a)}
-                className="h-4 w-4 accent-ocean"
-              />
-              {a}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      {/* Section: Transportation */}
-      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
-        Transportation
-      </div>
-      <div className="border-b border-[#ede8da] pb-7">
-        <label className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3.5 py-3 font-body text-[14px] text-[#4a463f] hover:border-ocean">
-          <input
-            type="checkbox"
-            checked={groundTransport}
-            onChange={(e) => setGroundTransport(e.target.checked)}
-            className="mt-0.5 h-4 w-4 accent-ocean"
-          />
-          <span>
-            Help arrange ground transportation (airport transfers, between courses/hotels)
-          </span>
-        </label>
-        <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-5">
-          <label className="flex cursor-pointer items-center gap-2 font-body text-[13px] text-[#4a463f]">
-            <input
-              type="checkbox"
-              checked={okToCall}
-              onChange={(e) => setOkToCall(e.target.checked)}
-              className="h-4 w-4 accent-ocean"
-            />
-            OK to call
+      {/* ── 5. Dining, Activities & Transport ── */}
+      <SectionHeader n={5} label="Dining, Activities & Transport" />
+      <div className="border-b border-[#ede8da] pb-7 space-y-5">
+        <div>
+          <label className="mb-2 block font-ui text-[13px] font-semibold text-ink">
+            Activities of interest <span className="font-normal text-[#8a857a]">(optional)</span>
           </label>
-          <label className="flex cursor-pointer items-center gap-2 font-body text-[13px] text-[#4a463f]">
-            <input
-              type="checkbox"
-              checked={okToText}
-              onChange={(e) => setOkToText(e.target.checked)}
-              className="h-4 w-4 accent-ocean"
-            />
-            OK to text
-          </label>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {ACTIVITIES.map((a) => (
+              <label key={a}
+                className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#e3ddcf] bg-[#faf8f2] px-3 py-2 font-body text-[13px] text-[#4a463f] hover:border-ocean">
+                <input type="checkbox" checked={selectedActivities.includes(a)}
+                  onChange={() => toggleActivity(a)} className={checkCls} />
+                {a}
+              </label>
+            ))}
+          </div>
         </div>
-        <p className="mt-2.5 max-w-[600px] font-body text-[12px] leading-relaxed text-[#8a857a]">
-          Monterey Regional Airport (MRY) is about 10 minutes from most courses, with
-          direct flights from major West Coast and select national hubs. San Jose
-          (SJC) and San Francisco (SFO) are 90–115min and 115min drives respectively if you&apos;re
-          flying into one of those instead.
-        </p>
+        <Field label="Transportation">
+          <select value={transportNeeded} onChange={(e) => setTransportNeeded(e.target.value)} className={inputCls}>
+            {TRANSPORT_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>{o.label}</option>
+            ))}
+          </select>
+          {transportNeeded && (
+            <p className="mt-2 font-body text-[12px] text-[#8a857a]">
+              MRY is 10 min from most courses. SJC and SFO are 90–115 min drives if flying into the Bay Area instead.
+            </p>
+          )}
+        </Field>
       </div>
 
-      {/* Section: How did you hear about us */}
-      <div className="mb-2 mt-7 font-ui text-[11px] font-bold uppercase tracking-[.1em] text-gold">
-        How did you hear about us?
-      </div>
-      <div className="border-b border-[#ede8da] pb-7">
-        <select
-          value={referralSource}
-          onChange={(e) => setReferralSource(e.target.value)}
-          className="w-full max-w-[400px] rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-        >
-          <option value="">Select an option</option>
-          {REFERRAL_SOURCES.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
-        {referralSource === "Other" && (
-          <input
-            type="text"
-            placeholder="Please tell us where you heard about us"
-            value={referralOther}
-            onChange={(e) => setReferralOther(e.target.value)}
-            className="mt-3 w-full max-w-[400px] rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          />
-        )}
-      </div>
-
-      <div className="mt-6">
-        <Field label="Anything we should know about your group? (optional)">
-          <textarea
-            rows={4}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean"
-          />
+      {/* ── 6. Almost Done ── */}
+      <SectionHeader n={6} label="Almost Done" />
+      <div className="space-y-5">
+        <Field label="Anything we should know about your group?">
+          <textarea rows={3} value={message} onChange={(e) => setMessage(e.target.value)}
+            placeholder="Special requests, anniversary trip, corporate event, handicaps, walking vs riding…"
+            className={inputCls} />
+        </Field>
+        <Field label="How did you hear about us?">
+          <select value={referralSource} onChange={(e) => setReferralSource(e.target.value)}
+            className={`${inputCls} max-w-[400px]`}>
+            <option value="">Select one…</option>
+            {REFERRAL_SOURCES.map((r) => <option key={r} value={r}>{r}</option>)}
+          </select>
+          {referralSource === "Other" && (
+            <input type="text" placeholder="Please tell us where" value={referralOther}
+              onChange={(e) => setReferralOther(e.target.value)}
+              className={`mt-3 ${inputCls} max-w-[400px]`} />
+          )}
         </Field>
       </div>
 
       {status === "error" && (
         <p className="mt-4 font-ui text-sm text-[#a83232]">
-          Something went wrong submitting your request. Please try again, or call us
-          directly.
+          Something went wrong. Please try again or call us directly.
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="mt-7 w-full rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark disabled:opacity-60 sm:w-auto"
-      >
-        {status === "submitting" ? "Sending…" : "Send my quote request"}
+      <button type="submit" disabled={status === "submitting"}
+        className="mt-8 w-full rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark disabled:opacity-60 sm:w-auto">
+        {status === "submitting" ? "Sending…" : "Get My Custom Quote →"}
       </button>
     </form>
   );
 }
 
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
+const inputCls = "w-full rounded-lg border border-[#d8d2c2] bg-[#faf8f2] px-3.5 py-2.5 font-body text-[15px] text-ink outline-none focus:border-ocean";
+const checkCls = "h-4 w-4 accent-ocean flex-shrink-0";
+const checkRowCls = "flex cursor-pointer items-center gap-2.5 font-body text-[14px] text-[#4a463f]";
+
+function SectionHeader({ n, label }: { n: number; label: string }) {
+  return (
+    <div className="mb-3 mt-8 flex items-center gap-3 first:mt-0">
+      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-ocean font-ui text-[11px] font-bold text-cream">
+        {n}
+      </div>
+      <div className="font-ui text-[13px] font-bold uppercase tracking-[.08em] text-ink">
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <div>
       <label className="mb-1.5 block font-ui text-[13px] font-semibold text-ink">
@@ -655,4 +462,3 @@ function Field({
     </div>
   );
 }
-
