@@ -15,6 +15,40 @@ MGTS launched with no admin panel (explicitly ruled out in strategy doc). That d
 
 ---
 
+## Sean Feedback — Received 2026-08-21
+
+Raw feedback from Sean. Each item tracked below with status and directive assignment.
+
+| # | Sean's request | Status | Assigned to | Notes |
+|---|---|---|---|---|
+| S1 | Portola Hotel listed first in all dropdowns and lodging pages | ❌ Open | TBD directive | Ordering change across QuoteForm hotel dropdown, lodging pages, any hotel list on site |
+| S2 | Carmel Valley Ranch golf photos are no good | ❌ Open | TBD directive | Need better golf course photos — not the current ones. Source needed. |
+| S3 | Pasadera has only the hero image — needs more photos | ❌ Open | TBD directive | Single image on Pasadera page. Need gallery or multiple photos. |
+| S4 | Pacific Grove page has a photo problem | ❌ Open | TBD directive | Unspecified — need to inspect live page and identify the issue |
+| S5 | Poppy Hills images aren't good — need to find some | ❌ Open | TBD directive | Need sourcing + replacement. IAGTO portal may have options (see S6). |
+| S6 | Re-access IAGTO portal to check images available for PBC properties | ❌ Open | MASTER action | Sean/MASTER need to log into IAGTO portal. Could solve S5 and other PBC image gaps. |
+| S7 | Need a toll-free phone number on the site | ❌ Open | Sean action | Sean to supply the number. Once supplied → Raza adds to header/footer/contact. |
+| S8 | Homepage "Which course fits your group?" section needs to be replaced | ❌ Open | TBD directive | Sean doesn't see value. Needs a better use of that real estate. MASTER to propose replacement before directive is written. |
+| S9 | QuoteForm must match GTHS — group size needs precise number of golfers | ❌ Open | D#15 scope addition | This is part of the D#15 QuoteForm upgrade. Group size field must be a number input, not a range or dropdown. Match GTHS exactly. |
+
+---
+
+## Action Items from Sean Feedback
+
+### MASTER must decide/action before Raza can touch:
+
+- **S6:** Log into IAGTO portal, audit what images are available for PBC properties (Pebble Beach Golf Links®, Spyglass Hill®, Del Monte®). This could solve S5 (Poppy Hills is not PBC but IAGTO portal may have Monterey Peninsula golf imagery). Document what's available and what requires photographer credit.
+- **S7:** Sean supplies the toll-free number → MASTER adds to directive for Raza to implement in header, footer, contact page, QuoteForm.
+- **S8:** MASTER proposes what replaces "Which course fits your group?" before any directive is written. Options: a testimonials strip, a "How it works" 3-step block, an itinerary highlights section, a stats bar, or a trust/credibility block. Decision needed before D#13/D#14 work begins.
+
+### Raza directive scope additions:
+
+- **S1:** Add to next content directive — Portola Hotel sort_order = 1 in data file or Supabase. Affects: hotel dropdown in QuoteForm, lodging page order, any hotel list component.
+- **S2, S3, S4, S5:** Image sourcing is a MASTER/Sean task. Once images are sourced and supplied, Raza implements. Do not send Raza to find images — he will use wrong ones.
+- **S9:** Already within D#15 scope. Add explicit note: group_size field must be `<input type="number" min="1">` — not a dropdown, not a range. Match GTHS QuoteForm exactly.
+
+---
+
 ## Pre-requisites (must all close before D#16 starts)
 
 | Item | Status | Notes |
@@ -22,7 +56,7 @@ MGTS launched with no admin panel (explicitly ruled out in strategy doc). That d
 | D#12 hero stats fixed (8→14 courses, 8→11 hotels) | ❌ Open | Raza session lock — D#12 only |
 | D#13 PBR nav mega-menu live | ❌ Open | Blocked on D#12 completion |
 | D#14 PBR homepage section live | ❌ Open | Blocked on D#12 completion |
-| D#15 QuoteForm 25-field upgrade | ❌ Open | Blocked on D#12 completion |
+| D#15 QuoteForm 25-field upgrade | ❌ Open | Blocked on D#12 completion. Now also includes S9 (precise group size number input) |
 | MASTER formal sign-off on admin build | ❌ Needed | Reverses no-admin-panel rule in strategy doc |
 
 ---
@@ -103,6 +137,7 @@ MGTS launched with no admin panel (explicitly ruled out in strategy doc). That d
 - IAGTO mandatory acknowledgment line in every quote email footer
 - Monterey TOT = 10.5% (pre-filled, editable)
 - California golf tax = 0% (pre-filled)
+- Portola Hotel must be first in hotel selector (S1)
 
 **rate_configs table schema:**
 ```
@@ -156,6 +191,7 @@ updated_at timestamptz DEFAULT NOW()
 - [ ] Per-person breakdown: golfer/non-golfer × single/double occ
 - [ ] PBC courses flagged in course picker (IAGTO badge, rate shown internally only)
 - [ ] Spanish Bay® greyed out / disabled in course picker
+- [ ] Portola Hotel listed first in hotel selector (S1)
 - [ ] Branded email preview (Sean sees exactly what customer sees)
 - [ ] From address formatted correctly with display name
 - [ ] Course images absolute URLs in email
@@ -182,6 +218,7 @@ updated_at timestamptz DEFAULT NOW()
 - Resend webhook must be manually registered at resend.com after go-live (health panel must show this as red until done)
 - Gmail poll cron: every 2hrs, matches reply sender email to quoted leads, logs lead_replied to activity_log
 - Twilio is currently trial — SMS code is built but won't work until Sean upgrades + verifies toll-free number
+- Toll-free number to be supplied by Sean (S7) — add to SMS sender config once received
 
 **email_log table schema:**
 ```
@@ -215,6 +252,7 @@ bounced_at timestamptz
 - [ ] Cron routes added to vercel.json
 - [ ] src/lib/twilio-sms.ts — smsQuoteToLead() function
 - [ ] Twilio SMS fires after quote send if ok_to_text=true
+- [ ] Toll-free number configured once Sean supplies it (S7)
 - [ ] Activity feed shows email tracking events (opened, clicked, replied)
 - [ ] Health panel Resend webhook status shows red until manually confirmed
 
@@ -243,6 +281,7 @@ bounced_at timestamptz
 - [ ] Lead pipeline stats (total leads, last received timestamp)
 - [ ] Email alerts status (red if RESEND_API_KEY missing)
 - [ ] Hero stats check (confirms D#12 is live — 14 courses, 11 hotels)
+- [ ] Toll-free number present in site config (S7)
 
 **Completion criteria:** Sean can see at a glance exactly what's broken and what's working with no technical knowledge needed.
 
@@ -273,8 +312,8 @@ bounced_at timestamptz
 | Bare from address | Resend rejected — "mike@..." not accepted | Format: `"Name <email>"` |
 | Relative image URLs in email | Images broken in email clients | Prepend `https://montereygolftours.com` if path starts with `/` |
 | Notes column mismatch | activity_log insert failed silently | Notes go in `details.note` (jsonb), not a separate column |
-| columns don't exist in Supabase | Supabase silently drops fields | Verify schema before any insert |
-| preview URL returns SSO wall | Can't use preview URLs for testing | Always test on `montereygolftours.vercel.app` |
+| Columns don't exist in Supabase | Supabase silently drops fields | Verify schema before any insert |
+| Preview URL returns SSO wall | Can't use preview URLs for testing | Always test on `montereygolftours.vercel.app` |
 
 ---
 
@@ -287,6 +326,13 @@ bounced_at timestamptz
 | Pull exact PBC trademark disclaimer from IAGTO agreement | Footer text | ❌ Not done |
 | Upgrade Twilio trial → paid + submit toll-free verification | D#19 SMS | ❌ Not done |
 | Register Resend webhook at resend.com after D#19 deploys | Email tracking | ❌ Post-launch |
+| Supply toll-free phone number for site (S7) | Header/footer/contact | ❌ Not supplied |
+| Log into IAGTO portal — audit available images for PBC properties (S6) | S2/S3/S4/S5 image fixes | ❌ Not done |
+| Source replacement photos for CVR golf (S2) | Course page | ❌ Not done |
+| Source additional photos for Pasadera (S3) | Course page | ❌ Not done |
+| Identify/fix Pacific Grove photo issue (S4) | Course page | ❌ Needs inspection |
+| Source replacement Poppy Hills images (S5) | Course page | ❌ Not done |
+| Decide what replaces "Which course fits your group?" homepage section (S8) | Homepage | ❌ MASTER to propose options |
 
 ---
 
@@ -299,7 +345,7 @@ bounced_at timestamptz
 | ADMIN_SECRET | HMAC auth (D#16) | ❌ Not yet created |
 | TWILIO_ACCOUNT_SID | SMS (D#19) | ✅ Set (trial) |
 | TWILIO_AUTH_TOKEN | SMS (D#19) | ✅ Set (trial) |
-| TWILIO_FROM_NUMBER | SMS (D#19) | ✅ Set (trial, unverified) |
+| TWILIO_FROM_NUMBER | SMS (D#19) | ✅ Set (trial, unverified — awaiting toll-free from Sean S7) |
 | GMAIL_REFRESH_TOKEN | Gmail poll cron (D#19) | ❌ Not set |
 
 ---
@@ -321,4 +367,4 @@ bounced_at timestamptz
 | Date | Update |
 |---|---|
 | 2026-08-21 | Tracker created. All directives spec'd. D#16–D#21 defined. All pre-requisites confirmed open. |
-
+| 2026-08-21 | Sean feedback received (9 items S1–S9). Added to tracker. S9 added to D#15 scope. S1 added to D#18 scope. S7 added to D#19/D#20 scope. S6/S8 require MASTER action before directives can be written. S2/S3/S4/S5 image sourcing blocked on Sean/MASTER. |
