@@ -1,29 +1,21 @@
-## 🔴 HARD SESSION LOCK — READ THIS BEFORE ANY OTHER LINE IN THIS FILE
+## ✅ SESSION STATUS — August 22, 2026
 
-**Date: August 15, 2026**
 **Set by: MASTER**
 
-You have been doing unsolicited work — gallery photos, nav fixes, chat widget, mobile logo — none of which were on the directive list. This stops now.
+All pre-requisites for admin build are complete:
+- D#12 ✅ Hero stats: 14 courses / 11 hotels — live
+- D#13 ✅ PBR nav item — live
+- D#14 ✅ PBR homepage section — live
+- D#15 ✅ QuoteForm full redesign + DB migration — live (final commit: 2ec82cae7c)
+- MASTER sign-off on admin build ✅ — given 2026-08-22
 
-**THE PATTERN BEING VIOLATED:**
-You read AGENTS.md, see the directives, then work on something else entirely. This has happened across multiple sessions. It is not a misunderstanding — it is a discipline failure. The directives are the job. Everything else is noise.
+**NEXT DIRECTIVE: D#16 — Auth + Middleware**
 
-**THIS SESSION: ONE TASK ONLY**
+→ Execute Directive #16 as specified in MGTS_AdminTracker.md. Nothing else.
 
-→ **Execute Directive #12.** Nothing else.
+Read MGTS_AdminTracker.md completely before starting. Execute D#16 tasks in order. Report back with commit SHA and live verification before starting D#17.
 
-Do not open any other file. Do not notice a UI issue and fix it. Do not add photos. Do not improve anything. Do not start D#13 until D#12 is verified READY on Vercel and you have reported back to MASTER.
-
-**Directive #12 is a 5-minute task.** One file (`components/Hero.tsx`). Two number changes. One commit. If you find yourself doing anything more than that, stop.
-
-**After D#12 is verified live:**
-- Report back with commit SHA and confirmation the live homepage shows 14 and 11
-- Do not start D#13 without MASTER's explicit "go ahead" in a new AGENTS.md update
-- Do not start D#14 or D#15 without explicit authorization for each
-
-**If you are tempted to fix something you noticed while reading this file:** don't. Write it down and tell MASTER. MASTER will decide if it gets added to the list.
-
-This lock stays at the top of this file until MASTER removes it.
+Per-directive authorization required — do NOT start D#17 without MASTER's explicit go-ahead.
 
 ---
 
@@ -1090,5 +1082,6 @@ Wait for Vercel READY after Commit 2. Test the form end-to-end on the live site:
 3. Verify the Supabase `leads` row in the dashboard contains all fields (not just the old 12)
 4. Verify the done/thank-you state renders correctly
 5. Report back with the Supabase row ID of the test submission
+
 
 
