@@ -187,10 +187,10 @@ export default function QuoteForm() {
   }
 
   return (
-    <div className="lg:grid lg:grid-cols-[1fr_280px] lg:items-start lg:gap-8">
+    <div className="lg:grid lg:grid-cols-[1fr_300px] lg:items-start lg:gap-10">
       {/* ── Main form ── */}
       <form onSubmit={handleSubmit}
-        className="rounded-2xl border border-[#e3ddcf] bg-white p-6 shadow-[0_8px_28px_rgba(37,35,33,.08)] md:p-10">
+        className="rounded-2xl border border-[#e3ddcf] bg-white p-6 shadow-[0_8px_28px_rgba(37,35,33,.08)] md:p-8 lg:p-10">
 
         {contextNote && (
           <Reveal>
@@ -273,7 +273,7 @@ export default function QuoteForm() {
           <p className="mb-3 font-body text-[13px] text-[#6a665e]">
             Select courses you&apos;re interested in — <span className="text-[#9a8a6e]">optional</span>
           </p>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
             {BOOKABLE_COURSES.map((c) => {
               const sel = selectedCourses.includes(c.slug);
               const pbc = PBC_SLUGS.has(c.slug);
