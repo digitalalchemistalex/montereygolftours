@@ -75,6 +75,7 @@ export default function QuoteForm() {
   const [okToCall, setOkToCall] = useState(false);
   const [okToText, setOkToText] = useState(false);
   const [contactPrefError, setContactPrefError] = useState(false);
+  const [coursesError, setCoursesError] = useState(false);
   const [returningCustomer, setReturningCustomer] = useState(false);
 
   // Section 2 — Trip details
@@ -122,6 +123,11 @@ export default function QuoteForm() {
 
   const toggle = (arr: string[], setArr: (v: string[]) => void, val: string) =>
     setArr(arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val]);
+
+  const toggleCourse = (slug: string) => {
+    toggle(selectedCourses, setSelectedCourses, slug);
+    setCoursesError(false);
+  };
 
   // Live green-fee estimate
   const liveEstimate = useMemo(() => {
@@ -180,6 +186,11 @@ export default function QuoteForm() {
       return;
     }
     setContactPrefError(false);
+    if (selectedCourses.length === 0) {
+      setCoursesError(true);
+      return;
+    }
+    setCoursesError(false);
     setStatus("submitting");
     const travelDates = datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ");
     const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner or family member." : null]
@@ -342,16 +353,17 @@ export default function QuoteForm() {
         {/* ── 3. Golf ── */}
         <SectionHeader n={3} label="Golf" />
         <div className="border-b border-[#ede8da] pb-7">
-          <p className="mb-3 font-body text-[13px] text-[#6a665e]">
-            Select courses you&apos;re interested in — <span className="text-[#9a8a6e]">optional</span>
-          </p>
+          <div className="mb-3 flex items-center gap-2">
+            <p className="font-body text-[13px] text-[#6a665e]">Select one or more courses <span className="text-[#a83232]">*</span></p>
+            {coursesError && <p className="font-ui text-[12px] text-[#a83232]">Please select at least one course.</p>}
+          </div>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
             {BOOKABLE_COURSES.map((c) => {
               const sel = selectedCourses.includes(c.slug);
               const pbc = PBC_SLUGS.has(c.slug);
               return (
                 <button key={c.slug} type="button"
-                  onClick={() => toggle(selectedCourses, setSelectedCourses, c.slug)}
+                  onClick={() => toggleCourse(c.slug)}
                   className={[
                     "rounded-[10px] border text-left transition-colors overflow-hidden",
                     sel && pbc ? "border-[1.5px] border-[#b89a3a] bg-[#fdf9ed]" :
