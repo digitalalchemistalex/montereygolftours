@@ -142,7 +142,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "5-day-complete-monterey-golf-vacation": {
     slug: "5-day-complete-monterey-golf-vacation",
-    image: "https://images.unsplash.com/photo-1592919505780-303950717480",
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
     title: "5-Day Full Peninsula",
     shortTitle: "Full Peninsula",
     durationDays: 5,
@@ -218,7 +218,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "7-day-ultimate-monterey-golf-trip": {
     slug: "7-day-ultimate-monterey-golf-trip",
-    image: "https://images.unsplash.com/photo-1632406209836-2d7e3c32d2e9?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
     title: "7-Day Ultimate Monterey",
     shortTitle: "Ultimate Monterey",
     durationDays: 7,
@@ -355,7 +355,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "pebble-beach-golf-package": {
     slug: "pebble-beach-golf-package",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
     title: "The Pebble Pilgrimage",
     shortTitle: "Pebble Pilgrimage",
     durationDays: 4,
@@ -417,7 +417,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-corporate-golf-outing": {
     slug: "monterey-corporate-golf-outing",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?auto=format&fit=crop&w=1400&q=90",
     title: "Monterey Corporate Golf Outing",
     shortTitle: "Corporate Outing",
     durationDays: 2,
