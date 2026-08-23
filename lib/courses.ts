@@ -74,7 +74,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "quail-lodge",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     par: 71,
@@ -104,7 +104,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pacific-grove-golf-links",
-    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
@@ -119,7 +119,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "poppy-hills",
-    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1542496658-e33a6d0d0c2f?auto=format&fit=crop&w=1400&q=90",
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
@@ -134,7 +134,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "club-at-pasadera",
-    image: "https://images.unsplash.com/photo-1606443192517-919653213206",
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
     name: "The Club at Pasadera",
     city: "Monterey, CA",
     par: 71,
@@ -164,7 +164,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "spyglass-hill",
-    image: "https://images.unsplash.com/photo-1606443192517-919653213206?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?auto=format&fit=crop&w=1400&q=90",
     name: "Spyglass Hill Golf Course®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -179,7 +179,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "links-at-spanish-bay",
-    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1400&q=90",
     name: "The Links at Spanish Bay®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -189,7 +189,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "del-monte-golf-course",
-    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
     name: "Del Monte Golf Course®",
     city: "Monterey, CA",
     par: 72,
@@ -204,7 +204,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "the-hay",
-    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
     name: "The Hay™",
     city: "Pebble Beach, CA",
     par: 27,
@@ -214,7 +214,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pasatiempo",
-    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1606443192517-919653213206?auto=format&fit=crop&w=1400&q=90",
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,
