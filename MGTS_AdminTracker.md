@@ -372,3 +372,46 @@ bounced_at timestamptz
 | 2026-08-22 | MASTER formal sign-off on admin build given. D#15 complete — leads table migration: added hotels_interested, activities_interested, ground_transport_needed, referral_source, ok_to_call, ok_to_text, raw_payload, nights, returning_customer, transport_needed, non_golfer_count, trip_type, corp_attendees, corp_event_type, corp_needs, hotel_pick_for_me, game_level columns. D#12/D#13/D#14 confirmed live (pre-requisites met). Admin build authorized — ready for D#16. |
 | 2026-08-22 | QuoteForm full redesign session. Changes: (1) removed budget field entirely, (2) trip length dropdown → nights number input, (3) 6 numbered sections GTHS-style, (4) ok_to_call/ok_to_text moved to contact section + required validation, (5) returning customer checkbox, (6) transport dropdown replacing checkbox, (7) course cards with real golfer stats (par/yards/rating/slope/walkable/pace/difficulty) from course-intelligence.md, (8) hotel strips with left accent bar, (9) sticky sidebar desktop, (10) page widened to max-w-1200px, (11) 21-day minimum arrival date, (12) auto-calculate nights from dates, (13) PBC 30-day lead time warning, (14) contact preference required validation, (15) courses required validation, (16) non-golfer count reveal, (17) trip type selector (Golf only/Golf+Stay/Full experience/Corporate) with conditional section visibility, (18) corporate needs section (attendees/event type/needs tags), (19) hotel pick-for-me option, (20) game level selector (Single figures/Club golfer/Social golfer/Casual) with intelligent course recommendations per tier. All READY on Vercel. Final QuoteForm commit: 2ec82cae7c. courses.ts extended with rating/slope/walkable/pace/difficulty: e91a4ea226. |
 
+
+---
+
+## SESSION LOG — 2026-08-23 (MASTER)
+
+### Build activity this session
+
+| Item | Commit | Status |
+|---|---|---|
+| Pebble Pilgrimage + Corporate Golf Outing itineraries (no pricing) | dceed39121 | ✅ |
+| Itinerary page: hide pricing when priceFrom=0 — show "Custom quote" | a254222ff1 | ✅ |
+| Spanish Bay waitlist page /spanish-bay-reopening/ | 477d493cbf | ✅ |
+| Hotel mega-menu links fixed — no longer pointing to pebblebeach.com | 6e82ffeae3 | ✅ |
+| The Lodge at Pebble Beach™ hotel page (verified from pebblebeach.com Aug 23 2026) | 55b174c86f | ✅ |
+| The Inn at Spanish Bay™ hotel page (verified from pebblebeach.com Aug 23 2026) | 7a7b203174 | ✅ |
+| Casa Palmero™ hotel page (verified from pebblebeach.com Aug 23 2026) | a7119e6d91 | ✅ |
+| GalleryLightbox.tsx — shared gallery with captions + tags + thumbnail strip | 483540ed3c | ✅ |
+| course-details.ts: gallery type extended to `{ src, caption, tag? }[]`, captions added for 8 courses | 658a59feae | ✅ |
+| hotel-details.ts: gallery type extended, captions added for all 11 hotels | 4a76fc4497 | ✅ |
+| Hotel + course pages wired to GalleryLightbox | bfbabd23a1 | ✅ |
+| All 14 course hero images replaced — unique verified Unsplash, no duplicates | f863c3b960 | ✅ |
+| PBC hotel hero images fixed (Lodge, Inn, Casa Palmero) | e916900d1a | ✅ |
+| Itinerary images fixed — 4-day (verified PB GL Patrick Konior), 3-day | 4a6addafbc | ✅ |
+
+### Key decisions
+
+- **No pricing anywhere** — `priceFrom: 0` handled conditionally throughout site
+- **PBC hotels can be named on MGTS** — IAGTO carveout confirmed via golfcentralcoast-legal skill
+- **Gallery type change is breaking** — `string[]` → `{ src, caption, tag? }[]` — do not revert
+- **Drive "Monterey Images" folder** — contains saved HTML pages only, not actual image files
+- **Montereygolftours skill packaged** — montereygolftours-skill.skill created Aug 23 2026
+
+### Outstanding Sean actions (unchanged)
+- IAGTO rates for PBC courses
+- Toll-free number (S7)
+- Staging submission to traveldesk@pebblebeach.com
+- Licensed photography from PBC press kit + course operators
+- S8 homepage replacement section
+- RESEND_API_KEY + LEAD_NOTIFY_EMAIL missing from Vercel env vars
+
+### Raza next steps
+- D#16 (Auth + Middleware) — authorized, in progress
+- Do NOT start D#17 without MASTER explicit go-ahead
