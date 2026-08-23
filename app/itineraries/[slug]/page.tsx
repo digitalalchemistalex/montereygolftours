@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${trip.title} | Monterey Golf Tours`,
-    description: `${trip.title} — ${trip.durationDays} days, ${trip.rounds}, from $${trip.priceFrom}/person. ${trip.target}`,
+    description: `${trip.title} — ${trip.durationDays} days, ${trip.rounds}${trip.priceFrom > 0 ? `, from $${trip.priceFrom}/person` : ""}. ${trip.target}`,
     alternates: {
       canonical: `https://${SITE.domain}/itineraries/${trip.slug}/`,
     },
@@ -159,6 +159,7 @@ export default async function ItineraryPage({ params }: Props) {
                   Rounds
                 </div>
               </div>
+              {trip.priceFrom > 0 ? (
               <div>
                 <div className="font-display text-2xl font-bold leading-none text-gold md:text-3xl">
                   ${trip.priceFrom.toLocaleString()}
@@ -167,11 +168,18 @@ export default async function ItineraryPage({ params }: Props) {
                   Price from{!trip.priceVerified && " (estimate)"}
                 </div>
               </div>
+              ) : (
+              <div>
+                <div className="font-display text-2xl font-bold leading-none text-ocean md:text-3xl">Custom</div>
+                <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">Quote on request</div>
+              </div>
+              )}
             </div>
             <div>
               <p id="speakable-summary" className="pull-quote text-xl leading-snug text-ink md:text-2xl">
                 A {trip.durationDays}-day trip with {trip.rounds}, based at {trip.baseHotel}.
               </p>
+              {trip.priceFrom > 0 ? (
               <p className="mt-4 font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
                 Pricing runs from ${trip.priceFrom.toLocaleString()} to $
                 {trip.priceTo.toLocaleString()} per person depending on course and room
@@ -183,6 +191,11 @@ export default async function ItineraryPage({ params }: Props) {
                   </span>
                 )}
               </p>
+              ) : (
+              <p className="mt-4 font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Pricing for this trip is tailored to your group size, course selection, and dates. Get a custom quote and we&apos;ll have options back to you within 24 hours.
+              </p>
+              )}
             </div>
           </div>
         </section>
@@ -382,7 +395,7 @@ export default async function ItineraryPage({ params }: Props) {
                   <div className="p-5">
                     <div className="font-display text-lg font-bold text-ink">{t.title}</div>
                     <div className="mt-1 font-body text-[13px] text-[#6a665e]">
-                      {t.durationDays} days &middot; {t.rounds} &middot; from ${t.priceFrom.toLocaleString()}/person
+                      {t.durationDays} days &middot; {t.rounds}{t.priceFrom > 0 ? ` · from $${t.priceFrom.toLocaleString()}/person` : ""}
                     </div>
                     <p className="mt-2 font-body text-[13px] leading-relaxed text-[#5a564e]">
                       {t.target}
@@ -440,7 +453,7 @@ export default async function ItineraryPage({ params }: Props) {
                       {upsell.title}
                     </div>
                     <div className="mt-1 font-display text-sm font-bold text-ocean-dark">
-                      from ${upsell.priceFrom.toLocaleString()}/person
+                      {upsell.priceFrom > 0 ? `from $${upsell.priceFrom.toLocaleString()}/person` : "Custom quote"}
                     </div>
                     <div className="mt-2 font-ui text-sm font-semibold text-ocean">
                       See this itinerary &rarr;
@@ -494,7 +507,7 @@ export default async function ItineraryPage({ params }: Props) {
                           {t.title}
                         </div>
                         <div className="mt-1 font-display text-sm font-bold text-ocean-dark">
-                          from ${t.priceFrom.toLocaleString()}/person
+                          {t.priceFrom > 0 ? `from $${t.priceFrom.toLocaleString()}/person` : "Custom quote"}
                         </div>
                         <div className="mt-3 font-ui text-sm font-semibold text-ocean">
                           View itinerary &rarr;
@@ -530,3 +543,4 @@ export default async function ItineraryPage({ params }: Props) {
     </>
   );
 }
+
