@@ -231,7 +231,7 @@ export default async function HotelPage({ params }: Props) {
                 </div>
               )}
             </div>
-            <HotelGalleryLightbox images={hotel.gallery} hotelName={hotel.name} />
+            <GalleryLightbox images={hotel.gallery ?? []} entityName={hotel.name} />
           </section>
         )}        {hotel.roomFeatures && (
           <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
