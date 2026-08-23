@@ -31,7 +31,7 @@ export type ItineraryTemplate = {
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
   "3-day-monterey-golf-weekend": {
     slug: "3-day-monterey-golf-weekend",
-    image: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
     title: "3-Day Monterey Golf Weekend",
     shortTitle: "Weekend",
     durationDays: 3,
@@ -83,7 +83,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
-    image: "https://images.unsplash.com/photo-1693661397754-f0b65d31e09e?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=1400&q=90",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
