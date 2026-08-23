@@ -27,7 +27,7 @@ export type HotelDetail = {
   driveTimeToCourses: { course: string; minutes: number }[];
   positioning: string;
   faqs: { q: string; a: string }[];
-  gallery?: string[];
+  gallery?: { src: string; caption: string; tag?: string }[];
 };
 
 export const HOTEL_DETAILS: Record<string, HotelDetail> = {
@@ -43,9 +43,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Hyatt Regency",
     hook: "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course®.",
     gallery: [
-      "/images/hotels/gallery/hyatt-regency-monterey-2.webp",
-      "/images/hotels/gallery/hyatt-regency-monterey-3.webp",
-      "/images/hotels/gallery/hyatt-regency-monterey-4.webp",
+      { src: "/images/hotels/gallery/hyatt-regency-monterey-2.webp", caption: "22 secluded acres of Monterey Pines — the resort feels removed from the city despite being 2 miles from downtown.", tag: "Grounds" },
+      { src: "/images/hotels/gallery/hyatt-regency-monterey-3.webp", caption: "Spa Adeline — 6 outdoor tennis courts, pools, hot tubs, and bocce courts round out the on-site recreational offering.", tag: "Spa Adeline" },
+      { src: "/images/hotels/gallery/hyatt-regency-monterey-4.webp", caption: "Sea Root Restaurant & Bar — coastal Mediterranean cuisine with indoor-outdoor seating among the pines.", tag: "Sea Root Restaurant" },
     ],
     description: [
       "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte Golf Course® — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
@@ -120,11 +120,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "The Unbound Collection by Hyatt",
     hook: "All-suite resort on 500 acres, with the only Pete Dye golf course in Northern California on-site.",
     gallery: [
-      "/images/hotels/gallery/carmel-valley-ranch-2.webp",
-      "/images/hotels/gallery/carmel-valley-ranch-3.webp",
-      "/images/hotels/gallery/carmel-valley-ranch-4.webp",
-      "/images/hotels/gallery/carmel-valley-ranch-5.webp",
-      "/images/hotels/gallery/carmel-valley-ranch-6.webp",
+      { src: "/images/hotels/gallery/carmel-valley-ranch-2.webp", caption: "All 179 accommodations are suites — minimum 800 sq ft. Gas fireplace, private deck, and valley or vineyard views in every room.", tag: "All-suite resort" },
+      { src: "/images/hotels/gallery/carmel-valley-ranch-3.webp", caption: "The Pete Dye golf course on-site — his only Northern California design. Warm Carmel Valley sunshine even when the coast is fogged in.", tag: "On-site golf" },
+      { src: "/images/hotels/gallery/carmel-valley-ranch-4.webp", caption: "Spa Aiyana — 10,500 sq ft of wellness space set in the Santa Lucia foothills. Nature-inspired treatments use the ranch's own gardens.", tag: "Spa Aiyana" },
+      { src: "/images/hotels/gallery/carmel-valley-ranch-5.webp", caption: "Valley Kitchen — farm-to-table dining sourced from the resort's own vineyard, beehives, and organic gardens.", tag: "Valley Kitchen" },
+      { src: "/images/hotels/gallery/carmel-valley-ranch-6.webp", caption: "500 acres in the Santa Lucia Mountains foothills — Carmel Valley is 15 degrees warmer than the coast on most days.", tag: "500 acres" },
     ],
     description: [
       "Carmel Valley Ranch is an all-suite resort — every accommodation is a minimum 800 sq ft (starting with the Santa Lucia Studio); there are no standard hotel rooms. Pete Dye's only Northern California golf design is on-site, and the property sits inland in the sun-drenched Santa Lucia foothills, typically 15–18°F warmer than the Monterey coast and clear of marine fog earlier in the morning. — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
@@ -200,9 +200,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent",
     hook: "Best value golf-resort combo on the peninsula, with an on-site championship course and warm Carmel Valley weather.",
     gallery: [
-      "/images/hotels/gallery/quail-lodge-2.webp",
-      "/images/hotels/gallery/quail-lodge-3.webp",
-      "/images/hotels/gallery/quail-lodge-4.webp",
+      { src: "/images/hotels/gallery/quail-lodge-2.webp", caption: "Lush gardens and 10 man-made lakes throughout the property — wildlife is a constant presence on the fairways.", tag: "Gardens & lakes" },
+      { src: "/images/hotels/gallery/quail-lodge-3.webp", caption: "Covey Grill — on-site dining with terrace views over the Carmel Valley course.", tag: "Covey Grill" },
+      { src: "/images/hotels/gallery/quail-lodge-4.webp", caption: "Robert Muir Graves original from 1964, refined by Origins Golf Design in 2015 — consistently rated best playing conditions in Central California.", tag: "On-site golf" },
     ],
     description: [
       "Quail Lodge & Golf Club sits in the sunny Carmel Valley, set among lush gardens and 10 man-made lakes that draw quail, hawks, deer, turtles, and fox. The on-site golf course is a Robert Muir Graves design (1964), refined by Todd Eckenrode / Origins Golf Design in 2015.",
@@ -267,9 +267,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent luxury boutique",
     hook: "A wine-country retreat with estate vineyard views and guest access to The Club at Pasadera outside of Monday.",
     gallery: [
-      "/images/hotels/gallery/bernardus-lodge-2.webp",
-      "/images/hotels/gallery/bernardus-lodge-3.webp",
-      "/images/hotels/gallery/bernardus-lodge-4.webp",
+      { src: "/images/hotels/gallery/bernardus-lodge-2.webp", caption: "Estate vineyard visible from guest rooms — Bernardus produces its own wine, served in the Marinus Restaurant.", tag: "Estate vineyard" },
+      { src: "/images/hotels/gallery/bernardus-lodge-3.webp", caption: "73 rooms with stone fireplace, vaulted ceilings, private terrace, and vineyard views — no chain affiliation, fully independent.", tag: "Guest rooms" },
+      { src: "/images/hotels/gallery/bernardus-lodge-4.webp", caption: "Marinus Restaurant — one of the top dining rooms on the Central Coast. Wine list focused on Carmel Valley and Santa Lucia Highlands.", tag: "Marinus Restaurant" },
     ],
     description: [
       "Bernardus Lodge & Spa is a wine-country retreat in Carmel Valley, with an estate vineyard visible from many rooms and Santa Lucia mountain views throughout the property. With 73 rooms, it's the most intimate of the Tier 1 golf-anchor properties.",
@@ -345,12 +345,12 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent (AAA Four Diamond)",
     hook: "The only Forbes Four-Star hotel in Monterey, perched over the bay on historic Cannery Row.",
     gallery: [
-      "/images/hotels/gallery/monterey-plaza-2.webp",
-      "/images/hotels/gallery/monterey-plaza-3.webp",
-      "/images/hotels/gallery/monterey-plaza-4.webp",
-      "/images/hotels/gallery/monterey-plaza-5.webp",
-      "/images/hotels/gallery/monterey-plaza-6.webp",
-      "/images/hotels/gallery/monterey-plaza-7.webp",
+      { src: "/images/hotels/gallery/monterey-plaza-2.webp", caption: "Directly on Monterey Bay — the only full-service luxury hotel with rooms directly above the water.", tag: "Waterfront" },
+      { src: "/images/hotels/gallery/monterey-plaza-3.webp", caption: "Forbes Four-Star rated — the prestige property on the bay. Within walking distance of Cannery Row and the Aquarium.", tag: "Forbes Four-Star" },
+      { src: "/images/hotels/gallery/monterey-plaza-4.webp", caption: "Duck Club Restaurant overlooking the bay — fresh seafood and Monterey Bay views from every table.", tag: "Duck Club Restaurant" },
+      { src: "/images/hotels/gallery/monterey-plaza-5.webp", caption: "Guest rooms range from bay view to partial ocean view — many with private balconies directly above the water.", tag: "Bay view rooms" },
+      { src: "/images/hotels/gallery/monterey-plaza-6.webp", caption: "8 minutes from MRY airport and 15 minutes from most peninsula golf courses — a practical central base.", tag: "Location" },
+      { src: "/images/hotels/gallery/monterey-plaza-7.webp", caption: "The Spa at Monterey Plaza — treatments using Monterey Bay sea ingredients, including kelp and Pacific salt.", tag: "Spa" },
     ],
     description: [
       "Monterey Plaza Hotel & Spa is an oceanfront property perched directly over Monterey Bay on historic Cannery Row — the only Forbes Four-Star hotel in Monterey, with European-influenced architecture often described as the \"grand dame of the bay.\" With 285 units, it's a strong fit for groups wanting to be in the heart of the action, walking distance to Cannery Row and Fisherman's Wharf.",
@@ -422,7 +422,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "InterContinental (IHG)",
     hook: "Bayfront on Cannery Row, next door to the Monterey Bay Aquarium, with panoramic coastal views.",
     gallery: [
-      "/images/hotels/gallery/intercontinental-the-clement-2.avif",
+      { src: "/images/hotels/gallery/intercontinental-the-clement-2.avif", caption: "Adjacent to the Monterey Bay Aquarium on Cannery Row — the newest bayfront hotel built in Monterey in 20+ years at its opening in 2008.", tag: "Cannery Row" },
     ],
     description: [
       "InterContinental The Clement Monterey sits bayfront on Cannery Row, directly next to the Monterey Bay Aquarium, with 208 guest rooms and suites offering panoramic coastal views. Opened in 2008, it was the newest waterfront property built in Monterey in over 20 years at the time.",
@@ -492,9 +492,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent (AAA Four Diamond)",
     hook: "The Central Coast's first LEED-certified hotel, downtown adjacent to the Monterey Conference Center.",
     gallery: [
-      "/images/hotels/gallery/portola-hotel-2.jpg",
-      "/images/hotels/gallery/portola-hotel-3.jpg",
-      "/images/hotels/gallery/portola-hotel-4.jpg",
+      { src: "/images/hotels/gallery/portola-hotel-2.jpg", caption: "The Central Coast's first LEED-certified hotel — AAA Four Diamond, downtown Monterey adjacent to the Conference Center.", tag: "LEED certified" },
+      { src: "/images/hotels/gallery/portola-hotel-3.jpg", caption: "379 rooms — the largest hotel in downtown Monterey, making it the best fit for large golf group room blocks.", tag: "379 rooms" },
+      { src: "/images/hotels/gallery/portola-hotel-4.jpg", caption: "Jack's Restaurant & Bar on-site — casual dining in the heart of downtown Monterey, 1 mile from Cannery Row.", tag: "Jack's Restaurant" },
     ],
     description: [
       "Portola Hotel & Spa sits in downtown Monterey, directly adjacent to and connected with the Monterey Conference Center, one mile from Cannery Row. With 379 rooms and suites, it's the best-suited property on this list for large groups, conventions, or groups paired with a conference.",
@@ -573,9 +573,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent boutique",
     hook: "Monterey's first hotel, dating to 1824, with hacienda-style architecture and lush courtyard gardens.",
     gallery: [
-      "/images/hotels/gallery/casa-munras-2.webp",
-      "/images/hotels/gallery/casa-munras-3.webp",
-      "/images/hotels/gallery/casa-munras-4.avif",
+      { src: "/images/hotels/gallery/casa-munras-2.webp", caption: "A historic Spanish-colonial property — originally the estate of Don Estéban Munras, built in 1824.", tag: "Historic 1824 estate" },
+      { src: "/images/hotels/gallery/casa-munras-3.webp", caption: "Outdoor heated pool and landscaped grounds in the heart of downtown Monterey.", tag: "Pool & grounds" },
+      { src: "/images/hotels/gallery/casa-munras-4.avif", caption: "Estéban Restaurant — Spanish-inspired cuisine in a garden courtyard setting, steps from downtown Monterey.", tag: "Estéban Restaurant" },
     ],
     description: [
       "Casa Munras Garden Hotel & Spa traces back to 1824 — Monterey's first hotel, and one of the oldest hotel properties on the Central Coast. The hacienda-style architecture and Spanish Colonial heritage are reflected throughout the downtown Monterey property, set amid picturesque courtyard gardens. It was named Best Hotel in Monterey County in 2023.",
@@ -637,11 +637,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Independent boutique — AAA Three Diamond",
     hook: "Downtown Monterey boutique property, walkable to Cannery Row and the Monterey Bay Aquarium.",
     gallery: [
-      "/images/hotels/gallery/hotel-abrego-2.avif",
-      "/images/hotels/gallery/hotel-abrego-3.avif",
-      "/images/hotels/gallery/hotel-abrego-4.avif",
-      "/images/hotels/gallery/hotel-abrego-5.avif",
-      "/images/hotels/gallery/hotel-abrego-6.avif",
+      { src: "/images/hotels/gallery/hotel-abrego-2.avif", caption: "Boutique property in downtown Monterey — close to Cannery Row, Fisherman's Wharf, and the Aquarium.", tag: "Downtown Monterey" },
+      { src: "/images/hotels/gallery/hotel-abrego-3.avif", caption: "Outdoor pool and firepit lounge — a relaxed social hub after a day on the course.", tag: "Pool & firepit" },
+      { src: "/images/hotels/gallery/hotel-abrego-4.avif", caption: "Guest rooms with contemporary coastal design — king or two queens, some with balcony or patio.", tag: "Guest rooms" },
+      { src: "/images/hotels/gallery/hotel-abrego-5.avif", caption: "Vivolo's Chowder House on-site — Monterey-style seafood chowder and local ingredients.", tag: "Vivolo's Chowder House" },
+      { src: "/images/hotels/gallery/hotel-abrego-6.avif", caption: "Fitness center and spa treatments available — practical amenities for multi-day golf groups.", tag: "Amenities" },
     ],
     description: [
       "Hotel Abrego is an independent boutique property in downtown Monterey, spread across four buildings with 93 individually furnished rooms. It carries an AAA Three Diamond rating.",
@@ -717,9 +717,9 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Embassy Suites by Hilton — AAA Three Diamond",
     hook: "All-suite property in Seaside with a separate living room and bedroom in every unit.",
     gallery: [
-      "/images/hotels/gallery/embassy-suites-2.avif",
-      "/images/hotels/gallery/embassy-suites-3.jpg",
-      "/images/hotels/gallery/embassy-suites-4.avif",
+      { src: "/images/hotels/gallery/embassy-suites-2.avif", caption: "All-suite hotel — every room is a two-room suite with separate living and sleeping areas, included cooked-to-order breakfast.", tag: "All-suite" },
+      { src: "/images/hotels/gallery/embassy-suites-3.jpg", caption: "Indoor pool and evening manager's reception included — practical value for budget-conscious golf groups.", tag: "Indoor pool" },
+      { src: "/images/hotels/gallery/embassy-suites-4.avif", caption: "Located in Seaside — directly adjacent to Bayonet & Black Horse golf courses, 10 minutes from the Monterey Peninsula courses.", tag: "Near Bayonet & Black Horse" },
     ],
     description: [
       "Embassy Suites by Hilton Monterey Bay Seaside is a 225-room all-suite property, carrying an AAA Three Diamond rating, with every unit featuring a separate living room and bedroom, a microwave, mini-refrigerator, wet bar, and two televisions. Select rooms offer ocean views.",
@@ -791,8 +791,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Tribute Portfolio (Marriott International) — AAA Three Diamond",
     hook: "The only Monterey Golf Tours hotel located directly on the beach.",
     gallery: [
-      "/images/hotels/gallery/monterey-beach-hotel-2.webp",
-      "/images/hotels/gallery/monterey-beach-hotel-3.webp",
+      { src: "/images/hotels/gallery/monterey-beach-hotel-2.webp", caption: "On the beach at Monterey Bay — a rare beachfront position with direct sand access.", tag: "Beachfront" },
+      { src: "/images/hotels/gallery/monterey-beach-hotel-3.webp", caption: "Pacific Ocean views from guest rooms — casual, relaxed atmosphere at an accessible price point.", tag: "Ocean views" },
     ],
     description: [
       "Monterey Beach Hotel, a Tribute Portfolio Hotel, is the only property in this collection located directly on a beach, with 188 guest rooms and 4 suites. Originally built in 1967, the property reopened under Marriott's Tribute Portfolio brand on August 21, 2024 following a complete renovation. It carries an AAA Three Diamond rating.",
