@@ -84,6 +84,7 @@ export default function QuoteForm() {
   const [endDate, setEndDate] = useState("");
   const [datesFlexible, setDatesFlexible] = useState(false);
   const [nonGolfer, setNonGolfer] = useState(false);
+  const [nonGolferCount, setNonGolferCount] = useState("1");
 
   // Sections 3–5
   const [selectedHotels, setSelectedHotels] = useState<string[]>([]);
@@ -190,6 +191,7 @@ export default function QuoteForm() {
       activities_interested: selectedActivities, transport_needed: transportNeeded || null,
       ok_to_call: okToCall, ok_to_text: okToText, returning_customer: returningCustomer,
       non_golfer_in_group: nonGolfer,
+      non_golfer_count: nonGolfer ? nonGolferCount : null,
       referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
       message: fullMessage || null,
     };
@@ -323,7 +325,17 @@ export default function QuoteForm() {
             )}
           </Field>
           <div className="sm:col-span-2">
-            <Check checked={nonGolfer} onChange={setNonGolfer} label="Traveling with a non-golfing partner or family member?" />
+            <Check checked={nonGolfer} onChange={(v) => { setNonGolfer(v); if (!v) setNonGolferCount("1"); }}
+              label="Traveling with a non-golfing partner or family member?" />
+            {nonGolfer && (
+              <div className="mt-3 sm:w-1/2">
+                <Field label="How many non-golfers?">
+                  <input type="number" min="1" max="100" value={nonGolferCount}
+                    onChange={(e) => setNonGolferCount(e.target.value)}
+                    className={iCls} />
+                </Field>
+              </div>
+            )}
           </div>
         </div>
 
