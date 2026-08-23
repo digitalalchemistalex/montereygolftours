@@ -104,7 +104,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pacific-grove-golf-links",
-    image: "/images/courses/pacific-grove-hero.jpg",
+    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
