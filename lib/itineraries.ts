@@ -463,7 +463,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,
