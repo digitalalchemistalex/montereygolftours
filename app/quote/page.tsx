@@ -38,7 +38,7 @@ export default function QuotePage() {
       </section>
 
       <main className="flex-1 px-6 py-12 md:px-14 md:py-16">
-        <div className="mx-auto max-w-[760px]">
+        <div className="mx-auto max-w-[1200px]">
           <Reveal>
             <div className="mb-8 grid grid-cols-3 gap-3 text-center">
               <div className="rounded-xl border border-[#e3ddcf] bg-white px-3 py-4">
