@@ -59,7 +59,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    image: "/images/courses/carmel-valley-ranch-hero.webp",
+    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?auto=format&fit=crop&w=1400&q=90",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     par: 70,
