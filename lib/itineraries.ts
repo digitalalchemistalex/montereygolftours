@@ -83,7 +83,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
-    image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1693661397754-f0b65d31e09e?auto=format&fit=crop&w=1400&q=90",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
