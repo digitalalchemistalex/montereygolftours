@@ -127,7 +127,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "lodge-at-pebble-beach",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=1400&q=90",
     name: "The Lodge at Pebble Beach™",
     city: "Pebble Beach, CA",
     tier: 1,
@@ -137,7 +137,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "inn-at-spanish-bay",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=90",
     name: "The Inn at Spanish Bay™",
     city: "Pebble Beach, CA",
     tier: 1,
@@ -147,7 +147,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "casa-palmero",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
     name: "Casa Palmero™",
     city: "Pebble Beach, CA",
     tier: 1,
