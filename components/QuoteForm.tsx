@@ -193,7 +193,7 @@ export default function QuoteForm() {
   }
 
   return (
-    <div className="lg:grid lg:grid-cols-[1fr_300px] lg:items-start lg:gap-10">
+    <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10" style={{alignItems:"start"}}>
       {/* ── Main form ── */}
       <form onSubmit={handleSubmit}
         className="rounded-2xl border border-[#e3ddcf] bg-white p-6 shadow-[0_8px_28px_rgba(37,35,33,.08)] md:p-8 lg:p-10">
@@ -472,7 +472,7 @@ export default function QuoteForm() {
       </form>
 
       {/* ── Sticky summary sidebar (desktop only) ── */}
-      <aside className="hidden lg:block">
+      <aside className="hidden lg:block" style={{minHeight:0}}>
         <div className="sticky top-8 rounded-2xl border border-[#e3ddcf] bg-white p-5 shadow-[0_4px_16px_rgba(37,35,33,.06)]">
           <p className="mb-4 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-[#9a8a6e]">Your trip so far</p>
           <div className="space-y-0 divide-y divide-[#ede8da]">
