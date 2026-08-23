@@ -74,6 +74,7 @@ export default function QuoteForm() {
   const [phone, setPhone] = useState("");
   const [okToCall, setOkToCall] = useState(false);
   const [okToText, setOkToText] = useState(false);
+  const [contactPrefError, setContactPrefError] = useState(false);
   const [returningCustomer, setReturningCustomer] = useState(false);
 
   // Section 2 — Trip details
@@ -149,6 +150,11 @@ export default function QuoteForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!okToCall && !okToText) {
+      setContactPrefError(true);
+      return;
+    }
+    setContactPrefError(false);
     setStatus("submitting");
     const travelDates = datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ");
     const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner or family member." : null]
@@ -215,9 +221,15 @@ export default function QuoteForm() {
               placeholder="+1 (555) 000-0000" className={iCls} />
           </Field>
           <div className="flex flex-col justify-end gap-2">
-            <p className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">Contact preferences</p>
-            <Check checked={okToCall} onChange={setOkToCall} label="You may call me to discuss my quote" />
-            <Check checked={okToText} onChange={setOkToText} label="You may text me with questions" />
+            <p className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+              Contact preferences <span className="text-[#a83232]">*</span>
+              <span className="ml-1 normal-case text-[#9a8a6e] tracking-normal font-normal">select at least one</span>
+            </p>
+            <Check checked={okToCall} onChange={(v) => { setOkToCall(v); if (v) setContactPrefError(false); }} label="You may call me to discuss my quote" />
+            <Check checked={okToText} onChange={(v) => { setOkToText(v); if (v) setContactPrefError(false); }} label="You may text me with questions" />
+            {contactPrefError && (
+              <p className="font-ui text-[12px] text-[#a83232]">Please select at least one contact method.</p>
+            )}
           </div>
           <div className="sm:col-span-2">
             <Check checked={returningCustomer} onChange={setReturningCustomer} label="I've booked with Monterey Golf Tours before" />
