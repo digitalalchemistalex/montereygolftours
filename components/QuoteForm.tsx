@@ -273,7 +273,7 @@ export default function QuoteForm() {
           <p className="mb-3 font-body text-[13px] text-[#6a665e]">
             Select courses you&apos;re interested in — <span className="text-[#9a8a6e]">optional</span>
           </p>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {BOOKABLE_COURSES.map((c) => {
               const sel = selectedCourses.includes(c.slug);
               const pbc = PBC_SLUGS.has(c.slug);
@@ -307,21 +307,12 @@ export default function QuoteForm() {
                         {sel && <span className="block h-1.5 w-1.5 rounded-full bg-white" />}
                       </span>
                     </div>
-                    {/* stat grid */}
+                    {/* stat row */}
                     {c.rating && c.slope && (
-                      <div className="mb-2 grid grid-cols-3 divide-x divide-[#e3ddcf] border border-[#e3ddcf] rounded-md overflow-hidden">
-                        <div className="px-2 py-1.5">
-                          <div className="font-ui text-[12px] font-semibold text-ink">{c.par}</div>
-                          <div className="font-ui text-[10px] text-[#9a8a6e]">Par</div>
-                        </div>
-                        <div className="px-2 py-1.5">
-                          <div className="font-ui text-[11px] font-semibold text-ink">{c.yards.replace(" yds","")}</div>
-                          <div className="font-ui text-[10px] text-[#9a8a6e]">Yards</div>
-                        </div>
-                        <div className="px-2 py-1.5">
-                          <div className="font-ui text-[11px] font-semibold text-ink">{c.rating} / {c.slope}</div>
-                          <div className="font-ui text-[10px] text-[#9a8a6e]">Rtg / Slope</div>
-                        </div>
+                      <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-0.5 border-t border-[#e3ddcf] pt-2">
+                        <span className="font-ui text-[11px] text-[#9a8a6e]">Par <span className="font-semibold text-ink">{c.par}</span></span>
+                        <span className="font-ui text-[11px] text-[#9a8a6e]">{c.yards}</span>
+                        <span className="font-ui text-[11px] text-[#9a8a6e]">Rtg <span className="font-semibold text-ink">{c.rating}</span> · Slope <span className="font-semibold text-ink">{c.slope}</span></span>
                       </div>
                     )}
                     {/* bottom row */}
