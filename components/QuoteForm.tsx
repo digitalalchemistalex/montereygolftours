@@ -136,6 +136,30 @@ export default function QuoteForm() {
   }, [selectedCourses]);
 
   const hasPBC = selectedCourses.some((s) => PBC_SLUGS.has(s));
+
+  // Warn if PBC courses selected and arrival is less than 30 days out
+  const pbcLeadTimeWarning = useMemo(() => {
+    if (!hasPBC || !startDate) return false;
+    const diff = Math.round((new Date(startDate).getTime() - Date.now()) / 86400000);
+    return diff < 30;
+  }, [hasPBC, startDate]);
+  // 21-day minimum lead time
+  const minArrival = useMemo(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 21);
+    return d.toISOString().split("T")[0];
+  }, []);
+
+  // Auto-calculate nights from arrival + departure
+  const autoNights = useMemo(() => {
+    if (!startDate || !endDate) return null;
+    const diff = Math.round((new Date(endDate).getTime() - new Date(startDate).getTime()) / 86400000);
+    return diff > 0 ? String(diff) : null;
+  }, [startDate, endDate]);
+
+  // Sync autoNights → nights field (only when dates are set and nights is empty or was auto-set)
+  const [nightsAutoSet, setNightsAutoSet] = useState(false);
+
   const carWeekFlag = isCarWeekDate(startDate) || isCarWeekDate(endDate);
 
   // Summary for sidebar
@@ -245,7 +269,11 @@ export default function QuoteForm() {
           </Field>
           <Field label="Nights">
             <input type="number" min="1" max="30" value={nights}
-              onChange={(e) => setNights(e.target.value)} placeholder="e.g. 4" className={iCls} />
+              onChange={(e) => { setNights(e.target.value); setNightsAutoSet(false); }}
+              placeholder="e.g. 4" className={iCls} />
+            {nightsAutoSet && nights && (
+              <p className="mt-1 font-ui text-[11px] text-[#2f6b4f]">Auto-calculated from your dates</p>
+            )}
           </Field>
           <div className="sm:col-span-2">
             <label className="mb-1.5 block font-ui text-[13px] font-semibold text-ink">Travel dates</label>
@@ -253,12 +281,27 @@ export default function QuoteForm() {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Arrival</label>
-                  <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} className={iCls} />
+                  <input type="date" value={startDate} min={minArrival}
+                  onChange={(e) => {
+                    setStartDate(e.target.value);
+                    // If departure already set, auto-calc nights
+                    if (endDate) {
+                      const diff = Math.round((new Date(endDate).getTime() - new Date(e.target.value).getTime()) / 86400000);
+                      if (diff > 0) { setNights(String(diff)); setNightsAutoSet(true); }
+                    }
+                  }} className={iCls} />
                 </div>
                 <div>
                   <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Departure</label>
-                  <input type="date" value={endDate} min={startDate || undefined}
-                    onChange={(e) => setEndDate(e.target.value)} className={iCls} />
+                  <input type="date" value={endDate}
+                    min={startDate ? new Date(new Date(startDate).getTime() + 86400000).toISOString().split("T")[0] : minArrival}
+                    onChange={(e) => {
+                      setEndDate(e.target.value);
+                      if (startDate) {
+                        const diff = Math.round((new Date(e.target.value).getTime() - new Date(startDate).getTime()) / 86400000);
+                        if (diff > 0) { setNights(String(diff)); setNightsAutoSet(true); }
+                      }
+                    }} className={iCls} />
                 </div>
               </div>
             )}
@@ -271,6 +314,11 @@ export default function QuoteForm() {
             {carWeekFlag && (
               <div className="mt-3 rounded-lg border border-[#e8b876] bg-[#fdf3e2] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#6a5528]">
                 Heads up: mid-August is Car Week — Bayonet and Black Horse close for several days and hotel rates spike. We&apos;ll still send options.
+              </div>
+            )}
+            {pbcLeadTimeWarning && (
+              <div className="mt-3 rounded-lg border border-[#e8b876] bg-[#fdf3e2] px-4 py-3 font-ui text-[13px] leading-relaxed text-[#6a5528]">
+                Pebble Beach Resorts® tee times for groups typically need 30+ days advance booking. We&apos;ll confirm availability — submit your request and we&apos;ll let you know what we can secure.
               </div>
             )}
           </div>
