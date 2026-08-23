@@ -37,6 +37,26 @@ const TRANSPORT_OPTIONS = [
   { value: "both", label: "Both airport and ground" },
 ];
 
+const CORPORATE_NEEDS = [
+  "F&B / group dining",
+  "AV / presentation setup",
+  "Branded materials",
+  "Team building activities",
+  "Prizes / gifts",
+  "Meeting space",
+  "Photography / video",
+  "Ground transport",
+];
+
+const CORPORATE_EVENT_TYPES = [
+  "Client entertainment",
+  "Team building",
+  "Sales kickoff",
+  "Retreat / offsite",
+  "Incentive trip",
+  "Other",
+];
+
 const CLOSED_COURSE_SLUGS = new Set(["links-at-spanish-bay", "the-hay"]);
 const PBC_SLUGS = new Set(["pebble-beach-golf-links", "spyglass-hill", "del-monte-golf-course"]);
 const BOOKABLE_COURSES = COURSES.filter((c) => !CLOSED_COURSE_SLUGS.has(c.slug));
@@ -77,6 +97,28 @@ export default function QuoteForm() {
   const [contactPrefError, setContactPrefError] = useState(false);
   const [coursesError, setCoursesError] = useState(false);
   const [returningCustomer, setReturningCustomer] = useState(false);
+
+  // Trip type selector
+  const [tripType, setTripType] = useState<"golf" | "stay" | "full" | "corp" | "">("");
+  const [tripTypeError, setTripTypeError] = useState(false);
+  const showLodging = tripType === "stay" || tripType === "full" || tripType === "corp";
+  const showActivities = tripType === "full" || tripType === "corp";
+  const showCorporate = tripType === "corp";
+
+  // Corporate fields — cleared when switching away from corp
+  const [corpAttendees, setCorpAttendees] = useState("");
+  const [corpEventType, setCorpEventType] = useState("");
+  const [corpNeeds, setCorpNeeds] = useState<string[]>([]);
+
+  const handleTripType = (t: typeof tripType) => {
+    if (tripType === "corp" && t !== "corp") {
+      setCorpAttendees("");
+      setCorpEventType("");
+      setCorpNeeds([]);
+    }
+    setTripType(t);
+    setTripTypeError(false);
+  };
 
   // Section 2 — Trip details
   const [groupSize, setGroupSize] = useState("8");
@@ -181,6 +223,11 @@ export default function QuoteForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!tripType) {
+      setTripTypeError(true);
+      return;
+    }
+    setTripTypeError(false);
     if (!okToCall && !okToText) {
       setContactPrefError(true);
       return;
@@ -197,6 +244,10 @@ export default function QuoteForm() {
       .filter(Boolean).join(" ");
     const payload = {
       name, email, phone: phone || null, group_size: groupSize,
+      trip_type: tripType || null,
+      corp_attendees: showCorporate ? corpAttendees || null : null,
+      corp_event_type: showCorporate ? corpEventType || null : null,
+      corp_needs: showCorporate && corpNeeds.length > 0 ? corpNeeds : null,
       nights: nights || null, travel_dates: travelDates || null,
       courses_interested: selectedCourses, hotels_interested: selectedHotels,
       activities_interested: selectedActivities, transport_needed: transportNeeded || null,
@@ -270,6 +321,45 @@ export default function QuoteForm() {
           </div>
           <div className="sm:col-span-2">
             <Check checked={returningCustomer} onChange={setReturningCustomer} label="I've booked with Monterey Golf Tours before" />
+          </div>
+        </div>
+
+        {/* ── Trip type selector ── */}
+        <div className="mb-2 mt-8">
+          <div className="mb-3 flex items-center gap-2">
+            <p className="font-ui text-[13px] font-bold uppercase tracking-[.08em] text-ink">
+              What are you planning? <span className="text-[#a83232]">*</span>
+            </p>
+            {tripTypeError && <p className="font-ui text-[12px] text-[#a83232]">Please select one.</p>}
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {([
+              { val: "golf", icon: "ti-golf", title: "Golf only", sub: "Tee times, no lodging needed" },
+              { val: "stay", icon: "ti-building", title: "Golf + Stay", sub: "Courses and hotel together" },
+              { val: "full", icon: "ti-stars", title: "Full experience", sub: "Golf, hotel, dining and activities" },
+              { val: "corp", icon: "ti-briefcase", title: "Corporate / group event", sub: "Team outing, client event, or retreat" },
+            ] as const).map(({ val, icon, title, sub }) => (
+              <button key={val} type="button" onClick={() => handleTripType(val)}
+                className={[
+                  "rounded-[10px] border p-3 text-left transition-colors",
+                  tripType === val && val === "corp"
+                    ? "border-[1.5px] border-[#7a5a0a] bg-[#fdf9ed]"
+                    : tripType === val
+                    ? "border-[1.5px] border-ocean bg-[#f2f7fa]"
+                    : "border-[#d8d2c2] bg-white hover:border-ocean",
+                ].join(" ")}
+              >
+                <div className={[
+                  "mb-2 flex h-8 w-8 items-center justify-center rounded-lg font-ui text-base",
+                  tripType === val && val === "corp" ? "bg-[#7a5a0a] text-white" :
+                  tripType === val ? "bg-ocean text-white" : "bg-[#f0ece4] text-[#5a564e]",
+                ].join(" ")}>
+                  <i className={`ti ${icon}`} aria-hidden="true" />
+                </div>
+                <div className="font-ui text-[12px] font-semibold text-ink">{title}</div>
+                <div className="mt-0.5 font-body text-[11px] leading-snug text-[#8a857a]">{sub}</div>
+              </button>
+            ))}
           </div>
         </div>
 
@@ -439,7 +529,8 @@ export default function QuoteForm() {
         </div>
 
         {/* ── 4. Lodging ── */}
-        <SectionHeader n={4} label="Lodging" />
+        {showLodging && (
+        <><SectionHeader n={4} label="Lodging" />
         <div className="border-b border-[#ede8da] pb-7">
           <p className="mb-3 font-body text-[13px] text-[#6a665e]">
             Hotels you&apos;re interested in — <span className="text-[#9a8a6e]">optional</span>
@@ -475,10 +566,12 @@ export default function QuoteForm() {
           <p className="mt-3 font-body text-[12px] text-[#8a857a]">
             Not sure yet? Leave this blank — we&apos;ll match lodging to whichever courses you play.
           </p>
-        </div>
+        </div></>
+        )}
 
         {/* ── 5. Activities & Transport ── */}
-        <SectionHeader n={5} label="Activities & transport" />
+        {showActivities && (
+        <><SectionHeader n={5} label="Activities & transport" />
         <div className="space-y-5 border-b border-[#ede8da] pb-7">
           <div>
             <p className="mb-3 font-body text-[13px] text-[#6a665e]">Activities of interest — <span className="text-[#9a8a6e]">optional</span></p>
@@ -507,7 +600,46 @@ export default function QuoteForm() {
               </p>
             )}
           </Field>
-        </div>
+        </div></>
+        )}
+
+        {/* ── Corporate needs ── */}
+        {showCorporate && (
+        <><SectionHeader n={6} label="Corporate needs" />
+        <div className="border-b border-[#ede8da] pb-7 space-y-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <Field label="Expected attendees">
+              <input type="number" min="1" max="1000" value={corpAttendees}
+                onChange={(e) => setCorpAttendees(e.target.value)}
+                placeholder="e.g. 40" className={iCls} />
+            </Field>
+            <Field label="Event type">
+              <select value={corpEventType} onChange={(e) => setCorpEventType(e.target.value)} className={iCls}>
+                <option value="">Select one…</option>
+                {CORPORATE_EVENT_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
+              </select>
+            </Field>
+          </div>
+          <div>
+            <p className="mb-2 font-ui text-[13px] font-semibold text-ink">What do you need? <span className="font-normal text-[#8a857a]">(select all that apply)</span></p>
+            <div className="flex flex-wrap gap-2">
+              {CORPORATE_NEEDS.map((n) => {
+                const sel = corpNeeds.includes(n);
+                return (
+                  <button key={n} type="button"
+                    onClick={() => setCorpNeeds(prev => sel ? prev.filter(x => x !== n) : [...prev, n])}
+                    className={[
+                      "rounded-lg border px-3 py-1.5 font-ui text-[12px] transition-colors",
+                      sel ? "border-[#7a5a0a] bg-[#fdf9ed] text-[#7a5a0a] font-semibold" : "border-[#d8d2c2] bg-white text-[#4a463f] hover:border-[#7a5a0a]",
+                    ].join(" ")}>
+                    {n}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div></>
+        )}
 
         {/* ── 6. Almost Done ── */}
         <SectionHeader n={6} label="Almost done" />
@@ -547,6 +679,11 @@ export default function QuoteForm() {
       <aside className="hidden lg:block" style={{minHeight:0}}>
         <div className="sticky top-8 rounded-2xl border border-[#e3ddcf] bg-white p-5 shadow-[0_4px_16px_rgba(37,35,33,.06)]">
           <p className="mb-4 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-[#9a8a6e]">Your trip so far</p>
+          {tripType && (
+            <div className="mb-3 rounded-lg bg-[#eef4f7] px-3 py-2 font-ui text-[12px] font-semibold text-ocean">
+              {tripType === "golf" ? "Golf only" : tripType === "stay" ? "Golf + Stay" : tripType === "full" ? "Full experience" : "Corporate / group event"}
+            </div>
+          )}
           <div className="space-y-0 divide-y divide-[#ede8da]">
             <SummaryRow label="Golfers" value={groupSize ? `${groupSize} golfers` : null} />
             <SummaryRow label="Dates" value={summaryDates} />
