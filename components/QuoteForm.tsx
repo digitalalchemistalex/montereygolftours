@@ -57,6 +57,77 @@ const CORPORATE_EVENT_TYPES = [
   "Other",
 ];
 
+const GAME_LEVELS = [
+  {
+    val: "low",
+    title: "Single figures",
+    sub: "Competitive, play regularly, score matters",
+    hcp: "Handicap 0–9",
+    hcpCls: "bg-[#eef4f7] text-[#1a4a5c]",
+    intel: "The peninsula will give you a proper game",
+    body: "Pebble Beach plays slope 145, Spyglass at 148 — both will expose any weakness in your iron game. Bayonet's Combat Corner on the back nine has humbled tour players. We'll build an itinerary that tests you round after round, not just ticks boxes.",
+    courses: [
+      { name: "Pebble Beach® — slope 145", style: "primary" },
+      { name: "Spyglass Hill® — slope 148", style: "primary" },
+      { name: "Bayonet — slope 141", style: "primary" },
+      { name: "TPC Pasadera", style: "secondary" },
+      { name: "Pasatiempo", style: "secondary" },
+    ],
+    pbcWarn: false,
+  },
+  {
+    val: "mid",
+    title: "Club golfer",
+    sub: "Solid game, play most weeks, enjoy the challenge",
+    hcp: "Handicap 10–20",
+    hcpCls: "bg-[#eaf4ee] text-[#1a6040]",
+    intel: "The full peninsula is open to you",
+    body: "Most club golfers play Pebble in the high 80s to mid 90s — that's completely normal, and the views make every bogey forgettable. Bayonet's slope of 141 will test your ball-striking. Carmel Valley Ranch rewards course management over power. We'll build a mix that plays to your strengths.",
+    courses: [
+      { name: "Pebble Beach®", style: "primary" },
+      { name: "Bayonet", style: "primary" },
+      { name: "Carmel Valley Ranch", style: "primary" },
+      { name: "Spyglass Hill®", style: "secondary" },
+      { name: "Quail Lodge", style: "secondary" },
+    ],
+    pbcWarn: false,
+  },
+  {
+    val: "high",
+    title: "Social golfer",
+    sub: "Play regularly, focus on the experience over score",
+    hcp: "Handicap 21–28",
+    hcpCls: "bg-[#fdf8ee] text-[#7a5a0a]",
+    intel: "Monterey has the right courses for your game",
+    body: "Carmel Valley Ranch (slope 130) and Quail Lodge (slope 128) are where you'll play your best golf on the peninsula — demanding enough to be interesting, fair enough to score on. Black Horse gives you Monterey Bay views without Bayonet's brutality. Pebble is on the table if the bucket-list round matters more than the scorecard — we'll tell you exactly what to expect.",
+    courses: [
+      { name: "Carmel Valley Ranch", style: "primary" },
+      { name: "Quail Lodge", style: "primary" },
+      { name: "Black Horse", style: "primary" },
+      { name: "Pacific Grove Golf Links", style: "secondary" },
+      { name: "Pebble Beach® — bucket list, not a scoring round", style: "note" },
+    ],
+    pbcWarn: false,
+  },
+  {
+    val: "casual",
+    title: "Casual / occasional",
+    sub: "Get out a few times a year, here for the experience",
+    hcp: "Handicap 28+",
+    hcpCls: "bg-[#f5f0fa] text-[#4a2a7a]",
+    intel: "Monterey has brilliant golf at every level",
+    body: "Pacific Grove's back nine runs along the same coastline as Pebble Beach at a fraction of the price and the pressure. Del Monte is California's oldest course in continuous play — flat, walkable, and genuinely fun. Laguna Seca was designed by the Jones father-son duo and punches well above its green fee. Proper courses with real character.",
+    courses: [
+      { name: "Pacific Grove Golf Links", style: "primary" },
+      { name: "Del Monte®", style: "primary" },
+      { name: "Laguna Seca", style: "primary" },
+      { name: "Quail Lodge", style: "secondary" },
+      { name: "Pebble Beach® — the experience is worth it once", style: "note" },
+    ],
+    pbcWarn: true,
+  },
+] as const;
+
 const CLOSED_COURSE_SLUGS = new Set(["links-at-spanish-bay", "the-hay"]);
 const PBC_SLUGS = new Set(["pebble-beach-golf-links", "spyglass-hill", "del-monte-golf-course"]);
 const BOOKABLE_COURSES = COURSES.filter((c) => !CLOSED_COURSE_SLUGS.has(c.slug));
@@ -97,6 +168,11 @@ export default function QuoteForm() {
   const [contactPrefError, setContactPrefError] = useState(false);
   const [coursesError, setCoursesError] = useState(false);
   const [returningCustomer, setReturningCustomer] = useState(false);
+
+  // Game level
+  const [gameLevel, setGameLevel] = useState<"low"|"mid"|"high"|"casual"|"">("");
+  const [gameLevelError, setGameLevelError] = useState(false);
+  const selectedLevel = GAME_LEVELS.find((g) => g.val === gameLevel) ?? null;
 
   // Trip type selector
   const [tripType, setTripType] = useState<"golf" | "stay" | "full" | "corp" | "">("");
@@ -224,6 +300,11 @@ export default function QuoteForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!gameLevel) {
+      setGameLevelError(true);
+      return;
+    }
+    setGameLevelError(false);
     if (!tripType) {
       setTripTypeError(true);
       return;
@@ -245,6 +326,7 @@ export default function QuoteForm() {
       .filter(Boolean).join(" ");
     const payload = {
       name, email, phone: phone || null, group_size: groupSize,
+      game_level: gameLevel || null,
       trip_type: tripType || null,
       corp_attendees: showCorporate ? corpAttendees || null : null,
       corp_event_type: showCorporate ? corpEventType || null : null,
@@ -324,6 +406,63 @@ export default function QuoteForm() {
           <div className="sm:col-span-2">
             <Check checked={returningCustomer} onChange={setReturningCustomer} label="I've booked with Monterey Golf Tours before" />
           </div>
+        </div>
+
+        {/* ── Game level selector ── */}
+        <div className="mb-2 mt-8">
+          <div className="mb-3 flex items-center gap-2">
+            <p className="font-ui text-[13px] font-bold uppercase tracking-[.08em] text-ink">
+              How would you describe your game? <span className="text-[#a83232]">*</span>
+            </p>
+            {gameLevelError && <p className="font-ui text-[12px] text-[#a83232]">Please select one.</p>}
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {GAME_LEVELS.map((g) => (
+              <button key={g.val} type="button"
+                onClick={() => { setGameLevel(g.val); setGameLevelError(false); }}
+                className={[
+                  "rounded-[10px] border p-3 text-left transition-colors",
+                  gameLevel === g.val
+                    ? "border-[1.5px] border-ocean bg-[#f2f7fa]"
+                    : "border-[#d8d2c2] bg-white hover:border-ocean",
+                ].join(" ")}
+              >
+                <div className="font-ui text-[13px] font-semibold text-ink">{g.title}</div>
+                <div className="mt-0.5 font-body text-[12px] text-[#8a857a]">{g.sub}</div>
+                <span className={`mt-2 inline-block rounded-full px-2.5 py-0.5 font-ui text-[10px] font-semibold ${g.hcpCls}`}>
+                  {g.hcp}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {selectedLevel && (
+            <div className={[
+              "mt-4 rounded-xl border p-4 font-body text-[13px] leading-relaxed",
+              gameLevel === "low" ? "border-[#b0cfd8] bg-[#eef4f7] text-[#1a3a4c]" :
+              gameLevel === "mid" ? "border-[#9fd8b0] bg-[#eaf4ee] text-[#1a4030]" :
+              gameLevel === "high" ? "border-[#dfc878] bg-[#fdf8ee] text-[#5a3a0a]" :
+              "border-[#c8b0e0] bg-[#f5f0fa] text-[#3a1a5a]",
+            ].join(" ")}>
+              <p className="mb-1 font-ui text-[13px] font-semibold">{selectedLevel.intel}</p>
+              <p>{selectedLevel.body}</p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {selectedLevel.courses.map((c) => (
+                  <span key={c.name} className={[
+                    "rounded-full px-2.5 py-0.5 font-ui text-[11px] font-semibold",
+                    c.style === "primary" ? "bg-[#1a4a5c] text-white" :
+                    c.style === "secondary" ? "bg-[#eef4f7] text-[#1a4a5c]" :
+                    "bg-[#fff3e0] text-[#7a4a0a]",
+                  ].join(" ")}>{c.name}</span>
+                ))}
+              </div>
+              {selectedLevel.pbcWarn && (
+                <div className="mt-3 rounded-lg border border-[#f0a0a0] bg-[#fdecea] px-3 py-2.5 font-ui text-[12px] leading-relaxed text-[#6a1a1a]">
+                  <strong>Note on Pebble Beach Golf Links®:</strong> At slope 145, it's one of the hardest rated courses in the country and the green fee runs $595 per round. We'll absolutely include it if it's on your list — just want to set honest expectations so the trip exceeds them.
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* ── Trip type selector ── */}
@@ -700,6 +839,11 @@ export default function QuoteForm() {
       <aside className="hidden lg:block" style={{minHeight:0}}>
         <div className="sticky top-8 rounded-2xl border border-[#e3ddcf] bg-white p-5 shadow-[0_4px_16px_rgba(37,35,33,.06)]">
           <p className="mb-4 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-[#9a8a6e]">Your trip so far</p>
+          {gameLevel && (
+            <div className="mb-2 rounded-lg bg-[#f0ece4] px-3 py-2 font-ui text-[12px] font-semibold text-[#5a564e]">
+              {GAME_LEVELS.find((g) => g.val === gameLevel)?.title}
+            </div>
+          )}
           {tripType && (
             <div className="mb-3 rounded-lg bg-[#eef4f7] px-3 py-2 font-ui text-[12px] font-semibold text-ocean">
               {tripType === "golf" ? "Golf only" : tripType === "stay" ? "Golf + Stay" : tripType === "full" ? "Full experience" : "Corporate / group event"}
