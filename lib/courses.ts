@@ -29,7 +29,7 @@ export type Course = {
 export const COURSES: Course[] = [
   {
     slug: "bayonet",
-    image: "/images/courses/bayonet-hero.webp",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
     name: "Bayonet",
     city: "Seaside, CA",
     par: 72,
@@ -44,7 +44,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "black-horse",
-    image: "/images/courses/black-horse-hero.jpg",
+    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=90",
     name: "Black Horse",
     city: "Seaside, CA",
     par: 72,
@@ -74,7 +74,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "quail-lodge",
-    image: "/images/courses/quail-lodge-hero.jpg",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     par: 71,
@@ -89,7 +89,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "laguna-seca-golf-ranch",
-    image: "/images/courses/laguna-seca-hero.jpg",
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
     name: "Laguna Seca Golf Ranch",
     city: "Monterey, CA",
     par: 71,
@@ -119,7 +119,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "poppy-hills",
-    image: "/images/courses/poppy-hills-hero.webp",
+    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
@@ -149,6 +149,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pebble-beach-golf-links",
+    image: "https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=1400&q=90",
     name: "Pebble Beach Golf Links®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -163,6 +164,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "spyglass-hill",
+    image: "https://images.unsplash.com/photo-1606443192517-919653213206?auto=format&fit=crop&w=1400&q=90",
     name: "Spyglass Hill Golf Course®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -177,6 +179,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "links-at-spanish-bay",
+    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
     name: "The Links at Spanish Bay®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -186,6 +189,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "del-monte-golf-course",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
     name: "Del Monte Golf Course®",
     city: "Monterey, CA",
     par: 72,
@@ -200,6 +204,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "the-hay",
+    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1400&q=90",
     name: "The Hay™",
     city: "Pebble Beach, CA",
     par: 27,
@@ -209,7 +214,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pasatiempo",
-    image: "/images/courses/pasatiempo-hero.jpg",
+    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,
