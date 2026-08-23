@@ -53,11 +53,11 @@ Raw feedback from Sean. Each item tracked below with status and directive assign
 
 | Item | Status | Notes |
 |---|---|---|
-| D#12 hero stats fixed (8→14 courses, 8→11 hotels) | ❌ Open | Raza session lock — D#12 only |
-| D#13 PBR nav mega-menu live | ❌ Open | Blocked on D#12 completion |
-| D#14 PBR homepage section live | ❌ Open | Blocked on D#12 completion |
-| D#15 QuoteForm 25-field upgrade | ❌ Open | Blocked on D#12 completion. S9 (group size number input) already done by MASTER — dc76226a98 |
-| MASTER formal sign-off on admin build | ❌ Needed | Reverses no-admin-panel rule in strategy doc |
+| D#12 hero stats fixed (8→14 courses, 8→11 hotels) | ✅ Done | Live — confirmed 14 courses / 11 hotels on montereygolftours.vercel.app |
+| D#13 PBR nav mega-menu live | ✅ Done | Live — PBR in nav confirmed |
+| D#14 PBR homepage section live | ✅ Done | Live — PBR homepage section confirmed |
+| D#15 QuoteForm 25-field upgrade | ✅ Done | Full redesign + DB migration complete — 2026-08-22 |
+| MASTER formal sign-off on admin build | ✅ Done | Given 2026-08-22 |
 
 ---
 
@@ -369,4 +369,6 @@ bounced_at timestamptz
 | 2026-08-21 | Tracker created. All directives spec'd. D#16–D#21 defined. All pre-requisites confirmed open. |
 | 2026-08-21 | Sean feedback received (9 items S1–S9). Added to tracker. S9 added to D#15 scope. S1 added to D#18 scope. S7 added to D#19/D#20 scope. S6/S8 require MASTER action before directives can be written. S2/S3/S4/S5 image sourcing blocked on Sean/MASTER. |
 | 2026-08-21 | MASTER fixed S1, S8, S9 directly (no Raza). S1: Portola Hotel moved to #1 in lib/hotels.ts (5ab96d5002). S8: FitFinder removed from app/page.tsx — replacement TBD (b0676320ae). S9: QuoteForm group size — number input min=2 max=400, label "Number of golfers" (final: e68097de4392). All READY on Vercel. |
+| 2026-08-22 | MASTER formal sign-off on admin build given. D#15 complete — leads table migration: added hotels_interested, activities_interested, ground_transport_needed, referral_source, ok_to_call, ok_to_text, raw_payload, nights, returning_customer, transport_needed, non_golfer_count, trip_type, corp_attendees, corp_event_type, corp_needs, hotel_pick_for_me, game_level columns. D#12/D#13/D#14 confirmed live (pre-requisites met). Admin build authorized — ready for D#16. |
+| 2026-08-22 | QuoteForm full redesign session. Changes: (1) removed budget field entirely, (2) trip length dropdown → nights number input, (3) 6 numbered sections GTHS-style, (4) ok_to_call/ok_to_text moved to contact section + required validation, (5) returning customer checkbox, (6) transport dropdown replacing checkbox, (7) course cards with real golfer stats (par/yards/rating/slope/walkable/pace/difficulty) from course-intelligence.md, (8) hotel strips with left accent bar, (9) sticky sidebar desktop, (10) page widened to max-w-1200px, (11) 21-day minimum arrival date, (12) auto-calculate nights from dates, (13) PBC 30-day lead time warning, (14) contact preference required validation, (15) courses required validation, (16) non-golfer count reveal, (17) trip type selector (Golf only/Golf+Stay/Full experience/Corporate) with conditional section visibility, (18) corporate needs section (attendees/event type/needs tags), (19) hotel pick-for-me option, (20) game level selector (Single figures/Club golfer/Social golfer/Casual) with intelligent course recommendations per tier. All READY on Vercel. Final QuoteForm commit: 2ec82cae7c. courses.ts extended with rating/slope/walkable/pace/difficulty: e91a4ea226. |
 
