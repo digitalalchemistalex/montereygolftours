@@ -267,14 +267,6 @@ export default function QuoteForm() {
             <input type="number" min="2" max="400" required value={groupSize}
               onChange={(e) => setGroupSize(e.target.value)} placeholder="e.g. 12" className={iCls} />
           </Field>
-          <Field label="Nights">
-            <input type="number" min="1" max="30" value={nights}
-              onChange={(e) => { setNights(e.target.value); setNightsAutoSet(false); }}
-              placeholder="e.g. 4" className={iCls} />
-            {nightsAutoSet && nights && (
-              <p className="mt-1 font-ui text-[11px] text-[#2f6b4f]">Auto-calculated from your dates</p>
-            )}
-          </Field>
           <div className="sm:col-span-2">
             <label className="mb-1.5 block font-ui text-[13px] font-semibold text-ink">Travel dates</label>
             {!datesFlexible && (
@@ -322,6 +314,14 @@ export default function QuoteForm() {
               </div>
             )}
           </div>
+          <Field label="Nights">
+            <input type="number" min="1" max="30" value={nights}
+              onChange={(e) => { setNights(e.target.value); setNightsAutoSet(false); }}
+              placeholder="e.g. 4" className={iCls} />
+            {nightsAutoSet && nights && (
+              <p className="mt-1 font-ui text-[11px] text-[#2f6b4f]">Auto-calculated from your dates</p>
+            )}
+          </Field>
           <div className="sm:col-span-2">
             <Check checked={nonGolfer} onChange={setNonGolfer} label="Traveling with a non-golfing partner or family member?" />
           </div>
