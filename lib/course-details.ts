@@ -26,7 +26,7 @@ export type CourseDetail = {
   faqs: { q: string; a: string }[];
   pointers?: string[];
   priceEstimate?: number;
-  gallery?: string[];
+  gallery?: { src: string; caption: string; tag?: string }[];
 };
 
 export const COURSE_DETAILS: Record<string, CourseDetail> = {
@@ -48,11 +48,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook:
       "The military-heritage championship at former Fort Ord — one of the toughest public courses in the country.",
     gallery: [
-      "/images/courses/gallery/bayonet-2.webp",
-      "/images/courses/gallery/bayonet-3.webp",
-      "/images/courses/gallery/bayonet-4.webp",
-      "/images/courses/gallery/bayonet-5.webp",
-      "/images/courses/gallery/bayonet-6.webp",
+      { src: "/images/courses/gallery/bayonet-2.webp", caption: "The Combat Corner — Bayonet's notorious back-nine stretch that turns directly into the prevailing wind.", tag: "Holes 14–16" },
+      { src: "/images/courses/gallery/bayonet-3.webp", caption: "Fairways carved from former Fort Ord military land — the history is in the terrain.", tag: "Fairway" },
+      { src: "/images/courses/gallery/bayonet-4.webp", caption: "Bayonet's championship layout plays to a slope of 141 from the tips — among the toughest on the peninsula.", tag: "Championship tees" },
+      { src: "/images/courses/gallery/bayonet-5.webp", caption: "Elevated approach shots with distant Monterey Bay views on the back nine.", tag: "Back nine" },
+      { src: "/images/courses/gallery/bayonet-6.webp", caption: "The green complexes at Bayonet demand precision — undulating and fast.", tag: "Putting surface" },
     ],
     description: [
       "Bayonet sits on the grounds of the former Fort Ord military base, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954 — reportedly to suit his own left-handed game. Hole 15, part of a demanding stretch that runs holes 11 through 15, carries the course's famous \"Combat Corner\" nickname. The course is named for the 7th Infantry, the \"Bayonet Division.\"",
@@ -137,13 +137,13 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook:
       "Alister MacKenzie's self-declared favorite design — he lived and died alongside the 6th fairway.",
     gallery: [
-      "/images/courses/gallery/pasatiempo-2.jpg",
-      "/images/courses/gallery/pasatiempo-3.jpg",
-      "/images/courses/gallery/pasatiempo-4.jpg",
-      "/images/courses/gallery/pasatiempo-5.jpg",
-      "/images/courses/gallery/pasatiempo-6.webp",
-      "/images/courses/gallery/pasatiempo-7.webp",
-      "/images/courses/gallery/pasatiempo-8.webp",
+      { src: "/images/courses/gallery/pasatiempo-2.jpg", caption: "Alister MacKenzie's home course — he lived on the property next to the 6th green. The design reflects his obsession with strategic angles.", tag: "MacKenzie design" },
+      { src: "/images/courses/gallery/pasatiempo-3.jpg", caption: "The famed 16th hole — a short par 4 that punishes the aggressive tee shot with a ravine short of the green.", tag: "Hole 16 · Par 4" },
+      { src: "/images/courses/gallery/pasatiempo-4.jpg", caption: "Deep MacKenzie-style bunkers with steep faces — visually intimidating, strategically exact.", tag: "Bunkering" },
+      { src: "/images/courses/gallery/pasatiempo-5.jpg", caption: "The 18th hole plays uphill to a green guarded by the same ravine that defines much of the back nine.", tag: "Hole 18 · Par 4" },
+      { src: "/images/courses/gallery/pasatiempo-6.webp", caption: "Views across the Santa Cruz Mountains from the upper holes — rare inland elevation for a MacKenzie layout.", tag: "Santa Cruz Mountains" },
+      { src: "/images/courses/gallery/pasatiempo-7.webp", caption: "The course plays through a mix of native oak woodland and open, wind-exposed ridgelines.", tag: "Course character" },
+      { src: "/images/courses/gallery/pasatiempo-8.webp", caption: "Pasatiempo's par 70 layout — short by modern standards, but MacKenzie made every yard count.", tag: "Par 70 · 6,434 yds" },
     ],
     description: [
       "Pasatiempo opened on September 8, 1929, designed by Alister MacKenzie for Marion Hollins, the 1921 U.S. Women's Amateur champion. MacKenzie — the architect behind Augusta National, Cypress Point, and Royal Melbourne — considered Pasatiempo one of his finest pieces of work, and felt strongly enough about the course that he bought a home next to the 6th fairway, where he lived until his death in 1934.",
@@ -220,9 +220,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook:
       "Black Horse's twin at the former Fort Ord — sweeping Monterey Bay views with a gentler test than its sister course.",
     gallery: [
-      "/images/courses/gallery/black-horse-2.jpg",
-      "/images/courses/gallery/black-horse-3.webp",
-      "/images/courses/gallery/black-horse-4.webp",
+      { src: "/images/courses/gallery/black-horse-2.jpg", caption: "Panoramic Monterey Bay views open up on the back nine — on a clear day you can see across to Santa Cruz.", tag: "Monterey Bay views" },
+      { src: "/images/courses/gallery/black-horse-3.webp", caption: "Black Horse's fescue-framed fairways give it a links character that Bayonet, its sister course, doesn't have.", tag: "Fescue fairways" },
+      { src: "/images/courses/gallery/black-horse-4.webp", caption: "Slope 132 from the tips — more forgiving than Bayonet, but the Bay wind makes every score honest.", tag: "Slope 132" },
     ],
     description: [
       "Black Horse shares its origin with Bayonet on the grounds of the former Fort Ord military base. Designed alongside Bayonet by General Robert B. McClure in 1954 and refreshed in a 2007 Gene Bates redesign, Black Horse offers fescue-framed fairways and sweeping views of Monterey Bay throughout the round.",
@@ -307,7 +307,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook:
       "Inland warmth and an early clear from the fog — the only Pete Dye design in Northern California.",
     gallery: [
-      "/images/courses/gallery/carmel-valley-ranch-golf-2.webp",
+      { src: "/images/courses/gallery/carmel-valley-ranch-golf-2.webp", caption: "Pete Dye's only Northern California design — the only Pete Dye course in the entire region. Redesigned by Gene Bates in 2006.", tag: "Pete Dye design" },
     ],
     description: [
       "Carmel Valley Ranch sits inland from the coastal fog belt, in the warmer Carmel Valley microclimate that tends to clear earlier in the day than the peninsula proper. The course carries a Pete Dye pedigree — the only Pete Dye design in Northern California — with a subsequent Gene Bates redesign.",
@@ -376,10 +376,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     hook:
       "A resort round in the Carmel Valley sun, threaded around 10 man-made lakes, away from the coastal marine layer.",
     gallery: [
-      "/images/courses/gallery/quail-lodge-2.webp",
-      "/images/courses/gallery/quail-lodge-3.webp",
-      "/images/courses/gallery/quail-lodge-4.webp",
-      "/images/courses/gallery/quail-lodge-5.webp",
+      { src: "/images/courses/gallery/quail-lodge-2.webp", caption: "Ten man-made lakes weave through Quail Lodge's layout — water comes into play on 9 of the 18 holes.", tag: "Water features" },
+      { src: "/images/courses/gallery/quail-lodge-3.webp", caption: "The Robert Muir Graves original from 1964, refined by Todd Eckenrode in 2015 — consistently rated best playing conditions in Central California.", tag: "Best conditions" },
+      { src: "/images/courses/gallery/quail-lodge-4.webp", caption: "Warm Carmel Valley sunshine even when the coast is fogged in — one of the practical reasons to base here.", tag: "Carmel Valley" },
+      { src: "/images/courses/gallery/quail-lodge-5.webp", caption: "Wildlife is a constant presence — quail, deer, hawks, and herons are regulars on the fairways.", tag: "Wildlife" },
     ],
     description: [
       "Quail Lodge & Golf Club was designed by Robert Muir Graves in 1964 and refined in 2015 by Principal Designer Todd Eckenrode of Origins Golf Design. The course plays through Carmel Valley's warmer inland climate with 10 man-made lakes strategically woven through the layout — accuracy matters more than distance here.",
@@ -457,7 +457,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "lagunasecagolf.com",
     hook: "An accessible daily-fee round close to downtown Monterey, with rates that won't strain a group budget.",
     gallery: [
-      "/images/courses/gallery/laguna-seca-2.jpg",
+      { src: "/images/courses/gallery/laguna-seca-2.jpg", caption: "Designed by Robert Trent Jones Sr. and Jr. — the only father-son collaboration in Monterey Peninsula golf.", tag: "RTJ Father-Son design" },
     ],
     description: [
       "Laguna Seca Golf Ranch was designed by the legendary Robert Trent Jones Sr. and Robert Trent Jones Jr. father-son duo in 1970 — remarkable design pedigree at a daily-fee price point. The course is carved through oak-studded coastal hills between Monterey and Salinas, with narrow uneven fairways, elevated tees, and strategically placed bunkers guarding every green.",
@@ -533,10 +533,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "playpacificgrove.com",
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
     gallery: [
-      "/images/courses/gallery/pacific-grove-golf-links-2.webp",
-      "/images/courses/gallery/pacific-grove-golf-links-3.webp",
-      "/images/courses/gallery/pacific-grove-golf-links-4.webp",
-      "/images/courses/gallery/pacific-grove-golf-links-5.webp",
+      { src: "/images/courses/gallery/pacific-grove-golf-links-2.webp", caption: "The Neville back nine — designed by Jack Neville, original co-designer of Pebble Beach Golf Links, in 1960. Dunes and ocean on every hole.", tag: "Neville Nine · Back 9" },
+      { src: "/images/courses/gallery/pacific-grove-golf-links-3.webp", caption: "Point Pinos Lighthouse overlooks holes 12 through 16 — built in 1855, the oldest continuously operating lighthouse on the West Coast.", tag: "Point Pinos Lighthouse" },
+      { src: "/images/courses/gallery/pacific-grove-golf-links-4.webp", caption: "The same Monterey coastline as Pebble Beach — at a fraction of the green fee. The locals' open secret.", tag: "Coastal links" },
+      { src: "/images/courses/gallery/pacific-grove-golf-links-5.webp", caption: "Windswept dunes remind you that Jack Neville understood links golf. The ocean spray is part of the experience.", tag: "Links terrain" },
     ],
     description: [
       "Pacific Grove Golf Links opened on May 9, 1932, with H. Chandler Egan designing the front nine. The back nine was laid out by Jack Neville — the same architect who designed the famous clifftop links right next door — and plays along the Pacific coast with crashing waves, tide pools, and views of Point Pinos Lighthouse.",
@@ -617,7 +617,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "poppyhillsgolf.com",
     hook: "Golf's most famous zip code, bentgrass greens, and no Pebble Beach Company gate fee.",
     gallery: [
-      "/images/courses/gallery/poppy-hills-2.webp",
+      { src: "/images/courses/gallery/poppy-hills-2.webp", caption: "Poppy Hills sits in the Del Monte Forest — the same zip code as Pebble Beach, at a public access green fee.", tag: "Del Monte Forest" },
     ],
     description: [
       "Poppy Hills Golf Course sits inside the Del Monte Forest — the same 93953 zip code as the resort's marquee courses — but is owned and operated by the Northern California Golf Association (NCGA), entirely separate from Pebble Beach Company. Day visitors do not pay the Pebble Beach gate fee; the NCGA entrance is completely separate.",
@@ -1073,3 +1073,4 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     ],
   },
 };
+
