@@ -130,6 +130,7 @@ export default function QuoteForm() {
   const [nonGolferCount, setNonGolferCount] = useState("1");
 
   // Sections 3–5
+  const [hotelPickForMe, setHotelPickForMe] = useState(false);
   const [selectedHotels, setSelectedHotels] = useState<string[]>([]);
   const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
   const [transportNeeded, setTransportNeeded] = useState("");
@@ -249,7 +250,8 @@ export default function QuoteForm() {
       corp_event_type: showCorporate ? corpEventType || null : null,
       corp_needs: showCorporate && corpNeeds.length > 0 ? corpNeeds : null,
       nights: nights || null, travel_dates: travelDates || null,
-      courses_interested: selectedCourses, hotels_interested: selectedHotels,
+      courses_interested: selectedCourses, hotels_interested: hotelPickForMe ? [] : selectedHotels,
+      hotel_pick_for_me: hotelPickForMe,
       activities_interested: selectedActivities, transport_needed: transportNeeded || null,
       ok_to_call: okToCall, ok_to_text: okToText, returning_customer: returningCustomer,
       non_golfer_in_group: nonGolfer,
@@ -532,40 +534,59 @@ export default function QuoteForm() {
         {showLodging && (
         <><SectionHeader n={4} label="Lodging" />
         <div className="border-b border-[#ede8da] pb-7">
-          <p className="mb-3 font-body text-[13px] text-[#6a665e]">
-            Hotels you&apos;re interested in — <span className="text-[#9a8a6e]">optional</span>
-          </p>
-          <div className="flex flex-col gap-2">
-            {HOTELS.map((h) => {
-              const sel = selectedHotels.includes(h.slug);
-              return (
-                <button key={h.slug} type="button"
-                  onClick={() => toggle(selectedHotels, setSelectedHotels, h.slug)}
-                  className={[
-                    "flex items-stretch overflow-hidden rounded-[10px] border text-left transition-colors",
-                    sel ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
-                  ].join(" ")}
-                >
-                  <div className={`w-1 flex-shrink-0 ${sel ? "bg-ocean" : "bg-[#d0dde3]"}`} />
-                  <div className="flex flex-1 items-center justify-between gap-3 px-3 py-2.5">
-                    <div>
-                      <div className="font-ui text-[13px] font-semibold text-ink">{h.name}</div>
-                      {h.city && <div className="mt-0.5 font-body text-[11px] text-[#9a8a6e]">{h.city}</div>}
-                    </div>
-                    <span className={[
-                      "flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border",
-                      sel ? "border-ocean bg-ocean" : "border-[#d8d2c2] bg-white",
-                    ].join(" ")}>
-                      {sel && <span className="block h-1.5 w-1.5 rounded-full bg-white" />}
-                    </span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-          <p className="mt-3 font-body text-[12px] text-[#8a857a]">
-            Not sure yet? Leave this blank — we&apos;ll match lodging to whichever courses you play.
-          </p>
+          {/* Pick for me toggle */}
+          <label className={[
+            "mb-4 flex cursor-pointer items-center gap-3 rounded-xl border-2 p-4 transition-colors",
+            hotelPickForMe ? "border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+          ].join(" ")}>
+            <div className={[
+              "flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors",
+              hotelPickForMe ? "border-ocean bg-ocean" : "border-[#d8d2c2]",
+            ].join(" ")}>
+              {hotelPickForMe && <span className="block h-2 w-2 rounded-full bg-white" />}
+            </div>
+            <input type="checkbox" checked={hotelPickForMe}
+              onChange={(e) => { setHotelPickForMe(e.target.checked); if (e.target.checked) setSelectedHotels([]); }}
+              className="sr-only" />
+            <div>
+              <div className="font-ui text-[13px] font-semibold text-ink">Choose the best hotel for us</div>
+              <div className="font-body text-[12px] text-[#8a857a]">We&apos;ll match lodging based on your courses, group size, and best available rates</div>
+            </div>
+          </label>
+
+          {!hotelPickForMe && (
+            <>
+              <p className="mb-3 font-body text-[13px] text-[#6a665e]">Or select a hotel you have in mind</p>
+              <div className="flex flex-col gap-2">
+                {HOTELS.map((h) => {
+                  const sel = selectedHotels.includes(h.slug);
+                  return (
+                    <button key={h.slug} type="button"
+                      onClick={() => toggle(selectedHotels, setSelectedHotels, h.slug)}
+                      className={[
+                        "flex items-stretch overflow-hidden rounded-[10px] border text-left transition-colors",
+                        sel ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                      ].join(" ")}
+                    >
+                      <div className={`w-1 flex-shrink-0 ${sel ? "bg-ocean" : "bg-[#d0dde3]"}`} />
+                      <div className="flex flex-1 items-center justify-between gap-3 px-3 py-2.5">
+                        <div>
+                          <div className="font-ui text-[13px] font-semibold text-ink">{h.name}</div>
+                          {h.city && <div className="mt-0.5 font-body text-[11px] text-[#9a8a6e]">{h.city}</div>}
+                        </div>
+                        <span className={[
+                          "flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border",
+                          sel ? "border-ocean bg-ocean" : "border-[#d8d2c2] bg-white",
+                        ].join(" ")}>
+                          {sel && <span className="block h-1.5 w-1.5 rounded-full bg-white" />}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div></>
         )}
 
@@ -707,7 +728,9 @@ export default function QuoteForm() {
             </div>
             <div className="py-3">
               <p className="mb-1.5 font-ui text-[11px] text-[#9a8a6e]">Lodging</p>
-              {selectedHotels.length === 0 ? (
+              {hotelPickForMe ? (
+                <span className="rounded-full bg-[#eef4f7] px-2.5 py-0.5 font-ui text-[11px] text-ocean">Best match — we decide</span>
+              ) : selectedHotels.length === 0 ? (
                 <p className="font-body text-[12px] italic text-[#b4b2a9]">none selected</p>
               ) : (
                 <div className="flex flex-col gap-1">
