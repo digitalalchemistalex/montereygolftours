@@ -215,15 +215,15 @@ export default function Header({ transparent = false }: { transparent?: boolean 
               <div className="px-4 pt-4 pb-3">
                 <div className="mb-2 font-ui text-[9.5px] font-bold uppercase tracking-[.12em] text-[#9a8a6e]">Lodging</div>
                 <div className="grid grid-cols-1 gap-0">
-                  <a href="/hotels/"
+                  <a href="/hotels/lodge-at-pebble-beach/"
                     className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
                     <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">The Lodge at Pebble Beach™</span>
                   </a>
-                  <a href="/hotels/"
+                  <a href="/hotels/inn-at-spanish-bay/"
                     className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
                     <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">The Inn at Spanish Bay™</span>
                   </a>
-                  <a href="/hotels/"
+                  <a href="/hotels/casa-palmero/"
                     className="flex items-center rounded-md px-2 py-[5px] hover:bg-[#f4f0e7]">
                     <span className="font-ui text-[12.5px] font-medium text-ink leading-tight">Casa Palmero™</span>
                   </a>
