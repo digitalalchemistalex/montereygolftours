@@ -125,4 +125,34 @@ export const HOTELS: Hotel[] = [
       "The only Monterey Golf Tours hotel located directly on the beach.",
     onSiteGolf: null,
   },
+  {
+    slug: "lodge-at-pebble-beach",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+    name: "The Lodge at Pebble Beach™",
+    city: "Pebble Beach, CA",
+    tier: 1,
+    description:
+      "Open since 1919, framing the 18th green of Pebble Beach Golf Links® — the original and most storied property at Pebble Beach Resorts®. Hotel guests can book tee times up to 18 months in advance.",
+    onSiteGolf: "Pebble Beach Golf Links®",
+  },
+  {
+    slug: "inn-at-spanish-bay",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+    name: "The Inn at Spanish Bay™",
+    city: "Pebble Beach, CA",
+    tier: 1,
+    description:
+      "Nestled between Del Monte Forest and the Pacific Ocean, overlooking The Links at Spanish Bay®. All rooms feature a gas fireplace, private patio or balcony, and views of the forest, fairways, or ocean.",
+    onSiteGolf: "The Links at Spanish Bay® (closed — reopens April 17, 2027)",
+  },
+  {
+    slug: "casa-palmero",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+    name: "Casa Palmero™",
+    city: "Pebble Beach, CA",
+    tier: 1,
+    description:
+      "An intimate Mediterranean-style hideaway with just 24 rooms and suites, situated on the 1st and 2nd fairways of Pebble Beach Golf Links®. The entire property can be reserved exclusively by one group.",
+    onSiteGolf: "Pebble Beach Golf Links®",
+  },
 ];
