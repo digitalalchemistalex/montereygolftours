@@ -64,6 +64,13 @@ function buildHtml(d: Record<string, unknown>): string {
     <tr><td style="padding:6px 0;color:#6a665e;">Event type</td><td style="padding:6px 0;">${String(d.corp_event_type || "—")}</td></tr>
     <tr><td style="padding:6px 0;color:#6a665e;">Needs</td><td style="padding:6px 0;">${corpNeeds}</td></tr>
     ` : ""}
+    ${d.rounds_per_golfer ? `<tr><td style="padding:6px 0;color:#6a665e;">Rounds / golfer</td><td style="padding:6px 0;">${String(d.rounds_per_golfer)}</td></tr>` : ""}
+    ${d.tee_time_pref_1 ? `<tr><td style="padding:6px 0;color:#6a665e;">Tee time 1st pref</td><td style="padding:6px 0;">${String(d.tee_time_pref_1).replace(/_/g," ")}</td></tr>` : ""}
+    ${d.tee_time_pref_2 ? `<tr><td style="padding:6px 0;color:#6a665e;">Tee time 2nd pref</td><td style="padding:6px 0;">${String(d.tee_time_pref_2).replace(/_/g," ")}</td></tr>` : ""}
+    ${d.room_config ? `<tr><td style="padding:6px 0;color:#6a665e;">Room config</td><td style="padding:6px 0;">${String(d.room_config)}</td></tr>` : ""}
+    ${d.caddie_option ? `<tr><td style="padding:6px 0;color:#6a665e;">Caddies</td><td style="padding:6px 0;">${String(d.caddie_option)}</td></tr>` : ""}
+    ${d.budget_tier ? `<tr><td style="padding:6px 0;color:#6a665e;">Budget tier</td><td style="padding:6px 0;">${String(d.budget_tier).replace(/_/g," ")}</td></tr>` : ""}
+    ${d.arrival_airport ? `<tr><td style="padding:6px 0;color:#6a665e;">Flying into</td><td style="padding:6px 0;">${String(d.arrival_airport)}</td></tr>` : ""}
     ${d.message ? `<tr><td style="padding:6px 0;color:#6a665e;vertical-align:top;">Message</td><td style="padding:6px 0;">${String(d.message)}</td></tr>` : ""}
   </table>
 
