@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import { HOTEL_DETAILS } from "@/lib/hotel-details";
+import HotelCourses from "@/components/HotelCourses";
 import { HOTELS } from "@/lib/hotels";
 import { COURSES } from "@/lib/courses";
 import { ITINERARIES } from "@/lib/itineraries";
@@ -293,6 +294,10 @@ export default async function HotelPage({ params }: Props) {
             <PracticalItem label="Website" value={hotel.website} />
             <PracticalItem label="Brand" value={hotel.brand} />
           </dl>
+        </section>
+
+                <section className="border-b border-fairwayborder px-6 py-10 md:px-14 md:py-14">
+          <HotelCourses hotelSlug={slug} />
         </section>
 
         <section className="relative overflow-hidden border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
