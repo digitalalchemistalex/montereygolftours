@@ -1085,3 +1085,727 @@ Wait for Vercel READY after Commit 2. Test the form end-to-end on the live site:
 
 
 
+
+
+
+---
+
+## DIRECTIVE D#22 — Client-Side Enhancement Block (7 features)
+
+**Status:** AUTHORIZED BY MASTER — 2026-08-23
+**Priority:** Execute after D#16 completes. Does NOT require D#17. Fully independent of admin build.
+**Depends on:** Nothing. No admin auth needed. No new DB tables. No env vars.
+
+Read this entire directive before writing a single line of code. Execute sections in order 1→7. One commit per section. Wait for Vercel READY between commits.
+
+---
+
+### GLOBAL RULES FOR THIS DIRECTIVE
+
+- No pricing anywhere. No `$` values. No green fee estimates.
+- All PBC course names require ® or ™ on every instance (Pebble Beach Golf Links®, Spyglass Hill® Golf Course, The Links at Spanish Bay®, Del Monte Golf Course®, The Lodge at Pebble Beach™, The Inn at Spanish Bay™, Casa Palmero™)
+- JSX entity escaping: `&apos;` `&ldquo;` `&rdquo;` `®` `™` — never raw special chars in JSX text nodes
+- No TypeScript `any` types
+- Test every page on `montereygolftours.vercel.app` (never preview URLs — they return SSO 302)
+- HTTP 200 ≠ real content — parse HTML to confirm actual content rendered
+- Read line structure before every JSX patch — string match success ≠ valid JSX nesting
+
+---
+
+### SECTION 1 — Spanish Bay Waitlist (course page + cron)
+
+**Files touched:**
+- `app/golf-courses/links-at-spanish-bay/page.tsx`
+- `app/api/cron/spanish-bay-open/route.ts` (NEW)
+- `vercel.json` (add cron entry)
+- `lib/supabase.ts` or existing Supabase client
+
+**1A — Waitlist form replaces CTA on course page**
+
+In `app/golf-courses/links-at-spanish-bay/page.tsx`:
+
+Replace the existing Package CTA section (section 10 per page spec) with a `SpanishBayWaitlist` component. Render condition: always show (Spanish Bay is confirmed closed until Apr 17 2027).
+
+Create `components/SpanishBayWaitlist.tsx`:
+
+```tsx
+// Layout: dark navy hero band (#042C53) + white form body
+// Hero band contains:
+//   - "Temporarily closed" pill with animated green dot (CSS animation pulse)
+//   - H2: "The Links at Spanish Bay® reopens April 17, 2027"
+//   - Subtext: "The oceanside links in Del Monte Forest. Be first in line when tee times open."
+//   - Live countdown: Days / Hours / Minutes (client-side JS, target: 2027-04-17T07:00:00-07:00)
+//     - Use useEffect + setInterval(tick, 30000) — update every 30 seconds
+//     - Math.floor for all values — no decimals
+//
+// Form body (white bg #ffffff, border #D3D1C7):
+//   - Row 1 (2-col on desktop, 1-col on mobile ≤520px): Name | Email
+//   - Row 2 (2-col on desktop, 1-col on mobile ≤520px): Group size (select: 4 golfers / 8 golfers / 12+ golfers) | Target month (select: April 2027 / May 2027 / Summer 2027 / Flexible)
+//   - Submit button full width: dark navy bg, white text, bell icon
+//   - Below button: "One email when tee times open. No spam." in muted text
+//
+// On submit:
+//   - Validate: name and email required (inline error if empty, 12px red text)
+//   - POST to /api/notify-lead with payload:
+//     {
+//       name, email,
+//       group_size: selectedGroupSize,
+//       travel_dates: selectedMonth,
+//       referral_source: 'spanish_bay_waitlist',
+//       message: 'Spanish Bay waitlist signup'
+//     }
+//   - On success: replace form with thank-you state:
+//     "You're on the list. We'll reach out personally when Spanish Bay tee times open."
+//   - On error: show inline error below button
+```
+
+**Responsive CSS rules (inline styles or Tailwind):**
+```
+Grid row: grid-template-columns: 1fr 1fr  → at max-width 520px → grid-template-columns: 1fr
+Form body padding: 1.75rem 2rem → at ≤520px → 1.25rem
+H2 font-size: 22px → at ≤520px → 18px
+Countdown numbers: 28px → at ≤520px → 22px
+```
+
+**Countdown number colors:**
+- Countdown numbers: `#ffffff` (white, on dark navy bg)
+- Labels below numbers: `rgba(255,255,255,0.45)` (muted white)
+- "April 17, 2027" in the heading: `#B5D4F4` (light blue accent, readable on navy)
+
+**1B — Cron: admin notification on Apr 17 2027**
+
+Create `app/api/cron/spanish-bay-open/route.ts`:
+
+```ts
+// Schedule: 0 7 17 4 * (7am PT, April 17 annually)
+// On execution:
+//   1. Query Supabase: SELECT count(*), array_agg(name), array_agg(email), array_agg(group_size), array_agg(travel_dates), array_agg(created_at) FROM leads WHERE referral_source = 'spanish_bay_waitlist' ORDER BY created_at ASC
+//   2. Send email via Resend to LEAD_NOTIFY_EMAIL with subject:
+//      "🏌️ Spanish Bay reopens TODAY — waitlist action required (N leads)"
+//   3. Email body (plain text + HTML) must contain ALL of the following:
+
+Subject: Spanish Bay® reopens TODAY — [N] waitlist leads ready to convert
+
+Body:
+
+The Links at Spanish Bay® reopened this morning (April 17, 2027).
+
+TOTAL WAITLIST LEADS: [N]
+
+ACTION REQUIRED — work through leads in order of signup (oldest first):
+
+1. PULL THE WAITLIST
+   Go to /admin/leads and filter by referral_source = 'spanish_bay_waitlist'
+   Sort by created_at ASC (first in, first served).
+
+2. CONTACT EACH LEAD WITHIN 24 HOURS
+   - Confirm their interest is still active
+   - Confirm group size and travel month
+   - Spanish Bay® PBC tee times require 30-day advance minimum
+   - Earliest bookable tee time from today: May 17, 2027
+   - Get them into a quote immediately — Spanish Bay slots will fill fast
+
+3. PBC BOOKING CONTACT
+   traveldesk@pebblebeach.com
+   866.543.9306
+   Karlyn Hawke (Director of Leisure Travel Sales):
+   khawke@pebblebeach.com / 831-648-7861
+
+4. IAGTO RATES
+   Confidential — apply in quote builder under rate_configs.iagto_rate
+   Never show the IAGTO rate to the customer — show package price only
+
+5. PRICING NOTES
+   Monterey TOT: 10.5% (pre-fills in quote builder)
+   California golf tax: 0%
+
+6. SITE UPDATES NEEDED (ask MASTER or Raza):
+   a. Remove "CLOSED" pill from The Links at Spanish Bay® course page
+   b. Remove waitlist form — restore normal course CTA section
+   c. Remove 'links-at-spanish-bay' from CLOSED_COURSE_SLUGS in lib/courses.ts
+      so it reappears in the QuoteForm course picker
+   d. Update course page copy to reflect reopening
+
+[WAITLIST LEADS — sorted by signup date]
+[dynamically render: #, Name, Email, Group Size, Target Month, Signed Up]
+
+---
+This email was sent automatically by the MGTS cron system.
+IAGTO member. Rates and packages subject to IAGTO agreement terms.
+
+//   4. If RESEND_API_KEY is missing: log error to console, do NOT throw (silent fail = unacceptable, but must not crash)
+//   5. Return { success: true, leadCount: N } as JSON
+```
+
+**Add to vercel.json:**
+```json
+{
+  "crons": [
+    { "path": "/api/cron/spanish-bay-open", "schedule": "0 7 17 4 *" }
+  ]
+}
+```
+
+If vercel.json already has a crons array, append to it. Do not replace existing entries.
+
+**Commit 1:**
+```
+feat: Spanish Bay waitlist form + Apr 17 2027 admin cron notification
+```
+
+**Verify:**
+- `/golf-courses/links-at-spanish-bay` shows waitlist form (not normal CTA)
+- Countdown numbers are live and decrementing
+- Form submits without error (check Supabase leads table for new row with referral_source = 'spanish_bay_waitlist')
+- On mobile (375px viewport) form is single column
+
+---
+
+### SECTION 2 — Car Week Blackout Banner (Bayonet + Black Horse)
+
+**Files touched:**
+- `app/golf-courses/bayonet/page.tsx`
+- `app/golf-courses/black-horse/page.tsx`
+- `components/CarWeekBanner.tsx` (NEW)
+
+Create `components/CarWeekBanner.tsx`:
+
+```tsx
+// Pure date logic — no props needed
+// Show condition: today >= Aug 1 AND today <= Aug 20 (any year)
+// If outside this window: return null (renders nothing)
+//
+// Layout:
+//   - Amber alert bar (bg #633806, text #ffffff): "⚠ Car Week conflict — Bayonet & Black Horse"
+//   - Alert body (bg #FAEEDA, border #EF9F27):
+//     - Text (color #412402): "The Concorso Italiano runs at Bayonet Black Horse during Car Week.
+//       Both courses close to golf Aug 14–17. Book around these dates if either course is on your list."
+//     - Date chips: Aug 14 / Aug 15 / Aug 16 / Aug 17
+//       Chip style: bg #854F0B, text #FAEEDA, font-size 12px, border-radius 20px, padding 4px 12px
+//
+// Border: 0.5px solid #EF9F27, border-radius 12px, overflow hidden
+// No close/dismiss button — informational only
+
+// Date check logic:
+const now = new Date()
+const month = now.getMonth() // 0-indexed: July=6
+const day = now.getDate()
+const show = month === 7 && day >= 1 && day <= 20 // August = month 7
+if (!show) return null
+```
+
+**Place in both course pages:**
+Insert `<CarWeekBanner />` immediately above the Package CTA section (section 10 of course page spec). Do NOT move or remove any other sections.
+
+**Commit 2:**
+```
+feat: Car Week blackout banner on Bayonet + Black Horse course pages (Aug 1-20 only)
+```
+
+**Verify:**
+- Temporarily hardcode the date check to always `true`, confirm banner renders on both pages, then revert to date logic before committing
+
+---
+
+### SECTION 3 — Hotel Proximity Cards (all course pages + all hotel pages)
+
+**Files touched:**
+- `lib/proximity.ts` (NEW)
+- `components/CourseHotels.tsx` (NEW)
+- `components/HotelCourses.tsx` (NEW)
+- All 14 course pages: `app/golf-courses/[slug]/page.tsx`
+- All 14 hotel pages: `app/hotels/[slug]/page.tsx`
+
+**3A — Create `lib/proximity.ts`**
+
+This is the single source of truth for all drive times. Do NOT hardcode in components.
+
+```ts
+// Exact drive times from MGTS lodging intelligence (verified June 2026)
+// All times in minutes, approximate driving distance
+
+export const HOTEL_TO_COURSE_MINUTES: Record<string, Record<string, number>> = {
+  'hyatt-regency-monterey':      { 'bayonet': 8,  'black-horse': 8,  'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 10, 'poppy-hills': 15, 'club-at-pasadera': 10 },
+  'carmel-valley-ranch':         { 'bayonet': 25, 'black-horse': 25, 'carmel-valley-ranch': 0,  'quail-lodge': 10, 'laguna-seca-golf-ranch': 20, 'pacific-grove-golf-links': 25, 'poppy-hills': 20, 'club-at-pasadera': 20 },
+  'quail-lodge':                 { 'bayonet': 20, 'black-horse': 20, 'carmel-valley-ranch': 10, 'quail-lodge': 0,  'laguna-seca-golf-ranch': 18, 'pacific-grove-golf-links': 22, 'poppy-hills': 18, 'club-at-pasadera': 18 },
+  'bernardus-lodge':             { 'bayonet': 30, 'black-horse': 30, 'carmel-valley-ranch': 7,  'quail-lodge': 15, 'laguna-seca-golf-ranch': 25, 'pacific-grove-golf-links': 30, 'poppy-hills': 25, 'club-at-pasadera': 25 },
+  'monterey-plaza-hotel':        { 'bayonet': 8,  'black-horse': 8,  'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 8,  'poppy-hills': 12, 'club-at-pasadera': 8  },
+  'intercontinental-the-clement':{ 'bayonet': 8,  'black-horse': 8,  'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 8,  'poppy-hills': 12, 'club-at-pasadera': 8  },
+  'portola-hotel':               { 'bayonet': 10, 'black-horse': 10, 'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 10, 'poppy-hills': 14, 'club-at-pasadera': 10 },
+  'lauberge-carmel':             { 'bayonet': 18, 'black-horse': 18, 'carmel-valley-ranch': 20, 'quail-lodge': 12, 'laguna-seca-golf-ranch': 20, 'pacific-grove-golf-links': 18, 'poppy-hills': 15, 'club-at-pasadera': 15 },
+  'casa-munras':                 { 'bayonet': 8,  'black-horse': 8,  'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 10, 'poppy-hills': 14, 'club-at-pasadera': 10 },
+  'embassy-suites-monterey-bay': { 'bayonet': 10, 'black-horse': 10, 'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 10, 'poppy-hills': 14, 'club-at-pasadera': 10 },
+  'monterey-beach-hotel':        { 'bayonet': 10, 'black-horse': 10, 'carmel-valley-ranch': 25, 'quail-lodge': 20, 'laguna-seca-golf-ranch': 12, 'pacific-grove-golf-links': 10, 'poppy-hills': 14, 'club-at-pasadera': 10 },
+  'lodge-at-pebble-beach':       { 'bayonet': 15, 'black-horse': 15, 'carmel-valley-ranch': 20, 'quail-lodge': 15, 'laguna-seca-golf-ranch': 18, 'pacific-grove-golf-links': 12, 'poppy-hills': 8,  'club-at-pasadera': 15 },
+  'inn-at-spanish-bay':          { 'bayonet': 15, 'black-horse': 15, 'carmel-valley-ranch': 20, 'quail-lodge': 15, 'laguna-seca-golf-ranch': 18, 'pacific-grove-golf-links': 10, 'poppy-hills': 8,  'club-at-pasadera': 15 },
+  'casa-palmero':                { 'bayonet': 15, 'black-horse': 15, 'carmel-valley-ranch': 20, 'quail-lodge': 15, 'laguna-seca-golf-ranch': 18, 'pacific-grove-golf-links': 12, 'poppy-hills': 8,  'club-at-pasadera': 15 },
+}
+
+export type HotelProximityRow = { hotelSlug: string; hotelName: string; minutes: number; tier: 'golf-anchor' | 'luxury' | 'city-base' | 'boutique' }
+export type CourseProximityRow = { courseSlug: string; courseName: string; minutes: number; isOnSite: boolean }
+
+// Hotel display names (short form for cards)
+export const HOTEL_DISPLAY_NAMES: Record<string, string> = {
+  'hyatt-regency-monterey': 'Hyatt Regency Monterey',
+  'carmel-valley-ranch': 'Carmel Valley Ranch',
+  'quail-lodge': 'Quail Lodge & Golf Club',
+  'bernardus-lodge': 'Bernardus Lodge & Spa',
+  'monterey-plaza-hotel': 'Monterey Plaza Hotel & Spa',
+  'intercontinental-the-clement': 'InterContinental The Clement',
+  'portola-hotel': 'Portola Hotel & Spa',
+  'lauberge-carmel': "L'Auberge Carmel",
+  'casa-munras': 'Casa Munras Garden Hotel',
+  'embassy-suites-monterey-bay': 'Embassy Suites Monterey Bay',
+  'monterey-beach-hotel': 'Monterey Beach Hotel',
+  'lodge-at-pebble-beach': 'The Lodge at Pebble Beach\u2122',
+  'inn-at-spanish-bay': 'The Inn at Spanish Bay\u2122',
+  'casa-palmero': 'Casa Palmero\u2122',
+}
+
+export const HOTEL_TIERS: Record<string, HotelProximityRow['tier']> = {
+  'hyatt-regency-monterey': 'golf-anchor',
+  'carmel-valley-ranch': 'golf-anchor',
+  'quail-lodge': 'golf-anchor',
+  'bernardus-lodge': 'luxury',
+  'monterey-plaza-hotel': 'city-base',
+  'intercontinental-the-clement': 'city-base',
+  'portola-hotel': 'city-base',
+  'lauberge-carmel': 'luxury',
+  'casa-munras': 'boutique',
+  'embassy-suites-monterey-bay': 'city-base',
+  'monterey-beach-hotel': 'city-base',
+  'lodge-at-pebble-beach': 'luxury',
+  'inn-at-spanish-bay': 'luxury',
+  'casa-palmero': 'luxury',
+}
+
+// Course display names (short form)
+export const COURSE_DISPLAY_NAMES: Record<string, string> = {
+  'bayonet': 'Bayonet',
+  'black-horse': 'Black Horse',
+  'carmel-valley-ranch': 'CVR Pete Dye',
+  'quail-lodge': 'Quail Lodge',
+  'laguna-seca-golf-ranch': 'Laguna Seca',
+  'pacific-grove-golf-links': 'Pacific Grove',
+  'poppy-hills': 'Poppy Hills',
+  'club-at-pasadera': 'TPC Pasadera',
+}
+
+// Returns hotels sorted by drive time for a given course slug
+export function getHotelsForCourse(courseSlug: string): HotelProximityRow[] {
+  return Object.entries(HOTEL_TO_COURSE_MINUTES)
+    .map(([hotelSlug, courses]) => ({
+      hotelSlug,
+      hotelName: HOTEL_DISPLAY_NAMES[hotelSlug] ?? hotelSlug,
+      minutes: courses[courseSlug] ?? 99,
+      tier: HOTEL_TIERS[hotelSlug] ?? 'city-base',
+    }))
+    .filter(h => h.minutes < 99)
+    .sort((a, b) => a.minutes - b.minutes)
+}
+
+// Returns courses sorted by drive time for a given hotel slug
+export function getCoursesForHotel(hotelSlug: string): CourseProximityRow[] {
+  const row = HOTEL_TO_COURSE_MINUTES[hotelSlug]
+  if (!row) return []
+  return Object.entries(row)
+    .map(([courseSlug, minutes]) => ({
+      courseSlug,
+      courseName: COURSE_DISPLAY_NAMES[courseSlug] ?? courseSlug,
+      minutes,
+      isOnSite: minutes === 0,
+    }))
+    .sort((a, b) => a.minutes - b.minutes)
+}
+```
+
+**3B — Create `components/CourseHotels.tsx`**
+
+Props: `courseSlug: string`
+
+```tsx
+// Renders the closest hotels list on a course page
+// Uses getHotelsForCourse(courseSlug) from lib/proximity.ts
+// Shows top 5 results sorted by drive time
+//
+// Layout per row (white card bg #ffffff, border #D3D1C7, border-radius 10px):
+//   LEFT: Hotel name (14px, #2C2C2A, font-weight 500) + tier badge + meta line (12px, #5F5E5A)
+//   RIGHT: Drive time number (22px, font-weight 500)
+//     - ≤15 min: color #042C53 (dark navy = close/good)
+//     - >15 min: color #B4B2A9 (muted gray = farther)
+//   Opacity 0.6 on rows where minutes > 20
+//
+// Tier badge colors:
+//   golf-anchor: bg #EAF3DE, text #085041
+//   luxury:      bg #EEEDFE, text #3C3489
+//   city-base:   bg #E6F1FB, text #042C53
+//   boutique:    bg #F1EFE8, text #444441
+//
+// Section heading above list: "Closest hotels" (18px, #2C2C2A)
+// Eyebrow above heading: course name (11px uppercase, #888780)
+// Note below list (12px, #888780): "Drive times approximate. Verify with Google Maps."
+```
+
+**3C — Create `components/HotelCourses.tsx`**
+
+Props: `hotelSlug: string`
+
+```tsx
+// Renders the drive time grid on a hotel page
+// Uses getCoursesForHotel(hotelSlug) from lib/proximity.ts
+//
+// Outer wrapper: bg #F1EFE8, border-radius 12px, padding 1.25rem
+// Section heading: "Drive times to courses" (14px, font-weight 500, #2C2C2A)
+// Grid: 3 columns on desktop, 2 columns on mobile (≤480px)
+//
+// Each cell: bg #ffffff, border #D3D1C7, border-radius 8px, padding 12px, text-align center
+//   - isOnSite === true: bg #042C53 (featured navy cell)
+//     - Time text: "On-site" (16px, #ffffff)
+//     - Label: course name (11px, rgba(255,255,255,0.65))
+//   - minutes ≤ 15: time color #2C2C2A
+//   - minutes > 20: time color #B4B2A9 (muted)
+//   - Time: "{N} min" (16px, font-weight 500)
+//   - Label: course name (11px, #5F5E5A)
+//
+// Note below grid (12px, #888780): "All times approximate driving distance."
+```
+
+**3D — Wire into pages**
+
+In every course page (`app/golf-courses/[slug]/page.tsx`):
+- Import `CourseHotels` from `@/components/CourseHotels`
+- Place `<CourseHotels courseSlug="[slug]" />` as section 8 (Nearby hotels)
+- Pass the exact slug string matching `HOTEL_TO_COURSE_MINUTES` keys
+
+In every hotel page (`app/hotels/[slug]/page.tsx`):
+- Import `HotelCourses` from `@/components/HotelCourses`
+- Place `<HotelCourses hotelSlug="[slug]" />` after the amenities section
+- Pass the exact slug string matching `HOTEL_TO_COURSE_MINUTES` keys
+
+**Commit 3:**
+```
+feat: hotel/course proximity cards — drive time matrix on all course + hotel pages
+```
+
+**Verify:** Open `/golf-courses/bayonet` — confirm hotel list renders sorted by time. Open `/hotels/carmel-valley-ranch` — confirm CVR shows "On-site" as first cell.
+
+---
+
+### SECTION 4 — TPC Pasadera Monday Insider Block
+
+**Files touched:**
+- `app/golf-courses/club-at-pasadera/page.tsx`
+- `components/MondayInsider.tsx` (NEW)
+
+Create `components/MondayInsider.tsx`:
+
+```tsx
+// No props — all data is static (Monday access is a permanent verified fact)
+//
+// Layout:
+// Card: border #D3D1C7, border-radius 16px, overflow hidden
+//
+// HEADER (bg #042C53, padding 1.75rem 2rem):
+//   - Icon: lock-open, 40x40 navy bg with rgba(255,255,255,0.12), border-radius 8px
+//   - Eyebrow: "Insider access" (10px, rgba(255,255,255,0.5), uppercase, letter-spacing 0.1em)
+//   - H3: "TPC Monterey at Pasadera is public — one day a week" (17px, #ffffff)
+//   - Sub: "The only Jack Nicklaus Signature course on the peninsula. Private club.
+//          Mondays open to the public." (13px, rgba(255,255,255,0.7))
+//   On mobile ≤480px: flex-direction column, padding 1.25rem
+//
+// WEEK STRIP (bg #F1EFE8, border-bottom #D3D1C7):
+//   7 columns: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+//   Mon cell: bg #E6F1FB, text #042C53
+//   Other cells: text #888780
+//   Each cell: 12px font, font-weight 500, padding 12px 4px, border-right #D3D1C7
+//   Dot below day name: 5px circle
+//     - Mon dot: #1D9E75 (green = available)
+//     - Other dots: #D3D1C7 (gray = closed)
+//
+// BODY (bg #ffffff, padding 1.5rem 2rem):
+//   Stats row (3 cells, bg #F1EFE8, border-radius 8px):
+//     Par: 71 | Yards: 6,673 | Rating: 73.7
+//     Cell: text-align center, 18px number (#2C2C2A), 11px label (#5F5E5A, uppercase)
+//
+//   Tip block (bg #EAF3DE, border-left 3px solid #1D9E75, border-radius 0 8px 8px 0):
+//     Icon: ti-bulb, color #0F6E56
+//     Text (13px, #173404): "Guests of Bernardus Lodge can book outside Monday as a resort
+//     benefit — if your dates don't land on a Monday, we pair a Bernardus stay to unlock
+//     access any day."
+//
+//   Button full width (bg #042C53, text #ffffff, border-radius 8px):
+//     "Build a package that includes Pasadera"
+//     onClick: links to /quote (or window.location.href = '/quote')
+//   On mobile ≤480px: body padding 1.25rem
+```
+
+**Place in course page:**
+Insert `<MondayInsider />` as section 5 (Highlights grid) on `app/golf-courses/club-at-pasadera/page.tsx`. Replace or supplement the existing highlights grid — do NOT remove other sections.
+
+**Commit 4:**
+```
+feat: TPC Pasadera Monday insider block with week availability strip
+```
+
+**Verify:** `/golf-courses/club-at-pasadera` — Monday cell is highlighted blue, other days grey, tip block renders.
+
+---
+
+### SECTION 5 — Poppy Hills Value Block
+
+**Files touched:**
+- `app/golf-courses/poppy-hills/page.tsx`
+- `components/PoppyHillsValue.tsx` (NEW)
+
+Create `components/PoppyHillsValue.tsx`:
+
+```tsx
+// No props — all data verified in mgts-course-intelligence.md
+//
+// Card: border #D3D1C7, border-radius 16px, overflow hidden
+//
+// HEADER (bg #085041 forest green, padding 1.75rem 2rem):
+//   Badges row:
+//     - "Golf Digest Top 100"   bg rgba(67,214,146,0.18) text #43d692 border rgba(67,214,146,0.3)
+//     - "93953 zip code"        bg rgba(255,255,255,0.1)  text rgba(255,255,255,0.8)
+//     - "No PBC gate fee"       bg rgba(255,255,255,0.1)  text rgba(255,255,255,0.8)
+//   H3 (20px, #ffffff): "Championship golf in the Pebble Beach zip code — at a fraction of the cost"
+//   Sub (13px, rgba(255,255,255,0.7)):
+//     "Poppy Hills sits inside Del Monte Forest, the same gated community as the iconic
+//      clifftop links overlooking Stillwater Cove. Different owner. Different gate.
+//      Same zip code."
+//     "Different owner. Different gate. Same zip code." — render this phrase in rgba(255,255,255,0.9)
+//   Stats strip (border-top rgba(255,255,255,0.12), margin-top 1.5rem, 3 columns):
+//     7,002 yards | 73.5 rating | 135 slope
+//     Number: 22px #ffffff | Label: 11px rgba(255,255,255,0.45) uppercase
+//   On mobile ≤480px: padding 1.25rem, H3 17px
+//
+// BODY (bg #ffffff, padding 1.5rem 2rem):
+//   Two quote blocks (bg #F1EFE8, border-left 3px solid #085041, border-radius 0 8px 8px 0):
+//     Quote 1: "Reminds me a little bit of Pinehurst and a little bit of Pine Valley."
+//              — Colin Montgomerie
+//     Quote 2: "I like that a lot. Would love a three-round event at Poppy Hills."
+//              — Tom Watson
+//     Quote text: 13px italic #2C2C2A | Attribution: 11px #5F5E5A uppercase font-weight 500
+//
+//   Tip block (bg #E6F1FB, border-left 3px solid #185FA5, border-radius 0 8px 8px 0):
+//     Icon: ti-users, color #185FA5
+//     Text (13px, #042C53): "Groups of 16+ get an advance booking window beyond the
+//     standard 90-day limit. We handle that coordination — you just show up."
+//
+//   Button full width (bg #085041, text #ffffff):
+//     "Add Poppy Hills to my trip"
+//     onClick: links to /quote
+//   On mobile ≤480px: body padding 1.25rem
+```
+
+**Place in course page:**
+Insert `<PoppyHillsValue />` immediately after the speakable summary block (section 2) in `app/golf-courses/poppy-hills/page.tsx`. Do NOT remove any other sections.
+
+**Commit 5:**
+```
+feat: Poppy Hills value positioning block — Golf Digest Top 100 + quote attribution
+```
+
+**Verify:** `/golf-courses/poppy-hills` — green header renders, both quotes show, stats are correct (7,002 / 73.5 / 135).
+
+---
+
+### SECTION 6 — Fog vs Sun Hotel Selector (/hotels page)
+
+**Files touched:**
+- `app/hotels/page.tsx`
+- `components/FogSunSelector.tsx` (NEW — client component, `'use client'`)
+
+Create `components/FogSunSelector.tsx`:
+
+```tsx
+'use client'
+// Interactive toggle — filters the hotel grid on the same page
+// State: 'coast' | 'valley' — default 'coast'
+//
+// TOGGLE (2 columns, gap 10px, margin-bottom 1.5rem):
+//   Coast option:
+//     - Icon: 🌫 (24px)
+//     - Name: "Coast" (15px, font-weight 500, #2C2C2A)
+//     - Desc: "Ocean views. Morning fog Jun–Aug. Cooler all year. Downtown Monterey or Cannery Row."
+//     - Active state: border 1.5px solid #185FA5, bg #EEF6FF
+//     - Inactive: border 1.5px solid #D3D1C7, bg #ffffff
+//     - Check indicator (18px circle): bg #185FA5, visible only when active
+//   Valley option:
+//     - Icon: ☀️ (24px)
+//     - Name: "Carmel Valley" (15px, font-weight 500, #2C2C2A)
+//     - Desc: "Sunny inland microclimate. Warm when the coast is fogged in. Golf resort atmosphere."
+//     - Active state: border 1.5px solid #085041, bg #EDF7F3
+//     - Inactive: border 1.5px solid #D3D1C7, bg #ffffff
+//     - Check indicator (18px circle): bg #085041, visible only when active
+//   Both options: border-radius 12px, padding 1.25rem, cursor pointer, position relative
+//   On mobile ≤480px: grid-template-columns 1fr 1fr (keep 2-col), padding 1rem
+//
+// HOTEL LIST (below toggle):
+//   Section eyebrow: "Coast hotels" or "Carmel Valley hotels" (11px uppercase #888780)
+//
+//   Coast hotels to show (in this order):
+//     1. InterContinental The Clement — "Cannery Row waterfront · premium" — badge: "City base" (#E6F1FB bg, #042C53 text)
+//     2. Hyatt Regency Monterey — "560 rooms · free airport shuttle · golf adjacent" — badge: "Golf anchor" (#EAF3DE bg, #085041 text)
+//     3. Portola Hotel & Spa — "379 rooms · best for groups 20+" — badge: "City base"
+//     4. Monterey Plaza Hotel & Spa — "Cannery Row · AAA Four Diamond" — badge: "Luxury" (#EEEDFE bg, #3C3489 text)
+//
+//   Valley hotels to show:
+//     1. Carmel Valley Ranch — "Pete Dye course on-site · 179 all-suites · 500 acres" — badge: "Golf anchor"
+//     2. Quail Lodge & Golf Club — "On-site course · best conditions in Central CA" — badge: "Golf anchor"
+//     3. Bernardus Lodge & Spa — "Boutique luxury · TPC Pasadera access" — badge: "Luxury"
+//
+//   Each hotel row: bg #ffffff, border #D3D1C7, border-radius 10px, padding 14px 16px
+//     grid-template-columns: 1fr auto
+//     Left: hotel name (14px, #2C2C2A, font-weight 500) + meta (12px, #5F5E5A)
+//     Right: tier badge
+//     On mobile ≤480px: grid-template-columns 1fr, badge below meta
+//   Hover: border-color #888780
+//
+// Page title above toggle: "Coast or Carmel Valley?" (18px, #2C2C2A)
+// Subtext: "Two different Monterey climates. Pick what suits your group." (13px, #5F5E5A)
+```
+
+**Place in hotels page:**
+Insert `<FogSunSelector />` at the top of the hotels listing page (`app/hotels/page.tsx`), before the main hotel grid. The existing hotel grid remains — this is an additional filter UI above it.
+
+**Commit 6:**
+```
+feat: Fog vs Sun hotel selector on /hotels page — coast/valley climate toggle
+```
+
+**Verify:** `/hotels` — toggle switches between coast and valley hotel lists. On mobile, toggle stays 2-col, hotel rows stack to single column.
+
+---
+
+### SECTION 7 — Architect's Trail Itinerary (new itinerary page)
+
+**Files touched:**
+- `lib/itineraries.ts` — add 9th entry
+- `app/itineraries/architects-trail/page.tsx` (NEW)
+- `components/ArchitectStop.tsx` (NEW)
+
+**7A — Add to `lib/itineraries.ts`**
+
+Append to the itineraries array:
+
+```ts
+{
+  slug: 'architects-trail',
+  title: "The Architect's Trail",
+  subtitle: 'Four legendary designers. One peninsula.',
+  duration: '4–5 days',
+  rounds: 4,
+  minGroupSize: 4,
+  priceFrom: 0, // renders as "Custom quote on request" per existing conditional logic
+  heroImage: '/images/itineraries/architects-trail.jpg', // Raza: use an existing course image as placeholder if this file doesn't exist — /images/courses/poppy-hills.jpg
+  excerpt: 'Pete Dye, Jack Nicklaus, Robert Trent Jones Jr., Gene Bates — each left exactly one course on the Monterey Peninsula. This itinerary plays all four.',
+  courses: ['carmel-valley-ranch', 'club-at-pasadera', 'poppy-hills', 'bayonet'],
+  tags: ['No private club required', '4 rounds', '4–5 days'],
+}
+```
+
+**7B — Create `app/itineraries/architects-trail/page.tsx`**
+
+```tsx
+// Static page — all data verified from mgts-course-intelligence.md
+//
+// HEADER (bg #2C2C2A charcoal, padding 1.75rem 2rem, border-radius 16px 16px 0 0 on card variant):
+//   Eyebrow: "Signature itinerary" (10px, rgba(255,255,255,0.4), uppercase, letter-spacing 0.1em)
+//   H1: "The Architect's Trail" (22px, #ffffff)
+//   Sub: "Four legendary designers. One peninsula. Every course publicly playable —
+//         each the only example of its architect's work in Northern California." (13px, rgba(255,255,255,0.6))
+//   Chips row (flex, gap 8px, margin-top 1.25rem):
+//     "4–5 days" | "4 rounds" | "4+ golfers" — bg rgba(255,255,255,0.08), text rgba(255,255,255,0.65), border rgba(255,255,255,0.15)
+//     "No private club required" — bg rgba(67,214,146,0.1), text #43d692, border rgba(67,214,146,0.25)
+//   On mobile ≤480px: padding 1.25rem, H1 18px
+//
+// STOPS (bg #ffffff, padding 0 2rem):
+//   Each stop: grid 44px spine + content, padding 1.5rem 0, border-bottom #F1EFE8
+//   Last stop: no border-bottom
+//   On mobile ≤480px: padding 0 1.25rem, grid 38px spine
+//
+//   STOP 1 — Pete Dye:
+//     Spine number: bg #E6F1FB, text #042C53
+//     Architect label: "Pete Dye" (10px, uppercase, #185FA5, font-weight 500)
+//     Course name: "Carmel Valley Ranch" (15px, #2C2C2A, font-weight 500)
+//     Claim: "Only Pete Dye course in Northern California" (12px, #185FA5, font-weight 500)
+//     Desc: "Par 70, 6,117 yards. Dye&apos;s signature railroad ties and island-style greens
+//            through the Santa Lucia foothills. Original 1980, redesigned Gene Bates 2006."
+//            (13px, #5F5E5A, line-height 1.6)
+//
+//   STOP 2 — Jack Nicklaus:
+//     Spine number: bg #EAF3DE, text #085041
+//     Architect label: "Jack Nicklaus" (#085041)
+//     Course name: "TPC Monterey at Pasadera"
+//     Claim: "Only Nicklaus Signature on the peninsula · Monday public access" (#085041)
+//     Desc: "Par 71, 6,673 yards. Nicklaus calls it one of the best courses he designed.
+//            &ldquo;The Moment&rdquo; &mdash; a 205-yard par 3 over a canyon with views to Monterey Bay."
+//
+//   STOP 3 — Robert Trent Jones Jr.:
+//     Spine number: bg #FAEEDA, text #633806
+//     Architect label: "Robert Trent Jones Jr." (#854F0B)
+//     Course name: "Poppy Hills Golf Course"
+//     Claim: "Golf Digest Top 100 · former AT&T Pro-Am co-host" (#854F0B)
+//     Desc: "Par 71, 7,002 yards through Del Monte Forest. RTJ Jr.&apos;s 1986 design,
+//            renovated 2014. Montgomerie compared it to Pine Valley. Bentgrass greens rated
+//            &ldquo;among the purest on the peninsula&rdquo; by the NCGA."
+//
+//   STOP 4 — Gene Bates:
+//     Spine number: bg #FAECE7, text #712B13
+//     Architect label: "Gene Bates" (#993C1D)
+//     Course name: "Bayonet"
+//     Claim: "Golf Digest Top 75 affordable · #16 best layout in the US" (#993C1D)
+//     Desc: "Par 72, 7,094 yards. Bates&apos; 2007 redesign of the 1954 military Fort Ord layout.
+//            &ldquo;Combat Corner&rdquo; doglegs on the back nine. One of California&apos;s most
+//            demanding public courses."
+//
+// FOOTER (bg #F1EFE8, border-top #D3D1C7, padding 1.25rem 2rem):
+//   Note (13px, #444441): "We coordinate all tee times — including Monday access at Pasadera
+//   and advance group booking at Poppy Hills. You focus on the golf."
+//   Button full width (bg #2C2C2A, text #ffffff, hover bg #042C53):
+//     "Request a quote for The Architect&apos;s Trail"
+//     onClick: links to /quote
+//   On mobile ≤480px: padding 1.25rem
+//
+// META:
+//   title: "The Architect's Trail — 4-Course Monterey Golf Itinerary | Monterey Golf Tours"
+//   description: "Play four legendary architect designs in one Monterey Peninsula trip:
+//                 Pete Dye, Jack Nicklaus, Robert Trent Jones Jr., and Gene Bates.
+//                 No private club required."
+//   canonical: "https://montereygolftours.com/itineraries/architects-trail/"
+//
+// Schema: add TouristTrip + BreadcrumbList JSON-LD (same pattern as other itinerary pages)
+```
+
+**Commit 7:**
+```
+feat: Architect's Trail itinerary page — 4 designers, 4 courses, static verified data
+```
+
+**Verify:** `/itineraries/architects-trail` returns real content (parse HTML — 200 alone is not enough). All 4 stops render with correct architect names, colors, and course stats.
+
+---
+
+### COMPLETION CRITERIA FOR D#22
+
+Before reporting back to MASTER:
+
+| Check | How to verify |
+|---|---|
+| Spanish Bay form | Submit test lead, confirm in Supabase with referral_source = 'spanish_bay_waitlist' |
+| Countdown live | Numbers change every 30 seconds |
+| Car Week banner | Temporarily force show=true, confirm both course pages render amber warning |
+| Proximity cards | Bayonet page shows hotels sorted by time. CVR hotel page shows "On-site" for CVR Pete Dye |
+| Monday strip | Pasadera page: Mon cell blue, all other cells grey |
+| Poppy Hills block | Stats 7,002 / 73.5 / 135 render. Quotes attributed correctly |
+| Fog/Sun toggle | /hotels page: click Valley → valley hotels show. Click Coast → coast hotels show |
+| Architect's Trail | /itineraries/architects-trail loads, all 4 stops render |
+| Mobile | All 7 features verified at 375px viewport width |
+| No pricing shown | Architect's Trail itinerary shows "Custom quote on request" not a price |
+| PBC trademarks | ® and ™ present on every PBC name instance across all new components |
+| Vercel READY | All 7 commits show READY — no build errors |
+
+Report back: list all 7 commit SHAs + confirm each verification check above passed.
+
