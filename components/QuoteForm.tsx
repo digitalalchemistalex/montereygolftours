@@ -235,6 +235,19 @@ export default function QuoteForm() {
   const [contactPrefError, setContactPrefError] = useState(false);
   const [coursesError, setCoursesError] = useState(false);
   const [returningCustomer, setReturningCustomer] = useState(false);
+  const [roundsError, setRoundsError] = useState(false);
+  const [teeTime1Error, setTeeTime1Error] = useState(false);
+  const [roomConfigError, setRoomConfigError] = useState(false);
+  const [caddieError, setCaddieError] = useState(false);
+  const [budgetTierError, setBudgetTierError] = useState(false);
+  const [airportError, setAirportError] = useState(false);
+  const [startDateError, setStartDateError] = useState(false);
+  const [nightsError, setNightsError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
+  const [nonGolferCountError, setNonGolferCountError] = useState(false);
+  const [corpAttendeesError, setCorpAttendeesError] = useState(false);
+  const [corpEventTypeError, setCorpEventTypeError] = useState(false);
+  const [dateOrderError, setDateOrderError] = useState(false);
 
   // Game level
   const [gameLevel, setGameLevel] = useState<"low"|"mid"|"high"|"casual"|"">("");
@@ -264,7 +277,7 @@ export default function QuoteForm() {
   };
 
   // Section 2 — Trip details
-  const [groupSize, setGroupSize] = useState("8");
+  const [groupSize, setGroupSize] = useState("");
   const [nights, setNights] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -387,26 +400,25 @@ export default function QuoteForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!gameLevel) {
-      setGameLevelError(true);
-      return;
-    }
-    setGameLevelError(false);
-    if (!tripType) {
-      setTripTypeError(true);
-      return;
-    }
-    setTripTypeError(false);
-    if (!okToCall && !okToText) {
-      setContactPrefError(true);
-      return;
-    }
-    setContactPrefError(false);
-    if (selectedCourses.length === 0) {
-      setCoursesError(true);
-      return;
-    }
-    setCoursesError(false);
+    let hasError = false;
+    if (!gameLevel) { setGameLevelError(true); hasError = true; } else setGameLevelError(false);
+    if (!tripType) { setTripTypeError(true); hasError = true; } else setTripTypeError(false);
+    if (!okToCall && !okToText) { setContactPrefError(true); hasError = true; } else setContactPrefError(false);
+    if (okToCall && !phone.trim()) { setPhoneError(true); hasError = true; } else setPhoneError(false);
+    if (!datesFlexible && !startDate) { setStartDateError(true); hasError = true; } else setStartDateError(false);
+    if (!datesFlexible && startDate && endDate && new Date(endDate) <= new Date(startDate)) { setDateOrderError(true); hasError = true; } else setDateOrderError(false);
+    if (datesFlexible && !nights) { setNightsError(true); hasError = true; } else setNightsError(false);
+    if (nonGolfer && !nonGolferCount) { setNonGolferCountError(true); hasError = true; } else setNonGolferCountError(false);
+    if (selectedCourses.length === 0) { setCoursesError(true); hasError = true; } else setCoursesError(false);
+    if (!roundsPerGolfer) { setRoundsError(true); hasError = true; } else setRoundsError(false);
+    if (!teeTimePref1) { setTeeTime1Error(true); hasError = true; } else setTeeTime1Error(false);
+    if (!caddieOption) { setCaddieError(true); hasError = true; } else setCaddieError(false);
+    if (showLodging && !roomConfig) { setRoomConfigError(true); hasError = true; } else setRoomConfigError(false);
+    if (!budgetTier) { setBudgetTierError(true); hasError = true; } else setBudgetTierError(false);
+    if ((transportNeeded === "airport" || transportNeeded === "both") && !arrivalAirport) { setAirportError(true); hasError = true; } else setAirportError(false);
+    if (showCorporate && !corpAttendees) { setCorpAttendeesError(true); hasError = true; } else setCorpAttendeesError(false);
+    if (showCorporate && !corpEventType) { setCorpEventTypeError(true); hasError = true; } else setCorpEventTypeError(false);
+    if (hasError) return;
     setStatus("submitting");
     const travelDates = datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ");
     const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner or family member." : null]
@@ -482,9 +494,10 @@ export default function QuoteForm() {
           <Field label="Email" required>
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={iCls} />
           </Field>
-          <Field label="Mobile">
-            <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
-              placeholder="+1 (555) 000-0000" className={iCls} />
+          <Field label="Mobile" required={okToCall}>
+            <input type="tel" value={phone} onChange={(e) => { setPhone(e.target.value); if (e.target.value.trim()) setPhoneError(false); }}
+              placeholder="+1 (555) 000-0000" className={`${iCls} ${phoneError ? "border-[#a83232]" : ""}`} />
+            {phoneError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Required if we may call you.</p>}
           </Field>
           <div className="flex flex-col justify-end gap-2">
             <p className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
@@ -602,8 +615,8 @@ export default function QuoteForm() {
         <SectionHeader n={2} label="Trip details" />
         <div className="grid grid-cols-1 gap-5 border-b border-[#ede8da] pb-7 sm:grid-cols-2">
           <Field label="Number of golfers" required>
-            <input type="number" min="2" max="400" required value={groupSize}
-              onChange={(e) => setGroupSize(e.target.value)} placeholder="e.g. 12" className={iCls} />
+            <input type="number" min="1" max="400" required value={groupSize}
+              onChange={(e) => setGroupSize(e.target.value)} placeholder="e.g. 8" className={iCls} />
           </Field>
           <div className="sm:col-span-2">
             <label className="mb-1.5 block font-ui text-[13px] font-semibold text-ink">Travel dates</label>
@@ -614,12 +627,14 @@ export default function QuoteForm() {
                   <input type="date" value={startDate} min={minArrival}
                   onChange={(e) => {
                     setStartDate(e.target.value);
-                    // If departure already set, auto-calc nights
+                    setStartDateError(false); setDateOrderError(false);
                     if (endDate) {
                       const diff = Math.round((new Date(endDate).getTime() - new Date(e.target.value).getTime()) / 86400000);
                       if (diff > 0) { setNights(String(diff)); setNightsAutoSet(true); }
                     }
-                  }} className={iCls} />
+                  }} className={`${iCls} ${startDateError ? "border-[#a83232]" : ""}`} />
+                  {startDateError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Arrival date required.</p>}
+                  {dateOrderError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Departure must be after arrival.</p>}
                 </div>
                 <div>
                   <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Departure</label>
@@ -652,11 +667,12 @@ export default function QuoteForm() {
               </div>
             )}
           </div>
-          <Field label="Nights">
+          <Field label="Nights" required={datesFlexible}>
             <input type="number" min="1" max="30" value={nights}
-              onChange={(e) => { setNights(e.target.value); setNightsAutoSet(false); }}
-              placeholder="e.g. 4" className={iCls} />
-            {nightsAutoSet && nights && (
+              onChange={(e) => { setNights(e.target.value); setNightsAutoSet(false); if (e.target.value) setNightsError(false); }}
+              placeholder="e.g. 4" className={`${iCls} ${nightsError ? "border-[#a83232]" : ""}`} />
+            {nightsError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Required when dates are flexible.</p>}
+            {nightsAutoSet && nights && !nightsError && (
               <p className="mt-1 font-ui text-[11px] text-[#2f6b4f]">Auto-calculated from your dates</p>
             )}
           </Field>
@@ -665,10 +681,11 @@ export default function QuoteForm() {
               label="Traveling with a non-golfing partner or family member?" />
             {nonGolfer && (
               <div className="mt-3 sm:w-1/2">
-                <Field label="How many non-golfers?">
+                <Field label="How many non-golfers?" required>
                   <input type="number" min="1" max="100" value={nonGolferCount}
-                    onChange={(e) => setNonGolferCount(e.target.value)}
-                    className={iCls} />
+                    onChange={(e) => { setNonGolferCount(e.target.value); if (e.target.value) setNonGolferCountError(false); }}
+                    className={`${iCls} ${nonGolferCountError ? "border-[#a83232]" : ""}`} />
+                  {nonGolferCountError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Please enter the number of non-golfers.</p>}
                 </Field>
               </div>
             )}
@@ -764,19 +781,20 @@ export default function QuoteForm() {
 
           {/* ── Rounds + tee times ── */}
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <Field label="Rounds per golfer">
+            <Field label="Rounds per golfer" required>
               <input type="number" min="1" max="30" value={roundsPerGolfer}
-                onChange={(e) => { setRoundsPerGolfer(e.target.value); setRoundsAutoSet(false); }}
-                placeholder="e.g. 4" className={iCls} />
-              {roundsAutoSet && roundsPerGolfer && (
+                onChange={(e) => { setRoundsPerGolfer(e.target.value); setRoundsAutoSet(false); if (e.target.value) setRoundsError(false); }}
+                placeholder="e.g. 4" className={`${iCls} ${roundsError ? "border-[#a83232]" : ""}`} />
+              {roundsError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Required — helps us price the golf correctly.</p>}
+              {roundsAutoSet && roundsPerGolfer && !roundsError && (
                 <p className="mt-1 font-ui text-[11px] text-[#2f6b4f]">Auto-set from your nights — adjust if playing more than one round per day</p>
               )}
             </Field>
-            <Field label="Caddie preference">
+            <Field label="Caddie preference" required>
               <div className="grid grid-cols-2 gap-2">
                 {CADDIE_OPTIONS.map((o) => (
                   <button key={o.value} type="button"
-                    onClick={() => setCaddieOption(o.value)}
+                    onClick={() => { setCaddieOption(o.value); setCaddieError(false); }}
                     className={[
                       "rounded-[10px] border p-2.5 text-left transition-colors",
                       caddieOption === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
@@ -786,17 +804,18 @@ export default function QuoteForm() {
                   </button>
                 ))}
               </div>
+              {caddieError && <p className="mt-2 font-ui text-[12px] text-[#a83232]">Please select a caddie preference.</p>}
             </Field>
           </div>
           <div className="mt-5">
             <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Preferred tee times</p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <p className="mb-1.5 font-ui text-[11px] text-[#8a857a] uppercase tracking-[.06em]">1st preference</p>
+                <p className="mb-1.5 font-ui text-[11px] text-[#8a857a] uppercase tracking-[.06em]">1st preference <span className="text-[#a83232]">*</span></p>
                 <div className="grid grid-cols-2 gap-2">
                   {TEE_TIME_OPTIONS.map((o) => (
                     <button key={o.value} type="button"
-                      onClick={() => setTeeTimePref1(teeTimePref1 === o.value ? "" : o.value)}
+                      onClick={() => { setTeeTimePref1(teeTimePref1 === o.value ? "" : o.value); setTeeTime1Error(false); }}
                       className={[
                         "rounded-[10px] border p-2.5 text-left transition-colors",
                         teeTimePref1 === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
@@ -806,6 +825,7 @@ export default function QuoteForm() {
                     </button>
                   ))}
                 </div>
+                {teeTime1Error && <p className="mt-1.5 font-ui text-[12px] text-[#a83232]">Please select your preferred tee time.</p>}
               </div>
               <div>
                 <p className="mb-1.5 font-ui text-[11px] text-[#8a857a] uppercase tracking-[.06em]">2nd preference</p>
@@ -945,11 +965,11 @@ export default function QuoteForm() {
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div>
-              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Trip budget</p>
+              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Trip budget <span className="text-[#a83232]">*</span></p>
               <div className="flex flex-col gap-2">
                 {BUDGET_TIER_OPTIONS.map((o) => (
                   <button key={o.value} type="button"
-                    onClick={() => setBudgetTier(budgetTier === o.value ? "" : o.value)}
+                    onClick={() => { setBudgetTier(budgetTier === o.value ? "" : o.value); setBudgetTierError(false); }}
                     className={[
                       "rounded-[10px] border p-2.5 text-left transition-colors",
                       budgetTier === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
@@ -959,13 +979,14 @@ export default function QuoteForm() {
                   </button>
                 ))}
               </div>
+              {budgetTierError && <p className="mt-2 font-ui text-[12px] text-[#a83232]">Please select a budget range.</p>}
             </div>
             <div>
-              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Flying into</p>
+              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Flying into <span className="text-[#9a8a6e] font-normal text-[11px] normal-case tracking-normal">— required with airport transfers</span></p></p>
               <div className="flex flex-col gap-2">
                 {AIRPORT_OPTIONS.map((o) => (
                   <button key={o.value} type="button"
-                    onClick={() => setArrivalAirport(arrivalAirport === o.value ? "" : o.value)}
+                    onClick={() => { setArrivalAirport(arrivalAirport === o.value ? "" : o.value); setAirportError(false); }}
                     className={[
                       "rounded-[10px] border p-2.5 text-left transition-colors",
                       arrivalAirport === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
@@ -975,6 +996,7 @@ export default function QuoteForm() {
                   </button>
                 ))}
               </div>
+              {airportError && <p className="mt-2 font-ui text-[12px] text-[#a83232]">Required when airport transfers are selected.</p>}
             </div>
           </div>
 
@@ -996,16 +1018,19 @@ export default function QuoteForm() {
         <><SectionHeader n={6} label="Corporate needs" />
         <div className="border-b border-[#ede8da] pb-7 space-y-5">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <Field label="Expected attendees">
+            <Field label="Expected attendees" required>
               <input type="number" min="1" max="1000" value={corpAttendees}
-                onChange={(e) => setCorpAttendees(e.target.value)}
-                placeholder="e.g. 40" className={iCls} />
+                onChange={(e) => { setCorpAttendees(e.target.value); if (e.target.value) setCorpAttendeesError(false); }}
+                placeholder="e.g. 40" className={`${iCls} ${corpAttendeesError ? "border-[#a83232]" : ""}`} />
+              {corpAttendeesError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Required for corporate quotes.</p>}
             </Field>
-            <Field label="Event type">
-              <select value={corpEventType} onChange={(e) => setCorpEventType(e.target.value)} className={iCls}>
+            <Field label="Event type" required>
+              <select value={corpEventType} onChange={(e) => { setCorpEventType(e.target.value); if (e.target.value) setCorpEventTypeError(false); }}
+                className={`${iCls} ${corpEventTypeError ? "border-[#a83232]" : ""}`}>
                 <option value="">Select one…</option>
                 {CORPORATE_EVENT_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
+              {corpEventTypeError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Required for corporate quotes.</p>}
             </Field>
           </div>
           <div>
