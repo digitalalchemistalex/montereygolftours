@@ -134,7 +134,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "club-at-pasadera",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1619468129361-605ebea04b44?auto=format&fit=crop&w",
     name: "The Club at Pasadera",
     city: "Monterey, CA",
     par: 71,
@@ -164,7 +164,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "spyglass-hill",
-    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w",
     name: "Spyglass Hill Golf Course®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -204,7 +204,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "the-hay",
-    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?auto=format&fit=crop&w",
     name: "The Hay™",
     city: "Pebble Beach, CA",
     par: 27,
