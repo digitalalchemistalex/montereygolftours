@@ -44,13 +44,13 @@ const HOTEL_NOTE: Record<string, { stars: string; note: string }> = {
 const PB_SLUGS    = ["pebble-beach-golf-links","spyglass-hill","del-monte-golf-course","the-hay","links-at-spanish-bay"];
 const OTHER_SLUGS = ["bayonet","black-horse","carmel-valley-ranch","quail-lodge","club-at-pasadera",
                      "poppy-hills","pacific-grove-golf-links","laguna-seca-golf-ranch","pasatiempo"];
-const MONTEREY_SLUGS = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras"];
+const MONTEREY_SLUGS = ["portola-hotel","hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","casa-munras"];
 const CARMEL_SLUGS   = ["bernardus-lodge","quail-lodge","carmel-valley-ranch"];
 
 const courseMap = Object.fromEntries(COURSES.map(c => [c.slug, c]));
 const hotelMap  = Object.fromEntries(HOTELS.map(h => [h.slug, h]));
 const FC = courseMap["bayonet"]!;
-const FH = hotelMap["hyatt-regency-monterey"]!;
+const FH = hotelMap["portola-hotel"]!;
 
 // Verified local-intelligence facts, sourced from LocalIntel.tsx — never invented.
 function isCarWeek() {
