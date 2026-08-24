@@ -761,7 +761,6 @@ export default function QuoteForm() {
               {liveEstimate.missing > 0 ? " (some courses don't publish a rate)" : ""}. Golf only — lodging not included.
             </div>
           )}
-        </div>
 
           {/* ── Rounds + tee times ── */}
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
