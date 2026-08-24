@@ -57,6 +57,40 @@ const CORPORATE_EVENT_TYPES = [
   "Other",
 ];
 
+const TEE_TIME_OPTIONS = [
+  { value: "early_bird", label: "Early bird", sub: "Before 8:00 am" },
+  { value: "morning",    label: "Morning",    sub: "8:00 – 10:00 am" },
+  { value: "mid_day",    label: "Mid-day",    sub: "10:00 am – 12:00 pm" },
+  { value: "afternoon",  label: "Afternoon",  sub: "12:00 pm onwards" },
+] as const;
+
+const ROOM_CONFIG_OPTIONS = [
+  { value: "double", label: "Sharing rooms", sub: "2 per room — lower cost" },
+  { value: "single", label: "Own room",       sub: "1 per room — full privacy" },
+  { value: "mixed",  label: "Mix of both",    sub: "Some sharing, some single" },
+] as const;
+
+const CADDIE_OPTIONS = [
+  { value: "caddie",   label: "Caddies",       sub: "Where available — recommended for PBC courses" },
+  { value: "cart",     label: "Cart only",      sub: "Motorised cart included" },
+  { value: "walking",  label: "Walking",        sub: "No cart or caddie" },
+  { value: "flexible", label: "Flexible",       sub: "We'll advise per course" },
+] as const;
+
+const BUDGET_TIER_OPTIONS = [
+  { value: "value",     label: "Focused on value",     sub: "Pacific Grove, Laguna Seca, Del Monte tier" },
+  { value: "mid",       label: "Mid-range",             sub: "Bayonet, CVR, Quail Lodge tier" },
+  { value: "premium",   label: "Premium",               sub: "Pebble Beach®, Spyglass®, lodge stays" },
+  { value: "no_limit",  label: "No limit",              sub: "Build the best possible trip" },
+] as const;
+
+const AIRPORT_OPTIONS = [
+  { value: "MRY", label: "MRY — Monterey Regional",   sub: "10 min from most courses" },
+  { value: "SJC", label: "SJC — San Jose",             sub: "~90 min drive" },
+  { value: "SFO", label: "SFO — San Francisco",        sub: "~115 min drive" },
+  { value: "own", label: "Own transport",              sub: "Driving or private travel" },
+] as const;
+
 const GAME_LEVELS = [
   {
     val: "low",
@@ -286,6 +320,26 @@ export default function QuoteForm() {
   // Sync autoNights → nights field (only when dates are set and nights is empty or was auto-set)
   const [nightsAutoSet, setNightsAutoSet] = useState(false);
 
+  // New enrichment fields
+  const [roundsPerGolfer, setRoundsPerGolfer] = useState("");
+  const [roundsAutoSet, setRoundsAutoSet] = useState(false);
+  const [teeTimePref1, setTeeTimePref1] = useState("");
+  const [teeTimePref2, setTeeTimePref2] = useState("");
+  const [roomConfig, setRoomConfig] = useState("");
+  const [caddieOption, setCaddieOption] = useState("");
+  const [budgetTier, setBudgetTier] = useState("");
+  const [arrivalAirport, setArrivalAirport] = useState("");
+
+  // Auto-calc rounds from nights (1 round per day default), allow override
+  useMemo(() => {
+    const n = parseInt(nights, 10);
+    if (n > 0 && !roundsAutoSet) {
+      setRoundsPerGolfer(String(n));
+      setRoundsAutoSet(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nights]);
+
   const carWeekFlag = isCarWeekDate(startDate) || isCarWeekDate(endDate);
 
   // Summary for sidebar
@@ -340,6 +394,13 @@ export default function QuoteForm() {
       non_golfer_count: nonGolfer ? nonGolferCount : null,
       referral_source: referralSource === "Other" && referralOther ? `Other: ${referralOther}` : referralSource || null,
       message: fullMessage || null,
+      rounds_per_golfer: roundsPerGolfer || null,
+      tee_time_pref_1: teeTimePref1 || null,
+      tee_time_pref_2: teeTimePref2 || null,
+      room_config: roomConfig || null,
+      caddie_option: caddieOption || null,
+      budget_tier: budgetTier || null,
+      arrival_airport: arrivalAirport || null,
     };
     const { error } = await supabase.from("leads").insert({ ...payload, raw_payload: payload });
     if (error) { setStatus("error"); return; }
@@ -669,6 +730,75 @@ export default function QuoteForm() {
           )}
         </div>
 
+          {/* ── Rounds + tee times ── */}
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <Field label="Rounds per golfer">
+              <input type="number" min="1" max="30" value={roundsPerGolfer}
+                onChange={(e) => { setRoundsPerGolfer(e.target.value); setRoundsAutoSet(false); }}
+                placeholder="e.g. 4" className={iCls} />
+              {roundsAutoSet && roundsPerGolfer && (
+                <p className="mt-1 font-ui text-[11px] text-[#2f6b4f]">Auto-set from your nights — adjust if playing more than one round per day</p>
+              )}
+            </Field>
+            <Field label="Caddie preference">
+              <div className="grid grid-cols-2 gap-2">
+                {CADDIE_OPTIONS.map((o) => (
+                  <button key={o.value} type="button"
+                    onClick={() => setCaddieOption(o.value)}
+                    className={[
+                      "rounded-[10px] border p-2.5 text-left transition-colors",
+                      caddieOption === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                    ].join(" ")}>
+                    <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                    <div className="mt-0.5 font-body text-[11px] text-[#8a857a] leading-snug">{o.sub}</div>
+                  </button>
+                ))}
+              </div>
+            </Field>
+          </div>
+          <div className="mt-5">
+            <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Preferred tee times</p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <p className="mb-1.5 font-ui text-[11px] text-[#8a857a] uppercase tracking-[.06em]">1st preference</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {TEE_TIME_OPTIONS.map((o) => (
+                    <button key={o.value} type="button"
+                      onClick={() => setTeeTimePref1(teeTimePref1 === o.value ? "" : o.value)}
+                      className={[
+                        "rounded-[10px] border p-2.5 text-left transition-colors",
+                        teeTimePref1 === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                      ].join(" ")}>
+                      <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                      <div className="mt-0.5 font-body text-[11px] text-[#8a857a]">{o.sub}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="mb-1.5 font-ui text-[11px] text-[#8a857a] uppercase tracking-[.06em]">2nd preference</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {TEE_TIME_OPTIONS.map((o) => (
+                    <button key={o.value} type="button"
+                      onClick={() => setTeeTimePref2(teeTimePref2 === o.value ? "" : o.value)}
+                      className={[
+                        "rounded-[10px] border p-2.5 text-left transition-colors",
+                        teeTimePref2 === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                        teeTimePref2 === o.value && teeTimePref2 === teeTimePref1 ? "border-[#e8b876] bg-[#fdf3e2]" : "",
+                      ].join(" ")}>
+                      <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                      <div className="mt-0.5 font-body text-[11px] text-[#8a857a]">{o.sub}</div>
+                    </button>
+                  ))}
+                </div>
+                {teeTimePref2 && teeTimePref2 === teeTimePref1 && (
+                  <p className="mt-1.5 font-ui text-[11px] text-[#7a5a0a]">Same as 1st — consider a different fallback</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ── 4. Lodging ── */}
         {showLodging && (
         <><SectionHeader n={4} label="Lodging" />
@@ -692,6 +822,24 @@ export default function QuoteForm() {
               <div className="font-body text-[12px] text-[#8a857a]">We&apos;ll match lodging based on your courses, group size, and best available rates</div>
             </div>
           </label>
+
+          {/* Room configuration */}
+          <div className="mb-5">
+            <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Room configuration</p>
+            <div className="grid grid-cols-3 gap-2">
+              {ROOM_CONFIG_OPTIONS.map((o) => (
+                <button key={o.value} type="button"
+                  onClick={() => setRoomConfig(roomConfig === o.value ? "" : o.value)}
+                  className={[
+                    "rounded-[10px] border p-2.5 text-left transition-colors",
+                    roomConfig === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                  ].join(" ")}>
+                  <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                  <div className="mt-0.5 font-body text-[11px] text-[#8a857a] leading-snug">{o.sub}</div>
+                </button>
+              ))}
+            </div>
+          </div>
 
           {!hotelPickForMe && (
             <>
@@ -750,6 +898,41 @@ export default function QuoteForm() {
               })}
             </div>
           </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div>
+              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Trip budget</p>
+              <div className="flex flex-col gap-2">
+                {BUDGET_TIER_OPTIONS.map((o) => (
+                  <button key={o.value} type="button"
+                    onClick={() => setBudgetTier(budgetTier === o.value ? "" : o.value)}
+                    className={[
+                      "rounded-[10px] border p-2.5 text-left transition-colors",
+                      budgetTier === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                    ].join(" ")}>
+                    <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                    <div className="mt-0.5 font-body text-[11px] text-[#8a857a] leading-snug">{o.sub}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Flying into</p>
+              <div className="flex flex-col gap-2">
+                {AIRPORT_OPTIONS.map((o) => (
+                  <button key={o.value} type="button"
+                    onClick={() => setArrivalAirport(arrivalAirport === o.value ? "" : o.value)}
+                    className={[
+                      "rounded-[10px] border p-2.5 text-left transition-colors",
+                      arrivalAirport === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
+                    ].join(" ")}>
+                    <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                    <div className="mt-0.5 font-body text-[11px] text-[#8a857a]">{o.sub}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <Field label="Transportation">
             <select value={transportNeeded} onChange={(e) => setTransportNeeded(e.target.value)} className={iCls}>
               {TRANSPORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
@@ -886,6 +1069,12 @@ export default function QuoteForm() {
               )}
             </div>
             <SummaryRow label="Transport" value={transportNeeded ? TRANSPORT_OPTIONS.find((o) => o.value === transportNeeded)?.label ?? null : null} />
+            <SummaryRow label="Rounds / golfer" value={roundsPerGolfer ? `${roundsPerGolfer} rounds` : null} />
+            <SummaryRow label="Tee time" value={teeTimePref1 ? (TEE_TIME_OPTIONS.find(o => o.value === teeTimePref1)?.label ?? null) : null} />
+            <SummaryRow label="Rooms" value={roomConfig ? (ROOM_CONFIG_OPTIONS.find(o => o.value === roomConfig)?.label ?? null) : null} />
+            <SummaryRow label="Caddies" value={caddieOption ? (CADDIE_OPTIONS.find(o => o.value === caddieOption)?.label ?? null) : null} />
+            <SummaryRow label="Budget" value={budgetTier ? (BUDGET_TIER_OPTIONS.find(o => o.value === budgetTier)?.label ?? null) : null} />
+            <SummaryRow label="Airport" value={arrivalAirport ? (AIRPORT_OPTIONS.find(o => o.value === arrivalAirport)?.label ?? null) : null} />
           </div>
           {liveEstimate && (
             <div className="mt-4 rounded-lg bg-ocean px-4 py-3 text-white">
@@ -945,3 +1134,4 @@ function SummaryRow({ label, value }: { label: string; value: string | null }) {
     </div>
   );
 }
+
