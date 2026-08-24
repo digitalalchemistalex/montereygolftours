@@ -982,7 +982,7 @@ export default function QuoteForm() {
               {budgetTierError && <p className="mt-2 font-ui text-[12px] text-[#a83232]">Please select a budget range.</p>}
             </div>
             <div>
-              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Flying into <span className="text-[#9a8a6e] font-normal text-[11px] normal-case tracking-normal">— required with airport transfers</span></p></p>
+              <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Flying into <span className="text-[#9a8a6e] font-normal text-[11px] normal-case tracking-normal">— required with airport transfers</span></p>
               <div className="flex flex-col gap-2">
                 {AIRPORT_OPTIONS.map((o) => (
                   <button key={o.value} type="button"
