@@ -403,7 +403,7 @@ export default function QuoteForm() {
     if (!gameLevel) { setGameLevelError(true); hasError = true; } else setGameLevelError(false);
     if (!tripType) { setTripTypeError(true); hasError = true; } else setTripTypeError(false);
     if (!okToCall && !okToText) { setContactPrefError(true); hasError = true; } else setContactPrefError(false);
-    if (okToCall && !phone.trim()) { setPhoneError(true); hasError = true; } else setPhoneError(false);
+    if (!phone.trim()) { setPhoneError(true); hasError = true; } else setPhoneError(false);
     if (!datesFlexible && !startDate) { setStartDateError(true); hasError = true; } else setStartDateError(false);
     if (datesFlexible && !nights) { setNightsError(true); hasError = true; } else setNightsError(false);
     if (nonGolfer && !nonGolferCount) { setNonGolferCountError(true); hasError = true; } else setNonGolferCountError(false);
@@ -492,7 +492,7 @@ export default function QuoteForm() {
           <Field label="Email" required>
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={iCls} />
           </Field>
-          <Field label="Mobile" required={okToCall}>
+          <Field label="Mobile" required>
             <input type="tel" value={phone} onChange={(e) => { setPhone(e.target.value); if (e.target.value.trim()) setPhoneError(false); }}
               placeholder="+1 (555) 000-0000" className={`${iCls} ${phoneError ? "border-[#a83232]" : ""}`} />
             {phoneError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Required if we may call you.</p>}
@@ -613,7 +613,7 @@ export default function QuoteForm() {
         <SectionHeader n={2} label="Trip details" />
         <div className="grid grid-cols-1 gap-5 border-b border-[#ede8da] pb-7 sm:grid-cols-2">
           <Field label="Number of golfers" required>
-            <input type="number" min="1" max="400" required value={groupSize}
+            <input type="number" min="2" max="400" required value={groupSize}
               onChange={(e) => setGroupSize(e.target.value)} placeholder="e.g. 8" className={iCls} />
           </Field>
           <div className="sm:col-span-2">
