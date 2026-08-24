@@ -57,7 +57,7 @@ export default function CourseHotels({ courseSlug, courseName }: Props) {
           return (
             <a
               key={h.hotelSlug}
-              href={`/hotels/${h.hotelSlug}/`}
+              href={}
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr auto",
@@ -109,9 +109,9 @@ export default function CourseHotels({ courseSlug, courseName }: Props) {
                     color: isFar ? "#B4B2A9" : "#042C53",
                   }}
                 >
-                  {h.minutes === 0 ? "On-site" : `${h.minutes} min`}
+                  {h.minutes === 0 ? "On-site" : }
                 </div>
-                {!h.isOnSite && (
+                {h.minutes !== 0 && (
                   <div style={{ fontSize: 11, color: "#888780", marginTop: 2 }}>drive</div>
                 )}
               </div>
