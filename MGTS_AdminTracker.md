@@ -415,3 +415,64 @@ bounced_at timestamptz
 ### Raza next steps
 - D#16 (Auth + Middleware) — authorized, in progress
 - Do NOT start D#17 without MASTER explicit go-ahead
+
+---
+
+## SESSION LOG — 2026-08-23 (MASTER) — QuoteForm Enrichment Session
+
+### Commits this session
+
+| Commit | Description | Status |
+|---|---|---|
+| `fbda12a8f9` | fix(notify-lead): align email to D#15 fields — remove budget/trip_length, add game_level/trip_type/nights/contact_pref/corporate/transport | ✅ |
+| `9f28393cb1` | feat(QuoteForm): add rounds/golfer (auto+override), tee time 1st+2nd pref, room config, caddie pref, budget tier, arrival airport | ✅ |
+| `921c9653e0` | feat(QuoteForm): replace room config with 6 hotel-accurate options — king_single, two_queens, suite_shared, villa_cottage, exclusive_buyout, no_preference | ✅ |
+| `3677e818c1` | fix(QuoteForm): fix JSX structure — rounds+tee time block inside Golf section div (Turbopack parse error) | ✅ |
+| `6e33b52728` | feat(QuoteForm): full required field validation — rounds, tee time 1st, caddie, room config (lodging), budget tier, airport (conditional), phone, startDate, nights (flexible), non-golfer count, corp fields | ✅ |
+| `9fd3ee17ff` | fix(QuoteForm): remove duplicate </p> on Flying into label | ✅ |
+| `f599a45419` | fix(QuoteForm): remove redundant date order validation — endDate min attribute handles it natively | ✅ |
+| `1d72f578e1` | fix(QuoteForm): phone always required; group size min restored to 2 | ✅ |
+
+### Supabase schema changes
+7 new columns added to `leads` table:
+`rounds_per_golfer` (integer), `tee_time_pref_1` (text), `tee_time_pref_2` (text), `room_config` (text), `caddie_option` (text), `budget_tier` (text), `arrival_airport` (text)
+
+### QuoteForm enrichment — full field list now required for Sean to quote without follow-up
+
+**New required fields added:**
+- Rounds per golfer (auto from nights, manual override)
+- Tee time 1st preference (Early bird / Morning / Mid-day / Afternoon)
+- Tee time 2nd preference (optional fallback)
+- Caddie preference (Caddies / Cart / Walking / Flexible)
+- Room configuration — 6 hotel-accurate options mapped to actual properties
+- Budget tier (Value / Mid / Premium / No limit)
+- Arrival airport (MRY / SJC / SFO / Own) — required when transport includes airport
+
+**Required validation added/fixed:**
+- Phone — always required (removed okToCall condition)
+- group_size — no default, min 2
+- startDate — required unless datesFlexible
+- nights — required when datesFlexible
+- non_golfer_count — required when nonGolfer checked
+- corp_attendees + corp_event_type — required when Corporate trip type
+- Removed redundant date order check (endDate min attr handles it)
+
+### Room config decision
+Old options (Sharing/Own/Mixed) replaced with hotel-accurate options:
+- `king_single` → Portola, IC, Abrego, PBC properties
+- `two_queens` → Portola, IC, Monterey Beach Hotel
+- `suite_shared` → Embassy Suites (all-suite), CVR (all-suite 800sqft min), Quail
+- `villa_cottage` → CVR, Bernardus, Lodge Cottages (Palmer/Eastwood)
+- `exclusive_buyout` → Casa Palmero (24 rooms) or CVR cottages — triggers contextual callout
+- `no_preference` → we advise
+
+### Skill updated
+montereygolftours.skill packaged with all changes from this session.
+
+### Key learnings added to skill gotchas
+- Always check Vercel build state after every commit
+- JSX patches: read line structure before pushing, string match ≠ valid JSX nesting
+- notify-lead email must stay in sync with QuoteForm payload
+- endDate min enforced by input attribute, no JS validation needed
+- phone always required, not conditional
+- group_size has no default, min=2
