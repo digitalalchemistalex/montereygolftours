@@ -247,7 +247,6 @@ export default function QuoteForm() {
   const [nonGolferCountError, setNonGolferCountError] = useState(false);
   const [corpAttendeesError, setCorpAttendeesError] = useState(false);
   const [corpEventTypeError, setCorpEventTypeError] = useState(false);
-  const [dateOrderError, setDateOrderError] = useState(false);
 
   // Game level
   const [gameLevel, setGameLevel] = useState<"low"|"mid"|"high"|"casual"|"">("");
@@ -406,7 +405,6 @@ export default function QuoteForm() {
     if (!okToCall && !okToText) { setContactPrefError(true); hasError = true; } else setContactPrefError(false);
     if (okToCall && !phone.trim()) { setPhoneError(true); hasError = true; } else setPhoneError(false);
     if (!datesFlexible && !startDate) { setStartDateError(true); hasError = true; } else setStartDateError(false);
-    if (!datesFlexible && startDate && endDate && new Date(endDate) <= new Date(startDate)) { setDateOrderError(true); hasError = true; } else setDateOrderError(false);
     if (datesFlexible && !nights) { setNightsError(true); hasError = true; } else setNightsError(false);
     if (nonGolfer && !nonGolferCount) { setNonGolferCountError(true); hasError = true; } else setNonGolferCountError(false);
     if (selectedCourses.length === 0) { setCoursesError(true); hasError = true; } else setCoursesError(false);
@@ -627,14 +625,13 @@ export default function QuoteForm() {
                   <input type="date" value={startDate} min={minArrival}
                   onChange={(e) => {
                     setStartDate(e.target.value);
-                    setStartDateError(false); setDateOrderError(false);
+                    setStartDateError(false);
                     if (endDate) {
                       const diff = Math.round((new Date(endDate).getTime() - new Date(e.target.value).getTime()) / 86400000);
                       if (diff > 0) { setNights(String(diff)); setNightsAutoSet(true); }
                     }
                   }} className={`${iCls} ${startDateError ? "border-[#a83232]" : ""}`} />
                   {startDateError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Arrival date required.</p>}
-                  {dateOrderError && <p className="mt-1 font-ui text-[12px] text-[#a83232]">Departure must be after arrival.</p>}
                 </div>
                 <div>
                   <label className="mb-1 block font-ui text-[11px] text-[#8a857a]">Departure</label>
