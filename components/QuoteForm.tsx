@@ -65,9 +65,42 @@ const TEE_TIME_OPTIONS = [
 ] as const;
 
 const ROOM_CONFIG_OPTIONS = [
-  { value: "double", label: "Sharing rooms", sub: "2 per room — lower cost" },
-  { value: "single", label: "Own room",       sub: "1 per room — full privacy" },
-  { value: "mixed",  label: "Mix of both",    sub: "Some sharing, some single" },
+  {
+    value: "king_single",
+    label: "King — own room",
+    sub: "1 golfer per room, king bed. Full privacy.",
+    badge: null,
+  },
+  {
+    value: "two_queens",
+    label: "Two queens / doubles",
+    sub: "2 golfers sharing, two beds. Most common for golf groups.",
+    badge: null,
+  },
+  {
+    value: "suite_shared",
+    label: "Suite — shared",
+    sub: "2 golfers in one suite. Separate bedroom + living room. Embassy Suites, CVR, Quail.",
+    badge: "All-suite hotels",
+  },
+  {
+    value: "villa_cottage",
+    label: "Villa / cottage",
+    sub: "4–6 golfers in a private villa or cottage. CVR, Bernardus, Lodge Cottages at Pebble Beach.",
+    badge: "Small group",
+  },
+  {
+    value: "exclusive_buyout",
+    label: "Full estate / exclusive use",
+    sub: "Entire property for your group only. Casa Palmero (24 rooms) or CVR cottages.",
+    badge: "Private buyout",
+  },
+  {
+    value: "no_preference",
+    label: "No preference",
+    sub: "We'll advise based on group size and budget.",
+    badge: null,
+  },
 ] as const;
 
 const CADDIE_OPTIONS = [
@@ -825,20 +858,33 @@ export default function QuoteForm() {
 
           {/* Room configuration */}
           <div className="mb-5">
-            <p className="mb-2 font-ui text-[13px] font-semibold text-ink">Room configuration</p>
-            <div className="grid grid-cols-3 gap-2">
+            <p className="mb-1.5 font-ui text-[13px] font-semibold text-ink">Room configuration</p>
+            <p className="mb-3 font-body text-[12px] text-[#8a857a]">Helps us match your group to the right hotel and price rooms correctly.</p>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {ROOM_CONFIG_OPTIONS.map((o) => (
                 <button key={o.value} type="button"
                   onClick={() => setRoomConfig(roomConfig === o.value ? "" : o.value)}
                   className={[
-                    "rounded-[10px] border p-2.5 text-left transition-colors",
+                    "rounded-[10px] border p-3 text-left transition-colors",
                     roomConfig === o.value ? "border-[1.5px] border-ocean bg-[#f2f7fa]" : "border-[#d8d2c2] bg-white hover:border-ocean",
                   ].join(" ")}>
-                  <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
-                  <div className="mt-0.5 font-body text-[11px] text-[#8a857a] leading-snug">{o.sub}</div>
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="font-ui text-[12px] font-semibold text-ink">{o.label}</div>
+                    {o.badge && (
+                      <span className="flex-shrink-0 rounded-full bg-[#eef4f7] px-2 py-0.5 font-ui text-[10px] font-semibold text-ocean">{o.badge}</span>
+                    )}
+                  </div>
+                  <div className="mt-1 font-body text-[11px] text-[#8a857a] leading-snug">{o.sub}</div>
                 </button>
               ))}
             </div>
+            {(roomConfig === "villa_cottage" || roomConfig === "exclusive_buyout") && (
+              <div className="mt-3 rounded-lg border border-[#e0c870] bg-[#fdf9ed] px-4 py-3 font-ui text-[12px] leading-relaxed text-[#7a5a0a]">
+                {roomConfig === "exclusive_buyout"
+                  ? "Casa Palmero™ at Pebble Beach (24 rooms, full estate) and Carmel Valley Ranch cottages both offer exclusive group buyout. We'll confirm availability and build the buyout into your quote."
+                  : "Villas and cottages sleep 4–6 and are available at Carmel Valley Ranch, Bernardus Lodge, and The Lodge at Pebble Beach™ (Palmer & Eastwood Cottages). We'll match the right option to your group size."}
+              </div>
+            )}
           </div>
 
           {!hotelPickForMe && (
