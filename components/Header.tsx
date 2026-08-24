@@ -48,7 +48,7 @@ const OTHER_SLUGS = ["bayonet","black-horse","carmel-valley-ranch","quail-lodge"
                      "poppy-hills","pacific-grove-golf-links","laguna-seca-golf-ranch","pasatiempo"];
 
 // ── Hotel groups ──────────────────────────────────────────────────────────
-const MONTEREY_SLUGS    = ["hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","portola-hotel","casa-munras","hotel-abrego","embassy-suites-monterey-bay-seaside","monterey-beach-hotel"];
+const MONTEREY_SLUGS    = ["portola-hotel","hyatt-regency-monterey","monterey-plaza","intercontinental-the-clement","casa-munras","hotel-abrego","embassy-suites-monterey-bay-seaside","monterey-beach-hotel"];
 const CARMEL_SLUGS      = ["bernardus-lodge","quail-lodge","carmel-valley-ranch"];
 
 const courseMap  = Object.fromEntries(COURSES.map(c => [c.slug, c]));
@@ -56,7 +56,7 @@ const hotelMap   = Object.fromEntries(HOTELS.map(h => [h.slug, h]));
 
 // ── Featured items ────────────────────────────────────────────────────────
 const FC = courseMap["bayonet"]!;
-const FH = hotelMap["hyatt-regency-monterey"]!;
+const FH = hotelMap["portola-hotel"]!;
 
 const SIMPLE_LINKS = [
   { label: "Packages",    href: "/packages/" },
@@ -248,7 +248,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
               <FeaturedPanel
                 image={FH.image.startsWith("/") ? FH.image : `${FH.image}?auto=format&fit=crop&w=400&h=520&q=85`}
                 alt={FH.name} title={FH.name}
-                sub="22 secluded acres · Ideal for golf groups"
+                sub="Downtown Monterey · Best for large groups"
                 href={`/hotels/${FH.slug}/`}
               />
 
