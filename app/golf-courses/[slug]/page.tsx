@@ -8,6 +8,11 @@ import GalleryLightbox from "@/components/GalleryLightbox";
 import { COURSES } from "@/lib/courses";
 import { getCoursePricing } from "@/lib/course-pricing";
 import { SITE } from "@/lib/site";
+import CourseHotels from "@/components/CourseHotels";
+import CarWeekBanner from "@/components/CarWeekBanner";
+import MondayInsider from "@/components/MondayInsider";
+import PoppyHillsValue from "@/components/PoppyHillsValue";
+import SpanishBayWaitlist from "@/components/SpanishBayWaitlist";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -362,6 +367,32 @@ export default async function CoursePage({ params }: Props) {
           </section>
         )}
 
+        {/* Closest hotels — proximity cards */}
+        <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
+          <CourseHotels courseSlug={slug} courseName={course.name} />
+        </section>
+
+        {/* Car Week banner — shows Aug 1-20 only, Bayonet + Black Horse */}
+        {(slug === "bayonet" || slug === "black-horse") && (
+          <div className="px-6 pt-6 md:px-14">
+            <CarWeekBanner />
+          </div>
+        )}
+
+        {/* Monday Insider — TPC Pasadera only */}
+        {slug === "club-at-pasadera" && (
+          <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
+            <MondayInsider />
+          </section>
+        )}
+
+        {/* Poppy Hills value block */}
+        {slug === "poppy-hills" && (
+          <section className="border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20">
+            <PoppyHillsValue />
+          </section>
+        )}
+
         <section className="relative overflow-hidden border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20 faq-section">
           <div className="pointer-events-none absolute inset-0 text-fairway opacity-[0.05]">
             <Image src="/art/patterns/faq-bg.svg" alt="" fill className="object-cover" />
@@ -387,17 +418,23 @@ export default async function CoursePage({ params }: Props) {
           </div>
         </section>
 
-        <section className="px-6 py-16 text-center md:px-14 md:py-20">
-          <h2 className="text-display-md font-display font-bold text-ink">
-            Play {course.name} as part of a planned trip
-          </h2>
-          <Link
-            href="/packages/"
-            className="mt-7 inline-block rounded-[9px] bg-fairway px-7 py-4 font-ui text-base font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-fairway-dark"
-          >
-            View packages &rarr;
-          </Link>
-        </section>
+        {isClosed ? (
+          <section className="px-6 py-14 md:px-14 md:py-20">
+            <SpanishBayWaitlist />
+          </section>
+        ) : (
+          <section className="px-6 py-16 text-center md:px-14 md:py-20">
+            <h2 className="text-display-md font-display font-bold text-ink">
+              Play {course.name} as part of a planned trip
+            </h2>
+            <Link
+              href="/packages/"
+              className="mt-7 inline-block rounded-[9px] bg-fairway px-7 py-4 font-ui text-base font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-fairway-dark"
+            >
+              View packages &rarr;
+            </Link>
+          </section>
+        )}
       </main>
 
       <Footer />
