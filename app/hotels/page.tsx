@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HOTELS } from "@/lib/hotels";
 import { SITE } from "@/lib/site";
+import FogSunSelector from "@/components/FogSunSelector";
 
 export const metadata: Metadata = {
   title: "Hotels on the Monterey Peninsula | Monterey Golf Tours",
@@ -94,6 +95,9 @@ export default function HotelsIndexPage() {
       </section>
 
       <main className="flex-1">
+        <div className="px-6 pt-10 md:px-14">
+          <FogSunSelector />
+        </div>
         {TIER_INFO.map((tierInfo) => {
           const tierHotels = HOTELS.filter((h) => h.tier === tierInfo.tier);
           return (
