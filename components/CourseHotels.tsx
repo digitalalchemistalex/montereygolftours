@@ -109,7 +109,7 @@ export default function CourseHotels({ courseSlug, courseName }: Props) {
                     color: isFar ? "#B4B2A9" : "#042C53",
                   }}
                 >
-                  {h.isOnSite ? "On-site" : `${h.minutes} min`}
+                  {h.minutes === 0 ? "On-site" : `${h.minutes} min`}
                 </div>
                 {!h.isOnSite && (
                   <div style={{ fontSize: 11, color: "#888780", marginTop: 2 }}>drive</div>
