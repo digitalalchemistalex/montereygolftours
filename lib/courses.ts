@@ -89,7 +89,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "laguna-seca-golf-ranch",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1611374243147-44a702c2d44c?auto=format&fit=crop&w=1400&q=90",
     name: "Laguna Seca Golf Ranch",
     city: "Monterey, CA",
     par: 71,
@@ -119,7 +119,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "poppy-hills",
-    image: "https://images.unsplash.com/photo-1542496658-e33a6d0d0c2f?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
