@@ -14,72 +14,156 @@ export default function AdminLogin() {
     e.preventDefault()
     setError('')
     setLoading(true)
-
     const res = await fetch('/api/admin/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     })
-
     const data = await res.json()
     setLoading(false)
-
-    if (data.ok) {
-      router.push('/admin')
-    } else {
-      setError(data.error ?? 'Login failed')
-    }
+    if (data.ok) router.push('/admin')
+    else setError(data.error ?? 'Login failed')
   }
 
   return (
-    <div className="min-h-screen bg-stone-950 flex items-center justify-center p-4">
-      <div className="w-full max-w-sm">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-white tracking-tight">Monterey Golf Tours</h1>
-          <p className="text-stone-400 text-sm mt-1">Admin Portal</p>
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #f8f6f1 0%, #eef0eb 100%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", sans-serif',
+      padding: '24px',
+    }}>
+      <div style={{ width: '100%', maxWidth: '400px' }}>
+
+        {/* Logo / wordmark */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: '10px',
+            marginBottom: '8px',
+          }}>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="14" fill="#2d6a4f"/>
+              <path d="M8 16 Q14 8 20 16" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+              <circle cx="14" cy="18" r="2.5" fill="white"/>
+            </svg>
+            <span style={{ fontSize: '15px', fontWeight: '600', color: '#1a1a1a', letterSpacing: '-0.3px' }}>
+              Monterey Golf Tours
+            </span>
+          </div>
+          <p style={{ fontSize: '13px', color: '#6b7280', margin: 0 }}>Operations Portal</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-stone-900 rounded-xl p-8 space-y-5 border border-stone-800">
-          <div>
-            <label className="block text-sm font-medium text-stone-300 mb-1.5">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              autoComplete="email"
-              className="w-full bg-stone-800 border border-stone-700 rounded-lg px-3 py-2.5 text-white placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
-              placeholder="you@montereygolftours.com"
-            />
-          </div>
+        {/* Card */}
+        <div style={{
+          background: 'white',
+          borderRadius: '16px',
+          padding: '36px',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06)',
+          border: '1px solid rgba(0,0,0,0.06)',
+        }}>
+          <h1 style={{ fontSize: '20px', fontWeight: '600', color: '#111827', margin: '0 0 4px 0', letterSpacing: '-0.4px' }}>
+            Sign in
+          </h1>
+          <p style={{ fontSize: '13px', color: '#6b7280', margin: '0 0 28px 0' }}>
+            Access your lead pipeline and quote tools
+          </p>
 
-          <div>
-            <label className="block text-sm font-medium text-stone-300 mb-1.5">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              required
-              autoComplete="current-password"
-              className="w-full bg-stone-800 border border-stone-700 rounded-lg px-3 py-2.5 text-white placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
-              placeholder="••••••••"
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', fontSize: '13px', fontWeight: '500', color: '#374151', marginBottom: '6px' }}>
+                Email
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                required
+                autoComplete="email"
+                placeholder="you@montereygolftours.com"
+                style={{
+                  width: '100%', boxSizing: 'border-box',
+                  padding: '10px 14px',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '8px',
+                  fontSize: '14px',
+                  color: '#111827',
+                  background: '#fafafa',
+                  outline: 'none',
+                  transition: 'border-color 0.15s',
+                }}
+                onFocus={e => e.target.style.borderColor = '#2d6a4f'}
+                onBlur={e => e.target.style.borderColor = '#d1d5db'}
+              />
+            </div>
 
-          {error && (
-            <p className="text-red-400 text-sm bg-red-950/40 border border-red-900 rounded-lg px-3 py-2">
-              {error}
-            </p>
-          )}
+            <div style={{ marginBottom: '24px' }}>
+              <label style={{ display: 'block', fontSize: '13px', fontWeight: '500', color: '#374151', marginBottom: '6px' }}>
+                Password
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
+                placeholder="••••••••••••"
+                style={{
+                  width: '100%', boxSizing: 'border-box',
+                  padding: '10px 14px',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '8px',
+                  fontSize: '14px',
+                  color: '#111827',
+                  background: '#fafafa',
+                  outline: 'none',
+                  transition: 'border-color 0.15s',
+                }}
+                onFocus={e => e.target.style.borderColor = '#2d6a4f'}
+                onBlur={e => e.target.style.borderColor = '#d1d5db'}
+              />
+            </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-stone-700 disabled:text-stone-400 text-white font-medium py-2.5 rounded-lg transition-colors text-sm"
-          >
-            {loading ? 'Signing in...' : 'Sign in'}
-          </button>
-        </form>
+            {error && (
+              <div style={{
+                marginBottom: '16px',
+                padding: '10px 14px',
+                background: '#fef2f2',
+                border: '1px solid #fecaca',
+                borderRadius: '8px',
+                fontSize: '13px',
+                color: '#dc2626',
+              }}>
+                {error}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={loading}
+              style={{
+                width: '100%',
+                padding: '11px',
+                background: loading ? '#d1d5db' : '#2d6a4f',
+                color: loading ? '#9ca3af' : 'white',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '14px',
+                fontWeight: '600',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                letterSpacing: '-0.1px',
+                transition: 'background 0.15s',
+              }}
+            >
+              {loading ? 'Signing in…' : 'Sign in'}
+            </button>
+          </form>
+        </div>
+
+        <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '12px', color: '#9ca3af' }}>
+          Monterey Golf Tours · Private Portal
+        </p>
       </div>
     </div>
   )
