@@ -24,7 +24,7 @@ async function verifyToken(token: string, secret: string): Promise<boolean> {
   }
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   if (!pathname.startsWith('/admin')) return NextResponse.next()
   if (isPublicPath(pathname)) return NextResponse.next()
@@ -44,7 +44,6 @@ export async function middleware(request: NextRequest) {
   return NextResponse.redirect(url)
 }
 
-// Next.js 16: proxy.ts replaces middleware.ts
 export const config = {
   matcher: ['/admin/:path*'],
 }
