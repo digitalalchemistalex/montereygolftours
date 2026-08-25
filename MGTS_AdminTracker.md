@@ -476,3 +476,28 @@ montereygolftours.skill packaged with all changes from this session.
 - endDate min enforced by input attribute, no JS validation needed
 - phone always required, not conditional
 - group_size has no default, min=2
+
+
+---
+
+## SESSION LOG — 2026-08-25 (MASTER + Claude)
+
+### Team change
+- Raza is off the project. All code now pushed directly by MASTER + Claude. AGENTS.md is stale.
+
+### Completed this session
+- GitHub token refreshed (90-day, workflow access) — stored in skill only
+- `RESEND_API_KEY` set in Vercel — lead notifications now live
+- `LEAD_NOTIFY_EMAIL` set: `dawoodanialtaaf@gmail.com`
+- Redeployed READY: `dpl_4ERw8YbncNjNHGKnB8QhX4CERNvW`
+- montereygolftours skill updated + packaged
+
+### D#16 checklist
+- [ ] Create admin_users table in Supabase
+- [ ] Set ADMIN_SECRET in Vercel
+- [ ] Push src/middleware.ts
+- [ ] Push app/admin/login/page.tsx
+- [ ] Push app/api/admin/auth/login/route.ts
+- [ ] Push app/api/admin/auth/logout/route.ts
+- [ ] Push src/lib/admin-error.ts
+- [ ] Verify login on montereygolftours.vercel.app/admin
