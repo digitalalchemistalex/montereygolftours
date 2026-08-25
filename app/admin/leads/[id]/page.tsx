@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import { supabase } from '@/lib/supabase'
 import LeadActions from './LeadActions'
+import QuoteBuilder from './QuoteBuilder'
 
 const PBC_SLUGS = ['pebble-beach', 'spyglass-hill', 'links-at-spanish-bay', 'del-monte']
 const CLOSED_SLUGS = ['links-at-spanish-bay']
@@ -26,11 +27,13 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   )
 }
 
-export default async function LeadDetail({ params }: { params: Promise<{ id: string }> }) {
+export default async function LeadDetail({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ tab?: string }> }) {
   const cookieStore = await cookies()
   if (!cookieStore.get('admin_token')) redirect('/admin/login')
 
   const { id } = await params
+  const sp = await searchParams
+  const activeTab = sp.tab ?? 'details'
   const { data: lead, error } = await supabase.from('leads').select('*').eq('id', id).single()
 
   if (error || !lead) {
@@ -58,7 +61,27 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
         <span style={{ color: '#111827', fontWeight: '500' }}>{lead.name}</span>
       </div>
 
-      <div className="admin-lead-grid">
+      {/* Tabs */}
+      <div style={{ display: 'flex', gap: '2px', borderBottom: '1px solid #e5e7eb', marginBottom: '24px' }}>
+        {[['details','Details'],['quote','Quote Builder']].map(([key, label]) => (
+          <a key={key} href={'/admin/leads/' + id + (key === 'details' ? '' : '?tab=' + key)} style={{
+            padding: '8px 18px', fontSize: '13px', fontWeight: '500', textDecoration: 'none',
+            borderBottom: activeTab === key ? '2px solid #2d6a4f' : '2px solid transparent',
+            color: activeTab === key ? '#2d6a4f' : '#6b7280', marginBottom: '-1px',
+          }}>{label}</a>
+        ))}
+      </div>
+
+      {activeTab === 'quote' && (
+        <QuoteBuilder
+          leadId={lead.id}
+          groupSize={parseInt(String(lead.group_size ?? '1'), 10) || 1}
+          nonGolfers={parseInt(String(lead.non_golfer_count ?? '0'), 10) || 0}
+          rawPayload={lead.raw_payload as Record<string,unknown> | null}
+        />
+      )}
+
+      {activeTab === 'details' && <div className="admin-lead-grid">
         {/* Left */}
         <div>
           <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', marginBottom: '14px' }}>
@@ -197,7 +220,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
             ))}
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   )
 }
