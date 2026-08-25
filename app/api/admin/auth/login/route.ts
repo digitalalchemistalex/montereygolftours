@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from '@/lib/supabase'
 import { createAdminToken, setAdminCookie } from '@/lib/admin-auth'
 import { logAndAlert } from '@/lib/admin-error'
 
@@ -8,11 +8,6 @@ const MAX_ATTEMPTS = 5
 const WINDOW_MS = 15 * 60 * 1000
 
 export async function POST(req: NextRequest) {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SECRET_KEY!
-  )
-
   const ip = req.headers.get('x-forwarded-for') ?? 'unknown'
   const now = Date.now()
 
@@ -38,7 +33,7 @@ export async function POST(req: NextRequest) {
       attempts.set(ip, { count, lockedUntil: now + WINDOW_MS })
       await logAndAlert(
         'Brute force lockout',
-        'IP ' + ip + ' locked out after ' + String(count) + ' failed attempts for email: ' + String(email)
+        'IP ' + ip + ' locked out after ' + String(count) + ' failed attempts for: ' + String(email)
       )
     } else {
       attempts.set(ip, { count, lockedUntil: 0 })
