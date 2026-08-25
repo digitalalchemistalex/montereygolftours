@@ -31,12 +31,11 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
   if (!cookieStore.get('admin_token')) redirect('/admin/login')
 
   const { id } = await params
-
   const { data: lead, error } = await supabase.from('leads').select('*').eq('id', id).single()
 
   if (error || !lead) {
     return (
-      <div style={{ padding: '64px', textAlign: 'center', fontFamily: '-apple-system, sans-serif' }}>
+      <div className="admin-page" style={{ textAlign: 'center', paddingTop: '64px' }}>
         <p style={{ color: '#dc2626' }}>Lead not found.</p>
         <a href="/admin/leads" style={{ color: '#2d6a4f' }}>← Back to leads</a>
       </div>
@@ -44,10 +43,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
   }
 
   const { data: activity } = await supabase
-    .from('activity_log')
-    .select('*')
-    .eq('entity_id', id)
-    .order('created_at', { ascending: false })
+    .from('activity_log').select('*').eq('entity_id', id).order('created_at', { ascending: false })
 
   const courses = (lead.courses_interested as string[]) ?? []
   const hotels = (lead.hotels_interested as string[]) ?? []
@@ -55,45 +51,40 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
   const corpNeeds = (lead.corp_needs as string[]) ?? []
 
   return (
-    <div style={{ padding: '32px 48px', fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", sans-serif' }}>
-
-      {/* Breadcrumb */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', marginBottom: '24px' }}>
+    <div className="admin-page">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', marginBottom: '20px' }}>
         <a href="/admin/leads" style={{ color: '#9ca3af', textDecoration: 'none' }}>Leads</a>
         <span style={{ color: '#d1d5db' }}>/</span>
         <span style={{ color: '#111827', fontWeight: '500' }}>{lead.name}</span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '24px', alignItems: 'start' }}>
-
+      <div className="admin-lead-grid">
         {/* Left */}
         <div>
-          {/* Header card */}
-          <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '24px', marginBottom: '16px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <div>
-                <h1 style={{ fontSize: '22px', fontWeight: '700', color: '#111827', margin: '0 0 4px 0', letterSpacing: '-0.4px' }}>{lead.name}</h1>
-                <p style={{ fontSize: '14px', color: '#6b7280', margin: '0 0 2px 0' }}>{lead.email}</p>
+          <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', marginBottom: '14px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+              <div style={{ minWidth: 0 }}>
+                <h1 style={{ fontSize: '20px', fontWeight: '700', color: '#111827', margin: '0 0 4px 0', letterSpacing: '-0.4px' }}>{lead.name}</h1>
+                <p style={{ fontSize: '14px', color: '#6b7280', margin: '0 0 2px 0', wordBreak: 'break-all' }}>{lead.email}</p>
                 {lead.phone && <p style={{ fontSize: '14px', color: '#6b7280', margin: 0 }}>{lead.phone}</p>}
               </div>
-              <div style={{ textAlign: 'right' }}>
+              <div style={{ textAlign: 'right', flexShrink: 0 }}>
                 <p style={{ fontSize: '11px', color: '#9ca3af', margin: '0 0 3px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Received</p>
-                <p style={{ fontSize: '13px', color: '#374151', margin: 0, fontWeight: '500' }}>
-                  {new Date(lead.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                <p style={{ fontSize: '12px', color: '#374151', margin: 0, fontWeight: '500' }}>
+                  {new Date(lead.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </p>
               </div>
             </div>
-            <div style={{ display: 'flex', gap: '8px', marginTop: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '6px', marginTop: '14px', flexWrap: 'wrap' }}>
               {lead.ok_to_call && <span style={{ fontSize: '12px', background: '#dcfce7', color: '#166534', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>OK to call</span>}
               {lead.ok_to_text && <span style={{ fontSize: '12px', background: '#dbeafe', color: '#1d4ed8', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>OK to text</span>}
               {lead.returning_customer && <span style={{ fontSize: '12px', background: '#fef9c3', color: '#854d0e', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>Returning</span>}
             </div>
           </div>
 
-          {/* Fields */}
-          <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '24px', marginBottom: '16px' }}>
+          <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', marginBottom: '14px' }}>
             <Section title="Trip Overview">
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0 24px' }}>
+              <div className="admin-field-grid-3">
                 <Field label="Group Size" value={lead.group_size + ' golfers'} />
                 <Field label="Trip Type" value={lead.trip_type} />
                 <Field label="Game Level" value={lead.game_level} />
@@ -127,7 +118,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
             </Section>
 
             <Section title="Preferences">
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0 24px' }}>
+              <div className="admin-field-grid-3">
                 <Field label="Tee Time 1st" value={lead.tee_time_pref_1} />
                 <Field label="Tee Time 2nd" value={lead.tee_time_pref_2} />
                 <Field label="Caddie" value={lead.caddie_option} />
@@ -165,7 +156,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
 
             {lead.trip_type === 'corp' && (
               <Section title="Corporate">
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 24px' }}>
+                <div className="admin-field-grid-2">
                   <Field label="Attendees" value={lead.corp_attendees} />
                   <Field label="Event Type" value={lead.corp_event_type} />
                 </div>
@@ -190,8 +181,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
         {/* Right */}
         <div>
           <LeadActions leadId={lead.id} currentStatus={lead.status} />
-
-          <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', marginTop: '16px' }}>
+          <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', marginTop: '14px' }}>
             <h3 style={{ fontSize: '13px', fontWeight: '600', color: '#111827', margin: '0 0 16px 0' }}>Activity</h3>
             {(!activity || activity.length === 0) && (
               <p style={{ fontSize: '13px', color: '#9ca3af', margin: 0 }}>No activity yet.</p>
@@ -207,7 +197,6 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
             ))}
           </div>
         </div>
-
       </div>
     </div>
   )
