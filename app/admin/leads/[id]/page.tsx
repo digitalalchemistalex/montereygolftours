@@ -88,7 +88,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
                 <Field label="Group Size" value={lead.group_size + ' golfers'} />
                 <Field label="Trip Type" value={lead.trip_type} />
                 <Field label="Game Level" value={lead.game_level} />
-                <Field label="Start Date" value={lead.start_date} />
+                <Field label="Travel Dates" value={lead.travel_dates} />
                 <Field label="Nights" value={lead.nights} />
                 <Field label="Rounds / Golfer" value={lead.rounds_per_golfer} />
                 <Field label="Non-Golfers" value={lead.non_golfer_in_group ? (lead.non_golfer_count + ' non-golfers') : null} />
