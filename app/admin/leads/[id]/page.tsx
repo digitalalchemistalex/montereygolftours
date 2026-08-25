@@ -1,5 +1,5 @@
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
 import { supabase } from '@/lib/supabase'
 import LeadActions from './LeadActions'
 
@@ -11,7 +11,7 @@ function Field({ label, value }: { label: string; value: string | number | boole
   const display = typeof value === 'boolean' ? (value ? 'Yes' : 'No') : String(value)
   return (
     <div style={{ marginBottom: '12px' }}>
-      <p style={{ fontSize: '11px', color: '#9ca3af', margin: '0 0 2px 0', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '500' }}>{label}</p>
+      <p style={{ fontSize: '11px', color: '#9ca3af', margin: '0 0 2px 0', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600' }}>{label}</p>
       <p style={{ fontSize: '14px', color: '#111827', margin: 0, fontWeight: '500' }}>{display}</p>
     </div>
   )
@@ -20,7 +20,7 @@ function Field({ label, value }: { label: string; value: string | number | boole
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ marginBottom: '24px' }}>
-      <h3 style={{ fontSize: '12px', fontWeight: '600', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 12px 0', paddingBottom: '8px', borderBottom: '1px solid #f3f4f6' }}>{title}</h3>
+      <h3 style={{ fontSize: '11px', fontWeight: '700', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.07em', margin: '0 0 12px 0', paddingBottom: '8px', borderBottom: '1px solid #f3f4f6' }}>{title}</h3>
       {children}
     </div>
   )
@@ -32,11 +32,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
 
   const { id } = await params
 
-  const { data: lead, error } = await supabase
-    .from('leads')
-    .select('*')
-    .eq('id', id)
-    .single()
+  const { data: lead, error } = await supabase.from('leads').select('*').eq('id', id).single()
 
   if (error || !lead) {
     return (
@@ -59,24 +55,18 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
   const corpNeeds = (lead.corp_needs as string[]) ?? []
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", sans-serif' }}>
-      {/* Nav */}
-      <div style={{ background: 'white', borderBottom: '1px solid #e5e7eb', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-          <a href="/admin" style={{ color: '#6b7280', textDecoration: 'none' }}>Admin</a>
-          <span style={{ color: '#d1d5db' }}>/</span>
-          <a href="/admin/leads" style={{ color: '#6b7280', textDecoration: 'none' }}>Leads</a>
-          <span style={{ color: '#d1d5db' }}>/</span>
-          <span style={{ color: '#111827', fontWeight: '500' }}>{lead.name}</span>
-        </div>
-        <form action="/api/admin/auth/logout" method="POST">
-          <button style={{ background: 'none', border: '1px solid #e5e7eb', borderRadius: '7px', padding: '6px 14px', fontSize: '13px', color: '#6b7280', cursor: 'pointer', fontFamily: 'inherit' }}>Sign out</button>
-        </form>
+    <div style={{ padding: '32px 48px', fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", sans-serif' }}>
+
+      {/* Breadcrumb */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', marginBottom: '24px' }}>
+        <a href="/admin/leads" style={{ color: '#9ca3af', textDecoration: 'none' }}>Leads</a>
+        <span style={{ color: '#d1d5db' }}>/</span>
+        <span style={{ color: '#111827', fontWeight: '500' }}>{lead.name}</span>
       </div>
 
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '32px', display: 'grid', gridTemplateColumns: '1fr 340px', gap: '24px', alignItems: 'start' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '24px', alignItems: 'start' }}>
 
-        {/* Left: all fields */}
+        {/* Left */}
         <div>
           {/* Header card */}
           <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '24px', marginBottom: '16px' }}>
@@ -87,14 +77,16 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
                 {lead.phone && <p style={{ fontSize: '14px', color: '#6b7280', margin: 0 }}>{lead.phone}</p>}
               </div>
               <div style={{ textAlign: 'right' }}>
-                <p style={{ fontSize: '12px', color: '#9ca3af', margin: '0 0 4px 0' }}>Received</p>
-                <p style={{ fontSize: '13px', color: '#374151', margin: 0 }}>{new Date(lead.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                <p style={{ fontSize: '11px', color: '#9ca3af', margin: '0 0 3px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Received</p>
+                <p style={{ fontSize: '13px', color: '#374151', margin: 0, fontWeight: '500' }}>
+                  {new Date(lead.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '8px', marginTop: '16px', flexWrap: 'wrap' }}>
-              {lead.ok_to_call && <span style={{ fontSize: '12px', background: '#dcfce7', color: '#166534', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>📞 OK to call</span>}
-              {lead.ok_to_text && <span style={{ fontSize: '12px', background: '#dbeafe', color: '#1d4ed8', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>💬 OK to text</span>}
-              {lead.returning_customer && <span style={{ fontSize: '12px', background: '#fef9c3', color: '#854d0e', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>⭐ Returning</span>}
+              {lead.ok_to_call && <span style={{ fontSize: '12px', background: '#dcfce7', color: '#166534', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>OK to call</span>}
+              {lead.ok_to_text && <span style={{ fontSize: '12px', background: '#dbeafe', color: '#1d4ed8', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>OK to text</span>}
+              {lead.returning_customer && <span style={{ fontSize: '12px', background: '#fef9c3', color: '#854d0e', padding: '3px 10px', borderRadius: '99px', fontWeight: '500' }}>Returning</span>}
             </div>
           </div>
 
@@ -127,7 +119,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
                       color: isClosed ? '#9ca3af' : isPBC ? '#854d0e' : '#166534',
                       textDecoration: isClosed ? 'line-through' : 'none',
                     }}>
-                      {c}{isPBC && !isClosed ? ' ⭐' : ''}{isClosed ? ' (closed)' : ''}
+                      {c}{isPBC && !isClosed ? ' ★' : ''}{isClosed ? ' (closed)' : ''}
                     </span>
                   )
                 })}
@@ -195,11 +187,10 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
           </div>
         </div>
 
-        {/* Right: actions + activity */}
+        {/* Right */}
         <div>
           <LeadActions leadId={lead.id} currentStatus={lead.status} />
 
-          {/* Activity log */}
           <div style={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', marginTop: '16px' }}>
             <h3 style={{ fontSize: '13px', fontWeight: '600', color: '#111827', margin: '0 0 16px 0' }}>Activity</h3>
             {(!activity || activity.length === 0) && (
@@ -209,7 +200,9 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
               <div key={a.id} style={{ paddingBottom: '12px', marginBottom: '12px', borderBottom: '1px solid #f3f4f6' }}>
                 <p style={{ fontSize: '12px', fontWeight: '600', color: '#374151', margin: '0 0 2px 0' }}>{a.action}</p>
                 {a.details?.note && <p style={{ fontSize: '12px', color: '#6b7280', margin: '0 0 2px 0' }}>{a.details.note}</p>}
-                <p style={{ fontSize: '11px', color: '#9ca3af', margin: 0 }}>{new Date(a.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} · {a.created_by}</p>
+                <p style={{ fontSize: '11px', color: '#9ca3af', margin: 0 }}>
+                  {new Date(a.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} · {a.created_by}
+                </p>
               </div>
             ))}
           </div>
