@@ -21,7 +21,7 @@ const STATUS_COLORS: Record<string, { bg: string; color: string }> = {
 
 function score(lead: Record<string, unknown>): { label: string; color: string } {
   const size = parseInt(String(lead.group_size ?? '1'), 10) || 1
-  const startDate = lead.start_date as string | undefined
+  const startDate = lead.travel_dates as string | undefined
   const urgency = startDate ? Math.max(0, (new Date(startDate).getTime() - Date.now()) / 86400000) : 120
   const urgencyMult = urgency < 60 ? 3 : urgency < 120 ? 2 : 1
   const tierMap: Record<string, number> = { value: 1, mid: 2, premium: 3, no_limit: 4 }
@@ -45,7 +45,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
 
   let query = supabase
     .from('leads')
-    .select('id, created_at, name, email, group_size, trip_type, budget_tier, courses_interested, start_date, status, ok_to_call, ok_to_text')
+    .select('id, created_at, name, email, group_size, trip_type, budget_tier, courses_interested, travel_dates, status, ok_to_call, ok_to_text')
     .order('created_at', { ascending: false })
   if (activeTab !== 'all') query = query.eq('status', activeTab)
 
