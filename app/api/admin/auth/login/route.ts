@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
       attempts.set(ip, { count, lockedUntil: now + WINDOW_MS })
       await logAndAlert(
         'Brute force lockout',
-        'IP ' + ip + ' locked out after ' + String(count) + ' failed attempts for: ' + String(email)
+        'IP ' + ip + ' locked out after ' + String(count) + ' failed login attempts for: ' + String(email)
       )
     } else {
       attempts.set(ip, { count, lockedUntil: 0 })
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
   }
 
   attempts.delete(ip)
-  const token = createAdminToken()
+  const token = await createAdminToken()
   await setAdminCookie(token)
   return NextResponse.json({ ok: true })
 }
