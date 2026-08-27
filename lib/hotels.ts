@@ -3,6 +3,7 @@
 // Casa Munras room count + address confirmed by Raza (see Master Tracker).
 // Quail Lodge room count confirmed by Raza: 93.
 // 2026-08-21: Portola Hotel moved to position #1 per Sean (S1 — best fit for large groups).
+// 2026-08-27: Images updated to Sean's licensed photos (local public/images/).
 
 export type Hotel = {
   slug: string;
@@ -17,7 +18,7 @@ export type Hotel = {
 export const HOTELS: Hotel[] = [
   {
     slug: "portola-hotel",
-    image: "/images/hotels/portola-hotel-hero.jpg",
+    image: "/images/portola-hotel-spa/gallery-1.jpg",
     name: "Portola Hotel & Spa",
     city: "Monterey, CA",
     tier: 2,
@@ -27,7 +28,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "hyatt-regency-monterey",
-    image: "/images/hotels/hyatt-regency-hero.webp",
+    image: "/images/hyatt-regency-monterey/gallery-1.webp",
     name: "Hyatt Regency Monterey Hotel & Spa",
     city: "Monterey, CA",
     tier: 1,
@@ -37,7 +38,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    image: "/images/hotels/carmel-valley-ranch-hotel-hero.webp",
+    image: "/images/carmel-valley-ranch/gallery-1.webp",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -47,7 +48,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "quail-lodge",
-    image: "/images/hotels/quail-lodge-hotel-hero.webp",
+    image: "/images/quail-lodge/gallery-1.webp",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -57,7 +58,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "bernardus-lodge",
-    image: "/images/hotels/bernardus-lodge-hero.webp",
+    image: "/images/bernardus-lodge/gallery-1.webp",
     name: "Bernardus Lodge & Spa",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -77,7 +78,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "intercontinental-the-clement",
-    image: "/images/hotels/intercontinental-hero.avif",
+    image: "/images/intercontinental-the-clement-monterey/gallery-1.jpg",
     name: "InterContinental The Clement Monterey",
     city: "Monterey, CA",
     tier: 2,
@@ -87,7 +88,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "casa-munras",
-    image: "/images/hotels/casa-munras-hero.avif",
+    image: "/images/casa-munras/gallery-1.jpg",
     name: "Casa Munras Garden Hotel & Spa",
     city: "Monterey, CA",
     tier: 3,
@@ -97,7 +98,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "hotel-abrego",
-    image: "/images/hotels/hotel-abrego-hero.avif",
+    image: "/images/hotel-abrego/gallery-1.jpg",
     name: "Hotel Abrego",
     city: "Monterey, CA",
     tier: 3,
@@ -107,7 +108,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "embassy-suites-monterey-bay-seaside",
-    image: "/images/hotels/embassy-suites-hero.avif",
+    image: "/images/embassy-suites-monterey/gallery-1.jpg",
     name: "Embassy Suites by Hilton Monterey Bay Seaside",
     city: "Seaside, CA",
     tier: 2,
@@ -117,7 +118,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "monterey-beach-hotel",
-    image: "/images/hotels/monterey-beach-hotel-hero.webp",
+    image: "/images/monterey-beach-hotel/gallery-1.webp",
     name: "Monterey Beach Hotel, A Tribute Portfolio Hotel",
     city: "Monterey, CA",
     tier: 2,
@@ -127,7 +128,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "lodge-at-pebble-beach",
-    image: "https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/lodge-at-pebble-beach/room-ocean-view.webp",
     name: "The Lodge at Pebble Beach™",
     city: "Pebble Beach, CA",
     tier: 1,
@@ -137,7 +138,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "inn-at-spanish-bay",
-    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/inn-at-spanish-bay/gallery-1.webp",
     name: "The Inn at Spanish Bay™",
     city: "Pebble Beach, CA",
     tier: 1,
