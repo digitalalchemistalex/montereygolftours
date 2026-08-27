@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { Resend } from 'resend';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,15 +8,18 @@ function getMgtsClient() {
 }
 
 async function sendNotification(subject: string, html: string) {
-  try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return;
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
       from: '"Monterey Golf Tours" <sean@golfthehighsierra.com>',
-      to: 'sean@golfthehighsierra.com',
+      to: ['sean@golfthehighsierra.com'],
       subject,
       html,
-    });
-  } catch { /* non-blocking */ }
+    }),
+  }).catch(() => {});
 }
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ token: string }> }) {
@@ -42,10 +44,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
   const newLeadStatus = action === 'approve' ? 'booked' : 'lost';
 
   await client.from('quote_responses').insert({
-    lead_id: draft.lead_id,
-    draft_id: draft.id,
-    action,
-    reason: reason || null,
+    lead_id: draft.lead_id, draft_id: draft.id, action, reason: reason || null,
   }).then(() => {}, () => {});
 
   await client.from('quote_drafts').update({
@@ -59,8 +58,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
 
   await client.from('activity_log').insert({
     action: action === 'approve' ? 'customer_approved' : 'customer_declined',
-    entity_type: 'lead',
-    entity_id: draft.lead_id,
+    entity_type: 'lead', entity_id: draft.lead_id,
     details: { pp_gg: draft.pp_gg, hotel: draft.hotel_name, reason: reason || null },
   }).then(() => {}, () => {});
 
@@ -69,7 +67,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
     : `${lead?.name || 'A customer'} declined their Monterey quote`;
   const html = action === 'approve'
     ? `<p>${lead?.name} confirmed their Monterey Golf package — $${draft.pp_gg?.toLocaleString()}/person. Lead moved to <strong>booked</strong>.</p>`
-    : `<p>${lead?.name} declined their Monterey Golf quote. Reason: <strong>${reason || 'Not specified'}</strong>. Lead moved to <strong>lost</strong>.</p>`;
+    : `<p>${lead?.name} declined. Reason: <strong>${reason || 'Not specified'}</strong>. Lead moved to <strong>lost</strong>.</p>`;
 
   await sendNotification(subject, html);
 
