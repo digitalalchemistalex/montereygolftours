@@ -141,7 +141,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pebble-beach-golf-links",
-    image: "/images/pebble-beach-golf-links/hole-6.webp",
+    image: "/images/courses/gallery/pebble-beach-hole-6.webp",
     name: "Pebble Beach Golf Links®",
     city: "Pebble Beach, CA",
     par: 72,
