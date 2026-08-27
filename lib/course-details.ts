@@ -533,7 +533,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "playpacificgrove.com",
     hook: "Ocean holes on a municipal budget — a coastal links round without the private-club price tag.",
     gallery: [
-      { src: "/images/courses/gallery/pacific-grove-golf-links-2.webp", caption: "The Neville back nine — designed by Jack Neville, original co-designer of Pebble Beach Golf Links, in 1960. Dunes and ocean on every hole.", tag: "Neville Nine · Back 9" },
+      
       { src: "/images/courses/gallery/pacific-grove-golf-links-3.webp", caption: "Point Pinos Lighthouse overlooks holes 12 through 16 — built in 1855, the oldest continuously operating lighthouse on the West Coast.", tag: "Point Pinos Lighthouse" },
       { src: "/images/courses/gallery/pacific-grove-golf-links-4.webp", caption: "The same Monterey coastline as Pebble Beach — at a fraction of the green fee. The locals' open secret.", tag: "Coastal links" },
       { src: "/images/courses/gallery/pacific-grove-golf-links-5.webp", caption: "Windswept dunes remind you that Jack Neville understood links golf. The ocean spray is part of the experience.", tag: "Links terrain" },
