@@ -874,6 +874,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "Guest rooms and suites from 570 to 1,300 sq ft, including Fairway One rooms and the Palmer and Eastwood four-bedroom cottages",
     brand: "Pebble Beach Resorts®",
     hook: "Open since 1919, The Lodge at Pebble Beach™ frames the 18th green of Pebble Beach Golf Links® — golf's most recognised closing hole.",
+    gallery: [
+      { src: "/images/hotels/gallery/lodge-pebble-beach-2.webp", caption: "An ocean view queen room at The Lodge at Pebble Beach™ — rooms range from 570 to 1,300 sq ft with garden, fairway, or Pacific views.", tag: "Ocean view room" },
+      { src: "/images/hotels/gallery/lodge-pebble-beach-3.webp", caption: "Fairway One at The Lodge — 30 oversized rooms overlooking the 1st fairway of Pebble Beach Golf Links®, steps from the first tee.", tag: "Fairway One" },
+      { src: "/images/hotels/gallery/lodge-pebble-beach-4.webp", caption: "The Vizcaino Suite at The Lodge at Pebble Beach™ — one of the resort's most storied suites, with direct views of the 18th green.", tag: "Vizcaino Suite" },
+    ],
     description: [
       "The Lodge at Pebble Beach™ has stood at the edge of Stillwater Cove since 1919, making it the oldest property at Pebble Beach Resorts® and one of the oldest golf resort hotels in America. Guest rooms range from 570 to 1,300 square feet, with views of the landscaped gardens, the 18th fairway of Pebble Beach Golf Links®, or the Pacific Ocean beyond Carmel Bay.",
       "Fairway One, a distinctive addition to The Lodge, sits steps from the first tee of Pebble Beach Golf Links® and offers 30 oversized guest rooms across three two-story buildings, each with fairway and partial ocean views. The Palmer Cottage and Eastwood Cottage — named for two of Pebble Beach Company's most celebrated part-owners — each feature a 1,000-square-foot living room with a stacked stone fireplace, wet bar, 17-foot vaulted ceilings, and an outdoor fire pit directly on the first fairway. Four individual bedrooms feed into each shared living space, making these cottages the most sought-after accommodation for golf group buddy trips at Pebble Beach.",
@@ -962,6 +967,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "Guest rooms and suites from 470 to 2,100 sq ft, all with gas fireplace and most with private patio or balcony",
     brand: "Pebble Beach Resorts®",
     hook: "Tucked between Del Monte Forest and the Pacific Ocean — the most romantic and most dramatic of the three Pebble Beach Resorts® properties.",
+    gallery: [
+      { src: "/images/hotels/gallery/inn-at-spanish-bay-2.webp", caption: "The Inn at Spanish Bay™ overlooks the Pacific coastline — every room has a gas fireplace and most have a private patio or balcony.", tag: "Oceanside setting" },
+      { src: "/images/hotels/gallery/inn-at-spanish-bay-3.webp", caption: "An ocean view room at The Inn at Spanish Bay™ — rooms range from 470 to 2,100 sq ft with forest, fairway, or Pacific views.", tag: "Ocean view room" },
+    ],
     description: [
       "The Inn at Spanish Bay™ sits at the northern end of the 17-Mile Drive, where the Del Monte Forest meets the Pacific coastline. Every guest room features a gas-burning fireplace and, in most cases, a private patio or balcony overlooking the forest, fairways, or open ocean. Rooms range from 470 to 2,100 square feet — the Grand Suite offers a dining/conference table for 10 and a grand piano.",
       "The Inn overlooks The Links at Spanish Bay®, currently closed for a full Gil Hanse redesign and scheduled to reopen April 17, 2027. When it reopens, guests of The Inn will have the most direct access to play the redesigned course — the only true links-style course at Pebble Beach Resorts®, designed with ocean-exposed dunes, firm fast fairways, and views across the Pacific on every hole.",
