@@ -50,7 +50,7 @@ export default async function RespondPage({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="https://montereygolftours.com/images/logo-white.png" alt="Monterey Golf Tours"
             style={{ height: 32, display: 'block' }}
-            onError={() => {}} />
+            />
           <div style={{ height: 3, background: 'linear-gradient(90deg,#C9A24D,#B08C3A)', marginTop: 14 }} />
         </div>
 

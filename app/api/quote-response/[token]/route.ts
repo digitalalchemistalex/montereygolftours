@@ -1,11 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { sendEmail, emailWrap } from '@/lib/gths-email';
+import { Resend } from 'resend';
 
 export const dynamic = 'force-dynamic';
 
 function getMgtsClient() {
   return createClient(process.env.MGTS_SUPABASE_URL!, process.env.MGTS_SUPABASE_SERVICE_KEY!);
+}
+
+async function sendNotification(subject: string, html: string) {
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    await resend.emails.send({
+      from: '"Monterey Golf Tours" <sean@golfthehighsierra.com>',
+      to: 'sean@golfthehighsierra.com',
+      subject,
+      html,
+    });
+  } catch { /* non-blocking */ }
 }
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ token: string }> }) {
@@ -29,7 +41,6 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
   const newStatus = action === 'approve' ? 'approved' : 'declined';
   const newLeadStatus = action === 'approve' ? 'booked' : 'lost';
 
-  // Record the response
   await client.from('quote_responses').insert({
     lead_id: draft.lead_id,
     draft_id: draft.id,
@@ -37,7 +48,6 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
     reason: reason || null,
   }).then(() => {}, () => {});
 
-  // Update draft status
   await client.from('quote_drafts').update({
     status: newStatus,
     approved_at: action === 'approve' ? new Date().toISOString() : null,
@@ -45,12 +55,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
     decline_reason: reason || null,
   }).eq('id', draft.id);
 
-  // Update lead status
-  await client.from('leads').update({
-    status: newLeadStatus,
-  }).eq('id', draft.lead_id);
+  await client.from('leads').update({ status: newLeadStatus }).eq('id', draft.lead_id);
 
-  // Log to activity_log
   await client.from('activity_log').insert({
     action: action === 'approve' ? 'customer_approved' : 'customer_declined',
     entity_type: 'lead',
@@ -58,22 +64,14 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
     details: { pp_gg: draft.pp_gg, hotel: draft.hotel_name, reason: reason || null },
   }).then(() => {}, () => {});
 
-  // Notify Sean
   const subject = action === 'approve'
     ? `${lead?.name || 'A customer'} approved their Monterey quote`
     : `${lead?.name || 'A customer'} declined their Monterey quote`;
-  const body = action === 'approve'
-    ? `<p style="font-size:14px;color:#111">${lead?.name} confirmed their Monterey Golf package — $${draft.pp_gg?.toLocaleString()}/person.</p>
-       <p style="font-size:14px;color:#111">Lead moved to <strong>booked</strong>.</p>`
-    : `<p style="font-size:14px;color:#111">${lead?.name} declined their Monterey Golf quote.</p>
-       <p style="font-size:14px;color:#111">Reason: <strong>${reason || 'Not specified'}</strong></p>
-       <p style="font-size:14px;color:#111">Lead moved to <strong>lost</strong>.</p>`;
+  const html = action === 'approve'
+    ? `<p>${lead?.name} confirmed their Monterey Golf package — $${draft.pp_gg?.toLocaleString()}/person. Lead moved to <strong>booked</strong>.</p>`
+    : `<p>${lead?.name} declined their Monterey Golf quote. Reason: <strong>${reason || 'Not specified'}</strong>. Lead moved to <strong>lost</strong>.</p>`;
 
-  await sendEmail({
-    to: 'sean@golfthehighsierra.com',
-    subject,
-    html: emailWrap(body),
-  }).then(() => {}, () => {});
+  await sendNotification(subject, html);
 
   return NextResponse.redirect(new URL(`/quote/respond/${token}?a=${action}`, req.url), 303);
 }
