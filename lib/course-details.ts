@@ -777,13 +777,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "The most famous cliff-top course in American golf, opened in 1919 and unchanged in legend ever since.",
     gallery: [
-      { src: "/images/courses/gallery/pebble-beach-2.webp", caption: "Holes 8, 9, and 10 running along the Pacific cliffs — the most photographed stretch in American golf.", tag: "Holes 8–10" },
+      { src: "/images/courses/gallery/pebble-beach-hole-6.webp", caption: "The par-5 6th hole at Pebble Beach Golf Links® — a dramatic downhill tee shot toward Stillwater Cove.", tag: "Hole 6 · Par 5" },
       { src: "/images/courses/gallery/pebble-beach-3.webp", caption: "The par-3 7th hole — one of the shortest and most iconic holes in golf, playing directly to the Pacific.", tag: "Hole 7 · Par 3" },
+      { src: "/images/courses/gallery/pebble-beach-2.webp", caption: "Holes 8, 9, and 10 running along the Pacific cliffs — the most photographed stretch in American golf.", tag: "Holes 8–10" },
       { src: "/images/courses/gallery/pebble-beach-4.webp", caption: "Looking back from the fairway — the Pacific stretches to the horizon on Pebble Beach's famous coastal stretch.", tag: "Coastal holes" },
       { src: "/images/courses/gallery/pebble-beach-5.webp", caption: "The 18th hole framed by the Lodge — golf's most famous closing hole, hugging the Stillwater Cove shoreline.", tag: "Hole 18" },
-      { src: "/images/courses/gallery/pebble-beach-holes-8-9-10.webp", caption: "The iconic clifftop corridor — holes 8, 9, and 10 at Pebble Beach Golf Links®, among the most recognised in the world.", tag: "Holes 8–9–10" },
-      { src: "/images/courses/gallery/pebble-beach-hole-9-10.webp", caption: "Hole 9 and 10 at Pebble Beach — where the course turns south along the cliffs toward the famous par-4 10th.", tag: "Holes 9–10" },
-      { src: "/images/courses/gallery/pebble-beach-hole-6.webp", caption: "The par-5 6th hole at Pebble Beach Golf Links® — a dramatic downhill tee shot toward Stillwater Cove.", tag: "Hole 6 · Par 5" },
     ],
     description: [
       "Pebble Beach Golf Links® was designed by two amateur golfers, Jack Neville and Douglas Grant, opening on February 22, 1919. It remains the most recognized golf course in the country, with a string of holes running directly along the Pacific coastline.",
