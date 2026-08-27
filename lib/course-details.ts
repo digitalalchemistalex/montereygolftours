@@ -925,6 +925,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     lessIdealIf: ["You want to book this course before it reopens — it is not currently available"],
     greenFeeEst: "Not applicable — course closed until April 17, 2027",
     nearbySlugs: ["pebble-beach-golf-links", "spyglass-hill"],
+    gallery: [
+      { src: "/images/courses/gallery/spanish-bay-bagpiper.webp", caption: "The Spanish Bay bagpiper plays at sunset along the oceanside links — one of Pebble Beach Resorts\u00ae most iconic traditions.", tag: "Sunset" },
+    ],
     faqs: [
       {
         q: "Is The Links at Spanish Bay® open right now?",
