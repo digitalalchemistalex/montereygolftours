@@ -83,11 +83,19 @@ export default function SpanishBayWaitlist() {
 
   return (
     <section>
+      {/* Bagpiper image */}
+      <div style={{ borderRadius: "12px 12px 0 0", overflow: "hidden", lineHeight: 0 }}>
+        <img
+          src="/images/courses/gallery/spanish-bay-bagpiper.webp"
+          alt="Bagpiper at sunset on The Links at Spanish Bay®"
+          style={{ width: "100%", height: 220, objectFit: "cover", objectPosition: "center 40%" }}
+        />
+      </div>
       {/* Hero */}
       <div
         style={{
           background: "#042C53",
-          borderRadius: "16px 16px 0 0",
+          borderRadius: "0",
           padding: "2rem 2rem 0",
           position: "relative",
           overflow: "hidden",
