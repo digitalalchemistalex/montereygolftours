@@ -4,6 +4,7 @@
 // until reopening April 17 2027.
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const REOPEN = new Date("2027-04-17T07:00:00-07:00");
 
@@ -84,11 +85,14 @@ export default function SpanishBayWaitlist() {
   return (
     <section>
       {/* Bagpiper image */}
-      <div style={{ borderRadius: "12px 12px 0 0", overflow: "hidden", lineHeight: 0 }}>
-        <img
+      <div style={{ borderRadius: "12px 12px 0 0", overflow: "hidden", lineHeight: 0, position: "relative", height: 220 }}>
+        <Image
           src="/images/courses/gallery/spanish-bay-bagpiper.webp"
           alt="Bagpiper at sunset on The Links at Spanish Bay®"
-          style={{ width: "100%", height: 220, objectFit: "cover", objectPosition: "center 40%" }}
+          fill
+          style={{ objectFit: "cover", objectPosition: "center 40%" }}
+          sizes="(max-width: 768px) 100vw, 560px"
+          priority
         />
       </div>
       {/* Hero */}
