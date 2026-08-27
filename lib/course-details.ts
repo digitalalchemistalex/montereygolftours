@@ -938,10 +938,13 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     greenFeeEst: "Not applicable — course closed until April 17, 2027",
     nearbySlugs: ["pebble-beach-golf-links", "spyglass-hill"],
     gallery: [
-      { src: "/images/courses/gallery/spanish-bay-bagpiper.webp", caption: "The Spanish Bay bagpiper plays at sunset along the oceanside links — one of Pebble Beach Resorts® most iconic traditions.", tag: "Sunset" },
       { src: "/images/courses/gallery/spanish-bay-2.webp", caption: "Hole 6 at The Links at Spanish Bay® — coastal dunes and Pacific exposure define this true links-style layout.", tag: "Hole 6" },
       { src: "/images/courses/gallery/spanish-bay-3.webp", caption: "The Links at Spanish Bay® before its Gil Hanse-led transformation — firm, fast links turf along the 17-Mile Drive.", tag: "Links character" },
       { src: "/images/courses/gallery/spanish-bay-4.webp", caption: "Hole 6 from the tee — The Links at Spanish Bay® plays directly along the Pacific, with ocean wind on every shot.", tag: "Hole 6 · Tee" },
+      { src: "/images/courses/gallery/spanish-bay-bagpiper.webp", caption: "Each evening at dusk, a bagpiper plays on the 18th hole as the sun sets over the Pacific — a Pebble Beach Resorts® tradition unique to Spanish Bay.", tag: "Sunset tradition" },
+    ],
+    pointers: [
+      "Each evening at dusk, a bagpiper walks the 18th hole as the sun sets over the Pacific — dine at The Inn at Spanish Bay, sit by the fire pits on the terrace, and watch the day end with the pipes playing. One of the most memorable non-golf moments on the peninsula.",
     ],
     faqs: [
       {
