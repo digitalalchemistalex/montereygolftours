@@ -1,13 +1,5 @@
 // Source: mgts-course-intelligence.md + MGTS_Fact_Verification_Tracker.xlsx
-// (corrected against direct verification by Raza, June 30 2026)
-// Pebble Beach Resorts® courses added per Sean's confirmed approval + IAGTO
-// Program Info PDF (dated 7/23/24) — TM/R symbols mandatory on every use,
-// per IAGTO agreement. Final symbol-per-name table should still be
-// cross-checked against the actual signed online agreement when available.
-//
-// Images: all Unsplash (free commercial license, no attribution required).
-// Verified live + visually reviewed 2026-07-04. Each image selected to match
-// the actual character of the course (coastal, forested, links, historic, etc.)
+// 2026-08-27: Images updated to Sean's licensed photos (local public/images/).
 
 export type Course = {
   slug: string;
@@ -29,7 +21,7 @@ export type Course = {
 export const COURSES: Course[] = [
   {
     slug: "bayonet",
-    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/bayonet-golf-course/gallery-1.webp",
     name: "Bayonet",
     city: "Seaside, CA",
     par: 72,
@@ -44,7 +36,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "black-horse",
-    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/black-horse-golf-course/gallery-1.jpg",
     name: "Black Horse",
     city: "Seaside, CA",
     par: 72,
@@ -59,7 +51,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/carmel-valley-ranch/golf-1.webp",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     par: 70,
@@ -74,7 +66,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "quail-lodge",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/quail-lodge/golf-1.jpg",
     name: "Quail Lodge & Golf Club",
     city: "Carmel Valley, CA",
     par: 71,
@@ -89,7 +81,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "laguna-seca-golf-ranch",
-    image: "https://images.unsplash.com/photo-1611374243147-44a702c2d44c?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/laguna-seca-golf-ranch/gallery-1.jpg",
     name: "Laguna Seca Golf Ranch",
     city: "Monterey, CA",
     par: 71,
@@ -104,7 +96,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pacific-grove-golf-links",
-    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pacific-grove-golf-links/hero.jpg",
     name: "Pacific Grove Golf Links",
     city: "Pacific Grove, CA",
     par: 70,
@@ -119,7 +111,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "poppy-hills",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/poppy-hills/gallery-1.webp",
     name: "Poppy Hills Golf Course",
     city: "Pebble Beach, CA (Del Monte Forest)",
     par: 71,
@@ -134,7 +126,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "club-at-pasadera",
-    image: "https://images.unsplash.com/photo-1619468129361-605ebea04b44?auto=format&fit=crop&w",
+    image: "https://images.unsplash.com/photo-1619468129361-605ebea04b44?auto=format&fit=crop&w=1400&q=90",
     name: "The Club at Pasadera",
     city: "Monterey, CA",
     par: 71,
@@ -149,7 +141,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pebble-beach-golf-links",
-    image: "https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pebble-beach-golf-links/hole-6.webp",
     name: "Pebble Beach Golf Links®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -164,7 +156,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "spyglass-hill",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w",
+    image: "/images/spyglass-hill-golf-course/gallery-1.webp",
     name: "Spyglass Hill Golf Course®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -179,7 +171,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "links-at-spanish-bay",
-    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/links-at-spanish-bay/gallery-1.webp",
     name: "The Links at Spanish Bay®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -189,7 +181,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "del-monte-golf-course",
-    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/del-monte-golf-course/gallery-1.webp",
     name: "Del Monte Golf Course®",
     city: "Monterey, CA",
     par: 72,
@@ -204,7 +196,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "the-hay",
-    image: "https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?auto=format&fit=crop&w",
+    image: "https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?auto=format&fit=crop&w=1400&q=90",
     name: "The Hay™",
     city: "Pebble Beach, CA",
     par: 27,
@@ -214,7 +206,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pasatiempo",
-    image: "https://images.unsplash.com/photo-1606443192517-919653213206?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pasatiempo-golf-club/hero.jpg",
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,
