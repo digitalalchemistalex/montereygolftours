@@ -53,7 +53,7 @@ export default function GalleryLightbox({ images, entityName, triggerLabel }: Pr
             onClick={() => openAt(i)}
             className={[
               "group relative overflow-hidden rounded-xl bg-[#e3ddcf]",
-              i === 0 ? "col-span-2 h-[240px] sm:col-span-2 sm:h-[280px]" : "h-[140px] sm:h-[160px]",
+              i === 0 ? "col-span-2 h-[240px] sm:col-span-2 sm:h-[280px]" : i === 1 ? "h-[140px] sm:h-[280px]" : "h-[140px] sm:h-[160px]",
             ].join(" ")}
             aria-label={`Open photo: ${img.caption}`}
           >
