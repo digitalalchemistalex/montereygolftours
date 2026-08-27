@@ -108,7 +108,7 @@ export default function ItinerariesIndexPage() {
                     {t.target}
                   </p>
                   <div className="mt-3 font-display text-lg font-bold text-[#e8b8be]">
-                    from ${t.priceFrom.toLocaleString()}
+                    {t.priceFrom > 0 ? `from $${t.priceFrom.toLocaleString()}` : 'Custom quote'}
                     <span className="font-ui text-sm font-normal text-[rgba(250,246,238,.7)]">
                       /person
                     </span>
