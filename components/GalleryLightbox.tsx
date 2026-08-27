@@ -154,8 +154,9 @@ export default function GalleryLightbox({ images, entityName, triggerLabel }: Pr
               alt={current.caption}
               fill
               className="object-contain"
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 80vw"
               priority
+              unoptimized
             />
           </div>
 
