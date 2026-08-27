@@ -501,3 +501,29 @@ montereygolftours.skill packaged with all changes from this session.
 - [ ] Push app/api/admin/auth/logout/route.ts
 - [ ] Push src/lib/admin-error.ts
 - [ ] Verify login on montereygolftours.vercel.app/admin
+
+---
+
+## Session Update: Aug 27 2026
+
+### Commits this session
+| Commit | Description |
+|---|---|
+| `047dca62ff` | fix(itineraries): show 'Custom quote' instead of $0 when priceFrom unset |
+| `bc1318f57c` | fix(pebble-beach): reorder gallery holes 6→7→8-10→18, remove duplicate cliff shots |
+| `f66b267280` | fix(pebble-beach): swap hole 6/7 gallery order to fix dead space |
+| `ba0181cbbb` | fix(pebble-beach): correct hero image path — was 404, now points to gallery |
+| `e03e332510` | fix(gallery): match top-right image height to hero — eliminate wasted space |
+| `917d8faf21` | fix(spyglass): replace Spanish Bay gallery images with correct Spyglass images |
+| `69d7372081` | feat(spanish-bay): move bagpiper to body pointers, reorder gallery |
+| `c0d05eefa5` | fix(pacific-grove): remove missing gallery-2 image reference |
+
+### Status changes
+- PBC staging email sent to Karlyn Hawke (khawke@pebblebeach.com + traveldesk@pebblebeach.com) — awaiting sign-off
+- All gallery issues resolved across 4 course pages
+- Itinerary $0 display bug fixed
+- Skill + memory updated
+
+### Outstanding blockers
+- Karlyn Hawke PBC sign-off → domain cutover
+- Sean: IAGTO rates, toll-free number, CVR/Pasadera/Poppy Hills images
