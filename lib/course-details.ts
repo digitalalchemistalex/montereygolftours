@@ -847,10 +847,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
     gallery: [
-      { src: "/images/courses/gallery/spanish-bay-2.webp", caption: "Hole 6 at The Links at Spanish Bay® — the course's most exposed coastal hole, where the Pacific wind defines club selection.", tag: "Hole 6" },
-      { src: "/images/courses/gallery/spanish-bay-3.webp", caption: "The Links at Spanish Bay® stretches along the Pacific Dunes — a true links layout modelled on the great Scottish coastal courses.", tag: "Links layout" },
-      { src: "/images/courses/gallery/spanish-bay-4.webp", caption: "Looking back along the dune corridor at Spanish Bay — wind-sculpted terrain and native dunegrass frame every approach.", tag: "Dune corridor" },
-      { src: "/images/courses/gallery/spanish-bay-bagpiper.webp", caption: "The Spanish Bay bagpiper at dusk — a nightly tradition that signals the close of play on one of the Monterey Peninsula's most storied courses.", tag: "Sunset tradition" },
+      { src: "/images/courses/gallery/spyglass-2.webp", caption: "Spyglass Hill Golf Course® opening holes — the front nine moves through coastal dunes before turning inland through Del Monte Forest.", tag: "Coastal dunes" },
+      { src: "/images/courses/gallery/spyglass-3.webp", caption: "The forest pines of the back nine at Spyglass Hill® — a complete contrast to the coastal opening holes, demanding precision on every approach.", tag: "Del Monte Forest" },
+      { src: "/images/courses/gallery/spyglass-4.webp", caption: "Rating 75.4, slope 145 — the numbers confirm what players already know: Spyglass Hill® is the hardest test among the Pebble Beach Resorts® properties.", tag: "Most demanding" },
     ],
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
