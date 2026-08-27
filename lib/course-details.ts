@@ -776,6 +776,15 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "The most famous cliff-top course in American golf, opened in 1919 and unchanged in legend ever since.",
+    gallery: [
+      { src: "/images/courses/gallery/pebble-beach-2.webp", caption: "Holes 8, 9, and 10 running along the Pacific cliffs — the most photographed stretch in American golf.", tag: "Holes 8–10" },
+      { src: "/images/courses/gallery/pebble-beach-3.webp", caption: "The par-3 7th hole — one of the shortest and most iconic holes in golf, playing directly to the Pacific.", tag: "Hole 7 · Par 3" },
+      { src: "/images/courses/gallery/pebble-beach-4.webp", caption: "Looking back from the fairway — the Pacific stretches to the horizon on Pebble Beach's famous coastal stretch.", tag: "Coastal holes" },
+      { src: "/images/courses/gallery/pebble-beach-5.webp", caption: "The 18th hole framed by the Lodge — golf's most famous closing hole, hugging the Stillwater Cove shoreline.", tag: "Hole 18" },
+      { src: "/images/courses/gallery/pebble-beach-holes-8-9-10.webp", caption: "The iconic clifftop corridor — holes 8, 9, and 10 at Pebble Beach Golf Links®, among the most recognised in the world.", tag: "Holes 8–9–10" },
+      { src: "/images/courses/gallery/pebble-beach-hole-9-10.webp", caption: "Hole 9 and 10 at Pebble Beach — where the course turns south along the cliffs toward the famous par-4 10th.", tag: "Holes 9–10" },
+      { src: "/images/courses/gallery/pebble-beach-hole-6.webp", caption: "The par-5 6th hole at Pebble Beach Golf Links® — a dramatic downhill tee shot toward Stillwater Cove.", tag: "Hole 6 · Par 5" },
+    ],
     description: [
       "Pebble Beach Golf Links® was designed by two amateur golfers, Jack Neville and Douglas Grant, opening on February 22, 1919. It remains the most recognized golf course in the country, with a string of holes running directly along the Pacific coastline.",
       "Tee options range from the 6,802-yard blue tees (rating 74.9, slope 144) down to shorter sets for a range of player abilities. Green fees vary annually for both resort and non-resort players, with optional caddie services. Enquire through us for current rates.",
@@ -839,6 +848,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
+    gallery: [
+      { src: "/images/courses/gallery/spyglass-2.webp", caption: "Hole 4 at Spyglass Hill — the transition from coastal dunes to the dense Del Monte Forest canopy begins here.", tag: "Hole 4" },
+      { src: "/images/courses/gallery/spyglass-3.webp", caption: "Hole 1 at Spyglass Hill Golf Course® — the opening drive descends from the clubhouse toward the Pacific-exposed dunes.", tag: "Hole 1" },
+      { src: "/images/courses/gallery/spyglass-4.webp", caption: "Spyglass Hill's interior forest holes — towering Monterey Pines create cathedral-like fairway corridors on the back nine.", tag: "Forest holes" },
+    ],
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
       "The front nine moves through coastal dunes before the back nine turns inland through Del Monte Forest pines, giving the round two distinct characters. Green fees vary annually — enquire for current rates.",
@@ -926,7 +940,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     greenFeeEst: "Not applicable — course closed until April 17, 2027",
     nearbySlugs: ["pebble-beach-golf-links", "spyglass-hill"],
     gallery: [
-      { src: "/images/courses/gallery/spanish-bay-bagpiper.webp", caption: "The Spanish Bay bagpiper plays at sunset along the oceanside links — one of Pebble Beach Resorts\u00ae most iconic traditions.", tag: "Sunset" },
+      { src: "/images/courses/gallery/spanish-bay-bagpiper.webp", caption: "The Spanish Bay bagpiper plays at sunset along the oceanside links — one of Pebble Beach Resorts® most iconic traditions.", tag: "Sunset" },
+      { src: "/images/courses/gallery/spanish-bay-2.webp", caption: "Hole 6 at The Links at Spanish Bay® — coastal dunes and Pacific exposure define this true links-style layout.", tag: "Hole 6" },
+      { src: "/images/courses/gallery/spanish-bay-3.webp", caption: "The Links at Spanish Bay® before its Gil Hanse-led transformation — firm, fast links turf along the 17-Mile Drive.", tag: "Links character" },
+      { src: "/images/courses/gallery/spanish-bay-4.webp", caption: "Hole 6 from the tee — The Links at Spanish Bay® plays directly along the Pacific, with ocean wind on every shot.", tag: "Hole 6 · Tee" },
     ],
     faqs: [
       {
@@ -967,6 +984,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
+    gallery: [
+      { src: "/images/courses/gallery/del-monte-2.webp", caption: "Hole 10 at Del Monte Golf Course® — mature trees and classic parkland character on the peninsula's most historic layout.", tag: "Hole 10" },
+      { src: "/images/courses/gallery/del-monte-3.webp", caption: "Del Monte Golf Course® in continuous operation since 1897 — the oldest golf course west of the Mississippi.", tag: "Historic layout" },
+      { src: "/images/courses/gallery/del-monte-4.webp", caption: "The parkland fairways of Del Monte — a gentler, tree-lined test compared to the cliff-top resort courses nearby.", tag: "Parkland character" },
+    ],
     description: [
       "Del Monte Golf Course® traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
       "At par 72 and 6,356 yards (rating 71.8, slope 129), it plays as a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses — enquire for current green fees.",
