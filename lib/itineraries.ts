@@ -31,7 +31,7 @@ export type ItineraryTemplate = {
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
   "3-day-monterey-golf-weekend": {
     slug: "3-day-monterey-golf-weekend",
-    image: "https://images.unsplash.com/photo-1561863783-e24e0b6b7a2f?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
     title: "3-Day Monterey Golf Weekend",
     shortTitle: "Weekend",
     durationDays: 3,
@@ -83,7 +83,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
-    image: "https://images.unsplash.com/photo-1593111774240-d529f12cf4d8?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
@@ -463,7 +463,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
-    image: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,
