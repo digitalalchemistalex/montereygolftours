@@ -31,7 +31,7 @@ export type ItineraryTemplate = {
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
   "3-day-monterey-golf-weekend": {
     slug: "3-day-monterey-golf-weekend",
-    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pacific-grove-golf-links/gallery-1.jpg",
     title: "3-Day Monterey Golf Weekend",
     shortTitle: "Weekend",
     durationDays: 3,
@@ -218,7 +218,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "7-day-ultimate-monterey-golf-trip": {
     slug: "7-day-ultimate-monterey-golf-trip",
-    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/quail-lodge/golf-1.jpg",
     title: "7-Day Ultimate Monterey",
     shortTitle: "Ultimate Monterey",
     durationDays: 7,
@@ -417,7 +417,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-corporate-golf-outing": {
     slug: "monterey-corporate-golf-outing",
-    image: "https://images.unsplash.com/photo-1506126944674-00c6c192e0a3?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/black-horse-golf-course/gallery-1.jpg",
     title: "Monterey Corporate Golf Outing",
     shortTitle: "Corporate Outing",
     durationDays: 2,
@@ -463,7 +463,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/laguna-seca-golf-ranch/gallery-1.jpg",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,
