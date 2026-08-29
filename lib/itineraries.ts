@@ -31,7 +31,7 @@ export type ItineraryTemplate = {
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
   "3-day-monterey-golf-weekend": {
     slug: "3-day-monterey-golf-weekend",
-    image: "/images/pacific-grove-golf-links/gallery-1.jpg",
+    image: "/images/courses/black-horse-hero.jpg",
     title: "3-Day Monterey Golf Weekend",
     shortTitle: "Weekend",
     durationDays: 3,
@@ -83,7 +83,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
-    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/courses/laguna-seca-hero.jpg",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
@@ -142,7 +142,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "5-day-complete-monterey-golf-vacation": {
     slug: "5-day-complete-monterey-golf-vacation",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/courses/pacific-grove-hero.jpg",
     title: "5-Day Full Peninsula",
     shortTitle: "Full Peninsula",
     durationDays: 5,
@@ -218,7 +218,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "7-day-ultimate-monterey-golf-trip": {
     slug: "7-day-ultimate-monterey-golf-trip",
-    image: "/images/quail-lodge/golf-1.jpg",
+    image: "/images/courses/quail-lodge-hero.jpg",
     title: "7-Day Ultimate Monterey",
     shortTitle: "Ultimate Monterey",
     durationDays: 7,
@@ -307,7 +307,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "carmel-valley-golf-getaway": {
     slug: "carmel-valley-golf-getaway",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/courses/black-horse-hero.jpg",
     title: "Carmel Valley Golf Getaway",
     shortTitle: "Carmel Valley Getaway",
     durationDays: 3,
@@ -355,7 +355,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "pebble-beach-golf-package": {
     slug: "pebble-beach-golf-package",
-    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/courses/laguna-seca-hero.jpg",
     title: "The Pebble Pilgrimage",
     shortTitle: "Pebble Pilgrimage",
     durationDays: 4,
@@ -417,7 +417,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-corporate-golf-outing": {
     slug: "monterey-corporate-golf-outing",
-    image: "/images/black-horse-golf-course/gallery-1.jpg",
+    image: "/images/courses/pacific-grove-hero.jpg",
     title: "Monterey Corporate Golf Outing",
     shortTitle: "Corporate Outing",
     durationDays: 2,
@@ -463,7 +463,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
-    image: "/images/laguna-seca-golf-ranch/gallery-1.jpg",
+    image: "/images/courses/quail-lodge-hero.jpg",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,
