@@ -9,12 +9,10 @@ import { SITE } from "@/lib/site";
 
 // GTHS api-image.php returns 403 — use index-based Unsplash fallbacks so each card gets a different photo
 const GTHS_IMG_BY_INDEX: string[] = [
-  "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=600&h=350&q=80",
-  "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&h=350&q=80",
-  "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&h=350&q=80",
-  "https://images.unsplash.com/photo-1516912481808-3406841bd33c?auto=format&fit=crop&w=600&h=350&q=80",
-  "https://images.unsplash.com/photo-1561863783-e24e0b6b7a2f?auto=format&fit=crop&w=600&h=350&q=80",
-  "https://images.unsplash.com/photo-1593111774240-d529f12cf4d8?auto=format&fit=crop&w=600&h=350&q=80",
+  "/images/courses/black-horse-hero.jpg",
+  "/images/courses/laguna-seca-hero.jpg",
+  "/images/courses/pacific-grove-hero.jpg",
+  "/images/courses/quail-lodge-hero.jpg",
 ];
 function gthsImg(index: number): string {
   return GTHS_IMG_BY_INDEX[index % GTHS_IMG_BY_INDEX.length];
