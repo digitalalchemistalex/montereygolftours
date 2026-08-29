@@ -31,7 +31,7 @@ export type ItineraryTemplate = {
 export const ITINERARIES: Record<string, ItineraryTemplate> = {
   "3-day-monterey-golf-weekend": {
     slug: "3-day-monterey-golf-weekend",
-    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1561863783-e24e0b6b7a2f?auto=format&fit=crop&w=1400&q=90",
     title: "3-Day Monterey Golf Weekend",
     shortTitle: "Weekend",
     durationDays: 3,
@@ -83,7 +83,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "4-day-monterey-peninsula-golf-trip": {
     slug: "4-day-monterey-peninsula-golf-trip",
-    image: "https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1593111774240-d529f12cf4d8?auto=format&fit=crop&w=1400&q=90",
     title: "4-Day Classic Peninsula",
     shortTitle: "Classic Peninsula",
     durationDays: 4,
@@ -417,7 +417,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-corporate-golf-outing": {
     slug: "monterey-corporate-golf-outing",
-    image: "https://images.unsplash.com/photo-1742498626081-a64f9677f468?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1506126944674-00c6c192e0a3?auto=format&fit=crop&w=1400&q=90",
     title: "Monterey Corporate Golf Outing",
     shortTitle: "Corporate Outing",
     durationDays: 2,
@@ -463,7 +463,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
   },
   "monterey-golf-trip-best-value": {
     slug: "monterey-golf-trip-best-value",
-    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?auto=format&fit=crop&w=1400&q=90",
+    image: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?auto=format&fit=crop&w=1400&q=90",
     title: "Best Value Peninsula Trip",
     shortTitle: "Best Value",
     durationDays: 3,
