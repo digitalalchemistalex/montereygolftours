@@ -25,6 +25,7 @@ export default function GolfCoursesIndexPage() {
         "@type": "CollectionPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
         name: "Golf Courses on the Monterey Peninsula",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
       },
