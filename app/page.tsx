@@ -34,32 +34,6 @@ const homepageSchema = {
         cssSelector: ["h1", ".speakable-summary", "#speakable-summary"],
       },
     },
-    {
-      "@type": "TravelAgency",
-      "@id": "https://montereygolftours.com/#travelagency",
-      name: "Monterey Golf Tours",
-      url: "https://montereygolftours.com",
-      description: "Custom Monterey Peninsula golf trips planned end to end. Tee times, lodging, and logistics for groups of 2–300 players. IAGTO-contracted partner with Pebble Beach Resorts®.",
-      telephone: "(888) 584-8232",
-      email: "info@montereygolftours.com",
-      priceRange: "$$$$",
-      areaServed: {
-        "@type": "Place",
-        name: "Monterey Peninsula, California",
-      },
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "2700 Mill St Suite 800",
-        addressLocality: "Reno",
-        addressRegion: "NV",
-        postalCode: "89502",
-        addressCountry: "US",
-      },
-      founder: {
-        "@type": "Person",
-        name: "Sean Schaeffer",
-      },
-    },
   ],
 };
 
