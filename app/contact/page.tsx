@@ -22,6 +22,10 @@ export default function ContactPage() {
     "@graph": [
       {
         "@type": "WebPage",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1"],
+        },
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
         name: "Contact Monterey Golf Tours",
