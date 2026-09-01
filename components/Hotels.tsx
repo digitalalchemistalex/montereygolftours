@@ -3,7 +3,7 @@ import Image from "next/image";
 import { HOTELS } from "@/lib/hotels";
 import Reveal from "./Reveal";
 
-const FEATURED_SLUGS = ["hyatt-regency-monterey", "carmel-valley-ranch", "quail-lodge"];
+const FEATURED_SLUGS = ["portola-hotel", "hyatt-regency-monterey", "quail-lodge"];
 
 export default function Hotels() {
   const featured = FEATURED_SLUGS.map((slug) => HOTELS.find((h) => h.slug === slug)!);
