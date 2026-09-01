@@ -27,11 +27,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${hotel.name} — Monterey Golf Trip Lodging | Monterey Golf Tours`;
   const description = `${hotel.name} in ${hotel.city} — ${hotel.rooms}. ${hotel.hook} Plan your Monterey golf trip with Monterey Golf Tours.`;
 
+  const hotelImg = HOTELS.find((h) => h.slug === slug);
+  const ogImage = hotelImg?.image?.startsWith("/")
+    ? `https://${SITE.domain}${hotelImg.image}`
+    : hotelImg?.image ?? "/og-image.jpg";
+
   return {
     title,
     description,
     alternates: {
       canonical: `https://${SITE.domain}/hotels/${hotel.slug}/`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://${SITE.domain}/hotels/${hotel.slug}/`,
+      images: [{ url: ogImage, width: 1200, height: 800, alt: hotel.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }
@@ -99,6 +116,15 @@ export default async function HotelPage({ params }: Props) {
         },
         telephone: hotel.phone === "Contact hotel directly" ? undefined : hotel.phone,
         url: canonicalUrl,
+        ...(hotelImage ? {
+          image: {
+            "@type": "ImageObject",
+            url: hotelImage.startsWith("/") ? `https://${SITE.domain}${hotelImage}` : hotelImage,
+            width: 1200,
+            height: 800,
+            name: `${hotel.name} — Monterey Golf Tours`,
+          },
+        } : {}),
       },
       {
         "@type": "FAQPage",
