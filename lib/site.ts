@@ -4,8 +4,8 @@
 export const SITE = {
   name: "Monterey Golf Tours",
   domain: "montereygolftours.com",
-  phone: "(888) 584-8232", // GTHS placeholder number, per Sean's instruction
-  phoneHref: "tel:18885848232",
+  phone: "(866) 278-7010", // MGTS toll-free confirmed by Sean Aug 31 2026
+  phoneHref: "tel:18662787010",
   email: "info@montereygolftours.com", // confirmed created by Master, per Sean
   address: "2700 Mill St Suite 800, Reno, NV 89502",
   minGroupSize: 2,
