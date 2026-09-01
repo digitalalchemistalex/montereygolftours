@@ -23,6 +23,10 @@ export default function FAQPage() {
     "@graph": [
       {
         "@type": "WebPage",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".faq-section"],
+        },
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
         name: "Frequently Asked Questions | Monterey Golf Tours",
