@@ -17,8 +17,32 @@ export const metadata: Metadata = {
 };
 
 export default function QuotePage() {
+  const canonicalUrl = `https://${SITE.domain}/quote/`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: "Get a Custom Golf Trip Quote | Monterey Golf Tours",
+        description: "Tell us your group size, dates, and budget, and we'll put together a custom Monterey Peninsula golf trip quote within 24 hours.",
+        isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Get a Quote", item: canonicalUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image src="https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=2400&q=90" alt="" fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
