@@ -75,7 +75,7 @@ function buildHtml(d: Record<string, unknown>): string {
     !okToText ? '' : R('OK to Text', '💬 Yes — text them', true),
   ].join('');
 
-  return \`<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -121,10 +121,10 @@ function buildHtml(d: Record<string, unknown>): string {
         <td style="background:#1E3A2F;border-radius:8px">
           <a href="\${adminUrl}" style="display:inline-block;padding:12px 24px;color:#fff;text-decoration:none;font-size:14px;font-weight:700">Open in Admin →</a>
         </td>
-        \${phone ? \`<td width="12"></td>
+        \${phone ? `<td width="12"></td>
         <td style="border:1px solid #E5E7EB;border-radius:8px">
           <a href="tel:\${phone}" style="display:inline-block;padding:12px 24px;color:#374151;text-decoration:none;font-size:14px;font-weight:600">📞 Call Now</a>
-        </td>\` : ''}
+        </td>` : ''}
       </tr>
     </table>
   </div>
@@ -135,7 +135,7 @@ function buildHtml(d: Record<string, unknown>): string {
   </div>
 </div>
 </body>
-</html>\`;
+</html>`;
 }
 
 
