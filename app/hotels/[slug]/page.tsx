@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `https://${SITE.domain}/hotels/${hotel.slug}/`,
     },
     openGraph: {
+      type: "website",
       title,
       description,
       url: `https://${SITE.domain}/hotels/${hotel.slug}/`,
@@ -102,6 +103,10 @@ export default async function HotelPage({ params }: Props) {
         url: canonicalUrl,
         name: `${hotel.name} — Monterey Golf Trip Lodging | Monterey Golf Tours`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".pull-quote"],
+        },
       },
       {
         "@type": "Hotel",
