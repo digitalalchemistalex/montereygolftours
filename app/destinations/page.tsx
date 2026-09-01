@@ -18,7 +18,32 @@ export const metadata: Metadata = {
 export default function DestinationsIndexPage() {
   const destinations = Object.values(DESTINATIONS);
 
+  const canonicalUrl = `https://${SITE.domain}/destinations/`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: "Monterey Peninsula Golf Destinations | Monterey Golf Tours",
+        description: "Golf destination guides for the Monterey Peninsula — Monterey, Carmel, Pacific Grove, Seaside, Carmel Valley, and the Pebble Beach area.",
+        isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Destinations", item: canonicalUrl },
+        ],
+      },
+    ],
+  };
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <>
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
