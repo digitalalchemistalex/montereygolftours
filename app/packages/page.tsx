@@ -67,6 +67,7 @@ export default async function PackagesPage() {
         "@type": "CollectionPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
         name: "Monterey Golf Trip Packages",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         description: `Real Monterey Peninsula golf packages from $${fromPrice.toLocaleString()}/person`,
@@ -79,6 +80,13 @@ export default async function PackagesPage() {
           url: `https://${SITE.domain}/itineraries/${t.slug}/`,
           name: t.title,
         })),
+      },
+    {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Packages", item: canonicalUrl },
+        ],
       },
     ],
   };
