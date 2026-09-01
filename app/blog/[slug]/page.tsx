@@ -24,6 +24,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `https://${SITE.domain}/blog/${post.slug}/`,
     },
+    openGraph: {
+      title: `${post.title} | Monterey Golf Tours`,
+      description: post.intro.slice(0, 155),
+      url: `https://${SITE.domain}/blog/${post.slug}/`,
+      type: "article",
+      publishedTime: post.datePublished,
+      modifiedTime: post.dateModified,
+      authors: ["Sean Schaeffer"],
+      images: [{ url: post.cardImage, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Monterey Golf Tours`,
+      description: post.intro.slice(0, 155),
+      images: [post.cardImage],
+    },
   };
 }
 
@@ -65,7 +81,12 @@ export default async function BlogPostPage({ params }: Props) {
         description: post.intro,
         datePublished: post.datePublished,
         dateModified: post.dateModified,
-        author: { "@type": "Organization", name: SITE.name },
+        author: {
+          "@type": "Person",
+          name: "Sean Schaeffer",
+          url: `https://${SITE.domain}/about/`,
+        },
+        publisher: { "@id": `https://${SITE.domain}/#organization` },
       },
       {
         "@type": "BreadcrumbList",
