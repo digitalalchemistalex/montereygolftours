@@ -28,8 +28,32 @@ export default function BlogIndexPage() {
 
   const [featured, ...rest] = posts;
 
+  const canonicalUrl = `https://${SITE.domain}/blog/`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: "Monterey Golf Trip Planning Blog | Monterey Golf Tours",
+        description: "Golf trip planning guides, course reviews, and destination advice for the Monterey Peninsula.",
+        isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Blog", item: canonicalUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       {/* Hero */}
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] md:min-h-[520px]">
         <Image
