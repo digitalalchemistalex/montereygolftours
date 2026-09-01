@@ -42,6 +42,10 @@ export default function AboutPage() {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2:first-of-type"],
+        },
         name: "About Monterey Golf Tours",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
       },
