@@ -26,6 +26,7 @@ export default function ItinerariesIndexPage() {
         "@type": "CollectionPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
         name: "Sample Golf Trip Itineraries",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
       },
@@ -37,6 +38,13 @@ export default function ItinerariesIndexPage() {
           url: `https://${SITE.domain}/itineraries/${t.slug}/`,
           name: t.title,
         })),
+      },
+    {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Itineraries", item: canonicalUrl },
+        ],
       },
     ],
   };
