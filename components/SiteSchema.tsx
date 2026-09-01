@@ -5,10 +5,16 @@ export default function SiteSchema() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "TravelAgency"],
         "@id": `https://${SITE.domain}/#organization`,
         name: SITE.name,
         url: `https://${SITE.domain}`,
+        sameAs: [
+          "https://www.facebook.com/montereygolftours",
+          "https://www.instagram.com/montereygolftours",
+          "https://www.linkedin.com/company/monterey-golf-tours",
+          "https://golfthehighsierra.com",
+        ],
         founder: {
           "@type": "Person",
           name: "Sean Schaeffer",
