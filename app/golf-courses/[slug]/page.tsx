@@ -40,11 +40,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now and plan your Monterey golf trip with Monterey Golf Tours.`
     : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Plan your Monterey golf trip including ${course.name} with Monterey Golf Tours.`;
 
+  const courseData = COURSES.find((c) => c.slug === slug);
+  const ogImage = courseData?.image?.startsWith("/")
+    ? `https://${SITE.domain}${courseData.image}`
+    : courseData?.image ?? "/og-image.jpg";
+
   return {
     title,
     description,
     alternates: {
       canonical: `https://${SITE.domain}/golf-courses/${course.slug}/`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://${SITE.domain}/golf-courses/${course.slug}/`,
+      images: [{ url: ogImage, width: 1200, height: 800, alt: course.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }
@@ -93,6 +110,10 @@ export default async function CoursePage({ params }: Props) {
           : `${course.name} — Tee Times & Course Info | Monterey Golf Tours`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "#speakable-summary", ".faq-section"],
+        },
       },
       {
         "@type": "GolfCourse",
