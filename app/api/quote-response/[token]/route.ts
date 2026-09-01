@@ -14,8 +14,8 @@ async function sendNotification(subject: string, html: string) {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      from: '"Monterey Golf Tours" <sean@golfthehighsierra.com>',
-      to: ['sean@golfthehighsierra.com'],
+      from: '"Monterey Golf Tours" <info@montereygolftours.com>',
+      to: ['info@montereygolftours.com'],
       subject,
       html,
     }),
