@@ -10,9 +10,6 @@ export default function SiteSchema() {
         name: SITE.name,
         url: `https://${SITE.domain}`,
         sameAs: [
-          "https://www.facebook.com/montereygolftours",
-          "https://www.instagram.com/montereygolftours",
-          "https://www.linkedin.com/company/monterey-golf-tours",
           "https://golfthehighsierra.com",
         ],
         founder: {
