@@ -73,6 +73,10 @@ export default async function BlogPostPage({ params }: Props) {
         url: canonicalUrl,
         name: `${post.title} | Monterey Golf Tours`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "p:first-of-type"],
+        },
       },
       {
         "@type": "BlogPosting",
