@@ -86,7 +86,7 @@ IAGTO member. Rates and packages subject to IAGTO agreement terms.</p>
 `;
 
   const RESEND_KEY   = process.env.RESEND_API_KEY;
-  const NOTIFY_EMAIL = process.env.LEAD_NOTIFY_EMAIL ?? "sean@montereygolftours.com";
+  const NOTIFY_EMAIL = process.env.LEAD_NOTIFY_EMAIL ?? "info@montereygolftours.com";
 
   if (!RESEND_KEY) {
     console.error("[spanish-bay-cron] RESEND_API_KEY not set");
@@ -100,7 +100,7 @@ IAGTO member. Rates and packages subject to IAGTO agreement terms.</p>
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Sean Schaeffer <sean@montereygolftours.com>",
+      from: "Monterey Golf Tours <info@montereygolftours.com>",
       to: [NOTIFY_EMAIL, "digitalalchemistalex@gmail.com"],
       subject: `\u26F3 Spanish Bay\u00ae reopens TODAY \u2014 ${leadCount} waitlist leads ready to convert`,
       html,
