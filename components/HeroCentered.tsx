@@ -14,8 +14,8 @@ export default function HeroCentered() {
   return (
     <section className="relative flex min-h-[820px] flex-col overflow-hidden bg-[#16242c] md:min-h-[900px]">
       <Image
-        src="https://images.unsplash.com/photo-1692931460164-f71ed1101ecf?auto=format&fit=crop&w=2400&q=95"
-        alt="Golf course overlooking the ocean at Pebble Beach"
+        src="/images/courses/gallery/pebble-beach-hole-9-aerial.jpg"
+        alt="Pebble Beach Golf Links® — aerial view of Hole 9 at golden hour. Photo by Jeff Marsh"
         fill
         priority
         quality={92}
@@ -24,8 +24,8 @@ export default function HeroCentered() {
         style={{ objectPosition: "center 35%", filter: "saturate(1.15) contrast(1.06) brightness(1.02)" }}
       />
       <Image
-        src="https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=800&q=95"
-        alt="Golf course green with fairway and trees"
+        src="/images/courses/gallery/pebble-beach-hole-9.jpg"
+        alt="Pebble Beach Golf Links® — Hole 9 coastal fairway. © Pebble Beach Company"
         fill
         priority
         quality={95}
