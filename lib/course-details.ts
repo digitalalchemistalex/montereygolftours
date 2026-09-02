@@ -794,7 +794,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "The most famous cliff-top course in American golf, opened in 1919 and unchanged in legend ever since.",
     gallery: [
-      { src: "/images/courses/gallery/pebble-beach-hole-9-aerial.jpg", caption: "Hole 9 at Pebble Beach Golf Links® — an aerial view of the par-4 coastal hole at golden hour, with the Pacific cliffs dropping to the ocean below.\nPhoto by Jeff Marsh", tag: "Hole 9 · Aerial" },
+      { src: "/images/courses/gallery/pebble-beach-hole-9.jpg", caption: "Hole 9 at Pebble Beach Golf Links® — the par-4 coastal fairway running along Stillwater Cove, with the Santa Lucia Mountains rising behind.\n© Pebble Beach Company", tag: "Hole 9 · Par 4" },
       { src: "/images/courses/gallery/pebble-beach-hole-9-fairway.jpg", caption: "Playing into Hole 9 at Pebble Beach Golf Links® — the coastal fairway with Stillwater Cove and the Pacific stretching behind.\nPhoto by Randy Tunnell", tag: "Hole 9 · Fairway" },
       { src: "/images/courses/gallery/pebble-beach-hole-6-green.jpg", caption: "The bunker complex guarding the green on Hole 6 at Pebble Beach Golf Links® — a par-5 that plays directly toward Stillwater Cove.\nPhoto by Jeff Marsh", tag: "Hole 6 · Par 5" },
     ],
