@@ -42,6 +42,9 @@ function buildHtml(d: Record<string, unknown>): string {
   const email = String(d.email || '');
   const phone = String(d.phone || '');
   const adminUrl = 'https://golfthehighsierra.com/admin/unified-leads';
+  const phoneBtn = phone
+    ? '<td width="12"></td><td style="border:1px solid #E5E7EB;border-radius:8px"><a href="tel:' + phone + '" style="display:inline-block;padding:12px 24px;color:#374151;text-decoration:none;font-size:14px;font-weight:600">&#128222; Call Now</a></td>'
+    : '';
 
   const rows = [
     R('Name', `<strong>${name}</strong>`),
@@ -113,18 +116,15 @@ function buildHtml(d: Record<string, unknown>): string {
 
     <div style="font-size:11px;color:#9CA3AF;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Lead Details</div>
     <table style="width:100%;border-collapse:collapse;border:1px solid #E5E7EB;border-radius:8px;overflow:hidden">
-      \${rows}
+      ${rows}
     </table>
 
     <table cellpadding="0" cellspacing="0" border="0" style="margin-top:24px">
       <tr>
         <td style="background:#1E3A2F;border-radius:8px">
-          <a href="\${adminUrl}" style="display:inline-block;padding:12px 24px;color:#fff;text-decoration:none;font-size:14px;font-weight:700">Open in Admin →</a>
+          <a href="${adminUrl}" style="display:inline-block;padding:12px 24px;color:#fff;text-decoration:none;font-size:14px;font-weight:700">Open in Admin →</a>
         </td>
-        \${phone ? `<td width="12"></td>
-        <td style="border:1px solid #E5E7EB;border-radius:8px">
-          <a href="tel:\${phone}" style="display:inline-block;padding:12px 24px;color:#374151;text-decoration:none;font-size:14px;font-weight:600">📞 Call Now</a>
-        </td>` : ''}
+        ${phoneBtn}
       </tr>
     </table>
   </div>
