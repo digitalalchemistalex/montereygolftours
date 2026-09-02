@@ -228,6 +228,7 @@ export default function QuoteForm() {
 
   // Section 1 — Contact
   const [name, setName] = useState("");
+  const [groupName, setGroupName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [okToCall, setOkToCall] = useState(false);
@@ -422,7 +423,7 @@ export default function QuoteForm() {
     const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner or family member." : null]
       .filter(Boolean).join(" ");
     const payload = {
-      name, email, phone: phone || null, group_size: groupSize,
+      name, group_name: groupName || null, email, phone: phone || null, group_size: groupSize,
       game_level: gameLevel || null,
       trip_type: tripType || null,
       corp_attendees: showCorporate ? corpAttendees || null : null,
@@ -489,6 +490,13 @@ export default function QuoteForm() {
             <input type="text" required value={name} onChange={(e) => setName(e.target.value)}
               placeholder="e.g. John" className={iCls} />
           </Field>
+          <div>
+            <label className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a857a]">
+              Group Name <span className="normal-case font-normal tracking-normal text-[#9a8a6e]">(if you have one)</span>
+            </label>
+            <input type="text" value={groupName} onChange={(e) => setGroupName(e.target.value)}
+              placeholder="e.g. The Hackers" className={`mt-1 ${iCls}`} />
+          </div>
           <Field label="Email" required>
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={iCls} />
           </Field>
@@ -1201,4 +1209,5 @@ function SummaryRow({ label, value }: { label: string; value: string | null }) {
     </div>
   );
 }
+
 
