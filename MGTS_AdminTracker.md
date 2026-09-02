@@ -527,3 +527,57 @@ montereygolftours.skill packaged with all changes from this session.
 ### Outstanding blockers
 - Karlyn Hawke PBC sign-off → domain cutover
 - Sean: IAGTO rates, toll-free number, CVR/Pasadera/Poppy Hills images
+
+
+---
+
+## Session Update: Sep 2 2026
+
+### PBC Image Compliance — Karlyn Hawke email received today
+
+#### What Karlyn said
+- **Approved image portal:** `https://assets.pebblebeach.com/share/ADAC1BEF-4BC0-47DF-8D395D20A6CCBCD7/`
+- **"3rd party ok"** label on approved images — Sean must check each image description in portal
+- **Photographer credit required** on every PBC image — use name from description, fallback `© Pebble Beach Company`
+- **Max 3 PBGL images** for new operators — holes 7, 17, 18 explicitly blocked
+- **Spanish Bay images** — do not use any (course under renovation)
+- **Trademark PDF** attached: "PBC TRADEMARKS 2026.pdf" — sent with email, Sean to review
+- She will audit the site once IT unblocks external access
+
+#### Current PBGL gallery audit (8 images — all need replacing)
+| File | What it shows | Issue |
+|------|--------------|-------|
+| `pebble-beach-3.webp` | Hole 7 cliff shot | ❌ Hole 7 — explicitly blocked |
+| `pebble-beach-hole-6.webp` | Hole 6 | Over 3-image limit |
+| `pebble-beach-2.webp` | Holes 8–10 | Over 3-image limit |
+| `pebble-beach-4.webp` | Coastal holes | Over 3-image limit |
+| `pebble-beach-5.webp` | Hole 18 | ❌ Hole 18 — explicitly blocked |
+| `holes-8-9-10.webp` | Holes 8–10 | Over 3-image limit |
+| `hole-9-10.webp` | Holes 9–10 | Over 3-image limit |
+| `gallery-1.webp` | Course overview | Over 3-image limit |
+
+Hero image (`hole-6.webp`) — ✅ fine, not a blocked hole.
+
+#### Spanish Bay gallery — still populated (needs clearing)
+6 images still in `course-details.ts` gallery array for `links-at-spanish-bay`. Must be emptied entirely — it's a closed course page.
+
+#### What needs to happen (blocked on Sean)
+1. Sean opens the portal, finds images marked **"3rd party ok"** (max 3 for PBGL)
+2. Downloads those images + notes photographer name from each description
+3. Sends files to MASTER
+4. MASTER replaces PBGL gallery with those 3 images + adds photographer credits in caption fields
+5. MASTER clears Spanish Bay gallery array in `course-details.ts`
+6. Sean reviews "PBC TRADEMARKS 2026.pdf" — confirm our ®/™ usage is compliant
+
+#### Photographer credit implementation plan (when images arrive)
+- Add credit as a second line in the `caption` field: `"...\n© [Photographer Name]"` or `"...\n© Pebble Beach Company"`
+- GalleryLightbox already renders captions — credits will show under each image
+- Apply same credit process to Spyglass Hill gallery images (also PBC licensed)
+- Apply to Del Monte gallery images (also PBC licensed)
+
+#### Outstanding Sean actions updated
+- ✅ Staging email sent Aug 27 — Karlyn replied Sep 2 (IT blocking site, will audit when unblocked)
+- ❌ Download 3 approved PBGL images from portal (marked "3rd party ok") — IN PROGRESS
+- ❌ Note photographer credit for each downloaded image
+- ❌ Review "PBC TRADEMARKS 2026.pdf" attachment from Karlyn's email
+
