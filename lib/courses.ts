@@ -182,7 +182,7 @@ export const COURSES: Course[] = [
   {
     slug: "del-monte-golf-course",
     image: "/images/del-monte-golf-course/gallery-1.webp",
-    name: "Del Monte Golf Course®",
+    name: "Del Monte™ Golf Course",
     city: "Monterey, CA",
     par: 72,
     yards: "6,356 yds",
