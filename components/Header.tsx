@@ -7,7 +7,6 @@ import { DESTINATIONS } from "@/lib/destinations";
 import { ITINERARIES } from "@/lib/itineraries";
 import MobileNav from "./MobileNav";
 import Logo from "./Logo";
-import ChatTriggerIcon from "./ChatTriggerIcon";
 
 // ── What makes each course distinct — shown in the dropdown ───────────────
 const COURSE_CHAR: Record<string, string> = {
@@ -399,7 +398,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
           {SITE.phone}
         </a>
         <div className="hidden lg:block">
-          <ChatTriggerIcon />
+          
         </div>
         <Link href="/quote/"
           className="hidden rounded-[7px] bg-gold px-4 py-[9px] font-ui text-[14px] font-bold text-ink hover:bg-[#e6b82a] lg:inline-block">
