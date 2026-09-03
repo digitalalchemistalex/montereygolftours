@@ -1,5 +1,6 @@
 // Directive #6 — lead notification API route
 // Updated: notify email aligned to D#15 QuoteForm fields (budget_per_person + trip_length removed)
+// Updated: from address corrected to info@montereygolftours.com
 //
 // Required env vars (set in Vercel dashboard):
 //   RESEND_API_KEY   — get from resend.com (free tier covers this volume)
@@ -168,7 +169,7 @@ export async function POST(req: Request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Monterey Golf Tours <notifications@montereygolftours.com>",
+      from: "Monterey Golf Tours <info@montereygolftours.com>",
       to: [NOTIFY_EMAIL],
       subject,
       html: buildHtml(data),
