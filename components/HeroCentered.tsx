@@ -109,7 +109,7 @@ export default function HeroCentered() {
       {/* Overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.05) 25%, rgba(22,36,44,.3) 55%, rgba(22,36,44,.75) 88%, rgba(22,36,44,.92) 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(22,36,44,.65) 0%, rgba(22,36,44,.35) 20%, rgba(22,36,44,.1) 40%, rgba(22,36,44,.4) 65%, rgba(22,36,44,.82) 88%, rgba(22,36,44,.94) 100%)" }}
       />
 
       <Header transparent />
@@ -117,7 +117,19 @@ export default function HeroCentered() {
       {/* Main content */}
       <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[760px] flex-col items-center px-6 pb-10 text-center md:pb-12">
 
-        <p className="font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-gold">
+        <Image
+          src="/brand/logo.png"
+          alt="Monterey Golf Tours"
+          width={280}
+          height={268}
+          priority
+          style={{ width: 200, height: "auto" }}
+          className="md:!w-[240px]"
+        />
+
+        <div className="mt-5 h-px w-20 bg-[rgba(250,246,238,.35)]" />
+
+        <p className="mt-5 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-gold">
           Monterey Peninsula &middot; Est. 1954
         </p>
 
@@ -275,3 +287,4 @@ export default function HeroCentered() {
     </section>
   );
 }
+
