@@ -581,3 +581,56 @@ Hero image (`hole-6.webp`) — ✅ fine, not a blocked hole.
 - ❌ Note photographer credit for each downloaded image
 - ❌ Review "PBC TRADEMARKS 2026.pdf" attachment from Karlyn's email
 
+
+---
+
+## Session Update: Sep 2 2026 — Part 2 (PBC Image Compliance Complete)
+
+### Summary
+Full PBC image compliance session. All Unsplash images removed from PBC properties. All galleries replaced with approved PBC portal images with photographer credits.
+
+### Key clarification from Karlyn Hawke
+- **3-image limit applies to PBGL only** — all other 108 portal images are unrestricted for use on the site
+- Portal URL: `https://assets.pebblebeach.com/share/ADAC1BEF-4BC0-47DF-8D395D20A6CCBCD7/`
+- Rights tag to check: **"Third Party OK"** in image description
+- Photographer credit format: `Photo by [Name]` or `© Pebble Beach Company` if no name listed
+
+### Images downloaded and uploaded
+Sean downloaded zip from portal ("Leisure Travel Sales Collection.zip", 64MB). Uploaded via bash script from Mac terminal directly to GitHub repo at `public/images/pbc-portal/` — 100 images total.
+
+### Commits this session
+| Commit | Description |
+|--------|-------------|
+| `179524e9` | Upload PBGL hole 9 ground image |
+| `3ca8b9d5` | Replace PBGL gallery — 1 approved image (temp) |
+| `be32543a` | Upload aerial, fairway, hole 6 images |
+| `aa74559e` | PBGL gallery — 3 approved portal images with credits |
+| `348bb226` | Replace PBGL hero with aerial (Jeff Marsh) |
+| `88baf8cc` | Swap gallery — hole 9 ground replaces aerial |
+| `3cd4c0bf` | Homepage hero — replace Unsplash with portal images |
+| `23ae0365` | course-details.ts — Spyglass/Del Monte/The Hay galleries |
+| `c9309817` | hotel-details.ts — Lodge/Inn galleries |
+| `ca59b46c` | courses.ts — The Hay hero (portal aerial) |
+| `fe03c55a` | hotels.ts — Casa Palmero hero (portal pool exterior) |
+
+### Final image state per property
+| Property | Hero | Gallery | Credits |
+|----------|------|---------|---------|
+| Pebble Beach Golf Links® | Portal aerial (Jeff Marsh) | 3 portal images — holes 9/9/6 | ✅ All credited |
+| Spyglass Hill® Golf Course | Existing (IAGTO) | 3 portal images — holes 4/7/11 | ✅ © PBC on all |
+| Del Monte™ Golf Course | Existing | Portal hole 16 + 2 existing | ✅ © PBC on portal |
+| The Hay™ | Portal aerial | 3 portal images — aerial/hole 2/hole 5 | ✅ © PBC on all |
+| The Lodge at Pebble Beach™ | Existing | 5 portal images — exterior/lobby/building/cottage/studio | ✅ All credited |
+| The Inn at Spanish Bay™ | Existing | 5 portal images — lobby/ocean room/presidential suite/fire pits/forest suite | ✅ Sherman Chu credited |
+| Casa Palmero® | Portal pool exterior | Existing CP_2024 gallery images | ✅ |
+| Homepage hero | Portal aerial (Jeff Marsh) desktop / hole 9 ground mobile | — | ✅ |
+
+### Remaining Unsplash (acceptable)
+- `club-at-pasadera` hero — not a PBC property, no portal image available
+- `Hero.tsx` — old component, not used anywhere (HeroCentered is active)
+
+### Outstanding PBC actions
+- Sean to review "PBC TRADEMARKS 2026.pdf" — attached to Karlyn's Sep 2 email
+- Fix Del Monte™ trademark — site may still show "Del Monte Golf Course®" (should be "Del Monte™ Golf Course")
+- Add mandatory PBC trademark acknowledgement line to site footer
+- Karlyn still hasn't audited the site (IT blocking) — domain cutover still blocked
