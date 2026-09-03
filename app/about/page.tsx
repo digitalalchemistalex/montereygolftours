@@ -95,7 +95,7 @@ export default function AboutPage() {
               <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
                 Monterey Golf Tours plans custom multi-day golf trips on the Monterey
                 Peninsula — courses, lodging, and tee times handled end to end. We work
-                with groups of any size, from a twosome to 300 players, and put together
+                with groups of any size, from a twosome to 400 players, and put together
                 trips ranging from a quick weekend to a full week covering every major
                 course on the peninsula.
               </p>
