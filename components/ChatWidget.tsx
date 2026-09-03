@@ -1,23 +1,9 @@
 "use client";
 
-import { useMemo, useState, useRef, useEffect, lazy } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
+import { COURSE_DETAILS } from "@/lib/course-details";
+import { HOTEL_DETAILS } from "@/lib/hotel-details";
 import { useChat } from "./ChatContext";
-
-// Lazy-load large data only when chat is first opened
-let COURSE_DETAILS: Record<string, unknown> = {};
-let HOTEL_DETAILS: Record<string, unknown> = {};
-let dataLoaded = false;
-
-async function loadChatData() {
-  if (dataLoaded) return;
-  const [cd, hd] = await Promise.all([
-    import("@/lib/course-details"),
-    import("@/lib/hotel-details"),
-  ]);
-  COURSE_DETAILS = cd.COURSE_DETAILS as Record<string, unknown>;
-  HOTEL_DETAILS = hd.HOTEL_DETAILS as Record<string, unknown>;
-  dataLoaded = true;
-}
 
 type Message = { text: string; fromUser: boolean };
 
