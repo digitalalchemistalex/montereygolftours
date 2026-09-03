@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lora, Inter } from "next/font/google";
 import "./globals.css";
+import SiteSchema from "@/components/SiteSchema";
+import BackToTop from "@/components/BackToTop";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,13 +28,6 @@ const inter = Inter({
   variable: "--font-inter",
   preload: false,
 });
-import dynamic from "next/dynamic";
-import SiteSchema from "@/components/SiteSchema";
-import BackToTop from "@/components/BackToTop";
-import { ChatProvider } from "@/components/ChatContext";
-
-// ChatWidget deferred — contains 142KB of course/hotel data not needed at initial load
-const ChatWidget = dynamic(() => import("@/components/ChatWidget"));
 
 const OG_IMAGE = "/og-image.jpg";
 
@@ -79,10 +74,7 @@ export default function RootLayout({
     <html lang="en" className={`h-full antialiased ${playfair.variable} ${lora.variable} ${inter.variable}`}>
       <body className="min-h-full flex flex-col">
         <SiteSchema />
-        <ChatProvider>
-          {children}
-          <ChatWidget />
-        </ChatProvider>
+        {children}
         <BackToTop />
       </body>
     </html>
