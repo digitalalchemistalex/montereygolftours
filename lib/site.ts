@@ -10,5 +10,5 @@ export const SITE = {
   address: "2700 Mill St Suite 800, Reno, NV 89502",
   minGroupSize: 2,
   maxGroupSize: 300,
-  groupSizeNote: "2–300 players — any group size welcome",
+  groupSizeNote: "2–400 players — any group size welcome",
 };
