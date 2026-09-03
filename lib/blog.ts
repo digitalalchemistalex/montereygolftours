@@ -71,7 +71,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "Start with group size",
         paragraphs: [
-          "We plan trips for groups of any size — a twosome up to 300 players, with no minimum beyond avoiding a solo trip of one. Smaller groups (4–8) have the most flexibility on tee times and lodging. Larger groups (16+) generally need to book further in advance and may be better suited to a property like the Portola Hotel, which is built for large-group logistics with its connected conference center.",
+          "We plan trips for groups of any size — a twosome up to 400 players, with no minimum beyond avoiding a solo trip of one. Smaller groups (4–8) have the most flexibility on tee times and lodging. Larger groups (16+) generally need to book further in advance and may be better suited to a property like the Portola Hotel, which is built for large-group logistics with its connected conference center.",
         ],
       },
       {
