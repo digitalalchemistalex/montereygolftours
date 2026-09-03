@@ -982,13 +982,13 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "What other Pebble Beach Resorts® courses are available in the meantime?",
-        a: "Pebble Beach Golf Links®, Spyglass Hill Golf Course®, Del Monte Golf Course®, and The Hay™ remain open and bookable.",
+        a: "Pebble Beach Golf Links®, Spyglass Hill Golf Course®, Del Monte™ Golf Course, and The Hay™ remain open and bookable.",
       },
     ],
   },
   "del-monte-golf-course": {
     slug: "del-monte-golf-course",
-    name: "Del Monte Golf Course®",
+    name: "Del Monte™ Golf Course",
     city: "Monterey, CA",
     facility: "Pebble Beach Resorts®",
     par: 72,
@@ -1008,7 +1008,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       { src: "/images/courses/gallery/del-monte-3.webp", caption: "Del Monte™ Golf Course in continuous operation since 1897 — the oldest golf course west of the Mississippi.", tag: "Historic layout" },
     ],
     description: [
-      "Del Monte Golf Course® traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
+      "Del Monte™ Golf Course traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
       "At par 72 and 6,356 yards (rating 71.8, slope 129), it plays as a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses — enquire for current green fees.",
     ],
     highlights: [
@@ -1032,23 +1032,23 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     nearbySlugs: [],
     faqs: [
       {
-        q: "Why is Del Monte Golf Course® historically significant?",
+        q: "Why is Del Monte™ Golf Course historically significant?",
         a: "It's the oldest golf course in continuous use west of the Mississippi, originally laid out in 1897 by Charles E. Maud.",
       },
       {
-        q: "What's the green fee at Del Monte Golf Course®?",
+        q: "What's the green fee at Del Monte™ Golf Course?",
         a: "Rates vary annually — enquire through us for current green fees.",
       },
       {
-        q: "Which hotel is on Del Monte Golf Course®?",
+        q: "Which hotel is on Del Monte™ Golf Course?",
         a: "The Hyatt Regency Monterey Hotel & Spa sits directly on the course grounds.",
       },
       {
-        q: "How long is Del Monte Golf Course®?",
+        q: "How long is Del Monte™ Golf Course?",
         a: "6,356 yards at par 72, with a 71.8 rating and 129 slope — a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses.",
       },
       {
-        q: "How far in advance can I book Del Monte Golf Course®?",
+        q: "How far in advance can I book Del Monte™ Golf Course?",
         a: "Without a resort stay, it can be booked 6 months out.",
       },
     ],
