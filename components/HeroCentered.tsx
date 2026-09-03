@@ -20,7 +20,7 @@ const LEVELS = {
     cta: "Show me social packages",
   },
   corp: {
-    sub: "Tee sheet blocks, hotel room blocks, ground transfers \u2014 one contract, one deposit. Corporate golf on Carmel Valley Ranch, TPC Pasadera, or Poppy Hills for groups up to 40.",
+    sub: "One contract, one deposit. Tee sheet blocks, hotel room blocks, and ground transfers for corporate groups of any size \u2014 from a company eightsome to a 300-player tournament.",
     cta: "Get a group quote",
   },
 } as const;
