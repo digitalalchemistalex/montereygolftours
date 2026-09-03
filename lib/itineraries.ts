@@ -412,7 +412,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
       { q: "Do we need to be good golfers to play Pebble Beach?", a: "Pebble Beach Golf Links® has no handicap restriction for resort guests. That said, the slope of 145 means higher handicap golfers should expect a high score — the views and the experience are what the round is about, not the card." },
       { q: "Does this trip include the 17-Mile Drive?", a: "Yes — after the Pebble Beach round, the route back to Monterey takes you through the Del Monte Forest via the 17-Mile Drive past Cypress Point and Seal Rock." },
       { q: "Can we swap Bayonet for a different course on day 4?", a: "Yes — we can substitute Carmel Valley Ranch, Quail Lodge, or another course depending on group preference. Get a custom quote and tell us what you're after." },
-      { q: "Is Del Monte Golf Course® or The Hay™ available to add?", a: "Yes — Del Monte is the oldest course in continuous play west of the Mississippi and can be added as a fifth round. The Hay is a short-course experience, good for an afternoon warm-up session." },
+      { q: "Is Del Monte™ Golf Course or The Hay™ available to add?", a: "Yes — Del Monte is the oldest course in continuous play west of the Mississippi and can be added as a fifth round. The Hay is a short-course experience, good for an afternoon warm-up session." },
     ],
   },
   "monterey-corporate-golf-outing": {
