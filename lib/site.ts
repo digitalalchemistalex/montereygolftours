@@ -9,6 +9,6 @@ export const SITE = {
   email: "info@montereygolftours.com", // confirmed created by Master, per Sean
   address: "2700 Mill St Suite 800, Reno, NV 89502",
   minGroupSize: 2,
-  maxGroupSize: 300,
+  maxGroupSize: 400,
   groupSizeNote: "2–400 players — any group size welcome",
 };
