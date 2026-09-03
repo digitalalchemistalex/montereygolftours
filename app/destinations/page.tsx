@@ -7,7 +7,7 @@ import { DESTINATIONS } from "@/lib/destinations";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Monterey Peninsula Golf Destinations | Monterey Golf Tours",
+  title: "Monterey Peninsula Golf Destinations",
   description:
     "Explore golf by destination across the Monterey Peninsula — Monterey, Carmel, Carmel Valley, Pacific Grove, Seaside, and the Pebble Beach area.",
   alternates: {

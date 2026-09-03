@@ -7,7 +7,7 @@ import FAQ, { FAQ_CATEGORIES } from "@/components/FAQ";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Monterey Golf Tours",
+  title: "Frequently Asked Questions",
   description:
     "Common questions about planning a Monterey Peninsula golf trip — group sizes, Pebble Beach Resorts® access, timing, and how the quote process works.",
   alternates: {

@@ -100,7 +100,7 @@ const homepageSchema = {
 
     // 3. Service — what we sell; required alongside Organization for rich results
     {
-      "@type": "Service",
+      "@type": ["Service", "Product"],
       "@id": "https://montereygolftours.com/#service",
       name: "Monterey Peninsula Golf Trip Planning",
       serviceType: "Golf Trip Planning",

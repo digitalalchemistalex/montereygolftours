@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.title} | Monterey Golf Tours`,
+    title: `${post.title}`,
     description: post.intro.slice(0, 155),
     alternates: {
       canonical: `https://${SITE.domain}/blog/${post.slug}/`,
     },
     openGraph: {
-      title: `${post.title} | Monterey Golf Tours`,
+      title: `${post.title}`,
       description: post.intro.slice(0, 155),
       url: `https://${SITE.domain}/blog/${post.slug}/`,
       type: "article",
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Monterey Golf Tours`,
+      title: `${post.title}`,
       description: post.intro.slice(0, 155),
       images: [post.cardImage],
     },
@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `${post.title} | Monterey Golf Tours`,
+        name: post.title,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         speakable: {
           "@type": "SpeakableSpecification",

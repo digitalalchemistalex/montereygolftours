@@ -19,7 +19,7 @@ function gthsImg(index: number): string {
 }
 
 export const metadata: Metadata = {
-  title: "Golf Trip Packages | Monterey Golf Tours",
+  title: "Golf Trip Packages",
   description:
     "Real Monterey Peninsula golf packages — 3 to 7 days, priced from actual course and lodging rates. Fully customizable for your group.",
   alternates: { canonical: `https://${SITE.domain}/packages/` },
