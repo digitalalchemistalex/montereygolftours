@@ -27,7 +27,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: "How many people can you plan a trip for?",
-        a: "Any group size, really — from a twosome up to 300 players. There's no minimum beyond avoiding a solo trip of one.",
+        a: "Any group size, really — from a twosome up to 400 players. There's no minimum beyond avoiding a solo trip of one.",
       },
       {
         q: "How does the quote process work?",
@@ -113,7 +113,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: "Can you help with corporate golf groups?",
-        a: "Yes. We handle corporate groups from 8 to 300 players \u2014 tee sheet blocks, hotel room blocks, ground transport, shotgun start coordination, and a single contract covering everything. Courses we frequently use for corporate events include Carmel Valley Ranch, TPC Monterey at Pasadera, Poppy Hills, and Bayonet.",
+        a: "Yes. We handle corporate groups from 2 to 400 players \u2014 tee sheet blocks, hotel room blocks, ground transport, shotgun start coordination, and a single contract covering everything. Courses we frequently use for corporate events include Carmel Valley Ranch, TPC Monterey at Pasadera, Poppy Hills, and Bayonet.",
       },
       {
         q: "Can you help arrange ground transportation?",
