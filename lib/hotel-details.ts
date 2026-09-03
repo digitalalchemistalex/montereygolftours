@@ -908,11 +908,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Pebble Beach Resorts®",
     hook: "Open since 1919, The Lodge at Pebble Beach™ frames the 18th green of Pebble Beach Golf Links® — golf's most recognised closing hole.",
     gallery: [
-      { src: "/images/hotels/gallery/lodge-pebble-beach-2.webp", caption: "An ocean view queen room at The Lodge at Pebble Beach™ — rooms range from 570 to 1,300 sq ft with garden, fairway, or Pacific views.", tag: "Ocean view room" },
-      { src: "/images/hotels/gallery/lodge-pebble-beach-3.webp", caption: "Fairway One at The Lodge — 30 oversized rooms overlooking the 1st fairway of Pebble Beach Golf Links®, steps from the first tee.", tag: "Fairway One" },
-      { src: "/images/hotels/gallery/lodge-pebble-beach-4.webp", caption: "The Vizcaino Suite at The Lodge at Pebble Beach™ — one of the resort's most storied suites, with direct views of the 18th green.", tag: "Vizcaino Suite" },
-      { src: "/images/lodge-at-pebble-beach/room-fairway.webp", caption: "The Lodge at Pebble Beach™ — a Fairway One room facing the course interior, with direct views of the 18th fairway.", tag: "Fairway One room" },
-      { src: "/images/lodge-at-pebble-beach/vizcaino-suite.webp", caption: "The Vizcaino Suite at The Lodge at Pebble Beach™ — one of the resort's most prestigious room categories.", tag: "Vizcaino Suite" },
+      { src: "/images/pbc-portal/lodge_2025_exterior.jpg", caption: "The Lodge at Pebble Beach™ exterior — the original 1919 property, framing the 18th green of Pebble Beach Golf Links®.\n© Pebble Beach Company", tag: "Exterior" },
+      { src: "/images/pbc-portal/lodge_2025_lobby.jpg", caption: "The Lodge at Pebble Beach™ lobby — classic California coastal elegance at the heart of Pebble Beach Resorts®.\n© Pebble Beach Company", tag: "Lobby" },
+      { src: "/images/pbc-portal/lodge-main-building_01.jpg", caption: "The Lodge at Pebble Beach™ main building — open since 1919, one of the oldest golf resort hotels in America.\n© Pebble Beach Company", tag: "Main building" },
+      { src: "/images/pbc-portal/lodge_2017_interior_fairwayone_cottage.jpg", caption: "Fairway One Cottage at The Lodge at Pebble Beach™ — the Palmer and Eastwood Cottages sit directly on the first fairway, steps from the first tee.\n© Pebble Beach Company", tag: "Fairway One Cottage" },
+      { src: "/images/pbc-portal/lodge_2018_interior_oceanstudio.jpg", caption: "An Ocean Studio at The Lodge at Pebble Beach™ — rooms range from 570 to 1,300 sq ft with garden, fairway, or Pacific views.\n© Pebble Beach Company", tag: "Ocean Studio" },
     ],
     description: [
       "The Lodge at Pebble Beach™ has stood at the edge of Stillwater Cove since 1919, making it the oldest property at Pebble Beach Resorts® and one of the oldest golf resort hotels in America. Guest rooms range from 570 to 1,300 square feet, with views of the landscaped gardens, the 18th fairway of Pebble Beach Golf Links®, or the Pacific Ocean beyond Carmel Bay.",
@@ -1003,9 +1003,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Pebble Beach Resorts®",
     hook: "Tucked between Del Monte Forest and the Pacific Ocean — the most romantic and most dramatic of the three Pebble Beach Resorts® properties.",
     gallery: [
-      { src: "/images/hotels/gallery/inn-at-spanish-bay-2.webp", caption: "The Inn at Spanish Bay™ overlooks the Pacific coastline — every room has a gas fireplace and most have a private patio or balcony.", tag: "Oceanside setting" },
-      { src: "/images/hotels/gallery/inn-at-spanish-bay-3.webp", caption: "An ocean view room at The Inn at Spanish Bay™ — rooms range from 470 to 2,100 sq ft with forest, fairway, or Pacific views.", tag: "Ocean view room" },
-      { src: "/images/inn-at-spanish-bay/room-ocean-view.webp", caption: "Ocean view room at The Inn at Spanish Bay™ — every room features a gas fireplace, private patio or balcony, and views of the forest, fairways, or ocean.", tag: "Ocean view room" },
+      { src: "/images/pbc-portal/inn_2020_interior_lobby.jpg", caption: "The lobby at The Inn at Spanish Bay™ — a 270-room resort overlooking the Pacific and the Links at Spanish Bay® golf course.\n© Pebble Beach Company", tag: "Lobby" },
+      { src: "/images/pbc-portal/the-inn-ocean-view-room.jpg", caption: "An ocean view room at The Inn at Spanish Bay™ — every room features a gas fireplace and private patio or balcony with forest, fairway, or Pacific views.\nPhoto by Sherman Chu", tag: "Ocean view room" },
+      { src: "/images/pbc-portal/the-inn-presidential-suite.jpg", caption: "The Presidential Suite at The Inn at Spanish Bay™ — 2,100 sq ft of oceanfront luxury at Pebble Beach Resorts®.\nPhoto by Sherman Chu", tag: "Presidential Suite" },
+      { src: "/images/pbc-portal/the-inn-at-spanish-bay---fire-pits.jpg", caption: "The fire pits at The Inn at Spanish Bay™ — each evening a bagpiper plays on the 18th green as the sun sets over the Pacific.\n© Pebble Beach Company", tag: "Fire pits" },
+      { src: "/images/pbc-portal/inn_2018_executiveforestsuite.jpg", caption: "The Executive Forest Suite at The Inn at Spanish Bay™ — the forest-facing room category with views into the Del Monte Forest pines.\nPhoto by Sherman Chu", tag: "Executive Forest Suite" },
     ],
     description: [
       "The Inn at Spanish Bay™ sits at the northern end of the 17-Mile Drive, where the Del Monte Forest meets the Pacific coastline. Every guest room features a gas-burning fireplace and, in most cases, a private patio or balcony overlooking the forest, fairways, or open ocean. Rooms range from 470 to 2,100 square feet — the Grand Suite offers a dining/conference table for 10 and a grand piano.",
