@@ -8,23 +8,19 @@ import Header from "./Header";
 
 const LEVELS = {
   scratch: {
-    headline: ["Bayonet\u2019s Back Nine Waits.", "Can You Handle It?"],
-    sub: "Combat Corner on #13. 72.8 rating. The peninsula\u2019s hardest public layout. We\u2019ll get you on the courses that actually test low handicappers \u2014 not just the famous ones.",
+    sub: "Bayonet\u2019s Combat Corner. 72.8 rating. Black Horse\u2019s back nine. We build Monterey golf trips around courses that actually test low handicappers \u2014 not just the famous names.",
     cta: "Plan my scratch trip",
   },
   club: {
-    headline: ["The Peninsula\u2019s Toughest Courses.", "Zero Logistics Headaches."],
-    sub: "Play Bayonet, Black Horse, Laguna Seca, and the peninsula\u2019s iconic resort courses \u2014 tee times, lodging, and transfers handled end to end.",
+    sub: "Play Bayonet, Black Horse, Laguna Seca, and the peninsula\u2019s best resort courses. Tee times, lodging, and transfers handled end to end.",
     cta: "Plan my trip",
   },
   social: {
-    headline: ["Monterey Golf Without the", "Handicap Pressure."],
-    sub: "Pacific Grove\u2019s walking-friendly links. Quail Lodge\u2019s calm valley setting. Del Monte\u2019s historic layout. Great golf for groups who want fun over scorecards.",
+    sub: "Pacific Grove\u2019s walking-friendly coastal links. Quail Lodge\u2019s calm valley setting. Del Monte\u2019s historic layout. Great Monterey golf for groups who want fun over scorecards.",
     cta: "Show me social packages",
   },
   corp: {
-    headline: ["14 Courses, One Point of Contact.", "Your Group, Handled."],
-    sub: "Corporate outings on Carmel Valley Ranch, TPC Pasadera, or Poppy Hills. We handle tee sheet blocks, hotel room blocks, and transfers for groups up to 40.",
+    sub: "Tee sheet blocks, hotel room blocks, ground transfers \u2014 one contract, one deposit. Corporate golf on Carmel Valley Ranch, TPC Pasadera, or Poppy Hills for groups up to 40.",
     cta: "Get a group quote",
   },
 } as const;
@@ -46,22 +42,12 @@ const MONTH_INTEL = [
   { booking: "2\u20133 weeks out", bookingNote: "Quiet season \u2014 best rates of the year", event: "December value window", eventNote: "Best green fee rates of the year \u2014 quiet peninsula, great conditions" },
 ];
 
-interface WeatherLocation {
-  name: string;
-  temp: number;
-  desc: string;
-  clouds: number;
-}
-
-interface WeatherData {
-  ok: boolean;
-  locations: WeatherLocation[];
-  fog: { chance: number; clearTime: string; note: string };
-}
+interface WeatherLocation { name: string; temp: number; desc: string; }
+interface WeatherData { ok: boolean; locations: WeatherLocation[]; fog: { chance: number; clearTime: string; note: string }; }
 
 export default function HeroCentered() {
   const [level, setLevel] = useState<Level>("club");
-  const [visible, setVisible] = useState(true);
+  const [subVisible, setSubVisible] = useState(true);
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
   const month = new Date().getMonth();
@@ -76,18 +62,19 @@ export default function HeroCentered() {
 
   function changeLevel(l: Level) {
     if (l === level) return;
-    setVisible(false);
-    setTimeout(() => { setLevel(l); setVisible(true); }, 200);
+    setSubVisible(false);
+    setTimeout(() => { setLevel(l); setSubVisible(true); }, 180);
   }
 
   const current = LEVELS[level];
 
   return (
     <section className="relative flex min-h-[820px] flex-col overflow-hidden bg-[#16242c] md:min-h-[900px]">
-      {/* Background image */}
+
+      {/* Background image — same as original */}
       <Image
         src="/images/courses/gallery/pebble-beach-hole-9-aerial.jpg"
-        alt="Pebble Beach Golf Links\u00ae \u2014 aerial view of Hole 9 at golden hour. Photo by Jeff Marsh"
+        alt="Monterey Peninsula golf courses — aerial view of the California coast at golden hour"
         fill
         priority
         quality={92}
@@ -97,7 +84,7 @@ export default function HeroCentered() {
       />
       <Image
         src="/images/courses/gallery/pebble-beach-hole-9.jpg"
-        alt="Pebble Beach Golf Links\u00ae \u2014 Hole 9 coastal fairway. \u00a9 Pebble Beach Company"
+        alt="Monterey Peninsula golf — coastal fairway at Pebble Beach area. \u00a9 Pebble Beach Company"
         fill
         priority
         quality={95}
@@ -106,7 +93,7 @@ export default function HeroCentered() {
         style={{ objectPosition: "center 60%", filter: "saturate(1.2) contrast(1.1) brightness(1.02)" }}
       />
 
-      {/* Overlay */}
+      {/* Overlay — darkened at top so nav is readable */}
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(180deg, rgba(22,36,44,.65) 0%, rgba(22,36,44,.35) 20%, rgba(22,36,44,.1) 40%, rgba(22,36,44,.4) 65%, rgba(22,36,44,.82) 88%, rgba(22,36,44,.94) 100%)" }}
@@ -114,9 +101,10 @@ export default function HeroCentered() {
 
       <Header transparent />
 
-      {/* Main content */}
-      <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[760px] flex-col items-center px-6 pb-10 text-center md:pb-12">
+      {/* Hero content */}
+      <div className="relative z-10 mx-auto mt-auto flex w-full max-w-[780px] flex-col items-center px-6 pb-10 text-center md:pb-12">
 
+        {/* Logo */}
         <Image
           src="/brand/logo.png"
           alt="Monterey Golf Tours"
@@ -126,32 +114,37 @@ export default function HeroCentered() {
           style={{ width: 200, height: "auto" }}
           className="md:!w-[240px]"
         />
-
         <div className="mt-5 h-px w-20 bg-[rgba(250,246,238,.35)]" />
 
+        {/* Eyebrow — secondary keyword: "Monterey Peninsula Golf" */}
         <p className="mt-5 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-gold">
-          Monterey Peninsula &middot; Est. 1954
+          Monterey Peninsula Golf &middot; Group &amp; Custom Trips
         </p>
 
-        {/* Animated headline */}
-        <div
-          className="mt-5 transition-opacity duration-200"
-          style={{ opacity: visible ? 1 : 0 }}
-        >
-          <h1 className="font-display text-[42px] font-bold leading-[1.1] text-cream md:text-[50px]">
-            {current.headline[0]}<br />{current.headline[1]}
-          </h1>
-          <p className="mt-4 font-body text-[17px] leading-relaxed text-[rgba(250,246,238,.65)] md:text-lg">
-            {current.sub}
-          </p>
-        </div>
+        {/* ── H1 — SERVER RENDERED, NEVER CHANGES ──────────────────────────
+            P1 keyword: "Monterey Golf Packages"
+            P1 keyword: "Monterey Golf Trip"
+            Speakable target. Crawled by Google + AI engines on first byte.
+            The sub-headline below handles creative/level variation — H1 does not.
+        ─────────────────────────────────────────────────────────────────── */}
+        <h1 className="speakable-summary mt-6 font-display text-[40px] font-bold leading-[1.1] text-cream md:text-[48px]">
+          Monterey Golf Packages &amp; Group Trip Planning
+        </h1>
 
-        {/* Level selector */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+        {/* Sub-headline — dynamic per level, NOT an H tag, not crawled as keyword signal */}
+        <p
+          className="mt-4 font-body text-[17px] leading-relaxed text-[rgba(250,246,238,.7)] transition-opacity duration-200 md:text-lg"
+          style={{ opacity: subVisible ? 1 : 0 }}
+        >
+          {current.sub}
+        </p>
+
+        {/* Level selector — changes sub + CTA only */}
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
           <span className="font-ui text-[11px] font-semibold uppercase tracking-[.07em] text-[rgba(250,246,238,.4)]">
             I play as a
           </span>
-          {(Object.keys(LEVELS) as Level[]).map((l) => (
+          {(["scratch", "club", "social", "corp"] as Level[]).map((l) => (
             <button
               key={l}
               onClick={() => changeLevel(l)}
@@ -168,7 +161,7 @@ export default function HeroCentered() {
         </div>
 
         {/* CTAs */}
-        <div className="mt-7 flex w-full max-w-[420px] flex-col gap-3">
+        <div className="mt-7 flex w-full max-w-[440px] flex-col gap-3">
           <Link
             href="/quote/"
             className="rounded-[9px] bg-cream px-7 py-4 text-center font-ui text-base font-bold uppercase tracking-[.05em] text-ink shadow-[0_6px_18px_rgba(0,0,0,.35)] transition-transform hover:-translate-y-0.5"
@@ -179,16 +172,16 @@ export default function HeroCentered() {
             href="/itineraries/"
             className="rounded-[9px] border-[1.5px] border-cream/70 bg-[rgba(22,36,44,.35)] px-7 py-3.5 text-center font-ui text-[15px] font-semibold text-cream backdrop-blur-[2px] transition-transform hover:-translate-y-0.5 hover:border-gold"
           >
-            See sample itineraries &rsaquo;
+            See sample Monterey golf itineraries &rsaquo;
           </Link>
         </div>
       </div>
 
       {/* Intelligence strip */}
       <div className="relative z-10 mx-4 grid max-w-[980px] grid-cols-2 gap-x-0 border-t border-cream/[.15] md:mx-auto md:grid-cols-4">
-        
+
         {/* Cell 1: Live weather */}
-        <div className="flex flex-col gap-1.5 px-6 py-7 first:pl-0">
+        <div className="flex flex-col gap-1.5 px-0 py-7 md:px-6 md:first:pl-0">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
@@ -222,18 +215,15 @@ export default function HeroCentered() {
         </div>
 
         {/* Cell 2: Fog */}
-        <div className="flex flex-col gap-1.5 border-l border-cream/[.1] px-6 py-7">
+        <div className="flex flex-col gap-1.5 border-l border-cream/[.1] px-4 py-7 md:px-6">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-            <span className="font-ui text-[10px] font-bold uppercase tracking-[.08em] text-cream/40">
-              Fog &amp; conditions
-            </span>
+            <span className="font-ui text-[10px] font-bold uppercase tracking-[.08em] text-cream/40">Fog &amp; conditions</span>
           </div>
           {weather ? (
             <>
               <p className="font-display text-[15px] font-semibold leading-snug text-cream">
-                Marine layer{" "}
-                <span className="text-gold">{weather.fog.clearTime}</span>
+                Marine layer <span className="text-gold">{weather.fog.clearTime}</span>
               </p>
               <p className="font-body text-[11px] leading-snug text-cream/40">{weather.fog.note}</p>
               <div className="mt-1.5 flex items-center gap-2">
@@ -256,12 +246,10 @@ export default function HeroCentered() {
         </div>
 
         {/* Cell 3: Booking window */}
-        <div className="flex flex-col gap-1.5 border-l border-cream/[.1] px-6 py-7">
+        <div className="flex flex-col gap-1.5 border-l border-cream/[.1] px-4 py-7 md:px-6">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#4ade80]" />
-            <span className="font-ui text-[10px] font-bold uppercase tracking-[.08em] text-cream/40">
-              Booking window
-            </span>
+            <span className="font-ui text-[10px] font-bold uppercase tracking-[.08em] text-cream/40">Booking window</span>
           </div>
           <p className="font-display text-[15px] font-semibold leading-snug text-cream">
             Book <span className="text-gold">{intel.booking}</span>
@@ -270,16 +258,12 @@ export default function HeroCentered() {
         </div>
 
         {/* Cell 4: Local intel */}
-        <div className="flex flex-col gap-1.5 border-l border-cream/[.1] px-6 py-7">
+        <div className="flex flex-col gap-1.5 border-l border-cream/[.1] px-4 py-7 md:px-6">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span className="font-ui text-[10px] font-bold uppercase tracking-[.08em] text-cream/40">
-              Local intel
-            </span>
+            <span className="font-ui text-[10px] font-bold uppercase tracking-[.08em] text-cream/40">Local intel</span>
           </div>
-          <p className="font-display text-[15px] font-semibold leading-snug text-cream">
-            {intel.event}
-          </p>
+          <p className="font-display text-[15px] font-semibold leading-snug text-cream">{intel.event}</p>
           <p className="font-body text-[11px] leading-snug text-cream/40">{intel.eventNote}</p>
         </div>
 
@@ -287,4 +271,3 @@ export default function HeroCentered() {
     </section>
   );
 }
-
