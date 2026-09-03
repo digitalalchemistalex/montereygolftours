@@ -142,13 +142,13 @@ export default function HeroCentered() {
         {/* Level selector — 2x2 grid mobile, flex row desktop */}
         <div className="mt-7 w-full max-w-[440px]">
           <p className="mb-2.5 text-center font-ui text-[11px] font-semibold uppercase tracking-[.07em] text-[rgba(250,246,238,.4)]">I play as a</p>
-          <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
           {(["scratch", "club", "social", "corp"] as Level[]).map((l) => (
             <button
               key={l}
               onClick={() => changeLevel(l)}
               className={[
-                "w-full rounded-[7px] border py-2.5 font-ui text-[12px] font-semibold transition-all md:w-auto md:px-4",
+                "w-full rounded-[7px] border py-2.5 font-ui text-[12px] font-semibold transition-all",
                 level === l
                   ? "border-gold/60 bg-gold/[.18] text-gold"
                   : "border-cream/20 bg-cream/[.06] text-cream/55 hover:border-cream/40 hover:text-cream/85",
