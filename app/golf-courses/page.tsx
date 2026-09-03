@@ -7,11 +7,22 @@ import { COURSES } from "@/lib/courses";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Golf Courses on the Monterey Peninsula | Monterey Golf Tours",
+  title: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
   description:
-    "Browse all 14 golf courses Monterey Golf Tours plans trips around — from championship resort courses to accessible daily-fee rounds across the Monterey Peninsula.",
-  alternates: {
-    canonical: `https://${SITE.domain}/golf-courses/`,
+    "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula — from championship resort courses to accessible daily-fee rounds. Browse, compare, and get a quote.",
+  alternates: { canonical: `https://${SITE.domain}/golf-courses/` },
+  openGraph: {
+    title: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
+    description: "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula — from championship resort courses to accessible daily-fee rounds.",
+    url: `https://${SITE.domain}/golf-courses/`,
+    siteName: "Monterey Golf Tours",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
+    description: "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula.",
   },
 };
 
@@ -25,12 +36,15 @@ export default function GolfCoursesIndexPage() {
         "@type": "CollectionPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
-        name: "Golf Courses on the Monterey Peninsula",
+        name: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
+        description: "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula.",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        publisher: { "@id": `https://${SITE.domain}/#organization` },
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".speakable-summary"] },
       },
       {
         "@type": "ItemList",
+        name: "Monterey Peninsula Golf Courses",
         itemListElement: COURSES.map((c, i) => ({
           "@type": "ListItem",
           position: i + 1,
@@ -50,15 +64,12 @@ export default function GolfCoursesIndexPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
           src="/images/pbc-portal/spyglass_4_2016_ground_green.jpg"
-          alt=""
+          alt="Golf courses on the Monterey Peninsula — Spyglass Hill Golf Course"
           fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
@@ -66,11 +77,11 @@ export default function GolfCoursesIndexPage() {
         />
         <Header />
         <div className="relative z-10 pt-44 md:pt-32">
-          <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
+          <h1 className="speakable-summary font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]">
             Golf courses on the Monterey Peninsula
           </h1>
           <p className="mt-3 max-w-[640px] font-body text-base leading-relaxed text-[rgba(250,246,238,.9)] md:text-lg">
-            14 courses, from championship cliff-top rounds to accessible daily-fee golf — all
+            14 courses, from championship cliff-top rounds to accessible daily-fee golf &mdash; all
             bookable as part of a planned Monterey Golf Tours trip.
           </p>
         </div>
@@ -88,7 +99,7 @@ export default function GolfCoursesIndexPage() {
                 {c.image ? (
                   <Image
                     src={c.image}
-                    alt={c.name}
+                    alt={`${c.name} — Monterey Peninsula golf`}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -98,10 +109,7 @@ export default function GolfCoursesIndexPage() {
                 )}
                 <div
                   className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(15,21,18,.92) 0%, rgba(15,21,18,.55) 45%, rgba(15,21,18,.1) 100%)",
-                  }}
+                  style={{ background: "linear-gradient(to top, rgba(15,21,18,.92) 0%, rgba(15,21,18,.55) 45%, rgba(15,21,18,.1) 100%)" }}
                 />
                 <div className="relative z-10 p-5">
                   <span className="inline-block rounded-full bg-[rgba(255,255,255,.15)] px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-cream backdrop-blur-sm">
@@ -139,7 +147,7 @@ export default function GolfCoursesIndexPage() {
             href="/quote/"
             className="mt-6 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream hover:bg-ocean-dark"
           >
-            Get a custom quote &rarr;
+            Get a custom Monterey golf quote &rarr;
           </Link>
         </section>
       </main>
