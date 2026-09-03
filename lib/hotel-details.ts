@@ -41,17 +41,17 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     website: "hyatt.com",
     rooms: "560 guestrooms and suites",
     brand: "Hyatt Regency",
-    hook: "22 secluded acres of Monterey pines, sitting directly on Del Monte Golf Course®.",
+    hook: "22 secluded acres of Monterey pines, sitting directly on Del Monte™ Golf Course.",
     gallery: [
       { src: "/images/hotels/gallery/hyatt-regency-monterey-2.webp", caption: "22 secluded acres of Monterey Pines — the resort feels removed from the city despite being 2 miles from downtown.", tag: "Grounds" },
       { src: "/images/hotels/gallery/hyatt-regency-monterey-3.webp", caption: "Spa Adeline — 6 outdoor tennis courts, pools, hot tubs, and bocce courts round out the on-site recreational offering.", tag: "Spa Adeline" },
       { src: "/images/hotels/gallery/hyatt-regency-monterey-4.webp", caption: "Sea Root Restaurant & Bar — coastal Mediterranean cuisine with indoor-outdoor seating among the pines.", tag: "Sea Root Restaurant" },
       { src: "/images/hyatt-regency-monterey/gallery-2.webp", caption: "The Hyatt Regency Monterey's Monterey pine-shaded grounds — 22 acres of Pacific coast forest, 2 miles from downtown.", tag: "Grounds" },
-      { src: "/images/hyatt-regency-monterey/gallery-3.webp", caption: "On-site access to Del Monte Golf Course® — guests step directly from the hotel to the peninsula's oldest course.", tag: "Golf access" },
+      { src: "/images/hyatt-regency-monterey/gallery-3.webp", caption: "On-site access to Del Monte™ Golf Course — guests step directly from the hotel to the peninsula's oldest course.", tag: "Golf access" },
       { src: "/images/hyatt-regency-monterey/gallery-4.webp", caption: "The Hyatt Regency Monterey pool and recreation area — the resort anchor for a full golf trip itinerary.", tag: "Pool" },
     ],
     description: [
-      "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte Golf Course® — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
+      "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte™ Golf Course — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
       "With 560 guestrooms and suites, it's the largest property on this list and a natural base for group trips, offering verified stay-and-play packages with Poppy Hills, Bayonet, and Black Horse, in addition to the on-site Del Monte course.",
     ],
     amenities: [
@@ -75,7 +75,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     uniqueDetails: [
       "Verified stay-and-play packages with Poppy Hills, Bayonet, and Black Horse",
     ],
-    onSiteGolf: "Del Monte Golf Course®",
+    onSiteGolf: "Del Monte™ Golf Course",
     airportDistance: "~8 min from MRY",
     driveTimeToCourses: [
       { course: "Bayonet / Black Horse", minutes: 8 },
@@ -91,7 +91,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     faqs: [
       {
         q: "Is the Hyatt Regency Monterey on a golf course?",
-        a: "Yes. It sits directly on Del Monte Golf Course®, the oldest golf course in continuous operation west of the Mississippi.",
+        a: "Yes. It sits directly on Del Monte™ Golf Course, the oldest golf course in continuous operation west of the Mississippi.",
       },
       {
         q: "How many rooms does the Hyatt Regency Monterey have?",
@@ -921,7 +921,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "The Lodge hosts 10 principal meeting rooms including the Pebble Beach Room (capacity 250) and multiple oceanfront terraces. It's the natural choice for corporate groups who want to combine world-class golf with serious meeting facilities in a single property.",
     ],
     amenities: [
-      "Access to Pebble Beach Golf Links®, Spyglass Hill® Golf Course, Del Monte Golf Course®, and The Hay™",
+      "Access to Pebble Beach Golf Links®, Spyglass Hill® Golf Course, Del Monte™ Golf Course, and The Hay™",
       "Hotel guests book tee times up to 18 months in advance (earliest window at the resort)",
       "The Spa at Pebble Beach™ — 22,000 sq ft, Forbes Five-Star, 15 massage rooms, 5 facial rooms, full salon and barber",
       "The Beach & Tennis Club — members-only club included with Lodge stay",
@@ -960,7 +960,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     driveTimeToCourses: [
       { course: "Pebble Beach Golf Links®", minutes: 0 },
       { course: "Spyglass Hill® Golf Course", minutes: 5 },
-      { course: "Del Monte Golf Course®", minutes: 10 },
+      { course: "Del Monte™ Golf Course", minutes: 10 },
       { course: "Poppy Hills Golf Course", minutes: 8 },
       { course: "Bayonet", minutes: 20 },
       { course: "Black Horse", minutes: 20 },
@@ -1056,7 +1056,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     driveTimeToCourses: [
       { course: "Pebble Beach Golf Links®", minutes: 10 },
       { course: "Spyglass Hill® Golf Course", minutes: 8 },
-      { course: "Del Monte Golf Course®", minutes: 15 },
+      { course: "Del Monte™ Golf Course", minutes: 15 },
       { course: "Poppy Hills Golf Course", minutes: 12 },
       { course: "Pacific Grove Golf Links", minutes: 5 },
       { course: "Bayonet", minutes: 18 },
@@ -1148,7 +1148,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     driveTimeToCourses: [
       { course: "Pebble Beach Golf Links®", minutes: 0 },
       { course: "Spyglass Hill® Golf Course", minutes: 5 },
-      { course: "Del Monte Golf Course®", minutes: 10 },
+      { course: "Del Monte™ Golf Course", minutes: 10 },
       { course: "Poppy Hills Golf Course", minutes: 8 },
       { course: "Bayonet", minutes: 20 },
       { course: "Black Horse", minutes: 20 },
