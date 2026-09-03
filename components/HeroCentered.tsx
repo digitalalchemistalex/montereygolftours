@@ -83,14 +83,14 @@ export default function HeroCentered() {
         style={{ objectPosition: "center 35%", filter: "saturate(1.15) contrast(1.06) brightness(1.02)" }}
       />
       <Image
-        src="/images/courses/gallery/pebble-beach-hole-9.jpg"
+        src="/images/courses/gallery/pebble-beach-hole-9-fairway.jpg"
         alt="Monterey Peninsula golf — coastal fairway at Pebble Beach area. \u00a9 Pebble Beach Company"
         fill
         priority
         quality={95}
         sizes="100vw"
         className="block object-cover sm:hidden"
-        style={{ objectPosition: "center 60%", filter: "saturate(1.2) contrast(1.1) brightness(1.02)" }}
+        style={{ objectPosition: "center 45%", filter: "saturate(1.15) contrast(1.08) brightness(1.03)" }}
       />
 
       {/* Overlay — darkened at top so nav is readable */}
@@ -139,17 +139,16 @@ export default function HeroCentered() {
           {current.sub}
         </p>
 
-        {/* Level selector — changes sub + CTA only */}
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
-          <span className="font-ui text-[11px] font-semibold uppercase tracking-[.07em] text-[rgba(250,246,238,.4)]">
-            I play as a
-          </span>
+        {/* Level selector — 2x2 grid mobile, flex row desktop */}
+        <div className="mt-7 w-full max-w-[440px]">
+          <p className="mb-2.5 text-center font-ui text-[11px] font-semibold uppercase tracking-[.07em] text-[rgba(250,246,238,.4)]">I play as a</p>
+          <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center">
           {(["scratch", "club", "social", "corp"] as Level[]).map((l) => (
             <button
               key={l}
               onClick={() => changeLevel(l)}
               className={[
-                "rounded-[7px] border px-4 py-2 font-ui text-[12px] font-semibold transition-all",
+                "w-full rounded-[7px] border py-2.5 font-ui text-[12px] font-semibold transition-all md:w-auto md:px-4",
                 level === l
                   ? "border-gold/60 bg-gold/[.18] text-gold"
                   : "border-cream/20 bg-cream/[.06] text-cream/55 hover:border-cream/40 hover:text-cream/85",
@@ -158,6 +157,7 @@ export default function HeroCentered() {
               {l === "scratch" ? "Single figures" : l === "club" ? "Club golfer" : l === "social" ? "Social / fun" : "Corporate group"}
             </button>
           ))}
+          </div>
         </div>
 
         {/* CTAs */}
@@ -271,3 +271,4 @@ export default function HeroCentered() {
     </section>
   );
 }
+
