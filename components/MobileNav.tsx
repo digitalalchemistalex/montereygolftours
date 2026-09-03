@@ -9,7 +9,6 @@ import { COURSES } from "@/lib/courses";
 import { HOTELS } from "@/lib/hotels";
 import { DESTINATIONS } from "@/lib/destinations";
 import { ITINERARIES } from "@/lib/itineraries";
-import { useChat } from "./ChatContext";
 import Logo from "./Logo";
 
 // ── Shared data — mirrors Header.tsx exactly, same source of truth ────────
@@ -187,7 +186,6 @@ const SIMPLE_LINKS = [
 
 export default function MobileNav({ forceVisible = false }: { forceVisible?: boolean }) {
   const [open, setOpen] = useState(false);
-  const { setOpen: setChatOpen } = useChat();
   const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [intelLine, setIntelLine] = useState(getIntelLine());
