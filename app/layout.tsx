@@ -26,10 +26,13 @@ const inter = Inter({
   variable: "--font-inter",
   preload: false,
 });
+import dynamic from "next/dynamic";
 import SiteSchema from "@/components/SiteSchema";
 import BackToTop from "@/components/BackToTop";
-import ChatWidget from "@/components/ChatWidget";
 import { ChatProvider } from "@/components/ChatContext";
+
+// ChatWidget deferred — contains 142KB of course/hotel data not needed at initial load
+const ChatWidget = dynamic(() => import("@/components/ChatWidget"), { ssr: false });
 
 const OG_IMAGE = "/og-image.jpg";
 
