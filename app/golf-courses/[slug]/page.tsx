@@ -162,7 +162,7 @@ export default async function CoursePage({ params }: Props) {
             width: 1200,
             height: 800,
             name: `${courseData!.name} — Monterey Golf Tours`,
-            ...(courseData!.image.startsWith("/") ? {} : { acquireLicensePage: "https://unsplash.com/license" }),
+
           },
         } : {}),
       },
