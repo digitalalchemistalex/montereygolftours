@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { SITE } from "@/lib/site";
-import Hero from "@/components/Hero";
+import dynamic from "next/dynamic";
 import HeroCentered from "@/components/HeroCentered";
 import Configurator from "@/components/Configurator";
 import PebbleBeachSection from "@/components/PebbleBeachSection";
 import Courses from "@/components/Courses";
-import Packages from "@/components/Packages";
-import Itinerary from "@/components/Itinerary";
-import Hotels from "@/components/Hotels";
-import LocalIntel from "@/components/LocalIntel";
-import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+
+// Below-fold sections — lazy loaded to reduce initial JS bundle
+const Packages  = dynamic(() => import("@/components/Packages"));
+const Itinerary = dynamic(() => import("@/components/Itinerary"));
+const Hotels    = dynamic(() => import("@/components/Hotels"));
+const LocalIntel = dynamic(() => import("@/components/LocalIntel"));
+const FAQ       = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
   alternates: {
@@ -45,8 +46,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
       />
       <main className="flex-1">
-        {/* HeroCentered = new large-logo, PBC-mood-inspired hero (Raza trial, Aug 2026).
-            To revert: swap <HeroCentered /> back to <Hero />, both kept in the codebase. */}
         <HeroCentered />
         <Configurator />
         <PebbleBeachSection />
@@ -61,4 +60,3 @@ export default function Home() {
     </>
   );
 }
-
