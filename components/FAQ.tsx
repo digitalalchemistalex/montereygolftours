@@ -6,7 +6,7 @@ export type FAQCategory = { category: string; items: FAQItem[] };
 
 const CATEGORY_ICONS: Record<string, string> = {
   "Trip planning": "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=400&q=85",
-  "Pebble Beach & courses": "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=400&q=85",
+  "Pebble Beach & courses": "/images/pbc-portal/pbgl_9_2016_ground.jpg",
   "Timing & logistics": "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=400&q=85",
   "Lodging & travel": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=400&q=85",
 };
