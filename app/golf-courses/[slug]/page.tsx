@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `${course.name} — Closed for Renovation, Reopening April 2027 | Monterey Golf Tours`
     : `${course.name} — Tee Times & Course Info | Monterey Golf Tours`;
   const description = isClosed
-    ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now and plan your Monterey golf trip with Monterey Golf Tours.`
-    : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Plan your Monterey golf trip including ${course.name} with Monterey Golf Tours.`;
+    ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now — join the waitlist and plan your Monterey golf trip.`
+    : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Book ${course.name} as part of a planned Monterey golf trip. Get a custom quote →`;
 
   const courseData = COURSES.find((c) => c.slug === slug);
   const ogImage = courseData?.image?.startsWith("/")
@@ -162,7 +162,11 @@ export default async function CoursePage({ params }: Props) {
             width: 1200,
             height: 800,
             name: `${courseData!.name} — Monterey Golf Tours`,
-
+            caption: `${courseData!.name}, Monterey Peninsula, California`,
+            copyrightNotice: `© ${courseData!.name}`,
+            creditText: `${courseData!.name} via Monterey Golf Tours`,
+            acquireLicensePage: `https://${SITE.domain}/contact/`,
+            license: "https://creativecommons.org/licenses/by/4.0/",
           },
         } : {}),
       },
@@ -174,6 +178,28 @@ export default async function CoursePage({ params }: Props) {
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
+      },
+      // Service + Product dual type — required for Google review snippet eligibility
+      {
+        "@type": ["Service", "Product"],
+        "@id": `${canonicalUrl}#service`,
+        name: `Play ${course.name} — Monterey Golf Tours`,
+        description: course.hook,
+        provider: { "@id": `https://${SITE.domain}/#organization` },
+        brand: { "@id": `https://${SITE.domain}/#organization` },
+        category: "Golf Course Booking",
+        areaServed: {
+          "@type": "Place",
+          name: course.city,
+        },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "USD",
+          availability: isClosed
+            ? "https://schema.org/Discontinued"
+            : "https://schema.org/InStock",
+          url: `https://${SITE.domain}/quote/`,
+        },
       },
       {
         "@type": "BreadcrumbList",

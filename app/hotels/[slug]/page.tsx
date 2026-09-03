@@ -103,9 +103,29 @@ export default async function HotelPage({ params }: Props) {
         url: canonicalUrl,
         name: `${hotel.name} — Monterey Golf Trip Lodging | Monterey Golf Tours`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        publisher: { "@id": `https://${SITE.domain}/#organization` },
         speakable: {
           "@type": "SpeakableSpecification",
           cssSelector: ["h1", ".pull-quote"],
+        },
+      },
+      {
+        "@type": ["Service", "Product"],
+        "@id": `${canonicalUrl}#service`,
+        name: `${hotel.name} — Monterey Golf Lodging`,
+        description: hotel.hook,
+        provider: { "@id": `https://${SITE.domain}/#organization` },
+        brand: { "@id": `https://${SITE.domain}/#organization` },
+        category: "Golf Trip Lodging",
+        areaServed: {
+          "@type": "Place",
+          name: hotel.city,
+        },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `https://${SITE.domain}/quote/?hotel=${hotel.slug}`,
         },
       },
       {

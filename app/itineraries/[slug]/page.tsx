@@ -19,10 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const trip = ITINERARIES[slug];
   if (!trip) return {};
 
-  // Keyword-first: trip type + "Monterey golf" + price signal
   const priceStr = trip.priceFrom > 0 ? ` from $${trip.priceFrom}/person` : "";
   const title = `${trip.title} — Monterey Golf Trip${priceStr} | Monterey Golf Tours`;
-  const description = `${trip.durationDays}-day Monterey Peninsula golf trip — ${trip.rounds}. ${trip.target} Fully customizable for your group.`;
+  const description = `${trip.durationDays}-day Monterey Peninsula golf trip — ${trip.rounds}. ${trip.target} Get a custom quote within 24 hours.`;
 
   const heroImage = trip.image
     ? trip.image.startsWith("/") ? `https://${SITE.domain}${trip.image}` : trip.image
@@ -67,7 +66,6 @@ export default async function ItineraryPage({ params }: Props) {
   const tripHotels = trip.hotelSlugs.map((s: string) => HOTELS.find((h) => h.slug === s)).filter(Boolean);
   const otherTrips = Object.values(ITINERARIES).filter((t) => t.slug !== trip.slug).slice(0, 2);
 
-  // AEO-targeted FAQs generated from trip data — answers in answer-first format
   const generatedFaqs = [
     {
       q: `How long is the ${trip.title}?`,
@@ -132,6 +130,40 @@ export default async function ItineraryPage({ params }: Props) {
           description: d.items.join(" "),
           location: { "@type": "Place", name: "Monterey Peninsula, California" },
         })),
+      },
+      // Service + Product dual type — required for Google review snippet eligibility
+      {
+        "@type": ["Service", "Product"],
+        "@id": `${canonicalUrl}#service`,
+        name: trip.title,
+        description: trip.target,
+        provider: { "@id": `https://${SITE.domain}/#organization` },
+        brand: { "@id": `https://${SITE.domain}/#organization` },
+        category: "Golf Trip Planning",
+        areaServed: {
+          "@type": "Place",
+          name: "Monterey Peninsula, California",
+        },
+        ...(trip.priceFrom > 0 ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "USD",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              minPrice: trip.priceFrom,
+              priceCurrency: "USD",
+            },
+            availability: "https://schema.org/InStock",
+            url: `https://${SITE.domain}/quote/`,
+          },
+        } : {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            url: `https://${SITE.domain}/quote/`,
+          },
+        }),
       },
       {
         "@type": "FAQPage",
@@ -258,7 +290,7 @@ export default async function ItineraryPage({ params }: Props) {
           </section>
         )}
 
-        {/* FAQ — generated from trip data, faq-answer class for speakable */}
+        {/* FAQ */}
         <section className="border-b border-[#e3ddcf] bg-white px-6 py-14 md:px-14 md:py-20">
           <h2 className="font-display text-2xl font-bold text-ink md:text-[32px] mb-8">Common questions</h2>
           <div className="max-w-[800px] divide-y divide-[#e3ddcf] border-t border-[#e3ddcf]">
@@ -275,7 +307,7 @@ export default async function ItineraryPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Cross-sell + CTA */}
+        {/* CTA */}
         <section className="px-6 py-16 text-center md:px-14 md:py-20">
           <h2 className="font-display text-2xl font-bold text-ink">
             Customise this Monterey golf trip for your group
