@@ -634,3 +634,73 @@ Sean downloaded zip from portal ("Leisure Travel Sales Collection.zip", 64MB). U
 - Fix Del Monte™ trademark — site may still show "Del Monte Golf Course®" (should be "Del Monte™ Golf Course")
 - Add mandatory PBC trademark acknowledgement line to site footer
 - Karlyn still hasn't audited the site (IT blocking) — domain cutover still blocked
+
+---
+
+## Session Update: Sep 2 2026 — Part 3 (CWV, Cleanup, GTHS Admin Fix)
+
+### Core Web Vitals Optimisation
+
+**Baseline (pre-fix, mobile):** FCP 2.4s 🟡, LCP 4.7s 🔴, TBT 20ms ✅, CLS 0 ✅, Speed Index 4.8s
+**Desktop was already perfect:** FCP 0.3s, LCP 0.8s, TBT 0ms, CLS 0.002
+
+**Fixes applied:**
+| Commit | Fix | Expected impact |
+|--------|-----|----------------|
+| `8648dee8` | next.config.ts — AVIF/WebP formats, 1yr cache TTL, compress:true | ~60-80% smaller images served |
+| `ea516a7a` | layout.tsx — removed unused Pacifico + Cinzel font imports | 2 fewer render-blocking CSS files |
+| `3faf63f1` | layout.tsx — switched @fontsource → next/font/google | Eliminates 1,500ms render block (biggest FCP win) |
+| `33dc29d7` | globals.css — use next/font CSS variables | Fonts load via CSS vars correctly |
+| `4d86eed5` | page.tsx — dynamic import below-fold sections, remove unused Hero import | Smaller initial JS bundle |
+
+### Chat System Removal (MESSY — 6 failed builds)
+**Root cause of failures:** Did not read all downstream references before starting. Made changes file-by-file instead of planning all changes first.
+
+**What was removed:**
+- `ChatWidget.tsx` — unused, was loading 142KB of course/hotel data on every page
+- `ChatContext.tsx` — unused
+- `ChatTriggerIcon.tsx` — was referenced in Footer, Header, MobileNav
+- `ChatProvider` wrapper — removed from layout.tsx
+
+**Failed commits:** `007a70284e` (TS error), `ab2e964ebc` (ssr:false in Server Component), `bdd79291f1` (didn't find all references), `63363ee22a` (orphaned button tag)
+
+**Final state:** `295f7bf5db` — READY. ChatWidget fully removed.
+
+### Dead File Cleanup
+| File | Size | Reason |
+|------|------|--------|
+| `ChatWidget.tsx` | 8KB | Removed — no chat feature |
+| `ChatContext.tsx` | 1KB | Removed — no chat feature |
+| `ChatTriggerIcon.tsx` | 1KB | Removed — no chat feature |
+| `AdminSidebar.tsx` | 7KB | Removed — leftover from stripped admin routes |
+| `Hero.tsx` | 4KB | Removed — replaced by HeroCentered |
+| `FitFinder.tsx` | 3KB | Removed — unused component |
+
+### Unsplash Audit (Full Codebase — 82 files checked)
+All PBC properties now using portal images only. Remaining Unsplash all non-PBC acceptable:
+- `app/about/page.tsx`, `app/blog/page.tsx`, `app/contact/page.tsx`, `app/faq/page.tsx` — generic scenes
+- `app/itineraries/page.tsx`, `app/packages/page.tsx` — generic golf/GTHS fallbacks
+- `lib/blog.ts` — blog card thumbnails
+- `lib/destinations.ts` — Carmel/Monterey city images
+- `lib/courses.ts` — club-at-pasadera only (non-PBC)
+- `next.config.ts` — domain allowlist (keep, needed)
+
+### Trademark Fixes
+- `Del Monte Golf Course®` → `Del Monte™ Golf Course` — **22 instances across 6 files**
+- Footer trademark acknowledgement updated to exact mandatory PBC TRADEMARKS 2026 text
+
+### GTHS Unified Admin — MGTS Connection
+**Status before fix:** `MGTS_SUPABASE_SERVICE_KEY` was set in GTHS Vercel but had **empty value** — MGTS leads not loading in unified admin.
+**Fix:** Patched env var with correct value `[REDACTED — see Vercel env vars]`. GTHS redeployed commit `e0877f71`.
+**MGTS integration files confirmed live:**
+- `src/lib/unified-admin/sites/mgts.ts` — site config with Supabase URL + service key
+- `src/app/api/admin/mgts-proxy/leads/route.ts` — leads proxy
+- `src/app/admin/unified/mgts/[leadId]/page.tsx` — lead detail view
+- `src/lib/unified-admin/registry.ts` — MGTS in ACTIVE_SITES list
+
+### Current Outstanding
+- Run PSI after chat removal — expect significant improvement on mobile FCP/LCP
+- Karlyn Hawke PBC site audit still pending (IT blocking external URLs)
+- Domain cutover `montereygolftours.com` still blocked on Karlyn sign-off
+- Sean to review PBC TRADEMARKS 2026.pdf
+- Sean to supply IAGTO rates, confirm toll-free, source higher-res CVR/Clement/Abrego images
