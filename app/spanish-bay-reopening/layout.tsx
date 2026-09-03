@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     images: [
       {
-        url: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&h=630&q=80",
+        url: "https://montereygolftours.com/images/pbc-portal/the-inn-at-spanish-bay---fire-pits.jpg",
         width: 1200,
         height: 630,
         alt: "Links-style golf course along the Pacific Ocean coastline",
