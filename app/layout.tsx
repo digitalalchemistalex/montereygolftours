@@ -8,9 +8,7 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
-import "@fontsource/pacifico/400.css";
-import "@fontsource/cinzel/500.css";
-import "@fontsource/cinzel/600.css";
+// Pacifico and Cinzel removed — unused, were blocking FCP
 import "./globals.css";
 import SiteSchema from "@/components/SiteSchema";
 import BackToTop from "@/components/BackToTop";
