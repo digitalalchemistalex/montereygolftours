@@ -32,7 +32,7 @@ import BackToTop from "@/components/BackToTop";
 import { ChatProvider } from "@/components/ChatContext";
 
 // ChatWidget deferred — contains 142KB of course/hotel data not needed at initial load
-const ChatWidget = dynamic(() => import("@/components/ChatWidget"), { ssr: false });
+const ChatWidget = dynamic(() => import("@/components/ChatWidget"));
 
 const OG_IMAGE = "/og-image.jpg";
 
