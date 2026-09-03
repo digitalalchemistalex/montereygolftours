@@ -416,7 +416,6 @@ export default function MobileNav({ forceVisible = false }: { forceVisible?: boo
             <a href={SITE.phoneHref} style={{ color: "#e6e2d8", fontFamily: "Inter, sans-serif", fontSize: 13, textDecoration: "none", whiteSpace: "nowrap" }}>
               {SITE.phone}
             </a>
-            <button
           </div>
         </div>,
         document.body
