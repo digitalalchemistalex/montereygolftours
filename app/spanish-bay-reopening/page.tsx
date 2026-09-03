@@ -46,7 +46,7 @@ export default function SpanishBayWaitlistPage() {
         <section className="relative overflow-hidden bg-[#0d2a38] px-6 py-20 text-center md:px-14 md:py-28">
           {/* Background texture */}
           <div className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: "url(\"https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1600&q=60\")", backgroundSize: "cover", backgroundPosition: "center" }} />
+            style={{ backgroundImage: "url(\"/images/pbc-portal/the-inn-at-spanish-bay---fire-pits.jpg\")", backgroundSize: "cover", backgroundPosition: "center" }} />
           <div className="relative mx-auto max-w-[760px]">
             <div className="mb-4 inline-block rounded-full border border-[rgba(255,255,255,.2)] bg-[rgba(255,255,255,.08)] px-4 py-1.5 font-ui text-[12px] font-semibold uppercase tracking-[.1em] text-[#c9a83c]">
               Reopening April 17, 2027
