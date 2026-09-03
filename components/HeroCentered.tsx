@@ -83,20 +83,20 @@ export default function HeroCentered() {
         style={{ objectPosition: "center 35%", filter: "saturate(1.15) contrast(1.06) brightness(1.02)" }}
       />
       <Image
-        src="/images/courses/gallery/pebble-beach-hole-9-fairway.jpg"
+        src="/images/courses/bayonet-hero.webp"
         alt="Monterey Peninsula golf — coastal fairway at Pebble Beach area. \u00a9 Pebble Beach Company"
         fill
         priority
         quality={95}
         sizes="100vw"
         className="block object-cover sm:hidden"
-        style={{ objectPosition: "center 45%", filter: "saturate(1.15) contrast(1.08) brightness(1.03)" }}
+        style={{ objectPosition: "center 40%", filter: "saturate(1.1) contrast(1.05) brightness(0.88)" }}
       />
 
       {/* Overlay — darkened at top so nav is readable */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(180deg, rgba(22,36,44,.65) 0%, rgba(22,36,44,.35) 20%, rgba(22,36,44,.1) 40%, rgba(22,36,44,.4) 65%, rgba(22,36,44,.82) 88%, rgba(22,36,44,.94) 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(10,20,15,.72) 0%, rgba(10,20,15,.55) 20%, rgba(10,20,15,.42) 40%, rgba(10,20,15,.58) 65%, rgba(10,20,15,.84) 88%, rgba(10,20,15,.95) 100%)" }}
       />
 
       <Header transparent />
