@@ -20,7 +20,7 @@ const LEVELS = {
     cta: "Show me social packages",
   },
   corp: {
-    sub: "One contract, one deposit. Tee sheet blocks, hotel room blocks, and ground transfers for corporate groups of any size \u2014 from a company eightsome to a 300-player tournament.",
+    sub: "One contract, one deposit. Tee sheet blocks, hotel room blocks, and ground transfers for groups of 2 to 400 \u2014 from a company foursome to a full tournament field.",
     cta: "Get a group quote",
   },
 } as const;
