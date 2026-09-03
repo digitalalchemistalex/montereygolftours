@@ -44,7 +44,7 @@ export default function QuotePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
-        <Image src="https://images.unsplash.com/photo-1571940205525-2d48d9f1f8d4?auto=format&fit=crop&w=2400&q=90" alt="" fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
+        <Image src="/images/pbc-portal/spyglass_7_2016_ground_green.jpg" alt="" fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(15,25,20,.18) 0%, rgba(15,25,20,.6) 100%)" }}
