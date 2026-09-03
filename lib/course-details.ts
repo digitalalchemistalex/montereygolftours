@@ -862,11 +862,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
     gallery: [
-      { src: "/images/courses/gallery/spyglass-2.webp", caption: "Spyglass Hill Golf Course® opening holes — the front nine moves through coastal dunes before turning inland through Del Monte Forest.", tag: "Coastal dunes" },
-      { src: "/images/courses/gallery/spyglass-3.webp", caption: "The forest pines of the back nine at Spyglass Hill® — a complete contrast to the coastal opening holes, demanding precision on every approach.", tag: "Del Monte Forest" },
-      { src: "/images/courses/gallery/spyglass-4.webp", caption: "Rating 75.4, slope 145 — the numbers confirm what players already know: Spyglass Hill® is the hardest test among the Pebble Beach Resorts® properties.", tag: "Most demanding" },
-      { src: "/images/spyglass-hill-golf-course/hole-4.webp", caption: "Hole 4 at Spyglass Hill® Golf Course — the transition from coastal dunes into Del Monte Forest begins here.", tag: "Hole 4" },
-      { src: "/images/spyglass-hill-golf-course/hole-1.webp", caption: "The opening hole at Spyglass Hill® — the coastal dunes character of the front nine before the forest closes in.", tag: "Hole 1" },
+      { src: "/images/pbc-portal/spyglass_4_2016_ground_green.jpg", caption: "Hole 4 at Spyglass Hill® Golf Course — where the coastal dunes of the front nine begin giving way to Del Monte Forest. The transition that defines the round.\n© Pebble Beach Company", tag: "Hole 4 · Coastal" },
+      { src: "/images/pbc-portal/spyglass_7_2016_ground_green.jpg", caption: "The green complex on Hole 7 at Spyglass Hill® Golf Course — precision approach required on a course rated 75.4, slope 145.\n© Pebble Beach Company", tag: "Hole 7" },
+      { src: "/images/pbc-portal/spyglass_11_2016_ground.jpg", caption: "Hole 11 at Spyglass Hill® Golf Course — deep into Del Monte Forest pines, the back nine demands accuracy on every shot.\n© Pebble Beach Company", tag: "Hole 11 · Forest" },
     ],
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
@@ -1005,10 +1003,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
     gallery: [
-      { src: "/images/courses/gallery/del-monte-2.webp", caption: "Hole 10 at Del Monte Golf Course® — mature trees and classic parkland character on the peninsula's most historic layout.", tag: "Hole 10" },
-      { src: "/images/courses/gallery/del-monte-3.webp", caption: "Del Monte Golf Course® in continuous operation since 1897 — the oldest golf course west of the Mississippi.", tag: "Historic layout" },
-      { src: "/images/courses/gallery/del-monte-4.webp", caption: "The parkland fairways of Del Monte — a gentler, tree-lined test compared to the cliff-top resort courses nearby.", tag: "Parkland character" },
-      { src: "/images/del-monte-golf-course/hole-10.webp", caption: "Hole 10 at Del Monte Golf Course® — parkland maturity on the peninsula's oldest layout, in continuous play since 1897.", tag: "Hole 10" },
+      { src: "/images/pbc-portal/delmonte_16_2016_ground_green.jpg", caption: "Hole 16 at Del Monte™ Golf Course — the parkland character that defines the peninsula's oldest layout, in continuous play since 1897.\n© Pebble Beach Company", tag: "Hole 16" },
+      { src: "/images/courses/gallery/del-monte-2.webp", caption: "Hole 10 at Del Monte™ Golf Course — mature trees and classic parkland character on the most historic layout on the peninsula.", tag: "Hole 10" },
+      { src: "/images/courses/gallery/del-monte-3.webp", caption: "Del Monte™ Golf Course in continuous operation since 1897 — the oldest golf course west of the Mississippi.", tag: "Historic layout" },
     ],
     description: [
       "Del Monte Golf Course® traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
@@ -1072,6 +1069,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     phone: "(800) 877-0597",
     website: "pebblebeach.com",
     hook: "A reimagined short course experience at Pebble Beach, redesigned by Tiger Woods and TGR Design in 2021.",
+    gallery: [
+      { src: "/images/pbc-portal/thehay_2021_aerial.jpg", caption: "The Hay™ from above — Tiger Woods and TGR Design's 2021 reimagining of the original Peter Hay short course at Pebble Beach.\n© Pebble Beach Company", tag: "Aerial" },
+      { src: "/images/pbc-portal/thehay_2_2021_ground_green.jpg", caption: "Hole 2 at The Hay™ — the par-27 short course experience at Pebble Beach, reopened in 2021 after a complete TGR Design overhaul.\n© Pebble Beach Company", tag: "Hole 2" },
+      { src: "/images/pbc-portal/thehay_5_2021_ground_green.jpg", caption: "Hole 5 at The Hay™ — one of nine holes redesigned by Tiger Woods and TGR Design, offering a fast and approachable Pebble Beach experience.\n© Pebble Beach Company", tag: "Hole 5" },
+    ],
     description: [
       "The Hay™ originally opened in 1957 as Peter Hay Golf Course, and was completely overhauled and redesigned by Tiger Woods and TGR Design in 2021, reopening as The Hay™ — a 9-hole, par-27 short course experience.",
       "At 670 yards and rating 70/slope 110, it's a fast, approachable round suited to a relaxed afternoon, a warm-up before a championship round, or a lower-pressure addition to a group itinerary. Enquire for current green fees.",
