@@ -15,6 +15,16 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
   {
     category: "Trip planning",
     items: [
+      // AEO target #1 — "how much does a monterey golf trip cost"
+      {
+        q: "How much does a Monterey golf trip cost?",
+        a: "A Monterey golf trip typically runs $400–$900 per person per day depending on courses and lodging. Pacific Grove and Laguna Seca are $75–$150 per round; Bayonet and Black Horse run $140–$220. A 3-day trip for four players at mid-range courses with a 4-star hotel typically comes to $1,200–$2,000 per person total. We'll send you a custom breakdown within 24 hours of submitting a quote.",
+      },
+      // AEO target #2 — "how far in advance book monterey golf trip"
+      {
+        q: "How far in advance should I book a Monterey golf trip?",
+        a: "60–90 days for peak season (May through October). Groups of 12 or more need 90 days minimum to secure tee time blocks. Some resort courses require a confirmed hotel stay to book in advance. January through March has 2–4 week availability for most courses. We hold pre-negotiated tee time allocations at several courses — contact us to check current windows.",
+      },
       {
         q: "How many people can you plan a trip for?",
         a: "Any group size, really — from a twosome up to 300 players. There's no minimum beyond avoiding a solo trip of one.",
@@ -32,62 +42,65 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         a: "Yes. We work with 9 verified properties across the peninsula, from golf-anchor resorts with on-site courses to boutique village stays, and can pair the right one with your course lineup.",
       },
       {
-        q: "What is 'Combat Corner' at Bayonet?",
-        a: "Combat Corner is the nickname for holes 11–15 at Bayonet, with hole 15 at the heart of the stretch. It's where the course turns most demanding — long, exposed holes with prevailing wind and little margin for error. Plan your best golf for here, and book an 8–10am tee time to have the best conditions before afternoon wind picks up.",
-      },
-      {
-        q: "What's the pace of play at Bayonet?",
-        a: "Approximately 4 hours 30 minutes for a standard group. For larger groups of 12+, an 8–10am tee time is industry-standard to ensure a full round without pace-of-play pressure.",
+        q: "What is \u2018Combat Corner\u2019 at Bayonet?",
+        a: "Combat Corner is the nickname for holes 11\u201315 at Bayonet, with hole 15 at the heart of the stretch. It\u2019s where the course turns most demanding \u2014 long, exposed holes with prevailing wind and little margin for error. Plan your best golf for here, and book an 8\u201310am tee time to have the best conditions before afternoon wind picks up.",
       },
       {
         q: "Do you sell single tee times, or only full trips?",
-        a: "Full trips only — we don't offer standalone single-round bookings. Every quote covers courses, lodging, and logistics planned together.",
+        a: "Full trips only \u2014 we don\u2019t offer standalone single-round bookings. Every quote covers courses, lodging, and logistics planned together.",
       },
       {
         q: "Are flights and meals included?",
-        a: "Not by default. Pricing covers golf and lodging; flights and meals can be arranged separately if you'd like us to include them in your quote.",
+        a: "Not by default. Pricing covers golf and lodging; flights and meals can be arranged separately if you\u2019d like us to include them in your quote.",
       },
     ],
   },
   {
     category: "Pebble Beach & courses",
     items: [
+      // AEO target #3 — "what golf courses are in monterey"
       {
-        q: "Can you book Pebble Beach Resorts® courses, or just describe them?",
-        a: "We can book and name Pebble Beach Golf Links®, Spyglass Hill Golf Course®, The Links at Spanish Bay®, Del Monte Golf Course®, and The Hay™ as part of a planned trip, as an authorized travel partner.",
+        q: "What golf courses are available on the Monterey Peninsula?",
+        a: "14 courses in total. Public daily-fee options include Bayonet (par 72, rating 74.7), Black Horse (par 72), Pacific Grove Golf Links (par 70, municipal), Laguna Seca Golf Ranch (par 71, Robert Trent Jones Jr.), and Poppy Hills (par 71, Golf Digest Top 100, NCGA-owned — not affiliated with Pebble Beach). Semi-private include Quail Lodge, Carmel Valley Ranch, and TPC Monterey at Pasadera (Monday public access). We also feature Del Monte Golf Course\u00ae \u2014 the oldest course west of the Mississippi, dating to 1897.",
+      },
+      // AEO target #4 — "is poppy hills pebble beach"
+      {
+        q: "Is Poppy Hills Golf Course part of Pebble Beach Resorts?",
+        a: "No. Poppy Hills is owned by the Northern California Golf Association (NCGA) and is fully independent from Pebble Beach Company. It\u2019s open to the public year-round with no gate fee, designed by Robert Trent Jones Jr. in 1986, renovated in 2014, and rated Golf Digest Top 100 Courses You Can Play.",
       },
       {
-        q: "How far in advance can I book a Pebble Beach round?",
-        a: "It depends on the course and whether you're staying on-property. Without a resort stay, Spyglass Hill can be booked 3 months out, and The Links at Spanish Bay, Del Monte, and The Hay can be booked 6 months out. Pebble Beach Golf Links itself generally requires a 2–3 night resort stay to book in advance — otherwise it's a 24-hour booking window.",
+        q: "Can you book Pebble Beach Resorts\u00ae courses, or just describe them?",
+        a: "We can book and name Pebble Beach Golf Links\u00ae, Spyglass Hill Golf Course\u00ae, The Links at Spanish Bay\u00ae, Del Monte Golf Course\u00ae, and The Hay\u2122 as part of a planned trip, as an authorized travel partner.",
       },
       {
-        q: "What's the oldest course on the peninsula?",
-        a: "Del Monte Golf Course®, dating to 1897 — the oldest golf course in continuous operation west of the Mississippi.",
+        q: "How far in advance can I book a round at a resort course?",
+        a: "Without a resort stay, Spyglass Hill can be booked 3 months out, and The Links at Spanish Bay, Del Monte, and The Hay can be booked 6 months out. Pebble Beach Golf Links itself generally requires a 2\u20133 night resort stay to book in advance \u2014 otherwise it\u2019s a 24-hour booking window.",
       },
       {
-        q: "How many courses do you feature in total?",
-        a: "14 courses across the peninsula, from accessible daily-fee options like Pacific Grove Golf Links to championship-caliber rounds like Bayonet and the full Pebble Beach Resorts® portfolio.",
+        q: "What\u2019s the oldest course on the peninsula?",
+        a: "Del Monte Golf Course\u00ae, dating to 1897 \u2014 the oldest golf course in continuous operation west of the Mississippi.",
       },
     ],
   },
   {
     category: "Timing & logistics",
     items: [
+      // AEO target #5 — "best time to play golf monterey"
       {
-        q: "When's the best time to play the Monterey Peninsula?",
-        a: "March through May and September through November tend to have the lightest fog and mildest weather. Coastal courses fog in until 9–10am from May through August, so plan tee times for 9:30am or later if you want clear skies from the first hole.",
+        q: "When\u2019s the best time to play golf on the Monterey Peninsula?",
+        a: "March through May and September through November \u2014 lightest fog, mildest weather (60\u201370\u00b0F), fewest crowds. June through August brings coastal marine layer that burns off by 10am; schedule tee times after 9:30am for clear skies from the first hole. August adds Car Week congestion and hotel rate spikes. December through February is cheapest with occasional rain but often excellent conditions.",
       },
       {
         q: "Should I avoid August?",
-        a: "If Car Week and the Concours d'Elegance aren't part of the appeal, yes — Bayonet and Black Horse close for several days in mid-August, and hotel rates spike well above normal during the event.",
+        a: "If Car Week and the Concours d\u2019Elegance aren\u2019t part of the appeal, yes \u2014 Bayonet and Black Horse close for several days in mid-August, and hotel rates spike well above normal during the event.",
       },
       {
         q: "How do I get to the Monterey Peninsula?",
-        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min if you're flying into one of those instead.",
+        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min.",
       },
       {
         q: "Is Carmel Valley warmer than the coast?",
-        a: "Yes — its inland location sits outside the coastal marine layer, so it's often clear and 15–18°F warmer even when Monterey and Pacific Grove are fogged in.",
+        a: "Yes \u2014 its inland location sits outside the coastal marine layer, so it\u2019s often clear and 15\u201318\u00b0F warmer even when Monterey and Pacific Grove are fogged in.",
       },
     ],
   },
@@ -96,15 +109,15 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
     items: [
       {
         q: "How many hotels do you feature?",
-        a: "8 verified properties, from golf-anchor resorts like Hyatt Regency Monterey and Carmel Valley Ranch to boutique stays like Casa Munras.",
+        a: "9 verified properties, from golf-anchor resorts like Hyatt Regency Monterey and Carmel Valley Ranch to boutique stays like Casa Munras and L\u2019Auberge Carmel.",
+      },
+      {
+        q: "Can you help with corporate golf groups?",
+        a: "Yes. We handle corporate groups from 8 to 300 players \u2014 tee sheet blocks, hotel room blocks, ground transport, shotgun start coordination, and a single contract covering everything. Courses we frequently use for corporate events include Carmel Valley Ranch, TPC Monterey at Pasadera, Poppy Hills, and Bayonet.",
       },
       {
         q: "Can you help arrange ground transportation?",
-        a: "Yes — the quote form includes an option to have us arrange airport transfers and transport between courses and hotels as part of your trip.",
-      },
-      {
-        q: "What's included in a room at your featured hotels?",
-        a: "It varies by property — some, like Carmel Valley Ranch, are all-suite with fireplaces and private decks; others are standard resort rooms. Each hotel's page lists its specific room features.",
+        a: "Yes \u2014 the quote form includes an option to have us arrange airport transfers and transport between courses and hotels as part of your trip.",
       },
     ],
   },
@@ -163,7 +176,8 @@ export default function FAQ() {
                       &minus;
                     </span>
                   </summary>
-                  <p className="mt-3 font-body text-[14px] leading-relaxed text-[#5a564e]">
+                  {/* faq-answer class = speakable target for AI crawlers */}
+                  <p className="faq-answer mt-3 font-body text-[14px] leading-relaxed text-[#5a564e]">
                     {f.a}
                   </p>
                 </details>
