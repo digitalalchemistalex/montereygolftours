@@ -148,7 +148,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "casa-palmero",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pbc-portal/cp_2024_exterior_pool.jpg",
     name: "Casa Palmero™",
     city: "Pebble Beach, CA",
     tier: 1,
