@@ -14,7 +14,7 @@ export default function Hero() {
     <section className="relative flex min-h-[760px] flex-col overflow-hidden bg-[#16242c] md:min-h-[820px]">
       {/* Desktop + tablet hero — aerial wide shot */}
       <Image
-        src="https://images.unsplash.com/photo-1742498626135-67a7d3501eff?auto=format&fit=crop&w=2400&q=95"
+        src="/images/pbc-portal/pebble-beach-hole-9-aerial.jpg"
         alt="Aerial view of a coastal golf course at sunrise"
         fill
         priority
@@ -25,7 +25,7 @@ export default function Hero() {
       />
       {/* Mobile hero — ground-level sharp close-up, portrait-friendly crop */}
       <Image
-        src="https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=800&q=95"
+        src="/images/courses/gallery/pebble-beach-hole-9.jpg"
         alt="Golf course green with fairway and trees"
         fill
         priority
