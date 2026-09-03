@@ -200,7 +200,7 @@ const homepageSchema = {
           name: "Can you book Monterey golf packages for corporate groups?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Monterey Golf Tours handles corporate golf groups from 8 to 300 players on the Monterey Peninsula. We secure tee sheet blocks at courses including Carmel Valley Ranch, TPC Monterey at Pasadera, Poppy Hills, and Bayonet. Services include hotel room blocks, ground transportation, shotgun start coordination, and a single contract covering all arrangements. Contact us for a corporate group quote.",
+            text: "Yes. Monterey Golf Tours handles corporate golf groups from 2 to 400 players on the Monterey Peninsula. We secure tee sheet blocks at courses including Carmel Valley Ranch, TPC Monterey at Pasadera, Poppy Hills, and Bayonet. Services include hotel room blocks, ground transportation, shotgun start coordination, and a single contract covering all arrangements. Contact us for a corporate group quote.",
           },
         },
       ],
