@@ -70,7 +70,7 @@ export default function QuotePage() {
                 <div className="mt-1 font-ui text-[11px] uppercase tracking-[.05em] text-[#8a857a]">Response time</div>
               </div>
               <div className="rounded-xl border border-[#e3ddcf] bg-white px-3 py-4">
-                <div className="font-display text-2xl font-bold text-ocean-dark">2&ndash;300</div>
+                <div className="font-display text-2xl font-bold text-ocean-dark">2&ndash;400</div>
                 <div className="mt-1 font-ui text-[11px] uppercase tracking-[.05em] text-[#8a857a]">Group sizes welcome</div>
               </div>
               <div className="rounded-xl border border-[#e3ddcf] bg-white px-3 py-4">
