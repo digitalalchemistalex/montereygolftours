@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 
 const STEPS = [
-  { n: "01", label: "Group size", detail: "2 to 300 players" },
+  { n: "01", label: "Group size", detail: "2 to 400 players" },
   { n: "02", label: "Skill level", detail: "Beginner to scratch" },
   { n: "03", label: "Dates", detail: "Flexible or fixed" },
   { n: "04", label: "Budget", detail: "Value to premium" },
