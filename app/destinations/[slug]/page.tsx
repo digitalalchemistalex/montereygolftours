@@ -111,8 +111,8 @@ export default async function DestinationPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <section className="relative flex min-h-[480px] flex-col bg-[#16242c] md:min-h-[580px]">
-        {dest.heroImage && (
-          <Image src={dest.heroImage} alt={`Golf in ${dest.name}, Monterey Peninsula`} fill priority className="object-cover" />
+        {dest.image && (
+          <Image src={dest.image} alt={`Golf in ${dest.name}, Monterey Peninsula`} fill priority className="object-cover" />
         )}
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,25,20,.2) 0%, rgba(10,25,20,.8) 100%)" }} />
         <Header />
