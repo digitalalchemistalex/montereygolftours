@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import Logo from "./Logo";
-import ChatTriggerIcon from "./ChatTriggerIcon";
 
 const PLAY_LINKS = [
   { label: "Courses", href: "/golf-courses/" },
@@ -111,7 +110,7 @@ export default function Footer() {
                 </a>
               ) : null}
               <span>Monterey, CA</span>
-              <ChatTriggerIcon />
+              
             </div>
           </div>
         </div>
