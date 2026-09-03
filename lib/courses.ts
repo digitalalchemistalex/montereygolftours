@@ -196,7 +196,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "the-hay",
-    image: "https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pbc-portal/thehay_2021_aerial.jpg",
     name: "The Hay™",
     city: "Pebble Beach, CA",
     par: 27,
