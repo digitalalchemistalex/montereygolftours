@@ -7,9 +7,17 @@ import { PHOTOGRAPHERS } from "@/lib/photographers";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Licensed Photography",
-  description: "All Pebble Beach Resorts® images on Monterey Golf Tours are licensed via the Pebble Beach Company Leisure Travel Sales Collection. Credits by photographer.",
+  title: "Pebble Beach Photography Credits | Monterey Golf Tours",
+  description: "All Pebble Beach Resorts\u00ae images on this site are licensed via the Pebble Beach Company Leisure Travel Sales Collection. Photographer credits listed by artist.",
   alternates: { canonical: `https://${SITE.domain}/photography/` },
+  openGraph: {
+    title: "Pebble Beach Photography Credits | Monterey Golf Tours",
+    description: "Licensed photography from the Pebble Beach Company Leisure Travel Sales Collection — photographer credits for every image.",
+    url: `https://${SITE.domain}/photography/`,
+    siteName: "Monterey Golf Tours",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Pebble Beach Photography Credits | Monterey Golf Tours" },
 };
 
 const canonicalUrl = `https://${SITE.domain}/photography/`;

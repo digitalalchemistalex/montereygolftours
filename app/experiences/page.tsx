@@ -7,9 +7,17 @@ import { EXPERIENCES } from "@/lib/experiences";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pebble Beach Resorts\u00ae Experiences | Monterey Golf Tours",
-  description: "Beyond golf \u2014 dining, spa, 17-Mile Drive\u00ae, the Golf Academy, and The Beach & Tennis Club at Pebble Beach Resorts\u00ae. Plan your full Monterey trip.",
+  title: "Pebble Beach Experiences — Dining, Spa & 17-Mile Drive | Monterey Golf Tours",
+  description: "Beyond golf \u2014 dining at Stillwater Bar & Grill, the Forbes Five-Star Spa, 17-Mile Drive\u00ae, the Golf Academy, and The Beach & Tennis Club at Pebble Beach Resorts\u00ae.",
   alternates: { canonical: `https://${SITE.domain}/experiences/` },
+  openGraph: {
+    title: "Pebble Beach Experiences — Dining, Spa & 17-Mile Drive | Monterey Golf Tours",
+    description: "Plan your full Monterey trip — dining, spa, 17-Mile Drive\u00ae, golf instruction, and beach access at Pebble Beach Resorts\u00ae.",
+    url: `https://${SITE.domain}/experiences/`,
+    siteName: "Monterey Golf Tours",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Pebble Beach Experiences | Monterey Golf Tours" },
 };
 
 const canonicalUrl = `https://${SITE.domain}/experiences/`;

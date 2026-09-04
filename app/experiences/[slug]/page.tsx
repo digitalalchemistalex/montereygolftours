@@ -17,9 +17,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const exp = EXPERIENCES[slug];
   if (!exp) return {};
   return {
-    title: `${exp.name} | Monterey Golf Tours`,
+    title: `${exp.name} at Pebble Beach | Monterey Golf Tours`,
     description: exp.hook,
     alternates: { canonical: `https://${SITE.domain}/experiences/${slug}/` },
+    openGraph: {
+      title: `${exp.name} at Pebble Beach | Monterey Golf Tours`,
+      description: exp.hook,
+      url: `https://${SITE.domain}/experiences/${slug}/`,
+      siteName: "Monterey Golf Tours",
+      type: "website",
+    },
+    twitter: { card: "summary_large_image", title: `${exp.name} at Pebble Beach | Monterey Golf Tours` },
   };
 }
 

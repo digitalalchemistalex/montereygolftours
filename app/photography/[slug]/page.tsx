@@ -17,9 +17,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = PHOTOGRAPHERS[slug];
   if (!p) return {};
   return {
-    title: `${p.name} — Licensed Photography`,
-    description: p.bio,
+    title: `${p.name} | Pebble Beach Photographer | Monterey Golf Tours`,
+    description: `${p.name} — licensed Pebble Beach Company photographer. ${p.bio.slice(0, 120)}`,
     alternates: { canonical: `https://${SITE.domain}/photography/${slug}/` },
+    openGraph: {
+      title: `${p.name} | Pebble Beach Photographer`,
+      description: p.bio,
+      url: `https://${SITE.domain}/photography/${slug}/`,
+      siteName: "Monterey Golf Tours",
+      type: "profile",
+    },
+    twitter: { card: "summary_large_image", title: `${p.name} | Pebble Beach Photographer | Monterey Golf Tours` },
   };
 }
 
