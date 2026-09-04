@@ -913,6 +913,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       { src: "/images/pbc-portal/lodge-main-building_01.jpg", caption: "The Lodge at Pebble Beach™ main building — open since 1919, one of the oldest golf resort hotels in America.", tag: "Main building" },
       { src: "/images/pbc-portal/lodge_2017_interior_fairwayone_cottage.jpg", caption: "Fairway One Cottage at The Lodge at Pebble Beach™ — the Palmer and Eastwood Cottages sit directly on the first fairway, steps from the first tee.\nPhoto by Noah Webb", tag: "Fairway One Cottage" },
       { src: "/images/pbc-portal/lodge_2018_interior_oceanstudio.jpg", caption: "An Ocean Studio at The Lodge at Pebble Beach™ — rooms range from 570 to 1,300 sq ft with garden, fairway, or Pacific views.\nPhoto by Noah Webb", tag: "Ocean Studio" },
+      { src: "/images/pbc-portal/fairway-one-cottage.jpg", caption: "Fairway One at The Lodge at Pebble Beach™ — 30 oversized guest rooms in three two-story buildings directly on the first fairway.\nPhoto by Noah Webb", tag: "Fairway One" },
+      { src: "/images/pbc-portal/fairwayone_2017_exterior_cottage.jpg", caption: "The exterior of Fairway One Cottage at The Lodge at Pebble Beach™ — the Palmer and Eastwood Cottages each sleep four, with a shared great room and fire pit on the first fairway.\nPhoto by Noah Webb", tag: "Fairway One · Exterior" },
     ],
     description: [
       "The Lodge at Pebble Beach™ has stood at the edge of Stillwater Cove since 1919, making it the oldest property at Pebble Beach Resorts® and one of the oldest golf resort hotels in America. Guest rooms range from 570 to 1,300 square feet, with views of the landscaped gardens, the 18th fairway of Pebble Beach Golf Links®, or the Pacific Ocean beyond Carmel Bay.",
