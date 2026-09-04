@@ -862,9 +862,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
     gallery: [
-      { src: "/images/pbc-portal/spyglass_4_2016_ground_green.jpg", caption: "Hole 4 at Spyglass Hill® Golf Course — where the coastal dunes of the front nine begin giving way to Del Monte Forest. The transition that defines the round.\n© Pebble Beach Company", tag: "Hole 4 · Coastal" },
-      { src: "/images/pbc-portal/spyglass_7_2016_ground_green.jpg", caption: "The green complex on Hole 7 at Spyglass Hill® Golf Course — precision approach required on a course rated 75.4, slope 145.\n© Pebble Beach Company", tag: "Hole 7" },
-      { src: "/images/pbc-portal/spyglass_11_2016_ground.jpg", caption: "Hole 11 at Spyglass Hill® Golf Course — deep into Del Monte Forest pines, the back nine demands accuracy on every shot.\n© Pebble Beach Company", tag: "Hole 11 · Forest" },
+      { src: "/images/pbc-portal/spyglass_4_2016_ground_green.jpg", caption: "Hole 4 at Spyglass Hill® Golf Course — where the coastal dunes of the front nine begin giving way to Del Monte Forest. The transition that defines the round.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 4 · Coastal" },
+      { src: "/images/pbc-portal/spyglass_7_2016_ground_green.jpg", caption: "The green complex on Hole 7 at Spyglass Hill® Golf Course — precision approach required on a course rated 75.4, slope 145.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 7" },
+      { src: "/images/pbc-portal/spyglass_11_2016_ground.jpg", caption: "Hole 11 at Spyglass Hill® Golf Course — deep into Del Monte Forest pines, the back nine demands accuracy on every shot.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 11 · Forest" },
     ],
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
