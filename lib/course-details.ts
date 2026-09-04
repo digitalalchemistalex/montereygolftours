@@ -1003,7 +1003,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
     gallery: [
-      { src: "/images/pbc-portal/delmonte_16_2016_ground_green.jpg", alt: "Hole 16 at Del Monte™ Golf Course, Monterey, CA — parkland fairway in continuous play since 1897", caption: "Hole 16 at Del Monte™ Golf Course — the parkland character that defines the peninsula's oldest layout, in continuous play since 1897.", credit: "Photo by Kevin Merfeld - PBC", photographer: "Kevin Merfeld", year: 2016, category: "Course", tag: "Hole 16", location: "Monterey, CA" },
+      { src: "/images/pbc-portal/delmonte_16_2016_ground_green.jpg", alt: "Hole 16 at Del Monte™ Golf Course, Monterey, CA — ancient coastal live oak frames the approach to the green", caption: "Hole 16 at Del Monte™ Golf Course — the parkland character that defines the peninsula's oldest layout, in continuous play since 1897.", credit: "Photo by Kevin Merfeld - PBC", photographer: "Kevin Merfeld", year: 2016, category: "Course", tag: "Hole 16", location: "Monterey, CA" },
       { src: "/images/courses/gallery/del-monte-2.webp", caption: "Hole 10 at Del Monte™ Golf Course — mature trees and classic parkland character on the most historic layout on the peninsula.", tag: "Hole 10" },
       { src: "/images/courses/gallery/del-monte-3.webp", caption: "Del Monte™ Golf Course in continuous operation since 1897 — the oldest golf course west of the Mississippi.", tag: "Historic layout" },
     ],
