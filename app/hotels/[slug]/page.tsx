@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GalleryLightbox from "@/components/GalleryLightbox";
+import TabbedGallery from "@/components/TabbedGallery";
 import { HOTEL_DETAILS } from "@/lib/hotel-details";
 import HotelCourses from "@/components/HotelCourses";
 import { HOTELS } from "@/lib/hotels";
@@ -257,7 +258,9 @@ export default async function HotelPage({ params }: Props) {
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Photos
             </h2>
-            <GalleryLightbox images={hotel.gallery ?? []} entityName={hotel.name} />
+            {(hotel.gallery ?? []).some((img) => img.category)
+              ? <TabbedGallery images={hotel.gallery ?? []} entityName={hotel.name} />
+              : <GalleryLightbox images={hotel.gallery ?? []} entityName={hotel.name} />}
           </section>
         )}        {hotel.roomFeatures && (
           <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
