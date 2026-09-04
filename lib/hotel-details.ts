@@ -1242,3 +1242,4 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       },
     ],
   },
+};
