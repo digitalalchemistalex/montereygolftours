@@ -5,8 +5,14 @@ import Image from "next/image";
 
 export type GalleryImage = {
   src: string;
-  caption: string;
-  tag?: string;
+  alt: string;          // descriptive only — never contains credit
+  caption: string;      // display caption — no credit
+  credit?: string;      // "Photo by [Name]" — displayed separately
+  photographer?: string; // photographer name for schema/filtering
+  year?: number;
+  category?: string;    // tab grouping
+  tag?: string;         // pill label on thumbnail
+  location?: string;    // for ImageObject schema
 };
 
 type Props = {
@@ -14,13 +20,6 @@ type Props = {
   entityName: string;
   triggerLabel?: string;
 };
-
-/** Split "caption\n© Credit" into { text, credit } */
-function parseCaption(caption: string): { text: string; credit: string | null } {
-  const idx = caption.indexOf("\n");
-  if (idx === -1) return { text: caption, credit: null };
-  return { text: caption.slice(0, idx).trim(), credit: caption.slice(idx + 1).trim() };
-}
 
 export default function GalleryLightbox({ images, entityName, triggerLabel }: Props) {
   const [open, setOpen] = useState(false);
@@ -47,63 +46,57 @@ export default function GalleryLightbox({ images, entityName, triggerLabel }: Pr
 
   const openAt = (i: number) => { setIndex(i); setOpen(true); };
   const current = images[index];
-  const currentParsed = parseCaption(current.caption);
 
   return (
     <>
       {/* Thumbnail grid */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {images.slice(0, 5).map((img, i) => {
-          const { text, credit } = parseCaption(img.caption);
-          return (
-            <button
-              key={img.src}
-              type="button"
-              onClick={() => openAt(i)}
-              className={[
-                "group relative overflow-hidden rounded-xl bg-[#e3ddcf]",
-                i === 0 ? "col-span-2 h-[240px] sm:col-span-2 sm:h-[280px]" : i === 1 ? "h-[140px] sm:h-[280px]" : "h-[140px] sm:h-[160px]",
-              ].join(" ")}
-              aria-label={`Open photo: ${text}`}
-            >
-              <Image
-                src={img.src}
-                alt={text}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, 33vw"
-              />
+        {images.slice(0, 5).map((img, i) => (
+          <figure
+            key={img.src}
+            className={[
+              "group relative overflow-hidden rounded-xl bg-[#e3ddcf] cursor-pointer",
+              i === 0 ? "col-span-2 h-[240px] sm:col-span-2 sm:h-[280px]" : i === 1 ? "h-[140px] sm:h-[280px]" : "h-[140px] sm:h-[160px]",
+            ].join(" ")}
+            onClick={() => openAt(i)}
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 640px) 50vw, 33vw"
+            />
 
-              {/* Tag badge */}
-              {img.tag && (
-                <div className="absolute bottom-2 left-2 rounded-full bg-black/60 px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-white backdrop-blur-sm">
-                  {img.tag}
-                </div>
-              )}
-
-              {/* Photographer credit — always visible bottom-right */}
-              {credit && (
-                <div className="absolute bottom-2 right-2 rounded bg-black/55 px-1.5 py-0.5 font-ui text-[9px] leading-tight text-white/80 backdrop-blur-sm">
-                  {credit}
-                </div>
-              )}
-
-              {/* Hover overlay with caption */}
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                <p className="line-clamp-2 px-3 pb-3 font-ui text-[12px] leading-snug text-white">
-                  {text}
-                </p>
+            {/* Tag badge */}
+            {img.tag && (
+              <div className="absolute bottom-2 left-2 rounded-full bg-black/60 px-2.5 py-1 font-ui text-[10px] font-semibold uppercase tracking-[.06em] text-white backdrop-blur-sm">
+                {img.tag}
               </div>
+            )}
 
-              {/* Last tile: +N more */}
-              {i === 4 && images.length > 5 && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/55">
-                  <span className="font-display text-2xl font-bold text-white">+{images.length - 5}</span>
-                </div>
-              )}
-            </button>
-          );
-        })}
+            {/* Photographer credit — always visible bottom-right */}
+            {img.credit && (
+              <figcaption className="absolute bottom-2 right-2 rounded bg-black/55 px-1.5 py-0.5 font-ui text-[9px] leading-tight text-white/80 backdrop-blur-sm">
+                {img.credit}
+              </figcaption>
+            )}
+
+            {/* Hover overlay with caption */}
+            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <p className="gallery-caption line-clamp-2 px-3 pb-3 font-ui text-[12px] leading-snug text-white">
+                {img.caption}
+              </p>
+            </div>
+
+            {/* Last tile: +N more */}
+            {i === 4 && images.length > 5 && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/55">
+                <span className="font-display text-2xl font-bold text-white">+{images.length - 5}</span>
+              </div>
+            )}
+          </figure>
+        ))}
       </div>
 
       {images.length > 5 && (
@@ -165,45 +158,41 @@ export default function GalleryLightbox({ images, entityName, triggerLabel }: Pr
           </button>
 
           {/* Main image */}
-          <div
+          <figure
             className="relative mx-auto h-[60vh] w-full max-w-5xl px-16"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={current.src}
-              alt={currentParsed.text}
+              alt={current.alt}
               fill
               className="object-contain"
               sizes="(max-width: 768px) 100vw, 80vw"
               priority
               unoptimized
             />
-          </div>
 
-          {/* Caption + credit panel */}
-          <div
-            className="mx-auto mt-4 w-full max-w-3xl px-6 text-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {current.tag && (
-              <span className="mb-2 inline-block rounded-full bg-white/10 px-3 py-1 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-white/70">
-                {current.tag}
-              </span>
-            )}
-            <p className="font-body text-[15px] leading-relaxed text-white/90">
-              {currentParsed.text}
-            </p>
-            {/* Photographer credit — mandatory for PBC licensed images */}
-            {currentParsed.credit && (
-              <p className="mt-2 font-ui text-[11px] tracking-wide text-white/45">
-                {currentParsed.credit}
+            {/* Caption + credit panel */}
+            <figcaption className="absolute inset-x-0 -bottom-20 mx-auto w-full max-w-3xl px-6 text-center">
+              {current.tag && (
+                <span className="mb-2 inline-block rounded-full bg-white/10 px-3 py-1 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-white/70">
+                  {current.tag}
+                </span>
+              )}
+              <p className="gallery-caption font-body text-[15px] leading-relaxed text-white/90">
+                {current.caption}
               </p>
-            )}
-          </div>
+              {current.credit && (
+                <p className="mt-2 font-ui text-[11px] tracking-wide text-white/45">
+                  {current.credit}
+                </p>
+              )}
+            </figcaption>
+          </figure>
 
           {/* Thumbnail strip */}
           <div
-            className="mt-5 flex gap-2 overflow-x-auto px-6 pb-4"
+            className="mt-24 flex gap-2 overflow-x-auto px-6 pb-4"
             onClick={(e) => e.stopPropagation()}
           >
             {images.map((img, i) => (
