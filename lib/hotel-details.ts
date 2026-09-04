@@ -1003,10 +1003,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     brand: "Pebble Beach Resorts®",
     hook: "Tucked between Del Monte Forest and the Pacific Ocean — the most romantic and most dramatic of the three Pebble Beach Resorts® properties.",
     gallery: [
-      { src: "/images/pbc-portal/inn_2020_interior_lobby.jpg", caption: "The lobby at The Inn at Spanish Bay™ — a 270-room resort overlooking the Pacific and the Links at Spanish Bay® golf course.\n© Pebble Beach Company", tag: "Lobby" },
-      { src: "/images/pbc-portal/the-inn-ocean-view-room.jpg", caption: "An ocean view room at The Inn at Spanish Bay™ — every room features a gas fireplace and private patio or balcony with forest, fairway, or Pacific views.\nPhoto by Sherman Chu", tag: "Ocean view room" },
-      { src: "/images/pbc-portal/the-inn-presidential-suite.jpg", caption: "The Presidential Suite at The Inn at Spanish Bay™ — 2,100 sq ft of oceanfront luxury at Pebble Beach Resorts®.\nPhoto by Sherman Chu", tag: "Presidential Suite" },
-      { src: "/images/pbc-portal/the-inn-at-spanish-bay---fire-pits.jpg", caption: "The fire pits at The Inn at Spanish Bay™ — each evening a bagpiper plays on the 18th green as the sun sets over the Pacific.\n© Pebble Beach Company", tag: "Fire pits" },
+      { src: "/images/pbc-portal/inn_2020_interior_lobby.jpg", caption: "The lobby at The Inn at Spanish Bay™ — a 270-room resort overlooking the Pacific and the Links at Spanish Bay® golf course.\nPhoto by Sherman Chu", tag: "Lobby" },
+      { src: "/images/pbc-portal/the-inn-ocean-view-room.jpg", caption: "An ocean view room at The Inn at Spanish Bay™ — every room features a gas fireplace and private patio or balcony with forest, fairway, or Pacific views.\nPhoto by Noah Webb", tag: "Ocean view room" },
+      { src: "/images/pbc-portal/the-inn-presidential-suite.jpg", caption: "The Presidential Suite at The Inn at Spanish Bay™ — 2,100 sq ft of oceanfront luxury at Pebble Beach Resorts®.", tag: "Presidential Suite" },
+      { src: "/images/pbc-portal/the-inn-at-spanish-bay---fire-pits.jpg", caption: "The fire pits at The Inn at Spanish Bay™ — each evening a bagpiper plays on the 18th green as the sun sets over the Pacific.\nPhoto by Joann Dost", tag: "Fire pits" },
       { src: "/images/pbc-portal/inn_2018_executiveforestsuite.jpg", caption: "The Executive Forest Suite at The Inn at Spanish Bay™ — the forest-facing room category with views into the Del Monte Forest pines.\nPhoto by Sherman Chu", tag: "Executive Forest Suite" },
     ],
     description: [
