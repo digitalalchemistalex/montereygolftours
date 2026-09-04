@@ -110,7 +110,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         a: "Yes — with 560 rooms and 40,000 sq ft of meeting and event space, it's built to handle large group golf trips and corporate outings.",
       },
     
-      { q: "Can I book the Hyatt Regency Monterey as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours includes the Hyatt Regency Monterey in Monterey golf packages — it’s centrally located for groups playing Bayonet, Black Horse, Laguna Seca, and Pacific Grove, with shuttle access to the Pebble Beach courses. A good base for groups who want a full-service hotel at a non-resort rate." },],
+      { q: "Can I book the Hyatt Regency Monterey as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours includes the Hyatt Regency Monterey in Monterey golf packages — centrally located for groups playing Bayonet, Black Horse, Laguna Seca, and Pacific Grove, with shuttle access to the Pebble Beach courses. A good base for groups who want a full-service hotel at a non-resort rate." },],
   },
   "carmel-valley-ranch": {
     slug: "carmel-valley-ranch",
@@ -137,8 +137,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     description: [
       "Carmel Valley Ranch is an all-suite resort — every accommodation is a minimum 800 sq ft (starting with the Santa Lucia Studio); there are no standard hotel rooms. Pete Dye's only Northern California golf design is on-site, and the property sits inland in the sun-drenched Santa Lucia foothills, typically 15–18°F warmer than the Monterey coast and clear of marine fog earlier in the morning. — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
       "The on-site golf course is a Pete Dye original (1980), renovated by Gene Bates in 2006 — the only Pete Dye design in Northern California. The wine-country microclimate here tends to stay sunny even when the coast is fogged in.",
-    
-      "Carmel Valley Ranch is a natural stay-and-play base for Monterey golf trips that want warmth, privacy, and an on-site Pete Dye course. Monterey Golf Tours includes it in Carmel Valley golf packages — the resort handles accommodation, golf, spa, and dining in one property, with easy day trips to the Pebble Beach courses.",],
+    ],
     amenities: [
       "On-site 18-hole Pete Dye golf course",
       "Spa Aiyana (10,500 sq ft)",
@@ -195,12 +194,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "Are there non-golf activities for the group?",
         a: "Yes — seasonal offerings include beekeeping, stargazing, axe throwing, archery, and cooking classes, plus a resident herd of miniature goats at The Corral.",
       },
-    ],
-  
-    faqs: [
-      { q: "Can I book Carmel Valley Ranch as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours builds stay-and-play Monterey golf packages around Carmel Valley Ranch — combining accommodation and the on-site Pete Dye course with day trips to Pebble Beach, Spyglass, and other peninsula courses. The inland location means less fog and warmer playing conditions than the coast." },
-      { q: "Is Carmel Valley Ranch better than staying at Pebble Beach for a golf trip?", a: "It depends on the group’s priorities. Carmel Valley Ranch offers a more private, resort-style setting with warmer weather and an on-site course at a lower rate than The Lodge or The Inn. Pebble Beach properties give you walkable access to the most famous courses in American golf. Monterey Golf Tours can advise based on your itinerary and budget." },
-    ],
+    
+      { q: "Can I book Carmel Valley Ranch as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours builds stay-and-play Monterey golf packages around Carmel Valley Ranch — combining accommodation and the on-site Pete Dye course with day trips to Pebble Beach, Spyglass, and other peninsula courses. The inland location means less fog and warmer playing conditions than the coast." },],
   },
   "quail-lodge": {
     slug: "quail-lodge",
@@ -295,8 +290,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     description: [
       "Bernardus Lodge & Spa is a wine-country retreat in Carmel Valley, with an estate vineyard visible from many rooms and Santa Lucia mountain views throughout the property. With 73 rooms, it's the most intimate of the Tier 1 golf-anchor properties.",
       "Guests of Bernardus Lodge have access to play The Club at Pasadera — a private course generally open to the public only on Mondays — outside of the standard Monday-only window. This access arrangement should be confirmed with the property before promoting in a specific package, as terms can change.",
-    
-      "Bernardus Lodge & Spa is a natural pairing for Monterey golf trips that want a luxury valley base — close to Carmel Valley Ranch and Quail Lodge, with the option to day-trip to the Pebble Beach courses. Monterey Golf Tours includes it in Carmel Valley-focused golf packages for groups who want a wine country setting alongside their peninsula rounds.",],
+    ],
     amenities: [
       "Guest access to The Club at Pasadera golf course",
       "Outdoor heated pool + poolside bar",
@@ -353,12 +347,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "How far is Bernardus Lodge from Carmel Valley Ranch?",
         a: "About 7 minutes — the two properties are the closest golf-anchor hotels to each other in Carmel Valley.",
       },
-    ],
-  
-    faqs: [
-      { q: "Can Bernardus Lodge be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Bernardus Lodge in Carmel Valley golf packages — typically paired with Carmel Valley Ranch and Quail Lodge for valley-based rounds, with day trips to Pebble Beach and Spyglass. It’s a strong choice for groups that want a luxury wine country setting alongside their Monterey Peninsula golf." },
-      { q: "What golf courses are closest to Bernardus Lodge?", a: "Bernardus Lodge is closest to Carmel Valley Ranch (Pete Dye design, 15 minutes) and Quail Lodge (Robert Muir Graves design, 10 minutes). Pebble Beach Golf Links® and Spyglass Hill® are approximately 30 minutes by car. Monterey Golf Tours can build an itinerary that combines valley-based play with day trips to the peninsula." },
-    ],
+    
+      { q: "Can Bernardus Lodge be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Bernardus Lodge in Carmel Valley golf packages — typically paired with Carmel Valley Ranch and Quail Lodge for valley-based rounds, with day trips to Pebble Beach and Spyglass. It’s a strong choice for groups that want a luxury wine country setting alongside their Monterey Peninsula golf." },],
   },
   "monterey-plaza": {
     slug: "monterey-plaza",
@@ -511,7 +501,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         a: "425–450 sq ft standard rooms with Frette linens, marble bathrooms with a soaking tub and separate shower, and a king bed or two doubles.",
       },
     
-      { q: "Can InterContinental The Clement be included in a Monterey golf package?", a: "Yes. InterContinental The Clement Monterey is on Cannery Row with Monterey Bay views and is well-positioned for groups playing the non-Pebble Beach courses on the peninsula. Monterey Golf Tours includes it in Monterey golf packages as a downtown base with easy access to Bayonet, Black Horse, Laguna Seca, and Pacific Grove." },],
+      { q: "Can InterContinental The Clement be included in a Monterey golf package?", a: "Yes. InterContinental The Clement Monterey is on Cannery Row with Monterey Bay views, well-positioned for groups playing the non-Pebble Beach courses on the peninsula. Monterey Golf Tours includes it in Monterey golf packages as a downtown base with easy access to Bayonet, Black Horse, Laguna Seca, and Pacific Grove." },],
   },
   "portola-hotel": {
     slug: "portola-hotel",
@@ -536,8 +526,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     description: [
       "Portola Hotel & Spa sits in downtown Monterey, directly adjacent to and connected with the Monterey Conference Center, one mile from Cannery Row. With 379 rooms and suites, it's the best-suited property on this list for large groups, conventions, or groups paired with a conference.",
       "The hotel was the Central Coast's first LEED-certified property, and includes a 6,000 square-foot spa — the largest day spa in Monterey County — along with an on-site craft brewery.",
-    
-      "Portola Hotel & Spa is one of the most central hotels for a Monterey Peninsula golf trip — steps from Old Fisherman’s Wharf and within 15 minutes of Bayonet, Black Horse, Laguna Seca, and Pacific Grove. Monterey Golf Tours includes it in peninsula-wide golf packages for groups who want a full-service hotel at the heart of downtown Monterey.",],
+    ],
     amenities: [
       "Spa on the Plaza (6,000 sq ft, 11 private treatment rooms — largest day spa in Monterey County)",
       "Craft brewery on-site",
@@ -597,12 +586,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "What's the dining like at Portola Hotel?",
         a: "Jacks Monterey serves breakfast and dinner with an American menu, on-site at the hotel.",
       },
-    ],
-  
-    faqs: [
-      { q: "Is Portola Hotel & Spa a good base for a Monterey golf trip?", a: "Yes. Portola Hotel & Spa is centrally located in downtown Monterey and within easy reach of all the peninsula courses — Bayonet, Black Horse, Laguna Seca, Pacific Grove, and Del Monte are all under 15 minutes. Monterey Golf Tours includes it in Monterey golf packages for groups who want a full-service downtown hotel." },
-      { q: "How far is Portola Hotel from Pebble Beach Golf Links®?", a: "Portola Hotel & Spa is approximately 20–25 minutes by car from Pebble Beach Golf Links® via 17-Mile Drive®. Monterey Golf Tours can arrange transport for groups staying downtown who are playing the Pebble Beach Resorts® courses as part of a planned itinerary." },
-    ],
+    
+      { q: "Is Portola Hotel & Spa a good base for a Monterey golf trip?", a: "Yes. Portola Hotel & Spa is centrally located in downtown Monterey and within easy reach of all the peninsula courses — Bayonet, Black Horse, Laguna Seca, Pacific Grove, and Del Monte are all under 15 minutes. Monterey Golf Tours includes it in Monterey golf packages for groups who want a full-service downtown hotel." },],
   },
   "casa-munras": {
     slug: "casa-munras",
@@ -698,8 +683,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Hotel Abrego is an independent boutique property in downtown Monterey, spread across four buildings with 93 individually furnished rooms. It carries an AAA Three Diamond rating.",
       "Its downtown location puts guests within walking distance of Cannery Row (1.4 mi), the Monterey Bay Aquarium (1.6 mi), and the Path of History, making it a strong choice for groups who want to pair golf with time exploring the city rather than staying resort-bound.",
       "The property also offers private and group tour arrangements and special-interest tours, along with a full-service business center on-site for groups mixing golf with meetings.",
-    
-      "Hotel Abrego is a solid mid-range base for a Monterey golf trip — centrally located in downtown Monterey, close to all the peninsula courses outside Pebble Beach. Monterey Golf Tours includes it in value-focused Monterey golf packages where groups want a clean, well-located hotel that keeps the budget available for green fees.",],
+    ],
     amenities: [
       "Heated outdoor pool + hot tub",
       "Bistro Abrego (on-site dining, breakfast + evening dining, bar/lounge with happy hour)",
@@ -755,12 +739,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "What else is within walking distance of Hotel Abrego?",
         a: "Path of History, Monterey Sports Center, Wine Trolley Tours, and the Monterey County Youth Museum are all a short walk away, along with a scenic overlook known as California Views.",
       },
-    ],
-  
-    faqs: [
-      { q: "Is Hotel Abrego included in Monterey golf packages?", a: "Yes. Monterey Golf Tours includes Hotel Abrego in Monterey golf packages for groups who want a central downtown location at a mid-range rate. It’s within 15 minutes of Bayonet, Black Horse, Laguna Seca, Pacific Grove, and Del Monte — and about 25 minutes from the Pebble Beach courses." },
-      { q: "What’s the advantage of staying at Hotel Abrego for a golf trip?", a: "Location and value. Hotel Abrego puts you in downtown Monterey — walkable to restaurants, Cannery Row, and the Aquarium — while keeping drive times to all peninsula courses under 20 minutes. For groups that want to balance golf with broader Monterey experiences, it’s a practical base." },
-    ],
+    
+      { q: "Is Hotel Abrego included in Monterey golf packages?", a: "Yes. Monterey Golf Tours includes Hotel Abrego in Monterey golf packages for groups who want a central downtown location at a mid-range rate. It’s within 15 minutes of Bayonet, Black Horse, Laguna Seca, Pacific Grove, and Del Monte — and about 25 minutes from the Pebble Beach courses." },],
   },
   "embassy-suites-monterey-bay-seaside": {
     slug: "embassy-suites-monterey-bay-seaside",
@@ -1058,7 +1038,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "The bagpiper is The Inn's defining evening ritual: a lone Scottish piper begins at the first tee in front of STICKS restaurant and plays for 45 minutes, finishing at the Spanish Bay fire pits beside the second green at sunset. It happens every day, rain or shine.",
       "With more than 14,000 square feet of flexible meeting space, The Inn's Grand Ballroom accommodates up to 800 guests — the largest event capacity at Pebble Beach Resorts®. The Peppoli Lawn overlooks the Pacific Coast and is one of the most dramatic outdoor event settings in California.",
     
-      "The Inn at Spanish Bay™ is the natural base for Monterey golf packages that prioritise the Links at Spanish Bay® and Spyglass Hill® — both accessible on foot or by a short shuttle from the property. Monterey Golf Tours books The Inn as part of IAGTO Pebble Beach packages, typically for groups who prefer the Spanish Bay setting over the Stillwater Cove side.",],
+      "The Inn at Spanish Bay™ is the natural base for Monterey golf packages that prioritise the Links at Spanish Bay® and Spyglass Hill® — both accessible on foot or by a short shuttle from the property. Monterey Golf Tours books The Inn as part of IAGTO Pebble Beach packages, typically for groups who prefer the Spanish Bay setting.",],
     amenities: [
       "Access to all Pebble Beach Resorts® golf courses — The Links at Spanish Bay® reopens April 17, 2027",
       "Hotel guests book tee times up to 18 months in advance",
