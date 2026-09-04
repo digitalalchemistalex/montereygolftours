@@ -61,6 +61,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A Gene Bates redesign completed in 2007 refreshed the layout while keeping the demanding, military-pedigree character intact.",
       "At 7,024 yards from the back tees (rating 74.8, slope 139), Bayonet is ranked among the toughest public courses in the country — Golf Digest placed it No. 35 nationwide on its list of the 50 Toughest Golf Courses in the United States, and Destinations Magazine ranks it the 13th most challenging course in California. It has hosted PGA Tour qualifiers and players including Billy Andrade, Arnold Palmer, Jack Nicklaus, and Tom Watson, and the Nationwide Tour's Monterey Peninsula Classic was held here from 2000 to 2003.",
       "Managed by Troon, with Patrick R. Jones, PGA serving as General Manager. The practice facility includes an all-grass driving range with 6 practice tees, two short-game areas, and a putting green overlooking Monterey Bay.",
+      "Bayonet is a natural anchor for a Monterey Peninsula golf trip — typically paired with Black Horse for a two-day Fort Ord combination, or mixed with a Pebble Beach round for groups who want the contrast between a military-heritage championship and a clifftop links. Monterey Golf Tours regularly includes Bayonet in 3- and 5-day Monterey golf packages for groups of all sizes."
     ],
     highlights: [
       {
@@ -236,6 +237,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Where Bayonet has built its reputation as one of the toughest public tests in the country, Black Horse plays as the more approachable of the two Fort Ord courses — still a genuine championship-caliber layout, but with a bit more forgiveness for a wider range of handicaps.",
       "Both courses operate under the same Bayonet & Black Horse facility, 5 miles from downtown Monterey, and are a natural multi-round pairing for groups spending a few days on the peninsula.",
       "⚠️ Car Week note: The annual Concorso Italiano (Monterey Car Week, August) is held on these grounds — both courses may be unavailable during that event week. Confirm dates before booking any August round.",
+      "Black Horse works well as the more accessible half of a Fort Ord two-day combination with Bayonet, or as a standalone round for groups that want Monterey Bay views without the difficulty level of a championship course. It’s a common starting point for Monterey golf trip itineraries that need to accommodate a range of handicaps."
     ],
     highlights: [
       {
@@ -558,6 +560,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Pacific Grove Golf Links opened on May 9, 1932, with H. Chandler Egan designing the front nine. The back nine was laid out by Jack Neville — the same architect who designed the famous clifftop links right next door — and plays along the Pacific coast with crashing waves, tide pools, and views of Point Pinos Lighthouse.",
       "Widely known as the 'Poor Man's Pebble Beach' — same ocean, same coastline, fraction of the cost. The front nine winds through forested Pacific Grove, giving the round two completely different personalities: wooded and sheltered on the front, fully exposed to the Pacific on the back.",
       "City-owned and managed by CourseCo, Inc. (General Manager: Neil Sauer), with municipal pricing that makes it one of the best value rounds on the peninsula. The course is adjacent to Asilomar State Beach at 77 Asilomar Avenue.",
+      "Pacific Grove is a regular addition to Monterey golf trip itineraries where groups want a morning ocean round at a price that balances out the higher-fee days at Pebble Beach or Spyglass. Monterey Golf Tours uses it as a value-play round in 4- and 5-day packages, often scheduled on an arrival or departure day when a full-day round isn’t practical."
     ],
     highlights: [
       {
@@ -641,6 +644,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "At par 71 and 7,002 yards (rating 73.5, slope 135), the Robert Trent Jones Jr. design opened in 1986 and underwent a 13-month renovation completed in April 2014, which introduced native sandy waste areas, removed rough, and opened up the forest floor. Post-renovation, Golf.com called it 'Pinehurst-like, with a hint of near-neighbor Cypress Point.'",
       "Colin Montgomerie said it 'reminds me of Pinehurst and Pine Valley.' Tom Watson: 'I like that a lot — would love a three-round event at Poppy Hills.' RTJ Jr. himself describes it as 'the closest you can get to playing golf in a National Park.' The course record is 62, set by Matt Gogel in the 2001 AT&T Pebble Beach Pro-Am. It co-hosted the AT&T from 1991 to 2009.",
       "Groups of 16+ receive an advance booking window beyond the standard 90-day window — contact Group Ambassador Cassidy Young at cyoung@ncga.org or (831) 622-8239.",
+      "Poppy Hills is one of the stronger group-booking options on the Monterey Peninsula — with a dedicated Group Ambassador and a 16+ advance window, it’s easier to secure for large parties than most courses in the area. Monterey Golf Tours regularly includes it in group golf packages where the itinerary calls for a NCGA-operated forest course as an alternative to the Pebble Beach properties."
     ],
     highlights: [
       {
@@ -719,6 +723,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "The only Jack Nicklaus Signature course on the Monterey Peninsula. The Club at Pasadera rewards groups who plan around its Monday public access window — the canyon par-3 14th ('The Moment', 205 yards over a canyon with views to Monterey and Pacific Grove) rivals any signature hole on the peninsula, with conditions that match private clubs in California.",
       "The Club at Pasadera is a Jack Nicklaus Signature Design that opened in 2000, privately operated with limited public access. The course is owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name \"The Club at Pasadera\" rather than any TPC-prefixed name.",
       "At par 71 and roughly 6,673–6,733 yards depending on the source, the course offers a premium Nicklaus design experience on the Monterey Peninsula, typically with limited access windows for non-members.",
+      "The Club at Pasadera is the only Jack Nicklaus Signature course on the Monterey Peninsula with Monday public access, making it a distinctive add-on for Monterey golf packages that want a Nicklaus design without requiring private membership. Monterey Golf Tours can secure Monday tee times for groups as part of a planned peninsula itinerary."
     ],
     highlights: [
       {
@@ -869,6 +874,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
       "The front nine moves through coastal dunes before the back nine turns inland through Del Monte Forest pines, giving the round two distinct characters. Green fees vary annually — enquire for current rates.",
+      "Spyglass Hill Golf Course® is a standard inclusion in premium Monterey golf packages — typically combined with Pebble Beach Golf Links® for the classic two-course Pebble Beach experience, or with Del Monte™ for a full Pebble Beach Company day. Monterey Golf Tours handles IAGTO bookings for both Spyglass and Pebble Beach as part of planned trip itineraries."
     ],
     highlights: [
       {
@@ -1010,6 +1016,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "Del Monte™ Golf Course traces back to 1897, when Charles E. Maud designed the original 9 holes — making it the oldest golf course in continuous use west of the Mississippi. The course sits directly adjacent to the Hyatt Regency Monterey Hotel & Spa, which sits on the grounds.",
       "At par 72 and 6,356 yards (rating 71.8, slope 129), it plays as a gentler, more walkable round than the cliff-top Pebble Beach Resorts® courses — enquire for current green fees.",
+      "Del Monte™ Golf Course is a natural add-on for Monterey golf trips already including Pebble Beach Golf Links® or Spyglass Hill® — a second Pebble Beach Company course at a lower green fee, on a historic parkland layout that contrasts well with the coastal and forest holes at the other two. Monterey Golf Tours can include all three Pebble Beach Company courses in a single itinerary."
     ],
     highlights: [
       {
