@@ -704,3 +704,84 @@ All PBC properties now using portal images only. Remaining Unsplash all non-PBC 
 - Domain cutover `montereygolftours.com` still blocked on Karlyn sign-off
 - Sean to review PBC TRADEMARKS 2026.pdf
 - Sean to supply IAGTO rates, confirm toll-free, source higher-res CVR/Clement/Abrego images
+
+
+---
+
+## SESSION: Sep 3 2026 — SEO/Schema Fixes + Experience Pages Strategy
+
+### SEO Fixes Applied (all live — 3 commits)
+
+**Commit 70aa792b — Schema fixes:**
+- `["Service","Product"]` dual type added to itinerary, hotel, course pages → Google review snippet eligibility
+- `publisher` added to hotel + itinerary WebPage nodes
+- Course `ImageObject`: added `copyrightNotice`, `creditText`, `acquireLicensePage`, `license`, `caption` fields
+- Course + itinerary meta descriptions: now end with action CTA
+
+**Commit 70480bee — Title deduplication + homepage schema:**
+- FAQ, Blog, Destinations, Packages, Blog[slug] pages: `| Monterey Golf Tours` was hardcoded in title AND appended again by layout template → stripped from page-level titles
+- Homepage `Service` → `["Service","Product"]`
+
+**Commit 387308c4 — Group size fix:**
+- `llms.txt`: 2–300 → 2–400
+- `quote/page.tsx`: 2–300 → 2–400
+
+**Commit 7c4d9fb8 — GalleryLightbox credits:**
+- Thumbnails: photographer credit shown bottom-right as always-visible pill
+- Lightbox: credit shown below caption in muted text
+- `parseCaption()` splits on `\n` — no data changes needed, format already correct
+
+**Final schema graph per page type:**
+```
+Homepage:   Organization+TravelAgency · WebSite · [Service,Product] · WebPage · FAQPage
+Course:     WebPage · GolfCourse · FAQPage · [Service,Product] · BreadcrumbList
+Hotel:      WebPage · [Service,Product] · Hotel · FAQPage · BreadcrumbList
+Itinerary:  WebPage · TouristTrip · [Service,Product] · FAQPage · BreadcrumbList
+Blog post:  WebPage · BlogPosting(author=Sean) · BreadcrumbList
+```
+
+### Photographer Credits — IN PROGRESS
+
+**Background:** PBC Bynder portal (`https://assets.pebblebeach.com/share/ADAC1BEF-4BC0-47DF-8D395D20A6CCBCD7/`) has `Photo/Video Credit` field per image. Required by Karlyn Hawke's terms. Cannot be accessed programmatically — browser only.
+
+**Credits collected so far (not yet used — wrong images):**
+- `peppoli_2026_interior_decor.jpg` → Sherman Chu
+- `stillwater--january-2026.jpg` → Taylor Mahon
+- `terrace-lounge.jpg` → Sherman Chu
+
+**17 images currently on site needing credits (Sean checking Sep 3):**
+- spyglass_4/7/11, thehay_aerial/2/5, delmonte_16
+- lodge_2025_exterior/lobby, lodge_2017_fairwayone, lodge_2018_oceanstudio, lodge-main-building_01
+- inn_2018_executiveforestsuite, inn_2020_lobby, the-inn-fire-pits, the-inn-ocean-view-room, the-inn-presidential-suite
+
+**Once all credits received:** Update caption strings in `course-details.ts` and `hotel-details.ts` with `\nPhoto by [Name]` suffix. GalleryLightbox will automatically display them.
+
+### Experience Pages — STRATEGY APPROVED
+
+**Decision:** Build 5 pages under `/experiences/`. All PBC-property content. Images already in repo at `public/images/pbc-portal/`. Value: captures standalone search traffic, adds internal linking depth, uses 80+ images currently sitting unused in repo.
+
+**Pages:**
+| URL | Keyword | Images |
+|---|---|---|
+| `/experiences/` | "things to do at Pebble Beach" | Index |
+| `/experiences/dining-at-pebble-beach/` | "restaurants at Pebble Beach Resorts" | 12 images |
+| `/experiences/the-spa-at-pebble-beach/` | "The Spa at Pebble Beach" | 5 images |
+| `/experiences/17-mile-drive/` | "17 Mile Drive guide stops" | 6 images |
+| `/experiences/pebble-beach-golf-academy/` | "Pebble Beach Golf Academy" | 2 images |
+
+**Schema per page:** WebPage · TouristAttraction · [Service,Product] · FAQPage · BreadcrumbList
+**Nav:** Add Experiences sub-section to existing Pebble Beach Resorts® dropdown in Header.tsx
+**Blocked on:** Photographer credits for 25 experience page images (dining, spa, 17MD, academy)
+
+### Open Actions
+
+| Item | Owner | Status |
+|---|---|---|
+| Photographer credits — 17 current images | Sean | ❌ In progress |
+| Photographer credits — 25 experience images | Sean | ❌ Pending |
+| Apply credits to course-details.ts + hotel-details.ts | MASTER | ❌ Blocked on credits |
+| Build 5 experience pages | MASTER | ❌ Blocked on credits |
+| Update Header.tsx nav, sitemap, llms.txt | MASTER | ❌ Blocked on build |
+| PBC TRADEMARKS 2026.pdf review | Sean | ❌ Pending |
+| Higher-res hero images: CVR, InterContinental, Hotel Abrego | Sean | ❌ Pending |
+| Domain cutover (pending Karlyn audit) | MASTER | ❌ Blocked on PBC |
