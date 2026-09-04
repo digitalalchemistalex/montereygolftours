@@ -23,6 +23,7 @@ const LEARN_LINKS = [
   { label: "Blog", href: "/blog/" },
   { label: "FAQ", href: "/faq/" },
   { label: "Contact", href: "/contact/" },
+  { label: "Photography", href: "/photography/" },
 ];
 
 const TRUST_ITEMS = [
