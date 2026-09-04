@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export type GalleryImage = {
   src: string;
-  alt: string;          // descriptive only — never contains credit
+  alt?: string;         // descriptive only — falls back to caption for non-PBC images
   caption: string;      // display caption — no credit
   credit?: string;      // "Photo by [Name]" — displayed separately
   photographer?: string; // photographer name for schema/filtering
@@ -62,7 +62,7 @@ export default function GalleryLightbox({ images, entityName, triggerLabel }: Pr
           >
             <Image
               src={img.src}
-              alt={img.alt}
+              alt={img.alt ?? img.caption}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
               sizes="(max-width: 640px) 50vw, 33vw"
@@ -164,7 +164,7 @@ export default function GalleryLightbox({ images, entityName, triggerLabel }: Pr
           >
             <Image
               src={current.src}
-              alt={current.alt}
+              alt={current.alt ?? current.caption}
               fill
               className="object-contain"
               sizes="(max-width: 768px) 100vw, 80vw"
