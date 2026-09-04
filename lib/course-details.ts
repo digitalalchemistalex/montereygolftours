@@ -26,7 +26,7 @@ export type CourseDetail = {
   faqs: { q: string; a: string }[];
   pointers?: string[];
   priceEstimate?: number;
-  gallery?: { src: string; alt: string; caption: string; credit?: string; photographer?: string; year?: number; category?: string; tag?: string; location?: string }[];
+  gallery?: { src: string; alt?: string; caption: string; credit?: string; photographer?: string; year?: number; category?: string; tag?: string; location?: string }[];
 };
 
 export const COURSE_DETAILS: Record<string, CourseDetail> = {
