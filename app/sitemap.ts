@@ -4,6 +4,7 @@ import { HOTELS } from "@/lib/hotels";
 import { DESTINATIONS } from "@/lib/destinations";
 import { ITINERARIES } from "@/lib/itineraries";
 import { BLOG_POSTS } from "@/lib/blog";
+import { PHOTOGRAPHER_SLUGS } from "@/lib/photographers";
 import { SITE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -69,6 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     });
+  }
+
+  // Photography pages
+  entries.push({ url: `${base}/photography/`, lastModified: now, changeFrequency: "yearly", priority: 0.5 });
+  for (const slug of PHOTOGRAPHER_SLUGS) {
+    entries.push({ url: `${base}/photography/${slug}/`, lastModified: now, changeFrequency: "yearly", priority: 0.4 });
   }
 
   return entries;
