@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/spanish-bay-open",
+      "schedule": "0 14 17 4 *"
+    }
+  ]
+}
