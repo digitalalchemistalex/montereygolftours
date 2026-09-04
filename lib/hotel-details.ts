@@ -27,7 +27,7 @@ export type HotelDetail = {
   driveTimeToCourses: { course: string; minutes: number }[];
   positioning: string;
   faqs: { q: string; a: string }[];
-  gallery?: { src: string; alt: string; caption: string; credit?: string; photographer?: string; year?: number; category?: string; tag?: string; location?: string }[];
+  gallery?: { src: string; alt?: string; caption: string; credit?: string; photographer?: string; year?: number; category?: string; tag?: string; location?: string }[];
 };
 
 export const HOTEL_DETAILS: Record<string, HotelDetail> = {
