@@ -16,7 +16,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "best-time-to-play-golf-monterey-peninsula": {
     slug: "best-time-to-play-golf-monterey-peninsula",
     cardTitle: "Best Time to Play",
-    cardImage: "https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/pacific-grove-golf-links/hero.jpg",
     title: "Best Time to Play Golf on the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -60,7 +60,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "how-to-plan-a-group-golf-trip-monterey": {
     slug: "how-to-plan-a-group-golf-trip-monterey",
     cardTitle: "Plan a Group Trip",
-    cardImage: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/bayonet-golf-course/gallery-1.webp",
     title: "How to Plan a Group Golf Trip to the Monterey Peninsula",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -103,7 +103,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "bayonet-golf-course-guide": {
     slug: "bayonet-golf-course-guide",
     cardTitle: "Bayonet Guide",
-    cardImage: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/black-horse-golf-course/gallery-2.jpg",
     title: "Bayonet Golf Course: A Complete Guide",
     category: "Course Guides",
     datePublished: "2026-06-30",
@@ -141,7 +141,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "best-golf-courses-monterey-peninsula": {
     slug: "best-golf-courses-monterey-peninsula",
     cardTitle: "Best Courses",
-    cardImage: "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/courses/gallery/pebble-beach-hole-9.jpg",
     title: "Best Golf Courses on the Monterey Peninsula in 2026",
     category: "Best Of",
     datePublished: "2026-06-30",
@@ -189,7 +189,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "monterey-golf-trip-on-a-budget": {
     slug: "monterey-golf-trip-on-a-budget",
     cardTitle: "Budget Golf Trip",
-    cardImage: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/laguna-seca-golf-ranch/gallery-1.jpg",
     title: "How to Plan an Affordable Monterey Golf Trip",
     category: "Trip Planning",
     datePublished: "2026-06-30",
@@ -225,7 +225,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "pacific-grove-golf-links-guide": {
     slug: "pacific-grove-golf-links-guide",
     cardTitle: "Pacific Grove Guide",
-    cardImage: "https://images.unsplash.com/photo-1587205476864-4a5a195167b4?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/pacific-grove-golf-links/hero.jpg",
     title: "Pacific Grove Golf Links: The Monterey Peninsula\'s Hidden Municipal Gem",
     category: "Course Guides",
     datePublished: "2026-07-05",
@@ -272,7 +272,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "carmel-valley-ranch-golf-guide": {
     slug: "carmel-valley-ranch-golf-guide",
     cardTitle: "Carmel Valley Ranch Guide",
-    cardImage: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/carmel-valley-ranch/golf-1.webp",
     title: "Carmel Valley Ranch Golf: The Fog-Free Alternative on the Monterey Peninsula",
     category: "Course Guides",
     datePublished: "2026-07-05",
@@ -319,7 +319,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "monterey-car-week-golf-guide": {
     slug: "monterey-car-week-golf-guide",
     cardTitle: "Golf During Car Week",
-    cardImage: "https://images.unsplash.com/photo-1605144884374-ecbb643615f6?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/black-horse-golf-course/gallery-2.jpg",
     title: "Playing Golf During Monterey Car Week: What to Know Before You Book",
     category: "Trip Planning",
     datePublished: "2026-07-05",
@@ -366,7 +366,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "poppy-hills-golf-course-guide": {
     slug: "poppy-hills-golf-course-guide",
     cardTitle: "Poppy Hills Guide",
-    cardImage: "https://images.unsplash.com/photo-1709525616662-8d9f9a995ceb?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/poppy-hills/gallery-1.webp",
     title: "Poppy Hills Golf Course Guide: Championship Bentgrass in the Del Monte Forest",
     category: "Course Guides",
     datePublished: "2026-07-05",
@@ -413,7 +413,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
   "monterey-golf-first-time-guide": {
     slug: "monterey-golf-first-time-guide",
     cardTitle: "First-Timer\'s Guide",
-    cardImage: "https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?auto=format&fit=crop&w=600&q=85",
+    cardImage: "/images/pbc-portal/thehay_2021_aerial.jpg",
     title: "First-Time Monterey Golf Trip: How to Plan a Solid Three Days",
     category: "Trip Planning",
     datePublished: "2026-07-05",
