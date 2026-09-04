@@ -36,7 +36,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "black-horse",
-    image: "/images/black-horse-golf-course/gallery-1.jpg",
+    image: "/images/black-horse-golf-course/gallery-2.jpg",
     name: "Black Horse",
     city: "Seaside, CA",
     par: 72,
@@ -51,7 +51,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    image: "/images/carmel-valley-ranch/golf-1.webp",
+    image: "/images/courses/gallery/carmel-valley-ranch-golf-2.webp",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     par: 70,
@@ -206,7 +206,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "pasatiempo",
-    image: "/images/pasatiempo-golf-club/hero.jpg",
+    image: "/images/courses/gallery/pasatiempo-2.jpg",
     name: "Pasatiempo Golf Course",
     city: "Santa Cruz, CA",
     par: 70,

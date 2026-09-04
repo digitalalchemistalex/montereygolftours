@@ -38,7 +38,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "carmel-valley-ranch",
-    image: "/images/carmel-valley-ranch/gallery-1.webp",
+    image: "/images/hotels/gallery/carmel-valley-ranch-2.webp",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -58,7 +58,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "bernardus-lodge",
-    image: "/images/bernardus-lodge/gallery-1.webp",
+    image: "/images/hotels/bernardus-lodge-hero.webp",
     name: "Bernardus Lodge & Spa",
     city: "Carmel Valley, CA",
     tier: 1,
@@ -128,7 +128,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "lodge-at-pebble-beach",
-    image: "/images/lodge-at-pebble-beach/room-ocean-view.webp",
+    image: "/images/hotels/gallery/lodge-portal-1.jpg",
     name: "The Lodge at Pebble Beach™",
     city: "Pebble Beach, CA",
     tier: 1,
@@ -138,7 +138,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "inn-at-spanish-bay",
-    image: "/images/inn-at-spanish-bay/gallery-1.webp",
+    image: "/images/hotels/gallery/inn-portal-2.jpg",
     name: "The Inn at Spanish Bay™",
     city: "Pebble Beach, CA",
     tier: 1,
