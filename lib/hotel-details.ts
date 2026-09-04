@@ -1007,7 +1007,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         a: "Collared shirts with slacks or walking shorts. No blue jeans or denim. Soft spikes recommended but not required. Multi-stud rubber-soled shoes are not recommended.",
       },
     
-      { q: "Is The Lodge at Pebble Beach™ included in Monterey golf packages?", a: "Yes. Monterey Golf Tours includes The Lodge at Pebble Beach™ in premium Monterey golf packages through our IAGTO agreement with Pebble Beach Resorts®. Lodge stays can be combined with tee times at Pebble Beach Golf Links®, Spyglass Hill®, Del Monte™, and The Hay™ as part of a planned trip." },],
+      { q: "Is The Lodge at Pebble Beach™ included in Monterey golf packages?", a: "Yes. Monterey Golf Tours includes The Lodge at Pebble Beach™ in premium Monterey golf packages through our IAGTO agreement with Pebble Beach Resorts®. Lodge stays can be combined with tee times at Pebble Beach Golf Links®, Spyglass Hill®, Del Monte™, and The Hay™ as part of a planned trip." },
+    ],
   },
 
   "inn-at-spanish-bay": {
@@ -1105,7 +1106,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         a: "The Lodge frames the 18th green of Pebble Beach Golf Links® and is the historic heart of the resort. The Inn is the more modern property, set in the dunes and forest at the northern end of the 17-Mile Drive with an entirely different character — more intimate, more coastal, with the links course directly outside and the bagpiper each evening. Both offer the same 18-month tee time booking advantage.",
       },
     
-      { q: "Can I stay at The Inn at Spanish Bay™ as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours includes The Inn at Spanish Bay™ in Pebble Beach golf packages through our IAGTO agreement. It’s the ideal base for groups focused on the Links at Spanish Bay® and Spyglass Hill®, with easy access to all five Pebble Beach Resorts® courses." },],
+      { q: "Can I stay at The Inn at Spanish Bay™ as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours includes The Inn at Spanish Bay™ in Pebble Beach golf packages through our IAGTO agreement. It’s the ideal base for groups focused on the Links at Spanish Bay® and Spyglass Hill®, with easy access to all five Pebble Beach Resorts® courses." },
+    ],
   },
 
   "casa-palmero": {
