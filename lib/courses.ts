@@ -156,7 +156,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "spyglass-hill",
-    image: "/images/spyglass-hill-golf-course/gallery-1.webp",
+    image: "/images/pbc-portal/spyglass_11_2016_ground.jpg",
     name: "Spyglass Hill Golf Course®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -171,7 +171,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "links-at-spanish-bay",
-    image: "/images/links-at-spanish-bay/gallery-1.webp",
+    image: "/images/pbc-portal/lasb_15_2016_ground_green.jpg",
     name: "The Links at Spanish Bay®",
     city: "Pebble Beach, CA",
     par: 72,
@@ -181,7 +181,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "del-monte-golf-course",
-    image: "/images/del-monte-golf-course/gallery-1.webp",
+    image: "/images/pbc-portal/delmonte_16_2016_ground_green.jpg",
     name: "Del Monte™ Golf Course",
     city: "Monterey, CA",
     par: 72,
