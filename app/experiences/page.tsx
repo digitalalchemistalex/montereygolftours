@@ -29,10 +29,47 @@ const schema = {
       "@type": "WebPage",
       "@id": `${canonicalUrl}#webpage`,
       url: canonicalUrl,
-      name: "Pebble Beach Resorts\u00ae Experiences | Monterey Golf Tours",
+      name: "Pebble Beach Experiences \u2014 Dining, Spa & 17-Mile Drive | Monterey Golf Tours",
       isPartOf: { "@id": `https://${SITE.domain}/#website` },
       publisher: { "@id": `https://${SITE.domain}/#organization` },
-      description: "Beyond golf \u2014 dining, spa, 17-Mile Drive\u00ae, the Golf Academy, and The Beach & Tennis Club at Pebble Beach Resorts\u00ae.",
+      description: "Beyond golf \u2014 dining, spa, 17-Mile Drive\u00ae, the Golf Academy, and The Beach & Tennis Club at Pebble Beach Resorts\u00ae. Plan your full Monterey trip.",
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["#speakable-summary"] },
+    },
+    {
+      "@type": "ItemList",
+      name: "Pebble Beach Resorts\u00ae Experiences",
+      description: "Non-golf experiences at Pebble Beach Resorts\u00ae available to guests and visitors.",
+      itemListElement: Object.values(EXPERIENCES).map((e, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: e.name,
+        url: `https://${SITE.domain}/experiences/${e.slug}/`,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What experiences does Pebble Beach Resorts® offer beyond golf?",
+          acceptedAnswer: { "@type": "Answer", text: "Pebble Beach Resorts\u00ae offers five major non-golf experiences: dining at venues including Stillwater Bar & Grill and Peppoli; the Forbes Five-Star Spa at Pebble Beach; the 17-Mile Drive\u00ae scenic road through Del Monte Forest; Pebble Beach Golf Academy\u2122 instruction programs; and The Beach & Tennis Club with heated pool, tennis courts, and private beach access on Stillwater Cove." },
+        },
+        {
+          "@type": "Question",
+          name: "Can non-golfers enjoy Pebble Beach Resorts®?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. Non-golfers can enjoy the full spa, dining at all resort restaurants, 17-Mile Drive\u00ae (toll road open to public), The Beach & Tennis Club, and golf instruction at the Golf Academy. Many Monterey golf trips include a mix of golf days and non-golf activities for the whole group." },
+        },
+        {
+          "@type": "Question",
+          name: "Is 17-Mile Drive open to the public?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. 17-Mile Drive\u00ae through Pebble Beach is open to the public for a per-vehicle toll. It passes 10 scenic stops including The Lone Cypress, Bird Rock, Fanshell Beach, and Ghost Tree, as well as the Pebble Beach Golf Links\u00ae 18th hole. Hotel guests enter free." },
+        },
+        {
+          "@type": "Question",
+          name: "What is the Pebble Beach Golf Academy?",
+          acceptedAnswer: { "@type": "Answer", text: "The Pebble Beach Golf Academy\u2122 offers PGA-certified instruction for all skill levels, with TrackMan technology bays, a grass practice range, short game area, and a robotic swing trainer. Group clinics and private lessons are available. It\u2019s included in some Monterey golf trip packages." },
+        },
+      ],
     },
     {
       "@type": "BreadcrumbList",

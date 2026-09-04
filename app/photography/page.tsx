@@ -29,10 +29,42 @@ const schema = {
       "@type": "WebPage",
       "@id": `${canonicalUrl}#webpage`,
       url: canonicalUrl,
-      name: "Licensed Photography | Monterey Golf Tours",
+      name: "Pebble Beach Photography Credits | Monterey Golf Tours",
       isPartOf: { "@id": `https://${SITE.domain}/#website` },
       publisher: { "@id": `https://${SITE.domain}/#organization` },
-      description: "All Pebble Beach Resorts® images licensed via the Pebble Beach Company Leisure Travel Sales Collection.",
+      description: "Licensed photography from the Pebble Beach Company Leisure Travel Sales Collection — photographer credits for every image on Monterey Golf Tours.",
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["#speakable-summary"] },
+    },
+    {
+      "@type": "ItemList",
+      name: "Licensed Photographers — Pebble Beach Resorts®",
+      description: "Photographers whose work is featured on Monterey Golf Tours under license from the Pebble Beach Company.",
+      itemListElement: Object.values(PHOTOGRAPHERS).map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: p.name,
+        url: `https://${SITE.domain}/photography/${p.slug}/`,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Are the Pebble Beach photos on Monterey Golf Tours officially licensed?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. All Pebble Beach Resorts\u00ae images on this site are licensed via the Pebble Beach Company Leisure Travel Sales Collection. Each image is used with explicit permission and carries the required photographer credit." },
+        },
+        {
+          "@type": "Question",
+          name: "Who are the photographers behind the Pebble Beach images?",
+          acceptedAnswer: { "@type": "Answer", text: "Licensed photographers include Kevin Merfeld - PBC, Jeff Marsh, Jamie Alcala, Sherman Chu, Noah Webb, Joann Dost, Martin Miller, Randy Tunnell, Taylor Mahon, Christine Bush, and TGO. Each photographer has a dedicated credit page on this site." },
+        },
+        {
+          "@type": "Question",
+          name: "Can I use the Pebble Beach photos from this site?",
+          acceptedAnswer: { "@type": "Answer", text: "No. All images are licensed exclusively for use on Monterey Golf Tours. They are the property of the Pebble Beach Company and the respective photographers. Contact the Pebble Beach Company directly for licensing inquiries." },
+        },
+      ],
     },
     {
       "@type": "BreadcrumbList",
