@@ -1070,9 +1070,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "A reimagined short course experience at Pebble Beach, redesigned by Tiger Woods and TGR Design in 2021.",
     gallery: [
-      { src: "/images/pbc-portal/thehay_2021_aerial.jpg", caption: "The Hay™ from above — Tiger Woods and TGR Design's 2021 reimagining of the original Peter Hay short course at Pebble Beach.\n© Pebble Beach Company", tag: "Aerial" },
-      { src: "/images/pbc-portal/thehay_2_2021_ground_green.jpg", caption: "Hole 2 at The Hay™ — the par-27 short course experience at Pebble Beach, reopened in 2021 after a complete TGR Design overhaul.\n© Pebble Beach Company", tag: "Hole 2" },
-      { src: "/images/pbc-portal/thehay_5_2021_ground_green.jpg", caption: "Hole 5 at The Hay™ — one of nine holes redesigned by Tiger Woods and TGR Design, offering a fast and approachable Pebble Beach experience.\n© Pebble Beach Company", tag: "Hole 5" },
+      { src: "/images/pbc-portal/thehay_2021_aerial.jpg", caption: "The Hay™ from above — Tiger Woods and TGR Design's 2021 reimagining of the original Peter Hay short course at Pebble Beach.\nPhoto by Martin Miller", tag: "Aerial" },
+      { src: "/images/pbc-portal/thehay_2_2021_ground_green.jpg", caption: "Hole 2 at The Hay™ — the par-27 short course experience at Pebble Beach, reopened in 2021 after a complete TGR Design overhaul.\nPhoto by Sherman Chu", tag: "Hole 2" },
+      { src: "/images/pbc-portal/thehay_5_2021_ground_green.jpg", caption: "Hole 5 at The Hay™ — one of nine holes redesigned by Tiger Woods and TGR Design, offering a fast and approachable Pebble Beach experience.\nPhoto by Sherman Chu", tag: "Hole 5" },
     ],
     description: [
       "The Hay™ originally opened in 1957 as Peter Hay Golf Course, and was completely overhauled and redesigned by Tiger Woods and TGR Design in 2021, reopening as The Hay™ — a 9-hole, par-27 short course experience.",
