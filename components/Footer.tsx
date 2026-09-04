@@ -8,6 +8,7 @@ const PLAY_LINKS = [
   { label: "Destinations", href: "/destinations/" },
   { label: "Itineraries", href: "/itineraries/" },
   { label: "Packages", href: "/packages/" },
+  { label: "Experiences", href: "/experiences/" },
 ];
 
 const EXPLORE_LINKS = [

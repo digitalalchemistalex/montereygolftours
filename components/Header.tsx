@@ -229,8 +229,9 @@ export default function Header({ transparent = false }: { transparent?: boolean 
                 </div>
               </div>
 
-              <div className="col-span-2 flex items-center justify-center gap-1.5 border-t border-[#f0ebe1] bg-[#fdfbf7] py-2.5 font-ui text-[11.5px] font-semibold text-gold">
-                IAGTO Partner &middot; Authorized Pebble Beach Resorts® Golf Travel Operator
+              <div className="col-span-2 flex items-center justify-between border-t border-[#f0ebe1] bg-[#fdfbf7] px-4 py-2.5">
+                <span className="font-ui text-[11.5px] font-semibold text-gold">IAGTO Partner &middot; Authorized Pebble Beach Resorts® Golf Travel Operator</span>
+                <Link href="/experiences/" className="font-ui text-[11.5px] font-semibold text-ocean hover:underline">Experiences →</Link>
               </div>
             </div>
           </div>

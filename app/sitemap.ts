@@ -5,6 +5,7 @@ import { DESTINATIONS } from "@/lib/destinations";
 import { ITINERARIES } from "@/lib/itineraries";
 import { BLOG_POSTS } from "@/lib/blog";
 import { PHOTOGRAPHER_SLUGS } from "@/lib/photographers";
+import { EXPERIENCE_SLUGS } from "@/lib/experiences";
 import { SITE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -70,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     });
+  }
+
+  // Experience pages
+  entries.push({ url: `${base}/experiences/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 });
+  for (const slug of EXPERIENCE_SLUGS) {
+    entries.push({ url: `${base}/experiences/${slug}/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 });
   }
 
   // Photography pages
