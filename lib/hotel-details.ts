@@ -1169,15 +1169,15 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       "Ideal for incentive trips, high-net-worth buddy trips, and executive corporate retreats",
     ],
     diningNames: [
-      { name: "Casa Palmero Bar & Lounge", detail: "Evening wine flights and cocktails in the estate's main house — for guests only" 
+      { name: "Casa Palmero Bar & Lounge", detail: "Evening wine flights and cocktails in the estate's main house — for guests only" },
+      { name: "In-room dining", detail: "24-hour healthful room service menu" },
+      { name: "Access to all Lodge dining", detail: "Stillwater Bar & Grill, Tap Room, Club XIX — a 5-minute walk" },
+    ],
     faqs: [
       { q: "Can Casa Palmero® be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Casa Palmero® in Pebble Beach golf packages through our IAGTO agreement. It’s best suited to small groups of 10 to 24 who want the most intimate and private property at Pebble Beach Resorts®, with access to all five courses and the spa, dining, and activities across the full resort." },
       { q: "Can Casa Palmero® be bought out for a private group?", a: "Yes. Casa Palmero®’s 24 rooms can be taken exclusively for a private group — the full estate, concierge, and facilities reserved entirely for your party. Monterey Golf Tours can coordinate a full buyout as part of a corporate golf trip or private event package." },
     ],
   },
-      { name: "In-room dining", detail: "24-hour healthful room service menu" },
-      { name: "Access to all Lodge dining", detail: "Stillwater Bar & Grill, Tap Room, Club XIX — a 5-minute walk" },
-    ],
     onSiteGolf: "Pebble Beach Golf Links®",
     airportDistance: "~15 min from MRY (Monterey Regional Airport)",
     driveTimeToCourses: [
