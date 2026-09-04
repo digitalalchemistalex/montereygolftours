@@ -862,9 +862,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "A Robert Trent Jones Sr. design moving from coastal dunes into Del Monte Forest pines — widely regarded as the toughest of the Pebble Beach Resorts® courses.",
     gallery: [
-      { src: "/images/pbc-portal/spyglass_4_2016_ground_green.jpg", caption: "Hole 4 at Spyglass Hill® Golf Course — where the coastal dunes of the front nine begin giving way to Del Monte Forest. The transition that defines the round.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 4 · Coastal" },
-      { src: "/images/pbc-portal/spyglass_7_2016_ground_green.jpg", caption: "The green complex on Hole 7 at Spyglass Hill® Golf Course — precision approach required on a course rated 75.4, slope 145.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 7" },
-      { src: "/images/pbc-portal/spyglass_11_2016_ground.jpg", caption: "Hole 11 at Spyglass Hill® Golf Course — deep into Del Monte Forest pines, the back nine demands accuracy on every shot.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 11 · Forest" },
+      { src: "/images/pbc-portal/spyglass_4_2016_ground_green.jpg", alt: "Hole 4 at Spyglass Hill® Golf Course, Pebble Beach, CA — coastal dunes of the front nine meeting Del Monte Forest", caption: "Hole 4 at Spyglass Hill® Golf Course — where the coastal dunes of the front nine begin giving way to Del Monte Forest. The transition that defines the round.", credit: "Photo by Kevin Merfeld - PBC", photographer: "Kevin Merfeld", year: 2016, category: "Signature Holes", tag: "Hole 4 · Coastal", location: "Pebble Beach, CA" },
+      { src: "/images/pbc-portal/spyglass_7_2016_ground_green.jpg", alt: "Hole 7 green complex at Spyglass Hill® Golf Course, Pebble Beach, CA", caption: "The green complex on Hole 7 at Spyglass Hill® Golf Course — precision approach required on a course rated 75.4, slope 145.", credit: "Photo by Kevin Merfeld - PBC", photographer: "Kevin Merfeld", year: 2016, category: "Signature Holes", tag: "Hole 7", location: "Pebble Beach, CA" },
+      { src: "/images/pbc-portal/spyglass_11_2016_ground.jpg", alt: "Hole 11 at Spyglass Hill® Golf Course, Pebble Beach, CA — deep in Del Monte Forest pines", caption: "Hole 11 at Spyglass Hill® Golf Course — deep into Del Monte Forest pines, the back nine demands accuracy on every shot.", credit: "Photo by Kevin Merfeld - PBC", photographer: "Kevin Merfeld", year: 2016, category: "Signature Holes", tag: "Hole 11 · Forest", location: "Pebble Beach, CA" },
     ],
     description: [
       "Spyglass Hill Golf Course® was designed by Robert Trent Jones Sr., playing up to 6,960 yards from the championship tees with a rating of 75.4 and slope of 145 — figures that back up its reputation as the most demanding course among the Pebble Beach Resorts® properties.",
@@ -1003,7 +1003,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "Originally laid out in 1897 — the oldest golf course in continuous use west of the Mississippi.",
     gallery: [
-      { src: "/images/pbc-portal/delmonte_16_2016_ground_green.jpg", caption: "Hole 16 at Del Monte™ Golf Course — the parkland character that defines the peninsula's oldest layout, in continuous play since 1897.\nPhoto by Kevin Merfeld - PBC", tag: "Hole 16" },
+      { src: "/images/pbc-portal/delmonte_16_2016_ground_green.jpg", alt: "Hole 16 at Del Monte™ Golf Course, Monterey, CA — parkland fairway in continuous play since 1897", caption: "Hole 16 at Del Monte™ Golf Course — the parkland character that defines the peninsula's oldest layout, in continuous play since 1897.", credit: "Photo by Kevin Merfeld - PBC", photographer: "Kevin Merfeld", year: 2016, category: "Course", tag: "Hole 16", location: "Monterey, CA" },
       { src: "/images/courses/gallery/del-monte-2.webp", caption: "Hole 10 at Del Monte™ Golf Course — mature trees and classic parkland character on the most historic layout on the peninsula.", tag: "Hole 10" },
       { src: "/images/courses/gallery/del-monte-3.webp", caption: "Del Monte™ Golf Course in continuous operation since 1897 — the oldest golf course west of the Mississippi.", tag: "Historic layout" },
     ],
@@ -1070,9 +1070,9 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "pebblebeach.com",
     hook: "A reimagined short course experience at Pebble Beach, redesigned by Tiger Woods and TGR Design in 2021.",
     gallery: [
-      { src: "/images/pbc-portal/thehay_2021_aerial.jpg", caption: "The Hay™ from above — Tiger Woods and TGR Design's 2021 reimagining of the original Peter Hay short course at Pebble Beach.\nPhoto by Martin Miller", tag: "Aerial" },
-      { src: "/images/pbc-portal/thehay_2_2021_ground_green.jpg", caption: "Hole 2 at The Hay™ — the par-27 short course experience at Pebble Beach, reopened in 2021 after a complete TGR Design overhaul.\nPhoto by Sherman Chu", tag: "Hole 2" },
-      { src: "/images/pbc-portal/thehay_5_2021_ground_green.jpg", caption: "Hole 5 at The Hay™ — one of nine holes redesigned by Tiger Woods and TGR Design, offering a fast and approachable Pebble Beach experience.\nPhoto by Sherman Chu", tag: "Hole 5" },
+      { src: "/images/pbc-portal/thehay_2021_aerial.jpg", alt: "The Hay™ short course aerial view, Pebble Beach, CA — Tiger Woods TGR Design 2021 redesign", caption: "The Hay™ from above — Tiger Woods and TGR Design's 2021 reimagining of the original Peter Hay short course at Pebble Beach.", credit: "Photo by Martin Miller", photographer: "Martin Miller", year: 2021, category: "Aerial", tag: "Aerial", location: "Pebble Beach, CA" },
+      { src: "/images/pbc-portal/thehay_2_2021_ground_green.jpg", alt: "Hole 2 \"Seven\" at The Hay™, Pebble Beach, CA — par-27 short course redesigned by Tiger Woods TGR Design", caption: "Hole 2 \"Seven\" at The Hay™ — the par-27 short course experience at Pebble Beach, reopened in 2021 after a complete TGR Design overhaul.", credit: "Photo by Sherman Chu", photographer: "Sherman Chu", year: 2021, category: "Signature Holes", tag: "Hole 2", location: "Pebble Beach, CA" },
+      { src: "/images/pbc-portal/thehay_5_2021_ground_green.jpg", alt: "Hole 5 \"Grace\" at The Hay™, Pebble Beach, CA — one of nine holes redesigned by Tiger Woods and TGR Design", caption: "Hole 5 \"Grace\" at The Hay™ — one of nine holes redesigned by Tiger Woods and TGR Design, offering a fast and approachable Pebble Beach experience.", credit: "Photo by Sherman Chu", photographer: "Sherman Chu", year: 2021, category: "Signature Holes", tag: "Hole 5", location: "Pebble Beach, CA" },
     ],
     description: [
       "The Hay™ originally opened in 1957 as Peter Hay Golf Course, and was completely overhauled and redesigned by Tiger Woods and TGR Design in 2021, reopening as The Hay™ — a 9-hole, par-27 short course experience.",
