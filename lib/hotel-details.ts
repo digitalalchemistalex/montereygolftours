@@ -998,6 +998,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "Is The Lodge suitable for corporate golf events?",
         a: "Yes — The Lodge has 10 principal meeting rooms including the Beach Club Dining Room, which accommodates up to 300 for a reception or 200 for a seated dinner with dance floor. The Pebble Beach Room seats up to 250. Combined with access to all five Pebble Beach Resorts® golf courses, it's the complete corporate golf event venue.",
       },
+      { q: "Is The Lodge at Pebble Beach™ included in Monterey golf packages?", a: "Yes. Monterey Golf Tours includes The Lodge at Pebble Beach™ in premium Monterey golf packages through our IAGTO agreement. Lodge stays can be combined with tee times at Pebble Beach Golf Links®, Spyglass Hill®, Del Monte™, and The Hay™ as part of a planned trip." },
+      { q: "How far in advance can Lodge guests book tee times?", a: "Lodge guests at Pebble Beach Resorts® can book tee times on Pebble Beach Golf Links® up to 18 months in advance. Monterey Golf Tours can assist with advance tee time coordination as part of a planned Pebble Beach golf package." },
       {
         q: "Is there a minimum stay requirement to play Pebble Beach Golf Links®?",
         a: "Yes — Pebble Beach Resorts® requires a minimum stay to play Pebble Beach Golf Links®, particularly for multiple rounds. We handle all booking through our IAGTO partnership — get a custom quote and we'll confirm the current requirements for your dates.",
@@ -1097,6 +1099,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
         q: "What is the bagpiper tradition at The Inn?",
         a: "A lone Scottish bagpiper begins at the first tee of The Links at Spanish Bay® in front of STICKS restaurant every evening and plays for approximately 45 minutes, finishing at the Spanish Bay fire pits by the second green as the sun sets over the Pacific. It happens every day of the year, rain or shine — and is one of the most memorable moments of a Pebble Beach stay.",
       },
+      { q: "Can I stay at The Inn at Spanish Bay™ as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours includes The Inn at Spanish Bay™ in Pebble Beach golf packages through our IAGTO agreement. It’s the ideal base for groups focused on Spyglass Hill®, with easy access to all five Pebble Beach Resorts® courses." },
+      { q: "Is The Inn at Spanish Bay™ better than The Lodge for a golf trip?", a: "It depends on the trip. The Inn suits groups who prefer the dramatic Pacific-facing setting. The Lodge is closer to Pebble Beach Golf Links®. Monterey Golf Tours can advise based on your itinerary and course priorities." },
       {
         q: "Can The Inn host our corporate golf event?",
         a: "Yes — The Inn has over 14,000 square feet of meeting space, with the Grand Ballroom accommodating up to 800 guests. The Peppoli Lawn provides a panoramic outdoor space overlooking the Pacific coast. Combined with access to all five Pebble Beach Resorts® golf courses, it's well-suited for large-scale corporate events. We handle the full coordination.",
@@ -1214,6 +1218,10 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     faqs: [
       { q: "Can Casa Palmero® be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Casa Palmero® in Pebble Beach golf packages through our IAGTO agreement. It’s best suited to small groups of 10 to 24 who want the most intimate property at Pebble Beach Resorts®, with access to all five courses and the full spa, dining, and activities across the resort." },
       { q: "Can Casa Palmero® be bought out for a private group?", a: "Yes. Casa Palmero®’s 24 rooms can be taken exclusively for a private group — the full estate, concierge, and facilities reserved entirely for your party. Monterey Golf Tours can coordinate a full buyout as part of a corporate golf trip or private event package." },
+    ],
+        faqs: [
+      { q: "Can Casa Palmero® be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Casa Palmero® in Pebble Beach golf packages through our IAGTO agreement. Best suited to small groups of 10–24 wanting the most intimate property at Pebble Beach Resorts®, with access to all five courses." },
+      { q: "Can Casa Palmero® be bought out for a private group?", a: "Yes. All 24 rooms can be reserved exclusively for a single group — the full estate, concierge, and facilities reserved for your party. Monterey Golf Tours can coordinate a full buyout as part of a corporate golf trip." },
     ],
         positioning: "The most exclusive accommodation at Pebble Beach Resorts® and arguably in golf. Best for high-net-worth buddy trips of up to 12–24 players who want complete privacy, a personal concierge, and the closest possible proximity to Pebble Beach Golf Links®. Corporate groups who want the entire estate for an executive retreat or incentive trip can book it exclusively.",
     faqs: [
