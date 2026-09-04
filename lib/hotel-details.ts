@@ -1211,7 +1211,11 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       { src: "/images/pbc-portal/cp_2024_interior_palmerosuite-3.jpg", alt: "Casa Palmero™ Palmero Suite sitting room with fireplace and private pool patio, Pebble Beach, CA", caption: "The Palmero Suite sitting room at Casa Palmero™ — lit fireplace, French doors opening directly to the private plunge pool patio.", credit: "Photo by Jamie Alcala", photographer: "Jamie Alcala", year: 2024, category: "Palmero Suite", tag: "Palmero Suite" },
       { src: "/images/pbc-portal/cp_2024_interior_palmerosuite_bathroom.jpg", alt: "Casa Palmero™ Palmero Suite bathroom, Pebble Beach, CA", caption: "The Palmero Suite bathroom at Casa Palmero™.", credit: "Photo by Jamie Alcala", photographer: "Jamie Alcala", year: 2024, category: "Palmero Suite", tag: "Palmero Suite" },
     ],
-    positioning: "The most exclusive accommodation at Pebble Beach Resorts® and arguably in golf. Best for high-net-worth buddy trips of up to 12–24 players who want complete privacy, a personal concierge, and the closest possible proximity to Pebble Beach Golf Links®. Corporate groups who want the entire estate for an executive retreat or incentive trip can book it exclusively.",
+    faqs: [
+      { q: "Can Casa Palmero® be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Casa Palmero® in Pebble Beach golf packages through our IAGTO agreement. It’s best suited to small groups of 10 to 24 who want the most intimate property at Pebble Beach Resorts®, with access to all five courses and the full spa, dining, and activities across the resort." },
+      { q: "Can Casa Palmero® be bought out for a private group?", a: "Yes. Casa Palmero®’s 24 rooms can be taken exclusively for a private group — the full estate, concierge, and facilities reserved entirely for your party. Monterey Golf Tours can coordinate a full buyout as part of a corporate golf trip or private event package." },
+    ],
+        positioning: "The most exclusive accommodation at Pebble Beach Resorts® and arguably in golf. Best for high-net-worth buddy trips of up to 12–24 players who want complete privacy, a personal concierge, and the closest possible proximity to Pebble Beach Golf Links®. Corporate groups who want the entire estate for an executive retreat or incentive trip can book it exclusively.",
     faqs: [
       {
         q: "Can we rent all of Casa Palmero exclusively for our group?",
