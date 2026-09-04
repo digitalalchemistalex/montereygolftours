@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSE_DETAILS } from "@/lib/course-details";
 import GalleryLightbox from "@/components/GalleryLightbox";
+import TabbedGallery from "@/components/TabbedGallery";
 import { COURSES } from "@/lib/courses";
 import { getCoursePricing } from "@/lib/course-pricing";
 import { SITE } from "@/lib/site";
@@ -300,7 +301,9 @@ export default async function CoursePage({ params }: Props) {
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Photos
             </h2>
-            <GalleryLightbox images={course.gallery} entityName={course.name} />
+            {course.gallery.some((img) => img.category)
+              ? <TabbedGallery images={course.gallery} entityName={course.name} />
+              : <GalleryLightbox images={course.gallery} entityName={course.name} />}
           </section>
         )}
 
