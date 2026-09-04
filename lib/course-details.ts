@@ -114,7 +114,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Can groups book Bayonet?",
         a: "Yes, Bayonet accommodates group events. Contact the facility directly or work with Monterey Golf Tours to coordinate tee times as part of a planned trip.",
       },
-    ],
+    
+      { q: "Can I include Bayonet in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Bayonet in Monterey Peninsula golf packages for groups of 2 to 400. It’s commonly paired with Black Horse for a Fort Ord two-day combination, or mixed into a broader peninsula itinerary alongside Pebble Beach and Laguna Seca. Contact us to build a custom quote." },],
     pointers: [
       "Ranked #16 nationally on GolfPass's Top 25 Courses for Layout in the US (2017).",
       "Has hosted several U.S. Presidents and foreign dignitaries during the course's Fort Ord military era.",
@@ -155,6 +156,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Pasatiempo opened on September 8, 1929, designed by Alister MacKenzie for Marion Hollins, the 1921 U.S. Women's Amateur champion. MacKenzie — the architect behind Augusta National, Cypress Point, and Royal Melbourne — considered Pasatiempo one of his finest pieces of work, and felt strongly enough about the course that he bought a home next to the 6th fairway, where he lived until his death in 1934.",
       "The course sits in the hills above Santa Cruz, with the front nine descending through tree-lined corridors toward a Pacific Ocean view before climbing back to the clubhouse, and the back nine winding through a canyon defined by barranca ravines. A multi-decade restoration — led by Tom Doak and Jim Urbina starting in 1996, with a full green and bunker rebuild completed in 2024 — has returned the course closely to MacKenzie's original 1929 design.",
       "Pasatiempo operates as a semi-private club, setting aside daily-fee tee times for public play. It's a perennial entry on national top-100 course lists.",
+      "Pasatiempo is the most common Monterey-area extension for groups traveling between San Francisco and the peninsula. Monterey Golf Tours includes it in itineraries where groups want a MacKenzie course alongside the Monterey Peninsula layouts — a one-round stop that stands among the best courses in California."
     ],
     highlights: [
       {
@@ -206,7 +208,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What other courses did Alister MacKenzie design?",
         a: "MacKenzie is also the architect behind Augusta National, Cypress Point, and Royal Melbourne — Pasatiempo is considered one of his finest works among that list.",
       },
-    ],
+    
+      { q: "Can Monterey Golf Tours include Pasatiempo in a trip itinerary?", a: "Yes. Pasatiempo is a natural extension for groups traveling between San Francisco and the Monterey Peninsula, or for those based in Santa Cruz. Monterey Golf Tours includes it in itineraries where a MacKenzie course is on the wishlist — a single round that ranks among the best in California and pairs well with any Monterey Peninsula golf package." },],
   },
   "black-horse": {
     slug: "black-horse",
@@ -293,7 +296,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "How far is Black Horse from downtown Monterey?",
         a: "Both Bayonet and Black Horse sit about 5 miles from downtown Monterey, within the same facility.",
       },
-    ],
+    
+      { q: "Can I book Black Horse as part of a Monterey golf trip?", a: "Yes. Monterey Golf Tours regularly includes Black Horse in Monterey golf packages — most often paired with Bayonet for a two-day Fort Ord combination, or as the value-friendly round in a multi-course itinerary. It’s a good fit for mixed-handicap groups that want a proper championship layout." },],
     pointers: [
       "Named for the 11th Cavalry Regiment 'Black Horse,' stationed at the Presidio of Monterey from 1919 to 1940.",
       "The sweeping Monterey Bay views from Black Horse's fairways are among the best on the peninsula.",
@@ -323,6 +327,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "Carmel Valley Ranch sits inland from the coastal fog belt, in the warmer Carmel Valley microclimate that tends to clear earlier in the day than the peninsula proper. The course carries a Pete Dye pedigree — the only Pete Dye design in Northern California — with a subsequent Gene Bates redesign.",
       "At 6,117 yards and par 70, the course favors strategy and shot placement over pure length, characteristic of Dye's design philosophy. It anchors the Carmel Valley Ranch resort property, making it a natural stay-and-play pairing for groups based there.",
+      "Carmel Valley Ranch is the go-to inland option on a Monterey Peninsula golf package — particularly for groups staying at the resort, where the course, accommodation, dining, and spa are all on one property. Monterey Golf Tours frequently includes it in itineraries that pair a valley-based stay with a Pebble Beach day trip."
     ],
     highlights: [
       {
@@ -368,7 +373,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Can non-resort guests play Carmel Valley Ranch?",
         a: "It primarily serves resort guests as an on-site course, so availability for outside play should be confirmed directly with the resort or arranged as part of a planned trip." ,
       },
-    ],
+    
+      { q: "Is Carmel Valley Ranch a good base for a Monterey golf package?", a: "Yes. The resort is well-suited to a stay-and-play Monterey golf trip — accommodation, the Pete Dye course, dining, spa, and activities all on one property in the warmer Carmel Valley microclimate. Monterey Golf Tours can build an itinerary around a valley base with day trips to the peninsula courses." },],
   },
   "quail-lodge": {
     slug: "quail-lodge",
@@ -477,6 +483,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "Laguna Seca Golf Ranch was designed by the legendary Robert Trent Jones Sr. and Robert Trent Jones Jr. father-son duo in 1970 — remarkable design pedigree at a daily-fee price point. The course is carved through oak-studded coastal hills between Monterey and Salinas, with narrow uneven fairways, elevated tees, and strategically placed bunkers guarding every green.",
       "SeeMontereY describes it as the 'best golf value on the Monterey Peninsula.' The signature hole is the par-5 15th — 548 yards, shaped like a snake, requiring carries over water on both the tee shot and approach. Hilly terrain makes a cart recommended, though the course is technically walkable. Managed by CourseCo, Inc., with Matt Pennington as General Manager.",
+      "Laguna Seca is one of the best-value rounds on any Monterey golf trip — a full championship layout at municipal pricing, less than 10 minutes from downtown Monterey. Monterey Golf Tours includes it in budget-conscious packages and in itineraries where groups want five or six rounds across a week without the full Pebble Beach rate on every day."
     ],
     highlights: [
       {
@@ -526,7 +533,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is Laguna Seca associated with the nearby raceway of the same name?",
         a: "The golf course and WeatherTech Raceway Laguna Seca share the same regional name but are separate facilities.",
       },
-    ],
+    
+      { q: "How does Laguna Seca fit into a Monterey Peninsula golf trip?", a: "Laguna Seca is most useful as a value round in a multi-day Monterey golf itinerary — a full championship layout at a fraction of the Pebble Beach green fee. Monterey Golf Tours uses it to balance itineraries where groups want 5 or 6 rounds across a week without spending Pebble Beach rates every day." },],
     pointers: [
       "The par-5 15th is nicknamed the 'snake hole' — it's shaped like a serpent and requires carries over water twice.",
       "Designed by Robert Trent Jones Sr. and Jr. in 1970 — notable design pedigree at a daily-fee price point.",
@@ -614,7 +622,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is Pacific Grove Golf Links owned by a resort?",
         a: "No — it's a city-owned municipal course, which is why its rates run well below the peninsula's resort and private options.",
       },
-    ],
+    
+      { q: "Can I book Pacific Grove Golf Links as part of a Monterey golf trip?", a: "Yes. Pacific Grove is a regular inclusion in Monterey golf packages where groups want a morning ocean round at municipal pricing. Monterey Golf Tours often schedules it on an arrival or departure day — a genuine coastal round at a price that makes sense alongside higher-fee days at Pebble Beach or Spyglass." },],
     pointers: [
       "The back nine was laid out by the same architect who designed the famous clifftop links next door — same Pacific Ocean, same crashing waves, a fraction of the price.",
       "The front nine plays through forested Pacific Grove, giving the round two completely different characters.",
@@ -697,7 +706,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is Poppy Hills in the same area as Pebble Beach Golf Links®?",
         a: "Yes — it sits in the same Del Monte Forest, though it's independently owned by the NCGA and doesn't carry the resort's gate fee.",
       },
-    ],
+    
+      { q: "Is Poppy Hills a good fit for a group Monterey golf package?", a: "Yes — Poppy Hills has a dedicated group booking channel and an advance window for parties of 16 or more. Monterey Golf Tours includes it in group golf packages where the itinerary calls for a Del Monte Forest course alongside the Pebble Beach properties." },],
     pointers: [
       "Colin Montgomerie compared it to Pine Valley. Tom Watson said: 'I like that a lot. Would love a three-round event at Poppy Hills.'",
       "All 18 holes play through towering Monterey Pines of the Del Monte Forest — unique atmosphere at a public price.",
@@ -775,7 +785,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is The Club at Pasadera a good fit for a group trip?",
         a: "It suits groups planning well in advance to secure access, given its limited public availability as a primarily private club.",
       },
-    ],
+    
+      { q: "How do I book The Club at Pasadera as part of a Monterey golf package?", a: "The Club at Pasadera is accessible to the public on Mondays only. Monterey Golf Tours can secure Monday tee times for groups as part of a planned peninsula itinerary — it’s the only Nicklaus Signature on the Monterey Peninsula with public access, making it a distinctive add-on for groups who want a name design outside the Pebble Beach properties." },],
     pointers: [
       "Signature hole: par-3 14th — 'The Moment' — 205 yards over a canyon with views stretching to Monterey and Pacific Grove.",
       "Guests of Bernardus Lodge can access the course outside the standard Monday public window — verify current terms with the property.",
@@ -916,7 +927,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "What's distinctive about the layout at Spyglass Hill?",
         a: "The front nine moves through coastal dunes before the back nine turns inland through Del Monte Forest pines, giving the round two distinct characters.",
       },
-    ],
+    
+      { q: "How do I book Spyglass Hill Golf Course® as part of a Monterey golf trip?", a: "Monterey Golf Tours books Spyglass Hill Golf Course® through our IAGTO agreement with Pebble Beach Resorts®. It’s a standard inclusion in premium Monterey golf packages — most often combined with Pebble Beach Golf Links® for the classic two-course Pebble Beach day, or across all three Pebble Beach Company golf courses in a multi-day itinerary." },],
     pointers: [
       "Co-hosted the AT&T Pebble Beach Pro-Am from 1991 to 2009 alongside Pebble Beach Golf Links®.",
       "A 2014 renovation introduced native sandy waste areas and opened up the forest floor, widely praised by golf media afterward.",
@@ -1058,7 +1070,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "How far in advance can I book Del Monte™ Golf Course?",
         a: "Without a resort stay, it can be booked 6 months out.",
       },
-    ],
+    
+      { q: "Can I include Del Monte™ Golf Course in a Monterey golf package?", a: "Yes. Del Monte™ Golf Course is a useful second or third Pebble Beach Company round in a multi-day Monterey golf trip — a historic parkland layout at a lower green fee than Pebble Beach Golf Links® or Spyglass Hill®, with the same Pebble Beach Resorts® service. Monterey Golf Tours can include all three Pebble Beach Company courses in one itinerary." },],
   },
   "the-hay": {
     slug: "the-hay",
@@ -1084,6 +1097,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     description: [
       "The Hay™ originally opened in 1957 as Peter Hay Golf Course, and was completely overhauled and redesigned by Tiger Woods and TGR Design in 2021, reopening as The Hay™ — a 9-hole, par-27 short course experience.",
       "At 670 yards and rating 70/slope 110, it's a fast, approachable round suited to a relaxed afternoon, a warm-up before a championship round, or a lower-pressure addition to a group itinerary. Enquire for current green fees.",
+      "The Hay™ is an easy add-on to any Monterey golf trip staying at a Pebble Beach Resorts® property — a 9-hole round takes under two hours, making it ideal for a first-evening warm-up, a post-round cool-down, or a low-pressure round for the less experienced players in a mixed-handicap group."
     ],
     highlights: [
       {
@@ -1125,7 +1139,8 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
         q: "Is The Hay™ good for a group with mixed experience levels?",
         a: "Yes — its short, 9-hole par-27 format makes it approachable for beginners while still giving experienced golfers a fun, fast round at Pebble Beach.",
       },
-    ],
+    
+      { q: "How does The Hay™ fit into a Monterey golf trip itinerary?", a: "The Hay™ works best as an evening or morning add-on in a Pebble Beach-based Monterey golf trip — a 9-hole round under two hours that suits any skill level. Monterey Golf Tours includes it in itineraries as a low-pressure option for non-golfers, high-handicappers, or anyone who wants a relaxed round at a Pebble Beach Resorts® course." },],
   },
 };
 
