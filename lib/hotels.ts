@@ -68,7 +68,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "monterey-plaza",
-    image: "/images/hotels/monterey-plaza-hero.webp",
+    image: "/images/hotels/gallery/monterey-plaza-2.webp",
     name: "Monterey Plaza Hotel & Spa",
     city: "Monterey, CA",
     tier: 2,
@@ -78,7 +78,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "intercontinental-the-clement",
-    image: "/images/intercontinental-the-clement-monterey/gallery-1.jpg",
+    image: "/images/intercontinental-the-clement-monterey/gallery-5.jpg",
     name: "InterContinental The Clement Monterey",
     city: "Monterey, CA",
     tier: 2,
@@ -98,7 +98,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "hotel-abrego",
-    image: "/images/hotel-abrego/gallery-1.jpg",
+    image: "/images/hotel-abrego/gallery-7.jpg",
     name: "Hotel Abrego",
     city: "Monterey, CA",
     tier: 3,
@@ -118,7 +118,7 @@ export const HOTELS: Hotel[] = [
   },
   {
     slug: "monterey-beach-hotel",
-    image: "/images/monterey-beach-hotel/gallery-1.webp",
+    image: "/images/hotels/monterey-beach-hotel-hero.webp",
     name: "Monterey Beach Hotel, A Tribute Portfolio Hotel",
     city: "Monterey, CA",
     tier: 2,
