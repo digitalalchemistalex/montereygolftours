@@ -46,7 +46,7 @@ export const PHOTOGRAPHERS: Record<string, Photographer> = {
     slug: "jeff-marsh",
     name: "Jeff Marsh",
     creditLine: "Photo by Jeff Marsh",
-    bio: "Jeff Marsh photographed Pebble Beach Golf Links® in 2020, capturing aerial and ground-level views of the course’s most celebrated holes along Stillwater Cove and the Pacific coastline.",
+    bio: "Jeff Marsh photographed Pebble Beach Golf Links® in 2020. His series includes the ground-level fairway approach on hole 9 with a golfer silhouetted against Stillwater Cove beach, the aerial view of hole 9 showing the full coastal fairway and Santa Lucia Mountains, and the tight bunker complex guarding the hole 6 green at dawn. Three images, all Pebble Beach Golf Links® — each from a different angle on a course that’s been photographed more than almost any other in the world.",
     images: [
       { src: "/images/pbc-portal/pbgl_9_2020_aerial.jpg", alt: "Pebble Beach Golf Links® hole 9 aerial view, Stillwater Cove, Pebble Beach, CA", caption: "Hole 9 at Pebble Beach Golf Links® from above — the par-4 coastal fairway running along Stillwater Cove.", subject: "Pebble Beach Golf Links®" },
       { src: "/images/pbc-portal/pbgl_6_2020_ground_green.jpg", alt: "Hole 6 at Pebble Beach Golf Links®, Pebble Beach, CA", caption: "The green complex on Hole 6 at Pebble Beach Golf Links® — a par-5 that plays directly toward Stillwater Cove.", subject: "Pebble Beach Golf Links®" },
@@ -58,7 +58,7 @@ export const PHOTOGRAPHERS: Record<string, Photographer> = {
     slug: "martin-miller",
     name: "Martin Miller",
     creditLine: "Photo by Martin Miller",
-    bio: "Martin Miller photographed The Hay™ short course from the air in 2021, capturing the full layout of Tiger Woods and TGR Design’s reimagining of the original Peter Hay course at Pebble Beach.",
+    bio: "Martin Miller shot the aerial of The Hay™ in 2021, the year the redesigned course reopened after Tiger Woods and TGR Design overhauled the original Peter Hay layout. The image shows the full 9-hole par-27 layout against Carmel Bay and the Monterey Peninsula — useful context for a course that’s easy to underestimate on the ground. It’s the only aerial in our collection of The Hay™, and the one that makes clearest why the course is positioned where it is.",
     images: [
       { src: "/images/pbc-portal/thehay_2021_aerial.jpg", alt: "The Hay™ short course aerial view, Pebble Beach, CA — Tiger Woods TGR Design 2021 redesign", caption: "The Hay™ from above — Tiger Woods and TGR Design’s 2021 reimagining of the original Peter Hay short course at Pebble Beach.", subject: "The Hay™" },
     ],
@@ -88,7 +88,7 @@ export const PHOTOGRAPHERS: Record<string, Photographer> = {
     slug: "noah-webb",
     name: "Noah Webb",
     creditLine: "Photo by Noah Webb",
-    bio: "Noah Webb photographed The Lodge at Pebble Beach™ guest rooms and Fairway One Cottage in 2017 and 2018, and the guest rooms at The Inn at Spanish Bay™, capturing the interiors of Pebble Beach Resorts®’ most celebrated accommodations.",
+    bio: "Noah Webb shot the room interiors at The Lodge at Pebble Beach™ in 2017 and 2018, including the Fairway One Cottage guest room — a king bedroom with sliding doors opening directly to the first fairway of Pebble Beach Golf Links®. He also photographed the ocean-view guest room at The Inn at Spanish Bay™. His images are the ones that make the accommodation look like somewhere worth the rate — warm light, lived-in but polished.",
     images: [
       { src: "/images/pbc-portal/lodge_2017_interior_fairwayone_cottage.jpg", alt: "Fairway One Cottage interior at The Lodge at Pebble Beach™, Pebble Beach, CA", caption: "Fairway One Cottage at The Lodge at Pebble Beach™ — the Palmer and Eastwood Cottages on the first fairway.", subject: "The Lodge at Pebble Beach™" },
       { src: "/images/pbc-portal/lodge_2018_interior_oceanstudio.jpg", alt: "Ocean Studio guest room at The Lodge at Pebble Beach™, Pebble Beach, CA", caption: "An Ocean Studio at The Lodge at Pebble Beach™ — rooms range from 570 to 1,300 sq ft.", subject: "The Lodge at Pebble Beach™" },
