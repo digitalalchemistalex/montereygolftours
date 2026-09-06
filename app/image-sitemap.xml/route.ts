@@ -11,7 +11,7 @@ function esc(s: string) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
-type ImageEntry = { loc: string; images: { url: string; title: string; caption?: string }[] };
+type ImageEntry = { loc: string; images: { url: string; title: string; caption?: string; license?: string }[] };
 
 export function GET() {
   const base = `https://${SITE.domain}`;
@@ -26,6 +26,7 @@ export function GET() {
           url: c.image.startsWith("/") ? `${base}${c.image}` : `${c.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
           title: `${c.name} — Monterey Peninsula Golf Course`,
           caption: `${c.name} in ${c.city}. Par ${c.par}, ${c.yards}.`,
+          license: c.image.includes("pbc-portal") ? "https://www.pebblebeach.com" : undefined,
         }],
       });
     }
@@ -51,7 +52,7 @@ export function GET() {
       entries.push({
         loc: `${base}/itineraries/${t.slug}/`,
         images: [{
-          url: `${t.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+          url: t.image.startsWith("/") ? `${base}${t.image}` : `${t.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
           title: `${t.title} — Monterey Golf Tours`,
           caption: `${t.durationDays}-day Monterey Peninsula golf trip. ${t.rounds}.`,
         }],
@@ -65,7 +66,7 @@ export function GET() {
       entries.push({
         loc: `${base}/blog/${p.slug}/`,
         images: [{
-          url: `${p.cardImage}`,
+          url: p.cardImage.startsWith("/") ? `${base}${p.cardImage}` : `${p.cardImage}`,
           title: `${p.title} — Monterey Golf Tours Blog`,
           caption: p.intro.slice(0, 150),
         }],
