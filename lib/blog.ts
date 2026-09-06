@@ -114,7 +114,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "A military pedigree",
         paragraphs: [
-          "Bayonet sits on the former Fort Ord, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954. The course's famous \"Combat Corner\" nickname belongs to hole 15, the centerpiece of a demanding stretch running holes 11 through 15. The course takes its name from the 7th Infantry, the \ Monterey Golf Tours includes Poppy Hills in Monterey golf packages where groups want a Del Monte Forest round alongside the peninsula’s coastal courses."Bayonet Division.\"",
+          "Bayonet sits on the former Fort Ord, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954. The course's famous \\"Combat Corner\\" nickname belongs to hole 15, the centerpiece of a demanding stretch running holes 11 through 15. The course takes its name from the 7th Infantry, the \\"Bayonet Division.\\"",
           "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A 2007 redesign by Gene Bates refreshed the layout while preserving its demanding character.",
         ],
       },
