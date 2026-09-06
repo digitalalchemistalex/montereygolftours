@@ -114,7 +114,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "A military pedigree",
         paragraphs: [
-          "Bayonet sits on the former Fort Ord, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954. The course's famous \\"Combat Corner\\" nickname belongs to hole 15, the centerpiece of a demanding stretch running holes 11 through 15. The course takes its name from the 7th Infantry, the \\"Bayonet Division.\\"",
+          "Bayonet sits on the former Fort Ord, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954. The course's famous \"Combat Corner\" nickname belongs to hole 15, the centerpiece of a demanding stretch running holes 11 through 15. The course takes its name from the 7th Infantry, the \"Bayonet Division.\"",
           "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A 2007 redesign by Gene Bates refreshed the layout while preserving its demanding character.",
         ],
       },
@@ -305,7 +305,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     takeaways: [
       "Inland location means fog-free mornings when coastal courses are still socked in",
       "Pete Dye original design with Gene Bates redesign — 6,117 yards, par 70",
-      "Hilly terrain: genuine workout if walking, with valley views throughout  Monterey Golf Tours includes Pacific Grove in Monterey golf packages as the value coastal round — typically on an arrival or departure day.",
+      "Hilly terrain: genuine workout if walking, with valley views throughout",
       "Strong pick for day 1 of a multi-day itinerary",
       "Resort lodging on-site for groups wanting to stay in the valley",
     ],
@@ -446,7 +446,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ],
     takeaways: [
       "Pacific Grove, Poppy Hills, Carmel Valley Ranch cover the full range of peninsula golf without resort pricing",
-      "Inland-first on Day 1 lets you avoid coastal fog on your opening round  Monterey Golf Tours includes Poppy Hills in Monterey golf packages as the Del Monte Forest round — typically the most demanding day in a three-day itinerary.",\"Bayonet Division.\"",
+      "Inland-first on Day 1 lets you avoid coastal fog on your opening round",
       "Save Poppy Hills for Day 3 — it\'s the longest and most demanding",
       "Mid-morning tee times at coastal courses avoid the marine layer",
       "Bayonet and Pebble Beach Resorts courses are logical additions on a second trip . Monterey Golf Tours builds first-time Monterey golf packages around exactly this structure — contact us for a custom quote.",
