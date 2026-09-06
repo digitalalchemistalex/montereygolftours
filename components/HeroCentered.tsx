@@ -111,7 +111,7 @@ export default function HeroCentered() {
           width={280}
           height={268}
           priority
-          style={{ width: 200, height: "auto", filter: "brightness(1.6) contrast(0.9)", WebkitFontSmoothing: "antialiased" }}
+          style={{ width: 200, height: "auto" }}
           className="md:!w-[240px]"
         />
         <div className="mt-5 h-px w-20 bg-[rgba(250,246,238,.35)]" />
