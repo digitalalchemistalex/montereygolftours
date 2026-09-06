@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     localPatterns: [
       { pathname: "/images/**" },
       { pathname: "/art/**" },
+      { pathname: "/brand/**" },
     ],
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
