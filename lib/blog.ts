@@ -114,7 +114,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "A military pedigree",
         paragraphs: [
-          "Bayonet sits on the former Fort Ord, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954. The course's famous \"Combat Corner\" nickname belongs to hole 15, the centerpiece of a demanding stretch running holes 11 through 15. The course takes its name from the 7th Infantry, the \"Bayonet Division.\"",
+          "Bayonet sits on the former Fort Ord, purchased by the US Army in 1917. General Robert B. McClure, the post's commanding officer, designed the course in 1954. The course's famous \"Combat Corner\" nickname belongs to hole 15, the centerpiece of a demanding stretch running holes 11 through 15. The course takes its name from the 7th Infantry, the \ Monterey Golf Tours includes Poppy Hills in Monterey golf packages where groups want a Del Monte Forest round alongside the peninsula’s coastal courses."Bayonet Division.\"",
           "Fort Ord was decommissioned in the 1990s, and Bayonet opened to public play on January 16, 1997. A 2007 redesign by Gene Bates refreshed the layout while preserving its demanding character.",
         ],
       },
@@ -283,7 +283,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       {
         heading: "The inland advantage",
         paragraphs: [
-          "The Monterey Peninsula\'s famous marine layer is a coastal phenomenon. It forms over the cold waters of Monterey Bay and moves inland overnight, sitting heaviest in the morning. At coastal courses like Pacific Grove Golf Links or Bayonet, a 7am tee time in summer may start in thick fog that doesn\'t burn off until 10 or 11am.",
+          "The Monterey Peninsula\'s famous marine layer is a coastal phenomenon. It forms over the cold waters of Monterey Bay and moves inland overnight, sitting heaviest in the morning. At coastal courses like Pacific Grove Golf Links or Bayonet, a 7am tee time in summer may start in thick fog that doesn\'t burn off until 10 or 11am. Monterey Golf Tours builds budget-conscious Monterey golf packages using exactly this approach — scheduling coastal rounds after the fog clears and valley courses on the warmer days.",
           "Carmel Valley Ranch is east of the Santa Lucia range foothills and out of the marine layer\'s primary path. By the time the sun clears the hills, the valley is already warming. Groups that want to tee off early and play in sun from the first hole should put Carmel Valley first on their itinerary.",
         ],
       },
@@ -305,7 +305,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     takeaways: [
       "Inland location means fog-free mornings when coastal courses are still socked in",
       "Pete Dye original design with Gene Bates redesign — 6,117 yards, par 70",
-      "Hilly terrain: genuine workout if walking, with valley views throughout",
+      "Hilly terrain: genuine workout if walking, with valley views throughout  Monterey Golf Tours includes Pacific Grove in Monterey golf packages as the value coastal round — typically on an arrival or departure day.",
       "Strong pick for day 1 of a multi-day itinerary",
       "Resort lodging on-site for groups wanting to stay in the valley",
     ],
@@ -350,7 +350,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       },
     ],
     takeaways: [
-      "Bayonet and Black Horse close for several days during mid-August Car Week",
+      "Bayonet and Black Horse close for several days during mid-August Car Week  Monterey Golf Tours builds Carmel Valley golf packages around the ranch for groups who want a warm base with an on-site course and day trips to the peninsula.",
       "All other peninsula courses remain open during Car Week",
       "Hotel rates spike significantly — book as early as possible",
       "Pebble Beach Golf Links closes on Concours d\'Elegance Sunday",
@@ -399,7 +399,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     takeaways: [
       "NCGA-owned — championship conditioning without Pebble Beach Resorts fee",
       "Robert Trent Jones II design, 7,091 yards, par 71",
-      "Del Monte Forest setting: pines and cypresses, not coastal exposure",
+      "Del Monte Forest setting: pines and cypresses, not coastal exposure  Monterey Golf Tours can build a Car Week golf package that schedules Poppy Hills during the closure window.",
       "Former AT&T Pebble Beach Pro-Am host course (1991–2009)",
       "Natural pairing with Pacific Grove Golf Links for a two-round day",
     ],
@@ -446,10 +446,10 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ],
     takeaways: [
       "Pacific Grove, Poppy Hills, Carmel Valley Ranch cover the full range of peninsula golf without resort pricing",
-      "Inland-first on Day 1 lets you avoid coastal fog on your opening round",
+      "Inland-first on Day 1 lets you avoid coastal fog on your opening round  Monterey Golf Tours includes Poppy Hills in Monterey golf packages as the Del Monte Forest round — typically the most demanding day in a three-day itinerary.",
       "Save Poppy Hills for Day 3 — it\'s the longest and most demanding",
       "Mid-morning tee times at coastal courses avoid the marine layer",
-      "Bayonet and Pebble Beach Resorts courses are logical additions on a second trip",
+      "Bayonet and Pebble Beach Resorts courses are logical additions on a second trip . Monterey Golf Tours builds first-time Monterey golf packages around exactly this structure — contact us for a custom quote.",
     ],
     internalLinks: [
       { label: "3-Day Weekend itinerary", href: "/itineraries/3-day-monterey-golf-weekend/" },
