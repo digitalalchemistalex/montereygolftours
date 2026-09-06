@@ -21,14 +21,14 @@ export type Destination = {
 export const DESTINATIONS: Record<string, Destination> = {
   monterey: {
     slug: "monterey",
-    image: "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd",
+    image: "/images/pbc-portal/17md_2016_coastline.jpg",
     name: "Monterey",
     heroTitle: "Golf in Monterey",
     speakable:
       "Monterey is the central base for golf on the peninsula, home to Del Monte Golf Course®, Laguna Seca Golf Ranch, and The Club at Pasadera, with the largest concentration of group-friendly hotels.",
     trustBar: ["4 courses nearby", "8 min from MRY", "Largest hotel selection on the peninsula"],
     whyPlay:
-      "Monterey sits at the center of the peninsula's golf geography, putting Del Monte Golf Course®, Laguna Seca, and The Club at Pasadera all within a short drive, alongside the largest concentration of group-friendly hotels on the peninsula — from the golf-anchor Hyatt Regency to downtown boutiques.",
+      "Monterey sits at the center of the peninsula's golf geography, putting Del Monte Golf Course®, Laguna Seca, and The Club at Pasadera all within a short drive, alongside the largest concentration of group-friendly hotels on the peninsula — from the golf-anchor Hyatt Regency to downtown boutiques. Monterey Golf Tours builds Monterey golf packages around downtown Monterey stays for groups who want central access to all peninsula courses without paying Pebble Beach resort rates.",
     features: [
       {
         label: "Central location",
@@ -78,18 +78,19 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "Is Del Monte Golf Course® walkable from downtown Monterey?",
         a: "It's a short drive rather than a walk, but it's one of the closest courses to downtown, sitting directly on the Hyatt Regency Monterey property.",
       },
-    ],
+    
+      { q: "Can I book a Monterey golf package based in downtown Monterey?", a: "Yes. Monterey Golf Tours builds Monterey golf packages around downtown hotels — the Portola Hotel, Hyatt Regency, and Casa Munras all put you within 8–20 minutes of every course on the peninsula. A 3- to 5-day itinerary based in Monterey gives you access to Del Monte, Laguna Seca, Bayonet, Black Horse, and Pacific Grove without the Pebble Beach resort rate." },],
   },
   carmel: {
     slug: "carmel",
-    image: "https://images.unsplash.com/photo-1645844235135-de673bcc4792",
+    image: "/images/pbc-portal/thehay_2021_aerial.jpg",
     name: "Carmel-by-the-Sea",
     heroTitle: "Golf near Carmel-by-the-Sea",
     speakable:
       "Carmel-by-the-Sea is a walkable village base for golf trips, with Carmel Valley's courses a short 5-10 minute drive inland.",
     trustBar: ["Carmel Valley courses 5–10 min away", "Village walkability", "Steps from Carmel Beach"],
     whyPlay:
-      "Carmel-by-the-Sea itself has no golf course within the village, but Carmel Valley's courses — Carmel Valley Ranch and Quail Lodge — are a short 5 to 10 minute drive inland. Carmel works best as a village base for groups who want walkable galleries, shops, and dining alongside their golf.",
+      "Carmel-by-the-Sea itself has no golf course within the village, but Carmel Valley's courses — Carmel Valley Ranch and Quail Lodge — are a short 5 to 10 minute drive inland. Carmel works best as a village base for groups who want walkable galleries, shops, and dining alongside their golf. Groups basing a Monterey golf trip in Carmel are typically focused on the Pebble Beach courses and Quail Lodge, with the town’s restaurant scene as the evening anchor.",
     features: [
       {
         label: "Village walkability",
@@ -136,18 +137,19 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "What's the best restaurant in Carmel for a group dinner?",
         a: "Carmel village has dozens of restaurants within walking distance of Ocean Avenue — ask us for a current recommendation matched to your group size and taste, since the best fit changes with availability.",
       },
-    ],
+    
+      { q: "Is Carmel a good base for a Pebble Beach golf trip?", a: "Yes. Carmel puts you minutes from Pebble Beach Golf Links®, Spyglass Hill®, Quail Lodge, and Carmel Valley Ranch. Monterey Golf Tours can build an itinerary based in Carmel for groups who want walkable dining and close proximity to the Pebble Beach courses." },],
   },
   "carmel-valley": {
     slug: "carmel-valley",
-    image: "https://images.unsplash.com/photo-1624723457165-f57168bb7dd7",
+    image: "/images/carmel-valley-ranch/golf-1.webp",
     name: "Carmel Valley",
     heroTitle: "Golf in Carmel Valley",
     speakable:
       "Carmel Valley is the warm, inland golf base on the peninsula, home to Carmel Valley Ranch, Quail Lodge, and Bernardus Lodge, typically 15–18°F warmer and clearer than the coast.",
     trustBar: ["3 courses on-site at lodging", "15–18°F warmer than the coast", "Wine country setting"],
     whyPlay:
-      "Carmel Valley sits inland from the coastal fog belt, in a wine-country microclimate that runs 15 to 18°F warmer and typically clears earlier than coastal Monterey courses. It's home to three golf-anchor resorts — Carmel Valley Ranch, Quail Lodge, and Bernardus Lodge — making it the best base for groups wanting golf and lodging in one place.",
+      "Carmel Valley sits inland from the coastal fog belt, in a wine-country microclimate that runs 15 to 18°F warmer and typically clears earlier than coastal Monterey courses. It's home to three golf-anchor resorts — Carmel Valley Ranch, Quail Lodge, and Bernardus Lodge — making it the best base for groups wanting golf and lodging in one place. Carmel Valley is the default base for Monterey golf trips that want warmth, privacy, and a stay-and-play resort setup — Carmel Valley Ranch and Quail Lodge both offer accommodation and courses on the same property.",
     features: [
       {
         label: "Warmer, sunnier weather",
@@ -195,18 +197,19 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "How far is Carmel Valley from the airport?",
         a: "About 20 minutes from Monterey Regional Airport (MRY), a bit further than the coastal courses given its inland location.",
       },
-    ],
+    
+      { q: "Is Carmel Valley a good choice for a golf trip base?", a: "Yes. Carmel Valley runs 15–18°F warmer than the coast and has two stay-and-play resorts — Carmel Valley Ranch and Quail Lodge — where you can walk from your room to the first tee. Monterey Golf Tours builds Carmel Valley golf packages for groups who want warmth and an inland resort setting alongside day trips to the Pebble Beach courses." },],
   },
   "pacific-grove": {
     slug: "pacific-grove",
-    image: "https://images.unsplash.com/photo-1706269771866-728009e647a3",
+    image: "/images/pacific-grove-golf-links/hero.jpg",
     name: "Pacific Grove",
     heroTitle: "Golf in Pacific Grove",
     speakable:
       "Pacific Grove is home to Pacific Grove Golf Links, a municipal course with genuine ocean-adjacent holes at the most accessible green fees on the peninsula.",
     trustBar: ["Municipal pricing", "Ocean-adjacent holes", "10 min from downtown Monterey"],
     whyPlay:
-      "Pacific Grove offers the most budget-friendly golf on the Monterey Peninsula — a city-owned municipal course with genuine ocean-adjacent holes, at a fraction of the cost of the peninsula's resort and private courses.",
+      "Pacific Grove offers the most budget-friendly golf on the Monterey Peninsula — a city-owned municipal course with genuine ocean-adjacent holes, at a fraction of the cost of the peninsula's resort and private courses. Pacific Grove Golf Links is one of the best-value rounds on any Monterey Peninsula golf trip and is often included in itineraries as the arrival or departure day round.",
     features: [
       {
         label: "Municipal pricing",
@@ -254,11 +257,12 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "Is Asilomar State Beach nearby?",
         a: "Yes, it borders Pacific Grove, offering a scenic walk for non-golfing members of the group.",
       },
-    ],
+    
+      { q: "Can I include Pacific Grove in a Monterey golf trip?", a: "Yes. Pacific Grove Golf Links is a regular inclusion in Monterey golf packages — a full links-style coastal round at municipal pricing, and one of the few courses on the peninsula where you can walk to the ocean from the green. Monterey Golf Tours includes it in multi-day itineraries as the arrival or departure day round." },],
   },
   seaside: {
     slug: "seaside",
-    image: "https://images.unsplash.com/photo-1612641313315-d3aec695974f",
+    image: "/images/black-horse-golf-course/gallery-2.jpg",
     name: "Seaside",
     heroTitle: "Golf in Seaside",
     speakable:
@@ -313,18 +317,19 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "Were Bayonet and Black Horse always public courses?",
         a: "No — both were built in 1954 as part of the Fort Ord Army base's recreational facilities, and opened to the public after the base was decommissioned in the 1990s.",
       },
-    ],
+    
+      { q: "Can I book Bayonet and Black Horse as part of a Monterey golf package?", a: "Yes. Bayonet and Black Horse at former Fort Ord in Seaside are two of the most booked courses in Monterey Golf Tours itineraries. We include them in Monterey golf packages for groups of all sizes — as a two-day Fort Ord combination, or mixed into a broader peninsula itinerary." },],
   },
   "pebble-beach-area": {
     slug: "pebble-beach-area",
-    image: "https://images.unsplash.com/photo-1674728450078-2383f1a3514e",
+    image: "/images/pbc-portal/pebble-beach-hole-9.jpg",
     name: "Pebble Beach Area",
     heroTitle: "Golf in the Pebble Beach Area",
     speakable:
       "The Pebble Beach Area refers to the Del Monte Forest area of the Monterey Peninsula, home to Pebble Beach Golf Links®, Spyglass Hill Golf Course®, The Links at Spanish Bay®, and Poppy Hills, among others.",
     trustBar: ["4+ courses in the Del Monte Forest", "IAGTO-authorized booking partner", "World-renowned golf address"],
     whyPlay:
-      "\"Pebble Beach Area\" here refers to the Del Monte Forest area of the Monterey Peninsula — the geography, not the Pebble Beach Company brand specifically. As an IAGTO-contracted travel partner with Pebble Beach Resorts®, we can book and name Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay® directly, alongside Poppy Hills, an NCGA-owned course in the same forest that doesn't carry the resort's gate fee.",
+      "\"Pebble Beach Area\" here refers to the Del Monte Forest area of the Monterey Peninsula — the geography, not the Pebble Beach Company brand specifically. As an IAGTO-contracted travel partner with Pebble Beach Resorts®, we can book and name Pebble Beach Golf Links®, Spyglass Hill Golf Course®, and The Links at Spanish Bay® directly, alongside Poppy Hills, an NCGA-owned course in the same forest that doesn't carry the resort's gate fee. Monterey Golf Tours books Pebble Beach Resorts® courses through our IAGTO agreement and can build full Pebble Beach golf packages for groups of any size, from a single Pebble Beach day trip to a multi-day stay across The Lodge, The Inn, and Casa Palmero.",
     features: [
       {
         label: "World-renowned address",
@@ -372,6 +377,7 @@ export const DESTINATIONS: Record<string, Destination> = {
         q: "What's the oldest course in the Del Monte Forest?",
         a: "Del Monte Golf Course®, dating to 1897 — the oldest golf course in continuous operation west of the Mississippi.",
       },
-    ],
+    
+      { q: "Can Monterey Golf Tours book a group Pebble Beach golf trip?", a: "Yes. Monterey Golf Tours is an IAGTO member with access to Pebble Beach Golf Links®, Spyglass Hill®, and Del Monte™ Golf Course. We build Pebble Beach golf packages for groups of 2 to 400, including accommodation at The Lodge, The Inn, and Casa Palmero. Contact us for a custom quote." },],
   },
 };
