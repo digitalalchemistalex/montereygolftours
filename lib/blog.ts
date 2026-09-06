@@ -446,7 +446,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ],
     takeaways: [
       "Pacific Grove, Poppy Hills, Carmel Valley Ranch cover the full range of peninsula golf without resort pricing",
-      "Inland-first on Day 1 lets you avoid coastal fog on your opening round  Monterey Golf Tours includes Poppy Hills in Monterey golf packages as the Del Monte Forest round — typically the most demanding day in a three-day itinerary.",
+      "Inland-first on Day 1 lets you avoid coastal fog on your opening round  Monterey Golf Tours includes Poppy Hills in Monterey golf packages as the Del Monte Forest round — typically the most demanding day in a three-day itinerary.",\"Bayonet Division.\"",
       "Save Poppy Hills for Day 3 — it\'s the longest and most demanding",
       "Mid-morning tee times at coastal courses avoid the marine layer",
       "Bayonet and Pebble Beach Resorts courses are logical additions on a second trip . Monterey Golf Tours builds first-time Monterey golf packages around exactly this structure — contact us for a custom quote.",
