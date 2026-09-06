@@ -27,7 +27,7 @@ Raw feedback from Sean. Each item tracked below with status and directive assign
 | S4 | Pacific Grove page has a photo problem | ❌ Open | TBD directive | Unspecified — need to inspect live page and identify the issue |
 | S5 | Poppy Hills images aren't good — need to find some | ❌ Open | TBD directive | Need sourcing + replacement. IAGTO portal may have options (see S6). |
 | S6 | Re-access IAGTO portal to check images available for PBC properties | ❌ Open | MASTER action | Sean/MASTER need to log into IAGTO portal. Could solve S5 and other PBC image gaps. |
-| S7 | Need a toll-free phone number on the site | ❌ Open | Sean action | Sean to supply the number. Once supplied → Raza adds to header/footer/contact. |
+| S7 | Need a toll-free phone number on the site | ✅ Done · Aug 31 2026 | MASTER | (866) 278-7010 — live in lib/site.ts |
 | S8 | Homepage "Which course fits your group?" section needs to be replaced | ✅ Removed · b0676320ae | MASTER | FitFinder removed from app/page.tsx. Replacement section TBD — MASTER to propose. |
 | S9 | QuoteForm must match GTHS — group size needs precise number of golfers | ✅ Done · e68097de4392 | MASTER | GROUP_SIZES dropdown replaced with <input type="number" min="2" max="400"> — label "Number of golfers" — 3 commits to reach final values |
 
@@ -326,7 +326,7 @@ bounced_at timestamptz
 | Pull exact PBC trademark disclaimer from IAGTO agreement | Footer text | ❌ Not done |
 | Upgrade Twilio trial → paid + submit toll-free verification | D#19 SMS | ❌ Not done |
 | Register Resend webhook at resend.com after D#19 deploys | Email tracking | ❌ Post-launch |
-| Supply toll-free phone number for site (S7) | Header/footer/contact | ❌ Not supplied |
+| Supply toll-free phone number for site (S7) | Header/footer/contact | ✅ Done — (866) 278-7010 in lib/site.ts |
 | Log into IAGTO portal — audit available images for PBC properties (S6) | S2/S3/S4/S5 image fixes | ❌ Not done |
 | Source replacement photos for CVR golf (S2) | Course page | ❌ Not done |
 | Source additional photos for Pasadera (S3) | Course page | ❌ Not done |
@@ -406,7 +406,7 @@ bounced_at timestamptz
 
 ### Outstanding Sean actions (unchanged)
 - IAGTO rates for PBC courses
-- Toll-free number (S7)
+- ~~Toll-free number (S7) — (866) 278-7010 live in lib/site.ts~~
 - Staging submission to traveldesk@pebblebeach.com
 - Licensed photography from PBC press kit + course operators
 - S8 homepage replacement section
@@ -812,7 +812,7 @@ Blog post:  WebPage · BlogPosting(author=Sean) · BreadcrumbList
 
 **Blocked on Sean:**
 - IAGTO rates for PBL®, SH®, Del Monte™ — blocks D#18
-- Toll-free number (S7)
+- ~~Toll-free number (S7) — (866) 278-7010 live in lib/site.ts~~
 - Higher-res heroes: Monterey Plaza, InterContinental, Hotel Abrego, Monterey Beach Hotel
 - Higher-res heroes: CVR course (S2), Pasadera (S3)
 - Pacific Grove photo issue inspection (S4)
