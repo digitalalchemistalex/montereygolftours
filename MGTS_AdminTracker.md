@@ -785,3 +785,43 @@ Blog post:  WebPage · BlogPosting(author=Sean) · BreadcrumbList
 | PBC TRADEMARKS 2026.pdf review | Sean | ❌ Pending |
 | Higher-res hero images: CVR, InterContinental, Hotel Abrego | Sean | ❌ Pending |
 | Domain cutover (pending Karlyn audit) | MASTER | ❌ Blocked on PBC |
+
+---
+
+## SESSION: Sep 6 2026 — Developer Access Revoked + Build Fixes
+
+### Team change
+- Raza (johnparker2086@gmail.com) access fully revoked Sep 6 2026
+- AGENTS.md overwritten with termination notice
+- All tokens removed from memory and documentation
+- All work from this point forward: MASTER + Claude only
+
+### Build fixes this session
+| Commit | Description | Status |
+|--------|-------------|--------|
+| `d8b3edd7` | fix: remove all keyword injections from blog.ts — 3 broken lines restored | ✅ READY |
+| `3de2f6da` | chore: revoke developer access — AGENTS.md cleared | ✅ READY |
+
+**Root cause of 5 failed deploys:** Raza's Claude was injecting keyword sentences mid-string-literal in `lib/blog.ts`, breaking JS parse. Lines 116, 307, and 448 were affected. Fixed by reading exact byte content and reconstructing correct paragraph text.
+
+### Open items (current)
+
+**Blocked on Karlyn Hawke (PBC):**
+- Site audit pending (IT blocking external URLs)
+- Domain cutover blocked until she signs off
+
+**Blocked on Sean:**
+- IAGTO rates for PBL®, SH®, Del Monte™ — blocks D#18
+- Toll-free number (S7)
+- Higher-res heroes: Monterey Plaza, InterContinental, Hotel Abrego, Monterey Beach Hotel
+- Higher-res heroes: CVR course (S2), Pasadera (S3)
+- Pacific Grove photo issue inspection (S4)
+- Poppy Hills replacement images (S5)
+- PBC TRADEMARKS 2026.pdf review
+- Remove johnparker2086@gmail.com from Google Drive folder
+
+**MASTER to do:**
+- Photographer credits on gallery thumbnails/lightbox (Drive MCP required — verify callable first)
+- D#16 Auth + Middleware (next code task when ready to proceed)
+- D#17–D#21 follow in sequence
+
