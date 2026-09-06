@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
+    localPatterns: [
+      { pathname: "/images/**" },
+      { pathname: "/art/**" },
+    ],
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "golfthehighsierra.com" },
