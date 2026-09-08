@@ -4,7 +4,7 @@ const PBC_COURSES = [
   {
     slug: "pebble-beach-golf-links",
     name: "Pebble Beach Golf Links®",
-    hook: "The world&apos;s most famous public golf course — clifftop drama on Stillwater Cove",
+    hook: "The world's most famous public golf course — clifftop drama on Stillwater Cove",
     closed: false,
   },
   {
@@ -63,7 +63,7 @@ export default function PebbleBeachSection() {
             Pebble Beach Resorts®
           </h2>
           <p className="mt-3 max-w-[560px] font-body text-[15px] leading-relaxed text-white/75">
-            Exclusive access to the world&apos;s most celebrated golf destination
+            Exclusive access to the world's most celebrated golf destination
           </p>
         </div>
 
