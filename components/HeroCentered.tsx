@@ -62,6 +62,11 @@ export default function HeroCentered() {
         style={{ objectPosition: "center 40%", filter: "saturate(1.1) contrast(1.05) brightness(0.88)" }}
       />
 
+      {/* Photo credit — bottom right */}
+      <div className="absolute bottom-2 right-3 z-10 hidden sm:block">
+        <span className="font-ui text-[9px] text-white/50 tracking-[.04em]">Photo by Jeff Marsh · © Pebble Beach Company</span>
+      </div>
+
       {/* Overlay — darkened at top so nav is readable */}
       <div
         className="absolute inset-0"
@@ -80,8 +85,8 @@ export default function HeroCentered() {
           width={1024}
           height={1024}
           priority
-          style={{ width: 160, height: "auto", filter: "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,.4))" }}
-          className="md:!w-[180px]"
+          style={{ width: 120, height: "auto" }}
+          className="md:!w-[140px]"
         />
         <div className="mt-5 h-px w-20 bg-[rgba(250,246,238,.35)]" />
 
