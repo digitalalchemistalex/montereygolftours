@@ -81,10 +81,10 @@ const homepageSchema = {
       email: "info@montereygolftours.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "2700 Mill St Suite 800",
-        addressLocality: "Reno",
-        addressRegion: "NV",
-        postalCode: "89502",
+        streetAddress: "140 W Franklin St Ste 203",
+        addressLocality: "Monterey",
+        addressRegion: "CA",
+        postalCode: "93940",
         addressCountry: "US",
       },
       areaServed: {
