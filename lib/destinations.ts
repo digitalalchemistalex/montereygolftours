@@ -322,7 +322,7 @@ export const DESTINATIONS: Record<string, Destination> = {
   },
   "pebble-beach-area": {
     slug: "pebble-beach-area",
-    image: "/images/pbc-portal/pebble-beach-hole-9.jpg",
+    image: "/images/pbc-portal/pbgl_9_2020_aerial.jpg",
     name: "Pebble Beach Area",
     heroTitle: "Golf in the Pebble Beach Area",
     speakable:
