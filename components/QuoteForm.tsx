@@ -222,6 +222,8 @@ export default function QuoteForm() {
   const [referralSource, setReferralSource] = useState("");
   const [referralOther, setReferralOther] = useState("");
   const [message, setMessage] = useState("");
+  const [fnbMessage, setFnbMessage] = useState("");
+  const [otherActivities, setOtherActivities] = useState("");
 
   // URL pre-fill
   const initialContext = useMemo(() => {
@@ -346,7 +348,7 @@ export default function QuoteForm() {
     if (hasError) return;
     setStatus("submitting");
     const travelDates = datesFlexible ? "Flexible" : [startDate, endDate].filter(Boolean).join(" to ");
-    const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner or family member." : null]
+    const fullMessage = [message, nonGolfer ? "Group includes a non-golfing partner or family member." : null, fnbMessage ? `F&B/Dining: ${fnbMessage}` : null, otherActivities ? `Other activities: ${otherActivities}` : null]
       .filter(Boolean).join(" ");
     const payload = {
       name, group_name: groupName || null, email, phone: phone || null, group_size: groupSize,
@@ -882,6 +884,19 @@ export default function QuoteForm() {
                 MRY is 10 min from most courses. SJC and SFO are 90–115 min drives if flying into the Bay Area.
               </p>
             )}
+          </Field>
+
+          <Field label="Food & beverage events">
+            <textarea rows={2} value={fnbMessage} onChange={(e) => setFnbMessage(e.target.value)}
+              placeholder="e.g. Group dinner reservations, organised dining event, welcome reception…"
+              className={iCls} />
+            <p className="mt-1 font-body text-[11px] text-[#9a8a6e]">Leave blank if not required</p>
+          </Field>
+
+          <Field label="Other activities">
+            <textarea rows={2} value={otherActivities} onChange={(e) => setOtherActivities(e.target.value)}
+              placeholder="Any additional activities for golfers or non-golfers — spa, wine tasting, sightseeing, team building…"
+              className={iCls} />
           </Field>
         </div></>
         )}
