@@ -72,7 +72,7 @@ const homepageSchema = {
       url: "https://montereygolftours.com/",
       logo: {
         "@type": "ImageObject",
-        url: "https://montereygolftours.com/brand/logo.png",
+        url: "https://montereygolftours.com/brand/logo-transparent-master.png",
         width: 280,
         height: 268,
       },
