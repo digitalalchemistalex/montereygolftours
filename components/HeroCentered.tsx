@@ -75,7 +75,7 @@ export default function HeroCentered() {
 
         {/* Logo */}
         <Image
-          src="/brand/logo-transparent-master.png"
+          src="/brand/logo-v2.png"
           alt="Monterey Golf Tours"
           width={1024}
           height={1024}
