@@ -28,7 +28,7 @@ table{border-collapse:collapse;}</style></head><body><div class="wrap">
 <div style="height:3px;background:linear-gradient(90deg,#C9A24D,#B08C3A)"></div>`;
 
 const EMAIL_FOOTER = `<div style="padding:16px 28px;font-size:11px;color:#9CA3AF;text-align:center;border-top:1px solid #E5E7EB">
-Monterey Golf Tours &nbsp;&middot;&nbsp; 2700 Mill St Suite 800, Reno, NV 89502<br>
+Monterey Golf Tours &nbsp;&middot;&nbsp; 140 W Franklin St Ste 203, Monterey, CA 93940<br>
 <a href="mailto:info@montereygolftours.com" style="color:#9CA3AF">info@montereygolftours.com</a>
 <br><span style="font-size:10px;font-style:italic;margin-top:6px;display:inline-block">
 IAGTO member. Rates and packages subject to IAGTO agreement terms.</span>
