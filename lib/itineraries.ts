@@ -229,7 +229,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
     priceTo: 4000,
     courseSlugs: [
       "carmel-valley-ranch",
-      "club-at-pasadera",
+      "tpc-monterey-at-pasadera",
       "quail-lodge",
       "poppy-hills",
       "bayonet",
