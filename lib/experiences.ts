@@ -32,7 +32,7 @@ export const EXPERIENCES: Record<string, Experience> = {
     slug: "dining-at-pebble-beach",
     name: "Dining at Pebble Beach Resorts\u00ae",
     headline: "Ten restaurants. One coastline.",
-    hook: "From Stillwater Bar & Grill overlooking the 18th fairway to the evening fire pits at Peppoli, dining at Pebble Beach Resorts\u00ae is part of the trip — not an afterthought.",
+    hook: "From Stillwater Bar & Grill overlooking the 18th fairway of Pebble Beach Golf Links®, to the evening fire pits at Peppoli at The Inn at Spanish Bay™, dining at Pebble Beach Resorts® is an experience in itself.",
     description: [
       "Pebble Beach Resorts\u00ae operates ten dining venues across The Lodge at Pebble Beach\u2122 and The Inn at Spanish Bay\u2122. The range runs from Stillwater Bar & Grill — one of the most photographed dining rooms in American golf, with floor-to-ceiling windows on the Pacific and the 18th fairway — to the casual Hay\'s Place beside The Hay\u2122 short course.",
       "Peppoli at The Inn at Spanish Bay\u2122 serves Italian coastal cuisine with Pacific views from the Peppoli Lawn, one of the most dramatic outdoor dining settings in California. Terrace Lounge at The Lodge offers lighter fare and cocktails with direct views over the 18th green. The Gallery Cafe and Sticks (with its terrace fire pits) round out the daytime options at The Lodge.",
@@ -66,7 +66,7 @@ export const EXPERIENCES: Record<string, Experience> = {
     description: [
       "The Spa at Pebble Beach\u2122 spans 22,000 square feet and holds a Forbes Travel Guide Five-Star rating \u2014 one of fewer than 100 spas in the world to hold this designation. It operates from The Lodge at Pebble Beach\u2122 but is accessible to guests of all three Pebble Beach Resorts\u00ae properties via a complimentary shuttle.",
       "The facility includes 15 massage rooms, 5 facial rooms, a full salon, a barber, a co-ed relaxation lounge, a whirlpool, cold plunge tubs, a steam room, and a dry sauna. Sports massage and recovery treatments are designed specifically for golfers \u2014 targeting the back, shoulder, and hip rotation areas that take the most stress over a multi-round trip.",
-      "Day-spa access can be arranged as a standalone booking or as part of a Monterey Golf Tours package. Non-golfers in the group often spend their on-course days here. Private spa buyouts for corporate groups can also be arranged.",
+      "Day-spa access can be arranged as a standalone booking or as part of a Monterey Golf Tours package. Non-golfers in the group often spend at least one day of pampered pleasure here. Private spa buyouts for corporate groups can also be arranged.",
     ],
     images: [
       { src: "/images/pbc-portal/spa_2024_interior_lockerroom.jpg", alt: "The Spa at Pebble Beach\u2122 locker room, Pebble Beach, CA \u2014 Forbes Five-Star", caption: "The locker room at The Spa at Pebble Beach\u2122 \u2014 22,000 sq ft, Forbes Five-Star rated.", credit: "Photo by Sherman Chu", photographer: "Sherman Chu", category: "Locker Rooms", tag: "Locker Room" },
@@ -78,7 +78,7 @@ export const EXPERIENCES: Record<string, Experience> = {
     faqs: [
       { q: "Do I need to be a hotel guest to use The Spa at Pebble Beach\u2122?", a: "Day-spa access is available to non-hotel guests by appointment. Guests of The Lodge at Pebble Beach\u2122, The Inn at Spanish Bay\u2122, and Casa Palmero\u00ae can all access the spa via complimentary shuttle. Monterey Golf Tours can arrange spa bookings as part of a trip." },
       { q: "What spa treatments are best for golfers?", a: "The Spa offers golf-specific sports massage targeting the back, shoulders, and hips. Many groups schedule a treatment on their travel day or their rest day mid-trip. Ask us about recovery day planning when building your itinerary." },
-      { q: "Can the spa accommodate a full corporate group?", a: "Private spa buyouts for corporate groups can be arranged directly through Pebble Beach Resorts\u00ae event services. Monterey Golf Tours can coordinate this alongside your golf and accommodation booking." },
+      { q: "Can the spa accommodate a full corporate group?", a: "Private spa buyouts for corporate groups can be arranged and coordinated by Monterey Golf Tours and are a simple addition to your golf and accommodation booking." },
     ],
     schema: { type: "HealthAndBeautyBusiness", address: "1700 17-Mile Drive, Pebble Beach, CA 93953" },
   },
