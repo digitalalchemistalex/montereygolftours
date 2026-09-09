@@ -142,6 +142,9 @@ export default function Footer() {
           Pebble Beach Golf Academy™, The Heritage logo, and their respective underlying distinctive images
           are trademarks, service marks and trade dress of Pebble Beach Company. Used by permission.
         </p>
+        <p className="mx-auto mt-2 max-w-[900px] font-ui text-[10.5px] leading-relaxed text-[#8a8276]">
+          Selected photography on this site courtesy of Pebble Beach Company. All Pebble Beach Resorts® photography used with permission. Individual photographer credits are displayed on each image.
+        </p>
       </div>
 
       <div className="flex flex-col items-center justify-between gap-3 bg-cream px-6 py-4 text-center md:flex-row md:px-14 md:text-left">
