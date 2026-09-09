@@ -4,7 +4,8 @@ import Reveal from "./Reveal";
 const STEPS = [
   { n: "01", label: "Group size", detail: "2 to 400 players" },
   { n: "02", label: "Dates", detail: "Flexible or fixed" },
-  { n: "03", label: "Budget", detail: "Value to premium" },
+  { n: "03", label: "Itinerary", detail: "Courses and lodging" },
+  { n: "04", label: "Budget", detail: "Value to premium" },
 ];
 
 export default function Configurator() {
@@ -17,7 +18,7 @@ export default function Configurator() {
               Get started
             </div>
             <h2 className="text-display-md mt-3 font-display font-bold text-ink">
-              Three questions.
+              Four questions.
               <br />
               One trip, built for you.
             </h2>
