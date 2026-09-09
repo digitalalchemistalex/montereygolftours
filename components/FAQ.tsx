@@ -50,8 +50,8 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         a: "Full trips only \u2014 we don\u2019t offer standalone single-round bookings. Every quote covers courses, lodging, and logistics planned together.",
       },
       {
-        q: "Are flights and meals included?",
-        a: "Not by default. Pricing covers golf and lodging; flights and meals can be arranged separately if you\u2019d like us to include them in your quote.",
+        q: "What is included in your pricing?",
+        a: "Generally, our packages include golf and lodging, but the convenience doesn\u2019t stop there. We are happy to arrange meals, ground transportation upon arrival and throughout the area, meetings, and unique activities aside from golf. Unfortunately, we do not schedule flights.",
       },
     ],
   },
@@ -69,8 +69,8 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         a: "No. Poppy Hills is owned by the Northern California Golf Association (NCGA) and is fully independent from Pebble Beach Company. It\u2019s open to the public year-round with no gate fee, designed by Robert Trent Jones Jr. in 1986, renovated in 2014, and rated Golf Digest Top 100 Courses You Can Play.",
       },
       {
-        q: "Can you book Pebble Beach Resorts\u00ae courses, or just describe them?",
-        a: "We can book and name Pebble Beach Golf Links\u00ae, Spyglass Hill Golf Course\u00ae, The Links at Spanish Bay\u00ae, Del Monte Golf Course\u00ae, and The Hay\u2122 as part of a planned trip, as an authorized travel partner.",
+        q: "Can you book Pebble Beach Resorts\u00ae courses?",
+        a: "Yes! As an authorized travel partner, we are able to book all courses associated with Pebble Beach Resorts, including Pebble Beach Golf Links\u00ae, Spyglass Hill Golf Course\u00ae, The Links at Spanish Bay\u00ae, Del Monte Golf Course\u00ae, and The Hay\u2122.",
       },
       {
         q: "How far in advance can I book a round at a resort course?",
@@ -90,10 +90,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         q: "When\u2019s the best time to play golf on the Monterey Peninsula?",
         a: "March through May and September through November \u2014 lightest fog, mildest weather (60\u201370\u00b0F), fewest crowds. June through August brings coastal marine layer that burns off by 10am; schedule tee times after 9:30am for clear skies from the first hole. August adds Car Week congestion and hotel rate spikes. December through February is cheapest with occasional rain but often excellent conditions.",
       },
-      {
-        q: "Should I avoid August?",
-        a: "If Car Week and the Concours d\u2019Elegance aren\u2019t part of the appeal, yes \u2014 Bayonet and Black Horse close for several days in mid-August, and hotel rates spike well above normal during the event.",
-      },
+
       {
         q: "How do I get to the Monterey Peninsula?",
         a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min.",
