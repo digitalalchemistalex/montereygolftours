@@ -896,3 +896,37 @@ Sean's colleague Mike submitted a site edits document (MGT_Site_Edits.docx). All
 
 ### Notification sent
 Email sent to Sean + Mike (Sep 9 2026) listing all changes and the 3 photo blockers.
+
+---
+
+## SESSION UPDATE: Sep 9 2026 — Logo Fix + Configurator + Hero Credit
+
+### Changes
+| Commit | Description | Status |
+|--------|-------------|--------|
+| `eff6acd` | Logo — use transparent master PNG, remove white filter | ✅ |
+| `c14b7ae` | Logo — use transparent master PNG in sticky header | ✅ |
+| `68387c4` | Add logo-correct.png (golf flag) from Sean upload | ✅ |
+| `2aabe8c` | HeroCentered — use logo-correct.png | ✅ |
+| `bb7b38a` | Logo.tsx — use logo-correct.png | ✅ |
+| `0dd8f0c` | Delete logo.png (tree badge) | ✅ |
+| `e3861ea` | Delete logo-400.png (tree badge) | ✅ |
+| `0409e05` | Delete logo-master.jpg (tree badge) | ✅ |
+| `0738212` | Logo — brightness(10) saturate(0) white filter restored | ✅ |
+| `43ccad8` | Logo — restore white filter on hero | ✅ |
+| `9fb64b0` | Hero — add Jeff Marsh / © PBC photo credit bottom-right | ✅ |
+| `136ff65` | Configurator — four questions: Group size, Dates, Itinerary, Budget | ✅ |
+| `b92c0ca` | Logo — size + drop-shadow (intermediate, superseded) | ✅ |
+
+### Key decisions
+- **logo-correct.png is the only valid logo** — golf flag illustration uploaded directly from Sean. All other brand files (logo.png, logo-400.png, logo-master.jpg) deleted. logo-transparent-master.png and logo-v2.png remain in repo but contain tree badge cached by Vercel — never reference in code.
+- **Always visually verify images** — filenames are unreliable. Always download + view before using.
+- **Lone Cypress** — logo-400.png was the circular tree badge. Resembled the Lone Cypress (PBC trademark). All tree badge files deleted. logo-correct.png has no trademark issues.
+- **Hero background** — pebble-beach-hole-9-aerial.jpg by Jeff Marsh / © Pebble Beach Company. Credit now shown bottom-right of hero.
+- **Configurator** — updated from 3 questions to 4: Group size, Dates, Itinerary, Budget. Heading updated to "Four questions."
+
+### Still pending from Sean
+- Pacific Grove hero replacement
+- CVR hero replacement  
+- Poppy Hills hero replacement
+
