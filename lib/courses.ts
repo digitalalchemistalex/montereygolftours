@@ -125,9 +125,9 @@ export const COURSES: Course[] = [
     difficulty: "challenging",
   },
   {
-    slug: "club-at-pasadera",
+    slug: "tpc-monterey-at-pasadera",
     image: "https://images.unsplash.com/photo-1619468129361-605ebea04b44?auto=format&fit=crop&w=1400&q=90",
-    name: "The Club at Pasadera",
+    name: "TPC Monterey at Pasadera",
     city: "Monterey, CA",
     par: 71,
     yards: "6,673 yds",
