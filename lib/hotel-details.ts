@@ -53,6 +53,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     description: [
       "The Hyatt Regency Monterey sits on 22 secluded acres of Monterey pines, 2 miles from downtown Monterey, directly adjacent to Del Monte™ Golf Course — the oldest golf course in continuous operation west of the Mississippi, dating to 1897.",
       "With 560 guestrooms and suites, it's the largest property on this list and a natural base for group trips, offering verified stay-and-play packages with Poppy Hills, Bayonet, and Black Horse, in addition to the on-site Del Monte course.",
+      "The Hyatt Regency Monterey provides a complimentary shuttle from Monterey Regional Airport (MRY) — one of the few hotels on the peninsula to offer this service, making it a convenient arrival point for fly-in golf groups.",
     ],
     amenities: [
       "2 outdoor pools + hot tubs",
