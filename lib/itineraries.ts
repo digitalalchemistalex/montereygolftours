@@ -48,7 +48,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         day: 1,
         title: "Arrival + Pacific Grove",
         items: [
-          "Arrive at Monterey Regional Airport (MRY) or self-drive — drop bags at hotel",
+          "Arrive at Monterey Regional Airport (MRY) or self-drive — drop bags at hotel (Hyatt Regency Monterey guests: complimentary airport shuttle available)",
           "Afternoon: Pacific Grove Golf Links — an easy shakeout round on travel day, with ocean views on the back nine",
           "Evening: dinner at Cannery Row",
         ],
@@ -100,7 +100,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         day: 1,
         title: "Arrival + Poppy Hills",
         items: [
-          "Arrive at MRY — drop bags, check in after the round",
+          "Arrive at MRY — drop bags, check in after the round (Hyatt Regency Monterey guests: complimentary airport shuttle available)",
           "Afternoon: Poppy Hills Golf Course — a trophy NCGA-owned course in the Del Monte Forest, without the resort price tag",
           "Evening: dinner at the resort or downtown Monterey",
         ],
@@ -164,7 +164,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         day: 1,
         title: "Arrival + Pacific Grove",
         items: [
-          "Arrive at MRY — drop bags, check in after the round",
+          "Arrive at MRY — drop bags, check in after the round (Hyatt Regency Monterey guests: complimentary airport shuttle available)",
           "Afternoon: Pacific Grove Golf Links (shakeout round)",
           "Evening: dinner downtown Monterey",
         ],
@@ -481,7 +481,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
         day: 1,
         title: "Pacific Grove Golf Links",
         items: [
-          "Arrive — drop bags, check in after the round",
+          "Arrive — drop bags, check in after the round (Hyatt Regency Monterey guests: complimentary airport shuttle from MRY available)",
           "Afternoon: Pacific Grove Golf Links — among the lowest green fees on the peninsula, with genuine ocean views",
         ],
       },
