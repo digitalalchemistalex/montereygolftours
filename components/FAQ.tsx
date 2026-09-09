@@ -123,3 +123,70 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
     ],
   },
 ];
+
+export default function FAQ() {
+  return (
+    <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
+      <Reveal>
+        <div className="mb-12 md:mb-16">
+          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
+            Questions
+          </div>
+          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
+            Frequently asked
+          </h2>
+        </div>
+      </Reveal>
+
+      <div className="space-y-12 md:space-y-16">
+        {FAQ_CATEGORIES.map((cat) => (
+          <div key={cat.category} className="grid grid-cols-1 gap-6 md:grid-cols-[0.4fr_1fr] md:gap-16">
+            <div className="flex flex-col gap-4 md:block">
+              <div className="relative h-40 w-full overflow-hidden rounded-lg shadow-[0_6px_20px_rgba(0,0,0,.22)] sm:h-44 md:h-48 md:w-48 md:rounded-full">
+                {CATEGORY_ICONS[cat.category] && (
+                  <Image
+                    src={CATEGORY_ICONS[cat.category]}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="192px"
+                  />
+                )}
+                <div
+                  className="absolute inset-0 flex items-center justify-center text-center"
+                  style={{ background: "linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%)" }}
+                >
+                  <span className="px-4 font-ui text-[15px] font-bold uppercase leading-tight tracking-[.04em] text-white sm:text-[18px] md:text-[20px]">
+                    {cat.category}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+              {cat.items.map((f, i) => (
+                <details
+                  key={f.q}
+                  className={`group py-4 ${i < cat.items.length - 2 ? "border-b border-[#ddd6c2]" : ""} ${
+                    i % 2 === 0 ? "sm:pr-8" : ""
+                  }`}
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-3 font-ui text-[15px] font-semibold italic leading-snug text-ink">
+                    {f.q}
+                    <span className="flex-none font-display text-xl leading-none text-gold group-open:hidden">+</span>
+                    <span className="hidden flex-none font-display text-xl leading-none text-gold group-open:inline">
+                      &minus;
+                    </span>
+                  </summary>
+                  {/* faq-answer class = speakable target for AI crawlers */}
+                  <p className="faq-answer mt-3 font-body text-[14px] leading-relaxed text-[#5a564e]">
+                    {f.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
