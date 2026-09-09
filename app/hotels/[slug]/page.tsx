@@ -344,8 +344,6 @@ export default async function HotelPage({ params }: Props) {
         <section className="border-b border-warmborder px-6 py-10 md:px-14 md:py-14">
           <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <PracticalItem label="Address" value={hotel.address} />
-            <PracticalItem label="Phone" value={hotel.phone} />
-            <PracticalItem label="Website" value={hotel.website} />
             <PracticalItem label="Brand" value={hotel.brand} />
           </dl>
         </section>
