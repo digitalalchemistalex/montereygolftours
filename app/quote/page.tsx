@@ -55,8 +55,7 @@ export default function QuotePage() {
             Get a custom golf trip quote
           </h1>
           <p className="mt-3 max-w-[600px] rounded-lg bg-[rgba(255,255,255,.5)] px-3 py-1.5 font-body text-base leading-relaxed text-[#1e2820] backdrop-blur-sm md:text-lg">
-            Tell us about your group and we&apos;ll put together a trip — courses, lodging,
-            and a price range — within 24 hours.
+            Tell us your ideal itinerary and trip needs – courses of interest, lodging preferences, and special interests – and we’ll build an accurate quote you can rely on!
           </p>
         </div>
       </section>
