@@ -90,7 +90,7 @@ export default function ExperiencesIndex() {
       <Header />
 
       <main className="flex-1">
-        <section className="border-b border-[#e3ddcf] bg-white px-6 py-16 md:px-14 md:py-20">
+        <section className="border-b border-[#e3ddcf] bg-white px-6 pb-16 pt-[120px] md:px-14 md:pb-20 md:pt-[140px]">
           <div className="max-w-[800px]">
             <span className="font-ui text-[11px] font-bold uppercase tracking-[.1em] text-[#8a8a6e]">
               Pebble Beach Resorts\u00ae
@@ -138,9 +138,7 @@ export default function ExperiencesIndex() {
                     <p className="mt-2 line-clamp-2 font-body text-[13px] leading-relaxed text-[#5a564e]">
                       {exp.hook}
                     </p>
-                    <div className="mt-3 font-ui text-[12px] font-semibold text-ocean">
-                      Explore \u2192
-                    </div>
+
                   </div>
                 </Link>
               );
