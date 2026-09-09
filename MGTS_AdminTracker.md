@@ -570,7 +570,9 @@ Hero image (`hole-6.webp`) — ✅ fine, not a blocked hole.
 6. Sean reviews "PBC TRADEMARKS 2026.pdf" — confirm our ®/™ usage is compliant
 
 #### Photographer credit implementation plan (when images arrive)
-- Add credit as a second line in the `caption` field: `"...\n© [Photographer Name]"` or `"...\n© Pebble Beach Company"`
+- Add credit as a second line in the `caption` field: `"...
+© [Photographer Name]"` or `"...
+© Pebble Beach Company"`
 - GalleryLightbox already renders captions — credits will show under each image
 - Apply same credit process to Spyglass Hill gallery images (also PBC licensed)
 - Apply to Del Monte gallery images (also PBC licensed)
@@ -729,7 +731,8 @@ All PBC properties now using portal images only. Remaining Unsplash all non-PBC 
 **Commit 7c4d9fb8 — GalleryLightbox credits:**
 - Thumbnails: photographer credit shown bottom-right as always-visible pill
 - Lightbox: credit shown below caption in muted text
-- `parseCaption()` splits on `\n` — no data changes needed, format already correct
+- `parseCaption()` splits on `
+` — no data changes needed, format already correct
 
 **Final schema graph per page type:**
 ```
@@ -754,7 +757,8 @@ Blog post:  WebPage · BlogPosting(author=Sean) · BreadcrumbList
 - lodge_2025_exterior/lobby, lodge_2017_fairwayone, lodge_2018_oceanstudio, lodge-main-building_01
 - inn_2018_executiveforestsuite, inn_2020_lobby, the-inn-fire-pits, the-inn-ocean-view-room, the-inn-presidential-suite
 
-**Once all credits received:** Update caption strings in `course-details.ts` and `hotel-details.ts` with `\nPhoto by [Name]` suffix. GalleryLightbox will automatically display them.
+**Once all credits received:** Update caption strings in `course-details.ts` and `hotel-details.ts` with `
+Photo by [Name]` suffix. GalleryLightbox will automatically display them.
 
 ### Experience Pages — STRATEGY APPROVED
 
@@ -824,4 +828,71 @@ Blog post:  WebPage · BlogPosting(author=Sean) · BreadcrumbList
 - Photographer credits on gallery thumbnails/lightbox (Drive MCP required — verify callable first)
 - D#16 Auth + Middleware (next code task when ready to proceed)
 - D#17–D#21 follow in sequence
+---
 
+## SESSION: Sep 9 2026 — Mike Site Edits Complete + Pasadera Rename
+
+### What happened
+Sean's colleague Mike submitted a site edits document (MGT_Site_Edits.docx). All copy, content, and structural changes were implemented and verified against live code. One item (Pasadera rename) was initially missed — caught and fixed during verification pass.
+
+### Commits this session (Sep 9 2026)
+| Commit | Description | Status |
+|--------|-------------|--------|
+| `08c7f35` | Remove game level selector from hero | ✅ |
+| `3652871` | Remove game level selector from QuoteForm | ✅ |
+| `d9a9511` | PBC nav Experiences link → pebblebeach.com/golf/experiences/ | ✅ |
+| `e8fad29` | Packages copy — badge, h2, body (Mike edits) | ✅ |
+| `100cccf` | Configurator — remove Skill level step, update heading + copy | ✅ |
+| `ccac6ee` | Quote page — update intro subtext | ✅ |
+| `31a720a` | FAQ — 4 Mike edits: pricing Q+A, PBC booking Q+A, remove August | ✅ |
+| `a8cdb10` | FAQ — items 14, 16, 19, 20 | ✅ |
+| `796c4cc` | FAQ — fix missing export default | ✅ |
+| `2d44d70` | Itineraries page — update intro tagline | ✅ |
+| `ff2097b` | Itineraries lib — player counts, check-in order, Pasadera naming | ✅ |
+| `f672f1a` | Experiences page — rewrite intro paragraph | ✅ |
+| `3436228` | Experiences lib — dining hook, spa description, spa FAQ | ✅ |
+| `9cde1d1` | Itineraries lib — player counts, check-in order, Pasadera naming | ✅ |
+| `ef6cad2` | Itineraries page — intro tagline | ✅ |
+| `c1010b0` | Experiences page — rewrite intro paragraph | ✅ |
+| `edcd4ad` | Experiences lib — dining hook, spa description, spa FAQ | ✅ |
+| `4347df6` | Hotels — remove Phone + Website rows | ✅ |
+| `a6f072d` | CVR description rewrite | ✅ |
+| `1353e97` | Hyatt — add shuttle description | ✅ |
+| `41bac90` | Itineraries — Hyatt shuttle note on Day 1 | ✅ |
+| `2e3b09b` | Itinerary page — dining disclaimer | ✅ |
+| `19ac873` | Revert to logo.png — drop-shadow for visibility | ✅ |
+| `926acec` | Logo — white filter + shrink to 140px | ✅ |
+| `24575e7` | Logo — 120px, drop-shadow, brightness boost, transparent master | ✅ |
+| `d7c361b` | Experiences — remove Explore arrows, fix header overlap | ✅ |
+| `8698a91` | QuoteForm — add F&B events + Other activities fields | ✅ |
+| `bf27d2b` | Header sticky — sticky on scroll, show nav logo after hero | ✅ |
+| `ebe9481` | Header sticky — shrink logo to 72px | ✅ |
+| `28fe106` | Header — mobile sticky no logo, desktop 48px | ✅ |
+| `04ddb29` | Header — restore mobile logo at 36px in sticky | ✅ |
+| `66d5f17` | Fix broken Pebble Beach Area image in destinations | ✅ |
+| `eff6acd` | Logo — use transparent master PNG, remove white filter, shrink to 120px | ✅ |
+| `c14b7ae` | Logo — use transparent master PNG in sticky header | ✅ |
+| `156ed22` | Itineraries — remove 4–8 player count from FAQ answer | ✅ |
+| `cffaa59` | Global — rename Club at Pasadera to TPC Monterey at Pasadera in courses.ts | ✅ |
+| `619ee61` | Global — rename Club at Pasadera to TPC Monterey at Pasadera in course-details.ts | ✅ |
+| `ba3b426` | Global — update club-at-pasadera slug to tpc-monterey-at-pasadera in itineraries.ts | ✅ |
+
+### Mike edits — full verified status
+
+**DONE — all verified in source:**
+- Global: "Golf Club at Pasadera" → "TPC Monterey at Pasadera" everywhere + slug updated to `/golf-courses/tpc-monterey-at-pasadera/`
+- Homepage: hero sub-copy, configurator copy, game level selector removed, packages badge/headline/body all updated
+- Logo: switched to logo-transparent-master.png (1024×1024 RGBA, true transparency), no filter, 120px hero / 140px desktop, sticky header also updated
+- QuoteForm: intro rewritten, game question removed, F&B events field added, Other Activities field added, transportation already in place
+- FAQ: booking lead time rewritten with PBC FOMO, "What is included in pricing?" renamed + new answer, PBC courses added to courses available, PBC booking Q rewritten, resort course advance booking standalone Q, private vacation rentals Q+A added, August question removed
+- Itineraries: intro tagline, player counts removed, "(estimate)" labels, dining disclaimer, Hyatt shuttle note, check-in timing fixed
+- PBC section: nav → pebblebeach.com/golf/experiences/, intro rewritten, Explore arrows removed, header overlap fixed, dining hook updated, spa last sentence + FAQ updated
+- Hotels: phone rows removed, website rows removed, CVR description rewritten
+
+**STILL BLOCKED ON SEAN (photos):**
+- Pacific Grove Golf Links hero — blurry, needs replacement
+- Carmel Valley Ranch hero — needs better image
+- Poppy Hills hero — needs better image
+
+### Notification sent
+Email sent to Sean + Mike (Sep 9 2026) listing all changes and the 3 photo blockers.
