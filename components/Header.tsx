@@ -121,6 +121,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
     }>
       {/* Logo — show always when fixed/scrolled; hidden when transparent hero mode */}
       <Link href="/" className="flex flex-none items-center justify-start">
+        {isFixed && <Logo size={36} className="lg:hidden" />}
         {isFixed && <Logo size={48} className="hidden lg:flex" />}
       </Link>
 
