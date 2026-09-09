@@ -3,9 +3,8 @@ import Reveal from "./Reveal";
 
 const STEPS = [
   { n: "01", label: "Group size", detail: "2 to 400 players" },
-  { n: "02", label: "Skill level", detail: "Beginner to scratch" },
-  { n: "03", label: "Dates", detail: "Flexible or fixed" },
-  { n: "04", label: "Budget", detail: "Value to premium" },
+  { n: "02", label: "Dates", detail: "Flexible or fixed" },
+  { n: "03", label: "Budget", detail: "Value to premium" },
 ];
 
 export default function Configurator() {
@@ -18,13 +17,12 @@ export default function Configurator() {
               Get started
             </div>
             <h2 className="text-display-md mt-3 font-display font-bold text-ink">
-              Four questions.
+              Three questions.
               <br />
               One trip, built for you.
             </h2>
             <p className="mt-4 max-w-[380px] font-body text-[15px] leading-relaxed text-[#6a6a62]">
-              No obligation, no generic packages — just tell us who&apos;s playing and
-              we&apos;ll shape the rest.
+              Give us an idea of what you want your trip to include, and we’ll shape it for you
             </p>
             <Link
               href="/quote/"
