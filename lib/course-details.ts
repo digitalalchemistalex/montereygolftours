@@ -714,11 +714,11 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Day visitors do NOT pay the Pebble Beach gate fee to access Poppy Hills — the NCGA entrance is entirely separate from the resort.",
     ],
   },
-  "club-at-pasadera": {
-    slug: "club-at-pasadera",
-    name: "The Club at Pasadera",
+  "tpc-monterey-at-pasadera": {
+    slug: "tpc-monterey-at-pasadera",
+    name: "TPC Monterey at Pasadera",
     city: "Monterey, CA",
-    facility: "The Club at Pasadera",
+    facility: "TPC Monterey at Pasadera",
     par: 71,
     yards: "6,673–6,733 yards",
     rating: "73.7",
@@ -730,10 +730,10 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     website: "theclubatpasadera.com",
     hook: "A Jack Nicklaus Signature course on the Monterey Peninsula — limited public access available.",
     description: [
-      "The only Jack Nicklaus Signature course on the Monterey Peninsula. The Club at Pasadera rewards groups who plan around its Monday public access window — the canyon par-3 14th ('The Moment', 205 yards over a canyon with views to Monterey and Pacific Grove) rivals any signature hole on the peninsula, with conditions that match private clubs in California.",
-      "The Club at Pasadera is a Jack Nicklaus Signature Design that opened in 2000, privately operated with limited public access. The course is owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name \"The Club at Pasadera\" rather than any TPC-prefixed name.",
+      "The only Jack Nicklaus Signature course on the Monterey Peninsula. TPC Monterey at Pasadera rewards groups who plan around its Monday public access window — the canyon par-3 14th ('The Moment', 205 yards over a canyon with views to Monterey and Pacific Grove) rivals any signature hole on the peninsula, with conditions that match private clubs in California.",
+      "TPC Monterey at Pasadera is a Jack Nicklaus Signature Design that opened in 2000, privately operated with limited public access. The course is owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name \"TPC Monterey at Pasadera\" rather than any TPC-prefixed name.",
       "At par 71 and roughly 6,673–6,733 yards depending on the source, the course offers a premium Nicklaus design experience on the Monterey Peninsula, typically with limited access windows for non-members.",
-      "The Club at Pasadera is the only Jack Nicklaus Signature course on the Monterey Peninsula with Monday public access, making it a distinctive add-on for Monterey golf packages that want a Nicklaus design without requiring private membership. Monterey Golf Tours can secure Monday tee times for groups as part of a planned peninsula itinerary."
+      "TPC Monterey at Pasadera is the only Jack Nicklaus Signature course on the Monterey Peninsula with Monday public access, making it a distinctive add-on for Monterey golf packages that want a Nicklaus design without requiring private membership. Monterey Golf Tours can secure Monday tee times for groups as part of a planned peninsula itinerary."
     ],
     highlights: [
       {
@@ -766,27 +766,27 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
     nearbySlugs: [],
     faqs: [
       {
-        q: "Can the public play The Club at Pasadera?",
+        q: "Can the public play TPC Monterey at Pasadera?",
         a: "Access is limited — the club is primarily private. Contact the club directly to confirm current public access terms before planning a round.",
       },
       {
-        q: "Who designed The Club at Pasadera?",
+        q: "Who designed TPC Monterey at Pasadera?",
         a: "Jack Nicklaus designed the course as a Jack Nicklaus Signature Design, which opened in 2000.",
       },
       {
-        q: "How long is the course at The Club at Pasadera?",
+        q: "How long is the course at TPC Monterey at Pasadera?",
         a: "Roughly 6,673–6,733 yards depending on the source, at par 71 with a 73.7 rating.",
       },
       {
-        q: "Who owns The Club at Pasadera?",
-        a: "It's owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name The Club at Pasadera.",
+        q: "Who owns TPC Monterey at Pasadera?",
+        a: "It's owned by Concert Golf Partners and has been associated with the TPC Network since 2025, though current public-facing branding uses the name TPC Monterey at Pasadera.",
       },
       {
-        q: "Is The Club at Pasadera a good fit for a group trip?",
+        q: "Is TPC Monterey at Pasadera a good fit for a group trip?",
         a: "It suits groups planning well in advance to secure access, given its limited public availability as a primarily private club.",
       },
     
-      { q: "How do I book The Club at Pasadera as part of a Monterey golf package?", a: "The Club at Pasadera is accessible to the public on Mondays only. Monterey Golf Tours can secure Monday tee times for groups as part of a planned peninsula itinerary — it’s the only Nicklaus Signature on the Monterey Peninsula with public access, making it a distinctive add-on for groups who want a name design outside the Pebble Beach properties." },],
+      { q: "How do I book TPC Monterey at Pasadera as part of a Monterey golf package?", a: "TPC Monterey at Pasadera is accessible to the public on Mondays only. Monterey Golf Tours can secure Monday tee times for groups as part of a planned peninsula itinerary — it’s the only Nicklaus Signature on the Monterey Peninsula with public access, making it a distinctive add-on for groups who want a name design outside the Pebble Beach properties." },],
     pointers: [
       "Signature hole: par-3 14th — 'The Moment' — 205 yards over a canyon with views stretching to Monterey and Pacific Grove.",
       "Guests of Bernardus Lodge can access the course outside the standard Monday public window — verify current terms with the property.",
