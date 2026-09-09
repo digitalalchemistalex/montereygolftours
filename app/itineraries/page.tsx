@@ -71,8 +71,7 @@ export default function ItinerariesIndexPage() {
             Sample golf trip itineraries
           </h1>
           <p className="mt-3 max-w-[640px] font-body text-base leading-relaxed text-[rgba(250,246,238,.92)] md:text-lg">
-            6 starting points, from a quick weekend to the full peninsula — every one
-            customizable around your group.
+            Here are some examples of short weekend trips, to week long, world-class golf experiences
           </p>
         </div>
       </section>
