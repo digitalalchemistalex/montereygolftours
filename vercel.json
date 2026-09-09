@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/spanish-bay-open",
       "schedule": "0 14 17 4 *"
+    },
+    {
+      "path": "/api/cron/compliance-check",
+      "schedule": "0 9 * * *"
     }
   ]
 }
