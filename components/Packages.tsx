@@ -43,14 +43,13 @@ export default function Packages() {
       <Reveal>
         <div className="relative z-10 mb-9 max-w-[600px]">
           <span className="inline-block rounded-full bg-gold px-4 py-1.5 font-ui text-xs font-bold uppercase tracking-[.1em] text-ink">
-            Real pricing, no surprises
+            All-Inclusive Pricing. No Hidden Fees.
           </span>
           <h2 className="mt-4 text-display-md font-display font-bold text-cream">
-            Trip packages, priced from real Monterey rounds
+            Trip packages designed for You
           </h2>
           <p className="mt-3 font-body text-[15px] leading-relaxed text-[rgba(250,246,238,.85)] md:text-base">
-            Every package is built from actual course and hotel rates — pricing varies by
-            course and room selections. Get a custom quote for your exact group.
+            Every package is built from actual course and hotel rates. Get a custom quote to match your group’s interests.
           </p>
         </div>
       </Reveal>
