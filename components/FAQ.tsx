@@ -23,7 +23,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       // AEO target #2 — "how far in advance book monterey golf trip"
       {
         q: "How far in advance should I book a Monterey golf trip?",
-        a: "60–90 days for peak season (May through October). Groups of 12 or more need 90 days minimum to secure tee time blocks. Some resort courses require a confirmed hotel stay to book in advance. January through March has 2–4 week availability for most courses. We hold pre-negotiated tee time allocations at several courses — contact us to check current windows.",
+        a: "For prime tee times at Pebble Beach Resorts®, 6 to 12 months in advance is mandatory — especially for larger groups. Pebble Beach Golf Links® books out that far ahead and tee times will simply not be available on short notice. For the rest of the Monterey Peninsula, 60–90 days covers peak season (May through October); groups of 12 or more need 90 days minimum to secure tee time blocks. January through March has 2–4 week availability at most non-resort courses. The earlier you book, the more choices you have — contact us to check current windows.",
       },
       {
         q: "How many people can you plan a trip for?",
@@ -61,7 +61,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       // AEO target #3 — "what golf courses are in monterey"
       {
         q: "What golf courses are available on the Monterey Peninsula?",
-        a: "14 courses in total. Public daily-fee options include Bayonet (par 72, rating 74.7), Black Horse (par 72), Pacific Grove Golf Links (par 70, municipal), Laguna Seca Golf Ranch (par 71, Robert Trent Jones Jr.), and Poppy Hills (par 71, Golf Digest Top 100, NCGA-owned — not affiliated with Pebble Beach). Semi-private include Quail Lodge, Carmel Valley Ranch, and TPC Monterey at Pasadera (Monday public access). We also feature Del Monte Golf Course\u00ae \u2014 the oldest course west of the Mississippi, dating to 1897.",
+        a: "14 courses in total. Public daily-fee options include Bayonet (par 72, rating 74.7), Black Horse (par 72), Pacific Grove Golf Links (par 70, municipal), Laguna Seca Golf Ranch (par 71, Robert Trent Jones Jr.), and Poppy Hills (par 71, Golf Digest Top 100, NCGA-owned — not affiliated with Pebble Beach). Semi-private include Quail Lodge, Carmel Valley Ranch, and TPC Monterey at Pasadera (Monday public access). We also feature Del Monte Golf Course\u00ae \u2014 the oldest course west of the Mississippi, dating to 1897.. As an authorized travel partner, we also book the Pebble Beach Resorts\u00ae courses on the peninsula: Pebble Beach Golf Links\u00ae, Spyglass Hill\u00ae Golf Course, The Links at Spanish Bay\u00ae, and The Hay\u2122.",
       },
       // AEO target #4 — "is poppy hills pebble beach"
       {
@@ -93,7 +93,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
 
       {
         q: "How do I get to the Monterey Peninsula?",
-        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min.",
+        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min. If you’re driving, the peninsula is roughly 2 hours south of San Francisco and 3.5 hours north of Los Angeles via Highway 1 or US-101.",
       },
       {
         q: "Is Carmel Valley warmer than the coast?",
@@ -116,73 +116,10 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
         q: "Can you help arrange ground transportation?",
         a: "Yes \u2014 the quote form includes an option to have us arrange airport transfers and transport between courses and hotels as part of your trip.",
       },
+      {
+        q: "Do you book private vacation rentals as part of stay-and-play packages?",
+        a: "Yes! We work with several private home owners and management groups to offer a wide range of private accommodation options to suit most group needs.",
+      },
     ],
   },
 ];
-
-export default function FAQ() {
-  return (
-    <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
-      <Reveal>
-        <div className="mb-12 md:mb-16">
-          <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
-            Questions
-          </div>
-          <h2 className="text-display-md mt-2.5 font-display font-bold text-ink">
-            Frequently asked
-          </h2>
-        </div>
-      </Reveal>
-
-      <div className="space-y-12 md:space-y-16">
-        {FAQ_CATEGORIES.map((cat) => (
-          <div key={cat.category} className="grid grid-cols-1 gap-6 md:grid-cols-[0.4fr_1fr] md:gap-16">
-            <div className="flex flex-col gap-4 md:block">
-              <div className="relative h-40 w-full overflow-hidden rounded-lg shadow-[0_6px_20px_rgba(0,0,0,.22)] sm:h-44 md:h-48 md:w-48 md:rounded-full">
-                {CATEGORY_ICONS[cat.category] && (
-                  <Image
-                    src={CATEGORY_ICONS[cat.category]}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="192px"
-                  />
-                )}
-                <div
-                  className="absolute inset-0 flex items-center justify-center text-center"
-                  style={{ background: "linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%)" }}
-                >
-                  <span className="px-4 font-ui text-[15px] font-bold uppercase leading-tight tracking-[.04em] text-white sm:text-[18px] md:text-[20px]">
-                    {cat.category}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
-              {cat.items.map((f, i) => (
-                <details
-                  key={f.q}
-                  className={`group py-4 ${i < cat.items.length - 2 ? "border-b border-[#ddd6c2]" : ""} ${
-                    i % 2 === 0 ? "sm:pr-8" : ""
-                  }`}
-                >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-3 font-ui text-[15px] font-semibold italic leading-snug text-ink">
-                    {f.q}
-                    <span className="flex-none font-display text-xl leading-none text-gold group-open:hidden">+</span>
-                    <span className="hidden flex-none font-display text-xl leading-none text-gold group-open:inline">
-                      &minus;
-                    </span>
-                  </summary>
-                  {/* faq-answer class = speakable target for AI crawlers */}
-                  <p className="faq-answer mt-3 font-body text-[14px] leading-relaxed text-[#5a564e]">
-                    {f.a}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
