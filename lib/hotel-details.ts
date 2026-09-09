@@ -135,10 +135,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
       { src: "/images/carmel-valley-ranch/gallery-5.webp", caption: "The pool and spa at Carmel Valley Ranch — a full resort experience anchored by the on-site Pete Dye golf course.", tag: "Pool & spa" },
     ],
     description: [
-      "Carmel Valley Ranch is an all-suite resort — every accommodation is a minimum 800 sq ft (starting with the Santa Lucia Studio); there are no standard hotel rooms. Pete Dye's only Northern California golf design is on-site, and the property sits inland in the sun-drenched Santa Lucia foothills, typically 15–18°F warmer than the Monterey coast and clear of marine fog earlier in the morning. — every accommodation, from studio suites to 2-bedroom suites with up to 4 interconnected bedrooms, averages 800 square feet, with no standard rooms on property. The resort sits on 500 acres in the Carmel Valley foothills, beside the 4,400-acre Garland Ranch Regional Park.",
-      "The on-site golf course is a Pete Dye original (1980), renovated by Gene Bates in 2006 — the only Pete Dye design in Northern California. The wine-country microclimate here tends to stay sunny even when the coast is fogged in.",
-    
-      "Carmel Valley Ranch is a natural stay-and-play base for Monterey golf trips that want warmth, privacy, and an on-site Pete Dye course. Monterey Golf Tours includes it in Carmel Valley golf packages — the resort handles accommodation, golf, spa, and dining in one property, with easy day trips to the Pebble Beach courses.",],
+      "Carmel Valley Ranch is a natural stay-and-play base for Monterey golf trips that want warmth, privacy, and an on-site course. Monterey Golf Tours can include it in any golf package, with easy day trips to the Monterey Peninsula golf courses.",
+    ],
     amenities: [
       "On-site 18-hole Pete Dye golf course",
       "Spa Aiyana (10,500 sq ft)",
