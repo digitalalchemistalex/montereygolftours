@@ -17,7 +17,7 @@ export default function Logo({
   return (
     <div className={`flex items-center ${className ?? ""}`}>
       <Image
-        src="/brand/logo-transparent-master.png"
+        src="/brand/logo-v2.png"
         alt="Monterey Golf Course"
         width={imageSize}
         height={imageSize}
