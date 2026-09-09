@@ -80,7 +80,7 @@ export default function HeroCentered() {
           width={280}
           height={268}
           priority
-          style={{ width: 160, height: "auto", filter: "drop-shadow(0 2px 12px rgba(0,0,0,.6)) brightness(1.15)" }}
+          style={{ width: 160, height: "auto", filter: "brightness(10) saturate(0) drop-shadow(0 1px 6px rgba(0,0,0,.4))" }}
           className="md:!w-[180px]"
         />
         <div className="mt-5 h-px w-20 bg-[rgba(250,246,238,.35)]" />
