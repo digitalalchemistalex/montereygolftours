@@ -72,7 +72,7 @@ export const ITINERARIES: Record<string, ItineraryTemplate> = {
       },
     ],
     faqs: [
-      { q: "How many people is this trip built for?", a: "This 3-day weekend is designed for a casual golfer group of 4–8 players." },
+      { q: "How many people is this trip built for?", a: "This 3-day weekend works for casual golfer groups of any size. Get a custom quote and we will build it around your group." },
       { q: "Which courses are included?", a: "Pacific Grove Golf Links, Bayonet, and Laguna Seca Golf Ranch — one round each over the 3 days." },
       { q: "Where do we stay?", a: "Hyatt Regency Monterey or Portola Hotel, both central to all three courses." },
       { q: "What's the price range for this trip?", a: "Verified at $564–$1,740 per person, depending on room and course selections." },
