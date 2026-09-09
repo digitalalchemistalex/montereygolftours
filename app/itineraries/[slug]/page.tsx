@@ -222,7 +222,8 @@ export default async function ItineraryPage({ params }: Props) {
 
         {/* Day-by-day */}
         <section className="border-b border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
-          <h2 className="font-display text-2xl font-bold text-ink md:text-[32px] mb-10">Day-by-day</h2>
+          <h2 className="font-display text-2xl font-bold text-ink md:text-[32px] mb-4">Day-by-day</h2>
+          <p className="mb-8 max-w-[720px] font-body text-[13px] text-[#8a857a] italic">Dining suggestions shown are illustrative and are not included in package pricing. We are happy to arrange reservations and group dining events — just let us know in your quote.</p>
           <div className="space-y-8 max-w-[720px]">
             {trip.days.map((d: { title: string; items: string[] }, i: number) => (
               <div key={i} className="flex gap-6">
