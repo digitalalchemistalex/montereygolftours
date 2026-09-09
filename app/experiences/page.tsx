@@ -99,9 +99,7 @@ export default function ExperiencesIndex() {
               Beyond the Fairways
             </h1>
             <p className="mt-4 max-w-[640px] font-body text-[15px] leading-relaxed text-[#5a564e]">
-              A Monterey golf trip is more than the rounds. Dining, spa, 17-Mile Drive\u00ae, the Golf Academy,
-              and The Beach & Tennis Club are all part of what makes Pebble Beach Resorts\u00ae the most
-              complete golf destination in the country.
+              A golf trip to Pebble Beach Resorts™ is more than just golf on iconic golf courses! Amazing dining, a world-class spa, game improvement, and The Beach and Tennis Club are the ultimate compliment to unprecedented coastal scenery!
             </p>
           </div>
         </section>
