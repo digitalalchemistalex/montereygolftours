@@ -75,13 +75,13 @@ export default function HeroCentered() {
 
         {/* Logo */}
         <Image
-          src="/brand/logo.png"
+          src="/brand/logo-transparent-master.png"
           alt="Monterey Golf Tours"
-          width={280}
-          height={268}
+          width={1024}
+          height={1024}
           priority
-          style={{ width: 200, height: "auto" }}
-          className="md:!w-[240px]"
+          style={{ width: 140, height: "auto", filter: "brightness(0) invert(1)" }}
+          className="md:!w-[160px]"
         />
         <div className="mt-5 h-px w-20 bg-[rgba(250,246,238,.35)]" />
 
