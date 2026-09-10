@@ -9,6 +9,15 @@ export default function SiteSchema() {
         "@id": `https://${SITE.domain}/#organization`,
         name: SITE.name,
         url: `https://${SITE.domain}`,
+        logo: {
+          "@type": "ImageObject",
+          "@id": `https://${SITE.domain}/#logo`,
+          url: `https://${SITE.domain}/brand/logo-correct.png`,
+          contentUrl: `https://${SITE.domain}/brand/logo-correct.png`,
+          caption: "Monterey Golf Tours",
+          inLanguage: "en-US",
+        },
+        image: { "@id": `https://${SITE.domain}/#logo` },
         sameAs: [
           "https://golfthehighsierra.com",
         ],
@@ -47,6 +56,14 @@ export default function SiteSchema() {
         name: SITE.name,
         publisher: { "@id": `https://${SITE.domain}/#organization` },
         inLanguage: "en-US",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `https://${SITE.domain}/?s={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
     ],
   };
