@@ -36,7 +36,6 @@ const DEFAULT_DESC =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://montereygolftours.com"),
-  metadataBase: new URL("https://montereygolftours.com"),
   title: {
     default: DEFAULT_TITLE,
     template: "%s | Monterey Golf Tours",
