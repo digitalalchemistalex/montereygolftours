@@ -29,13 +29,13 @@ const inter = Inter({
   preload: false,
 });
 
-const OG_IMAGE = "/og-image.jpg";
 
 const DEFAULT_TITLE = "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula";
 const DEFAULT_DESC =
   "Plan a private group golf trip to the Monterey Peninsula. Courses, lodging, and tee times handled end to end.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://montereygolftours.com"),
   metadataBase: new URL("https://montereygolftours.com"),
   title: {
     default: DEFAULT_TITLE,
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     title: DEFAULT_TITLE,
     description: DEFAULT_DESC,
     url: "https://montereygolftours.com/",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Monterey Peninsula golf" }],
+    // og image served by app/opengraph-image.tsx (dynamic @vercel/og)
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: DEFAULT_DESC,
-    images: [OG_IMAGE],
+    // twitter image served by app/twitter-image.tsx
   },
 };
 
