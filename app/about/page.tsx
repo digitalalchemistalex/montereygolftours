@@ -5,6 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 
+const PUBLISHED = "2026-08-22";
+const MODIFIED = "2026-09-13";
+
 export const metadata: Metadata = {
   title: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
   description:
@@ -29,7 +32,7 @@ const PRINCIPLES = [
   },
   {
     n: "02",
-    title: "Never \"all-inclusive\"",
+    title: 'Never "all-inclusive"',
     detail: "Flights and meals aren't bundled in unless you specifically ask us to arrange them.",
   },
   {
@@ -56,6 +59,14 @@ const FAQ_ITEMS = [
     q: "How long does a typical Monterey golf trip last?",
     a: "Most groups plan 3 to 7 days. A 4-day trip covers the four main courses comfortably; 5 days lets you add Carmel Valley Ranch or Black Horse. We build the schedule around how many rounds your group wants to play.",
   },
+  {
+    q: "When is the best time to golf on the Monterey Peninsula?",
+    a: "May through October is peak season — fog typically burns off by 10am and afternoon conditions are ideal. April and November offer shoulder-season pricing with the same course conditions. Winter brings more coastal weather but the Peninsula plays year-round. Morning tee times between 8–10am get the most consistent conditions in any season.",
+  },
+  {
+    q: "Why choose the Monterey Peninsula over other golf destinations?",
+    a: "The Peninsula concentrates more world-ranked courses within a 15-mile radius than almost anywhere in the world — Pebble Beach Golf Links®, Spyglass Hill®, Pasatiempo, and Carmel Valley Ranch are all within easy range of each other. You can play four genuinely different course styles in four days without driving more than 30 minutes between any two.",
+  },
 ];
 
 export default function AboutPage() {
@@ -71,9 +82,11 @@ export default function AboutPage() {
         name: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
         description:
           "Monterey Golf Tours plans custom multi-day golf trips on the Monterey Peninsula — courses, lodging, and tee times handled end to end. IAGTO-contracted Pebble Beach Resorts® partner.",
+        datePublished: PUBLISHED,
+        dateModified: MODIFIED,
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2"],
+          cssSelector: ["h1", "h2", ".speakable-faq"],
         },
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
@@ -83,6 +96,8 @@ export default function AboutPage() {
         "@id": `${canonicalUrl}#about`,
         url: canonicalUrl,
         name: "About Monterey Golf Tours",
+        datePublished: PUBLISHED,
+        dateModified: MODIFIED,
         about: { "@id": `https://${SITE.domain}/#organization` },
         mentions: { "@id": `${canonicalUrl}#sean-schaeffer` },
       },
@@ -99,6 +114,8 @@ export default function AboutPage() {
         "@id": `${canonicalUrl}#sean-schaeffer`,
         name: "Sean Schaeffer",
         jobTitle: "Founder",
+        description:
+          "Sean Schaeffer is the founder of Monterey Golf Tours and Golf the High Sierra. He operates a family of golf trip planning sites specializing in the Monterey Peninsula and the Reno/Tahoe/Graeagle region, coordinating custom multi-day golf packages for groups of 2 to 400 players.",
         url: canonicalUrl,
         worksFor: { "@id": `https://${SITE.domain}/#organization` },
         sameAs: ["https://golfthehighsierra.com"],
@@ -125,6 +142,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
+      {/* Hero */}
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] md:min-h-[520px]">
         <Image
           src="/images/pbc-portal/pbgl_9_2020_aerial.jpg"
@@ -132,7 +150,7 @@ export default function AboutPage() {
           fill
           priority
           className="object-cover"
-          style={{ objectPosition: "center 60%" }}
+          style={{ objectPosition: "center 72%" }}
         />
         <Header />
         <div className="relative z-10 px-6 pb-8 pt-40 md:px-14 md:pb-10 md:pt-60">
@@ -141,6 +159,9 @@ export default function AboutPage() {
           </h1>
           <p className="mt-3 max-w-xl font-body text-sm text-cream/80 drop-shadow md:text-base">
             IAGTO-contracted Pebble Beach Resorts® partner · 2–400 players · Custom Peninsula golf trips
+          </p>
+          <p className="mt-2 font-body text-xs text-cream/50">
+            Photo by Jeff Marsh · Pebble Beach Golf Links®, Hole 9
           </p>
         </div>
       </section>
@@ -182,19 +203,41 @@ export default function AboutPage() {
               </p>
               <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
                 We book across all{" "}
-                <Link href="/golf-courses/" className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark">
+                <Link
+                  href="/golf-courses/"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                >
                   14 courses on the Peninsula
                 </Link>
                 {" "}and coordinate stays at{" "}
-                <Link href="/hotels/" className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark">
+                <Link
+                  href="/hotels/"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                >
                   11 vetted hotels
                 </Link>
                 {" "}from downtown Monterey to Carmel Valley. If you&apos;re looking for a
                 starting point,{" "}
-                <Link href="/itineraries/" className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark">
+                <Link
+                  href="/itineraries/"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                >
                   our sample itineraries
                 </Link>
                 {" "}show what 3-, 4-, 5-, and 7-day trips typically look like.
+              </p>
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Beyond the courses, the Monterey Peninsula has enough to keep non-golfers
+                and rest days fully occupied — the 17-Mile Drive&reg;, Cannery Row,
+                Carmel-by-the-Sea village, wine tasting in Carmel Valley, and coastal
+                hiking along Point Lobos. We can point you toward our{" "}
+                <Link
+                  href="/experiences/"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                >
+                  Peninsula experiences guide
+                </Link>
+                {" "}if you want to plan the off-course days too.
               </p>
             </div>
           </div>
@@ -226,10 +269,11 @@ export default function AboutPage() {
             <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
               Founder
             </div>
-            <div>
+            <div className="space-y-4">
               <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-                Sean Schaeffer founded Monterey Golf Tours. It&apos;s part of a family of
-                golf trip planning sites operating under the same ownership, including{" "}
+                Sean Schaeffer founded Monterey Golf Tours as part of a family of golf
+                trip planning sites he operates across California&apos;s top golf
+                destinations. The same team behind{" "}
                 <a
                   href="https://golfthehighsierra.com"
                   className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
@@ -238,7 +282,31 @@ export default function AboutPage() {
                 >
                   Golf the High Sierra
                 </a>
+                {" "}— covering the Reno/Tahoe/Graeagle region — handles Monterey Peninsula
+                trip planning under the same model: coordinated, multi-day golf packages
+                built around the group, not the other way around.
+              </p>
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Every trip is planned with direct access to the Peninsula&apos;s courses
+                and hotels. No middlemen, no call-center itineraries. If you have
+                questions about how a specific trip would work,{" "}
+                <Link
+                  href="/contact/"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                >
+                  contact us directly
+                </Link>
+                {" "}or check the{" "}
+                <Link
+                  href="/faq/"
+                  className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+                >
+                  FAQ
+                </Link>
                 .
+              </p>
+              <p className="font-body text-[14px] text-[#9a9590] md:text-[15px]">
+                Monterey, CA · {SITE.address}
               </p>
             </div>
           </div>
@@ -252,13 +320,25 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
             {FAQ_ITEMS.map((item) => (
               <div key={item.q}>
-                <h3 className="font-ui text-base font-semibold text-ink">{item.q}</h3>
+                <h3 className="speakable-faq font-ui text-base font-semibold text-ink">
+                  {item.q}
+                </h3>
                 <p className="mt-2 font-body text-[14px] leading-relaxed text-[#6a665e]">
                   {item.a}
                 </p>
               </div>
             ))}
           </div>
+          <p className="mt-10 font-body text-[14px] text-[#9a9590]">
+            More questions?{" "}
+            <Link
+              href="/faq/"
+              className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark"
+            >
+              See the full FAQ
+            </Link>
+            .
+          </p>
         </section>
 
         {/* CTA */}
@@ -266,6 +346,9 @@ export default function AboutPage() {
           <h2 className="text-display-md font-display font-bold text-ink">
             Ready to plan your trip?
           </h2>
+          <p className="mt-3 font-body text-[15px] text-[#6a665e]">
+            Custom quote within 24 hours · Groups of 2–400 · 14 Peninsula courses
+          </p>
           <Link
             href="/quote/"
             className="mt-7 inline-block rounded-[9px] bg-ocean px-7 py-4 font-ui text-base font-semibold text-cream transition-transform hover:-translate-y-0.5 hover:bg-ocean-dark"
