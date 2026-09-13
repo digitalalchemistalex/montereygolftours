@@ -6,11 +6,18 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Monterey Golf Tours",
+  title: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
   description:
-    "Monterey Golf Tours plans custom multi-day golf trips on the Monterey Peninsula — courses, lodging, and tee times handled end to end.",
+    "Monterey Golf Tours plans custom multi-day golf trips on the Monterey Peninsula — courses, lodging, and tee times handled end to end. IAGTO-contracted Pebble Beach Resorts® partner.",
   alternates: {
     canonical: `https://${SITE.domain}/about/`,
+  },
+  openGraph: {
+    title: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
+    description:
+      "IAGTO-contracted Pebble Beach Resorts® partner. We plan custom multi-day golf trips on the Monterey Peninsula — courses, lodging, and tee times handled end to end.",
+    url: `https://${SITE.domain}/about/`,
+    type: "website",
   },
 };
 
@@ -32,6 +39,25 @@ const PRINCIPLES = [
   },
 ];
 
+const FAQ_ITEMS = [
+  {
+    q: "What does Monterey Golf Tours actually handle?",
+    a: "We handle courses, lodging, and tee times end to end. That means selecting the right courses for your group's skill level and schedule, booking accommodations at Peninsula hotels, and coordinating tee times — including at Pebble Beach Resorts® properties through our IAGTO contract. We do not book flights or meals unless you specifically ask.",
+  },
+  {
+    q: "How large or small a group can you accommodate?",
+    a: "We work with groups of any size, from a twosome to 400 players. Small groups get the same level of planning attention as large corporate outings.",
+  },
+  {
+    q: "Is Monterey Golf Tours an authorized Pebble Beach booking agent?",
+    a: "Yes. We are an IAGTO-contracted travel partner with Pebble Beach Resorts®, which means we can book tee times at Pebble Beach Golf Links®, Spyglass Hill® Golf Course, The Links at Spanish Bay®, Del Monte™ Golf Course, and The Hay™ directly through official channels.",
+  },
+  {
+    q: "How long does a typical Monterey golf trip last?",
+    a: "Most groups plan 3 to 7 days. A 4-day trip covers the four main courses comfortably; 5 days lets you add Carmel Valley Ranch or Black Horse. We build the schedule around how many rounds your group wants to play.",
+  },
+];
+
 export default function AboutPage() {
   const canonicalUrl = `https://${SITE.domain}/about/`;
 
@@ -42,25 +68,52 @@ export default function AboutPage() {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
+        name: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
+        description:
+          "Monterey Golf Tours plans custom multi-day golf trips on the Monterey Peninsula — courses, lodging, and tee times handled end to end. IAGTO-contracted Pebble Beach Resorts® partner.",
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2:first-of-type"],
+          cssSelector: ["h1", "h2"],
         },
-        name: "About Monterey Golf Tours",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
+        breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
       },
       {
         "@type": "AboutPage",
         "@id": `${canonicalUrl}#about`,
         url: canonicalUrl,
+        name: "About Monterey Golf Tours",
         about: { "@id": `https://${SITE.domain}/#organization` },
+        mentions: { "@id": `${canonicalUrl}#sean-schaeffer` },
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "About", item: canonicalUrl },
         ],
+      },
+      {
+        "@type": "Person",
+        "@id": `${canonicalUrl}#sean-schaeffer`,
+        name: "Sean Schaeffer",
+        jobTitle: "Founder",
+        url: canonicalUrl,
+        worksFor: { "@id": `https://${SITE.domain}/#organization` },
+        sameAs: ["https://golfthehighsierra.com"],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl}#faq`,
+        mainEntity: FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+          },
+        })),
       },
     ],
   };
@@ -73,14 +126,27 @@ export default function AboutPage() {
       />
 
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] md:min-h-[520px]">
-        <Image src="https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=2400&q=90" alt="Aerial view of an elegant golf course" fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
+        <Image
+          src="/images/pbc-portal/pbgl_9_2020_aerial.jpg"
+          alt="Aerial view of Pebble Beach Golf Links® Hole 9 along Stillwater Cove, Monterey Peninsula"
+          fill
+          priority
+          className="object-cover"
+          style={{ objectPosition: "center 60%" }}
+        />
         <Header />
         <div className="relative z-10 px-6 pb-8 pt-40 md:px-14 md:pb-10 md:pt-60">
-          <h1 className="sr-only">About Monterey Golf Tours</h1>
+          <h1 className="font-display text-3xl font-bold text-cream drop-shadow-md md:text-4xl lg:text-5xl">
+            About Monterey Golf Tours
+          </h1>
+          <p className="mt-3 max-w-xl font-body text-sm text-cream/80 drop-shadow md:text-base">
+            IAGTO-contracted Pebble Beach Resorts® partner · 2–400 players · Custom Peninsula golf trips
+          </p>
         </div>
       </section>
 
       <main className="flex-1">
+        {/* Who we are */}
         <section className="border-b border-[#e3ddcf] px-6 py-16 md:px-14 md:py-24">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.6fr_1fr] md:gap-16">
             <div>
@@ -106,10 +172,35 @@ export default function AboutPage() {
                 Golf Course&reg;, and The Hay&trade;, alongside the rest of the
                 peninsula&apos;s courses.
               </p>
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Every Monterey golf package we build starts with understanding your
+                group — how many players, how many rounds, what mix of bucket-list courses
+                versus hidden gems, and where everyone wants to stay. We match the
+                itinerary to the group, not the other way around. The result is a
+                coordinated Monterey Peninsula golf trip where the logistics are handled
+                before you land.
+              </p>
+              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                We book across all{" "}
+                <Link href="/golf-courses/" className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark">
+                  14 courses on the Peninsula
+                </Link>
+                {" "}and coordinate stays at{" "}
+                <Link href="/hotels/" className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark">
+                  11 vetted hotels
+                </Link>
+                {" "}from downtown Monterey to Carmel Valley. If you&apos;re looking for a
+                starting point,{" "}
+                <Link href="/itineraries/" className="text-ocean underline decoration-[rgba(44,110,142,.3)] underline-offset-2 hover:text-ocean-dark">
+                  our sample itineraries
+                </Link>
+                {" "}show what 3-, 4-, 5-, and 7-day trips typically look like.
+              </p>
             </div>
           </div>
         </section>
 
+        {/* How we operate */}
         <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
           <h2 className="text-display-md mb-10 font-display font-bold text-ink md:mb-14">
             How we operate
@@ -129,6 +220,7 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Founder */}
         <section className="border-b border-[#e3ddcf] px-6 py-16 md:px-14 md:py-24">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.6fr_1fr] md:gap-16">
             <div className="font-ui text-[13px] font-bold uppercase tracking-[.14em] text-gold">
@@ -152,6 +244,24 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="border-b border-[#e3ddcf] bg-stone px-6 py-16 md:px-14 md:py-24">
+          <h2 className="text-display-md mb-10 font-display font-bold text-ink md:mb-14">
+            Common questions
+          </h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
+            {FAQ_ITEMS.map((item) => (
+              <div key={item.q}>
+                <h3 className="font-ui text-base font-semibold text-ink">{item.q}</h3>
+                <p className="mt-2 font-body text-[14px] leading-relaxed text-[#6a665e]">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
         <section className="px-6 py-16 text-center md:px-14 md:py-20">
           <h2 className="text-display-md font-display font-bold text-ink">
             Ready to plan your trip?
