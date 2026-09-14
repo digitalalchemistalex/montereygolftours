@@ -863,7 +863,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
   },
   "spyglass-hill": {
     slug: "spyglass-hill",
-    name: "Spyglass Hill Golf Course®",
+    name: "Spyglass Hill™ Golf Course",
     city: "Pebble Beach, CA",
     facility: "Pebble Beach Resorts®",
     par: 72,
