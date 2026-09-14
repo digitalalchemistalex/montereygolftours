@@ -157,7 +157,7 @@ export const COURSES: Course[] = [
   {
     slug: "spyglass-hill",
     image: "/images/pbc-portal/spyglass_11_2016_ground.jpg",
-    name: "Spyglass Hill Golf Course®",
+    name: "Spyglass Hill™ Golf Course",
     city: "Pebble Beach, CA",
     par: 72,
     yards: "6,960 yds",
