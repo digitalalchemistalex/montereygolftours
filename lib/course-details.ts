@@ -818,6 +818,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       "Pebble Beach Golf Links® was designed by two amateur golfers, Jack Neville and Douglas Grant, opening on February 22, 1919. It remains the most recognized golf course in the country, with a string of holes running directly along the Pacific coastline.",
       "Tee options range from the 6,802-yard blue tees (rating 74.9, slope 144) down to shorter sets for a range of player abilities. Green fees vary annually for both resort and non-resort players, with optional caddie services. Enquire through us for current rates.",
       "Booking through Monterey Golf Tours, as an IAGTO-contracted travel partner with Pebble Beach Resorts®, gives groups access to coordinated tee times and stay-and-play packages as part of a planned trip.",
+      "Important planning note: a minimum resort stay is typically required — usually three nights — to secure advance tee times at Pebble Beach Golf Links®. Without a qualifying stay, availability opens only 24 hours in advance. Book accommodation first.",
     ],
     highlights: [
       {
@@ -853,7 +854,7 @@ export const COURSE_DETAILS: Record<string, CourseDetail> = {
       },
       {
         q: "How far in advance can I book Pebble Beach Golf Links®?",
-        a: "It generally requires a 2–3 night resort stay to book in advance — otherwise it's a 24-hour booking window.",
+        a: "A minimum resort stay is required to book in advance — typically three nights. Without a qualifying stay, tee times open only 24 hours out. This is the single most important thing to plan around for a Pebble Beach trip: book your stay first, then your tee times.",
       },
       {
         q: "How long is the course at Pebble Beach Golf Links®?",
