@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!dest) return {};
 
   // Keyword-first title: "Golf in [City] — [descriptor] | Monterey Golf Tours"
-  const title = `Golf in ${dest.name}, California — Courses & Packages | Monterey Golf Tours`;
+  const title = `Golf in ${dest.name}, California — Courses & Packages`;
   const description = dest.speakable;
 
   return {
@@ -70,7 +70,7 @@ export default async function DestinationPage({ params }: Props) {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `Golf in ${dest.name}, California — Courses & Packages | Monterey Golf Tours`,
+        name: `Golf in ${dest.name}, California — Courses & Packages`,
         description: dest.speakable,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
