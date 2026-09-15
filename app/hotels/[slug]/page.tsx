@@ -11,6 +11,8 @@ import { HOTELS } from "@/lib/hotels";
 import { COURSES } from "@/lib/courses";
 import { ITINERARIES } from "@/lib/itineraries";
 import { SITE } from "@/lib/site";
+import PBCEvents from "@/components/PBCEvents";
+import PBCMajorsBanner from "@/components/PBCMajorsBanner";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -442,6 +444,28 @@ export default async function HotelPage({ params }: Props) {
               ))}
             </div>
           </section>
+        )}
+
+        {/* Majors banner — PBC hotels only */}
+        {["lodge-at-pebble-beach","inn-at-spanish-bay","casa-palmero"].includes(slug) && (
+          <PBCMajorsBanner />
+        )}
+
+        {/* Events calendar — Lodge: golf + lifestyle; Inn: golf + lifestyle + recurring */}
+        {slug === "lodge-at-pebble-beach" && (
+          <PBCEvents
+            tiers={["golf","lifestyle"]}
+            title="Upcoming events at Pebble Beach"
+            subtitle="Plan your Lodge stay around what's happening at the resort."
+          />
+        )}
+        {slug === "inn-at-spanish-bay" && (
+          <PBCEvents
+            tiers={["golf","lifestyle"]}
+            showRecurring={true}
+            title="What's on at Pebble Beach Resorts"
+            subtitle="Live music, golf tournaments, culinary events — happening at The Inn and across the resort."
+          />
         )}
 
         <section className="px-6 py-16 text-center md:px-14 md:py-20">
