@@ -91,13 +91,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script
           id="ga4-script"
           strategy="afterInteractive"
-          src={}
+          src="https://www.googletagmanager.com/gtag/js?id=G-2FREF1K3T1"
         />
         <Script
           id="ga4-config"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: ,
+            __html: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2FREF1K3T1',{page_path:window.location.pathname,send_page_view:true});"
           }}
         />
       </head>
