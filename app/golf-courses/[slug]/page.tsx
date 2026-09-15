@@ -189,7 +189,7 @@ export default async function CoursePage({ params }: Props) {
         "@type": ["Service", "Product"],
         "@id": `${canonicalUrl}#service`,
         name: `Play ${course.name} — Monterey Golf Tours`,
-        description: course.hook,
+        description: course.hook?.slice(0, 155),
         provider: { "@id": `https://${SITE.domain}/#organization` },
         brand: { "@id": `https://${SITE.domain}/#organization` },
         category: "Golf Course Booking",
