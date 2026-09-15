@@ -525,3 +525,10 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     { q: "Is Poppy Hills Golf Course open to the public?", a: "Yes. Poppy Hills Golf Course is open to the public — both NCGA members and non-members. Non-member green fees are typically higher than member rates." },
     { q: "Who designed Poppy Hills Golf Course?", a: "Poppy Hills Golf Course was designed by Robert Trent Jones Jr. and opened in 1986. It served as a rotation course for the AT&T Pebble Beach Pro-Am from 1991 to 2009." },
     { q: "How much does it cost to play Poppy Hills Golf Course?", a: "Poppy Hills Golf Course green fees for non-NCGA members typically range from $90-130 for 18 holes. NCGA members play at significantly reduced rates." },
+
+    { q: "What should a first-time golfer know about the Monterey Peninsula?", a: "Book tee times 2-3 months ahead for top courses. Bring layers — coastal fog and wind can change conditions quickly. Rental clubs are available at all major courses." },
+    { q: "What is the best first course to play in Monterey?", a: "Bayonet Golf Course offers the best combination of challenge, scenery, condition, and value for first-time visitors. Pacific Grove Golf Links provides the most accessible coastal experience." },
+    { q: "How do I get from San Francisco to Monterey for golf?", a: "Monterey is approximately 2 hours south of San Francisco via Highway 101 south to Highway 68 west. Monterey Regional Airport (MRY) has direct flights from SF, LA, Phoenix, and Denver." },
+    { q: "Do Monterey golf courses have caddies?", a: "Yes. Pebble Beach Golf Links®, Spyglass Hill™, and Del Monte™ Golf Course all offer caddies. Rates range from $65-80 per bag for a forecaddie to $130-160 for a full caddie." }
+  ],
+};
