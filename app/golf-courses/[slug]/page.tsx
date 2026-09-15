@@ -14,6 +14,7 @@ import CarWeekBanner from "@/components/CarWeekBanner";
 import MondayInsider from "@/components/MondayInsider";
 import PoppyHillsValue from "@/components/PoppyHillsValue";
 import SpanishBayWaitlist from "@/components/SpanishBayWaitlist";
+import PBGLLiveCams from "@/components/PBGLLiveCams";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -422,6 +423,11 @@ export default async function CoursePage({ params }: Props) {
         <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
           <CourseHotels courseSlug={slug} courseName={course.name} />
         </section>
+
+        {/* Live cams — PBGL only */}
+        {slug === "pebble-beach-golf-links" && (
+          <PBGLLiveCams />
+        )}
 
         {/* Car Week banner — shows Aug 1-20 only, Bayonet + Black Horse */}
         {(slug === "bayonet" || slug === "black-horse") && (
