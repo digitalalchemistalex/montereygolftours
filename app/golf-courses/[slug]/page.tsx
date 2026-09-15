@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const isClosed = slug === "links-at-spanish-bay";
   const title = isClosed
-    ? `${course.name} — Closed for Renovation, Reopening April 2027 | Monterey Golf Tours`
-    : `${course.name} — Tee Times & Course Info | Monterey Golf Tours`;
+    ? `${course.name} — Closed for Renovation, Reopening April 2027`
+    : `${course.name} — Tee Times & Course Info`;
   const description = isClosed
     ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now — join the waitlist and plan your Monterey golf trip.`
     : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Book ${course.name} as part of a planned Monterey golf trip. Get a custom quote →`;
@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `https://${SITE.domain}/golf-courses/${course.slug}/`,
-      images: [{ url: ogImage, width: 1200, height: 800, alt: course.name }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: course.name }],
     },
     twitter: {
       card: "summary_large_image",
