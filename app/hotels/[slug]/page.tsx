@@ -451,6 +451,20 @@ export default async function HotelPage({ params }: Props) {
           <PBCMajorsBanner />
         )}
 
+        {/* Pebble Beach packages hub crosslink — PBC hotels only */}
+        {["lodge-at-pebble-beach","inn-at-spanish-bay","casa-palmero"].includes(slug) && (
+          <div className="border-b border-fairwayborder bg-[#faf7f2] px-6 py-5 md:px-14">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <p className="font-body text-[14px] text-[#5a5448]">
+                Planning a complete Pebble Beach golf trip?
+              </p>
+              <Link href="/pebble-beach/" className="flex-none font-ui text-[13px] font-bold text-fairway hover:underline">
+                View Pebble Beach packages →
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* Events calendar — Lodge: golf + lifestyle; Inn: golf + lifestyle + recurring */}
         {slug === "lodge-at-pebble-beach" && (
           <PBCEvents
