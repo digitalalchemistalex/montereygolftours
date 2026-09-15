@@ -18,7 +18,7 @@ const schemaGraph = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       "url": PAGE_URL,
-      "name": "Pebble Beach Golf Packages — Book With an IAGTO Authorized Operator | Monterey Golf Tours",
+      "name": "Pebble Beach Golf Packages — Book With an IAGTO Authorized Operator",
       "description": "Book a Pebble Beach golf package through Monterey Golf Tours — IAGTO Authorized Pebble Beach Resorts® Golf Travel Operator. Tee times at Pebble Beach Golf Links®, Spyglass Hill™, Del Monte™, and The Hay™. Lodging, transfers, and full trip planning for groups of 2–400.",
       "isPartOf": { "@id": `${BASE}/#website` },
       "breadcrumb": { "@id": `${PAGE_URL}#breadcrumb` },
@@ -119,7 +119,7 @@ const schemaGraph = {
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Pebble Beach Golf Packages — Book With an IAGTO Authorized Operator | Monterey Golf Tours",
+  title: "Pebble Beach Golf Packages — Book With an IAGTO Authorized Operator",
   description:
     "Book a Pebble Beach golf package with Monterey Golf Tours — IAGTO Authorized Pebble Beach Resorts® Golf Travel Operator. Tee times, lodging, and full trip planning for groups of 2–400. Get a custom quote.",
   alternates: { canonical: PAGE_URL },
