@@ -44,8 +44,17 @@ export default function ItinerariesIndexPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "Itineraries", item: canonicalUrl },
-        ],
-      },
+,
+      {
+        "@type": "FAQPage",
+        "@id": "https://montereygolftours.com/itineraries/#faq",
+        "mainEntity": [
+                    {"@type": "Question", "name": "How many days do I need for a Monterey golf trip?", "acceptedAnswer": {"@type": "Answer", "text": "Most golfers plan 3-5 days. A 3-day trip fits 3 rounds at top public courses. A 5-day trip can include Pebble Beach Golf Links® plus Spyglass Hill™ alongside the best public courses. A 7-day trip covers all 14 peninsula courses."}},
+          {"@type": "Question", "name": "How far in advance should I book a Monterey golf trip?", "acceptedAnswer": {"@type": "Answer", "text": "For Pebble Beach tee times, book 3-6 months in advance. For most peninsula courses in shoulder season, 6-8 weeks is sufficient. Pebble Beach Golf Links® for non-resort guests can book out 12+ months ahead."}},
+          {"@type": "Question", "name": "Can Monterey Golf Tours customize a golf trip itinerary?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every itinerary shown is a starting point. Course lineup, lodging, group size, budget, and travel dates are fully customizable. Submit a quote request and receive a detailed plan within 24 hours."}},
+          {"@type": "Question", "name": "What is the best Monterey golf itinerary for first-time visitors?", "acceptedAnswer": {"@type": "Answer", "text": "First-time visitors typically love the 4-Day Classic Peninsula — combining Poppy Hills, Bayonet, Carmel Valley Ranch, and Black Horse at moderate green fees, with lodging at the Hyatt Regency Monterey or Portola Hotel."}}
+        ]
+      }
     ],
   };
 
