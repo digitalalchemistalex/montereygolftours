@@ -4,8 +4,8 @@ description: "Master skill for MontereyGolfTours.com (MGTS) — Monterey Peninsu
 ---
 
 # MONTEREYGOLFTOURS.COM — MASTER STRATEGY & SKILL
-**Last verified: August 14 2026**
-**Status: LIVE — deployed at montereygolftours.vercel.app (domain cutover pending)**
+**Last verified: Sep 15 2026**
+**Status: LIVE ON CUSTOM DOMAIN — montereygolftours.com (activated Sep 15 2026)**
 **READ THIS BEFORE ANY WORK ON THIS PROJECT**
 
 ---
@@ -17,7 +17,7 @@ description: "Master skill for MontereyGolfTours.com (MGTS) — Monterey Peninsu
 | GitHub repo | ✅ Live | `digitalalchemistalex/montereygolftours` |
 | Vercel project | ✅ READY | `prj_36SupULpvPpDElcJmqCZlvmGgjEi`, team `golfbookingsystem` |
 | Production URL | ✅ Live | `montereygolftours.vercel.app` |
-| Domain | ⏳ Pending cutover | `montereygolftours.com` DNS on Vercel nameservers, intentionally detached until MASTER authorizes |
+| Domain | ✅ LIVE | `montereygolftours.com` — activated Sep 15 2026 |
 | All pages | ✅ 200 OK | All routes returning 200 |
 | Supabase | ✅ Live | `ewhatqtehwzlypjguvoo.supabase.co` |
 | Resend email alerts | ❌ NOT WIRED | `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` NOT in Vercel env — lead emails are silently failing |
