@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSE_DETAILS } from "@/lib/course-details";
+import { HOTEL_DETAILS } from "@/lib/hotel-details";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import TabbedGallery from "@/components/TabbedGallery";
 import { COURSES } from "@/lib/courses";
@@ -34,6 +35,28 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+
+  // Hotel pages
+  const hotel = HOTEL_DETAILS[slug];
+  if (hotel) {
+    const title = `${hotel.name} — Golf Lodging on the Monterey Peninsula`;
+    const description = `${hotel.hook}`.slice(0, 155);
+    return {
+      title,
+      description,
+      alternates: { canonical: `https://${SITE.domain}/hotels/${hotel.slug}/` },
+      openGraph: {
+        type: "website",
+        title,
+        description,
+        url: `https://${SITE.domain}/hotels/${hotel.slug}/`,
+        siteName: "Monterey Golf Tours",
+      },
+      twitter: { card: "summary_large_image", title, description },
+    };
+  }
+
+  // Course pages
   const course = COURSE_DETAILS[slug];
   if (!course) return {};
 
