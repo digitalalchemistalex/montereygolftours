@@ -293,7 +293,11 @@ export default function PebbleBeachPackagesPage() {
               </Link>
             ))}
           </div>
-          <p className="mt-5 font-body text-[13px] text-[#8a857a]">
+          <div className="mt-4 flex items-center gap-2 rounded-xl border border-[#e8e0d0] bg-[#faf7f2] px-4 py-3">
+            <span className="font-ui text-[11px] font-semibold text-[#8a857a]">Also on Pebble Beach Golf Links®:</span>
+            <Link href="/golf-courses/pebble-beach-golf-links/live-cams/" className="font-ui text-[12px] font-semibold text-fairway hover:underline">Live course cameras →</Link>
+          </div>
+          <p className="mt-4 font-body text-[13px] text-[#8a857a]">
             We also book Carmel Valley Ranch, Quail Lodge, Pacific Grove, Laguna Seca, Pasatiempo, TPC Monterey at Pasadera, and Black Horse.{" "}
             <Link href="/golf-courses/" className="font-semibold text-fairway hover:underline">See all 14 courses →</Link>
           </p>
