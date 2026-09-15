@@ -432,6 +432,20 @@ export default async function CoursePage({ params }: Props) {
           <PBGLLiveCams />
         )}
 
+        {/* Hub page crosslink — PBGL only */}
+        {slug === "pebble-beach-golf-links" && (
+          <div className="border-b border-fairwayborder bg-[#faf7f2] px-6 py-5 md:px-14">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <p className="font-body text-[14px] text-[#5a5448]">
+                Planning a Pebble Beach trip for your group?
+              </p>
+              <Link href="/pebble-beach/" className="flex-none font-ui text-[13px] font-bold text-fairway hover:underline">
+                View Pebble Beach packages →
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* Tournaments You Can Play — PBGL only */}
         {slug === "pebble-beach-golf-links" && (
           <PBGLTournaments />
