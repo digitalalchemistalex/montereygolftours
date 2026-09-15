@@ -30,7 +30,9 @@ type Props = {
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  return Object.keys(COURSE_DETAILS).map((slug) => ({ slug }));
+  const courseSlugs = Object.keys(COURSE_DETAILS).map((slug) => ({ slug }));
+  const hotelSlugs = Object.keys(HOTEL_DETAILS).map((slug) => ({ slug }));
+  return [...courseSlugs, ...hotelSlugs];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -99,14 +101,191 @@ export default async function CoursePage({ params }: Props) {
   const { slug } = await params;
   const course = COURSE_DETAILS[slug];
 
+  // ── Hotel pages ─────────────────────────────────────────────────
+  const hotel = HOTEL_DETAILS[slug];
+  if (hotel) {
+    const hotelType = hotel.tier === 1 ? "Resort" : "LodgingBusiness";
+    const canonicalUrl = `https://${SITE.domain}/hotels/${hotel.slug}/`;
+    const heroImage = hotel.gallery?.[0]?.src
+      ? hotel.gallery[0].src.startsWith("/")
+        ? `https://${SITE.domain}${hotel.gallery[0].src}`
+        : hotel.gallery[0].src
+      : `https://${SITE.domain}/og-image.jpg`;
+
+    const hotelSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": hotelType,
+          "@id": `${canonicalUrl}#hotel`,
+          name: hotel.name,
+          description: hotel.hook,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: hotel.address,
+            addressLocality: hotel.city.split(",")[0],
+            addressRegion: "CA",
+            addressCountry: "US",
+          },
+          telephone: hotel.phone,
+          url: `https://${hotel.website}`,
+          image: { "@type": "ImageObject", url: heroImage, width: 1200, height: 630 },
+          numberOfRooms: hotel.rooms,
+          amenityFeature: hotel.amenities.map((a) => ({
+            "@type": "LocationFeatureSpecification",
+            name: a,
+            value: true,
+          })),
+        },
+        {
+          "@type": "WebPage",
+          "@id": `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: hotel.name,
+          description: hotel.hook?.slice(0, 155),
+          isPartOf: { "@id": `https://${SITE.domain}/#website` },
+          publisher: { "@id": `https://${SITE.domain}/#organization` },
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", "#speakable-summary", ".faq-answer"],
+          },
+          breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
+            { "@type": "ListItem", position: 2, name: "Hotels", item: `https://${SITE.domain}/hotels/` },
+            { "@type": "ListItem", position: 3, name: hotel.name, item: canonicalUrl },
+          ],
+        },
+        ...(hotel.faqs?.length > 0 ? [{
+          "@type": "FAQPage",
+          "@id": `${canonicalUrl}#faq`,
+          mainEntity: hotel.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }] : []),
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelSchema) }}
+        />
+        <Header />
+        <main className="flex-1">
+          <section className="relative h-[480px] bg-navy">
+            {hotel.gallery?.[0] && (
+              <Image
+                src={hotel.gallery[0].src}
+                alt={hotel.gallery[0].alt ?? hotel.name}
+                fill
+                className="object-cover opacity-60"
+                priority
+              />
+            )}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
+              <p className="font-ui text-sm uppercase tracking-widest text-gold mb-2">
+                {hotel.city}
+              </p>
+              <h1 className="font-display text-4xl md:text-5xl text-white">{hotel.name}</h1>
+              <p id="speakable-summary" className="speakable-summary mt-4 max-w-2xl font-body text-lg text-white/90">
+                {hotel.hook}
+              </p>
+            </div>
+          </section>
+
+          <section className="mx-auto max-w-4xl px-6 py-16">
+            <div className="space-y-4">
+              {hotel.description.map((para, i) => (
+                <p key={i} className="font-body text-base text-ink leading-relaxed">{para}</p>
+              ))}
+            </div>
+
+            {hotel.amenities?.length > 0 && (
+              <div className="mt-12">
+                <h2 className="font-display text-2xl text-navy mb-4">Amenities</h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {hotel.amenities.map((a, i) => (
+                    <li key={i} className="font-body text-sm text-ink flex items-start gap-2">
+                      <span className="mt-1 text-gold">✓</span>{a}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {hotel.driveTimeToCourses?.length > 0 && (
+              <div className="mt-12">
+                <h2 className="font-display text-2xl text-navy mb-4">Drive Time to Courses</h2>
+                <ul className="space-y-2">
+                  {hotel.driveTimeToCourses.map((d, i) => (
+                    <li key={i} className="font-body text-sm text-ink flex justify-between border-b border-sand pb-2">
+                      <span>{d.course}</span>
+                      <span className="text-ocean font-medium">{d.minutes} min</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {hotel.faqs?.length > 0 && (
+              <div className="mt-16 faq-section">
+                <h2 className="font-display text-2xl text-navy mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-4">
+                  {hotel.faqs.map((faq, i) => (
+                    <details key={i} className="border-b border-sand pb-4">
+                      <summary className="cursor-pointer font-ui text-base font-medium text-navy">
+                        {faq.q}
+                      </summary>
+                      <p className="faq-answer mt-2 font-body text-sm text-ink leading-relaxed">
+                        {faq.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-16 rounded-lg bg-navy p-8 text-center">
+              <h2 className="font-display text-2xl text-white mb-2">
+                Include {hotel.name} in your Monterey golf trip
+              </h2>
+              <p className="font-body text-white/80 mb-6">
+                Monterey Golf Tours pairs lodging with tee times across the peninsula.
+                Get a custom quote for your group.
+              </p>
+              <Link
+                href="/quote/"
+                className="inline-block bg-gold text-navy font-ui font-semibold px-8 py-3 rounded hover:bg-gold/90 transition"
+              >
+                Get a Custom Quote →
+              </Link>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  // ── Course pages (fallthrough) ───────────────────────────────────
   if (!course) {
     return (
       <>
         <Header />
         <main className="flex-1 px-6 py-32 text-center">
-          <p className="font-body text-lg text-ink">Course not found.</p>
-          <Link href="/golf-courses/" className="mt-4 inline-block font-ui text-ocean">
-            View all courses &rarr;
+          <p className="font-body text-lg text-ink">Page not found.</p>
+          <Link href="/" className="mt-4 inline-block font-ui text-ocean">
+            Return home &rarr;
           </Link>
         </main>
         <Footer />
