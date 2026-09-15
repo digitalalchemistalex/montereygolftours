@@ -66,3 +66,4 @@ Llms: https://montereygolftours.com/llms.txt
 
 # IndexNow key
 # https://montereygolftours.com/3a618946b0a3492ebdc3876c6aa8a5cb.txt
+# Last updated: 2026-09-15
