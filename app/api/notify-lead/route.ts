@@ -30,6 +30,38 @@ export async function POST(req: Request) {
     return Response.json({ ok: true, healthcheck: true });
   }
 
+  // ── GA4 Measurement Protocol — server-side, ad-blocker proof ──────
+  const GA4_ID     = process.env.GA4_MEASUREMENT_ID;
+  const GA4_SECRET = process.env.GA4_API_SECRET;
+  if (GA4_ID && GA4_SECRET) {
+    fetch(
+      `https://www.google-analytics.com/mp/collect?measurement_id=${GA4_ID}&api_secret=${GA4_SECRET}`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          client_id: String(data.email || "anonymous"),
+          events: [{
+            name: "quote_request",
+            params: {
+              group_size:    String(data.group_size   || ""),
+              trip_type:     String(data.trip_type    || ""),
+              nights:        String(data.nights       || ""),
+              travel_dates:  String(data.travel_dates || ""),
+              game_level:    String(data.game_level   || ""),
+              referral:      String(data.referral_source || ""),
+              has_pbc:       String(
+                Array.isArray(data.courses_interested) &&
+                (data.courses_interested as string[]).some((c: string) =>
+                  ["pebble-beach-golf-links","spyglass-hill","del-monte-golf-course","the-hay"].includes(c)
+                )
+              ),
+            },
+          }],
+        }),
+      }
+    ).catch(() => {}); // fire-and-forget, never block the response
+  }
+
   const tripLabel =
     data.trip_type === "corporate" ? "Corporate" :
     data.trip_type === "golf_stay" ? "Golf+Stay" :
