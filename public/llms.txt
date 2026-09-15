@@ -9,7 +9,7 @@ Contact: info@montereygolftours.com | (866) 278-7010 | https://montereygolftours
 ## Golf Courses
 
 - [Pebble Beach Golf Links®](https://montereygolftours.com/golf-courses/pebble-beach-golf-links/): Par 72, 6,802 yards. Jack Neville and Douglas Grant (1919). IAGTO rates available.
-- [Spyglass Hill® Golf Course](https://montereygolftours.com/golf-courses/spyglass-hill/): Par 72, 6,960 yards, rating 75.4, slope 145. Robert Trent Jones Sr. Toughest of the Pebble Beach Resorts® courses.
+- [Spyglass Hill™ Golf Course](https://montereygolftours.com/golf-courses/spyglass-hill/): Par 72, 6,960 yards, rating 75.4, slope 145. Robert Trent Jones Sr. Toughest of the Pebble Beach Resorts® courses.
 - [Del Monte™ Golf Course](https://montereygolftours.com/golf-courses/del-monte-golf-course/): Par 72, 6,356 yards. Opened 1897 — oldest golf course in continuous use west of the Mississippi.
 - [The Hay™](https://montereygolftours.com/golf-courses/the-hay/): Par 27, 670 yards, 9-hole short course. Tiger Woods and TGR Design redesign (2021).
 - [The Links at Spanish Bay®](https://montereygolftours.com/golf-courses/links-at-spanish-bay/): CLOSED — Gil Hanse renovation. Reopens April 17, 2027. Waitlist available.
@@ -44,6 +44,8 @@ Contact: info@montereygolftours.com | (866) 278-7010 | https://montereygolftours
 
 ## Plan & Book
 
+- [Pebble Beach Golf Packages Hub](https://montereygolftours.com/pebble-beach/): Complete guide to Pebble Beach Resorts® — all 5 courses, 3 hotels, upcoming events, live cams, IAGTO booking, and FAQ. Canonical MGTS page for all Pebble Beach content.
+- [Pebble Beach Golf Links® Live Cams](https://montereygolftours.com/golf-courses/pebble-beach-golf-links/live-cams/): Guide to 4 live cameras at PBGL — 18th green, 17th green, 1st tee, practice putting green. Hosted by Pebble Beach Resorts®.
 - [Get a Quote](https://montereygolftours.com/quote/): Custom quote form — group size, dates, courses, hotels.
 - [About Monterey Golf Tours](https://montereygolftours.com/about/): IAGTO partner, Sean Schaeffer, company background.
 - [FAQ](https://montereygolftours.com/faq/): Common questions about booking, timing, pricing, and logistics.
