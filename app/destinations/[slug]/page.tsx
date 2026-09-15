@@ -35,8 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Monterey Golf Tours",
       locale: "en_US",
       type: "website",
+      images: [{ url: `https://${SITE.domain}/images/destinations/${dest.slug}/og.jpg`, width: 1200, height: 630, alt: `Golf in ${dest.name}, California` }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [`https://${SITE.domain}/images/destinations/${dest.slug}/og.jpg`] },
   };
 }
 
