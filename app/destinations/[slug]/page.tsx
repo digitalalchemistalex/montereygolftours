@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DESTINATIONS } from "@/lib/destinations";
+import { ITINERARIES } from "@/lib/itineraries";
 import { COURSES } from "@/lib/courses";
 import { HOTELS } from "@/lib/hotels";
 import { SITE } from "@/lib/site";
@@ -47,8 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DestinationPage({ params }: Props) {
   const { slug } = await params;
   const dest = DESTINATIONS[slug];
+  const trip = ITINERARIES[slug]; // fallback for component body
 
-  if (!dest) {
+  if (!dest && !trip) {
     return (
       <>
         <Header />
