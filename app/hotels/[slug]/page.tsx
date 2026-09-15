@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const hotel = HOTEL_DETAILS[slug];
   if (!hotel) return {};
 
-  const title = `${hotel.name} — Monterey Golf Trip Lodging | Monterey Golf Tours`;
+  const title = `${hotel.name} — Monterey Golf Trip Lodging`;
   const description = `${hotel.name} in ${hotel.city} — ${hotel.rooms}. ${hotel.hook} Plan your Monterey golf trip with Monterey Golf Tours.`;
 
   const hotelImg = HOTELS.find((h) => h.slug === slug);
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `https://${SITE.domain}/hotels/${hotel.slug}/`,
-      images: [{ url: ogImage, width: 1200, height: 800, alt: hotel.name }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: hotel.name }],
     },
     twitter: {
       card: "summary_large_image",
@@ -104,7 +104,7 @@ export default async function HotelPage({ params }: Props) {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `${hotel.name} — Monterey Golf Trip Lodging | Monterey Golf Tours`,
+        name: `${hotel.name} — Monterey Golf Trip Lodging`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
         speakable: {
@@ -149,7 +149,7 @@ export default async function HotelPage({ params }: Props) {
             "@type": "ImageObject",
             url: hotelImage.startsWith("/") ? `https://${SITE.domain}${hotelImage}` : hotelImage,
             width: 1200,
-            height: 800,
+            height: 630,
             name: `${hotel.name} — Monterey Golf Tours`,
           },
         } : {}),
