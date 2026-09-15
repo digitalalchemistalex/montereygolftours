@@ -1389,7 +1389,13 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     ],
   },
 
-  "casa-palmero": {
+   faqs: [
+    { q: "What makes Casa Palmero® different from The Lodge and The Inn?", a: "Casa Palmero® is the most intimate Pebble Beach property — just 24 rooms and suites in a Mediterranean-style villa. All guests receive complimentary spa access, a personal concierge, and the option to buy out the entire estate for exclusive group use." },
+    { q: "What golf courses can Casa Palmero® guests play?", a: "Casa Palmero® guests have access to Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™. A 3-night minimum stay is required for Pebble Beach Golf Links® tee times." },
+    { q: "Is spa access complimentary at Casa Palmero®?", a: "Yes. All Casa Palmero® guests receive complimentary daily access to The Spa at Pebble Beach™ (Forbes Five-Star) — a distinction from The Lodge and Inn where treatments are à la carte." },
+    { q: "Can a group buy out all of Casa Palmero® exclusively?", a: "Yes. Casa Palmero® can be reserved exclusively by a single group — all 24 rooms, the main house with library and billiard room, the bar and lounge, and the heated pool. Monterey Golf Tours arranges Casa Palmero exclusive buyouts for high-end corporate and private groups." }
+  ],
+   "casa-palmero": {
     slug: "casa-palmero",
     name: "Casa Palmero™",
     city: "Pebble Beach, CA",
