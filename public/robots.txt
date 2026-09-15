@@ -1,69 +1,165 @@
-User-agent: *
-Allow: /
-
-# AI Training Crawlers — ALLOW (want to be cited)
-User-agent: GPTBot
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: Google-Extended
-Allow: /
-User-agent: Applebot-Extended
-Allow: /
-User-agent: Amazonbot
-Allow: /
-User-agent: Meta-ExternalAgent
-Allow: /
-User-agent: CCBot
-Allow: /
-User-agent: anthropic-ai
-Allow: /
-User-agent: cohere-ai
-Allow: /
-User-agent: Diffbot
-Allow: /
-
-# AI Search / RAG Crawlers — ALLOW
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: ChatGPT-User
-Allow: /
-User-agent: Claude-SearchBot
-Allow: /
-User-agent: Claude-User
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Perplexity-User
-Allow: /
-User-agent: YouBot
-Allow: /
-User-agent: Bingbot
-Allow: /
+# ── Legitimate search engines ────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
 User-agent: Applebot
 Allow: /
+Disallow: /api/
 
-# Block scrapers
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+
+User-agent: Slurp
+Allow: /
+Disallow: /api/
+
+# ── AI training crawlers — ALLOW (want to be cited) ──────────────────
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /api/
+
+User-agent: YouBot
+Allow: /
+Disallow: /api/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+
+User-agent: Diffbot
+Allow: /
+Disallow: /api/
+
+# ── Block all spam / scraper / data harvesting bots ──────────────────
 User-agent: Bytespider
 Disallow: /
+
 User-agent: AhrefsBot
 Disallow: /
+
 User-agent: SemrushBot
 Disallow: /
+
 User-agent: DotBot
 Disallow: /
+
 User-agent: MJ12bot
 Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: magpie-crawler
+Disallow: /
+
+User-agent: Nicecrawler
+Disallow: /
+
+User-agent: GrapeshotCrawler
+Disallow: /
+
+User-agent: Mail.RU_Bot
+Disallow: /
+
+User-agent: SiteExplorer
+Disallow: /
+
+User-agent: Meltwater
+Disallow: /
+
+User-agent: marketing-bot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: MojeekBot
+Disallow: /
+
+# ── Everything else — block API, allow content ───────────────────────
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
 Sitemap: https://montereygolftours.com/sitemap.xml
 Sitemap: https://montereygolftours.com/image-sitemap.xml
 
-# AI context file
-Llms: https://montereygolftours.com/llms.txt
-# https://montereygolftours.com/llms.txt
+# IndexNow
+IndexNow: https://montereygolftours.com/3a618946b0a3492ebdc3876c6aa8a5cb.txt
 
-# IndexNow key
-# https://montereygolftours.com/3a618946b0a3492ebdc3876c6aa8a5cb.txt
-# Last updated: 2026-09-15
+# AI context
+Llms: https://montereygolftours.com/llms.txt
