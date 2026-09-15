@@ -174,11 +174,28 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     positioning:
       "Premier all-suite golf resort, best for groups wanting a luxury resort experience with golf on-site, in a warm, sunny microclimate when the coast is foggy.",
     faqs: [
-    { q: "What golf course is at Carmel Valley Ranch?", a: "Carmel Valley Ranch has its own Pete Dye-designed golf course on-site, a dramatic layout carved through the Santa Lucia foothills with significant elevation changes." },
-    { q: "Is Carmel Valley Ranch good for non-golfers?", a: "Yes. Carmel Valley Ranch is consistently rated among California's best resorts for non-golfers — with a spa, falconry, beekeeping, wine blending, yoga, and multiple pools." },
-    { q: "Does Carmel Valley Ranch have sunnier weather than coastal Monterey?", a: "Yes. Carmel Valley is inland and typically 10-15°F warmer than coastal Monterey, making it a great choice if you want to avoid morning fog. Afternoons are almost always clear and sunny." },
-    { q: "Does Carmel Valley Ranch have all-suite accommodation?", a: "Yes. All accommodations are suites — no standard hotel rooms. The smallest suite is approximately 700 sq ft." }
-  ],
+      {
+        q: "Does Carmel Valley Ranch have standard hotel rooms?",
+        a: "No — every accommodation on property is a suite, averaging 800 square feet, ranging from studios to multi-bedroom configurations.",
+      },
+      {
+        q: "Who designed the golf course at Carmel Valley Ranch?",
+        a: "Pete Dye designed the original course in 1980 — the only Pete Dye design in Northern California — with a 2006 renovation by Gene Bates.",
+      },
+      {
+        q: "Is Carmel Valley Ranch usually warmer than the coast?",
+        a: "Yes — its inland Carmel Valley location sits in a wine-country microclimate that often stays sunny when the coastal areas are fogged in.",
+      },
+      {
+        q: "What's included in the suites?",
+        a: "A gas fireplace, private deck or patio, valley/vineyard/forest views, an espresso maker, and a refrigerator are standard across suite types.",
+      },
+      {
+        q: "Are there non-golf activities for the group?",
+        a: "Yes — seasonal offerings include beekeeping, stargazing, axe throwing, archery, and cooking classes, plus a resident herd of miniature goats at The Corral.",
+      },
+    
+      { q: "Can I book Carmel Valley Ranch as part of a Monterey golf package?", a: "Yes. Monterey Golf Tours builds stay-and-play Monterey golf packages around Carmel Valley Ranch — combining accommodation and the on-site Pete Dye course with day trips to Pebble Beach, Spyglass, and other peninsula courses. The inland location means less fog and warmer playing conditions than the coast." },],
   },
   "quail-lodge": {
     slug: "quail-lodge",
@@ -311,11 +328,28 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     positioning:
       "Best choice for golfers wanting access to The Club at Pasadera outside of Monday, paired with a wine-country setting that's strong for groups combining golf and Carmel Valley wine tasting.",
     faqs: [
-    { q: "What golf is available from Bernardus Lodge & Spa?", a: "Bernardus Lodge guests have access to TPC Monterey at Pasadera — a private championship course that offers limited public access. Monterey Golf Tours can arrange tee times as part of a package." },
-    { q: "How far is Bernardus Lodge from Carmel Valley Ranch Golf Course?", a: "Bernardus Lodge is approximately 5 miles from Carmel Valley Ranch Golf Course in Carmel Valley, about a 10-minute drive." },
-    { q: "Is Bernardus Lodge good for wine enthusiasts?", a: "Yes. Bernardus Winery is on-site, and Carmel Valley is one of California's premier wine appellations. The Lucia Restaurant has an exceptional local wine program." },
-    { q: "What type of accommodation does Bernardus Lodge & Spa offer?", a: "Bernardus Lodge offers 73 rooms and suites, vineyard villas, and a full-service spa. It's an intimate, adult-oriented retreat in the hills of Carmel Valley." }
-  ],
+      {
+        q: "Does Bernardus Lodge have an on-site golf course?",
+        a: "No, but guests have access to play The Club at Pasadera, including outside its standard Monday-only public access window — confirm current terms with the property before booking.",
+      },
+      {
+        q: "How many rooms does Bernardus Lodge have?",
+        a: "73 rooms, making it the most intimate of the Tier 1 golf-anchor properties on this list.",
+      },
+      {
+        q: "What are the Premier Villas?",
+        a: "Villa Sol and Villa Carmelo are 2-bedroom, 2.5-bath villas with a 12-person dining table, a private terrace with fire pits, and outdoor showers.",
+      },
+      {
+        q: "What's in a standard room at Bernardus Lodge?",
+        a: "A stone fireplace, vaulted ceilings, a private terrace or balcony, vineyard views, and a mini-fridge bar with Nespresso.",
+      },
+      {
+        q: "How far is Bernardus Lodge from Carmel Valley Ranch?",
+        a: "About 7 minutes — the two properties are the closest golf-anchor hotels to each other in Carmel Valley.",
+      },
+    
+      { q: "Can Bernardus Lodge be included in a Monterey golf package?", a: "Yes. Monterey Golf Tours includes Bernardus Lodge in Carmel Valley golf packages — typically paired with Carmel Valley Ranch and Quail Lodge for valley-based rounds, with day trips to Pebble Beach and Spyglass. A strong choice for groups that want a luxury wine country setting alongside Monterey Peninsula golf." },],
   },
   "monterey-plaza": {
     slug: "monterey-plaza",
@@ -534,10 +568,28 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     positioning:
       "Best choice for large groups (20+ golfers), corporate outings, or groups paired with a conference, with LEED credentials appealing to sustainability-minded groups.",
     faqs: [
-    { q: "Is the Portola Hotel & Spa good for large golf groups?", a: "Yes. At 379 rooms with full conference facilities, the Portola Hotel & Spa is one of Monterey's best options for large golf groups — accommodating groups of 20 to 400+ in one property." },
-    { q: "How far is the Portola Hotel & Spa from Bayonet Golf Course?", a: "The Portola Hotel & Spa is approximately 4 miles from Bayonet and Black Horse Golf Courses in Seaside — about a 10-minute drive." },
-    { q: "Is the Portola Hotel & Spa LEED certified?", a: "Yes. The Portola Hotel & Spa is LEED Silver certified, one of the most environmentally responsible hotel properties on the Monterey Peninsula." }
-  ],
+      {
+        q: "Is Portola Hotel good for large groups?",
+        a: "Yes — with 379 rooms and direct connection to the Monterey Conference Center, it's the best-suited property here for large groups, conventions, or corporate outings.",
+      },
+      {
+        q: "Is Portola Hotel LEED-certified?",
+        a: "Yes, it was the Central Coast's first LEED-certified hotel.",
+      },
+      {
+        q: "Does Portola Hotel charge a resort fee?",
+        a: "No resort fee on direct bookings, per the hotel's official policy.",
+      },
+      {
+        q: "What's the spa like at Portola Hotel?",
+        a: "Spa on the Plaza is 6,000 sq ft with 11 private treatment rooms — the largest day spa in Monterey County.",
+      },
+      {
+        q: "What's the dining like at Portola Hotel?",
+        a: "Jacks Monterey serves breakfast and dinner with an American menu, on-site at the hotel.",
+      },
+    
+      { q: "Is Portola Hotel & Spa a good base for a Monterey golf trip?", a: "Yes. Portola Hotel & Spa is centrally located in downtown Monterey and within easy reach of all the peninsula courses — Bayonet, Black Horse, Laguna Seca, Pacific Grove, and Del Monte are all under 15 minutes. Monterey Golf Tours includes it in Monterey golf packages for groups who want a full-service downtown hotel." },],
   },
   "casa-munras": {
     slug: "casa-munras",
@@ -666,10 +718,32 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     positioning:
       "Best for groups who want a walkable downtown Monterey base and are planning to spend some trip time off the course — note the mandatory $20/night amenity fee when comparing total cost to other properties.",
     faqs: [
-    { q: "Where is Hotel Abrego located in Monterey?", a: "Hotel Abrego is in downtown Monterey near Alvarado Street, within walking distance of Fisherman's Wharf, Old Custom House, and Monterey's main dining district." },
-    { q: "Is Hotel Abrego a good base for a Monterey golf trip?", a: "Yes. Hotel Abrego is a practical mid-tier choice — approximately 5 miles from Bayonet and Black Horse and 14 miles from Pebble Beach. Good value for groups who don't need full resort amenities." },
-    { q: "Does Hotel Abrego have a pool?", a: "Yes. Hotel Abrego has a heated outdoor pool and fire pits — well suited for groups socializing after a round of golf." }
-  ],
+      {
+        q: "Is Hotel Abrego close to the Monterey Bay Aquarium?",
+        a: "Yes — it's about 1.6 miles away, an easy walk or short drive.",
+      },
+      {
+        q: "How many rooms does Hotel Abrego have?",
+        a: "93 rooms, spread across four buildings on the property.",
+      },
+      {
+        q: "Does Hotel Abrego have a resort fee?",
+        a: "Yes — a mandatory $20/night amenity fee covers parking and WiFi. Factor this into your total cost comparison.",
+      },
+      {
+        q: "Is Hotel Abrego good for golf groups?",
+        a: "It's not on a golf course, but it's centrally located with drive times of roughly 12–15 minutes to several Monterey Peninsula courses, and offers group rates.",
+      },
+      {
+        q: "What dining is on-site at Hotel Abrego?",
+        a: "Bistro Abrego serves a daily breakfast buffet and California coastal dishes in the evening, plus a bar/lounge with happy hour.",
+      },
+      {
+        q: "What else is within walking distance of Hotel Abrego?",
+        a: "Path of History, Monterey Sports Center, Wine Trolley Tours, and the Monterey County Youth Museum are all a short walk away, along with a scenic overlook known as California Views.",
+      },
+    
+      { q: "Is Hotel Abrego included in Monterey golf packages?", a: "Yes. Monterey Golf Tours includes Hotel Abrego in Monterey golf packages for groups who want a central downtown location at a mid-range rate. It’s within 15 minutes of Bayonet, Black Horse, Laguna Seca, Pacific Grove, and Del Monte — and about 25 minutes from the Pebble Beach courses." },],
   },
   "embassy-suites-monterey-bay-seaside": {
     slug: "embassy-suites-monterey-bay-seaside",
@@ -847,14 +921,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "Guest rooms and suites from 570 to 1,300 sq ft, including Fairway One rooms and the Palmer and Eastwood four-bedroom cottages",
     brand: "Pebble Beach Resorts®",
     hook: "Open since 1919, The Lodge at Pebble Beach™ frames the 18th green of Pebble Beach Golf Links® — golf's most recognised closing hole.",
-    faqs: [
-    { q: "What golf courses can guests of The Lodge at Pebble Beach™ play?", a: "Lodge guests have access to Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™. A minimum 3-night stay is required to book Pebble Beach Golf Links® tee times." },
-    { q: "How far is The Lodge at Pebble Beach™ from Monterey Airport?", a: "The Lodge at Pebble Beach™ is approximately 14 miles from Monterey Regional Airport (MRY), about a 20-minute drive along 17-Mile Drive." },
-    { q: "Does The Lodge at Pebble Beach™ have a spa?", a: "Yes. The Spa at Pebble Beach is located adjacent to The Lodge and offers a full menu of treatments, accessible to guests of all three Pebble Beach resort properties." },
-    { q: "What is the minimum stay at The Lodge at Pebble Beach™ to play Pebble Beach Golf Links®?", a: "A minimum 3-night stay is required to book Pebble Beach Golf Links® tee times as a resort guest." },
-    { q: "Can non-resort guests play Pebble Beach Golf Links®?", a: "Yes, but tee times are limited and must be booked well in advance. Monterey Golf Tours, as an IAGTO Authorized Operator, can secure tee times for both resort guests and non-guests." }
-  ],
-  gallery: [
+    gallery: [
       { src: "/images/pbc-portal/lodge_2025_exterior.jpg", alt: "The Lodge at Pebble Beach™ exterior, Pebble Beach, CA — framing the 18th green of Pebble Beach Golf Links®", caption: "The Lodge at Pebble Beach™ exterior — the original 1919 property, framing the 18th green of Pebble Beach Golf Links®.", credit: "Photo by Jamie Alcala", photographer: "Jamie Alcala", year: 2025, category: "Exterior", tag: "Exterior", location: "Pebble Beach, CA" },
       { src: "/images/pbc-portal/lodge_2025_lobby.jpg", alt: "The Lodge at Pebble Beach™ ocean-view dining room, Pebble Beach, CA — floor-to-ceiling windows overlooking Stillwater Cove", caption: "Ocean-view dining at The Lodge at Pebble Beach™ — panoramic views of Stillwater Cove and Carmel Bay.", credit: "Photo by Jamie Alcala", photographer: "Jamie Alcala", year: 2025, category: "Lobby", tag: "Lobby", location: "Pebble Beach, CA" },
       { src: "/images/pbc-portal/lodge-main-building_01.jpg", alt: "The Lodge at Pebble Beach™ main building, Pebble Beach, CA — open since 1919", caption: "The Lodge at Pebble Beach™ main building — open since 1919, one of the oldest golf resort hotels in America.", credit: "© Pebble Beach Company", photographer: "Pebble Beach Company", year: 0, category: "Exterior", tag: "Main building", location: "Pebble Beach, CA" },
@@ -959,13 +1026,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     rooms: "Guest rooms and suites from 470 to 2,100 sq ft, all with gas fireplace and most with private patio or balcony",
     brand: "Pebble Beach Resorts®",
     hook: "Tucked between Del Monte Forest and the Pacific Ocean — the most romantic and most dramatic of the three Pebble Beach Resorts® properties.",
-    faqs: [
-    { q: "Is The Links at Spanish Bay™ currently open for play?", a: "The Links at Spanish Bay™ is currently closed for a Gil Hanse-led renovation and is scheduled to reopen April 17, 2027. Inn guests can still play Pebble Beach Golf Links®, Spyglass Hill™, and Del Monte™." },
-    { q: "What golf courses are available to Inn at Spanish Bay™ guests?", a: "Inn guests have access to Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, and Del Monte™ Golf Course. The Links at Spanish Bay™ reopens April 2027." },
-    { q: "Does The Inn at Spanish Bay™ have live bagpipe music?", a: "Yes. A lone piper plays at sunset — one of Pebble Beach's signature traditions. This will resume when The Links at Spanish Bay™ reopens in April 2027." },
-    { q: "How far is The Inn at Spanish Bay™ from Pebble Beach Golf Links®?", a: "Approximately 4 miles north along 17-Mile Drive — roughly a 10-minute drive." }
-  ],
-  gallery: [
+    gallery: [
       { src: "/images/pbc-portal/inn_2020_interior_lobby.jpg", alt: "The Inn at Spanish Bay™ lobby, Pebble Beach, CA — overlooking the Pacific and Links at Spanish Bay®", caption: "The lobby at The Inn at Spanish Bay™ — a 270-room resort overlooking the Pacific and the Links at Spanish Bay® golf course.", credit: "Photo by Sherman Chu", photographer: "Sherman Chu", year: 2020, category: "Lobby", tag: "Lobby", location: "Pebble Beach, CA" },
       { src: "/images/pbc-portal/the-inn-ocean-view-room.jpg", alt: "Ocean view king room at The Inn at Spanish Bay™, Pebble Beach, CA — floor-to-ceiling windows with Pacific views", caption: "An ocean view room at The Inn at Spanish Bay™ — every room features a gas fireplace and private patio or balcony with forest, fairway, or Pacific views.", credit: "Photo by Noah Webb", photographer: "Noah Webb", year: 0, category: "Guest Rooms", tag: "Ocean view room", location: "Pebble Beach, CA" },
       { src: "/images/pbc-portal/the-inn-presidential-suite.jpg", alt: "Presidential Suite living room at The Inn at Spanish Bay™, Pebble Beach, CA — grand piano and fireplace", caption: "The Presidential Suite at The Inn at Spanish Bay™ — 2,100 sq ft featuring a grand piano, fireplace, and multiple sitting areas.", credit: "© Pebble Beach Company", photographer: "Pebble Beach Company", year: 0, category: "Suites", tag: "Presidential Suite", location: "Pebble Beach, CA" },
@@ -1056,13 +1117,7 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     ],
   },
 
-   faqs: [
-    { q: "What makes Casa Palmero® different from The Lodge and The Inn?", a: "Casa Palmero® is the most intimate Pebble Beach property — just 24 rooms and suites in a Mediterranean-style villa. All guests receive complimentary spa access, a personal concierge, and the option to buy out the entire estate for exclusive group use." },
-    { q: "What golf courses can Casa Palmero® guests play?", a: "Casa Palmero® guests have access to Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™. A 3-night minimum stay is required for Pebble Beach Golf Links® tee times." },
-    { q: "Is spa access complimentary at Casa Palmero®?", a: "Yes. All Casa Palmero® guests receive complimentary daily access to The Spa at Pebble Beach™ (Forbes Five-Star) — a distinction from The Lodge and Inn where treatments are à la carte." },
-    { q: "Can a group buy out all of Casa Palmero® exclusively?", a: "Yes. Casa Palmero® can be reserved exclusively by a single group — all 24 rooms, the main house with library and billiard room, the bar and lounge, and the heated pool. Monterey Golf Tours arranges Casa Palmero exclusive buyouts for high-end corporate and private groups." }
-  ],
-   "casa-palmero": {
+  "casa-palmero": {
     slug: "casa-palmero",
     name: "Casa Palmero™",
     city: "Pebble Beach, CA",
