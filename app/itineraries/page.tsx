@@ -44,6 +44,7 @@ export default function ItinerariesIndexPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "Itineraries", item: canonicalUrl },
+        ],
       },
       {
         "@type": "FAQPage",
