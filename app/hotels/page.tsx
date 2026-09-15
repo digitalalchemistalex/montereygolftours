@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site";
 import FogSunSelector from "@/components/FogSunSelector";
 
 export const metadata: Metadata = {
-  title: "Hotels on the Monterey Peninsula | Monterey Golf Tours",
+  title: "Golf Hotels on the Monterey Peninsula",
   description:
     "Browse all 11 hotels Monterey Golf Tours recommends for group golf trips — from golf-anchor resorts to boutique village properties across the Monterey Peninsula.",
   alternates: {
