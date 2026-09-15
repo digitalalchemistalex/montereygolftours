@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const trip = ITINERARIES[slug];
   if (!trip) return {};
 
-  const priceStr = trip.priceFrom > 0 ? ` from $${trip.priceFrom}/person` : "";
   const title = `${trip.title}`;
   const description = `${trip.durationDays}-day Monterey Peninsula golf trip — ${trip.rounds}. ${trip.target} Get a custom quote within 24 hours.`;
 
