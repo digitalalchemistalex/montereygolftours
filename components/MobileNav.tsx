@@ -180,6 +180,7 @@ function ViewAllRow({ href, onClick, label }: { href: string; onClick: () => voi
 }
 
 const SIMPLE_LINKS = [
+  { label: "Pebble Beach Packages", href: "/pebble-beach/" },
   { label: "About", href: "/about/" },
   { label: "FAQ",   href: "/faq/" },
 ];
