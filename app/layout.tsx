@@ -31,6 +31,7 @@ const inter = Inter({
 });
 
 const GTM_ID = "GTM-P42W2PKX";
+const GA4_ID = "G-2FREF1K3T1";
 
 const DEFAULT_TITLE = "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula";
 const DEFAULT_DESC =
@@ -84,6 +85,19 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`,
+          }}
+        />
+        {/* GA4 */}
+        <Script
+          id="ga4-script"
+          strategy="afterInteractive"
+          src={}
+        />
+        <Script
+          id="ga4-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: ,
           }}
         />
       </head>
