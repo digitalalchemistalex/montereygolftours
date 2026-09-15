@@ -56,7 +56,7 @@ export default function GolfCoursesIndexPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "Golf Courses", item: canonicalUrl },
-,
+      },
       {
         "@type": "FAQPage",
         "@id": "https://montereygolftours.com/golf-courses/#faq",
