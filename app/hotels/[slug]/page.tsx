@@ -39,20 +39,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Hotel pages
   const hotel = HOTEL_DETAILS[slug];
   if (hotel) {
-    const title = hotel.name;
-    const description = `${hotel.hook}`.slice(0, 155);
+    const hotelTitle = hotel.name;
+    const hotelDesc = (hotel.hook ?? "").slice(0, 155);
     return {
-      title,
-      description,
+      title: hotelTitle,
+      description: hotelDesc,
       alternates: { canonical: `https://${SITE.domain}/hotels/${hotel.slug}/` },
       openGraph: {
         type: "website",
-        title,
-        description,
+        title: hotelTitle,
+        description: hotelDesc,
         url: `https://${SITE.domain}/hotels/${hotel.slug}/`,
         siteName: "Monterey Golf Tours",
       },
-      twitter: { card: "summary_large_image", title, description },
+      twitter: { card: "summary_large_image", title: hotelTitle, description: hotelDesc },
     };
   }
 
