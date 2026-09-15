@@ -112,8 +112,8 @@ export default async function CoursePage({ params }: Props) {
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
         name: isClosed
-          ? `${course.name} — Closed for Renovation, Reopening April 2027 | Monterey Golf Tours`
-          : `${course.name} — Tee Times & Course Info | Monterey Golf Tours`,
+          ? `${course.name} — Closed for Renovation, Reopening April 2027`
+          : `${course.name} — Tee Times & Course Info`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
         speakable: {
@@ -125,7 +125,7 @@ export default async function CoursePage({ params }: Props) {
         "@type": "GolfCourse",
         "@id": `${canonicalUrl}#course`,
         name: course.name,
-        description: course.hook,
+        description: course.hook?.slice(0, 155),
         address: {
           "@type": "PostalAddress",
           streetAddress: course.address,
