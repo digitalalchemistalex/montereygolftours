@@ -16,6 +16,12 @@ User-agent: Meta-ExternalAgent
 Allow: /
 User-agent: CCBot
 Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Diffbot
+Allow: /
 
 # AI Search / RAG Crawlers — ALLOW
 User-agent: OAI-SearchBot
@@ -30,6 +36,8 @@ User-agent: PerplexityBot
 Allow: /
 User-agent: Perplexity-User
 Allow: /
+User-agent: YouBot
+Allow: /
 User-agent: Bingbot
 Allow: /
 User-agent: Googlebot
@@ -37,15 +45,24 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-# Block scraper
+# Block scrapers
 User-agent: Bytespider
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: MJ12bot
 Disallow: /
 
 Sitemap: https://montereygolftours.com/sitemap.xml
 Sitemap: https://montereygolftours.com/image-sitemap.xml
 
 # AI context file
+Llms: https://montereygolftours.com/llms.txt
 # https://montereygolftours.com/llms.txt
 
-# IndexNow
+# IndexNow key
 # https://montereygolftours.com/3a618946b0a3492ebdc3876c6aa8a5cb.txt
