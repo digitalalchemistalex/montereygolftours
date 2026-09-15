@@ -49,6 +49,7 @@ export type SendResult = { ok: boolean; id?: string; error?: string };
 
 export async function sendEmail(opts: {
   to: string | string[];
+  cc?: string[];
   subject: string;
   html: string;
   key: string;
@@ -60,6 +61,7 @@ export async function sendEmail(opts: {
       body: JSON.stringify({
         from: FROM,
         to: Array.isArray(opts.to) ? opts.to : [opts.to],
+        ...(opts.cc && opts.cc.length > 0 ? { cc: opts.cc } : {}),
         subject: opts.subject,
         html: HEADER + '<div style="padding:28px 32px">' + opts.html + '</div>' + FOOTER,
       }),
