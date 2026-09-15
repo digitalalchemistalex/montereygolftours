@@ -104,7 +104,15 @@ export default async function CoursePage({ params }: Props) {
   // ── Hotel pages ─────────────────────────────────────────────────
   const hotel = HOTEL_DETAILS[slug];
   if (hotel) {
-    const hotelType = hotel.tier === 1 ? "Resort" : "LodgingBusiness";
+    const RESORT_SLUGS = [
+      "lodge-at-pebble-beach",
+      "inn-at-spanish-bay",
+      "casa-palmero",
+      "carmel-valley-ranch-hotel",
+      "quail-lodge-hotel",
+      "bernardus-lodge",
+    ];
+    const hotelType = RESORT_SLUGS.includes(slug) ? ["Hotel", "Resort"] : "Hotel";
     const canonicalUrl = `https://${SITE.domain}/hotels/${hotel.slug}/`;
     const heroImage = hotel.gallery?.[0]?.src
       ? hotel.gallery[0].src.startsWith("/")
