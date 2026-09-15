@@ -19,7 +19,9 @@ User-agent: Slurp
 Allow: /
 Disallow: /api/
 
-# ── AI training crawlers — ALLOW (want to be cited) ──────────────────
+# ── AI training & LLM crawlers — ALLOW (want to be cited in AI answers) ──
+
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 Disallow: /api/
@@ -32,6 +34,7 @@ User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
 
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 Disallow: /api/
@@ -48,6 +51,16 @@ User-agent: anthropic-ai
 Allow: /
 Disallow: /api/
 
+# Google AI (Gemini / Bard / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot-News
+Allow: /
+Disallow: /api/
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 Disallow: /api/
@@ -56,7 +69,17 @@ User-agent: Perplexity-User
 Allow: /
 Disallow: /api/
 
-User-agent: Google-Extended
+# Meta AI (Llama)
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /api/
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Disallow: /api/
+
+# Apple (Siri / Apple Intelligence)
+User-agent: Applebot
 Allow: /
 Disallow: /api/
 
@@ -64,23 +87,77 @@ User-agent: Applebot-Extended
 Allow: /
 Disallow: /api/
 
+# Amazon (Alexa / Bedrock)
 User-agent: Amazonbot
 Allow: /
 Disallow: /api/
 
-User-agent: Meta-ExternalAgent
+# Microsoft (Copilot / Bing AI)
+User-agent: Bingbot
 Allow: /
 Disallow: /api/
 
+User-agent: adidxbot
+Allow: /
+Disallow: /api/
+
+# You.com
 User-agent: YouBot
 Allow: /
 Disallow: /api/
 
+# Cohere
 User-agent: cohere-ai
 Allow: /
 Disallow: /api/
 
+# Diffbot (used by many LLMs for knowledge graphs)
 User-agent: Diffbot
+Allow: /
+Disallow: /api/
+
+# Common Crawl (used to train most LLMs)
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+# Brave AI
+User-agent: Brave-Search
+Allow: /
+Disallow: /api/
+
+# Baidu AI
+User-agent: Baiduspider
+Allow: /
+Disallow: /api/
+
+# Naver (Korean AI)
+User-agent: Yeti
+Allow: /
+Disallow: /api/
+
+# Mistral / HuggingFace crawlers
+User-agent: HuggingFaceBot
+Allow: /
+Disallow: /api/
+
+# Webz.io / Webhose (feeds LLM datasets)
+User-agent: Webzio-Extended
+Allow: /
+Disallow: /api/
+
+# Scrapy / generic research crawlers
+User-agent: scrapy
+Allow: /
+Disallow: /api/
+
+# AI2 (Allen Institute — trains open-source LLMs)
+User-agent: AI2Bot
+Allow: /
+Disallow: /api/
+
+# Timpibot (EU search + AI)
+User-agent: Timpibot
 Allow: /
 Disallow: /api/
 
