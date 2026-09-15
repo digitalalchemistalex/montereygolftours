@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isClosed = slug === "links-at-spanish-bay";
   const title = isClosed
     ? `${course.name} — Closed for Renovation, Reopening April 2027`
-    : `${course.name} — Tee Times & Course Info`;
+    : `${course.name}`;
   const description = isClosed
     ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now — join the waitlist and plan your Monterey golf trip.`
     : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Book ${course.name} as part of a planned Monterey golf trip. Get a custom quote →`;
@@ -113,7 +113,7 @@ export default async function CoursePage({ params }: Props) {
         url: canonicalUrl,
         name: isClosed
           ? `${course.name} — Closed for Renovation, Reopening April 2027`
-          : `${course.name} — Tee Times & Course Info`,
+          : `${course.name}`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
         speakable: {
