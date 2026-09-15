@@ -15,6 +15,7 @@ import MondayInsider from "@/components/MondayInsider";
 import PoppyHillsValue from "@/components/PoppyHillsValue";
 import SpanishBayWaitlist from "@/components/SpanishBayWaitlist";
 import PBGLLiveCams from "@/components/PBGLLiveCams";
+import PBGLTournaments from "@/components/PBGLTournaments";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -427,6 +428,11 @@ export default async function CoursePage({ params }: Props) {
         {/* Live cams — PBGL only */}
         {slug === "pebble-beach-golf-links" && (
           <PBGLLiveCams />
+        )}
+
+        {/* Tournaments You Can Play — PBGL only */}
+        {slug === "pebble-beach-golf-links" && (
+          <PBGLTournaments />
         )}
 
         {/* Car Week banner — shows Aug 1-20 only, Bayonet + Black Horse */}
