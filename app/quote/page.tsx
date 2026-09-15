@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Get a Custom Golf Trip Quote | Monterey Golf Tours",
+  title: "Get a Custom Monterey Golf Trip Quote",
   description:
     "Tell us your group size, dates, and budget, and we'll put together a custom Monterey Peninsula golf trip quote within 24 hours.",
   alternates: {
