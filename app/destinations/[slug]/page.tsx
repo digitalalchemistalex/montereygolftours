@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ITINERARIES } from "@/lib/itineraries";
+import { DESTINATIONS } from "@/lib/destinations";
 import { COURSES } from "@/lib/courses";
 import { HOTELS } from "@/lib/hotels";
 import { SITE } from "@/lib/site";
@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return Object.keys(ITINERARIES).map((slug) => ({ slug }));
+  return Object.keys(DESTINATIONS).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
