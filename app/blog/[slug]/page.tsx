@@ -83,15 +83,26 @@ export default async function BlogPostPage({ params }: Props) {
         "@id": `${canonicalUrl}#post`,
         headline: post.title,
         description: post.intro,
+        image: post.cardImage ? `https://${SITE.domain}${post.cardImage}` : undefined,
         datePublished: post.datePublished,
-        dateModified: post.dateModified,
+        dateModified: post.dateModified ?? post.datePublished,
         author: {
           "@type": "Person",
           name: "Sean Schaeffer",
           url: `https://${SITE.domain}/about/`,
         },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${canonicalUrl}#webpage` },
       },
+      ...(post.faqs && post.faqs.length > 0 ? [{
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl}#faq`,
+        mainEntity: post.faqs.map((faq: { q: string; a: string }) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }] : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
