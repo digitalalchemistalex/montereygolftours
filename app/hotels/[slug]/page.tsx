@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Hotel pages
   const hotel = HOTEL_DETAILS[slug];
   if (hotel) {
-    const title = `${hotel.name} — Monterey Golf Lodging`;
+    const title = hotel.name;
     const description = `${hotel.hook}`.slice(0, 155);
     return {
       title,
