@@ -44,11 +44,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function ItineraryPage({ params }: Props) {
+export default async function DestinationPage({ params }: Props) {
   const { slug } = await params;
-  const trip = ITINERARIES[slug];
+  const dest = DESTINATIONS[slug];
 
-  if (!trip) {
+  if (!dest) {
     return (
       <>
         <Header />
