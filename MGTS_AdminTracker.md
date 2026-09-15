@@ -985,3 +985,22 @@ Homepage FAQ category images (Trip Planning, Timing & Logistics, Lodging & Trave
 - MGTS_AdminTracker.md updated (this file)
 - MGTS_STATUS.md updated — domain status corrected to LIVE
 - GTHS skill update pending (GTHS token expired — cannot push to GTHS repo)
+
+## Sep 15 2026 — DB Mirror Complete
+
+### MGTS Supabase now mirrors GTHS schema exactly
+
+**vendors table** (28 rows):
+- 14 courses: Bayonet, Black Horse, CVR, Quail Lodge, Laguna Seca, Pacific Grove, Poppy Hills, TPC Pasadera, Pasatiempo, Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, The Links at Spanish Bay®, Del Monte™ Golf Course, The Hay™
+- 14 hotels: Portola, Hyatt Regency, CVR, Quail Lodge, Bernardus, Monterey Plaza, InterContinental, Casa Munras, Hotel Abrego, Embassy Suites, Monterey Beach Hotel, The Lodge at Pebble Beach™, The Inn at Spanish Bay™, Casa Palmero™
+- PBC trademark symbols correct per Karlyn Hawke Sep 2026 audit
+- Spanish Bay: closed=true, reopens=2027-04-17 in properties JSONB
+
+**New tables added** (exact GTHS schema):
+- `trips` — trip records linked to leads
+- `trip_items` — line items per trip (course rounds, hotel nights, activities)
+- `trip_vendors` — vendor confirmations per trip item
+- `tasks` — general task management
+- `lead_tasks` — lead pipeline tasks
+
+**Total tables: 15** — activity_log, admin_users, course_pricing, email_log, lead_tasks, leads, quote_drafts, quote_responses, rate_configs, spanish_bay_waitlist, tasks, trip_items, trip_vendors, trips, vendors
