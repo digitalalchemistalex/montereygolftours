@@ -16,6 +16,8 @@ import PoppyHillsValue from "@/components/PoppyHillsValue";
 import SpanishBayWaitlist from "@/components/SpanishBayWaitlist";
 import PBGLLiveCams from "@/components/PBGLLiveCams";
 import PBGLTournaments from "@/components/PBGLTournaments";
+import PBCEvents from "@/components/PBCEvents";
+import PBCMajorsBanner from "@/components/PBCMajorsBanner";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -433,6 +435,20 @@ export default async function CoursePage({ params }: Props) {
         {/* Tournaments You Can Play — PBGL only */}
         {slug === "pebble-beach-golf-links" && (
           <PBGLTournaments />
+        )}
+
+        {/* Majors banner — PBC courses: PBGL, Spyglass, Del Monte, The Hay */}
+        {["pebble-beach-golf-links","spyglass-hill","del-monte-golf-course","the-hay"].includes(slug) && (
+          <PBCMajorsBanner />
+        )}
+
+        {/* Events calendar — PBGL only (golf tier) */}
+        {slug === "pebble-beach-golf-links" && (
+          <PBCEvents
+            tiers={["golf"]}
+            title="Upcoming events at Pebble Beach Golf Links®"
+            subtitle="Plan your round around what's happening on the course."
+          />
         )}
 
         {/* Car Week banner — shows Aug 1-20 only, Bayonet + Black Horse */}
