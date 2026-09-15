@@ -930,3 +930,58 @@ Email sent to Sean + Mike (Sep 9 2026) listing all changes and the 3 photo block
 - CVR hero replacement  
 - Poppy Hills hero replacement
 
+---
+
+## SESSION: Sep 15 2026 — Domain Activation + Full Audit
+
+### montereygolftours.com LIVE ✅
+
+Domain activated Sep 15 2026. Full audit performed against live domain.
+
+### Audit results — all pages returning 200 on live domain
+
+| Section | Count | Status |
+|---|---|---|
+| Core pages (/, /about/, /contact/, /faq/, /quote/, /packages/, /itineraries/, /blog/, /experiences/, /photography/) | 10 | ✅ All 200 |
+| Course pages (/golf-courses/[slug]/) | 14 | ✅ All 200 |
+| Hotel pages (/hotels/[slug]/) | 13 | ✅ All 200 |
+| /sitemap.xml, /robots.txt, /llms.txt | 3 | ✅ All 200 |
+
+### Canonical / OG / Schema — all correct on live domain
+
+- canonical: `https://montereygolftours.com/` ✅
+- og:url: `https://montereygolftours.com/` ✅
+- og:site_name: `Monterey Golf Tours` ✅
+- og:image: `https://montereygolftours.com/opengraph-image?...` ✅
+- All schema @id values: `https://montereygolftours.com/#...` ✅
+- metadataBase resolving to live domain ✅
+
+### Unified Admin — MGTS section confirmed live in GTHS admin
+
+| Route | Status |
+|---|---|
+| /admin/unified/mgts/ | ✅ auth-protected (307 → login) |
+| /admin/unified/mgts/leads/ | ✅ auth-protected |
+| /admin/unified/mgts/[leadId]/ | ✅ auth-protected |
+| /api/admin/mgts-proxy/leads/ | ✅ 401 (auth-gated correctly) |
+
+### Flag: 3 Unsplash images still in FAQ section
+
+Homepage FAQ category images (Trip Planning, Timing & Logistics, Lodging & Travel) still using Unsplash. These are NOT PBC properties — acceptable per current rules. Flagged for Sean to confirm or replace.
+
+### Remaining blockers (unchanged)
+
+- IAGTO rates for PBL®, SH®, Del Monte™ — blocks D#18
+- Higher-res heroes: Monterey Plaza, InterContinental, Hotel Abrego, Monterey Beach Hotel
+- CVR course photos (S2), Pasadera photos (S3), Poppy Hills images (S5)
+- PBC TRADEMARKS 2026.pdf review
+- Twilio upgrade + toll-free verification for SMS
+- GTHS GitHub token expired — needs fresh token
+- GSC property for montereygolftours.com — add and submit sitemap
+
+### Actions from this session
+
+- Memory updated (overview.md) — MGTS domain live status recorded
+- MGTS_AdminTracker.md updated (this file)
+- MGTS_STATUS.md updated — domain status corrected to LIVE
+- GTHS skill update pending (GTHS token expired — cannot push to GTHS repo)
