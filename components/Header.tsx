@@ -245,7 +245,10 @@ export default function Header({ transparent = false }: { transparent?: boolean 
 
               <div className="col-span-2 flex items-center justify-between border-t border-[#f0ebe1] bg-[#fdfbf7] px-4 py-2.5">
                 <span className="font-ui text-[11.5px] font-semibold text-gold">IAGTO Partner &middot; Authorized Pebble Beach Resorts® Golf Travel Operator</span>
-                <a href="https://www.pebblebeach.com/plan-my-trip/" target="_blank" rel="noopener noreferrer" className="font-ui text-[11.5px] font-semibold text-ocean hover:underline">PBR Experiences →</a>
+                <div className="flex items-center gap-3">
+                  <Link href="/pebble-beach/" className="font-ui text-[11.5px] font-semibold text-fairway hover:underline">Our PBR hub →</Link>
+                  <a href="https://www.pebblebeach.com/plan-my-trip/" target="_blank" rel="noopener noreferrer" className="font-ui text-[11.5px] font-semibold text-ocean hover:underline">PebbleBeach.com →</a>
+                </div>
               </div>
             </div>
           </div>
