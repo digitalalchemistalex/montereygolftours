@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries: MetadataRoute.Sitemap = [
     { url: `${base}/`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/pebble-beach/`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${base}/golf-courses/pebble-beach-golf-links/live-cams/`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${base}/golf-courses/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/hotels/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/destinations/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
