@@ -15,16 +15,16 @@ const FAQ       = dynamic(() => import("@/components/FAQ"));
 // ── Metadata ─────────────────────────────────────────────────────────
 // Formula: P1 keyword first | price signal | brand | ≤60 chars title
 export const metadata: Metadata = {
-  title: "Monterey Golf Packages & Group Trips | Monterey Golf Tours",
+  title: "Pebble Beach Golf Packages & Monterey Golf Trips | Monterey Golf Tours",
   description:
-    "Custom Monterey Peninsula golf packages for groups. 14 courses, 9 hotels, tee times and transfers handled end to end. Get a quote in 24 hours.",
+    "Plan a Pebble Beach golf trip with Monterey's IAGTO-authorized operator. 14 courses, 9 hotels, groups of 2–400. Tee times, transfers, lodging — handled. Quote in 24 hrs.",
   alternates: {
     canonical: "https://montereygolftours.com/",
   },
   openGraph: {
-    title: "Monterey Golf Packages & Group Trips | Monterey Golf Tours",
+    title: "Pebble Beach Golf Packages & Monterey Golf Trips | Monterey Golf Tours",
     description:
-      "Custom Monterey Peninsula golf packages for groups. 14 courses, 9 hotels, tee times and transfers handled end to end. Get a quote in 24 hours.",
+      "Plan a Pebble Beach golf trip with Monterey's IAGTO-authorized operator. 14 courses, 9 hotels, groups of 2–400. Tee times, transfers, lodging — handled. Quote in 24 hrs.",
     url: "https://montereygolftours.com/",
     siteName: "Monterey Golf Tours",
     locale: "en_US",
