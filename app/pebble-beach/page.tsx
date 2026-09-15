@@ -339,15 +339,7 @@ export default function PebbleBeachHubPage() {
                   {exp.label} <ExternalArrow />
                 </div>
                 <div className="font-body text-[13px] text-[#6a6358]">{exp.desc}</div>
-                {exp.internal && (
-                  <Link
-                    href={exp.internal}
-                    onClick={(e) => e.stopPropagation()}
-                    className="mt-1 font-ui text-[11.5px] font-semibold text-fairway hover:underline"
-                  >
-                    Our page →
-                  </Link>
-                )}
+
               </a>
             ))}
           </div>
