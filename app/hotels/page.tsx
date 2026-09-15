@@ -9,8 +9,7 @@ import FogSunSelector from "@/components/FogSunSelector";
 
 export const metadata: Metadata = {
   title: "Golf Hotels on the Monterey Peninsula",
-  description:
-    "Browse all 11 hotels Monterey Golf Tours recommends for group golf trips — from golf-anchor resorts to boutique village properties across the Monterey Peninsula.",
+  description: "11 handpicked hotels for Monterey Peninsula golf trips — Pebble Beach resort lodging to boutique Carmel inns. All paired with tee times.",
   alternates: {
     canonical: `https://${SITE.domain}/hotels/`,
   },
