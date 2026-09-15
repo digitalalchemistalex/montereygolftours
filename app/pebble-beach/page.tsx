@@ -119,7 +119,7 @@ const schemaGraph = {
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Pebble Beach Golf Packages — Book With an IAGTO Authorized Operator",
+  title: "Pebble Beach Golf Packages — IAGTO Authorized",
   description:
     "Book a Pebble Beach golf package with Monterey Golf Tours — IAGTO Authorized Pebble Beach Resorts® Golf Travel Operator. Tee times, lodging, and full trip planning for groups of 2–400. Get a custom quote.",
   alternates: { canonical: PAGE_URL },
