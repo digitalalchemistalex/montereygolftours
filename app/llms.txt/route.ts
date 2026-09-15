@@ -146,6 +146,37 @@ export async function GET() {
   lines.push(`- The Links at Spanish Bay® status: CLOSED — Gil Hanse renovation, reopens April 17 2027`);
   lines.push(``);
 
+  // ─── Contact ──────────────────────────────────────────────────────────────
+  lines.push(`## Contact`);
+  lines.push(``);
+  lines.push(`- Email: info@montereygolftours.com`);
+  lines.push(`- Phone: (866) 278-7010`);
+  lines.push(`- Quote form: ${BASE}/quote/`);
+  lines.push(`- Response time: Within 24 hours`);
+  lines.push(``);
+
+  // ─── FAQ ──────────────────────────────────────────────────────────────────
+  lines.push(`## Frequently Asked Questions`);
+  lines.push(``);
+  lines.push(`**Do I need to stay at a Pebble Beach hotel to play Pebble Beach Golf Links®?**`);
+  lines.push(`Yes. A minimum stay of 3 nights at a Pebble Beach Resorts® property — The Lodge, The Inn, or Casa Palmero — is required to book Pebble Beach Golf Links® tee times. Lodge guests receive the earliest advance booking window (up to 18 months).`);
+  lines.push(``);
+  lines.push(`**What is an IAGTO Authorized Pebble Beach operator?**`);
+  lines.push(`IAGTO (International Association of Golf Tour Operators) is the global golf travel trade body. Pebble Beach Resorts® contracts with a small number of IAGTO operators who can book PBC tee times and lodging at IAGTO rates. Monterey Golf Tours holds this authorization.`);
+  lines.push(``);
+  lines.push(`**What is the minimum group size?**`);
+  lines.push(`Monterey Golf Tours plans trips for groups of 2–400 players. There is no formal minimum, but packages are optimized for groups of 4 or more.`);
+  lines.push(``);
+  lines.push(`**How far in advance should I book?**`);
+  lines.push(`For peak season (May–October) and major events like the AT&T Pro-Am, book 6–18 months in advance. Shoulder season (November–April) allows shorter lead times of 2–6 months.`);
+  lines.push(``);
+  lines.push(`**Which courses are bookable through Monterey Golf Tours?**`);
+  lines.push(`All 14 courses on the Monterey Peninsula are bookable, including the four Pebble Beach Resorts® courses (Pebble Beach Golf Links®, Spyglass Hill™, Del Monte™, The Hay™) and 10 public/semi-private courses including Bayonet, Black Horse, Poppy Hills, Pasadera, and others. The Links at Spanish Bay® is closed until April 17, 2027.`);
+  lines.push(``);
+  lines.push(`**Do you handle transfers and logistics?**`);
+  lines.push(`Yes. Monterey Golf Tours coordinates tee time scheduling, airport transfers, inter-course shuttles, caddies, forecaddies, and restaurant reservations as part of a complete trip package.`);
+  lines.push(``);
+
   // ─── Legal ────────────────────────────────────────────────────────────────
   lines.push(`## Legal`);
   lines.push(``);
