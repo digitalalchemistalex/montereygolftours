@@ -178,7 +178,8 @@ export const HOTEL_DETAILS: Record<string, HotelDetail> = {
     { q: "Is Carmel Valley Ranch good for non-golfers?", a: "Yes. Carmel Valley Ranch is consistently rated among California's best resorts for non-golfers — with a spa, falconry, beekeeping, wine blending, yoga, and multiple pools." },
     { q: "Does Carmel Valley Ranch have sunnier weather than coastal Monterey?", a: "Yes. Carmel Valley is inland and typically 10-15°F warmer than coastal Monterey, making it a great choice if you want to avoid morning fog. Afternoons are almost always clear and sunny." },
     { q: "Does Carmel Valley Ranch have all-suite accommodation?", a: "Yes. All accommodations are suites — no standard hotel rooms. The smallest suite is approximately 700 sq ft." }
-  ]carmel-valley-ranch": {
+  ],
+  "carmel-valley-ranch": {
     slug: "carmel-valley-ranch",
     name: "Carmel Valley Ranch",
     city: "Carmel Valley, CA",
