@@ -61,7 +61,7 @@ export default function HotelsIndexPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "Hotels", item: canonicalUrl },
-,
+      },
       {
         "@type": "FAQPage",
         "@id": "https://montereygolftours.com/hotels/#faq",
