@@ -12,11 +12,11 @@ const PLAY_LINKS = [
 ];
 
 const EXPLORE_LINKS = [
+  { label: "Pebble Beach Packages", href: "/pebble-beach/" },
   { label: "Pebble Beach Golf Links®", href: "/golf-courses/pebble-beach-golf-links/" },
-  { label: "Pasatiempo Golf Course", href: "/golf-courses/pasatiempo/" },
-  { label: "Spyglass Hill® Golf Course", href: "/golf-courses/spyglass-hill/" },
-  { label: "Quail Lodge & Golf Club", href: "/golf-courses/quail-lodge/" },
+  { label: "Spyglass Hill™ Golf Course", href: "/golf-courses/spyglass-hill/" },
   { label: "Bayonet", href: "/golf-courses/bayonet/" },
+  { label: "All Courses", href: "/golf-courses/" },
 ];
 
 const LEARN_LINKS = [
