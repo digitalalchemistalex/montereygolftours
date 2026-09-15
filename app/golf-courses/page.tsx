@@ -56,8 +56,18 @@ export default function GolfCoursesIndexPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "Golf Courses", item: canonicalUrl },
-        ],
-      },
+,
+      {
+        "@type": "FAQPage",
+        "@id": "https://montereygolftours.com/golf-courses/#faq",
+        "mainEntity": [
+                    {"@type": "Question", "name": "What golf courses are on the Monterey Peninsula?", "acceptedAnswer": {"@type": "Answer", "text": "The Monterey Peninsula has 14 public and semi-private golf courses bookable through Monterey Golf Tours — including Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™, Bayonet, Black Horse, Carmel Valley Ranch, Quail Lodge, Laguna Seca Golf Ranch, Pacific Grove Golf Links, and Poppy Hills Golf Course."}},
+          {"@type": "Question", "name": "Which Monterey golf courses are open to the public?", "acceptedAnswer": {"@type": "Answer", "text": "Most peninsula courses are public or semi-private — including Bayonet, Black Horse, Laguna Seca Golf Ranch, Pacific Grove Golf Links, and Poppy Hills. Pebble Beach Resort courses require booking through a resort stay or an IAGTO Authorized Operator like Monterey Golf Tours."}},
+          {"@type": "Question", "name": "What is the average green fee for Monterey Peninsula golf?", "acceptedAnswer": {"@type": "Answer", "text": "Green fees range from around $60 at Pacific Grove Golf Links to $595+ at Pebble Beach Golf Links®. Mid-tier courses like Bayonet, Black Horse, and Laguna Seca typically range from $90 to $175."}},
+          {"@type": "Question", "name": "Do I need to stay at a resort to play Pebble Beach Golf Links®?", "acceptedAnswer": {"@type": "Answer", "text": "No. Non-resort guests can book tee times, but availability is limited. Monterey Golf Tours, as an IAGTO Authorized Operator, can secure tee times for non-resort guests as part of a planned trip."}},
+          {"@type": "Question", "name": "What is the best time of year to play golf on the Monterey Peninsula?", "acceptedAnswer": {"@type": "Answer", "text": "The peninsula is playable year-round. Spring and fall offer the best weather and course conditions. Summer brings morning fog on coastal courses that burns off by midday."}}
+        ]
+      }
     ],
   };
 
