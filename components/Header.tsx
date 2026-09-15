@@ -209,7 +209,10 @@ export default function Header({ transparent = false }: { transparent?: boolean 
           <div className={`${DROP} left-1/2 w-[560px] -translate-x-1/2`}>
             <div className={`${CARD} grid grid-cols-2`}>
               <div className="border-r border-[#f0ebe1] px-4 pt-4 pb-3">
-                <div className="mb-2 font-ui text-[9.5px] font-bold uppercase tracking-[.12em] text-[#9a8a6e]">Golf Courses</div>
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="font-ui text-[9.5px] font-bold uppercase tracking-[.12em] text-[#9a8a6e]">Golf Courses</span>
+                  <Link href="/pebble-beach/" className="font-ui text-[9.5px] font-semibold text-fairway hover:underline">All packages →</Link>
+                </div>
                 <div className="grid grid-cols-1 gap-0">
                   {PB_SLUGS.map(slug => {
                     const c = courseMap[slug]; if (!c) return null;
