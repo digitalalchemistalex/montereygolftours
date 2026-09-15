@@ -57,6 +57,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Carmel Valley destination guide", href: "/destinations/carmel-valley/" },
       { label: "4-day Classic Peninsula itinerary", href: "/itineraries/4-day-monterey-peninsula-golf-trip/" },
     ],
+    faqs: [
+      { q: "What is the best time of year to play golf in Monterey?", a: "March through May and September through November are the best months. Fog is lightest, mornings clear earlier, and tee time availability is better than peak summer. June through August brings consistent marine layer on coastal courses until 9–10am." },
+      { q: "Does it rain a lot during Monterey golf season?", a: "Significant rain is rare from April through October. November through February sees the most rainfall, though many courses stay open. Spring and fall offer the best combination of dry conditions and comfortable temperatures in the low-to-mid 60s." },
+      { q: "Is summer a good time to golf in Monterey?", a: "Summer works well if you book tee times for 9:30am or later on coastal courses. Carmel Valley courses — Carmel Valley Ranch and Quail Lodge — run 15–18°F warmer than the coast and clear earlier, making them ideal for early summer tee times." },
+    ],
   },
   "how-to-plan-a-group-golf-trip-monterey": {
     slug: "how-to-plan-a-group-golf-trip-monterey",
@@ -100,6 +105,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Browse all sample itineraries", href: "/itineraries/" },
       { label: "Get a custom quote", href: "/quote/" },
     ],
+    faqs: [
+      { q: "How far in advance should I book a group golf trip to Monterey?", a: "For peak season (May–October) and Pebble Beach tee times, book 6–18 months in advance. Lodge guests at Pebble Beach can book up to 18 months out. Shoulder season (November–April, excluding holidays) can work with 2–4 months lead time for most courses." },
+      { q: "What is the minimum group size for a Monterey golf trip?", a: "Monterey Golf Tours plans trips for groups of 2–400 players with no formal minimum. Groups of 4 get the best tee time efficiency. Groups of 16 or more benefit from dedicated coordination and properties like the Portola Hotel built for large-group logistics." },
+      { q: "Do you need to stay at Pebble Beach to play Pebble Beach Golf Links?", a: "Yes. A minimum 3-night stay at a Pebble Beach Resorts® hotel — The Lodge, The Inn at Spanish Bay, or Casa Palmero — is required to book Pebble Beach Golf Links® tee times through an authorized operator like Monterey Golf Tours." },
+    ],
   },
   "bayonet-golf-course-guide": {
     slug: "bayonet-golf-course-guide",
@@ -137,6 +147,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Full Bayonet course page", href: "/golf-courses/bayonet/" },
       { label: "Black Horse course page", href: "/golf-courses/black-horse/" },
       { label: "Seaside destination guide", href: "/destinations/seaside/" },
+    ],
+    faqs: [
+      { q: "How difficult is Bayonet Golf Course?", a: "Bayonet plays to a course rating of 75.1 and slope of 141 from the back tees, making it one of the toughest public courses in California. Its military-heritage design features tight tree-lined fairways, small bentgrass greens, and significant elevation changes. Most groups play the middle or forward tees." },
+      { q: "How much does it cost to play Bayonet Golf Course?", a: "Green fees at Bayonet vary by season and time, typically ranging from $100 to $160 per round. Monterey Golf Tours can incorporate Bayonet into a multi-course package with coordinated tee times and transfers." },
+      { q: "Is Bayonet Golf Course worth playing?", a: "Yes — Bayonet is consistently ranked among the best public courses in California and is a favorite among serious golfers visiting the Monterey Peninsula. Its military history, challenging layout, and Monterey Bay views make it a strong choice for any multi-course itinerary." },
     ],
   },
   "best-golf-courses-monterey-peninsula": {
@@ -186,6 +201,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Pebble Beach area destination guide", href: "/destinations/pebble-beach-area/" },
       { label: "7-day Ultimate Monterey itinerary", href: "/itineraries/7-day-ultimate-monterey-golf-trip/" },
     ],
+    faqs: [
+      { q: "What are the top golf courses on the Monterey Peninsula?", a: "The top courses are Pebble Beach Golf Links® (world-ranked), Spyglass Hill™ Golf Course (tree-lined and coastal mix), Bayonet (championship public), Pacific Grove Golf Links (coastal municipal), and Carmel Valley Ranch (fog-free inland). Monterey Golf Tours can book all 14 courses on the peninsula." },
+      { q: "Which Monterey Peninsula golf course is best for a bucket-list round?", a: "Pebble Beach Golf Links® is the definitive bucket-list round — consistently ranked in the world's top 10 public courses, host to six US Opens, and featuring the iconic cliffside 7th and 18th holes. A 3-night stay at a Pebble Beach Resorts® hotel is required to book tee times." },
+      { q: "Can you play Spyglass Hill without staying at Pebble Beach?", a: "Spyglass Hill™ Golf Course is a Pebble Beach Resorts® course, so tee times are booked through the resort. While a hotel stay requirement is less strict than Pebble Beach Golf Links®, booking through an IAGTO operator like Monterey Golf Tours provides access at IAGTO rates." },
+    ],
   },
   "monterey-golf-trip-on-a-budget": {
     slug: "monterey-golf-trip-on-a-budget",
@@ -221,6 +241,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Best Value itinerary", href: "/itineraries/monterey-golf-trip-best-value/" },
       { label: "Pacific Grove course page", href: "/golf-courses/pacific-grove-golf-links/" },
       { label: "Casa Munras hotel page", href: "/hotels/casa-munras/" },
+    ],
+    faqs: [
+      { q: "What is the cheapest golf course on the Monterey Peninsula?", a: "Pacific Grove Golf Links is the most affordable option at $50–$75 per round, offering genuine coastal links golf at municipal pricing. Del Monte™ Golf Course is next at $90–$120 and is the oldest continuously operating golf course west of the Mississippi." },
+      { q: "Can you do a Monterey golf trip without playing Pebble Beach?", a: "Absolutely. Bayonet, Black Horse, Pacific Grove Golf Links, Laguna Seca, and Poppy Hills are all world-class courses at a fraction of the Pebble Beach price. A 3-day trip playing these courses can be excellent value while still delivering a true Monterey Peninsula golf experience." },
+      { q: "What is the best value Monterey golf itinerary?", a: "A 3-day best-value itinerary typically combines Bayonet or Black Horse (championship quality), Pacific Grove Golf Links (coastal links experience), and Poppy Hills or Laguna Seca (solid club golf). Total green fees run $250–$400 per person versus $1,000+ for a Pebble Beach package." },
     ],
   },
   "pacific-grove-golf-links-guide": {
@@ -267,6 +292,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Pacific Grove course page", href: "/golf-courses/pacific-grove-golf-links/" },
       { label: "Poppy Hills course page", href: "/golf-courses/poppy-hills/" },
       { label: "Best Value itinerary", href: "/itineraries/monterey-golf-trip-best-value/" },
+    ],
+    faqs: [
+      { q: "How much does Pacific Grove Golf Links cost to play?", a: "Pacific Grove Golf Links charges $50–$75 per round for non-residents, making it the most affordable coastal links experience on the Monterey Peninsula. Weekend rates are slightly higher. Twilight rates are available after 2pm." },
+      { q: "Is Pacific Grove Golf Links worth playing?", a: "Yes — Pacific Grove is one of the best-value golf experiences in California. The back nine runs along the Pacific Ocean cliffs with views of Point Pinos Lighthouse and Lovers Point. Conditions are links-style with firm, fast turf and consistent wind." },
+      { q: "Is Pacific Grove Golf Links a municipal course?", a: "Yes. Pacific Grove Golf Links is owned and operated by the City of Pacific Grove, which keeps green fees accessible to locals and visitors alike. It is managed professionally and maintains conditions comparable to private clubs at a fraction of the cost." },
     ],
   },
 
@@ -315,6 +345,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Carmel Valley hotel page", href: "/hotels/carmel-valley-ranch/" },
       { label: "Carmel Valley Golf Getaway itinerary", href: "/itineraries/carmel-valley-golf-getaway/" },
     ],
+    faqs: [
+      { q: "Is Carmel Valley Ranch golf foggy in the mornings?", a: "No — Carmel Valley sits in an inland microclimate that runs 15–18°F warmer than the coast and is typically clear of fog by early morning. This makes Carmel Valley Ranch one of the best choices for early tee times any time of year, especially during summer when coastal courses are socked in until 9–10am." },
+      { q: "Is Carmel Valley Ranch Golf Course open to the public?", a: "Carmel Valley Ranch Golf Course is a resort course primarily for hotel guests. Monterey Golf Tours can incorporate it into packages that include a stay at the Carmel Valley Ranch resort, which features 500-acre grounds, a spa, and a winery." },
+      { q: "How does Carmel Valley Ranch compare to Pebble Beach?", a: "Carmel Valley Ranch is a Pete Dye design rated 71.2 with rolling terrain, valley views, and a resort atmosphere. Pebble Beach Golf Links® is a world-ranked oceanfront course with significantly higher green fees and a hotel stay requirement. Many groups pair both for a contrast of inland resort golf and coastal championship golf." },
+    ],
   },
 
   "monterey-car-week-golf-guide": {
@@ -361,6 +396,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "Bayonet course page", href: "/golf-courses/bayonet/" },
       { label: "Black Horse course page", href: "/golf-courses/black-horse/" },
       { label: "Best time to play guide", href: "/blog/best-time-to-play-golf-monterey-peninsula/" },
+    ],
+    faqs: [
+      { q: "Can you still golf during Monterey Car Week?", a: "Yes, but with important caveats. The Hay™ and Poppy Hills close during Car Week (mid-August). Pebble Beach Golf Links® and Spyglass Hill™ remain open but tee times are limited and prices are elevated. Carmel Valley courses — Carmel Valley Ranch and Quail Lodge — are a smart Car Week alternative as they are less affected by the Pebble Beach Concours traffic." },
+      { q: "When is Monterey Car Week 2026?", a: "Monterey Car Week 2026 runs August 8–17, with the Pebble Beach Concours d'Elegance on Sunday August 16. Tee times at Pebble Beach Resort courses sell out months in advance for this window." },
+      { q: "What courses are closed during Monterey Car Week?", a: "The Hay™ and Poppy Hills Golf Course typically close during Car Week to accommodate the Concours and related events on the Pebble Beach Resorts® grounds. All other courses on the peninsula remain open, though Pebble Beach Golf Links® and Spyglass Hill™ tee times are very limited." },
     ],
   },
 
@@ -409,6 +449,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "3-Day Weekend itinerary", href: "/itineraries/3-day-monterey-golf-weekend/" },
       { label: "Pacific Grove course guide", href: "/blog/pacific-grove-golf-links-guide/" },
     ],
+    faqs: [
+      { q: "Is Poppy Hills Golf Course good?", a: "Yes — Poppy Hills is an NCGA (Northern California Golf Association) facility with bentgrass fairways and greens, which is rare on the Monterey Peninsula. It plays through the Del Monte Forest with tight tree-lined holes and is notably well-maintained. It was a longtime AT&T Pebble Beach Pro-Am venue." },
+      { q: "How much does Poppy Hills cost to play?", a: "Poppy Hills green fees typically run $100–$130 per round for non-NCGA members. NCGA members receive discounted rates. It offers strong value as one of the better-conditioned public courses on the peninsula at a mid-range price point." },
+      { q: "Is Poppy Hills open to the public?", a: "Yes. Poppy Hills is open to the public, though NCGA members receive priority tee times and discounted rates. Non-members can book tee times directly or through Monterey Golf Tours as part of a multi-course peninsula package." },
+    ],
   },
 
   "monterey-golf-first-time-guide": {
@@ -456,6 +501,11 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       { label: "3-Day Weekend itinerary", href: "/itineraries/3-day-monterey-golf-weekend/" },
       { label: "Best time to play", href: "/blog/best-time-to-play-golf-monterey-peninsula/" },
       { label: "Pacific Grove guide", href: "/blog/pacific-grove-golf-links-guide/" },
+    ],
+    faqs: [
+      { q: "What should I play on my first Monterey golf trip?", a: "For a first visit, the 3-day combination most guides recommend is Pebble Beach Golf Links® (bucket list), Bayonet (best-value championship), and Pacific Grove Golf Links (coastal links at municipal pricing). This covers the full spectrum of what the peninsula offers. Monterey Golf Tours' 3-day Weekend itinerary is built around this logic." },
+      { q: "Where should I stay for a Monterey golf trip?", a: "For a Pebble Beach Golf Links® round, a 3-night stay at The Lodge, The Inn at Spanish Bay, or Casa Palmero is required. For non-Pebble Beach trips, the Portola Hotel and Hyatt Regency Monterey are popular group bases in downtown Monterey with easy access to all peninsula courses." },
+      { q: "How many rounds can you play in 3 days in Monterey?", a: "Most groups play 3 rounds in 3 days — one per day. Ambitious golfers sometimes play 36 holes in a day, but peninsula courses are walking-friendly and 18 holes typically takes 4–4.5 hours. Monterey Golf Tours coordinates tee times to avoid early fog on coastal courses." },
     ],
   },
 
