@@ -46,3 +46,6 @@ Sitemap: https://montereygolftours.com/image-sitemap.xml
 
 # AI context file
 # https://montereygolftours.com/llms.txt
+
+# IndexNow
+# https://montereygolftours.com/3a618946b0a3492ebdc3876c6aa8a5cb.txt
