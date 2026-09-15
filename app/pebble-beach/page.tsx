@@ -159,7 +159,7 @@ const LODGING = [
   { name: "Monterey Plaza Hotel & Spa", slug: "monterey-plaza-hotel", tier: "Non-resort", note: "Forbes Four-Star · Cannery Row · Best non-resort waterfront option" },
 ] as const;
 
-const PACKAGES = [
+const PACKAGES: { slug: string; name: string; duration: string; rounds: string; courses: string; hotel: string; hook: string; mostBooked?: boolean }[] = [
   {
     slug: "pebble-beach-golf-package",
     name: "The Pebble Pilgrimage",
@@ -188,7 +188,7 @@ const PACKAGES = [
     hook: "The most-booked trip — serious courses at serious value, with the full peninsula experience. No resort stay required.",
     mostBooked: true,
   },
-] as const;
+];
 
 const FAQS_DISPLAY = [
   { q: "Do you need to stay at The Lodge to play Pebble Beach Golf Links®?", a: "Yes — tee times at Pebble Beach Golf Links® require a hotel stay, typically a minimum of 3 nights at a Pebble Beach Resorts® property. Lodge guests receive the earliest booking window — up to 18 months in advance. We handle the hotel and tee time together in one package." },
