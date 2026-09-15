@@ -3,14 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { COURSE_DETAILS } from "@/lib/course-details";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import TabbedGallery from "@/components/TabbedGallery";
-import { HOTEL_DETAILS } from "@/lib/hotel-details";
-import HotelCourses from "@/components/HotelCourses";
-import { HOTELS } from "@/lib/hotels";
 import { COURSES } from "@/lib/courses";
-import { ITINERARIES } from "@/lib/itineraries";
+import { getCoursePricing } from "@/lib/course-pricing";
 import { SITE } from "@/lib/site";
+import CourseHotels from "@/components/CourseHotels";
+import CarWeekBanner from "@/components/CarWeekBanner";
+import MondayInsider from "@/components/MondayInsider";
+import PoppyHillsValue from "@/components/PoppyHillsValue";
+import SpanishBayWaitlist from "@/components/SpanishBayWaitlist";
+import PBGLLiveCams from "@/components/PBGLLiveCams";
+import PBGLTournaments from "@/components/PBGLTournaments";
 import PBCEvents from "@/components/PBCEvents";
 import PBCMajorsBanner from "@/components/PBCMajorsBanner";
 
@@ -18,35 +23,45 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+// Revalidate every hour so pricing edits made in Supabase's table editor
+// show up automatically without needing a full manual redeploy -- otherwise
+// this page's static generation would only pick up new prices at build time.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
-  return Object.keys(HOTEL_DETAILS).map((slug) => ({ slug }));
+  return Object.keys(COURSE_DETAILS).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const hotel = HOTEL_DETAILS[slug];
-  if (!hotel) return {};
+  const course = COURSE_DETAILS[slug];
+  if (!course) return {};
 
-  const title = `${hotel.name} — Monterey Golf Trip Lodging`;
-  const description = `${hotel.name} in ${hotel.city} — ${hotel.rooms}. ${hotel.hook} Plan your Monterey golf trip with Monterey Golf Tours.`;
+  const isClosed = slug === "links-at-spanish-bay";
+  const title = isClosed
+    ? `${course.name} — Closed for Renovation, Reopening April 2027`
+    : `${course.name} — Tee Times & Course Info`;
+  const description = isClosed
+    ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now — join the waitlist and plan your Monterey golf trip.`
+    : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Book ${course.name} as part of a planned Monterey golf trip. Get a custom quote →`;
 
-  const hotelImg = HOTELS.find((h) => h.slug === slug);
-  const ogImage = hotelImg?.image?.startsWith("/")
-    ? `https://${SITE.domain}${hotelImg.image}`
-    : hotelImg?.image ?? "/og-image.jpg";
+  const courseData = COURSES.find((c) => c.slug === slug);
+  const ogImage = courseData?.image?.startsWith("/")
+    ? `https://${SITE.domain}${courseData.image}`
+    : courseData?.image ?? "/og-image.jpg";
 
   return {
     title,
     description,
     alternates: {
-      canonical: `https://${SITE.domain}/hotels/${hotel.slug}/`,
+      canonical: `https://${SITE.domain}/golf-courses/${course.slug}/`,
     },
     openGraph: {
       type: "website",
       title,
       description,
-      url: `https://${SITE.domain}/hotels/${hotel.slug}/`,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: hotel.name }],
+      url: `https://${SITE.domain}/golf-courses/${course.slug}/`,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: course.name }],
     },
     twitter: {
       card: "summary_large_image",
@@ -57,35 +72,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const TIER_LABEL: Record<number, string> = {
-  1: "Golf-anchor",
-  2: "Premium city base",
-  3: "Boutique",
-};
-
-export default async function HotelPage({ params }: Props) {
+export default async function CoursePage({ params }: Props) {
   const { slug } = await params;
-  const hotel = HOTEL_DETAILS[slug];
+  const course = COURSE_DETAILS[slug];
 
-  const nearbyCity = hotel?.city?.split(",")[0].trim() ?? "";
-  const nearbyCourses = hotel ? COURSES
-    .filter(c => c.city.includes(nearbyCity) || c.city.includes("Monterey") || c.city.includes("Carmel") || c.city.includes("Seaside"))
-    .filter(c => c.slug !== "links-at-spanish-bay")
-    .slice(0, 3) : [];
-  const allTrips = Object.values(ITINERARIES);
-  const crossSellTrips = hotel ? [
-    ...allTrips.filter(t => t.hotelSlugs?.includes(hotel.slug)),
-    ...allTrips.filter(t => !t.hotelSlugs?.includes(hotel.slug)),
-  ].slice(0, 2) : [];
-
-  if (!hotel) {
+  if (!course) {
     return (
       <>
         <Header />
         <main className="flex-1 px-6 py-32 text-center">
-          <p className="font-body text-lg text-ink">Hotel not found.</p>
-          <Link href="/hotels/" className="mt-4 inline-block font-ui text-ocean">
-            View all hotels &rarr;
+          <p className="font-body text-lg text-ink">Course not found.</p>
+          <Link href="/golf-courses/" className="mt-4 inline-block font-ui text-ocean">
+            View all courses &rarr;
           </Link>
         </main>
         <Footer />
@@ -93,9 +91,18 @@ export default async function HotelPage({ params }: Props) {
     );
   }
 
-  const canonicalUrl = `https://${SITE.domain}/hotels/${hotel.slug}/`;
-  const hotelImage = HOTELS.find((h) => h.slug === hotel.slug)?.image;
-  const sortedDriveTimes = [...hotel.driveTimeToCourses].sort((a, b) => a.minutes - b.minutes);
+  const livePricing = await getCoursePricing(course.slug);
+  const greenFeeDisplay = livePricing?.price_label ?? course.greenFeeEst;
+  // courseData from COURSES has the image field (CourseDetail doesn't)
+  const courseData = COURSES.find(c => c.slug === slug);
+
+  const nearby = course.nearbySlugs
+    .map((s) => COURSES.find((c) => c.slug === s))
+    .filter(Boolean);
+
+  const canonicalUrl = `https://${SITE.domain}/golf-courses/${course.slug}/`;
+  const courseImage = COURSES.find((c) => c.slug === course.slug)?.image;
+  const isClosed = slug === "links-at-spanish-bay";
 
   const schema = {
     "@context": "https://schema.org",
@@ -104,75 +111,123 @@ export default async function HotelPage({ params }: Props) {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `${hotel.name} — Monterey Golf Trip Lodging`,
+        name: isClosed
+          ? `${course.name} — Closed for Renovation, Reopening April 2027`
+          : `${course.name} — Tee Times & Course Info`,
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         publisher: { "@id": `https://${SITE.domain}/#organization` },
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["h1", ".pull-quote"],
+          cssSelector: ["h1", "#speakable-summary", ".faq-section"],
         },
       },
       {
-        "@type": ["Service", "Product"],
-        "@id": `${canonicalUrl}#service`,
-        name: `${hotel.name} — Monterey Golf Lodging`,
-        description: hotel.hook,
-        provider: { "@id": `https://${SITE.domain}/#organization` },
-        brand: { "@id": `https://${SITE.domain}/#organization` },
-        category: "Golf Trip Lodging",
-        areaServed: {
-          "@type": "Place",
-          name: hotel.city,
-        },
-        offers: {
-          "@type": "Offer",
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          url: `https://${SITE.domain}/quote/?hotel=${hotel.slug}`,
-        },
-      },
-      {
-        "@type": "Hotel",
-        "@id": `${canonicalUrl}#hotel`,
-        name: hotel.name,
-        description: hotel.hook,
+        "@type": "GolfCourse",
+        "@id": `${canonicalUrl}#course`,
+        name: course.name,
+        description: course.hook?.slice(0, 155),
         address: {
           "@type": "PostalAddress",
-          streetAddress: hotel.address,
-          addressLocality: hotel.city.split(",")[0].trim(),
+          streetAddress: course.address,
+          addressLocality: course.city.split(",")[0].trim(),
           addressRegion: "CA",
+          addressCountry: "US",
         },
-        telephone: hotel.phone === "Contact hotel directly" ? undefined : hotel.phone,
+        telephone: course.phone,
         url: canonicalUrl,
-        ...(hotelImage ? {
+        numberOfHoles: course.holes,
+        courseLength: course.yards,
+        ...(course.rating ? { courseRating: course.rating } : {}),
+        ...(course.slope ? { courseSlope: course.slope } : {}),
+        ...(course.designer && course.designer !== "Unknown" ? {
+          amenityFeature: [
+            { "@type": "LocationFeatureSpecification", name: "Designer", value: course.designer },
+            { "@type": "LocationFeatureSpecification", name: "Par", value: String(course.par) },
+            { "@type": "LocationFeatureSpecification", name: "Course Type", value: course.type },
+          ],
+        } : {}),
+        offers: {
+          "@type": "Offer",
+          name: "Green Fee",
+          description: greenFeeDisplay,
+          priceCurrency: "USD",
+          availability: isClosed
+            ? "https://schema.org/Discontinued"
+            : "https://schema.org/InStock",
+        },
+        ...(courseData?.image ? {
           image: {
             "@type": "ImageObject",
-            url: hotelImage.startsWith("/") ? `https://${SITE.domain}${hotelImage}` : hotelImage,
+            url: courseData!.image.startsWith("/")
+              ? `https://${SITE.domain}${courseData!.image}`
+              : `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
+            contentUrl: courseData!.image.startsWith("/")
+              ? `https://${SITE.domain}${courseData!.image}`
+              : `${courseData!.image}?auto=format&fit=crop&w=1200&h=800&q=85`,
             width: 1200,
-            height: 630,
-            name: `${hotel.name} — Monterey Golf Tours`,
+            height: 800,
+            name: `${courseData!.name} — Monterey Golf Tours`,
+            caption: `${courseData!.name}, Monterey Peninsula, California`,
+            copyrightNotice: `© ${courseData!.name}`,
+            creditText: `${courseData!.name} via Monterey Golf Tours`,
+            acquireLicensePage: `https://${SITE.domain}/contact/`,
+            license: "https://creativecommons.org/licenses/by/4.0/",
           },
         } : {}),
       },
       {
         "@type": "FAQPage",
         "@id": `${canonicalUrl}#faq`,
-        mainEntity: hotel.faqs.map((f) => ({
+        mainEntity: course.faqs.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
       },
+      // Service + Product dual type — required for Google review snippet eligibility
+      {
+        "@type": ["Service", "Product"],
+        "@id": `${canonicalUrl}#service`,
+        name: `Play ${course.name} — Monterey Golf Tours`,
+        description: course.hook,
+        provider: { "@id": `https://${SITE.domain}/#organization` },
+        brand: { "@id": `https://${SITE.domain}/#organization` },
+        category: "Golf Course Booking",
+        areaServed: {
+          "@type": "Place",
+          name: course.city,
+        },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "USD",
+          availability: isClosed
+            ? "https://schema.org/Discontinued"
+            : "https://schema.org/InStock",
+          url: `https://${SITE.domain}/quote/`,
+        },
+      },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
-          { "@type": "ListItem", position: 2, name: "Hotels", item: `https://${SITE.domain}/hotels/` },
-          { "@type": "ListItem", position: 3, name: hotel.name, item: canonicalUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Golf Courses",
+            item: `https://${SITE.domain}/golf-courses/`,
+          },
+          { "@type": "ListItem", position: 3, name: course.name, item: canonicalUrl },
         ],
       },
     ],
   };
+
+  const statItems = [
+    { label: "Par", value: String(course.par) },
+    { label: "Yards", value: course.yards.replace(" yards", "") },
+    ...(course.rating ? [{ label: "Rating", value: course.rating }] : []),
+    ...(course.slope ? [{ label: "Slope", value: course.slope }] : []),
+  ];
 
   return (
     <>
@@ -182,72 +237,62 @@ export default async function HotelPage({ params }: Props) {
       />
 
       <section className="relative flex min-h-[480px] flex-col bg-[#16242c] md:min-h-[600px]">
-        {hotelImage && (
-          <Image src={hotelImage} alt={hotel.name} fill priority className="object-cover" />
+        {courseImage && (
+          <Image src={courseImage} alt={course.name} fill priority className="object-cover" />
         )}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(22,36,44,.15) 0%, rgba(22,36,44,.7) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(15,25,15,.25) 0%, rgba(15,25,15,.85) 100%)" }}
         />
         <Header />
         <div className="relative z-10 mt-auto px-6 pb-10 pt-48 md:px-14 md:pb-14 md:pt-36">
-          <span className="inline-block rounded-full bg-terracotta px-3 py-1 font-ui text-[11px] font-bold uppercase tracking-[.06em] text-white">
-            {TIER_LABEL[hotel.tier]}
+          <span className="inline-block rounded-full border border-[rgba(250,246,238,.4)] bg-[rgba(20,30,15,.4)] px-3.5 py-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.1em] text-cream backdrop-blur-sm">
+            {course.city}
           </span>
           <h1 className="text-display-lg mt-4 font-display font-extrabold text-cream" style={{ textShadow: "0 2px 24px rgba(0,0,0,.35)" }}>
-            {hotel.name}
+            {course.name}
           </h1>
-          <p className="mt-3 max-w-[600px] font-body text-base leading-relaxed text-[rgba(250,246,238,.9)] md:text-lg">
-            {hotel.hook}
+          <p className="mt-3 max-w-[620px] font-body text-base leading-relaxed text-[rgba(250,246,238,.9)] md:text-lg">
+            {course.hook}
           </p>
         </div>
       </section>
 
-      <main className="flex-1 bg-warmcream">
-        <section className="border-b border-warmborder px-6 py-8 md:px-14 md:py-10">
+      <main className="flex-1 bg-fairwaycream">
+        <section className="border-b border-fairwayborder px-6 py-8 md:px-14 md:py-10">
           <div className="flex flex-wrap gap-x-10 gap-y-6 md:gap-x-14">
-            <div>
-              <div className="font-display text-4xl font-extrabold leading-none text-terracotta-dark md:text-5xl">
-                {hotel.rooms.split(" ")[0]}
+            {statItems.map((s) => (
+              <div key={s.label}>
+                <div className="font-display text-4xl font-extrabold leading-none text-fairway-dark md:text-5xl">
+                  {s.value}
+                </div>
+                <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a8a6e]">
+                  {s.label}
+                </div>
               </div>
-              <div className="mt-1.5 font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#9c8570]">
-                Rooms
+            ))}
+            <div className="min-w-[180px] flex-1">
+              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#8a8a6e]">
+                Type
               </div>
-            </div>
-            <div className="min-w-[140px]">
-              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#9c8570]">
-                City
-              </div>
-              <div className="mt-1.5 font-display text-lg font-bold text-ink">{hotel.city}</div>
-            </div>
-            <div className="min-w-[160px]">
-              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#9c8570]">
-                On-site golf
-              </div>
-              <div className="mt-1.5 font-display text-lg font-bold text-ink">{hotel.onSiteGolf ?? "None"}</div>
-            </div>
-            <div className="min-w-[140px]">
-              <div className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#9c8570]">
-                Airport
-              </div>
-              <div className="mt-1.5 font-display text-lg font-bold text-ink">{hotel.airportDistance}</div>
+              <div className="mt-1.5 font-display text-lg font-bold text-ink">{course.type}</div>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-warmborder px-6 py-14 md:px-14 md:py-20">
+        <section className="border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.55fr_1fr] md:gap-16">
             <div>
-              <p className="pull-quote text-2xl leading-tight text-ink md:text-3xl">
-                &ldquo;{hotel.positioning.split(".")[0]}.&rdquo;
+              <p id="speakable-summary" className="pull-quote text-2xl leading-tight text-ink md:text-3xl">
+                &ldquo;{course.bestFor[0]} will find this course most rewarding.&rdquo;
               </p>
-              <div className="mt-6 font-ui text-sm font-semibold uppercase tracking-[.06em] text-terracotta-dark">
-                {hotel.brand}
+              <div className="mt-6 font-body text-sm text-[#8a8a6e]">
+                Designed by {course.designer}
               </div>
             </div>
             <div className="space-y-4">
-              {hotel.description.map((p, i) => (
-                <p key={i} className="font-body text-[15px] leading-relaxed text-[#4a3f34] md:text-base">
+              {course.description.map((p, i) => (
+                <p key={i} className="font-body text-[15px] leading-relaxed text-[#3a3f2e] md:text-base">
                   {p}
                 </p>
               ))}
@@ -255,208 +300,144 @@ export default async function HotelPage({ params }: Props) {
           </div>
         </section>
 
-        {hotel.gallery && hotel.gallery.length > 0 && (
-          <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
+        {course.gallery && course.gallery.length > 0 && (
+          <section className="border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
               Photos
             </h2>
-            {(hotel.gallery ?? []).some((img) => img.category)
-              ? <TabbedGallery images={hotel.gallery ?? []} entityName={hotel.name} />
-              : <GalleryLightbox images={hotel.gallery ?? []} entityName={hotel.name} />}
-          </section>
-        )}        {hotel.roomFeatures && (
-          <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
-            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
-              Rooms &amp; suites
-            </h2>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-              {hotel.roomFeatures.map((r) => (
-                <div key={r} className="flex items-baseline gap-2.5 border-b border-warmborder py-2.5 font-body text-[14px] text-[#4a3f34]">
-                  <span className="h-1.5 w-1.5 flex-none rounded-full bg-terracotta" />
-                  {r}
-                </div>
-              ))}
-            </div>
-            {hotel.uniqueDetails && (
-              <div className="mt-8 rounded-xl border border-warmborder bg-warmcream p-5">
-                {hotel.uniqueDetails.map((d) => (
-                  <p key={d} className="font-body text-[14px] leading-relaxed text-[#4a3f34]">
-                    &middot; {d}
-                  </p>
-                ))}
-              </div>
-            )}
+            {course.gallery.some((img) => img.category)
+              ? <TabbedGallery images={course.gallery} entityName={course.name} />
+              : <GalleryLightbox images={course.gallery} entityName={course.name} />}
           </section>
         )}
 
-        <section className="relative overflow-hidden border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
-          <div className="pointer-events-none absolute inset-0 text-terracotta opacity-[0.05]">
-            <Image src="/art/patterns/amenities-bg.svg" alt="" fill className="object-cover" />
-          </div>
-          <div className="relative">
-            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
-              Amenities
-            </h2>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-              {hotel.amenities.map((a) => (
-                <div key={a} className="flex items-baseline gap-2.5 border-b border-warmborder py-2.5 font-body text-[14px] text-[#4a3f34]">
-                  <span className="h-1.5 w-1.5 flex-none rounded-full bg-terracotta" />
-                  {a}
+        <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
+          <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+            Course highlights
+          </h2>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+            {course.highlights.map((h, i) => (
+              <div key={h.label} className="flex gap-4">
+                <div className="font-display text-2xl font-extrabold leading-none text-fairway">
+                  {String(i + 1).padStart(2, "0")}
                 </div>
-              ))}
-            </div>
-
-            {hotel.diningNames && (
-              <div className="mt-10">
-                <div className="font-ui text-sm font-bold uppercase tracking-[.06em] text-terracotta-dark">
-                  Dining
-                </div>
-                <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {hotel.diningNames.map((d) => (
-                    <div key={d.name} className="rounded-lg border border-warmborder bg-warmcream p-4">
-                      <div className="font-display text-base font-bold text-ink">{d.name}</div>
-                      <div className="mt-1 font-body text-[13px] text-[#7a6a58]">{d.detail}</div>
-                    </div>
-                  ))}
+                <div>
+                  <div className="font-ui text-base font-semibold text-ink">{h.label}</div>
+                  <div className="mt-1.5 font-body text-[14px] leading-relaxed text-[#5c6048]">
+                    {h.detail}
+                  </div>
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </section>
 
-        {sortedDriveTimes.length > 0 && (
-          <section className="border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
-            <h2 className="text-display-md mb-3 font-display font-bold text-ink md:mb-4">
-              Distance to courses
+        {course.pointers && (
+          <section className="border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+              Worth knowing
             </h2>
-            <p className="mb-8 max-w-[600px] font-body text-[14px] text-[#7a6a58]">
-              Approximate driving times from {hotel.name}.
-            </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {sortedDriveTimes.map((d) => (
-                <div key={d.course} className="flex items-center justify-between border-b border-warmborder py-2.5">
-                  <span className="font-body text-[14px] text-[#4a3f34]">{d.course}</span>
-                  <span className="font-display text-base font-bold text-terracotta-dark">{d.minutes} min</span>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+              {course.pointers.map((p) => (
+                <div key={p} className="flex gap-3 rounded-xl border border-fairwayborder bg-fairwaycream p-4">
+                  <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-fairway" />
+                  <p className="font-body text-[14px] leading-relaxed text-[#3a3f2e]">{p}</p>
                 </div>
               ))}
             </div>
           </section>
         )}
 
-        <section className="border-b border-warmborder px-6 py-10 md:px-14 md:py-14">
+        <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <div className="font-ui text-sm font-bold uppercase tracking-[.08em] text-fairway-dark">
+                Best for
+              </div>
+              <ul className="mt-3 space-y-2 font-body text-[15px] text-[#3a3f2e]">
+                {course.bestFor.map((b) => (
+                  <li key={b}>&middot; {b}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="font-ui text-sm font-bold uppercase tracking-[.08em] text-[#a85561]">
+                Less ideal if
+              </div>
+              <ul className="mt-3 space-y-2 font-body text-[15px] text-[#3a3f2e]">
+                {course.lessIdealIf.map((b) => (
+                  <li key={b}>&middot; {b}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-fairwayborder bg-white px-6 py-10 md:px-14 md:py-14">
           <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <PracticalItem label="Address" value={hotel.address} />
-            <PracticalItem label="Brand" value={hotel.brand} />
+            <PracticalItem label="Green fee" value={`${greenFeeDisplay} (verify current rates)`} />
+            <PracticalItem label="Address" value={course.address} />
+            <PracticalItem label="Phone" value={course.phone} />
+            <PracticalItem label="Website" value={course.website} />
           </dl>
         </section>
 
-                <section className="border-b border-fairwayborder px-6 py-10 md:px-14 md:py-14">
-          <HotelCourses hotelSlug={slug} />
-        </section>
-
-        <section className="relative overflow-hidden border-b border-warmborder bg-white px-6 py-14 md:px-14 md:py-20">
-          <div className="pointer-events-none absolute inset-0 text-terracotta opacity-[0.05]">
-            <Image src="/art/patterns/faq-bg.svg" alt="" fill className="object-cover" />
-          </div>
-          <div className="relative">
+        {nearby.length > 0 && (
+          <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
             <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
-              Common questions
-            </h2>
-            <div className="max-w-[800px] divide-y divide-warmborder border-t border-warmborder">
-              {hotel.faqs.map((f) => (
-                <details key={f.q} className="group py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
-                    {f.q}
-                    <span className="font-display text-xl text-terracotta group-open:hidden">+</span>
-                    <span className="hidden font-display text-xl text-terracotta group-open:inline">&minus;</span>
-                  </summary>
-                  <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#5a4f42]">
-                    {f.a}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Nearby courses cross-sell */}
-        {nearbyCourses.length > 0 && (
-          <section className="border-t border-[#e3ddcf] bg-stone px-6 py-14 md:px-14 md:py-20">
-            <h2 className="text-display-md mb-8 font-display font-bold text-ink">
-              Courses near {hotel.name}
+              Nearby courses
             </h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-              {nearbyCourses.map(c => (
-                <Link key={c.slug} href={`/golf-courses/${c.slug}/`}
-                  className="group overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white shadow-[0_3px_12px_rgba(37,35,33,.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(37,35,33,.15)]">
-                  {/* Image with type badge overlay */}
-                  <div className="relative h-48 w-full overflow-hidden bg-[#e8e4da]">
-                    {c.image && (
-                      <Image src={c.image} alt={c.name} fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, 33vw" />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,20,18,.4)] to-transparent" />
-                    <span className="absolute left-3 bottom-3 rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-1 font-ui text-[10px] font-bold uppercase tracking-[.07em] text-white">
-                      {c.type.split("/")[0].trim()}
-                    </span>
-                  </div>
-                  {/* Content */}
-                  <div className="p-5">
-                    <div className="font-display text-base font-bold leading-snug text-ink group-hover:text-ocean transition-colors">{c.name}</div>
-                    <div className="mt-1 font-body text-[12.5px] text-[#6a665e]">Par {c.par} · {c.yards} · {c.city.split(",")[0]}</div>
-                    <p className="mt-2 line-clamp-2 font-body text-[12px] leading-relaxed text-[#7a7670]">{c.hook}</p>
-                    <div className="mt-3 flex items-center gap-1 font-ui text-[12.5px] font-semibold text-ocean">
-                      View course
-                      <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              {nearby.map((c) =>
+                c ? (
+                  <Link
+                    key={c.slug}
+                    href={`/golf-courses/${c.slug}/`}
+                    className="group overflow-hidden rounded-2xl border border-[#e3ddcf] bg-white shadow-[0_3px_12px_rgba(37,35,33,.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(37,35,33,.15)]"
+                  >
+                    <div className="relative h-48 w-full overflow-hidden bg-[#e8e4da]">
+                      {c.image && (
+                        <Image src={c.image} alt={c.name} fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, 33vw" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,20,18,.4)] to-transparent" />
+                      <span className="absolute left-3 bottom-3 rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-1 font-ui text-[10px] font-bold uppercase tracking-[.07em] text-white">
+                        {c.type.split("/")[0].trim()}
+                      </span>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                    <div className="p-5">
+                      <div className="font-display text-base font-bold leading-snug text-ink group-hover:text-ocean transition-colors">{c.name}</div>
+                      <div className="mt-1 font-body text-[12.5px] text-[#6a665e]">Par {c.par} · {c.yards} · {c.city.split(",")[0]}</div>
+                      <p className="mt-2 line-clamp-2 font-body text-[12px] leading-relaxed text-[#7a7670]">{c.hook}</p>
+                      <div className="mt-3 flex items-center gap-1 font-ui text-[12.5px] font-semibold text-ocean">
+                        View course
+                        <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      </div>
+                    </div>
+                  </Link>
+                ) : null
+              )}
             </div>
           </section>
         )}
 
-        {/* Itinerary cross-sell */}
-        {crossSellTrips.length > 0 && (
-          <section className="border-t border-[#e3ddcf] px-6 py-14 md:px-14 md:py-20">
-            <h2 className="text-display-md mb-8 font-display font-bold text-ink">
-              Golf trips based here
-            </h2>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {crossSellTrips.map(t => (
-                <Link key={t.slug} href={`/itineraries/${t.slug}/`}
-                  className="group overflow-hidden rounded-xl border border-[#e3ddcf] bg-white shadow-[0_2px_8px_rgba(37,35,33,.06)] transition-all hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(37,35,33,.13)]">
-                  <div className="relative h-44 w-full overflow-hidden">
-                    <Image src={t.image} alt={t.title} fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, 50vw" />
-                    {t.mostBooked && (
-                      <span className="absolute left-3 top-3 rounded-full bg-gold px-2.5 py-0.5 font-ui text-[10px] font-bold uppercase tracking-[.05em] text-ink">Most booked</span>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <div className="font-display text-base font-bold text-ink">{t.title}</div>
-                    <div className="mt-1 font-body text-[13px] text-[#6a665e]">{t.durationDays} days · {t.rounds}</div>
-                    <div className="mt-3 font-ui text-sm font-semibold text-ocean">View itinerary →</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
+        {/* Closest hotels — proximity cards */}
+        <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
+          <CourseHotels courseSlug={slug} courseName={course.name} />
+        </section>
+
+        {/* Live cams — PBGL only */}
+        {slug === "pebble-beach-golf-links" && (
+          <PBGLLiveCams />
         )}
 
-        {/* Majors banner — PBC hotels only */}
-        {["lodge-at-pebble-beach","inn-at-spanish-bay","casa-palmero"].includes(slug) && (
-          <PBCMajorsBanner />
-        )}
-
-        {/* Pebble Beach packages hub crosslink — PBC hotels only */}
-        {["lodge-at-pebble-beach","inn-at-spanish-bay","casa-palmero"].includes(slug) && (
+        {/* Hub page crosslink — PBGL only */}
+        {slug === "pebble-beach-golf-links" && (
           <div className="border-b border-fairwayborder bg-[#faf7f2] px-6 py-5 md:px-14">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <p className="font-body text-[14px] text-[#5a5448]">
-                Planning a complete Pebble Beach golf trip?
+                Planning a Pebble Beach trip for your group?
               </p>
               <Link href="/pebble-beach/" className="flex-none font-ui text-[13px] font-bold text-fairway hover:underline">
                 View Pebble Beach packages →
@@ -465,34 +446,88 @@ export default async function HotelPage({ params }: Props) {
           </div>
         )}
 
-        {/* Events calendar — Lodge: golf + lifestyle; Inn: golf + lifestyle + recurring */}
-        {slug === "lodge-at-pebble-beach" && (
-          <PBCEvents
-            tiers={["golf","lifestyle"]}
-            title="Upcoming events at Pebble Beach"
-            subtitle="Plan your Lodge stay around what's happening at the resort."
-          />
+        {/* Tournaments You Can Play — PBGL only */}
+        {slug === "pebble-beach-golf-links" && (
+          <PBGLTournaments />
         )}
-        {slug === "inn-at-spanish-bay" && (
+
+        {/* Majors banner — PBC courses: PBGL, Spyglass, Del Monte, The Hay */}
+        {["pebble-beach-golf-links","spyglass-hill","del-monte-golf-course","the-hay"].includes(slug) && (
+          <PBCMajorsBanner />
+        )}
+
+        {/* Events calendar — PBGL only (golf tier) */}
+        {slug === "pebble-beach-golf-links" && (
           <PBCEvents
-            tiers={["golf","lifestyle"]}
-            showRecurring={true}
-            title="What's on at Pebble Beach Resorts"
-            subtitle="Live music, golf tournaments, culinary events — happening at The Inn and across the resort."
+            tiers={["golf"]}
+            title="Upcoming events at Pebble Beach Golf Links®"
+            subtitle="Plan your round around what's happening on the course."
           />
         )}
 
-        <section className="px-6 py-16 text-center md:px-14 md:py-20">
-          <h2 className="text-display-md font-display font-bold text-ink">
-            Pair {hotel.name} with a planned golf trip
-          </h2>
-          <Link
-            href={`/quote/?hotel=${hotel.slug}`}
-            className="mt-7 inline-block rounded-[9px] bg-terracotta px-7 py-4 font-ui text-base font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-terracotta-dark"
-          >
-            Get a custom quote &rarr;
-          </Link>
+        {/* Car Week banner — shows Aug 1-20 only, Bayonet + Black Horse */}
+        {(slug === "bayonet" || slug === "black-horse") && (
+          <div className="px-6 pt-6 md:px-14">
+            <CarWeekBanner />
+          </div>
+        )}
+
+        {/* Monday Insider — TPC Pasadera only */}
+        {slug === "club-at-pasadera" && (
+          <section className="border-b border-fairwayborder px-6 py-14 md:px-14 md:py-20">
+            <MondayInsider />
+          </section>
+        )}
+
+        {/* Poppy Hills value block */}
+        {slug === "poppy-hills" && (
+          <section className="border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20">
+            <PoppyHillsValue />
+          </section>
+        )}
+
+        <section className="relative overflow-hidden border-b border-fairwayborder bg-white px-6 py-14 md:px-14 md:py-20 faq-section">
+          <div className="pointer-events-none absolute inset-0 text-fairway opacity-[0.05]">
+            <Image src="/art/patterns/faq-bg.svg" alt="" fill className="object-cover" />
+          </div>
+          <div className="relative">
+            <h2 className="text-display-md mb-8 font-display font-bold text-ink md:mb-10">
+              Common questions
+            </h2>
+            <div className="max-w-[800px] divide-y divide-fairwayborder border-t border-fairwayborder">
+              {course.faqs.map((f) => (
+                <details key={f.q} className="group py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-ui text-base font-semibold text-ink">
+                    {f.q}
+                    <span className="font-display text-xl text-fairway group-open:hidden">+</span>
+                    <span className="hidden font-display text-xl text-fairway group-open:inline">&minus;</span>
+                  </summary>
+                  <p className="mt-3 max-w-[700px] font-body text-[15px] leading-relaxed text-[#4a4f3c]">
+                    {f.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </section>
+
+        {isClosed ? (
+          <section className="px-6 py-14 md:px-14 md:py-20">
+            <SpanishBayWaitlist />
+          </section>
+        ) : (
+          <section className="px-6 py-16 text-center md:px-14 md:py-20">
+            <h2 className="text-display-md font-display font-bold text-ink">
+              Play {course.name} as part of a planned trip
+            </h2>
+            <Link
+              href="/packages/"
+              className="mt-7 inline-block rounded-[9px] bg-fairway px-7 py-4 font-ui text-base font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-fairway-dark"
+            >
+              View packages &rarr;
+            </Link>
+          </section>
+        )}
       </main>
 
       <Footer />
@@ -503,7 +538,7 @@ export default async function HotelPage({ params }: Props) {
 function PracticalItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="font-ui text-[11px] font-semibold uppercase tracking-[.08em] text-[#9c8570]">
+      <dt className="font-ui text-[11px] font-semibold uppercase tracking-[.06em] text-[#8a8a6e]">
         {label}
       </dt>
       <dd className="mt-1.5 font-body text-[15px] text-ink">{value}</dd>
