@@ -61,8 +61,17 @@ export default function HotelsIndexPage() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `https://${SITE.domain}/` },
           { "@type": "ListItem", position: 2, name: "Hotels", item: canonicalUrl },
-        ],
-      },
+,
+      {
+        "@type": "FAQPage",
+        "@id": "https://montereygolftours.com/hotels/#faq",
+        "mainEntity": [
+                    {"@type": "Question", "name": "What are the best hotels for a Monterey golf trip?", "acceptedAnswer": {"@type": "Answer", "text": "Top golf-anchor hotels include The Lodge at Pebble Beach™ (Pebble Beach course access), Hyatt Regency Monterey (on Del Monte™ Golf Course), Carmel Valley Ranch (Pete Dye course on-site), and Quail Lodge & Golf Club. Choice depends on budget, group size, and target courses."}},
+          {"@type": "Question", "name": "Do any Monterey hotels have golf courses on-site?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Hyatt Regency Monterey sits on Del Monte™ Golf Course. Carmel Valley Ranch has a Pete Dye-designed course on property. Quail Lodge & Golf Club has its own parkland course. The Pebble Beach Resort properties have access to all five Pebble Beach courses."}},
+          {"@type": "Question", "name": "What is the best hotel near Pebble Beach Golf Links®?", "acceptedAnswer": {"@type": "Answer", "text": "The Lodge at Pebble Beach™ is the only hotel directly overlooking the 18th green of Pebble Beach Golf Links® — the premier choice for a bucket-list Pebble Beach golf trip."}},
+          {"@type": "Question", "name": "Are there affordable hotels for a Monterey golf trip?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Embassy Suites Monterey Bay - Seaside is steps from Bayonet and Black Horse. Portola Hotel & Spa is a solid value for large groups. Casa Munras and Hotel Abrego offer mid-tier pricing in central Monterey."}}
+        ]
+      }
     ],
   };
 
