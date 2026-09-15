@@ -5,7 +5,7 @@
 const RESEND_API = "https://api.resend.com/emails";
 const FROM = "Monterey Golf Tours <info@montereygolftours.com>";
 const SITE = "https://montereygolftours.com";
-const LOGO_URL = "https://montereygolftours.vercel.app/brand/logo-transparent-master.png";
+const LOGO_URL = "https://montereygolftours.com/brand/logo-correct.png";
 
 export const HEADER = `<!DOCTYPE html><html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
