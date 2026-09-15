@@ -120,8 +120,7 @@ const schemaGraph = {
 // ─── METADATA ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: "Pebble Beach Golf Packages — IAGTO Authorized",
-  description:
-    "Book a Pebble Beach golf package with Monterey Golf Tours — IAGTO Authorized Pebble Beach Resorts® Golf Travel Operator. Tee times, lodging, and full trip planning for groups of 2–400. Get a custom quote.",
+  description: "Book a Pebble Beach golf package with an IAGTO Authorized Operator. Pebble Beach Golf Links, Spyglass Hill, Spanish Bay, Del Monte. Custom quotes in 24h.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
