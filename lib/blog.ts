@@ -10,6 +10,7 @@ export type BlogPost = {
   sections: { heading: string; paragraphs: string[] }[];
   takeaways?: string[];
   internalLinks: { label: string; href: string }[];
+  faqs?: { q: string; a: string }[];
 };
 
 export const BLOG_POSTS: Record<string, BlogPost> = {
