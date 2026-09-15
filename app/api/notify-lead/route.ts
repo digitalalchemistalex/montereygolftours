@@ -41,6 +41,7 @@ export async function POST(req: Request) {
 
   const opResult = await sendEmail({
     to: NOTIFY_EMAIL,
+    cc: ["sean@golfthehighsierra.com", "mike@golfthehighsierra.com", "mike.eskuchen@golfthehighsierra.com"],
     subject,
     html: buildLeadNotificationHtml(data, adminUrl),
     key: RESEND_KEY,
