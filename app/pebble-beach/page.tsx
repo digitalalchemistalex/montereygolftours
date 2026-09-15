@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
@@ -24,7 +23,7 @@ const schemaGraph = {
       "breadcrumb": { "@id": `${PAGE_URL}#breadcrumb` },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", ".speakable-intro"]
+        "cssSelector": ["h1", ".speakable-summary", ".faq-answer"]
       },
       "dateModified": "2026-09-14"
     },
@@ -200,7 +199,7 @@ const FAQS_DISPLAY = [
 export default function PebbleBeachPackagesPage() {
   return (
     <>
-      <Script id="schema-pbc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
       <Header />
       <main className="flex-1">
 
