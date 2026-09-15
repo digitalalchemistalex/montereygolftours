@@ -7,13 +7,13 @@ import { COURSES } from "@/lib/courses";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
+  title: "Monterey Golf Courses — All 14 on the Peninsula",
   description:
     "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula — from championship resort courses to accessible daily-fee rounds. Browse, compare, and get a quote.",
   alternates: { canonical: `https://${SITE.domain}/golf-courses/` },
   openGraph: {
-    title: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
-    description: "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula — from championship resort courses to accessible daily-fee rounds.",
+    title: "Monterey Golf Courses — All 14 on the Peninsula",
+    description: "All 14 golf courses on the Monterey Peninsula — Pebble Beach, Spyglass, Bayonet, Carmel Valley Ranch and more. Book as a package or standalone rounds.",
     url: `https://${SITE.domain}/golf-courses/`,
     siteName: "Monterey Golf Tours",
     locale: "en_US",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Monterey Golf Courses — All 14 on the Peninsula | Monterey Golf Tours",
+    title: "Monterey Golf Courses — All 14 on the Peninsula",
     description: "All 14 golf courses Monterey Golf Tours books on the Monterey Peninsula.",
   },
 };
