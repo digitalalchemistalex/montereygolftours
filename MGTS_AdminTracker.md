@@ -1004,3 +1004,37 @@ Homepage FAQ category images (Trip Planning, Timing & Logistics, Lodging & Trave
 - `lead_tasks` — lead pipeline tasks
 
 **Total tables: 15** — activity_log, admin_users, course_pricing, email_log, lead_tasks, leads, quote_drafts, quote_responses, rate_configs, spanish_bay_waitlist, tasks, trip_items, trip_vendors, trips, vendors
+
+
+## Sep 16 2026 — AEO/SEO Overhaul + Content Sprint
+
+### AEO / Entity fixes (all live)
+- SiteSchema.tsx: foundingDate, knowsAbout x7, hasOfferCatalog x3, sameAs x4, booking-platform description
+- llms.txt: active booking declaration + booking-platform FAQ
+- page.tsx: duplicate Org removed, who-books FAQ first
+- about/page.tsx: .speakable-intro added, dateModified updated
+
+### Title templates (~36 pages)
+- Course: PBC gets IAGTO title, non-PBC gets group/trip title, Spanish Bay gets waitlist title
+- Hotel: PBC hotel / on-site-golf / standard hotel variants
+- Itinerary: corporate outing + Pebble Beach package targeted
+- Bug fix: spyglass-hill-golf-course -> spyglass-hill in isPBC arrays
+
+### 5 new blog posts (all 200 OK)
+- /blog/links-at-spanish-bay-reopening-2027/
+- /blog/2027-us-open-pebble-beach-golf-trip/
+- /blog/pebble-beach-golf-cost/
+- /blog/bayonet-vs-black-horse-golf/
+- /blog/monterey-golf-group-size/
+
+### 93 URLs live, all 200 OK
+### GitHub token refreshed Sep 16 2026 (see MGTS skill file)
+### MGTS skill packaged Sep 16 2026
+
+### Open — blocked on Sean
+- GBP setup for montereygolftours.com (highest priority)
+- Verify Facebook/Instagram profiles exist (sameAs URLs in SiteSchema.tsx)
+- GSC indexing check in 3-4 weeks before next content build
+- IAGTO rates for PBGL/SH/Del Monte
+- Higher-res hotel heroes: Monterey Plaza, InterContinental, Hotel Abrego, Monterey Beach Hotel
+- Twilio upgrade + toll-free verification
