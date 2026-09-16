@@ -41,8 +41,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Hotel pages
   const hotel = HOTEL_DETAILS[slug];
   if (hotel) {
-    const hotelTitle = hotel.name;
-    const hotelDesc = (hotel.hook ?? "").slice(0, 155);
+    const isPBCHotel = ["lodge-at-pebble-beach","inn-at-spanish-bay","casa-palmero"].includes(slug);
+    const hasOnSiteGolf = hotel.onSiteGolf !== null;
+    const hotelTitle = isPBCHotel
+      ? `${hotel.name} — Golf Packages & Pebble Beach Resorts® Stay`
+      : hasOnSiteGolf
+      ? `${hotel.name} — On-Site Golf & Monterey Peninsula Packages`
+      : `${hotel.name} — Golf Group Hotel, Monterey Peninsula`;
+    const hotelDesc = isPBCHotel
+      ? `Stay at ${hotel.name} with Monterey Golf Tours — IAGTO-authorized Pebble Beach Resorts® tee times, group rates, and end-to-end trip planning. Custom quote in 24 hours.`
+      : hasOnSiteGolf
+      ? `${hotel.name} in ${hotel.city} — on-site golf, group-friendly, and bookable as part of a complete Monterey Peninsula golf package. Custom quote in 24 hours.`
+      : (`${hotel.name} in ${hotel.city} — ${hotel.hook ?? ""} Book as part of a Monterey Peninsula golf trip for groups of 2–400.`).slice(0, 160);
     return {
       title: hotelTitle,
       description: hotelDesc,
@@ -63,12 +73,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!course) return {};
 
   const isClosed = slug === "links-at-spanish-bay";
+  const isPBC = ["pebble-beach-golf-links","spyglass-hill-golf-course","del-monte-golf-course","the-hay"].includes(slug);
   const title = isClosed
-    ? `${course.name} — Closed for Renovation, Reopening April 2027`
-    : `${course.name} — Tee Times & Course Info`;
+    ? `${course.name} — Closed for Renovation, Reopening April 2027 | Waitlist Open`
+    : isPBC
+    ? `${course.name} — IAGTO Tee Times & Pebble Beach Golf Packages`
+    : `${course.name} — Group Tee Times & Monterey Golf Trip Planning`;
   const description = isClosed
-    ? `${course.name} in ${course.city} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. See what's open now — join the waitlist and plan your Monterey golf trip.`
-    : `${course.name} in ${course.city} — Par ${course.par}, ${course.yards}, designer ${course.designer.split("(")[0].trim()}. Book ${course.name} as part of a planned Monterey golf trip. Get a custom quote →`;
+    ? `${course.name} is closed for a Gil Hanse-led renovation, reopening April 17, 2027. Join the waitlist and plan your Monterey Peninsula golf trip around the reopening.`
+    : isPBC
+    ? `Book ${course.name} through Monterey Golf Tours — IAGTO-authorized tee times, Pebble Beach Resorts® lodging, and end-to-end trip planning for groups of 2–400. Custom quote in 24 hours.`
+    : (`${course.name} in ${course.city} — Par ${course.par}, ${course.yards}. Group tee times, hotel coordination, and Monterey Peninsula trip planning. Custom quote in 24 hours.`).slice(0, 160);
 
   const courseData = COURSES.find((c) => c.slug === slug);
   const ogImage = courseData?.image?.startsWith("/")
