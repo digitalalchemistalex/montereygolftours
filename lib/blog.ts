@@ -509,4 +509,214 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ],
   },
 
+  "links-at-spanish-bay-reopening-2027": {
+    slug: "links-at-spanish-bay-reopening-2027",
+    cardTitle: "Spanish Bay Reopens 2027",
+    cardImage: "/images/pbc-portal/pb_spanishbay_clubhouse_entrance.jpg",
+    title: "The Links at Spanish Bay® Reopening April 2027: What to Expect and How to Book",
+    category: "Trip Planning",
+    datePublished: "2026-09-16",
+    dateModified: "2026-09-16",
+    intro:
+      "The Links at Spanish Bay® closed in late 2024 for a full Gil Hanse-led renovation and reopens April 17, 2027. Here is what the renovation involves, what the reopened course will play like, and how to secure a tee time through Monterey Golf Tours as an IAGTO-authorized Pebble Beach Resorts® operator.",
+    sections: [
+      {
+        heading: "Why The Links at Spanish Bay® is closed",
+        paragraphs: [
+          "Pebble Beach Company engaged Gil Hanse — the architect behind the 2016 Olympic Golf Course in Rio and the restoration of Merion East — to undertake a full redesign of the course. The project began in late 2024 and is the most significant work done to Spanish Bay since it opened in 1987.",
+          "The original course was designed by Robert Trent Jones Jr., Tom Watson, and Sandy Tatum in the Scottish links tradition, routing through the dunes and coastal scrub of the Del Monte Forest. The Hanse renovation is expected to sharpen that links character — firmer, faster, more exposed to the wind off Stillwater Cove.",
+        ],
+      },
+      {
+        heading: "What the reopened course is expected to play like",
+        paragraphs: [
+          "Gil Hanse’s approach favors restoring natural ground conditions over managed irrigation. Expect firmer fairways, more pronounced dune contours, and tighter rough edges than the pre-renovation layout. The course’s par and overall yardage have not been publicly confirmed for the new design.",
+          "Spanish Bay has always been the most links-style of the Pebble Beach Resorts® courses — wind exposure is constant, bounce and roll matter, and the back nine toward the Pacific is genuinely exposed. The renovation appears to lean further into that character rather than softening it.",
+          "As of September 2026 no official course photos or yardage cards for the redesigned layout have been released by Pebble Beach Company.",
+        ],
+      },
+      {
+        heading: "The reopening date and waitlist",
+        paragraphs: [
+          "Pebble Beach Resorts® has confirmed the reopening date as April 17, 2027. Monterey Golf Tours is collecting waitlist interest now for groups who want to be among the first to play the renovated course. Waitlist members will be contacted once tee time availability opens for post-April 17 dates.",
+          "Demand for Spanish Bay tee times will be elevated in the months following reopening, particularly for groups that want to combine it with Pebble Beach Golf Links® and Spyglass Hill™ in the same trip. Booking as early as possible is advisable for peak-season dates — May through October 2027.",
+        ],
+      },
+      {
+        heading: "How to book Spanish Bay through Monterey Golf Tours",
+        paragraphs: [
+          "As an IAGTO-contracted Authorized Pebble Beach Resorts® Golf Travel Operator, Monterey Golf Tours books tee times at The Links at Spanish Bay® directly through official channels at IAGTO rates. We can combine Spanish Bay with The Inn at Spanish Bay™ lodging — where guests have complimentary daily access to the Spanish Bay Club™ — and coordinate all other courses and hotels on the peninsula in the same package.",
+          "If your group wants a full Pebble Beach Resorts® rotation post-reopening — Pebble Beach Golf Links®, Spyglass Hill™, Spanish Bay, and Del Monte™ — that is a natural 4- to 5-day itinerary we can build around your dates and group size. Submit a quote request or join the waitlist and we will follow up as availability opens.",
+        ],
+      },
+      {
+        heading: "Planning around Spanish Bay in your Monterey trip",
+        paragraphs: [
+          "While Spanish Bay is closed, groups building Pebble Beach Resorts® rotations have been substituting Poppy Hills (same zip code as PBGL, no gate fee) or Pasatiempo in Santa Cruz as a fourth or fifth round. Both are strong options that remain available year-round.",
+          "For groups staying at The Inn at Spanish Bay™ before April 17, 2027: the Inn is open and fully operational. Guests still have access to the Spanish Bay Club™, the nightly bagpiper at the fire pits, and all dining. Only the course itself is unavailable until reopening.",
+        ],
+      },
+    ],
+    takeaways: [
+      "The Links at Spanish Bay® reopens April 17, 2027 after a Gil Hanse-led renovation",
+      "Monterey Golf Tours is collecting waitlist interest now for post-April 17 tee times",
+      "IAGTO-authorized booking available through Monterey Golf Tours as an official PBR operator",
+      "The Inn at Spanish Bay™ remains open and fully operational during the renovation",
+      "Book 2027 spring/summer dates early — demand will be elevated immediately after reopening",
+    ],
+    internalLinks: [
+      { label: "The Links at Spanish Bay® course page", href: "/golf-courses/links-at-spanish-bay/" },
+      { label: "The Inn at Spanish Bay™ hotel page", href: "/hotels/inn-at-spanish-bay/" },
+      { label: "Pebble Beach golf packages", href: "/pebble-beach/" },
+      { label: "The Pebble Pilgrimage — 4-day itinerary", href: "/itineraries/pebble-beach-golf-package/" },
+    ],
+    faqs: [
+      { q: "When does The Links at Spanish Bay® reopen?", a: "The Links at Spanish Bay® is scheduled to reopen April 17, 2027, following a full renovation led by architect Gil Hanse. Monterey Golf Tours is collecting waitlist interest for groups who want early tee times after the reopening." },
+      { q: "Who designed the Spanish Bay renovation?", a: "Gil Hanse, the architect behind the 2016 Olympic Golf Course in Rio and the restoration of Merion East, is leading the redesign. Pebble Beach Company has not released full details of the scope, but the renovation involves a comprehensive reworking of the layout." },
+      { q: "Can I still stay at The Inn at Spanish Bay™ while the course is closed?", a: "Yes. The Inn at Spanish Bay™ is open and fully operational during the renovation. Guests retain access to the Spanish Bay Club™, all dining venues including STAVE Wine Cellar at Spanish Bay™ and Peppoli at Pebble Beach™, and the nightly bagpiper at the outdoor fire pits." },
+      { q: "How do I book Spanish Bay tee times through Monterey Golf Tours?", a: "Monterey Golf Tours is an IAGTO-contracted Authorized Pebble Beach Resorts® Golf Travel Operator with direct booking access to Spanish Bay tee times. Submit a quote request or join the waitlist. We will contact waitlist members as tee time availability opens for post-April 17, 2027 dates." },
+    ],
+  },
+  "2027-us-open-pebble-beach-golf-trip": {
+    slug: "2027-us-open-pebble-beach-golf-trip",
+    cardTitle: "2027 US Open at Pebble Beach",
+    cardImage: "/images/pbc-portal/pbgl_18_2019_watson.jpg",
+    title: "Playing Pebble Beach Around the 2027 US Open: What to Book and When",
+    category: "Trip Planning",
+    datePublished: "2026-09-16",
+    dateModified: "2026-09-16",
+    intro:
+      "The 2027 US Open Championship returns to Pebble Beach Golf Links® from June 17 to 20, 2027 — the seventh time the course has hosted the event. If you want to play Pebble Beach in 2027, understanding how the tournament affects tee time access and hotel availability is the first step. Here is what to know and when to book.",
+    sections: [
+      {
+        heading: "Which weeks are closed to public play",
+        paragraphs: [
+          "Pebble Beach Golf Links® closes to public play during both the AT&T Pebble Beach Pro-Am (February 1–7, 2027) and the US Open setup and tournament week. The course typically closes approximately 2 to 3 weeks before the US Open starts for practice rounds and course preparation, meaning public access ends around late May 2027 and does not resume until after the final round on June 20.",
+          "Spyglass Hill™ Golf Course may also have restricted access in the weeks surrounding the tournament, as it hosted pro-am practice rounds in previous US Open years at Pebble Beach. Del Monte™ and The Hay™ are generally unaffected by the tournament closure.",
+        ],
+      },
+      {
+        heading: "The best windows to play Pebble Beach in 2027",
+        paragraphs: [
+          "The spring window before the US Open closure — roughly March 1 through late May 2027 — is the primary opportunity to play Pebble Beach Golf Links® in 2027 if you want to experience the course while the US Open setup is underway nearby. The course will be in peak condition heading into the major, and the coastal weather from April onward is among the best of the year.",
+          "The post-US Open window from late June through October 2027 is the second option. The course reopens quickly after the final round, and demand from tournament spectators drops sharply once the week is over. Late June and July 2027 are likely to have strong tee time availability.",
+          "The AT&T Pebble Beach Pro-Am window in early February closes PBGL and Spyglass Hill™ for the tournament week. Avoid that window for a playing trip.",
+        ],
+      },
+      {
+        heading: "Hotel availability around the tournament",
+        paragraphs: [
+          "The Lodge at Pebble Beach™ and The Inn at Spanish Bay™ will be fully committed to US Open hospitality for tournament week and likely the weeks immediately surrounding it. Lodge and Inn guests get priority tee time access up to 18 months in advance, so groups wanting pre-tournament spring tee times at Pebble Beach Golf Links® should be planning now.",
+          "For tournament spectators who are not staying on-site, downtown Monterey hotels — the Portola Hotel, Monterey Plaza, and InterContinental Clement — are 15 to 20 minutes from Pebble Beach and will have more availability than the on-site properties, though rates will still be elevated during tournament week.",
+        ],
+      },
+      {
+        heading: "What Monterey Golf Tours can book for 2027",
+        paragraphs: [
+          "As an IAGTO-contracted Authorized Pebble Beach Resorts® Golf Travel Operator, Monterey Golf Tours can book Pebble Beach Golf Links® tee times and Pebble Beach Resorts® lodging for groups of 2 to 400 players in the pre- and post-tournament windows. We are actively taking bookings now for spring 2027 dates before the US Open closure.",
+          "A natural 2027 itinerary pairs pre-tournament Pebble Beach play — staying at The Lodge or The Inn — with spectator tickets to one or more US Open rounds. We handle the golf and accommodation side; US Open tickets are managed separately through the USGA.",
+          "The Links at Spanish Bay® reopens April 17, 2027, which means a spring 2027 trip can include the full Pebble Beach Resorts® rotation: Pebble Beach Golf Links®, Spyglass Hill™, the newly reopened Spanish Bay, and Del Monte™. This is the first time all four PBR courses will be playable simultaneously since Spanish Bay closed for renovation.",
+        ],
+      },
+      {
+        heading: "How far in advance to book",
+        paragraphs: [
+          "Lodge and Inn guests can book tee times up to 18 months in advance. For spring 2027 dates, that window is open now. Groups that want the best combination of pre-tournament tee times and on-site lodging should contact us as soon as possible — availability for May 2027 will tighten through the fall of 2026.",
+          "Post-US Open summer dates (late June through September 2027) have more runway but should still be confirmed by early 2027 for groups of 8 or more.",
+        ],
+      },
+    ],
+    takeaways: [
+      "2027 US Open at Pebble Beach: June 17–20, 2027",
+      "PBGL closes to public play approximately late May 2027 through June 20",
+      "Best playing windows: March–late May 2027 and late June–October 2027",
+      "Spanish Bay reopens April 17, 2027 — first full PBR rotation since renovation started",
+      "Lodge/Inn guests book up to 18 months out — spring 2027 window open now",
+    ],
+    internalLinks: [
+      { label: "Pebble Beach Golf Links® course page", href: "/golf-courses/pebble-beach-golf-links/" },
+      { label: "The Lodge at Pebble Beach™ hotel page", href: "/hotels/lodge-at-pebble-beach/" },
+      { label: "Pebble Beach golf packages", href: "/pebble-beach/" },
+      { label: "Spanish Bay reopening 2027", href: "/blog/links-at-spanish-bay-reopening-2027/" },
+      { label: "The Pebble Pilgrimage itinerary", href: "/itineraries/pebble-beach-golf-package/" },
+    ],
+    faqs: [
+      { q: "When is the 2027 US Open at Pebble Beach?", a: "The 2027 US Open Championship is scheduled for June 17–20, 2027 at Pebble Beach Golf Links® in Pebble Beach, California. This will be the seventh time Pebble Beach has hosted the US Open." },
+      { q: "Can I play Pebble Beach Golf Links during the 2027 US Open week?", a: "No. Pebble Beach Golf Links® closes to public play during US Open setup and tournament week. The public playing window ends approximately late May 2027 and resumes after the final round on June 20. The best pre-tournament window is March through mid-May 2027." },
+      { q: "How do I book Pebble Beach tee times for spring 2027?", a: "Monterey Golf Tours is an IAGTO-contracted Authorized Pebble Beach Resorts® Golf Travel Operator. We can book tee times at Pebble Beach Golf Links® for spring 2027 now. Lodge and Inn guests have access up to 18 months in advance. Contact us for a custom quote." },
+      { q: "Will Spanish Bay be open for the 2027 US Open trip?", a: "Yes. The Links at Spanish Bay® is scheduled to reopen April 17, 2027, before the US Open closure window begins. This means a spring 2027 Monterey golf trip can include all four Pebble Beach Resorts® courses for the first time since Spanish Bay closed for its Gil Hanse renovation." },
+    ],
+  },
+  "pebble-beach-golf-cost": {
+    slug: "pebble-beach-golf-cost",
+    cardTitle: "Pebble Beach Golf Cost",
+    cardImage: "/images/pbc-portal/pbgl_7_2020_aerial.jpg",
+    title: "How Much Does a Pebble Beach Golf Trip Cost? A Realistic 2026 Breakdown",
+    category: "Trip Planning",
+    datePublished: "2026-09-16",
+    dateModified: "2026-09-16",
+    intro:
+      "A Pebble Beach golf trip costs significantly more than a typical golf vacation, and the pricing structure is more complex than most destinations. This page breaks down what you actually pay — green fees, lodging, and the stay requirement — so you can plan your budget before requesting a quote.",
+    sections: [
+      {
+        heading: "The stay requirement",
+        paragraphs: [
+          "To book Pebble Beach Golf Links®, you must stay at a Pebble Beach Resorts® property — The Lodge at Pebble Beach™, The Inn at Spanish Bay™, or Casa Palmero™. The minimum stay is typically 3 nights. This is not a suggestion; tee times at PBGL are not available to non-resort guests through standard public channels.",
+          "Pebble Beach Company reserves a portion of daily tee times for IAGTO-contracted operators like Monterey Golf Tours, which is how we can access PBGL tee times even for groups that are not staying on-site in some cases. But for most groups, the lodge stay is the path to a confirmed tee time.",
+        ],
+      },
+      {
+        heading: "Green fees at the Pebble Beach Resorts® courses",
+        paragraphs: [
+          "As of 2026, green fees at the four main Pebble Beach Resorts® courses are approximately: Pebble Beach Golf Links® — $595 to $695 per player plus a mandatory forecaddie fee of approximately $50–85 per player. Spyglass Hill™ Golf Course — approximately $445 per player. Del Monte™ Golf Course — approximately $135 per player. The Hay™ — approximately $95 per player for 9 holes.",
+          "These are planning estimates — actual IAGTO rates available through Monterey Golf Tours may differ. Rates also vary by season and booking channel. The forecaddie fee at Pebble Beach Golf Links® is mandatory and not optional.",
+          "Tip: the forecaddie fee at PBGL covers one forecaddie for the foursome — not an individual caddie per player. If you want a dedicated caddie per player, that cost is additional and arranged separately.",
+        ],
+      },
+      {
+        heading: "Lodge and Inn room rates",
+        paragraphs: [
+          "The Lodge at Pebble Beach™ room rates typically start at $1,000 to $1,500 per night for a standard room and can exceed $2,000 for rooms with direct 18th fairway or ocean views. The Inn at Spanish Bay™ runs somewhat lower — typically $700 to $1,200 per night — with all rooms featuring a gas fireplace and private balcony or patio.",
+          "Casa Palmero™ is the most exclusive and also the most expensive of the three — 24 rooms and suites, rates on request. The entire property can be booked exclusively for one group.",
+          "For groups on a tighter budget, staying at a downtown Monterey hotel and accessing PBGL through our IAGTO tee time allocation — without the mandatory lodge stay — is an option in some cases. Contact us to discuss availability.",
+        ],
+      },
+      {
+        heading: "What a typical 4-day Pebble Beach trip costs per person",
+        paragraphs: [
+          "For a group of 8 sharing rooms at The Inn at Spanish Bay™, playing Pebble Beach Golf Links®, Spyglass Hill™, Poppy Hills, and Bayonet over 4 days: a realistic budget is $3,000 to $5,000 per person all-in for golf and lodging, before flights. The spread is driven primarily by room type and whether you play PBGL once or twice.",
+          "Green fees account for roughly $1,200 to $1,600 of that per-person cost across 4 rounds. Lodging at The Inn at $800–1,000 per room per night split between 2 covers $1,600 to $2,000 per person over 4 nights.",
+          "Groups looking to reduce cost typically substitute one Pebble Beach Resorts® round for a round at Poppy Hills (same zip code, no gate fee required, Golf Digest Top 100) or Pacific Grove Golf Links (municipal, ocean-view holes, under $100 per round).",
+        ],
+      },
+      {
+        heading: "How Monterey Golf Tours prices Pebble Beach packages",
+        paragraphs: [
+          "We do not publish package prices on the site because every trip is custom — group size, course mix, lodging selection, travel dates, and room types all affect the final number. We provide a detailed itemized quote within 24 hours of your request.",
+          "IAGTO rates available through Monterey Golf Tours for Pebble Beach Resorts® courses are confirmed to be competitive with direct booking. There is no markup added above IAGTO rates for the golf component.",
+        ],
+      },
+    ],
+    takeaways: [
+      "PBGL requires a minimum 3-night stay at The Lodge, The Inn, or Casa Palmero to book standard tee times",
+      "Green fees: PBGL ~$595–695 + mandatory forecaddie ($50–85), Spyglass ~$445, Del Monte ~$135, The Hay ~$95",
+      "Inn at Spanish Bay™ rooms: approximately $700–1,200/night; Lodge rooms: $1,000–1,500+/night",
+      "Realistic 4-day trip for group of 8 at The Inn: $3,000–5,000 per person all-in for golf and lodging",
+      "IAGTO rates through Monterey Golf Tours are competitive with direct PBR booking",
+    ],
+    internalLinks: [
+      { label: "Pebble Beach Golf Links® course page", href: "/golf-courses/pebble-beach-golf-links/" },
+      { label: "The Lodge at Pebble Beach™", href: "/hotels/lodge-at-pebble-beach/" },
+      { label: "The Inn at Spanish Bay™", href: "/hotels/inn-at-spanish-bay/" },
+      { label: "The Pebble Pilgrimage — 4-day itinerary", href: "/itineraries/pebble-beach-golf-package/" },
+      { label: "Get a custom quote", href: "/quote/" },
+    ],
+    faqs: [
+      { q: "How much does it cost to play Pebble Beach Golf Links?", a: "Green fees at Pebble Beach Golf Links® are approximately $595–695 per player as of 2026, plus a mandatory forecaddie fee of approximately $50–85 per player. A stay at The Lodge at Pebble Beach™, The Inn at Spanish Bay™, or Casa Palmero™ (minimum 3 nights) is required to book tee times through standard channels. IAGTO-contracted operators like Monterey Golf Tours can access tee times directly." },
+      { q: "Do you have to stay at Pebble Beach to play Pebble Beach Golf Links?", a: "For most groups, yes — a minimum 3-night stay at a Pebble Beach Resorts® property is required to book Pebble Beach Golf Links® tee times. Monterey Golf Tours holds IAGTO tee time allocations that can in some cases allow access without a lodge stay. Contact us to discuss your specific situation." },
+      { q: "What is the cheapest way to play Pebble Beach?", a: "The most cost-effective approach is staying at The Inn at Spanish Bay™ (typically $200–400 per night less than The Lodge) and playing Del Monte™ and Spyglass Hill™ alongside one round at Pebble Beach Golf Links® rather than two. Substituting Poppy Hills (no Pebble Beach gate fee) or Pacific Grove Golf Links for a second Pebble Beach round saves $500–700 per player without sacrificing course quality." },
+      { q: "How much does a Pebble Beach trip cost for a group of 8?", a: "A 4-day trip for 8 players at The Inn at Spanish Bay™, playing Pebble Beach Golf Links®, Spyglass Hill™, Poppy Hills, and Bayonet, realistically costs $3,000–5,000 per person for golf and lodging before flights. The range depends primarily on room type and how many rounds at PBGL are included. Contact Monterey Golf Tours for a custom itemized quote." },
+    ],
+  },
+
 };
