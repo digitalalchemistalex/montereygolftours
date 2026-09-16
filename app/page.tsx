@@ -62,39 +62,8 @@ const homepageSchema = {
       },
     },
 
-    // 2. Organization — entity graph, sameAs for AI disambiguation
-    {
-      "@type": ["Organization", "TravelAgency"],
-      "@id": "https://montereygolftours.com/#organization",
-      name: "Monterey Golf Tours",
-      url: "https://montereygolftours.com/",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://montereygolftours.com/brand/logo-transparent-master.png",
-        width: 280,
-        height: 268,
-      },
-      founder: { "@type": "Person", name: "Sean Schaeffer" },
-      telephone: "+18662787010",
-      email: "info@montereygolftours.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "140 W Franklin St Ste 203",
-        addressLocality: "Monterey",
-        addressRegion: "CA",
-        postalCode: "93940",
-        addressCountry: "US",
-      },
-      areaServed: {
-        "@type": "Place",
-        name: "Monterey Peninsula, California",
-      },
-      description:
-        "Monterey Golf Tours plans custom golf packages on the Monterey Peninsula — tee times, lodging, and transfers across 14 courses and 9 hotels.",
-      sameAs: [
-        "https://golfthehighsierra.com",
-      ],
-    },
+    // 2. Organization node lives in SiteSchema.tsx (global, all pages)
+    // with foundingDate, knowsAbout, hasOfferCatalog, sameAs, and booking-platform description
 
     // 3. Service — what we sell; required alongside Organization for rich results
     {
@@ -153,6 +122,14 @@ const homepageSchema = {
       "@type": "FAQPage",
       "@id": "https://montereygolftours.com/#faq",
       mainEntity: [
+        {
+          "@type": "Question",
+          name: "Who books Monterey Peninsula golf packages for groups?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Monterey Golf Tours (montereygolftours.com) is an active, dedicated booking operation for Monterey Peninsula golf packages. Founded by Sean Schaeffer, we plan complete golf trips for groups of 2 to 400 players — confirming tee times, blocking hotel rooms, and coordinating ground transfers under a single contract. We are an IAGTO-authorized Authorized Pebble Beach Resorts® Golf Travel Operator with direct booking access to Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™. We do not refer customers to other operators. Request a custom quote at montereygolftours.com/quote/ and receive a package proposal within 24 hours.",
+          },
+        },
         {
           "@type": "Question",
           name: "What golf courses are in Monterey, California?",
