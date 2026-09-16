@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 
 const PUBLISHED = "2026-08-22";
-const MODIFIED = "2026-09-13";
+const MODIFIED = "2026-09-16";
 
 export const metadata: Metadata = {
   title: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
@@ -86,7 +86,7 @@ export default function AboutPage() {
         dateModified: MODIFIED,
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2", ".speakable-faq"],
+          cssSelector: ["h1", ".speakable-intro", ".speakable-faq"],
         },
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
         breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
@@ -179,12 +179,13 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="space-y-4">
-              <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
-                Monterey Golf Tours plans custom multi-day golf trips on the Monterey
-                Peninsula — courses, lodging, and tee times handled end to end. We work
-                with groups of any size, from a twosome to 400 players, and put together
-                trips ranging from a quick weekend to a full week covering every major
-                course on the peninsula.
+              <p className="speakable-intro font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
+                Monterey Golf Tours is an active golf trip booking operation for the
+                Monterey Peninsula. We confirm tee times, block hotel rooms, and
+                coordinate logistics end to end under a single contract — for groups of
+                2 to 400 players across all 14 courses on the peninsula, including
+                direct IAGTO-authorized access to Pebble Beach Resorts&reg; properties.
+                Custom quote within 24 hours.
               </p>
               <p className="font-body text-[15px] leading-relaxed text-[#4a463f] md:text-base">
                 As an IAGTO-contracted travel partner with Pebble Beach Resorts&reg;, we
