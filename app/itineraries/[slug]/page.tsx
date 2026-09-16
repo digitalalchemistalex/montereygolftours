@@ -19,8 +19,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const trip = ITINERARIES[slug];
   if (!trip) return {};
 
-  const title = `${trip.title}`;
-  const description = `${trip.durationDays}-day Monterey Peninsula golf trip — ${trip.rounds}. ${trip.target} Get a custom quote within 24 hours.`;
+  const isCorporate = slug === "monterey-corporate-golf-outing";
+  const isPebble = slug === "pebble-beach-golf-package";
+  const title = isCorporate
+    ? `Monterey Peninsula Corporate Golf Outing — Groups of 8–400 Players`
+    : isPebble
+    ? `Pebble Beach Golf Package — ${trip.durationDays}-Day Monterey Peninsula Trip`
+    : `${trip.title} — ${trip.durationDays}-Day Monterey Golf Trip`;
+  const description = isCorporate
+    ? `Plan a corporate golf outing on the Monterey Peninsula — shotgun starts, tee sheet blocks at Bayonet, Poppy Hills, Carmel Valley Ranch, and more. Hotel room blocks and transfers included. Groups of 8–400. Custom quote in 24 hours.`
+    : isPebble
+    ? `${trip.durationDays}-day Pebble Beach golf package — IAGTO tee times at Pebble Beach Golf Links®, Spyglass Hill™, and more. Lodging at The Lodge or The Inn. End-to-end trip planning. Custom quote in 24 hours.`
+    : `${trip.durationDays}-day Monterey Peninsula golf trip — ${trip.rounds}. ${trip.target} Groups of 2–400. Custom quote within 24 hours.`;
 
   const heroImage = trip.image
     ? trip.image.startsWith("/") ? `https://${SITE.domain}${trip.image}` : trip.image
