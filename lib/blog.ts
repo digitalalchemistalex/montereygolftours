@@ -719,4 +719,146 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ],
   },
 
+  "bayonet-vs-black-horse-golf": {
+    slug: "bayonet-vs-black-horse-golf",
+    cardTitle: "Bayonet vs Black Horse",
+    cardImage: "/images/bayonet-golf-course/gallery-1.webp",
+    title: "Bayonet vs Black Horse: Which Monterey Peninsula Course Should Your Group Play?",
+    category: "Course Guides",
+    datePublished: "2026-09-16",
+    dateModified: "2026-09-16",
+    intro:
+      "Bayonet and Black Horse share the same former Fort Ord military land in Seaside, the same operator, and the same routing history. They are not the same golf course. Bayonet is harder, longer, and more demanding. Black Horse is more scenic and more forgiving. Here is how to decide which one your group should play.",
+    sections: [
+      {
+        heading: "The basics",
+        paragraphs: [
+          "Both courses were designed by General Robert B. McClure in 1954 and redesigned by Gene Bates in 2007. Both are semi-private and open to public play, both are managed by Troon, and both sit on the same property at 1 McClure Way in Seaside. Green fees are comparable.",
+          "Bayonet: Par 72, 7,024 yards, course rating 74.8, slope 139. Black Horse: Par 72, 7,024 yards, course rating 73.7, slope 141. The slope number is the clearest single-number summary of the difference — Black Horse is rated slightly more difficult for bogey golfers despite its lower course rating, because its hazards punish errant shots more consistently even if the overall scoring par is lower.",
+        ],
+      },
+      {
+        heading: "Where Bayonet is harder",
+        paragraphs: [
+          "Bayonet is nationally ranked for difficulty — Golf Digest placed it 35th on its list of the 50 Toughest Golf Courses in the United States. The back nine is the reason. Holes 11 through 15 form a stretch known as the Combat Corner, which plays directly into the prevailing wind off Monterey Bay. It is relentless for players who are not comfortable shaping shots in wind.",
+          "The course rating of 74.8 means a scratch golfer is expected to average nearly 3 shots over par. For a 15-handicap group, that translates to a genuinely punishing day if the wind is up. The green complexes are fast and undulating, and the rough is not forgiving.",
+        ],
+      },
+      {
+        heading: "Where Black Horse is different",
+        paragraphs: [
+          "Black Horse trades the Combat Corner for panoramic Monterey Bay views throughout the round — the views are better and more consistent than Bayonet. The fairways are slightly wider, the routing is less wind-exposed on the back nine, and mid-handicap players tend to score better here than on Bayonet.",
+          "The slope of 141 reflects that the course has significant difficulty for bogey golfers specifically. Hazards are well-placed, and the penalty for missing the fairway is real. But it does not have Bayonet’s sustained back-nine difficulty spike.",
+        ],
+      },
+      {
+        heading: "The Fort Ord two-day combination",
+        paragraphs: [
+          "Most groups visiting the peninsula who want to play both courses do a Fort Ord two-day: one round at Bayonet, one at Black Horse, both on the same property. This is one of the best-value two-day golf combinations on the peninsula — two distinct championship layouts, no driving between venues, and green fees well below Pebble Beach Resorts pricing.",
+          "Monterey Golf Tours includes this combination in the 3-Day Monterey Golf Weekend itinerary and can build it into any custom package. It pairs naturally with a third round at Pacific Grove Golf Links for groups who want a coastal ocean-view contrast to the Fort Ord inland layout.",
+        ],
+      },
+      {
+        heading: "Which to choose if you are only playing one",
+        paragraphs: [
+          "Play Bayonet if your group is serious golfers, scratch to mid-handicap, and wants the hardest public test on the peninsula. The Combat Corner alone is worth the round.",
+          "Play Black Horse if your group is mixed handicap, if some players want scenery as much as challenge, or if you are pairing it with a more demanding course later in the trip and want a slightly more forgiving warm-up or wind-down round.",
+          "For most groups, the answer is both.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Bayonet: 74.8 rating, slope 139 — nationally ranked as one of the toughest public courses in the US",
+      "Black Horse: 73.7 rating, slope 141 — panoramic Monterey Bay views, slightly more forgiving for mid-handicap groups",
+      "Both are Par 72, 7,024 yards, same property, same green fees",
+      "Combat Corner (holes 11–15 at Bayonet) is the defining differentiator — a sustained wind-exposed back-nine challenge",
+      "Fort Ord two-day combination is the best value two-course package on the peninsula",
+    ],
+    internalLinks: [
+      { label: "Bayonet course page", href: "/golf-courses/bayonet/" },
+      { label: "Black Horse course page", href: "/golf-courses/black-horse/" },
+      { label: "3-Day Monterey Golf Weekend itinerary", href: "/itineraries/3-day-monterey-golf-weekend/" },
+      { label: "Seaside destination guide", href: "/destinations/seaside/" },
+    ],
+    faqs: [
+      { q: "Is Bayonet or Black Horse harder?", a: "Bayonet is the harder course overall, with a course rating of 74.8 versus Black Horse's 73.7. However, Black Horse has a slightly higher slope (141 vs 139), meaning it is relatively harder for bogey golfers specifically. The Combat Corner at Bayonet — holes 11 through 15 playing directly into the prevailing wind — is the most difficult sustained stretch on either course." },
+      { q: "Can you play both Bayonet and Black Horse in one day?", a: "Technically yes, but most groups split them across two days for a proper experience. Both are full 18-hole courses at 7,024 yards from the back tees. Playing both in one day is a long golf day and does not do justice to either course." },
+      { q: "Which course has better views, Bayonet or Black Horse?", a: "Black Horse. Monterey Bay views are present throughout the round at Black Horse, particularly on the back nine. Bayonet has some Bay views but the course routing puts more emphasis on the military-heritage terrain than the ocean scenery." },
+      { q: "How much does it cost to play Bayonet and Black Horse?", a: "Green fees vary by season and tee time. Contact Monterey Golf Tours for current rates — we coordinate tee times at both courses as part of Monterey Peninsula golf packages for groups of 2 to 400." },
+    ],
+  },
+  "monterey-golf-group-size": {
+    slug: "monterey-golf-group-size",
+    cardTitle: "Group Size Planning Guide",
+    cardImage: "/images/pbc-portal/pb_portola_exterior_day.jpg",
+    title: "Planning a Monterey Golf Trip by Group Size: 4, 8, 12, 16, and 24+ Players",
+    category: "Trip Planning",
+    datePublished: "2026-09-16",
+    dateModified: "2026-09-16",
+    intro:
+      "Group size is the single variable that changes the most about how a Monterey Peninsula golf trip gets planned. A foursome has near-total flexibility. A group of 24 needs tee sheet blocks booked months in advance. Here is exactly how planning changes as your group grows.",
+    sections: [
+      {
+        heading: "Groups of 2–4 players",
+        paragraphs: [
+          "The smallest groups have the most flexibility on the Monterey Peninsula. Most courses can accommodate a twosome or foursome with 2 to 4 weeks lead time outside of peak summer. Lodging options are unrestricted — any hotel on the peninsula works for a small group.",
+          "The one exception is Pebble Beach Golf Links®. Even for a foursome, the minimum 3-night stay at a Pebble Beach Resorts® property applies, and peak-season tee times can require 60 to 90 days lead. Small groups working through Monterey Golf Tours’ IAGTO allocation can sometimes access PBGL tee times with shorter lead time.",
+        ],
+      },
+      {
+        heading: "Groups of 8–12 players",
+        paragraphs: [
+          "Eight to twelve players is the most common group size Monterey Golf Tours works with. At this size, you are typically booking two or three consecutive tee times rather than a full tee sheet block, which keeps you under the threshold most courses use to trigger their tournament/outing rate structure.",
+          "Lead time at this size: 60 days minimum for May through October, 30 days for shoulder season. The Portola Hotel in downtown Monterey is the natural anchor property at this group size — 560 rooms, no minimum room block for groups under 15, walking distance to Cannery Row.",
+          "At 12 players, Bayonet and Black Horse will accommodate back-to-back tee times easily. For Pebble Beach Resorts® courses, 12-player groups should plan for IAGTO access through Monterey Golf Tours rather than attempting direct booking.",
+        ],
+      },
+      {
+        heading: "Groups of 16–24 players",
+        paragraphs: [
+          "At 16 to 24 players, you are moving into tee sheet block territory. Most courses on the peninsula will quote a group/outing rate at this size, which typically includes dedicated consecutive tee times, sometimes a starter, and simplified billing. Bayonet and Black Horse are the easiest courses on the peninsula to accommodate this group size for a full outing day.",
+          "Lead time at 16 to 24: 90 days minimum peak season, 60 days shoulder. Hotel room blocks become relevant at this size — the Portola Hotel can accommodate groups of this size with a formal room block at group rates. Carmel Valley Ranch and Hyatt Regency Monterey are also viable options.",
+          "Ground transportation starts to matter at this group size. Moving 16 to 24 players between a downtown Monterey hotel and courses in Seaside or Carmel Valley is a logistics item that benefits from coordination. Monterey Golf Tours handles shuttle and transfer arrangements as part of the package.",
+        ],
+      },
+      {
+        heading: "Groups of 40–100 players",
+        paragraphs: [
+          "At 40 or more players, you are typically looking at a shotgun start — all foursomes tee off simultaneously from different holes at a set time. Courses that accommodate shotgun starts for groups this size on the Monterey Peninsula include Bayonet, Black Horse, Laguna Seca Golf Ranch, and TPC Monterey at Pasadera (Monday public access for groups).",
+          "Pebble Beach Resorts® courses do not offer shotgun starts for outside groups. Groups of 40 or more wanting to include a PBGL round typically break into smaller waves over consecutive morning tee times rather than a shotgun format.",
+          "At this group size, hotel logistics become as important as golf logistics. The Portola Hotel is the only property on the peninsula with conference center capacity adjacent to a 560-room hotel — it is the natural choice for groups of 40 to 100 that need meeting space alongside golf.",
+        ],
+      },
+      {
+        heading: "Groups of 100–400 players",
+        paragraphs: [
+          "Large incentive groups and corporate outings of 100 or more require full tee sheet buyouts and, in some cases, multiple courses running simultaneously on the same day. Bayonet and Black Horse together can run a combined tee sheet for groups up to roughly 200 players in a single shotgun day.",
+          "Groups of this size are the most logistics-intensive: multiple shuttle routes, staggered food and beverage service, scoring and prizes, and a single contract covering all vendors. Monterey Golf Tours coordinates all of this as a single point of contact.",
+          "Lead time for groups of 100 or more: 6 to 12 months minimum for any peak-season date. This is not a soft recommendation — tee sheet buyouts at the right courses during the right dates simply do not exist on shorter notice.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Groups of 2–4: near-total flexibility, 2–4 week lead time outside peak season",
+      "Groups of 8–12: most common size, 60-day lead time peak season, consecutive tee times standard",
+      "Groups of 16–24: tee sheet block territory, 90-day lead time peak, room blocks and shuttles become relevant",
+      "Groups of 40–100: shotgun start format, Bayonet/Black Horse/Laguna Seca most accommodating",
+      "Groups of 100–400: full tee sheet buyouts, 6–12 month lead time, Monterey Golf Tours coordinates all vendors",
+    ],
+    internalLinks: [
+      { label: "Corporate golf outing itinerary", href: "/itineraries/monterey-corporate-golf-outing/" },
+      { label: "Bayonet course page", href: "/golf-courses/bayonet/" },
+      { label: "Black Horse course page", href: "/golf-courses/black-horse/" },
+      { label: "Portola Hotel", href: "/hotels/portola-hotel/" },
+      { label: "Get a custom group quote", href: "/quote/" },
+    ],
+    faqs: [
+      { q: "What is the minimum group size for a Monterey golf trip?", a: "Monterey Golf Tours plans trips for groups as small as 2 players. There is no formal minimum. Packages are optimized for groups of 4 or more, but we handle twosome bookings at the same level of care." },
+      { q: "Can a group of 20 get a shotgun start on the Monterey Peninsula?", a: "Yes. Bayonet and Black Horse regularly accommodate shotgun starts for groups of 20 or more. TPC Monterey at Pasadera also accommodates groups on Mondays. Shotgun starts at Pebble Beach Resorts® courses are not available for outside groups." },
+      { q: "How far in advance should a group of 16 book a Monterey golf trip?", a: "90 days minimum for May through October dates. For groups of 16 or more wanting Pebble Beach Resorts® courses, 90 to 120 days is advisable. January through March dates can sometimes be arranged within 30 to 60 days." },
+      { q: "What is the largest group Monterey Golf Tours can handle?", a: "We plan trips for groups up to 400 players. Large groups of 100 or more typically require full tee sheet buyouts at Bayonet and Black Horse and 6 to 12 months lead time for peak-season dates. Contact us early for large group inquiries." },
+      { q: "Which hotel in Monterey is best for large golf groups?", a: "The Portola Hotel & Spa is the most group-capable property on the peninsula — 560 rooms, adjacent Monterey Conference Center, and downtown location 15 minutes from both Bayonet/Black Horse and the Pebble Beach gate. For groups also playing Pebble Beach Resorts® courses, The Inn at Spanish Bay™ accommodates moderate-size groups and offers on-site golf access." },
+    ],
+  },
+
 };
