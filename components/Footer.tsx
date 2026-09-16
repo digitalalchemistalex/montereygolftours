@@ -155,7 +155,7 @@ export default function Footer() {
           Fog typically clears by 10am &middot; Best tee time: 8&ndash;10am
         </span>
         <span className="font-ui text-[11px] text-[#6b6357]">
-          <Link href="/privacy/">Privacy Policy</Link> &middot; <Link href="/terms/">Terms of Use</Link>
+          <Link href="/privacy/">Privacy Policy</Link> &middot; <Link href="/terms/">Terms of Use</Link> &middot; <Link href="/privacy/#do-not-sell">Do Not Sell or Share My Personal Information</Link>
         </span>
       </div>
     </footer>
