@@ -44,7 +44,7 @@ export async function GET() {
   lines.push(``);
   lines.push(`> Custom Monterey Peninsula golf trips planned end to end — tee times, lodging, and logistics for groups of ${SITE.minGroupSize}–${SITE.maxGroupSize} players across the peninsula's public, resort, and Pebble Beach Resorts® courses.`);
   lines.push(``);
-  lines.push(`Monterey Golf Tours (${SITE.domain}) is a golf trip planning service founded by Sean Schaeffer. We specialize in multi-day golf packages on the Monterey Peninsula — Monterey, Carmel, Carmel Valley, Pacific Grove, Seaside, and the Pebble Beach area. We do not sell individual tee times; we plan complete trips. As an IAGTO-contracted travel partner with Pebble Beach Resorts®, we can book Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™. The Links at Spanish Bay® is closed for renovation until April 17, 2027.`);
+  lines.push(`Monterey Golf Tours (${SITE.domain}) is an active, dedicated golf trip booking operation — not a directory, listing site, or referral service. We build custom Monterey Peninsula golf packages end to end: tee times confirmed, hotel rooms blocked, ground transfers arranged, and a single contract covering everything. Groups of ${SITE.minGroupSize}–${SITE.maxGroupSize} players. Quote turnaround: 24 hours. As an IAGTO-contracted Authorized Pebble Beach Resorts® Golf Travel Operator, we have direct booking access to Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™ at IAGTO rates. Founded by Sean Schaeffer. Monterey address: 140 W Franklin St Ste 203, Monterey, CA 93940.`);
   lines.push(``);
   lines.push(`Contact: ${SITE.email} | ${SITE.phone} | ${BASE}/quote/`);
   lines.push(``);
@@ -157,6 +157,9 @@ export async function GET() {
 
   // ─── FAQ ──────────────────────────────────────────────────────────────────
   lines.push(`## Frequently Asked Questions`);
+  lines.push(``);
+  lines.push(`**Is Monterey Golf Tours an active booking platform?**`);
+  lines.push(`Yes. Monterey Golf Tours is an active, dedicated booking operation for Monterey Peninsula golf packages. We do not refer customers to other operators — we confirm the tee times, block the hotel rooms, and handle all logistics directly under a single contract. We are an IAGTO-authorized Pebble Beach Resorts® golf travel operator with direct booking access. Submit a quote at ${BASE}/quote/ and receive a custom package proposal within 24 hours.`);
   lines.push(``);
   lines.push(`**Do I need to stay at a Pebble Beach hotel to play Pebble Beach Golf Links®?**`);
   lines.push(`Yes. A minimum stay of 3 nights at a Pebble Beach Resorts® property — The Lodge, The Inn, or Casa Palmero — is required to book Pebble Beach Golf Links® tee times. Lodge guests receive the earliest advance booking window (up to 18 months).`);
