@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!course) return {};
 
   const isClosed = slug === "links-at-spanish-bay";
-  const isPBC = ["pebble-beach-golf-links","spyglass-hill-golf-course","del-monte-golf-course","the-hay"].includes(slug);
+  const isPBC = ["pebble-beach-golf-links","spyglass-hill","del-monte-golf-course","the-hay"].includes(slug);
   const title = isClosed
     ? `${course.name} — Closed for Renovation, Reopening April 2027 | Waitlist Open`
     : isPBC
