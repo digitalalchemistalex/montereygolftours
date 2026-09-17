@@ -1038,3 +1038,39 @@ Homepage FAQ category images (Trip Planning, Timing & Logistics, Lodging & Trave
 - IAGTO rates for PBGL/SH/Del Monte
 - Higher-res hotel heroes: Monterey Plaza, InterContinental, Hotel Abrego, Monterey Beach Hotel
 - Twilio upgrade + toll-free verification
+
+## SESSION: Sep 16 2026 — Contact + FAQ Page Fixes
+
+### Changes this session
+
+| File | Commit | What changed |
+|---|---|---|
+| `app/contact/page.tsx` | `79ee510` | Replace Unsplash pool hero → PBC portal `17md_2016_coastline.jpg` |
+| `app/contact/page.tsx` | `8cfb12b` | Title strengthened, meta description rewritten, OG tags added, ContactPage schema now includes telephone/email/address, speakable expanded to `.speakable-contact`, sub-heading added to hero |
+| `app/faq/page.tsx` | `ce5174d` | Title → keyword-rich, OG tags added, speakable selectors fixed (`h1` + `.faq-answer`), h1 now visible (was sr-only), speakable sub-heading added |
+| `components/FAQ.tsx` | `dc4800g` | All 3 Unsplash category icons replaced with PBC portal images; Spyglass Hill® → Spyglass Hill™ (3 instances) |
+
+### Image replacements
+
+| Location | Was | Now |
+|---|---|---|
+| Contact page hero | Unsplash pool/resort | `/images/pbc-portal/17md_2016_coastline.jpg` |
+| FAQ page hero | Unsplash misty golf course | `/images/pbc-portal/spyglass_7_2016_ground_green.jpg` |
+| FAQ category — Trip planning | Unsplash | `/images/pbc-portal/17md_2016_coastline.jpg` |
+| FAQ category — Timing & logistics | Unsplash | `/images/pbc-portal/pbgl_9_2013_ground_fairway.jpg` |
+| FAQ category — Lodging & travel | Unsplash | `/images/pbc-portal/lodge_2025_exterior.jpg` |
+
+### Schema / SEO fixes
+
+| Page | Fix |
+|---|---|
+| /contact/ | OG tags added; ContactPage schema now has telephone, email, PostalAddress; speakable targets h1 + .speakable-contact |
+| /faq/ | OG tags added; speakable fixed (was targeting .faq-section which didn't exist — now targets .faq-answer); h1 visible in DOM |
+| /faq/ component | Spyglass Hill® → Spyglass Hill™ in 3 FAQ answers |
+
+### Vercel token updated
+- Old (expired): `vcp_[expired — see memory overview.md]`
+- Current (expires Jul 2 2027): `vcp_[see memory overview.md]`
+- Source of truth: memory `/projects/019e2c88-6a9b-7018-9939-8d05095776fd/overview.md`
+
+### All deploys READY — verified via GitHub commit status API
