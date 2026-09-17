@@ -57,8 +57,8 @@ export default function BlogIndexPage() {
       {/* Hero */}
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] md:min-h-[520px]">
         <Image
-          src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=2400&q=90"
-          alt="Golf course fairway on the Monterey Peninsula"
+          src="/images/pbc-portal/spyglass_11_2016_ground.jpg"
+          alt="Spyglass Hill Golf Course — Monterey Peninsula golf trip planning guides"
           fill
           priority
           className="object-cover"
