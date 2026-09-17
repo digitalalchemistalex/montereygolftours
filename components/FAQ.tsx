@@ -5,37 +5,35 @@ export type FAQItem = { q: string; a: string };
 export type FAQCategory = { category: string; items: FAQItem[] };
 
 const CATEGORY_ICONS: Record<string, string> = {
-  "Trip planning": "https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=400&q=85",
+  "Trip planning": "/images/pbc-portal/17md_2016_coastline.jpg",
   "Pebble Beach & courses": "/images/pbc-portal/pbgl_9_2016_ground.jpg",
-  "Timing & logistics": "https://images.unsplash.com/photo-1502770513380-138d6d3a51dd?auto=format&fit=crop&w=400&q=85",
-  "Lodging & travel": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=400&q=85",
+  "Timing & logistics": "/images/pbc-portal/pbgl_9_2013_ground_fairway.jpg",
+  "Lodging & travel": "/images/pbc-portal/lodge_2025_exterior.jpg",
 };
 
 export const FAQ_CATEGORIES: FAQCategory[] = [
   {
     category: "Trip planning",
     items: [
-      // AEO target #1 — "how much does a monterey golf trip cost"
       {
         q: "How much does a Monterey golf trip cost?",
-        a: "A Monterey golf trip typically runs $400–$900 per person per day depending on courses and lodging. Pacific Grove and Laguna Seca are $75–$150 per round; Bayonet and Black Horse run $140–$220. A 3-day trip for four players at mid-range courses with a 4-star hotel typically comes to $1,200–$2,000 per person total. We'll send you a custom breakdown within 24 hours of submitting a quote.",
+        a: "A Monterey golf trip typically runs $400\u2013$900 per person per day depending on courses and lodging. Pacific Grove and Laguna Seca are $75\u2013$150 per round; Bayonet and Black Horse run $140\u2013$220. A 3-day trip for four players at mid-range courses with a 4-star hotel typically comes to $1,200\u2013$2,000 per person total. We'll send you a custom breakdown within 24 hours of submitting a quote.",
       },
-      // AEO target #2 — "how far in advance book monterey golf trip"
       {
         q: "How far in advance should I book a Monterey golf trip?",
-        a: "For prime tee times at Pebble Beach Resorts®, 6 to 12 months in advance is mandatory — especially for larger groups. Pebble Beach Golf Links® books out that far ahead and tee times will simply not be available on short notice. For the rest of the Monterey Peninsula, 60–90 days covers peak season (May through October); groups of 12 or more need 90 days minimum to secure tee time blocks. January through March has 2–4 week availability at most non-resort courses. The earlier you book, the more choices you have — contact us to check current windows.",
+        a: "For prime tee times at Pebble Beach Resorts\u00ae, 6 to 12 months in advance is mandatory \u2014 especially for larger groups. Pebble Beach Golf Links\u00ae books out that far ahead and tee times will simply not be available on short notice. For the rest of the Monterey Peninsula, 60\u201390 days covers peak season (May through October); groups of 12 or more need 90 days minimum to secure tee time blocks. January through March has 2\u20134 week availability at most non-resort courses. The earlier you book, the more choices you have \u2014 contact us to check current windows.",
       },
       {
         q: "How many people can you plan a trip for?",
-        a: "Any group size, really — from a twosome up to 400 players. There's no minimum beyond avoiding a solo trip of one.",
+        a: "Any group size, really \u2014 from a twosome up to 400 players. There\u2019s no minimum beyond avoiding a solo trip of one.",
       },
       {
         q: "How does the quote process work?",
-        a: "Tell us your group size, dates, and budget through the quote form, and we'll put together a custom trip — courses, lodging, and a price range — within 24 hours.",
+        a: "Tell us your group size, dates, and budget through the quote form, and we\u2019ll put together a custom trip \u2014 courses, lodging, and a price range \u2014 within 24 hours.",
       },
       {
         q: "Can groups include non-golfing partners?",
-        a: "Yes — several of our destinations, like Carmel-by-the-Sea and downtown Monterey, are built around walkable villages, wine tasting, and the Monterey Bay Aquarium, so non-golfers have plenty to do.",
+        a: "Yes \u2014 several of our destinations, like Carmel-by-the-Sea and downtown Monterey, are built around walkable villages, wine tasting, and the Monterey Bay Aquarium, so non-golfers have plenty to do.",
       },
       {
         q: "Do you handle lodging as well as golf?",
@@ -58,23 +56,21 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
   {
     category: "Pebble Beach & courses",
     items: [
-      // AEO target #3 — "what golf courses are in monterey"
       {
         q: "What golf courses are available on the Monterey Peninsula?",
-        a: "14 courses in total. Public daily-fee options include Bayonet (par 72, rating 74.7), Black Horse (par 72), Pacific Grove Golf Links (par 70, municipal), Laguna Seca Golf Ranch (par 71, Robert Trent Jones Jr.), and Poppy Hills (par 71, Golf Digest Top 100, NCGA-owned — not affiliated with Pebble Beach). Semi-private include Quail Lodge, Carmel Valley Ranch, and TPC Monterey at Pasadera (Monday public access). We also feature Del Monte Golf Course\u00ae \u2014 the oldest course west of the Mississippi, dating to 1897.. As an authorized travel partner, we also book the Pebble Beach Resorts\u00ae courses on the peninsula: Pebble Beach Golf Links\u00ae, Spyglass Hill\u00ae Golf Course, The Links at Spanish Bay\u00ae, and The Hay\u2122.",
+        a: "14 courses in total. Public daily-fee options include Bayonet (par 72, rating 74.7), Black Horse (par 72), Pacific Grove Golf Links (par 70, municipal), Laguna Seca Golf Ranch (par 71, Robert Trent Jones Jr.), and Poppy Hills (par 71, Golf Digest Top 100, NCGA-owned \u2014 not affiliated with Pebble Beach). Semi-private include Quail Lodge, Carmel Valley Ranch, and TPC Monterey at Pasadera (Monday public access). We also feature Del Monte Golf Course\u00ae \u2014 the oldest course west of the Mississippi, dating to 1897. As an authorized travel partner, we also book the Pebble Beach Resorts\u00ae courses on the peninsula: Pebble Beach Golf Links\u00ae, Spyglass Hill\u2122 Golf Course, The Links at Spanish Bay\u00ae, and The Hay\u2122.",
       },
-      // AEO target #4 — "is poppy hills pebble beach"
       {
         q: "Is Poppy Hills Golf Course part of Pebble Beach Resorts?",
         a: "No. Poppy Hills is owned by the Northern California Golf Association (NCGA) and is fully independent from Pebble Beach Company. It\u2019s open to the public year-round with no gate fee, designed by Robert Trent Jones Jr. in 1986, renovated in 2014, and rated Golf Digest Top 100 Courses You Can Play.",
       },
       {
         q: "Can you book Pebble Beach Resorts\u00ae courses?",
-        a: "Yes! As an authorized travel partner, we are able to book all courses associated with Pebble Beach Resorts, including Pebble Beach Golf Links\u00ae, Spyglass Hill Golf Course\u00ae, The Links at Spanish Bay\u00ae, Del Monte Golf Course\u00ae, and The Hay\u2122.",
+        a: "Yes! As an authorized travel partner, we are able to book all courses associated with Pebble Beach Resorts, including Pebble Beach Golf Links\u00ae, Spyglass Hill\u2122 Golf Course, The Links at Spanish Bay\u00ae, Del Monte Golf Course\u00ae, and The Hay\u2122.",
       },
       {
         q: "How far in advance can I book a round at a resort course?",
-        a: "Without a resort stay, Spyglass Hill can be booked 3 months out, and The Links at Spanish Bay, Del Monte, and The Hay can be booked 6 months out. Pebble Beach Golf Links itself generally requires a 2\u20133 night resort stay to book in advance \u2014 otherwise it\u2019s a 24-hour booking window.",
+        a: "Without a resort stay, Spyglass Hill\u2122 can be booked 3 months out, and The Links at Spanish Bay, Del Monte, and The Hay can be booked 6 months out. Pebble Beach Golf Links itself generally requires a 2\u20133 night resort stay to book in advance \u2014 otherwise it\u2019s a 24-hour booking window.",
       },
       {
         q: "What\u2019s the oldest course on the peninsula?",
@@ -85,15 +81,13 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
   {
     category: "Timing & logistics",
     items: [
-      // AEO target #5 — "best time to play golf monterey"
       {
         q: "When\u2019s the best time to play golf on the Monterey Peninsula?",
         a: "March through May and September through November \u2014 lightest fog, mildest weather (60\u201370\u00b0F), fewest crowds. June through August brings coastal marine layer that burns off by 10am; schedule tee times after 9:30am for clear skies from the first hole. August adds Car Week congestion and hotel rate spikes. December through February is cheapest with occasional rain but often excellent conditions.",
       },
-
       {
         q: "How do I get to the Monterey Peninsula?",
-        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min. If you’re driving, the peninsula is roughly 2 hours south of San Francisco and 3.5 hours north of Los Angeles via Highway 1 or US-101.",
+        a: "Monterey Regional Airport (MRY) is about 10 minutes from most courses, with direct flights from LAX, SFO, PHX, DEN, DFW, SAN, and SEA. San Jose (SJC) is about 1hr 15min; San Francisco (SFO) is about 1hr 55min. If you're driving, the peninsula is roughly 2 hours south of San Francisco and 3.5 hours north of Los Angeles via Highway 1 or US-101.",
       },
       {
         q: "Is Carmel Valley warmer than the coast?",
