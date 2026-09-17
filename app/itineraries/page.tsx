@@ -68,8 +68,8 @@ export default function ItinerariesIndexPage() {
 
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
-          src="https://images.unsplash.com/photo-1605147861225-7bcd55f8e513?auto=format&fit=crop&w=2400&q=90"
-          alt=""
+          src="/images/pbc-portal/pbgl_9_2020_aerial.jpg"
+          alt="Aerial view of Pebble Beach Golf Links hole 9 — Monterey Peninsula golf itineraries"
           fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
         <div
           className="absolute inset-0"
