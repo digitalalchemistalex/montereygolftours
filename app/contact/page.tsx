@@ -6,11 +6,28 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Monterey Golf Tours",
+  title: "Contact Monterey Golf Tours — Plan Your Monterey Peninsula Golf Trip",
   description:
-    "Get in touch with Monterey Golf Tours to start planning your Monterey Peninsula golf trip.",
+    "Contact Monterey Golf Tours to start planning your group golf trip on the Monterey Peninsula. Get a custom quote within 24 hours or call us directly.",
   alternates: {
     canonical: `https://${SITE.domain}/contact/`,
+  },
+  openGraph: {
+    title: "Contact Monterey Golf Tours — Plan Your Monterey Peninsula Golf Trip",
+    description:
+      "Contact Monterey Golf Tours to start planning your group golf trip on the Monterey Peninsula. Get a custom quote within 24 hours or call us directly.",
+    url: `https://${SITE.domain}/contact/`,
+    siteName: "Monterey Golf Tours",
+    images: [
+      {
+        url: `https://${SITE.domain}/images/pbc-portal/17md_2016_coastline.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "17-Mile Drive coastline on the Monterey Peninsula",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
   },
 };
 
@@ -24,17 +41,28 @@ export default function ContactPage() {
         "@type": "WebPage",
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["h1"],
+          cssSelector: ["h1", ".speakable-contact"],
         },
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: "Contact Monterey Golf Tours",
+        name: "Contact Monterey Golf Tours — Plan Your Monterey Peninsula Golf Trip",
         isPartOf: { "@id": `https://${SITE.domain}/#website` },
       },
       {
         "@type": "ContactPage",
         "@id": `${canonicalUrl}#contact`,
         url: canonicalUrl,
+        name: "Contact Monterey Golf Tours",
+        telephone: SITE.phone,
+        email: SITE.email,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "140 W Franklin St Ste 203",
+          addressLocality: "Monterey",
+          addressRegion: "CA",
+          postalCode: "93940",
+          addressCountry: "US",
+        },
       },
       {
         "@type": "BreadcrumbList",
@@ -67,6 +95,9 @@ export default function ContactPage() {
           <h1 className="font-display text-[32px] font-bold leading-[1.1] text-cream md:text-[48px]" style={{ textShadow: "0 2px 12px rgba(0,0,0,.5)" }}>
             Get in touch
           </h1>
+          <p className="speakable-contact mt-3 max-w-[480px] font-body text-[15px] leading-relaxed text-cream/80">
+            We plan Monterey Peninsula golf trips for groups of 2 to 400. Submit a quote request and we respond within 24 hours.
+          </p>
         </div>
       </section>
 
