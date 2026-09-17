@@ -59,12 +59,7 @@ const schemaGraph = {
       "provider": { "@id": `${BASE}/#travelagency` },
       "serviceType": "Golf Trip Planning",
       "areaServed": { "@type": "Place", "name": "Pebble Beach, California" },
-      "description": "End-to-end Pebble Beach golf trip planning — IAGTO tee times at Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™; lodging at The Lodge at Pebble Beach™, The Inn at Spanish Bay™, or Casa Palmero™; and all transfers.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "description": "Custom quote based on group size, dates, course selection, and lodging tier. Contact for pricing."
-      }
+      "description": "End-to-end Pebble Beach golf trip planning — IAGTO tee times at Pebble Beach Golf Links®, Spyglass Hill™ Golf Course, Del Monte™ Golf Course, and The Hay™; lodging at The Lodge at Pebble Beach™, The Inn at Spanish Bay™, or Casa Palmero™; and all transfers."
     },
     {
       "@type": "FAQPage",
