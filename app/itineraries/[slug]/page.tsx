@@ -133,12 +133,15 @@ export default async function ItineraryPage({ params }: Props) {
             url: `https://${SITE.domain}/quote/`,
           },
         } : {}),
-        itinerary: trip.days.map((d: { title: string; items: string[] }) => ({
-          "@type": "Event",
-          name: d.title,
-          description: d.items.join(" "),
-          location: { "@type": "Place", name: "Monterey Peninsula, California" },
-        })),
+        itinerary: {
+          "@type": "ItemList",
+          itemListElement: trip.days.map((d: { title: string; items: string[] }, idx: number) => ({
+            "@type": "ListItem",
+            position: idx + 1,
+            name: d.title,
+            description: d.items.join(" "),
+          })),
+        },
       },
       // Service + Product dual type — required for Google review snippet eligibility
       {
