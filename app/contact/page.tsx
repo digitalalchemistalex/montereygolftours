@@ -55,9 +55,9 @@ export default function ContactPage() {
 
       <section className="relative flex min-h-[420px] flex-col justify-end bg-[#16242c] px-6 pb-10 md:min-h-[520px] md:px-14 md:pb-12">
         <Image
-          src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=90"
-          alt="Luxury resort pool and terrace"
-          fill priority className="object-cover" style={{ objectPosition: "center 70%" }} />
+          src="/images/pbc-portal/17md_2016_coastline.jpg"
+          alt="17-Mile Drive coastline on the Monterey Peninsula"
+          fill priority className="object-cover" style={{ objectPosition: "center 50%" }} />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, rgba(15,25,35,.32) 0%, rgba(15,25,35,0) 38%, rgba(20,40,20,.15) 100%)" }}
