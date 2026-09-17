@@ -106,8 +106,8 @@ export default async function PackagesPage() {
       {/* Hero */}
       <section className="relative flex min-h-[440px] flex-col justify-end bg-[#16242c] md:min-h-[540px]">
         <Image
-          src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=2400&q=90"
-          alt="Monterey Peninsula golf"
+          src="/images/pbc-portal/17md_2016_coastline.jpg"
+          alt="17-Mile Drive coastline — Monterey Peninsula golf packages"
           fill priority
           className="object-cover object-[center_70%]"
         />
