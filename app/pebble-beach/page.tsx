@@ -97,16 +97,26 @@ const schemaGraph = {
       "name": "AT&T Pebble Beach Pro-Am 2027",
       "startDate": "2027-02-01",
       "endDate": "2027-02-07",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": { "@type": "Place", "name": "Pebble Beach Golf Links®", "address": { "@type": "PostalAddress", "addressLocality": "Pebble Beach", "addressRegion": "CA" } },
-      "description": "Annual PGA Tour event at Pebble Beach Golf Links®. Plan a trip around the Pro-Am with Monterey Golf Tours."
+      "image": "https://montereygolftours.com/images/pbc-portal/pebble-beach-golf-links-18th-hole.jpg",
+      "description": "Annual PGA Tour event at Pebble Beach Golf Links®. Plan a trip around the Pro-Am with Monterey Golf Tours.",
+      "organizer": { "@type": "Organization", "name": "PGA Tour", "url": "https://www.pgatour.com" },
+      "offers": { "@type": "Offer", "url": "https://montereygolftours.com/quote/", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Book a golf trip around the AT&T Pebble Beach Pro-Am — custom packages from Monterey Golf Tours." }
     },
     {
       "@type": "Event",
       "name": "2027 U.S. Open Championship",
       "startDate": "2027-06-17",
       "endDate": "2027-06-20",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": { "@type": "Place", "name": "Pebble Beach Golf Links®", "address": { "@type": "PostalAddress", "addressLocality": "Pebble Beach", "addressRegion": "CA" } },
-      "description": "The 2027 U.S. Open at Pebble Beach Golf Links®. Book your trip around the championship with Monterey Golf Tours."
+      "image": "https://montereygolftours.com/images/pbc-portal/pebble-beach-golf-links-18th-hole.jpg",
+      "description": "The 2027 U.S. Open at Pebble Beach Golf Links®. Book your trip around the championship with Monterey Golf Tours.",
+      "organizer": { "@type": "Organization", "name": "United States Golf Association", "url": "https://www.usga.org" },
+      "offers": { "@type": "Offer", "url": "https://montereygolftours.com/quote/", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Book a golf trip around the 2027 U.S. Open at Pebble Beach — custom packages from Monterey Golf Tours." }
     }
   ]
 };
