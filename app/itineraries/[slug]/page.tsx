@@ -168,14 +168,7 @@ export default async function ItineraryPage({ params }: Props) {
             availability: "https://schema.org/InStock",
             url: `https://${SITE.domain}/quote/`,
           },
-        } : {
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "USD",
-            availability: "https://schema.org/InStock",
-            url: `https://${SITE.domain}/quote/`,
-          },
-        }),
+        } : {}),
       },
       {
         "@type": "FAQPage",
