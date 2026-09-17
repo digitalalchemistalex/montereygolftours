@@ -79,13 +79,7 @@ const homepageSchema = {
       description:
         "End-to-end Monterey Peninsula golf trip planning for groups: tee times at 14 courses, lodging at 9 hotels, ground transfers, and a custom quote within 24 hours.",
       url: "https://montereygolftours.com/quote/",
-      offers: {
-        "@type": "Offer",
-        url: "https://montereygolftours.com/quote/",
-        description: "Custom Monterey golf package — price varies by group size, courses, and lodging",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-      },
+
     },
 
     // 4. WebPage — page-level signals; speakable targets H1 + FAQ
