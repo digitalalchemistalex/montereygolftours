@@ -126,7 +126,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "tpc-monterey-at-pasadera",
-    image: "https://images.unsplash.com/photo-1619468129361-605ebea04b44?auto=format&fit=crop&w=1400&q=90",
+    image: "/images/pbc-portal/spyglass_4_2016_ground_green.jpg",
     name: "TPC Monterey at Pasadera",
     city: "Monterey, CA",
     par: 71,
