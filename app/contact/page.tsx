@@ -6,14 +6,14 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Monterey Golf Tours — Plan Your Monterey Peninsula Golf Trip",
+  title: "Contact Monterey Golf Tours — Get a Custom Quote",
   description:
     "Contact Monterey Golf Tours to start planning your group golf trip on the Monterey Peninsula. Get a custom quote within 24 hours or call us directly.",
   alternates: {
     canonical: `https://${SITE.domain}/contact/`,
   },
   openGraph: {
-    title: "Contact Monterey Golf Tours — Plan Your Monterey Peninsula Golf Trip",
+    title: "Contact Monterey Golf Tours — Get a Custom Quote",
     description:
       "Contact Monterey Golf Tours to start planning your group golf trip on the Monterey Peninsula. Get a custom quote within 24 hours or call us directly.",
     url: `https://${SITE.domain}/contact/`,
