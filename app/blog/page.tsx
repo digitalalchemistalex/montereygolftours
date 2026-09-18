@@ -7,9 +7,9 @@ import { BLOG_POSTS } from "@/lib/blog";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Monterey Golf Trip Planning Blog",
+  title: "Monterey Golf Trip Planning Blog — Course Guides & Advice",
   description:
-    "Trip planning guides, course breakdowns, and seasonal advice for golfing the Monterey Peninsula.",
+    "Golf trip planning guides, course reviews, and local intel for the Monterey Peninsula. Best courses, timing, and how to plan a group trip.",
   alternates: {
     canonical: `https://${SITE.domain}/blog/`,
   },
