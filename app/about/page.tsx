@@ -11,14 +11,14 @@ const MODIFIED = "2026-09-16";
 export const metadata: Metadata = {
   title: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
   description:
-    "IAGTO-contracted Pebble Beach Resorts® partner. Custom multi-day golf trips on the Monterey Peninsula — courses, lodging, tee times, end to end. Groups of 2–400.",
+    "IAGTO-contracted Pebble Beach Resorts® partner. Custom Monterey Peninsula golf trips — courses, lodging, tee times, end to end. Groups of 2–400.",
   alternates: {
     canonical: `https://${SITE.domain}/about/`,
   },
   openGraph: {
     title: "About Monterey Golf Tours | Custom Peninsula Golf Trips",
     description:
-      "IAGTO-contracted Pebble Beach Resorts® partner. We plan custom multi-day golf trips on the Monterey Peninsula — courses, lodging, and tee times handled end to end.",
+      "IAGTO-contracted Pebble Beach Resorts® partner. Custom Monterey Peninsula golf trips — courses, lodging, tee times, end to end. Groups of 2–400.",
     url: `https://${SITE.domain}/about/`,
     type: "website",
   },
