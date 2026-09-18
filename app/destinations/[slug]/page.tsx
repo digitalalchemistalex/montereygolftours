@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!dest) return {};
 
   // Keyword-first title: "Golf in [City] — [descriptor] | Monterey Golf Tours"
-  const title = `Golf in ${dest.name}, California`;
+  const title = `Golf in ${dest.name} — Courses, Hotels & Trip Planning`;
   const description = dest.speakable?.slice(0, 155);
 
   return {
