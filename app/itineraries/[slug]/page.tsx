@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `Monterey Peninsula Corporate Golf Outing — Groups of 8–400 Players`
     : isPebble
     ? `Pebble Beach Golf Package — ${trip.durationDays}-Day Monterey Peninsula Trip`
-    : `${trip.title} — ${trip.durationDays}-Day Monterey Golf Trip`;
+    : `${trip.title} — Peninsula Courses, Hotels & Tee Times`;
   const description = isCorporate
     ? `Plan a corporate golf outing on the Monterey Peninsula — shotgun starts, tee sheet blocks at Bayonet, Poppy Hills, Carmel Valley Ranch, and more. Hotel room blocks and transfers included. Groups of 8–400. Custom quote in 24 hours.`
     : isPebble
