@@ -79,9 +79,9 @@ const schemaGraph = {
 };
 
 export const metadata: Metadata = {
-  title: "Pebble Beach Golf Links® Live Cam — Watch the Course Live | Monterey Golf Tours",
+  title: "Pebble Beach Golf Links® Live Cam — Watch the Course Live",
   description:
-    "Watch Pebble Beach Golf Links® live — four cameras on the 18th green, 17th green, 1st tee, and practice putting green. Hosted by Pebble Beach Resorts®. Plan your round with us.",
+    "Watch Pebble Beach Golf Links® live — four cameras on the 18th green, 17th green, 1st tee, and putting green. Hosted by Pebble Beach Resorts®.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
