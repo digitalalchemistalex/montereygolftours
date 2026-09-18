@@ -46,6 +46,7 @@ export default function HeroCentered() {
         alt="Monterey Peninsula golf courses — aerial view of the California coast at golden hour"
         fill
         priority
+        fetchPriority="high"
         quality={92}
         sizes="100vw"
         className="hidden object-cover sm:block"
@@ -56,6 +57,7 @@ export default function HeroCentered() {
         alt="Monterey Peninsula golf — coastal fairway at Pebble Beach area. © Pebble Beach Company"
         fill
         priority
+        fetchPriority="high"
         quality={95}
         sizes="100vw"
         className="block object-cover sm:hidden"
