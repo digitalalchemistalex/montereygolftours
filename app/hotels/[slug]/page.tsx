@@ -41,13 +41,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Hotel pages
   const hotel = HOTEL_DETAILS[slug];
   if (hotel) {
+    const TITLE_NAME: Record<string, string> = {
+      "embassy-suites-monterey-bay-seaside": "Embassy Suites Monterey Bay",
+      "monterey-beach-hotel": "Monterey Beach Hotel",
+    };
+    const displayName = TITLE_NAME[slug] ?? hotel.name;
     const isPBCHotel = ["lodge-at-pebble-beach","inn-at-spanish-bay","casa-palmero"].includes(slug);
     const hasOnSiteGolf = hotel.onSiteGolf !== null;
     const hotelTitle = isPBCHotel
       ? `${hotel.name} — Golf Packages & Pebble Beach Resorts® Stay`
       : hasOnSiteGolf
-      ? `${hotel.name} — On-Site Golf & Monterey Peninsula Packages`
-      : `${hotel.name} — Golf Group Hotel, Monterey Peninsula`;
+      ? `${displayName} — On-Site Golf & Monterey Peninsula Packages`
+      : `${displayName} — Golf Group Hotel, Monterey Peninsula`;
     const hotelDesc = isPBCHotel
       ? `Stay at ${hotel.name} with Monterey Golf Tours — IAGTO-authorized Pebble Beach Resorts® tee times, group rates, and end-to-end trip planning. Custom quote in 24 hours.`
       : hasOnSiteGolf
