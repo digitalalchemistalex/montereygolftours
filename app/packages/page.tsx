@@ -21,7 +21,7 @@ function gthsImg(index: number): string {
 export const metadata: Metadata = {
   title: "Monterey Golf Trip Packages — 3 to 7 Days | Monterey Golf Tours",
   description:
-    "Real Monterey Peninsula golf packages from $564/person — 3 to 7 days, priced from actual course and lodging rates. Fully customizable for groups of 2 to 400.",
+    "Real Monterey Peninsula golf packages — 3 to 7 days, priced from actual course and lodging rates. Fully customizable for groups of 2 to 400.",
   alternates: { canonical: `https://${SITE.domain}/packages/` },
   openGraph: {
     title: "Monterey Golf Trip Packages | Monterey Golf Tours",
