@@ -123,7 +123,7 @@ const schemaGraph = {
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Pebble Beach Golf Packages",
+  title: "Pebble Beach Golf Packages — IAGTO Authorized Operator",
   description: "Book a Pebble Beach golf package with an IAGTO Authorized Operator. Pebble Beach Golf Links, Spyglass Hill, Spanish Bay, Del Monte. Custom quotes in 24h.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
