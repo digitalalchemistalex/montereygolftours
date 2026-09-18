@@ -19,18 +19,18 @@ function gthsImg(index: number): string {
 }
 
 export const metadata: Metadata = {
-  title: "Monterey Golf Trip Packages — 3 to 7 Days | Monterey Golf Tours",
+  title: "Monterey Golf Trip Packages — 3 to 7 Days",
   description:
     "Real Monterey Peninsula golf packages — 3 to 7 days, priced from actual course and lodging rates. Fully customizable for groups of 2 to 400.",
   alternates: { canonical: `https://${SITE.domain}/packages/` },
   openGraph: {
-    title: "Monterey Golf Trip Packages | Monterey Golf Tours",
+    title: "Monterey Golf Trip Packages — 3 to 7 Days",
     description: "Real Monterey Peninsula golf packages priced from actual course and lodging rates. 3 to 7 days, fully customizable for any group size.",
     url: `https://${SITE.domain}/packages/`,
     siteName: "Monterey Golf Tours",
     type: "website",
   },
-  twitter: { card: "summary_large_image", title: "Monterey Golf Trip Packages | Monterey Golf Tours" },
+  twitter: { card: "summary_large_image", title: "Monterey Golf Trip Packages — 3 to 7 Days" },
 };
 
 // VIBE → badge color
