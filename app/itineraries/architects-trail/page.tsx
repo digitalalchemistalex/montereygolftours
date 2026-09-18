@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "The Architect\u2019s Trail \u2014 4-Course Monterey Golf Itinerary | Monterey Golf Tours",
+  title: "The Architect\u2019s Trail \u2014 4-Course Monterey Peninsula Itinerary",
   description:
     "Play four legendary architect designs in one Monterey Peninsula trip: Pete Dye, Jack Nicklaus, Robert Trent Jones Jr., and Gene Bates. No private club required.",
   alternates: { canonical: `https://${SITE.domain}/itineraries/architects-trail/` },
