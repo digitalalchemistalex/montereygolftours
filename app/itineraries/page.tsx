@@ -7,7 +7,7 @@ import { ITINERARIES } from "@/lib/itineraries";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Sample Golf Trip Itineraries",
+  title: "Monterey Peninsula Golf Trip Itineraries — 3 to 7 Days",
   description:
     "Browse sample Monterey Peninsula golf trip itineraries, from a 3-day weekend to a 7-day ultimate trip — every one customizable to your group.",
   alternates: {
