@@ -15,7 +15,7 @@ const FAQ       = dynamic(() => import("@/components/FAQ"));
 // ── Metadata ─────────────────────────────────────────────────────────
 // Formula: P1 keyword first | price signal | brand | ≤60 chars title
 export const metadata: Metadata = {
-  title: "Pebble Beach Golf Packages & Monterey Golf Trips",
+  title: "Pebble Beach Golf Packages & Monterey Group Golf Trips",
   description: "Plan a Pebble Beach golf trip with Monterey's IAGTO-authorized operator. 14 courses, 9 hotels, groups of 2–400. Custom quotes in 24 hours.",
   alternates: {
     canonical: "https://montereygolftours.com/",
