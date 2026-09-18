@@ -32,9 +32,9 @@ const inter = Inter({
 
 const GTM_ID = "GTM-P42W2PKX";
 
-const DEFAULT_TITLE = "Monterey Golf Tours — Private Group Golf Trips on the Monterey Peninsula";
+const DEFAULT_TITLE = "Monterey Peninsula Group Golf Trips & Pebble Beach Packages";
 const DEFAULT_DESC =
-  "Plan a private group golf trip to the Monterey Peninsula. Courses, lodging, and tee times handled end to end.";
+  "IAGTO-authorized operator for Monterey Peninsula group golf. 14 courses, 14 hotels, tee times and room blocks handled end to end. Groups of 2–400.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://montereygolftours.com"),
