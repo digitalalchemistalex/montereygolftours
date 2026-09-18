@@ -534,14 +534,20 @@ The `.speakable-intro` div must be the first visible paragraph on the page, serv
 
 ## Known Issues / Pending
 
-- `app/spanish-bay-reopening/page.tsx` — title shows `Links character` (code bleed) — BROKEN, fix immediately
-- `/experiences/[slug]/` — "at Pebble Beach" appended even when name already contains Pebble Beach — fix in generateMetadata
-- Embassy Suites + Monterey Beach Hotel titles exceed 60 chars with full brand name — truncate
-- About page description 181 chars — trim to 155
-- Experiences index description 176 chars — trim to 155
-- DEFAULT_TITLE 73 chars — fix in layout.tsx
-- GBP (Google Business Profile) not yet set up — highest-leverage remaining entity signal
-- sameAs Facebook/Instagram URLs not yet verified as live profiles
+- **GBP (Google Business Profile)** — not yet set up — highest-leverage remaining entity signal
+- **sameAs Facebook/Instagram** — URLs not yet verified as live profiles
+- **GSC data** — domain launched Sep 15 2026, first meaningful data expected ~Oct 13 2026
+
+### Resolved (Sep 17 2026)
+- ✅ DEFAULT_TITLE fixed (was 73 chars, now 59)
+- ✅ DEFAULT_DESC fixed (was weak, now IAGTO-forward)
+- ✅ Homepage title updated (added "Group")
+- ✅ Hotels index fixed ("11 hotels" → 14, title improved)
+- ✅ Pebble Beach hub title fixed (added IAGTO signal)
+- ✅ Contact title trimmed
+- ✅ About desc trimmed to 144 chars
+- ✅ Experiences slug — fixed "at Pebble Beach" redundancy
+- ✅ spanish-bay-reopening — added layout.tsx with proper metadata (was "use client" page with no metadata)
 
 ---
 
