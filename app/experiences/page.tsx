@@ -7,7 +7,7 @@ import { EXPERIENCES } from "@/lib/experiences";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pebble Beach Experiences — Dining, Spa & 17-Mile Drive | Monterey Golf Tours",
+  title: "Pebble Beach Experiences — Dining, Spa & 17-Mile Drive®",
   description: "Beyond golf \u2014 dining at Stillwater Bar & Grill, the Forbes Five-Star Spa, 17-Mile Drive\u00ae, the Golf Academy, and The Beach & Tennis Club at Pebble Beach Resorts\u00ae.",
   alternates: { canonical: `https://${SITE.domain}/experiences/` },
   openGraph: {
