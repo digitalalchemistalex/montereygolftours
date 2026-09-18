@@ -7,14 +7,14 @@ import FAQ, { FAQ_CATEGORIES } from "@/components/FAQ";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Monterey Golf Trip FAQ — Pebble Beach, Courses & Planning Questions",
+  title: "Monterey Golf Trip FAQ — Pebble Beach, Courses & Planning",
   description:
     "Common questions about planning a Monterey Peninsula golf trip — group sizes, Pebble Beach Resorts® access, best timing, and how the quote process works.",
   alternates: {
     canonical: `https://${SITE.domain}/faq/`,
   },
   openGraph: {
-    title: "Monterey Golf Trip FAQ — Pebble Beach, Courses & Planning Questions",
+    title: "Monterey Golf Trip FAQ — Pebble Beach, Courses & Planning",
     description:
       "Common questions about planning a Monterey Peninsula golf trip — group sizes, Pebble Beach Resorts® access, best timing, and how the quote process works.",
     url: `https://${SITE.domain}/faq/`,
