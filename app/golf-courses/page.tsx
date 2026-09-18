@@ -7,11 +7,11 @@ import { COURSES } from "@/lib/courses";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Monterey Golf Courses — All 14 Courses",
-  description: "All 14 golf courses on the Monterey Peninsula bookable through Monterey Golf Tours.",
+  title: "All 14 Monterey Peninsula Golf Courses — Group Tee Times",
+  description: "From Pebble Beach Golf Links® to Pacific Grove Golf Links — all 14 Monterey Peninsula courses available for group tee times. IAGTO-authorized booking.",
   alternates: { canonical: `https://${SITE.domain}/golf-courses/` },
   openGraph: {
-    title: "Monterey Golf Courses — All 14 Courses",
+    title: "All 14 Monterey Peninsula Golf Courses — Group Tee Times",
     description: "All 14 golf courses on the Monterey Peninsula — Pebble Beach, Spyglass, Bayonet, Carmel Valley Ranch and more. Book as a package or standalone.",
     url: `https://${SITE.domain}/golf-courses/`,
     siteName: "Monterey Golf Tours",
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Monterey Golf Courses — All 14 Courses",
-    description: "All 14 golf courses on the Monterey Peninsula bookable through Monterey Golf Tours.",
+    title: "All 14 Monterey Peninsula Golf Courses — Group Tee Times",
+    description: "From Pebble Beach Golf Links® to Pacific Grove Golf Links — all 14 Monterey Peninsula courses. IAGTO-authorized booking.",
   },
 };
 
