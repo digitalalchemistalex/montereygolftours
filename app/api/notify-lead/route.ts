@@ -9,6 +9,19 @@ export const runtime = "edge";
 import { sendEmail, buildLeadNotificationHtml, buildLeadConfirmationHtml } from "@/lib/email";
 import { sendDevAlert } from "@/lib/dev-alert";
 
+async function logEmail(toEmail: string, subject: string, type: string, leadId: string | null, resendId: string | null | undefined) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.MGTS_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.MGTS_SUPABASE_SERVICE_KEY;
+  if (!url || !key) return;
+  try {
+    await fetch(`${url}/rest/v1/email_log`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: key, Authorization: `Bearer ${key}`, Prefer: "return=minimal" },
+      body: JSON.stringify({ to_email: toEmail, subject, type, status: "sent", lead_id: leadId || null, gmail_message_id: resendId || null }),
+    });
+  } catch { /* non-critical */ }
+}
+
 export async function POST(req: Request) {
   const RESEND_KEY   = process.env.RESEND_API_KEY;
   const NOTIFY_EMAIL = process.env.LEAD_NOTIFY_EMAIL;
@@ -79,6 +92,10 @@ export async function POST(req: Request) {
     key: RESEND_KEY,
   });
 
+  const leadIdStr = typeof data.lead_id === "string" ? data.lead_id : null;
+  if (opResult.ok) {
+    logEmail(NOTIFY_EMAIL, subject, "lead_notification", leadIdStr, opResult.id).catch(() => {});
+  }
   if (!opResult.ok) {
     console.error("notify-lead: operator email failed", opResult.error);
     // Alert dev immediately — Sean won't know about the lead
@@ -116,6 +133,9 @@ export async function POST(req: Request) {
       html: buildLeadConfirmationHtml(data),
       key: RESEND_KEY,
     });
+    if (custResult.ok) {
+      logEmail(customerEmail, custSubject, "lead_confirmation", leadIdStr, custResult.id).catch(() => {});
+    }
     if (!custResult.ok) {
       console.error("notify-lead: customer confirmation failed", custResult.error);
     }
