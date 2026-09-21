@@ -1,61 +1,42 @@
-// app/api/indexnow/route.ts
-// Pings Bing + Yandex via IndexNow on demand (call after new content deploys)
-// GET /api/indexnow — submit all sitemap URLs instantly
+import { NextResponse } from 'next/server';
 
-import { NextResponse } from "next/server";
+const INDEXNOW_KEY = 'b7d4f1e8a3c6b9d2e5f8a1c4b7d0e3f6';
+const HOST = 'montereygolftours.com';
 
-export const runtime = "edge";
-export const dynamic = "force-dynamic";
+export async function GET() {
+  return NextResponse.json({ key: INDEXNOW_KEY });
+}
 
-const KEY = "mgts1789002022monterey2026";
-const HOST = "montereygolftours.com";
-const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
-
-const URLS = [
-  `https://${HOST}/`,
-  `https://${HOST}/golf-courses/`,
-  `https://${HOST}/hotels/`,
-  `https://${HOST}/itineraries/`,
-  `https://${HOST}/packages/`,
-  `https://${HOST}/destinations/`,
-  `https://${HOST}/blog/`,
-  `https://${HOST}/faq/`,
-  `https://${HOST}/about/`,
-  `https://${HOST}/quote/`,
-  `https://${HOST}/contact/`,
-];
-
-export async function GET(req: Request) {
-  const auth = req.headers.get("authorization");
-  if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+export async function POST(request: Request) {
+  const auth = request.headers.get('x-indexnow-auth');
+  if (auth !== INDEXNOW_KEY) {
+    return new NextResponse('Unauthorized', { status: 401 });
   }
+
+  const urls = [
+    `https://${HOST}/`,
+    `https://${HOST}/golf-courses/`,
+    `https://${HOST}/hotels/`,
+    `https://${HOST}/itineraries/`,
+    `https://${HOST}/pebble-beach/`,
+    `https://${HOST}/experiences/`,
+    `https://${HOST}/about/`,
+    `https://${HOST}/faq/`,
+    `https://${HOST}/llms.txt`,
+  ];
 
   const payload = {
     host: HOST,
-    key: KEY,
-    keyLocation: KEY_LOCATION,
-    urlList: URLS,
+    key: INDEXNOW_KEY,
+    keyLocation: `https://${HOST}/${INDEXNOW_KEY}.txt`,
+    urlList: urls,
   };
 
-  const results = await Promise.allSettled([
-    fetch("https://api.indexnow.org/indexnow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify(payload),
-    }),
-    fetch("https://www.bing.com/indexnow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify(payload),
-    }),
-  ]);
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify(payload),
+  });
 
-  const statuses = results.map((r, i) => ({
-    engine: i === 0 ? "indexnow.org" : "bing",
-    ok: r.status === "fulfilled" && r.value.ok,
-    status: r.status === "fulfilled" ? r.value.status : "rejected",
-  }));
-
-  return NextResponse.json({ submitted: URLS.length, results: statuses });
+  return NextResponse.json({ submitted: urls.length, status: res.status });
 }
