@@ -137,7 +137,7 @@ const homepageSchema = {
           name: "How much does a Monterey golf trip cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A Monterey golf trip typically costs $400–From $900 per person per day depending on which courses you play and where you stay. Daily-fee courses like Pacific Grove Golf Links and Laguna Seca Golf Ranch run $75–From $150 per round. Premium courses such as Bayonet and Black Horse are $140–From $220 per round. Resort course green fees vary and require a lodge stay to access. A 3-day trip for a group of 4 playing mid-range courses and staying at a 4-star hotel typically runs $1,200–$2,000 per person total. Contact Monterey Golf Tours for a custom quote based on your group size and course preferences.",
+            text: "A Monterey golf trip typically costs From $400–From $900 per person per day depending on which courses you play and where you stay. Daily-fee courses like Pacific Grove Golf Links and Laguna Seca Golf Ranch run From $75–From $150 per round. Premium courses such as Bayonet and Black Horse are From $140–From $220 per round. Resort course green fees vary and require a lodge stay to access. A 3-day trip for a group of 4 playing mid-range courses and staying at a 4-star hotel typically runs $1,200–$2,000 per person total. Contact Monterey Golf Tours for a custom quote based on your group size and course preferences.",
           },
         },
         {
