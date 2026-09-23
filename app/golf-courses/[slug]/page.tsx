@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSE_DETAILS } from "@/lib/course-details";
+import { findPhotographerBySrc } from "@/lib/photographers";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import TabbedGallery from "@/components/TabbedGallery";
 import { COURSES } from "@/lib/courses";
@@ -108,6 +109,7 @@ export default async function CoursePage({ params }: Props) {
   const canonicalUrl = `https://${SITE.domain}/golf-courses/${course.slug}/`;
   const courseImage = COURSES.find((c) => c.slug === course.slug)?.image;
   const isClosed = slug === "links-at-spanish-bay";
+  const imagePhotographer = courseData?.image ? findPhotographerBySrc(courseData.image) : undefined;
 
   const schema = {
     "@context": "https://schema.org",
@@ -173,8 +175,11 @@ export default async function CoursePage({ params }: Props) {
             height: 800,
             name: `${courseData!.name} — Monterey Golf Tours`,
             caption: `${courseData!.name}, Monterey Peninsula, California`,
-            copyrightNotice: `© ${courseData!.name}`,
-            creditText: `${courseData!.name} via Monterey Golf Tours`,
+            copyrightNotice: imagePhotographer ? "© Pebble Beach Company" : `© ${courseData!.name}`,
+            creditText: imagePhotographer ? imagePhotographer.creditLine : `${courseData!.name} via Monterey Golf Tours`,
+            creator: imagePhotographer
+              ? { "@type": "Person", name: imagePhotographer.name }
+              : { "@type": "Organization", name: SITE.name },
             acquireLicensePage: `https://${SITE.domain}/contact/`,
             license: "https://creativecommons.org/licenses/by/4.0/",
           },

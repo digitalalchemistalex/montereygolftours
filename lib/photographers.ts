@@ -169,3 +169,7 @@ export const PHOTOGRAPHERS: Record<string, Photographer> = {
 };
 
 export const PHOTOGRAPHER_SLUGS = Object.keys(PHOTOGRAPHERS);
+
+export function findPhotographerBySrc(src: string): Photographer | undefined {
+  return Object.values(PHOTOGRAPHERS).find((p) => p.images.some((img) => img.src === src));
+}
