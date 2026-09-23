@@ -94,7 +94,7 @@ export default async function ExperiencePage({ params }: Props) {
         } : {}),
       },
       {
-        "@type": ["Service", "Product"],
+        "@type": "Service",
         "@id": `${canonicalUrl}#service`,
         name: `${exp.name} \u2014 Monterey Golf Tours`,
         description: exp.hook,

@@ -194,9 +194,8 @@ export default async function CoursePage({ params }: Props) {
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
       },
-      // Service + Product dual type — required for Google review snippet eligibility
       {
-        "@type": ["Service", "Product"],
+        "@type": "Service",
         "@id": `${canonicalUrl}#service`,
         name: `Play ${course.name} — Monterey Golf Tours`,
         description: course.hook?.slice(0, 155),

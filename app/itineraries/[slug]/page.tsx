@@ -143,9 +143,8 @@ export default async function ItineraryPage({ params }: Props) {
           })),
         },
       },
-      // Service + Product dual type — required for Google review snippet eligibility
       {
-        "@type": ["Service", "Product"],
+        "@type": "Service",
         "@id": `${canonicalUrl}#service`,
         name: trip.title,
         description: trip.target,
